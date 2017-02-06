@@ -28,6 +28,8 @@
 		3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A41E48B5BE001E8ED3 /* Dialogue.json */; };
 		3F2844AA1E48B5E6001E8ED3 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */; };
 		3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */; };
+		3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D631E48D65400100027 /* ContentViewController.swift */; };
+		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		3F2844A41E48B5BE001E8ED3 /* Dialogue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dialogue.json; sourceTree = "<group>"; };
 		3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				3F28449D1E48B55D001E8ED3 /* NameModalViewController.swift */,
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
 				3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */,
+				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
+				3FBD2D651E48D66B00100027 /* ViewController.swift */,
 			);
 			path = ProjetImerirApp;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 				3F2844901E488F30001E8ED3 /* DesignableLabel.swift in Sources */,
 				3F2844921E488F94001E8ED3 /* BuildElementApp.swift in Sources */,
 				3F28449C1E48B515001E8ED3 /* InitViewController.swift in Sources */,
+				3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */,
+				3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */,
 				3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */,
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
