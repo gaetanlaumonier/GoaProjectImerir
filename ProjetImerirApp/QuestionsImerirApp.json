@@ -1,0 +1,1025 @@
+{
+    "Questions": [{
+                  "Question": "Comment s'appelle la mémoire vive ?",
+                  "Choice": ["RIM", "ROM", "REM"],
+                  "Answer": "RAM",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Autrement dit, la mémoire rapide quoi...",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Toute carte réseau à une adresse __ désignant son identifiant unique.",
+                  "Choice": ["GUI", "NIC", "CPU"],
+                  "Answer": "MAC",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": null,
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle est le cerveau d'un ordinateur ?",
+                  "Choice": ["Carte mère", "Disque dur", "Carte réseau"],
+                  "Answer": "Processeur",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "J'espère que ton cerveau fonctionne bien lui...",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "En quelle année le World Wide Web a t'il été crée ?",
+                  "Choice": ["1974", "1965", "1982"],
+                  "Answer": "1991",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Le premier navigateur web a été développé en Objectif-C !",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Laquelle de ces lettres désigne un langage de programmation ?",
+                  "Choice": ["B", "A", "D"] ,
+                  "Answer": "C",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Très amusante cette question",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle commande permet le déplacement sur le disque sous linux ?",
+                  "Choice": ["Cf", "Dep", "Dp"],
+                  "Answer": "Cd",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": null,
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est ce langage ? System.out.println ('Bonjour!')",
+                  "Choice": ["C", "HTML", "PHP"],
+                  "Answer" : "Java",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Facile, facile..",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En 2014, quelle langage a été créé par Apple ?",
+                  "Choice": ["Scale", "Siri", "Snail"],
+                  "Answer": "Swift",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "On en entend beaucoup parler !",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "EDI signifie :",
+                  "Choice": ["Électronique dirigée par informatique", "European Data Identity", "Ensemble des informations"],
+                  "Answer": "Environnement de développement intégré",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Etat D'Inceste ?",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Qu’est-ce qu’un chevron ?",
+                  "Choice": ["/", "\"", "'"],
+                  "Answer": ">",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Pas si évident",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Que signifie l’indentation en informatique ?",
+                  "Choice": ["L’ensemble de la ponctuation", "Un design en forme de mâchoire", "Supprimer les mots un par un"],
+                  "Answer": "Des espaces avant les phrases",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Lequel de ces mot n’est pas un type de variable ?",
+                  "Choice": [ "String", "Integer", "Float"],
+                  "Answer":"Square",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Ce jeu est vraiment facile !",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle entreprise a créé Steve Jobs en 1985 après avoir été renvoyé de chez Apple ?",
+                  "Choice": ["IBM", "DEC", "Accenture"],
+                  "Answer": "NeXt",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Ce faire virer de son entreprise, sale histoire...",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Qu’appelle-t-on machine virtuelle ?",
+                  "Choice": ["Une intelligence artificielle", "Un boitier d’ordinateur vide", "Un serveur"],
+                  "Answer": "Un ordinateur émulé",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle entreprise n’a jamais vendu d’ordinateurs portables ?",
+                  "Choice": ["Samsung", "Sony", "Panasonic"],
+                  "Answer": "Canon",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Aller, au pif !",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est le rôle d’une carte mère ?",
+                  "Choice": ["Donner des ordres aux composants", "Protéger les différents composants", "Permettre une ventilation des composants"],
+                  "Answer": "Mettre en relation les composants",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle est le langage de programmation le plus vieux ?",
+                  "Choice": ["Java", "C++", "Ruby"],
+                  "Answer": "Basic",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Toujours bon à savoir",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle langage est le plus récent ?",
+                  "Choice": ["Objectif C", "Python", "SQL"],
+                  "Answer": "Javascript",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Le petit dernier de la famille",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle est la particularité d’un Disque SSD ?",
+                  "Choice": ["Plus d'espace de stockage", "Plus écologique", "Moins chère"],
+                  "Answer": "Plus rapide à l'exécution",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Il fut un réel progrès comme composant",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En langage binaire, lequel de ces calcul est vrai ?",
+                  "Choice": ["1+1=0", "1+1=1", "1+1=11"],
+                  "Answer": "1+1=10",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Y'a pas 2 ?!",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "L’iPhone 7 contient environs …… pixels :",
+                  "Choice": ["5 000 000", "500 000", "100 000"],
+                  "Answer": "1 000 000",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Sa chipote un peu sur les chiffres, je te l'accorde",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "En hexadécimal on peut compter jusqu’à ?",
+                  "Choice": ["7", "16", "D"],
+                  "Answer": "F",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": null,
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Laquelle de ces valeur est la plus grande ?",
+                  "Choice": ["Mégaoctet", "Gigaoctet", "Octet"],
+                  "Answer": "Téraoctet",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Toujours plus, bientôt l'UltraOctet !",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Un Mio est égal à ?",
+                  "Choice": ["1024 Ko", "1000 Ko", "1048Kio" ],
+                  "Answer": "1048Ko",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Sa ce joue sur les détails",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Combien d’adresses IP différentes peut contenir un réseau de classe A ?",
+                  "Choice": ["65534", "254", " 256"],
+                  "Answer": "16 777 214",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "On se rappelle de ses premiers cours de réseau !",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est le nom du principal protocol de communication serveur/client ?",
+                  "Choice": ["TCP/IP", "SMTP", "FTP"],
+                  "Answer": "HTTP",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle était la vitesse de transfert du premier disque dur ?",
+                  "Choice": ["5.4 Go/s", "3.2 Mo/s", "320 o/s"],
+                  "Answer": "8.8 Ko/s",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Tellement lent...",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "En anglais comment dit-on disque dur ?",
+                  "Choice": ["File Saver", "Rough Disk", "Data Drive"],
+                  "Answer": "Hard Disk",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "En règle générale, quelle est la valeur d’octet maximale d’un entier ?",
+                  "Choice": ["299 792 458", "3 141 592 653 589 793", "43 252 003 274 489 856 000"],
+                  "Answer": "2 147 483 647",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Après on passe au type 'double'",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est le rôle d’un service web ?",
+                  "Choice": ["Sécuriser les systèmes de paiement en ligne", "Générer une documentation en ligne", "Fournir des données sur un utilisateur" ],
+                  "Answer": "Permettre l’échange de données entre applications",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Lequel de ces robots existe ?",
+                  "Choice": ["Mishi", "Nara", "Mashado"],
+                  "Answer": "Nao",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Robot Français !",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En 2016, sur 10 personnes ayant un smartphone dans le monde, combien possèdent un android ?",
+                  "Choice": ["7", "5", "6" ],
+                  "Answer": "8",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "En quelle année la disposition actuelle AZERTY des touches de claviers d’ordinateurs a-t-elle été inventée ?",
+                  "Choice": ["1956", "1923", "1967"],
+                  "Answer": "1985",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un peu plus de culture",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "En quelle année le jeu PONG a-t-il été inventé ?",
+                  "Choice": ["1953", "1985", "1962"],
+                  "Answer": "1972",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un des tout premiers jeu vidéo",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En Java, pour un entier i = 1, si j’écris i += ++i, quel valeur prendra désormais i ?",
+                  "Choice": ["2", "4", "1"],
+                  "Answer": "3",
+                  "Topic": "Info",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Aller, c'est pas si dur !",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Où peut-on admirer la Joconde?",
+                  "Choice": ["Au musée de l’Ermitage, à Saint-Pétersbourg", "Au château de Versailles", "Au musée d’Orsay, à Paris"],
+                  "Answer": "Au musée du Louvre, à Paris",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Une oeuvre entourée de mystère",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est l'auteur du Misanthrope ?",
+                  "Choice": ["Diderot", "Racine", "Rousseau"],
+                  "Answer": "Molière",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un misanthrope est un personnage détestant le genre humain",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Les terres émergées du globe terrestre représentent …",
+                  "Choice": ["50% de la surface totale", "20% de la surface totale", "40% de la surface totale"],
+                  "Answer": "30% de la surface totale",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Malgré cela, des gens meurent de soifs...",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle est la capitale du Luxembourg ?",
+                  "Choice": ["Geneves", "Francfort", "Bruges"],
+                  "Answer": "Luxembourg",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Attention",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Où se trouve la prison d'Alcatraz ?",
+                  "Choice": ["à Los Angeles", "à Alcatraz", "à Sacramento"],
+                  "Answer": "à San Francisco",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Al Capone y a séjourné",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle est la capitale de l'Australie ?",
+                  "Choice": ["Melbourne", "Adelaide", "Sydney"],
+                  "Answer": "Canberra",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel était le prénom du \"Che\" Guevara ?",
+                  "Choice": ["Augusto", "Alfonso", "Javier"],
+                  "Answer": "Ernesto",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "\"Che\" c'était pas son prénom ?",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quelle est la date du débarquement en Normandie durant le Seconde Guerre Mondiale ?",
+                  "Choice": ["18 août 1945", "12 juillet 1944", "24 septembre 1945"],
+                  "Answer": "6 juin 1944",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un jour historique",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En quelle année l’O.N.U a-t-elle été crée?",
+                  "Choice": ["1939", "1919", "1953"],
+                  "Answer": "1945",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "En quelle année \"le Titanic\" a-t-il fait naufrage?",
+                  "Choice": ["1917", "1907", "1902"],
+                  "Answer": "1912",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Repond à la question",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "La chute du mur de Berlin, c'était en...",
+                  "Choice": ["1987", "1991", "1985"],
+                  "Answer": "1989",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "C'était y'a pas si longtemps",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel président américain a démissionné à cause du scandale du Watergate en 1974?",
+                  "Choice": ["Reagan", "Carter", "Ford"],
+                  "Answer": "Nixon",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Affaire d'espionnage politique américaine",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est la Capitale de la Norvège ?",
+                  "Choice": ["Stockholm", "Helsinki", "Dublin"],
+                  "Answer": "Oslo",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "On les connais toute, mais laquelle est en Norvège ?",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En 1940, quelle est la capitale de l’État français dirigé par Pétain?",
+                  "Choice": ["Paris", "Lyon", "Lille"],
+                  "Answer": "Vicky",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Qui est le président américain qui a assisté à la conférence de Yalta?",
+                  "Choice": ["Kennedy", "Wilson", "Truman"],
+                  "Answer": "Roosevelt",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Et Lincoln ?! ",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "En quelle année survient la catastrophe de Tchernobyl?",
+                  "Choice": ["1991", "1981", "1976"],
+                  "Answer": "1986",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Repond à la question",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Les Trente glorieuses sont des années de gloire de la France entre…",
+                  "Choice": ["1975 à 2003", "1955 à 1983", "1965 à 1993"],
+                  "Answer": "1945 à 1973",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Prémice de la consommation de masse",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est la capitale du Panama ?",
+                  "Choice": ["Sucre", "Lima", "Quito"],
+                  "Answer": "Panama",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Y'a un piège ?",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel est la racine carrée de 196 ?",
+                  "Choice": ["16", "15", "13"],
+                  "Answer": "14",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Les maths c'est important",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Quel est le carrée de 13",
+                  "Choice": [" 143", "156", "182"],
+                  "Answer": "169",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Qui dit algo, dit math",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Quelle est le cube de 6",
+                  "Choice": ["198", "180", "162"],
+                  "Answer": "216",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Repond à la question",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Résoudre le calcul ((4+5+6*7)-18):",
+                  "Choice": ["69", "3", "15"],
+                  "Answer": "33",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Facile, Facile",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Convertir le chiffre romain suivant : XIX",
+                  "Choice": ["21", "4", "9"],
+                  "Answer": "19",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Y'a plus dur quand même",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "Résoudre le calcul 2^8:",
+                  "Choice": ["512", "1024", "128"],
+                  "Answer": "256",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "2*2*2*2*2...",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Convertir le chiffre romain suivant : MCMLXVIII",
+                  "Choice": ["573", "2030", "2158"],
+                  "Answer": "1968",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Aller si tu te plante, c'est pas grave",
+                  "HPLost": 2,
+                  "Timer":30
+                  }, {
+                  "Question": "Quelle fruit a influencé le physicien Isaac Newton lors de sa découverte sur la gravité ?",
+                  "Choice": ["Une poire", "Une banane", "Une orange"],
+                  "Answer": "Une pomme",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Le fruit lui est tomber sur la tête, comme quoi...",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Qui est l’inventeur du téléphone ?",
+                  "Choice": ["Alexis de Tocqueville", "Nicolas Tesla", "Benjamin Franklin"],
+                  "Answer": "Alexander Graham Bell",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Oui, le précurseur de ton dernier smartphone",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Qui a considérablement participé à l’invention de l’ordinateur au XXe siècle?",
+                  "Choice": ["Bill Gates", "Steve jobs", "Nicola Tesla"],
+                  "Answer": "Alan Turing",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un grand génie",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Quel dirigeant fut le premier à utiliser la bombe nucléaire ?",
+                  "Choice": ["Vladimir Poutine", "Winston Churchill", "Kim Jong Il"],
+                  "Answer": "Harry Truman",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "The first massive atomic killer",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "A Combien équivaut environ la vitesse du son ?",
+                  "Choice": ["1000m/s", "1040m/s", "300m/s"],
+                  "Answer": "340m/s",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Franchir le mur du son",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "A Combien équivaut environ la vitesse de la lumière ?",
+                  "Choice": ["100 000m/s", "400 000m/s", "200 000m/s"],
+                  "Answer": "300 000m/s",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 15
+                  }, {
+                  "Question": "Lorsque l’on est confronté à une force centrifuge on dit que l’on prend des ?",
+                  "Choice": ["PI", "X", "K"],
+                  "Answer": "G",
+                  "Topic": "CultureG",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Vomissement ?",
+                  "HPLost": 1,
+                  "Timer": 15
+                  }, {
+                  "Question": "Combien de gouttes d'eau peut-on mettre dans un verre vide ?",
+                  "Choice": ["une", "1", "Une"],
+                  "Answer": "Avec une goutte, le verre n'est plus vide",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "À la goutte près ?",
+                  "HPLost": 3,
+                  "Timer": 15
+                  }, {
+                  "Question": "C'est mieux que dieu, c'est pire que le diable, les pauvres en ont, les riches en ont besoin et si on en mange, on meurt.",
+                  "Choice": ["Rien", "rien"],
+                  "Answer": "Rien",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Pas facile celle la",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Compléter cette suite logique : 0 - 2 - 5 - 7 - 8 - 9 - 11 - ?",
+                  "Choice": ["12", "13", "51"],
+                  "Answer": "100",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Tes yeux te trahissent",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Compléter cette suite logique : 0 - 10 -11 - 21 - 22 - 32 - ?",
+                  "Choice": ["34", "43", "61"],
+                  "Answer": "51",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Compléter cette suite logique : 2 - 5 - 12 - 27 - 58 - ? ",
+                  "Choice": ["85", "106", "143"],
+                  "Answer": "121",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Aller on réflechit",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Compléter cette suite logique : 3 - 6 - 12 - 15 - 30 - 33 - 66 - ?",
+                  "Choice": ["96", "99", "132"],
+                  "Answer": "69",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Encore des maths",
+                  "HPLost": 2,
+                  "Timer":60
+                  }, {
+                  "Question": "Compléter cette suite logique : 6 - 9 - 15 - 27 - 51 - ?",
+                  "Choice": ["52", "54", "75"],
+                  "Answer": "99",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un enfant de 3 mois à répondu juste",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "La souris mange le fromage, le chat mange la souris. Qui reste-t-il ?",
+                  "Choice": ["La souris", "Le fromage", "Aucun"],
+                  "Answer": "Le chat",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Si tu répond juste tu deviens immortel",
+                  "HPLost": 3,
+                  "Timer": 60
+                  }, {
+                  "Question": "Trouvez l'intrus",
+                  "Choice": ["Solide", "Rigide", "Résistant"],
+                  "Answer": "Gros",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Un seul se démarque du lot",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Trouvez l'intrus",
+                  "Choice": ["Ingénu", "Crédule", "Niai"],
+                  "Answer": "Grossier",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Ne soit pas un des quatres",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Retrouver l'anagramme du mot caché : Grade dans l’armée / qui concerne la majorité : AERELNG",
+                  "Choice": ["général", "general", "GÉNÉRAL", "GENERAL", "Général", "General"],
+                  "Answer": "GÉNÉRAL",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Tu trouve sa dur ?",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Retrouver l'anagramme du mot caché : Aide une entreprise / Programme informatique : OGILILCE ",
+                  "Choice": ["LOGICIEL", "logiciel", "Logiciel"],
+                  "Answer": "LOGICIEL",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Tu en utilise tout les jours",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Retrouver l'anagramme du mot caché : Lettre en Majuscule / Grande importance / Pôle majeur d’un pays : APATICLE",
+                  "Choice": ["Capitale", "CAPITALE", "capitale"],
+                  "Answer": "CAPITALE",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Aide : Anagramme du mot 'ARMY' = 'MARY' ",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Retrouver l'anagramme du mot caché : Moyen de communication moderne / Facilement transportable : ORELBAPT",
+                  "Choice": ["PORTABLE", "portable", "Portable"],
+                  "Answer": "PORTABLE",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Aide : Anagramme du mot 'POLICE' = 'PICOLE' ",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Retrouver l'anagramme du mot caché : Preuve de maturité / ce que n’a pas le débutant : ECERIXPEEN",
+                  "Choice": ["EXPERIENCE", "Expérience", "Experience", "EXPÉRIENCE", "expérience", "experience"],
+                  "Answer": "EXPÉRIENCE",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Tu en aura un jour",
+                  "HPLost": 2,
+                  "Timer":30
+                  }, {
+                  "Question": "Indice pour la police, lorsqu'ils ont besoin d'un portrait. Nombreux dans les cuisines, bourrés de mécanique et travaillent beaucoup dans les usines. Qui-es ce ?",
+                  "Choice": ["Robot", "Robots", "ROBOT", "ROBOTS", "robot", "robots"],
+                  "Answer": "Les Robots",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "L'imérir te forme à en créer",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Quel est le volume de terre qui se trouve dans un trou carré creusé dans le sol, et mesurant 2 mètres de côté et 2 mètres de profondeur ?",
+                  "Choice": ["0"],
+                  "Answer": "0",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 3,
+                  "Timer": 30
+                  }, {
+                  "Question": "Sur un pommier, il y a 6 branches. Sur ces 6 branches, on trouve 4 branches. Sur ces 4 branches, 5 branches qui ont chacunes 6 poires. Combien y'a t'il de poires ?",
+                  "Choice": ["0"],
+                  "Answer": "0 'poire' dans un 'pommier'",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Mr Boidelot entend 21 tintements de verres chez son voisin, combien de convives y a t'il chez son voisin (chaque convive trinque avec les autres convives une seule fois).",
+                  "Choice": ["7"],
+                  "Answer": "7 convives",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Santé !",
+                  "HPLost": 1,
+                  "Timer": 60
+                  }, {
+                  "Question": "Une armada en comporte trois. Un bataillon en a deux. Un commando n'en a qu'un et un régiment n'en a pas du tout. Qui suis-je ?",
+                  "Choice": ["A", "a"],
+                  "Answer": "Le 'A'",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "C'ette énigme est abracadabrante",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Un père à autant de filles que de garçons et chacune de ses filles a moitié moins de soeurs que de frères. Combien y a t'il d'enfant dans ma famille ?",
+                  "Choice": ["4"],
+                  "Answer": "4 enfants, 2 filles et 2 garçons",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Tu va y arriver",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "J'ai des billes, toutes sont rouges sauf deux, toutes sont vertes sauf deux, et toutes sont bleues sauf deux. Combien de billes je possède ?",
+                  "Choice": ["3"],
+                  "Answer": "3, une de chaques",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Répond à la question",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Si trois chats attrapent trois souris en trois minutes, combien faudrait-il de chats pour attraper 100 souris en 100 minutes ?",
+                  "Choice": ["3"],
+                  "Answer": "3 chats",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Sa porte à reflexion",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question":"Un microbe se multiplie par deux chaque seconde. Après une minute un pot de confiture en est rempli. En combien de secondes le bocal sera rempli, si on démarre avec 4 microbes ?",
+                  "Choice": ["58"],
+                  "Answer": "58 secondes",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Sa fera combien de microbes à la fin ?!",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Quelle lettre n'a pas sa place dans la série suivante : A B D J O P Q R ?",
+                  "Choice": ["J", "j"],
+                  "Answer": "'J' n'a pas de boucle fermante",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Input",
+                  "FeedBack": "Le looser",
+                  "HPLost": 2,
+                  "Timer": 60
+                  }, {
+                  "Question": "Quelle lettre se trouve avant z ?",
+                  "Choice": ["K", "S", "A"],
+                  "Answer": "T",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Et le 'Y' dans tout sa ?",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Quelle lettre se trouve avant le 'e'",
+                  "Choice": ["K", "O", "P"],
+                  "Answer": "E",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "...",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }, {
+                  "Question": "Quelle lettre se trouve avant le 'i'",
+                  "Choice": ["K", "G", "P"],
+                  "Answer": "H",
+                  "Topic": "Enigme",
+                  "TypeOfQuestion": "Button",
+                  "FeedBack": "Aller, rappel toi l'alphabet",
+                  "HPLost": 2,
+                  "Timer": 30
+                  }
+                  , {
+                  "Question": "Ta motivation dans la vie ?",
+                  "Choice": ["Gagner beaucoup d’argent", "Rencontrer de nombreuses personnes", "Me reposer dès que possible", "Me développer dans ma passion"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_crieur","profil_sociable","profil_timide","profil_innovateur"],
+                  "FeedBack": "Nous sommes tous motivés par quelque chose",
+                  "HPLostArray": [0,0,0,0]
+
+                  }, {
+                  "Question": "Le sens de la vie selon toi ?",
+                  "Choice": ["Je ne l’ai pas encore trouvé", "Rencontrer des extraterrestres", "Faire son chemin et ne pas se laisser faire ", "Rester avec les gens qui me sont chère"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_timide","profil_crieur","profil_innovateur","profil_sociable"],
+                  "FeedBack": "La question existencielle",
+                  "HPLostArray": [0,0,0,0]
+
+                  }, {
+                  "Question": "Tu possède le droit de vie une fois, qui sauvera tu ?",
+                  "Choice": ["Le medecin qui t’a sauvé la vie", "Une personne ravisante à qui tu plait", "Ta nourrice d’enfance", "Une femme enceinte"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_good","profil_evil","profil_sociable","profil_good"],
+                  "FeedBack": "Et qui laissera tu mourir 'lol'",
+                  "HPLostArray": [0,2,0,0]
+                  }, {
+                  "Question": "En conduisant tu croise une voiture accidenté. Une place disponible, qui choisit tu d’amener ?",
+                  "Choice": ["La grand mère entre la vie et la mort", "Le porte-feuille des accidentés", "Un ami blessé, à qui tu est redevable", "Personne, tu a un rencard"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_good","profil_evil","profil_good","profil_evil"],
+                  "FeedBack": "Et qui laissera tu sur le bas-côté ?",
+                  "HPLostArray": [0,2,0,2]
+                  }, {
+                  "Question": "À la croisée des chemins plusieurs routes s’offre à toi, laquelle choisis tu ?",
+                  "Choice": ["La route calme qui se n’arrête jamais", "La route aux milles dangers qui amène au trésor", "La route des sirènes enivrantes puis meurtrières", "La route mystère"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_timide","profil_crieur","profil_evil","profil_innovateur"],
+                  "FeedBack": "Le chemin de la vie, ou de la mort",
+                  "HPLostArray": [0,0,2,0]
+                  }, {
+                  "Question": "Un pouvoir te serait accordé, lequel choisirai tu ?",
+                  "Choice": ["La manipulation mentale", "La super-force", "La paix sur terre", "La téléportation"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_evil","profil_crieur","profil_good","profil_innovateur"],
+                  "FeedBack": "Le pouvoir de dirigée le monde !",
+                  "HPLostArray": [1,0,0,0]
+                  }, {
+                  "Question": "Tu aurai le don d’être totalement épanoui dans un domaine, lequel choisirai tu ?",
+                  "Choice": ["Une grande famille heureuse ", "Un don et une réussite dans ta passion", "Une amitié sans faille", "Un amour parfait"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_timide","profil_innovateur","profil_sociable","profil_timide"],
+                  "FeedBack": "Et si ma passion c'est ma femme avec qui j'ai fondée une famille, qui est aussi ma meilleur amie ?",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "A choisir que préfères tu ?",
+                  "Choice": ["Vivre dans un pays riche et puissant", "Vivre dans un monde sans guerre", "Vivre dans un monde sans maladie", "Vivre dans un monde sans faim"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_crieur","profil_sociable","profil_innovateur","profil_timide"],
+                  "FeedBack": "Vivre dans une galaxie lointaine, très lointaine..",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "Une pandémie est déclarée, les vaccins sont limités, que faire ?",
+                  "Choice": ["Donner le vaccin aux personalité 'importantes' du monde uniquement", "Donner une faible dose à toutes les personnes sans promesse de reussite", "Garder le vaccin pour toi et ton entourage", "Donner le vaccin aux habitants de ton pays uniquement"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_evil","profil_sociable","profil_evil","profil_timide"],
+                  "FeedBack": "Ces questions sont tordues.",
+                  "HPLostArray": [3,0,2,0]
+                  }, {
+                  "Question": "Quelle serait ta journée idéale ?",
+                  "Choice": ["Des activités varié en plein air ", "Geeker du lever au coucher", "Dormir puis regarder une série entière", "Travailler et préparer ton futur"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_sociable","profil_timide","profil_evil","profil_innovateur"],
+                  "FeedBack": "Moi j'aime bien jouer aux billes ",
+                  "HPLostArray": [0,0,2,0]
+                  }, {
+                  "Question": "Vous êtes en réunion et un membre ne partage pas vos opinions. Il trouve que vos suggestions sont inappropriées. Vous êtes exaspéré. Comment réagissez-vous?",
+                  "Choice": ["Vous lui manifestez ouvertement votre agacement", "Vous prenez votre mal en patience", "Vous lui donnez raison pour lui faire plaisir", "Vous attendez après la réunion pour essayer de trouver un arrangement"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_crieur","profil_innovateur","profil_timide","profil_sociable"],
+                  "FeedBack": "Je le tape",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "Vous ne vous sentez pas bien dans votre équipe de travail. Vous avez l’impression qu’on ne vous accepte pas. Que faites-vous?",
+                  "Choice": ["Ce n'est pas un problème et vous continuez de faire votre travail", "Vous êtes gentil avec ceux qui le sont et ne vous occupez pas des autres", "Vous en parlez avec votre conjoint et vous suivrez ses conseils", "Vous exposez le problème au chef d’équipe et au représentant syndical"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_innovateur","profil_sociable","profil_timide","profil_crieur"],
+                  "FeedBack": "Je les tape",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "Première journée dans l’entreprise. À la réception, on vous dit que la personne chargée de vous accueillir est absente pour la semaine. Que faites-vous?",
+                  "Choice": ["Vous demandez où se trouve votre bureau et vous vous mettez au travail", "Vous demandez est votre bureau et vous faites le tour des collègues", "Vous demandez où est votre bureau et attendez qu’on vous donne du travail", "Vous demandez à faire appeler la personne pour avoir des consignes"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_innovateur","profil_sociable","profil_timide","profil_crieur"],
+                  "FeedBack": "Vacances !",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "Vous remarquez qu’un de vos collègues amène chez lui du matériel appartenant à l'entreprise où vous travaillez. Comment réagiriez-vous ?",
+                  "Choice": ["Je l'informe que je suis au courant et je n’en parle à personne", "Je ne l'informe pas et je le dénonce à mes supérieurs", "Je ne l'informe pas et je demande conseil à mon supérieur immédiat", "Je l'informe que je suis au courant et j'en parle à l'entourage"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_timide","profil_crieur","profil_innovateur","profil_sociable"],
+                  "FeedBack": "Répond à la question",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "Si tu devais mourir demain que ferais tu ?",
+                  "Choice": ["J’irais voir les gens que j’aime", "Je réaliserai tous mes fantasmes", "Je développerai un système pour transférer ma pensée dans un robot", "Je tuerait des gens"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_sociable","profil_crieur","profil_innovateur","profil_evil"],
+                  "FeedBack": "Il y a une réponse bizarre, je te laisse deviner laquelle",
+                  "HPLostArray": [0,0,0,6]
+                  }, {
+                  "Question": "Une météorite se dirige sur la terre, que fais tu ?",
+                  "Choice": ["Je donne mon maximum pour développer une solution", "Je fais mes adieux à mes proches", "J'envoie toute mes finances à la NASA", "Je tuerait des gens"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_innovateur","profil_sociable","profil_crieur","profil_evil"],
+                  "FeedBack": "Il y a une réponse bizarre, je te laisse deviner laquelle",
+                  "HPLostArray": [0,0,0,6]
+                  }, {
+                  "Question": "Aujourd’hui journée de la liberté totale et non-punitive, que fais tu ?",
+                  "Choice": ["Je cherche à voler ma banque", "Je me cache à mon domicile et j’attend", "Je hackerai le site de la Maison Blanche", "Je tuerait des gens"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_crieur","profil_timide","profil_innovateur","profil_evil"],
+                  "FeedBack": "Une des réponses est faite pour moi",
+                  "HPLostArray": [0,0,0,6]
+                  }, {
+                  "Question": "Tu vis avec 5 euros par jour, que fais-tu ?",
+                  "Choice": ["Je fais la manche et joue à des jeux d’argent", "Je mange pour 5 euros par jour", "Je fais la manche et économiser mon argent", "Je cherche un travail"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_crieur","profil_sociable","profil_timide","profil_innovateur"],
+                  "FeedBack": "Sa fait 6 baguettes de pains par jour !",
+                  "HPLostArray": [0,0,0,0]
+                  }, {
+                  "Question": "Tu ne quittes jamais ta maison sans ___ ?",
+                  "Choice": ["Ton téléphone", "Le sourire", "Avoir mis des vêtements", "Un objectif"],
+                  "Topic": "Psycho",
+                  "TypeOfQuestion": "Psycho",
+                  "ProfilConsequence" : ["profil_timide","profil_sociable","profil_evil","profil_innovateur"],
+                  "FeedBack": "Mes chaussettes fétiches",
+                  "HPLostArray": [0,0,3,0]
+                  }
+                  
+                  ],
+    "AnswersReactions": [{
+                         "bonneReponse" : ["Bien joué ! ", "Pas mal ! ", "Je suis fière de toi ! ", "Bonne réponse ! ", "Tu as bien répondu ! ", "Impressionnant ! ", "Bravo ! ", "Super ! ", "Quelle intelligence ! ", "Epoustoufflant ! ", "Admirable ! ", "Remarquable ! ", "Merveilleux cette réponse ! ", "Extraordinaire ! ", "Quelle Eclatante réponse ! ", "Formidable ! ", "Prodigieux ", "Réponse exemplaire !", "Parfait ! ", "Ta supériorité est inconstestable ! ", "Perspicace le bougre ! ", "Quelle génie ! ", "Loupé ! Non je plaisante, c'est la bonne réponse ! "],
+                         "mauvaiseReponse" : ["Deçevant... ", "Loupé ! ", "Pas loin.. mais non ! ", "Mauvaise réponse... ", "Non ! ", "C'est pas encore sa... ", "Erreur ! ", "Tu t'es trompé sur ce coup... ", "Quelle abération ! ", "Quelle bêtise ! ", "J'espère que tu blague... ", "Quelle faux pas... ", "C'est de la folie pure... ", "Inexacte ! ", "Faux ", "Surprenant de maladresse... ", "Non non et non ! ", "J'ai bien fait de ne pas croire en toi... ", "Je ris de ton manque de connaissance... ", "Bien joué ! enfin non c'est faux... ", "Tu pense avoir la bonne réponse ? Et bien c'est la mauvaise ! ", "Perdu ! ", "Pas fameux...", "Vrai ! Non c'est faux... "],
+                         "gainPVReponse" : ["Tu remporte ", "Tu gagne ", "Tu décroche ", "Tu emporte ", "Tu reçoit ", "Tu obtient ", "Tu progresse de "],
+                         "pertePVReponse" : ["Tu perds ", "Tu y laisse ", "Tu as été dépossédé de ", "Tu as perdus ", "Dis adieu à tes ", "Dis au revoir à ", "Tu t'affaiblis de "],
+                         "chanceDuNoob":["Quelle incroyable chance du débutant ! Ta mauvaise réponse te permet de gagner ", "Pas mal le noob, en répondant faux tu gagne ", "Mauvaise réponse ! Grâce à ta classe tu gagne ", "Faux ! Ta classe te permet de gagner ", "Chance du noob ! En répondant faux tu remporte ", "Réponse fausse ! Mais ta classe te fait rapporter ", "Ce n'est pas sa ! Cependant ton noobisme te rapporte "]
+                         }]
+}
+
+
+

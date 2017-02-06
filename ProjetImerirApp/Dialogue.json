@@ -1,0 +1,9 @@
+{
+    "Dialogue": [{
+                     "idDialogue":"0",
+                     "libelleDialogue":["Réveille toi ! ", "Aller, il faut que je me motive à me lever", "Les tests sont dans une heure", "Il faut que je me prépare", "Ne sois pas en retard !"],
+                     "eventDialogue":["nil", "nil", "nil", "nil", "nil", "choixClasse"],
+                     "BackgroundDialogue":["Reveil", "png"]
+                     }
+                  ]
+}
