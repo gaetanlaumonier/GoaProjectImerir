@@ -53,7 +53,7 @@ class DialogueViewController: UIViewController {
             
             break
             
-        case "choixClasse":
+        case "choixClasse" :
             break
             
         default:
