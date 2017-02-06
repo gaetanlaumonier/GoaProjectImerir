@@ -7,7 +7,7 @@
 //background pr les classes ? (à priori non)
 //scenario
 //git
-
+//page view classe
 
 //a aborder reunion
 //Ce que jai fait (json, timer, background, classe)
