@@ -293,6 +293,14 @@
             </objects>
             <point key="canvasLocation" x="-772.46376811594212" y="-632.60869565217399"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="rMf-YE-gHV">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gi2-wu-LJa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZP-ty-VHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="-1152"/>
+        </scene>
         <!--Dialogue View Controller-->
         <scene sceneID="eJB-rY-ave">
             <objects>
