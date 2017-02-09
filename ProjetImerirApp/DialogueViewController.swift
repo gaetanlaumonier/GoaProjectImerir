@@ -21,7 +21,9 @@ class DialogueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AllDialogue = buildDialogue()
-        GestionDialogue()
+        print(AllDialogue)
+        print(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])
+        GestionEvent()
         print(self.oneProfil.name)
         
         
@@ -46,20 +48,38 @@ class DialogueViewController: UIViewController {
         } else {
             
         }
-        
-        switch AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]{
-        case "nil":
-            GestionDialogue()
+        if AllDialogue[idDialogueNumber].styleLabel.isEmpty {
+                print("normal2")
+                dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
+        } else {
+            if DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count {
+                print("normal3")
+                dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
+            } else if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
+                dialogueLabel.font = UIFont.italicSystemFont(ofSize: self.dialogueLabel.font.pointSize)
+                print("ital")
+            } else {
+                print("normal")
+                dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
+            }
             
-            break
-            
-        case "choixClasse":
-            break
-            
-        default:
-            print("Problème avec l'évènement du dialogue")
-            break
         }
+        print(DialogueNumber)
+        dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+
+//        switch AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]{
+//        case "nil":
+//            GestionDialogue()
+//            
+//            break
+//            
+//        case "choixClasse":
+//            break
+//            
+//        default:
+//            print("Problème avec l'évènement du dialogue")
+//            break
+//        }
     }
     @IBAction func DialogueTap(_ sender: UITapGestureRecognizer) {
         GestionEvent()

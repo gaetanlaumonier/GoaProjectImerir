@@ -53,6 +53,7 @@ struct Dialogue {
     
     var idDialogue : Int
     var libelleDialogue : [String]
+    var styleLabel : [String]
     var eventDialogue : [String]
     var backgroundDialogue : [String]
 }
@@ -143,13 +144,18 @@ func buildClasseJoueur() -> [ClasseJoueur]{
 func buildDialogue() -> [Dialogue]{
     var allDialogue = [Dialogue]()
     if let file = Bundle.main.path(forResource: "Dialogue", ofType: "json") {
-        
+        print("file :", file)
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: file))
+            print("data :", data)
+
             let json = JSON(data: data)
+            print("json :", json)
+
             for (_, dict) in json["Dialogue"] {
                 let thisObject = Dialogue(idDialogue: dict["idDialogue"].intValue,
                                           libelleDialogue: dict["libelleDialogue"].arrayValue.map { $0.string!},
+                                          styleLabel: dict["styleLabel"].arrayValue.map { $0.string!},
                                           eventDialogue: dict["eventDialogue"].arrayValue.map { $0.string!},
                                           backgroundDialogue: dict["backgroundDialogue"].arrayValue.map { $0.string!})
                 allDialogue.append(thisObject)
