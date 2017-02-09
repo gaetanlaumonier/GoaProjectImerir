@@ -21,6 +21,8 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     var pageViewController:UIPageViewController!
     var pageViewLabels:[String]!
     var pageViewImages:[String]!
+    var pageViewTitles:[String]!
+    var pageViewHints:[String]!
     
     var progress:Float = 0.5
     var isMomWatching = false
@@ -37,33 +39,47 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         cookie.layer.cornerRadius = cookie.frame.size.width/2
         progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         
-        pageViewLabels = ["Lala", "Sol"]
-        pageViewImages = ["Cookie", "Mom"]
+        pageViewLabels = ["Ce cookie ci-dessus représente ton principal objectif en tant que bébé rebel.", "Mais attention, une personne dont la gentillesse pourrait te parraitre familière ne te laissera pas accéder à ton but si facilement.","Cette jauge représente ta joie d'être bébé, la remplir te rendras moins grincheux"]
+        pageViewImages = ["Cookie", "Mom","progressBar"]
+        pageViewTitles = ["Le gâteau","La mère","La barre d'humeur"]
+        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Ne clique pas sur le cookie si elle te regarde", ""]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         
         pageViewController.dataSource = self
         
-        //let startVC = viewControllerAtIndex(index: 0)
-        //let viewControllers = startVC
+        let startVC = viewControllerAtIndex(index: 0)
         
-        //pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([startVC], direction: .forward, animated: true, completion: nil)
         
-        //pageViewController.view.frame = view.frame
+        var modal = view.frame
+        modal.size.width = modal.width*0.75
+        modal.size.height = modal.height*0.5
         
-        //addChildViewController(pageViewController)
-        //view.addSubview(pageViewController.view)
-        //pageViewController.didMove(toParentViewController: self)
+        pageViewController.view.frame = modal
+        pageViewController.view.center = view.center
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.8
+        
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+
+        
+        addChildViewController(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
         
         initGame()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        hideMom()
+//        hideMom()
     }
     
     func initGame() {
@@ -71,17 +87,19 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         // Gère les variables a modifier selon la classe du joueur
         initPlayerClass()
         
+        // Initialise l'interface
+        initHUD()
+    }
+    
+    func startGame() {
         // Ajoute la gestion du tap sur le Cookie
         addGestures()
         
         // Lance la boucle qui diminue le score
         decreaseScoreLoop()
         
-        // Lance la boucle qui appelle ensuite showMom()
-        //hideMom()
-        
-        // Initialise l'interface
-        initHUD()
+        // Lance la boucle d'affichage de mom
+        hideMom()
         
         Timer.scheduledTimer(timeInterval: gameDuration, target: self, selector: #selector(ViewController.endGame), userInfo: nil, repeats: false)
     }
@@ -371,6 +389,26 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         return TimeInterval(exactly: Float(arc4random()) / Float(UINT32_MAX) * 4 + 1)!
     }
     
+    func hideModal() {
+            for subview in self.view.subviews {
+                guard subview is UIVisualEffectView else {
+                    continue
+                }
+                
+                UIView.animate(withDuration: 1, animations: {_ in
+                    self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                })
+                
+                UIView.animate(withDuration: 4,delay: 0, options: .curveEaseOut ,animations: {_ in
+                    subview.alpha = 0
+                }, completion: { finished in
+                    subview.removeFromSuperview()
+                    self.pageViewController.view.removeFromSuperview()
+                    self.startGame()
+                })
+        }
+    }
+    
     func viewControllerAtIndex(index: Int) -> ContentViewController {
         
         if pageViewLabels.count == 0 || index >= pageViewLabels.count {
@@ -380,9 +418,15 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         let vc:ContentViewController = storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
         
         vc.actualImage = pageViewImages[index]
-        vc.actuaLabel = pageViewLabels[index]
+        vc.actualLabel = pageViewLabels[index]
+        vc.actualTitle = pageViewTitles[index]
+        vc.actualHint = pageViewHints[index]
         vc.pageIndex = index
         
+        if index == pageViewLabels.count - 1 {
+            vc.isLastPage = true
+        }
+
         return vc
     }
     
