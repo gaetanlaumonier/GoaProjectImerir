@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "RubiksCube.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Mère Cookie.png",
       "scale" : "2x"
     },
     {

@@ -63,7 +63,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-gN-kua" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="192" y="613" width="384" height="102.5"/>
+                                <rect key="frame" x="192" y="613" width="384" height="103"/>
                                 <color key="backgroundColor" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Quiz">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,11 +108,35 @@
                                     <segue destination="h1e-iz-tf4" kind="show" id="aCo-rN-K74"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vz-Cb-KxA" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="147" y="974" width="81" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.50649360809999999" blue="0.53760114309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Rangement"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="NH6-Vt-jUi" kind="show" id="vmZ-e6-NPZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" id="2uk-rC-nca"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="48t-bf-GyB"/>
+                            <constraint firstItem="1vz-Cb-KxA" firstAttribute="leading" secondItem="Jxr-Ph-VKQ" secondAttribute="trailing" constant="28" id="4kL-11-CBc"/>
+                            <constraint firstItem="1vz-Cb-KxA" firstAttribute="baseline" secondItem="Jxr-Ph-VKQ" secondAttribute="baseline" id="BUc-q3-8mg"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.8" id="HUx-K4-8pj"/>
                             <constraint firstItem="Jxr-Ph-VKQ" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leadingMargin" id="OaY-ij-ebq"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="PuU-cX-xRo"/>
@@ -142,6 +166,55 @@
             </objects>
             <point key="canvasLocation" x="-1062" y="309"/>
         </scene>
+        <!--Rangement View Controller-->
+        <scene sceneID="REM-D2-wa3">
+            <objects>
+                <viewController id="NH6-Vt-jUi" customClass="RangementViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rqn-YS-Yxb"/>
+                        <viewControllerLayoutGuide type="bottom" id="vaz-3t-6PD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hu4-g2-eTo">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Armoire" translatesAutoresizingMaskIntoConstraints="NO" id="h0Q-nv-S6Y">
+                                <rect key="frame" x="20" y="20" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h0Q-nv-S6Y" secondAttribute="height" id="bqU-1d-etI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coffre a jouet" translatesAutoresizingMaskIntoConstraints="NO" id="B0F-aO-7a1">
+                                <rect key="frame" x="492" y="20" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B0F-aO-7a1" secondAttribute="height" id="Idi-Gc-Gfn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Poubelle" translatesAutoresizingMaskIntoConstraints="NO" id="206-HV-SnC">
+                                <rect key="frame" x="256" y="748" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="206-HV-SnC" secondAttribute="height" id="D0L-Wt-p8l"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B0F-aO-7a1" firstAttribute="trailing" secondItem="Hu4-g2-eTo" secondAttribute="trailingMargin" id="0G8-GO-JP5"/>
+                            <constraint firstItem="h0Q-nv-S6Y" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" multiplier="1/3" id="20V-ry-iZk"/>
+                            <constraint firstItem="h0Q-nv-S6Y" firstAttribute="top" secondItem="rqn-YS-Yxb" secondAttribute="bottom" id="6ge-qr-g13"/>
+                            <constraint firstItem="206-HV-SnC" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" multiplier="1/3" id="94C-eE-0cY"/>
+                            <constraint firstItem="B0F-aO-7a1" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" multiplier="1/3" id="9mh-2A-Bep"/>
+                            <constraint firstItem="206-HV-SnC" firstAttribute="centerX" secondItem="Hu4-g2-eTo" secondAttribute="centerX" id="BlB-vw-Lrd"/>
+                            <constraint firstAttribute="bottom" secondItem="206-HV-SnC" secondAttribute="bottom" constant="20" symbolic="YES" id="IhA-UQ-Qhg"/>
+                            <constraint firstItem="B0F-aO-7a1" firstAttribute="top" secondItem="h0Q-nv-S6Y" secondAttribute="top" id="Zzs-vI-S99"/>
+                            <constraint firstItem="h0Q-nv-S6Y" firstAttribute="leading" secondItem="Hu4-g2-eTo" secondAttribute="leadingMargin" id="jo8-Fw-ZnJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAw-Rr-DR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063" y="1331"/>
+        </scene>
         <!--Name Modal View Controller-->
         <scene sceneID="jdZ-wy-D1W">
             <objects>
@@ -157,7 +230,7 @@
                                     <rect key="frame" x="115" y="256" width="538" height="512"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quel est ton nom ?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-tS-f4E" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="53" y="30" width="431" height="77"/>
+                                            <rect key="frame" x="53" y="30" width="430.5" height="77"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -168,7 +241,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez votre nom" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vND-3A-TCc" userLabel="ContrainteLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="53.5" y="138" width="431" height="77"/>
+                                            <rect key="frame" x="53.5" y="137.5" width="430.5" height="77.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -179,13 +252,13 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utr-30-AxL">
-                                            <rect key="frame" x="134" y="230" width="269" height="51"/>
+                                            <rect key="frame" x="134" y="230" width="268.5" height="50.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMx-lC-2jQ" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="134" y="296" width="269" height="77"/>
+                                            <rect key="frame" x="134" y="295.5" width="268.5" height="77.5"/>
                                             <color key="backgroundColor" red="0.38122620559999998" green="0.16111875319999999" blue="0.071343979609999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <state key="normal" title="C'est parti !">
@@ -210,7 +283,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJD-Ih-37X" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="188.5" y="383" width="161" height="76.5"/>
+                                            <rect key="frame" x="188.5" y="383" width="160.5" height="76"/>
                                             <color key="backgroundColor" red="0.38122620559999998" green="0.16111875319999999" blue="0.071343979609999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Retour">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -316,7 +389,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id0-cq-8cB" userLabel="BackgroundView">
                                 <rect key="frame" x="0.0" y="20" width="768" height="829.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woodgrain-1140061_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-63-idK" userLabel="BackgroundImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-63-idK" userLabel="BackgroundImage">
                                         <rect key="frame" x="0.0" y="-20" width="768" height="829.5"/>
                                     </imageView>
                                 </subviews>
@@ -332,7 +405,7 @@
                                 <rect key="frame" x="0.0" y="819" width="768" height="205"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-OP-NJv" userLabel="DialogueLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="39" y="10.5" width="691" height="184"/>
+                                        <rect key="frame" x="39" y="10.5" width="691" height="184.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -405,13 +478,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="870.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG9-XH-y1o" userLabel="LabelView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="434.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="435"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-PU-1VW" userLabel="QuestionView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
                                         <rect key="frame" x="77.5" y="98" width="614" height="239.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-30-hen" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="5" width="594" height="227.5"/>
+                                                <rect key="frame" x="10" y="5" width="594" height="227"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -477,10 +550,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPQ-ry-yYN" userLabel="MarginRightView">
-                                        <rect key="frame" x="691.5" y="0.0" width="76.5" height="434.5"/>
+                                        <rect key="frame" x="691.5" y="0.0" width="76.5" height="435"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc3-7S-dMv" userLabel="MarginLeftView">
-                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="434.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="435"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63P-Er-H2L" userLabel="TimerLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
                                         <rect key="frame" x="82.5" y="25" width="268.5" height="65"/>
@@ -494,7 +567,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8D-IL-Esk" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="317" y="25" width="134" height="43"/>
+                                        <rect key="frame" x="317" y="25" width="134" height="43.5"/>
                                         <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Switch">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -548,7 +621,7 @@
                                 <rect key="frame" x="0.0" y="358.5" width="768" height="512"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-2h-rBR" userLabel="AButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="20.5" width="614" height="102"/>
+                                        <rect key="frame" x="77.5" y="20.5" width="614" height="101.5"/>
                                         <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -575,7 +648,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RpU-6F-8QY" userLabel="BButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="143.5" width="614" height="102"/>
+                                        <rect key="frame" x="77.5" y="142.5" width="614" height="102"/>
                                         <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -602,7 +675,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nlq-WB-vna" userLabel="CButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="265.5" width="614" height="102"/>
+                                        <rect key="frame" x="77.5" y="264" width="614" height="102.5"/>
                                         <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -629,7 +702,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-s4-Kqd" userLabel="DButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="388" width="614" height="102.5"/>
+                                        <rect key="frame" x="77.5" y="387" width="614" height="102.5"/>
                                         <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -656,7 +729,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-h2-C7i" userLabel="InputButtonValidate" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="232.5" width="192.5" height="102.5"/>
+                                        <rect key="frame" x="288" y="232" width="192.5" height="103"/>
                                         <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -683,13 +756,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="20.5"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egY-3M-pZs" userLabel="TopBMarginView">
-                                        <rect key="frame" x="0.0" y="122.5" width="768" height="21"/>
+                                        <rect key="frame" x="0.0" y="122" width="768" height="20.5"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NW1-wL-mPu" userLabel="TopCMarginView">
-                                        <rect key="frame" x="0.0" y="245.5" width="768" height="20"/>
+                                        <rect key="frame" x="0.0" y="244.5" width="768" height="19.5"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-nC-nXL" userLabel="TopDMarginView">
-                                        <rect key="frame" x="0.0" y="367.5" width="768" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="366.5" width="768" height="20.5"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-n6-zMy" userLabel="ResultatView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
                                         <rect key="frame" x="77.5" y="40.5" width="614" height="434.5"/>
@@ -752,7 +825,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtP-MK-giz" userLabel="InputAnswer">
-                                        <rect key="frame" x="192" y="172.5" width="384" height="30"/>
+                                        <rect key="frame" x="192.5" y="172" width="384" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1001,6 +1074,18 @@
                                     <constraint firstAttribute="width" constant="50" id="yWS-dC-xLW"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100 PV" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-VS-ry9" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="493" y="28" width="254.5" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.093268572379999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="33"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1037,7 +1122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63e-5E-4qx" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-346"/>
+            <point key="canvasLocation" x="-203" y="1326"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="iZG-uy-iA6">
@@ -1063,7 +1148,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La règle" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cw-ig-xkm" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="30" y="261" width="708" height="103"/>
+                                <rect key="frame" x="30" y="261" width="708" height="102"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1083,7 +1168,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un indice" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp2-xD-N8l" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="30" y="374" width="708" height="102.5"/>
+                                <rect key="frame" x="30" y="373" width="708" height="102.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1094,7 +1179,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qri-Ov-LC6" firstAttribute="leading" secondItem="PnU-Nx-6YX" secondAttribute="leadingMargin" id="0vl-v4-z9L"/>
                             <constraint firstItem="QSV-xy-Ssn" firstAttribute="centerX" secondItem="PnU-Nx-6YX" secondAttribute="centerX" id="2u9-Wk-eok"/>
@@ -1124,7 +1209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8h-nr-N9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="79.6875"/>
+            <point key="canvasLocation" x="609" y="1752"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="1V8-0f-jo6">
@@ -1132,15 +1217,18 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="BoF-Oj-c5h" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwq-yz-Jcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="-633"/>
+            <point key="canvasLocation" x="609" y="1039"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Armoire" width="357" height="360"/>
         <image name="Background" width="1920" height="1200"/>
+        <image name="Coffre a jouet" width="354" height="360"/>
         <image name="Cookie" width="400" height="400"/>
         <image name="FinDirecteur.gif" width="1280" height="1535"/>
         <image name="Happy" width="255" height="240"/>
-        <image name="Mom" width="900" height="1200"/>
+        <image name="Mom" width="640" height="815"/>
+        <image name="Poubelle" width="344" height="360"/>
         <image name="Sad" width="600" height="561"/>
         <image name="chains-pattern" width="1920" height="1920"/>
     </resources>

@@ -28,6 +28,7 @@
 		3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A41E48B5BE001E8ED3 /* Dialogue.json */; };
 		3F2844AA1E48B5E6001E8ED3 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */; };
 		3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */; };
+		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
 		3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D631E48D65400100027 /* ContentViewController.swift */; };
 		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		3F2844A41E48B5BE001E8ED3 /* Dialogue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dialogue.json; sourceTree = "<group>"; };
 		3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
 		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */,
 				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
 				3FBD2D651E48D66B00100027 /* ViewController.swift */,
+				3F4EFD731E50DF4900316A2B /* RangementViewController.swift */,
 			);
 			path = ProjetImerirApp;
 			sourceTree = "<group>";
@@ -221,7 +224,7 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 56URF3SB4V;
+						DevelopmentTeam = N44QRNRP98;
 						ProvisioningStyle = Automatic;
 					};
 					3F2844781E488E94001E8ED3 = {
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */,
 				3F2844901E488F30001E8ED3 /* DesignableLabel.swift in Sources */,
 				3F2844921E488F94001E8ED3 /* BuildElementApp.swift in Sources */,
 				3F28449C1E48B515001E8ED3 /* InitViewController.swift in Sources */,
@@ -433,10 +437,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56URF3SB4V;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = laumonier.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -446,10 +451,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56URF3SB4V;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = laumonier.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
