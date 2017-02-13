@@ -144,19 +144,24 @@
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Vob-aI-BRH"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="Waa-wW-PPa"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="a7r-7g-Bfr"/>
+                            <constraint firstItem="lFM-gG-gVf" firstAttribute="top" secondItem="V2U-jB-sko" secondAttribute="top" constant="35" id="ayQ-7w-vmu"/>
+                            <constraint firstItem="lFM-gG-gVf" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="bjd-Hs-KhI"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="fDf-Yn-tkM"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="gUq-mQ-JJf"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="top" secondItem="R5H-Bu-ab5" secondAttribute="bottom" constant="50" id="lpx-GP-oAd"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="top" secondItem="uxd-nk-aTg" secondAttribute="bottom" constant="80" id="lyp-li-c6Y"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="mKS-vf-mhg"/>
                             <constraint firstAttribute="bottom" secondItem="Jxr-Ph-VKQ" secondAttribute="bottom" constant="20" symbolic="YES" id="qRj-yX-aQx"/>
+                            <constraint firstAttribute="trailing" secondItem="lFM-gG-gVf" secondAttribute="trailing" id="qmc-4z-Dmp"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="rAq-O9-Zuc"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="uFQ-G8-3xX"/>
+                            <constraint firstItem="lFM-gG-gVf" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.15" id="wIy-YF-RZH"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="xwk-kN-lNp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="MenuBackgroundView" destination="3lF-mz-r9V" id="dTK-rY-SZ0"/>
+                        <outlet property="headerView" destination="lFM-gG-gVf" id="VAI-oT-f4R"/>
                         <outlet property="newPartieButton" destination="R5H-Bu-ab5" id="iiz-cU-dfz"/>
                         <outlet property="quizButton" destination="tyc-gN-kua" id="vZ5-JG-yEt"/>
                         <outlet property="titreLabel" destination="LM7-OW-Qej" id="jOs-8I-Dqr"/>
@@ -164,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcd-u5-Lpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="309"/>
+            <point key="canvasLocation" x="-1063.2" y="308.9955022488756"/>
         </scene>
         <!--Rangement View Controller-->
         <scene sceneID="REM-D2-wa3">
@@ -1231,5 +1236,9 @@
         <image name="Poubelle" width="344" height="360"/>
         <image name="Sad" width="600" height="561"/>
         <image name="chains-pattern" width="1920" height="1920"/>
+        <image name="woodgrain-1140061_960_720" width="720" height="720"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="glL-i0-a5F"/>
+    </inferredMetricsTieBreakers>
 </document>

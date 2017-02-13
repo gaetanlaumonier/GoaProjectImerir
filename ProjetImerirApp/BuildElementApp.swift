@@ -5,6 +5,7 @@
 //Background : Reveil, berceau, chambre ado, Ecran titre, Ecran de fin, game over, question ado (pas obligé)
 //Element graphique : feuille de bac, arcade cookie ?
 //background pr les classes ? (à priori non)
+//segue button exit
 //scenario
 //git
 //page view classe

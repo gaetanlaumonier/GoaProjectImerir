@@ -170,6 +170,7 @@
 				3F28448B1E488EE5001E8ED3 /* DesignableView.swift */,
 				3F28448D1E488F23001E8ED3 /* DesignableButton.swift */,
 				3F28448F1E488F30001E8ED3 /* DesignableLabel.swift */,
+				3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -265,6 +266,7 @@
 				3F2844A71E48B5BE001E8ED3 /* DataSave.json in Resources */,
 				3F2844701E488E94001E8ED3 /* Assets.xcassets in Resources */,
 				3F2844A51E48B5BE001E8ED3 /* ClasseJoueur.json in Resources */,
+				3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */,
 				3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */,
 				3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */,
 			);
@@ -294,10 +296,12 @@
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
 				3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */,
+				3FB88A6A1E4F65DA007C0BD6 /* DesignableXibView.swift in Sources */,
 				3F2844941E488FA3001E8ED3 /* ProfilJoueur.swift in Sources */,
 				3F28449E1E48B55D001E8ED3 /* NameModalViewController.swift in Sources */,
 				3F28448C1E488EE5001E8ED3 /* DesignableView.swift in Sources */,
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
+				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

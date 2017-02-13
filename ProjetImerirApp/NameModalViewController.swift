@@ -28,7 +28,8 @@ class NameModalViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Dialogue" {
             let toViewController = segue.destination as! DialogueViewController
-            toViewController.oneProfil.name = nameField.text!
+            let namePlayer = nameField.text!.capitalizingFirstLetter()
+            toViewController.oneProfil.name = namePlayer
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
