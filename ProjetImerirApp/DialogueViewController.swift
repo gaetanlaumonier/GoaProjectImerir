@@ -17,15 +17,13 @@ class DialogueViewController: UIViewController {
     var idDialogueNumber : Int = 0
     var DialogueNumber : Int = 0
     var nameTap : Bool = false
+    var firstDialogue = true
     var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
     override func viewDidLoad() {
         super.viewDidLoad()
         AllDialogue = buildDialogue()
-        print(AllDialogue)
-        print(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])
-        GestionEvent()
-        print(self.oneProfil.name)
-        
+        dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+        GestionDialogue()        
         
         // Do any additional setup after loading the view.
     }
@@ -35,22 +33,32 @@ class DialogueViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func GestionDialogue(){
-        dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+    func NomExcla(){
+        dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) !"
+        
+    }
+    func NomInt(){
+        dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) ?"
         
     }
     
-    func GestionEvent(){
+    func GestionEnchainementDialogue(){
+        if firstDialogue == false {
         DialogueNumber += 1
         if DialogueNumber == AllDialogue[idDialogueNumber].libelleDialogue.count {
+            //firstDialogue = true
             DialogueNumber = 0
             idDialogueNumber += 1
+            }
         } else {
-            
+            firstDialogue  = false
         }
+    }
+    
+    func GestionStyleDialogue(){
         if AllDialogue[idDialogueNumber].styleLabel.isEmpty {
-                print("normal2")
-                dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
+            print("normal2")
+            dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
         } else {
             if DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count {
                 print("normal3")
@@ -62,11 +70,43 @@ class DialogueViewController: UIViewController {
                 print("normal")
                 dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
             }
-            
+        
         }
-        print(DialogueNumber)
-        dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+    }
+    
 
+    func GestionEventDialogue(){
+        print(AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber])
+        if AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber] != "nil" {
+//        let event = AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]
+//        let selector = NSSelectorFromString(event)
+//        //let _ = #selector(selector)
+//        selector
+//        } else {
+//            dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+//        }
+            switch AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber] {
+            case "NomExcla" :
+                NomExcla()
+                break
+            case "NomInt":
+                NomInt()
+                break
+            default:
+                dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+            break
+            }
+        } else {
+            print("lala")
+            dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+        }
+    }
+    func GestionDialogue(){
+        
+            GestionEnchainementDialogue()
+            GestionStyleDialogue()
+            GestionEventDialogue()
+    }
 //        switch AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]{
 //        case "nil":
 //            GestionDialogue()
@@ -80,9 +120,11 @@ class DialogueViewController: UIViewController {
 //            print("Problème avec l'évènement du dialogue")
 //            break
 //        }
-    }
+
+    
+    
     @IBAction func DialogueTap(_ sender: UITapGestureRecognizer) {
-        GestionEvent()
+        GestionDialogue()
     }
     
     /*

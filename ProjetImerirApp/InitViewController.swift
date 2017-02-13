@@ -16,15 +16,26 @@ class InitViewController: UIViewController {
     
     @IBOutlet weak var MenuBackgroundView: UIImageView!
     
+    @IBOutlet weak var headerView: HeaderView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MenuBackgroundView.loadGif(name: "FinDirecteur")
+      
         
-        // Do any additional setup after loading the view.
+
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if let headerView2 = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
+            headerView2.bounds = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
+            
+            print(headerView2.bounds)
+            
+            headerView2.timerLabel.text = "60s"
+            self.view.addSubview(headerView2)
+        }}
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,7 +49,7 @@ class InitViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "testQuiz" {
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Fonctionnaire")
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker")
             
             let toViewController = segue.destination as! QuestionViewController
             toViewController.oneProfil = oneProfil
