@@ -31,6 +31,8 @@
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6A1E4F65DA007C0BD6 /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
+		3FB88A6E1E522480007C0BD6 /* ChoiceClasseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */; };
+		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
 		3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D631E48D65400100027 /* ContentViewController.swift */; };
 		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableXibView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseTableViewController.swift; sourceTree = "<group>"; };
+		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
 		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +121,11 @@
 		3F2844671E488E94001E8ED3 /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3FB88A751E52298A007C0BD6 /* Classe */,
 				3F28448A1E488EB6001E8ED3 /* IBDesignable */,
+				3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */,
+				3F2844911E488F94001E8ED3 /* BuildElementApp.swift */,
+				3F2844951E488FB9001E8ED3 /* OutletExtension.swift */,
 				3F2844891E488EA5001E8ED3 /* Json */,
 				3F2844881E488E9B001E8ED3 /* Picture/gif */,
 				3F2844681E488E94001E8ED3 /* AppDelegate.swift */,
@@ -125,16 +133,14 @@
 				3F28446F1E488E94001E8ED3 /* Assets.xcassets */,
 				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
 				3F2844741E488E94001E8ED3 /* Info.plist */,
-				3F2844911E488F94001E8ED3 /* BuildElementApp.swift */,
-				3F2844931E488FA3001E8ED3 /* ProfilJoueur.swift */,
-				3F2844951E488FB9001E8ED3 /* OutletExtension.swift */,
 				3F2844991E48B4F7001E8ED3 /* DialogueViewController.swift */,
 				3F28449B1E48B515001E8ED3 /* InitViewController.swift */,
 				3F28449D1E48B55D001E8ED3 /* NameModalViewController.swift */,
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
-				3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */,
 				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
 				3FBD2D651E48D66B00100027 /* ViewController.swift */,
+				3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */,
+				3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */,
 				3FB88A671E4F6396007C0BD6 /* HeaderView.swift */,
 				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
 			);
@@ -178,6 +184,14 @@
 				3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */,
 			);
 			name = IBDesignable;
+			sourceTree = "<group>";
+		};
+		3FB88A751E52298A007C0BD6 /* Classe */ = {
+			isa = PBXGroup;
+			children = (
+				3F2844931E488FA3001E8ED3 /* ProfilJoueur.swift */,
+			);
+			name = Classe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,9 +315,11 @@
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
 				3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */,
 				3FB88A6A1E4F65DA007C0BD6 /* DesignableXibView.swift in Sources */,
+				3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */,
 				3F2844941E488FA3001E8ED3 /* ProfilJoueur.swift in Sources */,
 				3F28449E1E48B55D001E8ED3 /* NameModalViewController.swift in Sources */,
 				3F28448C1E488EE5001E8ED3 /* DesignableView.swift in Sources */,
+				3FB88A6E1E522480007C0BD6 /* ChoiceClasseTableViewController.swift in Sources */,
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
