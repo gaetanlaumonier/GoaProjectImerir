@@ -43,12 +43,14 @@ class ChoiceClasseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classeCell", for: indexPath) as! ClasseTableViewCell
 
-        
         cell.titleClasseLabel?.text = AllClasse[indexPath.row].nomClasse
+        cell.libelleClasse?.text = AllClasse[indexPath.row].libelleClasse
+        cell.pouvoirClasse?.text = AllClasse[indexPath.row].pouvoirClasse
+        
         return cell
     }
     
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

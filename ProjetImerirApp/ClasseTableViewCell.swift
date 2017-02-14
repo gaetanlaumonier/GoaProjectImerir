@@ -11,6 +11,10 @@ import UIKit
 class ClasseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleClasseLabel: DesignableLabel!
+    @IBOutlet weak var libelleClasse: DesignableLabel!
+    @IBOutlet weak var pouvoirClasse: DesignableLabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
