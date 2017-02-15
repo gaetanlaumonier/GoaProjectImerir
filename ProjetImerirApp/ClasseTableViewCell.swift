@@ -13,6 +13,7 @@ class ClasseTableViewCell: UITableViewCell {
     @IBOutlet weak var titleClasseLabel: DesignableLabel!
     @IBOutlet weak var libelleClasse: DesignableLabel!
     @IBOutlet weak var pouvoirClasse: DesignableLabel!
+    @IBOutlet weak var classeButton: UIButton!
     
     
     override func awakeFromNib() {

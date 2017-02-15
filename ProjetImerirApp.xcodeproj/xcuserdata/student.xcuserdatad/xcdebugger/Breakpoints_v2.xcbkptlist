@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/ChoiceClasseTableViewController.swift"
+            timestampString = "508847642.112721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "ChoiceClasseTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/DialogueViewController.swift"
+            timestampString = "508858486.385721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "DialogueViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjetImerirApp.DialogueViewController.__deallocating_deinit"
+                  moduleName = "ProjetImerirApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Google%20Drive/imerir/Projet/Xcode/ProjetImerirApp/ProjetImerirApp/DialogueViewController.swift"
+                  timestampString = "508858487.539008"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjetImerirApp.DialogueViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ProjetImerirApp.DialogueViewController"
+                  moduleName = "ProjetImerirApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Google%20Drive/imerir/Projet/Xcode/ProjetImerirApp/ProjetImerirApp/DialogueViewController.swift"
+                  timestampString = "508858487.544071"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjetImerirApp.DialogueViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ProjetImerirApp.DialogueViewController"
+                  moduleName = "ProjetImerirApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Google%20Drive/imerir/Projet/Xcode/ProjetImerirApp/ProjetImerirApp/DialogueViewController.swift"
+                  timestampString = "508858487.546748"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjetImerirApp.DialogueViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ProjetImerirApp.DialogueViewController&gt;"
+                  moduleName = "ProjetImerirApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Google%20Drive/imerir/Projet/Xcode/ProjetImerirApp/ProjetImerirApp/DialogueViewController.swift"
+                  timestampString = "508858487.548442"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjetImerirApp.DialogueViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ProjetImerirApp.DialogueViewController&gt;"
+                  moduleName = "ProjetImerirApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Google%20Drive/imerir/Projet/Xcode/ProjetImerirApp/ProjetImerirApp/DialogueViewController.swift"
+                  timestampString = "508858487.55002"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

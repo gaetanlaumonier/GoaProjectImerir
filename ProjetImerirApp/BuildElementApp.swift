@@ -9,6 +9,9 @@
 //scenario
 //git
 //page view classe
+//design header element (shadow)
+//dismiss les view
+
 
 //a aborder reunion
 //Ce que jai fait (json, timer, background, classe)
@@ -145,13 +148,10 @@ func buildClasseJoueur() -> [ClasseJoueur]{
 func buildDialogue() -> [Dialogue]{
     var allDialogue = [Dialogue]()
     if let file = Bundle.main.path(forResource: "Dialogue", ofType: "json") {
-        print("file :", file)
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: file))
-            print("data :", data)
 
             let json = JSON(data: data)
-            print("json :", json)
 
             for (_, dict) in json["Dialogue"] {
                 let thisObject = Dialogue(idDialogue: dict["idDialogue"].intValue,

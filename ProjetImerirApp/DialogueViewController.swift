@@ -18,13 +18,15 @@ class DialogueViewController: UIViewController {
     var DialogueNumber : Int = 0
     var nameTap : Bool = false
     var firstDialogue = true
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
     override func viewDidLoad() {
         super.viewDidLoad()
         AllDialogue = buildDialogue()
         dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
         GestionDialogue()        
-        
+        print(oneProfil.name)
+        print(oneProfil.lifePoint)
+        print(oneProfil.classeJoueur)
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +42,20 @@ class DialogueViewController: UIViewController {
     func NomInt(){
         dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) ?"
         
+    }
+    
+    func ChoixClasse(){
+        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "choixClasse") as? ChoiceClasseTableViewController
+        {
+            print("ok2")
+            vc.oneProfil = self.oneProfil
+            present(vc, animated: true, completion: nil)
+        }else {
+            print("Could not instantiate view controller with identifier of type ChoiceClasseTableViewController")
+            return
+        }
+ 
+
     }
     
     func GestionEnchainementDialogue(){
@@ -76,7 +92,7 @@ class DialogueViewController: UIViewController {
     
 
     func GestionEventDialogue(){
-        print(AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber])
+      
         if AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber] != "nil" {
 //        let event = AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]
 //        let selector = NSSelectorFromString(event)
@@ -91,6 +107,10 @@ class DialogueViewController: UIViewController {
                 break
             case "NomInt":
                 NomInt()
+                break
+            case "ChoixClasse":
+                print("ok")
+                ChoixClasse()
                 break
             default:
                 dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
@@ -127,14 +147,15 @@ class DialogueViewController: UIViewController {
         GestionDialogue()
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+
+        if segue.identifier == "choixClasseSegue" {
+            let toViewController = segue.destination as! ChoiceClasseTableViewController
+            toViewController.oneProfil = self.oneProfil
+            print("azertyhgfdsqs")
+        }
      }
-     */
+ 
     
 }

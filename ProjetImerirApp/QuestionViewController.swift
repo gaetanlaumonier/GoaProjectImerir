@@ -135,8 +135,8 @@ class QuestionViewController: UIViewController {
         
         switch self.oneProfil.classeJoueur{
         case "Geek":
-            self.oneProfil.lifePoint += 50
-            lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+           // self.oneProfil.lifePoint += 50
+           // lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
             break
         case "Noob":
             chanceDuNoob = true

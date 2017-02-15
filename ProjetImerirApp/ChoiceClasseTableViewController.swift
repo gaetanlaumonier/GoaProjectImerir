@@ -11,10 +11,17 @@ import UIKit
 class ChoiceClasseTableViewController: UITableViewController {
 
     var AllClasse = [ClasseJoueur]()
+    var buttonSender : Int = 10
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AllClasse = buildClasseJoueur()
+        tableView.allowsSelection = false
+        print(oneProfil.name)
+        print(oneProfil.lifePoint)
+        print(oneProfil.classeJoueur)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,57 +50,43 @@ class ChoiceClasseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classeCell", for: indexPath) as! ClasseTableViewCell
 
+        //soulignement du titre
+        let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
+        let underlineAttributedString = NSAttributedString(string: "StringWithUnderLine", attributes: underlineAttribute)
+        cell.titleClasseLabel?.attributedText = underlineAttributedString
+        
         cell.titleClasseLabel?.text = AllClasse[indexPath.row].nomClasse
         cell.libelleClasse?.text = AllClasse[indexPath.row].libelleClasse
         cell.pouvoirClasse?.text = AllClasse[indexPath.row].pouvoirClasse
+        cell.classeButton?.tag = indexPath.row
         
         return cell
     }
     
+    @IBAction func ClasseSelected(sender : UIButton){
+        buttonSender = sender.tag
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "confirmationSegue" {
+            guard buttonSender < 9 else {
+        print("buttonSender : ", buttonSender)
+                return false
+        }
+        performSegue(withIdentifier: "confirmationSegue", sender: self)
+        return false
+            }
+        return false
+    }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "confirmationSegue" {
+            let toViewController = segue.destination as! ClasseModalViewController
+            let classePlayer = AllClasse[buttonSender].idClasse
+            toViewController.classePlayer = classePlayer!
+            toViewController.oneProfil = self.oneProfil
+        }
     }
-    */
 
 }

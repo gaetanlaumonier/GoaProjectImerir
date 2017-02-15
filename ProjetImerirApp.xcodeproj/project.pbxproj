@@ -28,8 +28,8 @@
 		3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A41E48B5BE001E8ED3 /* Dialogue.json */; };
 		3F2844AA1E48B5E6001E8ED3 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */; };
 		3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */; };
+		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
-		3FB88A6A1E4F65DA007C0BD6 /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
 		3FB88A6E1E522480007C0BD6 /* ChoiceClasseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */; };
 		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
@@ -73,8 +73,8 @@
 		3F2844A41E48B5BE001E8ED3 /* Dialogue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dialogue.json; sourceTree = "<group>"; };
 		3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableXibView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseTableViewController.swift; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,19 +130,20 @@
 				3F2844881E488E9B001E8ED3 /* Picture/gif */,
 				3F2844681E488E94001E8ED3 /* AppDelegate.swift */,
 				3F28446C1E488E94001E8ED3 /* Main.storyboard */,
+				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
 				3F28446F1E488E94001E8ED3 /* Assets.xcassets */,
 				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
 				3F2844741E488E94001E8ED3 /* Info.plist */,
-				3F2844991E48B4F7001E8ED3 /* DialogueViewController.swift */,
+				3FB88A671E4F6396007C0BD6 /* HeaderView.swift */,
 				3F28449B1E48B515001E8ED3 /* InitViewController.swift */,
 				3F28449D1E48B55D001E8ED3 /* NameModalViewController.swift */,
+				3F2844991E48B4F7001E8ED3 /* DialogueViewController.swift */,
+				3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */,
+				3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */,
+				3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */,
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
 				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
 				3FBD2D651E48D66B00100027 /* ViewController.swift */,
-				3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */,
-				3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */,
-				3FB88A671E4F6396007C0BD6 /* HeaderView.swift */,
-				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
 			);
 			path = ProjetImerirApp;
 			sourceTree = "<group>";
@@ -181,7 +182,6 @@
 				3F28448B1E488EE5001E8ED3 /* DesignableView.swift */,
 				3F28448D1E488F23001E8ED3 /* DesignableButton.swift */,
 				3F28448F1E488F30001E8ED3 /* DesignableLabel.swift */,
-				3FB88A691E4F65DA007C0BD6 /* DesignableXibView.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -314,7 +314,6 @@
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
 				3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */,
-				3FB88A6A1E4F65DA007C0BD6 /* DesignableXibView.swift in Sources */,
 				3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */,
 				3F2844941E488FA3001E8ED3 /* ProfilJoueur.swift in Sources */,
 				3F28449E1E48B55D001E8ED3 /* NameModalViewController.swift in Sources */,
@@ -323,6 +322,7 @@
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
+				3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
