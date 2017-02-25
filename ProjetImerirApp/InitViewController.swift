@@ -28,9 +28,9 @@ class InitViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         if let headerView2 = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
-            headerView2.bounds = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
+            headerView2.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
             
-            print(headerView2.bounds)
+            print(headerView2.frame)
             
             headerView2.timerLabel.text = "60s"
             self.view.addSubview(headerView2)
