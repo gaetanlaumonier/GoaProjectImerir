@@ -1,22 +1,30 @@
-//A faire :
-//background, style des boutons, label...
-//sauvegarde
 //enigmes speciales (clik sur élément)
-//Background : Reveil, berceau, chambre ado, Ecran titre, Ecran de fin, game over, question ado (pas obligé)
-//Element graphique : feuille de bac, arcade cookie ?
-//background pr les classes ? (à priori non)
-//segue button exit
-//scenario
-//git
-//page view classe
-//design header element (shadow)
-//dismiss les view
 
+//février : 
+
+//uml, reflexion tests
+//background chambre ado
+
+//mars :
+
+//relié les view
+//dismiss les view
+//reduction poids graphisme
+//segue button exit
+//design header element (shadow)
+//Element graphique : feuille de bac, arcade cookie ?
+//Background : chambre ado, Ecran titre, Ecran de fin, game over, les 4 arcades, les animations dans les jeux
+//gif
+
+//avril: 
+//background, graphisme
+//save
 
 //a aborder reunion
-//Ce que jai fait (json, timer, background, classe)
+//Ce que jai fait (table view classe, gif, debut du jeu)
 //Ce qu'il a fait
-//git
+//graphisme
+//charte
 //reporting
 
 import UIKit

@@ -27,25 +27,34 @@ class DialogueViewController: UIViewController {
         print(oneProfil.name)
         print(oneProfil.lifePoint)
         print(oneProfil.classeJoueur)
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func NomExcla(){
+      
         dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) !"
         
+        guard AllDialogue[idDialogueNumber].styleLabel.isEmpty  else {
+            guard DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count else {
+             if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
+                dialogueLabel.text? += "\""
+                }
+                return
+            }
+            return
+        }
     }
+    
     func NomInt(){
         dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) ?"
         
     }
     
     func ChoixClasse(){
-        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "choixClasse") as? ChoiceClasseTableViewController
+        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "choixClasse") as? ChoiceClasseViewController
         {
             print("ok2")
             vc.oneProfil = self.oneProfil
@@ -73,17 +82,13 @@ class DialogueViewController: UIViewController {
     
     func GestionStyleDialogue(){
         if AllDialogue[idDialogueNumber].styleLabel.isEmpty {
-            print("normal2")
             dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
         } else {
             if DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count {
-                print("normal3")
                 dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
             } else if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
                 dialogueLabel.font = UIFont.italicSystemFont(ofSize: self.dialogueLabel.font.pointSize)
-                print("ital")
             } else {
-                print("normal")
                 dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
             }
         
@@ -151,7 +156,7 @@ class DialogueViewController: UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "choixClasseSegue" {
-            let toViewController = segue.destination as! ChoiceClasseTableViewController
+            let toViewController = segue.destination as! ChoiceClasseViewController
             toViewController.oneProfil = self.oneProfil
             print("azertyhgfdsqs")
         }

@@ -31,10 +31,10 @@
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
-		3FB88A6E1E522480007C0BD6 /* ChoiceClasseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */; };
 		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
 		3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D631E48D65400100027 /* ContentViewController.swift */; };
 		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
+		3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +76,10 @@
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseTableViewController.swift; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
 		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,10 +140,10 @@
 				3F2844991E48B4F7001E8ED3 /* DialogueViewController.swift */,
 				3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */,
 				3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */,
-				3FB88A6D1E522480007C0BD6 /* ChoiceClasseTableViewController.swift */,
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
 				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
 				3FBD2D651E48D66B00100027 /* ViewController.swift */,
+				3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */,
 			);
 			path = ProjetImerirApp;
 			sourceTree = "<group>";
@@ -312,13 +312,13 @@
 				3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */,
 				3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */,
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
+				3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */,
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
 				3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */,
 				3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */,
 				3F2844941E488FA3001E8ED3 /* ProfilJoueur.swift in Sources */,
 				3F28449E1E48B55D001E8ED3 /* NameModalViewController.swift in Sources */,
 				3F28448C1E488EE5001E8ED3 /* DesignableView.swift in Sources */,
-				3FB88A6E1E522480007C0BD6 /* ChoiceClasseTableViewController.swift in Sources */,
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
