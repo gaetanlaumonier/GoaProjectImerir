@@ -27,7 +27,7 @@ class QuestionViewController: UIViewController {
     var TableauEnigme : [Question] = []
     var TableauPsycho : [Question] = []
     var themeQuestionActif = [Question]()
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
     var QuestionNumber = Int()
     var QuestionPose : Int = 0
     var messageSpecialLabel : Int = 0
@@ -315,22 +315,22 @@ class QuestionViewController: UIViewController {
                 }
                 switch profilNameAnswer {
                 case "profil_crieur":
-                    self.oneProfil.dict_profil["profil_crieur"]? += 1
+                    self.oneProfil.dictProfil["profil_crieur"]? += 1
                     break
                 case "profil_sociable":
-                    self.oneProfil.dict_profil["profil_sociable"]? += 1
+                    self.oneProfil.dictProfil["profil_sociable"]? += 1
                     break
                 case "profil_timide":
-                    self.oneProfil.dict_profil["profil_timide"]? += 1
+                    self.oneProfil.dictProfil["profil_timide"]? += 1
                     break
                 case "profil_innovateur":
-                    self.oneProfil.dict_profil["profil_innovateur"]? += 1
+                    self.oneProfil.dictProfil["profil_innovateur"]? += 1
                     break
                 case "profil_evil":
-                    self.oneProfil.dict_profil["profil_evil"]? += 1
+                    self.oneProfil.dictProfil["profil_evil"]? += 1
                     break
                 case "profil_good":
-                    self.oneProfil.dict_profil["profil_good"]? += 1
+                    self.oneProfil.dictProfil["profil_good"]? += 1
                     break
                 default:
                     print("Error json ProfilConsequence")
@@ -338,15 +338,15 @@ class QuestionViewController: UIViewController {
                 }
                 resultatLabel.text = "Ta réponse est retenu, cela me servira par la suite"
                 if themeQuestionActif[QuestionNumber].HPLostArray[IntReponse] != 0 {
-                    self.oneProfil.lifePoint -= (themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])! + (self.oneProfil.dict_profil["profil_evil"])!
-                    resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int((themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!) + (self.oneProfil.dict_profil["profil_evil"])!) PV."
+                    self.oneProfil.lifePoint -= (themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])! + (self.oneProfil.dictProfil["profil_evil"])!
+                    resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int((themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!) + (self.oneProfil.dictProfil["profil_evil"])!) PV."
                     dialogueLabel.text = "Tu as un profil assez diabolique, je ne suis pas sur que tu finira le jeu avec des réponses comme cela"
                 }
                 
                 bonneReponseLabel.text = ("Tu as répondu : \(themeQuestionActif[QuestionNumber].Choice[IntReponse])")
                 if QuestionPose > 12 {
                     
-                    print(self.oneProfil.dict_profil)
+                    print(self.oneProfil.dictProfil)
                     
                 }
                 break

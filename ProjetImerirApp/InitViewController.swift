@@ -49,15 +49,16 @@ class InitViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "testQuiz" {
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker")
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker")
             
             let toViewController = segue.destination as! QuestionViewController
             toViewController.oneProfil = oneProfil
         } else if segue.identifier == "choiceName" {
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne")
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne")
             
             let toViewController = segue.destination as! NameModalViewController
             toViewController.oneProfil = oneProfil
+
         }
         
     }

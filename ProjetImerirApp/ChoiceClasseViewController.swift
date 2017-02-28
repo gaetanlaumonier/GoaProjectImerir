@@ -13,7 +13,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     var AllClasse = [ClasseJoueur]()
     var buttonSender : Int = 10
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
     
     override func viewDidLoad() {
         super.viewDidLoad()

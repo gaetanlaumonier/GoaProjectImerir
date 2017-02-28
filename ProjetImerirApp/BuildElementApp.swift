@@ -11,11 +11,10 @@
 //dismiss les view
 //reduction poids graphisme
 //segue button exit
-//design header element (shadow)
-//Element graphique : feuille de bac, arcade cookie ?
+//Element graphique : arcade cookie ?
 //Background : chambre ado, Ecran titre, Ecran de fin, game over, les 4 arcades, les animations dans les jeux
 //gif
-
+//menu : revenir au menu 
 //avril: 
 //background, graphisme
 //save
@@ -26,6 +25,13 @@
 //graphisme
 //charte
 //reporting
+
+//a demander a grabo :
+//dismiss, UML, Tests
+//
+
+
+
 
 import UIKit
 
