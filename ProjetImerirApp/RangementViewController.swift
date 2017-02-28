@@ -12,8 +12,9 @@ class RangementViewController: UIViewController {
 
     @IBOutlet var Conteneurs: [UIImageView]!
     @IBOutlet var scoreLabel: DesignableLabel!
-    
-    var playerClass = "Geek"
+    @IBOutlet var timerLabel: DesignableLabel!
+
+    var playerClass = "Hacker"
     var noob = false
     var animationMultiplier:CFTimeInterval = 1
     
@@ -44,7 +45,6 @@ class RangementViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         startGame()
     }
     
@@ -66,6 +66,7 @@ class RangementViewController: UIViewController {
         endGameTimer = Timer.scheduledTimer(withTimeInterval: 0.1 * slowGameFactor, repeats: true, block: {_ in
             if self.timeLeft > 0 {
                 self.timeLeft -= 0.1
+                self.timerLabel.text = String(format: "%.1f", self.timeLeft)
             } else {
                 self.endGame()
             }
@@ -235,7 +236,7 @@ class RangementViewController: UIViewController {
     }
     
     func animateIn(objet: Objet) {
-        UIView.animate(withDuration: 1 * animationMultiplier, delay: animationMultiplier/2 , options: [.allowUserInteraction], animations: {_ in
+        UIView.animate(withDuration: 1 * animationMultiplier, delay: animationMultiplier - 1 , options: [.allowUserInteraction], animations: {_ in
             objet.isSpawning = true
             objet.alpha = 1
         }, completion: {_ in
@@ -407,7 +408,7 @@ class RangementViewController: UIViewController {
         label.layer.shadowPath = shadowPath.cgPath
         
         label.textAlignment = .center
-        label.setupLabelDynamicSize(fontSize: 20)
+        label.setupLabelDynamicSize(fontSize: 18)
         label.textColor = bonus.color
         label.alpha = 0.5
         label.adjustsFontSizeToFitWidth = true

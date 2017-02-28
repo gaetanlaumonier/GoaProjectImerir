@@ -215,19 +215,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui9-Mf-h1n" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="28" width="342" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B0F-aO-7a1" firstAttribute="trailing" secondItem="Hu4-g2-eTo" secondAttribute="trailingMargin" id="0G8-GO-JP5"/>
                             <constraint firstItem="h0Q-nv-S6Y" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" multiplier="1/3" id="20V-ry-iZk"/>
+                            <constraint firstItem="Ui9-Mf-h1n" firstAttribute="leading" secondItem="h0Q-nv-S6Y" secondAttribute="leading" id="3o2-4l-qED"/>
                             <constraint firstItem="h0Q-nv-S6Y" firstAttribute="top" secondItem="rqn-YS-Yxb" secondAttribute="bottom" id="6ge-qr-g13"/>
                             <constraint firstItem="206-HV-SnC" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" multiplier="1/3" id="94C-eE-0cY"/>
                             <constraint firstItem="B0F-aO-7a1" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" multiplier="1/3" id="9mh-2A-Bep"/>
                             <constraint firstItem="2cb-Fz-s0e" firstAttribute="centerY" secondItem="Hu4-g2-eTo" secondAttribute="centerY" id="Ara-Go-pSd"/>
                             <constraint firstItem="206-HV-SnC" firstAttribute="centerX" secondItem="Hu4-g2-eTo" secondAttribute="centerX" id="BlB-vw-Lrd"/>
+                            <constraint firstItem="Ui9-Mf-h1n" firstAttribute="width" secondItem="h0Q-nv-S6Y" secondAttribute="width" id="Eee-j7-ULn"/>
                             <constraint firstItem="2cb-Fz-s0e" firstAttribute="height" secondItem="Hu4-g2-eTo" secondAttribute="height" id="H2u-Ae-NW3"/>
                             <constraint firstAttribute="bottom" secondItem="206-HV-SnC" secondAttribute="bottom" constant="20" symbolic="YES" id="IhA-UQ-Qhg"/>
                             <constraint firstItem="Ofg-Dr-GLC" firstAttribute="height" secondItem="h0Q-nv-S6Y" secondAttribute="height" multiplier="1/3" id="LEx-h4-qeF"/>
+                            <constraint firstItem="Ui9-Mf-h1n" firstAttribute="top" secondItem="Ofg-Dr-GLC" secondAttribute="top" id="RCg-Yu-Y3n"/>
                             <constraint firstItem="2cb-Fz-s0e" firstAttribute="width" secondItem="Hu4-g2-eTo" secondAttribute="width" id="Uxa-qQ-xXn"/>
                             <constraint firstItem="B0F-aO-7a1" firstAttribute="top" secondItem="h0Q-nv-S6Y" secondAttribute="top" id="Zzs-vI-S99"/>
                             <constraint firstItem="Ofg-Dr-GLC" firstAttribute="centerX" secondItem="2cb-Fz-s0e" secondAttribute="centerX" id="j0i-Xo-FCv"/>
@@ -238,6 +252,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="Ofg-Dr-GLC" id="Ro6-62-Q9H"/>
+                        <outlet property="timerLabel" destination="Ui9-Mf-h1n" id="TVc-gj-UqI"/>
                         <outletCollection property="Conteneurs" destination="B0F-aO-7a1" collectionClass="NSMutableArray" id="sPm-Ti-aYp"/>
                         <outletCollection property="Conteneurs" destination="206-HV-SnC" collectionClass="NSMutableArray" id="5Hn-06-t2h"/>
                         <outletCollection property="Conteneurs" destination="h0Q-nv-S6Y" collectionClass="NSMutableArray" id="pTU-e7-ZWg"/>
