@@ -18,28 +18,53 @@ class DialogueViewController: UIViewController {
     var DialogueNumber : Int = 0
     var nameTap : Bool = false
     var firstDialogue = true
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
     override func viewDidLoad() {
         super.viewDidLoad()
         AllDialogue = buildDialogue()
         dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
         GestionDialogue()        
-        
-        // Do any additional setup after loading the view.
+        print(oneProfil.name)
+        print(oneProfil.lifePoint)
+        print(oneProfil.classeJoueur)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func NomExcla(){
+      
         dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) !"
         
+        guard AllDialogue[idDialogueNumber].styleLabel.isEmpty  else {
+            guard DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count else {
+             if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
+                dialogueLabel.text? += "\""
+                }
+                return
+            }
+            return
+        }
     }
+    
     func NomInt(){
         dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) ?"
         
+    }
+    
+    func ChoixClasse(){
+        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "choixClasse") as? ChoiceClasseViewController
+        {
+            print("ok2")
+            vc.oneProfil = self.oneProfil
+            present(vc, animated: true, completion: nil)
+        }else {
+            print("Could not instantiate view controller with identifier of type ChoiceClasseTableViewController")
+            return
+        }
+ 
+
     }
     
     func GestionEnchainementDialogue(){
@@ -57,17 +82,13 @@ class DialogueViewController: UIViewController {
     
     func GestionStyleDialogue(){
         if AllDialogue[idDialogueNumber].styleLabel.isEmpty {
-            print("normal2")
             dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
         } else {
             if DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count {
-                print("normal3")
                 dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
             } else if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
                 dialogueLabel.font = UIFont.italicSystemFont(ofSize: self.dialogueLabel.font.pointSize)
-                print("ital")
             } else {
-                print("normal")
                 dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
             }
         
@@ -76,7 +97,7 @@ class DialogueViewController: UIViewController {
     
 
     func GestionEventDialogue(){
-        print(AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber])
+      
         if AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber] != "nil" {
 //        let event = AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]
 //        let selector = NSSelectorFromString(event)
@@ -91,6 +112,10 @@ class DialogueViewController: UIViewController {
                 break
             case "NomInt":
                 NomInt()
+                break
+            case "ChoixClasse":
+                print("ok")
+                ChoixClasse()
                 break
             default:
                 dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
@@ -127,14 +152,15 @@ class DialogueViewController: UIViewController {
         GestionDialogue()
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+
+        if segue.identifier == "choixClasseSegue" {
+            let toViewController = segue.destination as! ChoiceClasseViewController
+            toViewController.oneProfil = self.oneProfil
+            print("azertyhgfdsqs")
+        }
      }
-     */
+ 
     
 }

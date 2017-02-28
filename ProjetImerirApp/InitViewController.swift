@@ -27,13 +27,20 @@ class InitViewController: UIViewController {
 
     }
     override func viewDidAppear(_ animated: Bool) {
+<<<<<<< HEAD
         if let headerView2 = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
             headerView2.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
             
             print(headerView2.frame)
+=======
+        if let headerViewComponent = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
+            headerViewComponent.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
             
-            headerView2.timerLabel.text = "60s"
-            self.view.addSubview(headerView2)
+            print(headerViewComponent.frame)
+>>>>>>> origin/master
+            
+            headerViewComponent.timerLabel.text = "60s"
+            self.view.addSubview(headerViewComponent)
         }}
         
     override func didReceiveMemoryWarning() {
@@ -53,8 +60,12 @@ class InitViewController: UIViewController {
             
             let toViewController = segue.destination as! QuestionViewController
             toViewController.oneProfil = oneProfil
+        } else if segue.identifier == "choiceName" {
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dict_profil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne")
+            
+            let toViewController = segue.destination as! NameModalViewController
+            toViewController.oneProfil = oneProfil
         }
-        
         
     }
     

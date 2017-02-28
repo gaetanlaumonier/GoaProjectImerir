@@ -20,15 +20,15 @@ import UIKit
             self.layer.borderWidth = borderWidth
         }
     }
-    @IBInspectable var fontSize: CGFloat = 12 {
-        didSet{
-            self.setupButtonDynamicSize(fontSize: fontSize)
-        }
-    }
     @IBInspectable var borderColor: UIColor = UIColor.white {
         didSet{
             self.layer.borderColor = borderColor.cgColor
             
+        }
+    }
+    @IBInspectable var fontSize: CGFloat = 12 {
+        didSet{
+            self.setupButtonDynamicSize(fontSize: fontSize)
         }
     }
 }
