@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ContentViewController: UIViewController {
     
     @IBOutlet var titre: DesignableLabel!
@@ -53,7 +54,7 @@ class ContentViewController: UIViewController {
         titre.text = actualTitle
         label.text = actualLabel
         label.sizeToFit()
-        print(view.bounds)
+
         if isLastPage {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: view.bounds.width/3, height: 20 ))
             button.setupButtonDynamicSize(fontSize: 12)

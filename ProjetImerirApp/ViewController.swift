@@ -62,6 +62,16 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         pageViewController.view.frame = modal
         pageViewController.view.center = view.center
         
+        
+        UIGraphicsBeginImageContext(pageViewController.view.frame.size)
+        UIImage(named: "Background Kid")?.draw(in: pageViewController.view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        pageViewController.view.backgroundColor = UIColor(patternImage: image)
+        
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.alpha = 0.8
@@ -399,7 +409,7 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
                     self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 })
                 
-                UIView.animate(withDuration: 4,delay: 0, options: .curveEaseOut ,animations: {_ in
+                UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {_ in
                     subview.alpha = 0
                 }, completion: { finished in
                     subview.removeFromSuperview()

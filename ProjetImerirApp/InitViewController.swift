@@ -27,10 +27,17 @@ class InitViewController: UIViewController {
 
     }
     override func viewDidAppear(_ animated: Bool) {
+<<<<<<< HEAD
+        if let headerView2 = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
+            headerView2.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
+            
+            print(headerView2.frame)
+=======
         if let headerViewComponent = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
             headerViewComponent.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
             
             print(headerViewComponent.frame)
+>>>>>>> origin/master
             
             headerViewComponent.timerLabel.text = "60s"
             self.view.addSubview(headerViewComponent)

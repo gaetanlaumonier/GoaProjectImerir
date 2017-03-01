@@ -28,6 +28,16 @@
 		3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A41E48B5BE001E8ED3 /* Dialogue.json */; };
 		3F2844AA1E48B5E6001E8ED3 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */; };
 		3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */; };
+		3F28F7E41E61F1A800920808 /* Bonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7E31E61F1A700920808 /* Bonus.swift */; };
+		3F28F7E61E61F1CF00920808 /* FreezeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7E51E61F1CF00920808 /* FreezeTime.swift */; };
+		3F28F7E81E61F1E200920808 /* FreezeObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7E71E61F1E200920808 /* FreezeObjects.swift */; };
+		3F28F7EA1E61F1ED00920808 /* SlowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7E91E61F1ED00920808 /* SlowTime.swift */; };
+		3F28F7EC1E61F1FB00920808 /* ScoreUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7EB1E61F1FB00920808 /* ScoreUp.swift */; };
+		3F28F7EE1E61F20400920808 /* ScoreDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7ED1E61F20400920808 /* ScoreDown.swift */; };
+		3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7EF1E61F21200920808 /* SomeHelp.swift */; };
+		3F28F7F21E61F26600920808 /* RangementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F11E61F26600920808 /* RangementView.swift */; };
+		3F28F7F41E61F27C00920808 /* Objet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F31E61F27C00920808 /* Objet.swift */; };
+		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
@@ -73,6 +83,16 @@
 		3F2844A41E48B5BE001E8ED3 /* Dialogue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dialogue.json; sourceTree = "<group>"; };
 		3F2844A91E48B5E6001E8ED3 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		3F28F7E31E61F1A700920808 /* Bonus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bonus.swift; sourceTree = "<group>"; };
+		3F28F7E51E61F1CF00920808 /* FreezeTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezeTime.swift; sourceTree = "<group>"; };
+		3F28F7E71E61F1E200920808 /* FreezeObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezeObjects.swift; sourceTree = "<group>"; };
+		3F28F7E91E61F1ED00920808 /* SlowTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlowTime.swift; sourceTree = "<group>"; };
+		3F28F7EB1E61F1FB00920808 /* ScoreUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreUp.swift; sourceTree = "<group>"; };
+		3F28F7ED1E61F20400920808 /* ScoreDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreDown.swift; sourceTree = "<group>"; };
+		3F28F7EF1E61F21200920808 /* SomeHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeHelp.swift; sourceTree = "<group>"; };
+		3F28F7F11E61F26600920808 /* RangementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementView.swift; sourceTree = "<group>"; };
+		3F28F7F31E61F27C00920808 /* Objet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objet.swift; sourceTree = "<group>"; };
+		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -121,6 +141,7 @@
 		3F2844671E488E94001E8ED3 /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F28F7E21E61F0A100920808 /* ArcadeRangement */,
 				3FB88A751E52298A007C0BD6 /* Classe */,
 				3F28448A1E488EB6001E8ED3 /* IBDesignable */,
 				3F2844AD1E48B8E9001E8ED3 /* SwiftyJSON.swift */,
@@ -186,6 +207,29 @@
 			name = IBDesignable;
 			sourceTree = "<group>";
 		};
+		3F28F7E21E61F0A100920808 /* ArcadeRangement */ = {
+			isa = PBXGroup;
+			children = (
+				3F28F7F51E61F29800920808 /* Bonus */,
+				3F4EFD731E50DF4900316A2B /* RangementViewController.swift */,
+				3F28F7F11E61F26600920808 /* RangementView.swift */,
+				3F28F7F31E61F27C00920808 /* Objet.swift */,
+			);
+			name = ArcadeRangement;
+			sourceTree = "<group>";
+		};
+		3F28F7F51E61F29800920808 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				3F28F7E31E61F1A700920808 /* Bonus.swift */,
+				3F28F7E51E61F1CF00920808 /* FreezeTime.swift */,
+				3F28F7E71E61F1E200920808 /* FreezeObjects.swift */,
+				3F28F7E91E61F1ED00920808 /* SlowTime.swift */,
+				3F28F7EB1E61F1FB00920808 /* ScoreUp.swift */,
+				3F28F7ED1E61F20400920808 /* ScoreDown.swift */,
+				3F28F7EF1E61F21200920808 /* SomeHelp.swift */,
+			);
+			name = Bonus;
 		3FB88A751E52298A007C0BD6 /* Classe */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +288,7 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 56URF3SB4V;
+						DevelopmentTeam = N44QRNRP98;
 						ProvisioningStyle = Automatic;
 					};
 					3F2844781E488E94001E8ED3 = {
@@ -305,10 +349,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */,
 				3F2844901E488F30001E8ED3 /* DesignableLabel.swift in Sources */,
+				3F28F7E61E61F1CF00920808 /* FreezeTime.swift in Sources */,
 				3F2844921E488F94001E8ED3 /* BuildElementApp.swift in Sources */,
 				3F28449C1E48B515001E8ED3 /* InitViewController.swift in Sources */,
+				3F28F7EC1E61F1FB00920808 /* ScoreUp.swift in Sources */,
 				3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */,
+				3F28F7EE1E61F20400920808 /* ScoreDown.swift in Sources */,
+				3F28F7F21E61F26600920808 /* RangementView.swift in Sources */,
+				3F28F7E41E61F1A800920808 /* Bonus.swift in Sources */,
 				3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */,
 				3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */,
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
@@ -320,7 +370,11 @@
 				3F28449E1E48B55D001E8ED3 /* NameModalViewController.swift in Sources */,
 				3F28448C1E488EE5001E8ED3 /* DesignableView.swift in Sources */,
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
+				3F28F7F41E61F27C00920808 /* Objet.swift in Sources */,
+				3F28F7EA1E61F1ED00920808 /* SlowTime.swift in Sources */,
+				3F28F7E81E61F1E200920808 /* FreezeObjects.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
+				3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
 				3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */,
 			);
@@ -461,10 +515,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56URF3SB4V;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = laumonier.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -474,10 +529,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56URF3SB4V;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = laumonier.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
