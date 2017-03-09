@@ -1,9 +1,9 @@
 {
     "Dialogue": [{
                  "idDialogue": "0",
-                 "libelleDialogue": ["\"Réveille toi ! \"", "\"Aller, il faut que je me motive à me lever...\"", "\"Les tests sont dans une heure !\"", "\"Il faut que je me prépare.\"", "\"Ne sois pas en retard !\""],
+                 "libelleDialogue": ["...", "\"Réveille toi ", "\"Aller, il faut que je me motive à me lever...\"", "\"Les tests sont dans une heure !\"", "\"Il faut que je me prépare.\"", "\"Ne sois pas en retard !\"", ""],
                  "styleLabel": ["it", "it", "it", "it", "it", "it"],
-                 "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "ChoixClasse"],
+                 "eventDialogue": ["nil", "NomExcla", "nil", "nil", "nil", "nil","ChoixClasse"],
                  "BackgroundDialogue": ["Reveil", "png"]
                  }, {
                  "idDialogue": "1",
@@ -22,9 +22,9 @@
                  "BackgroundDialogue": ["nil", "nil"]
                  }, {
                  "idDialogue": "4",
-                 "libelleDialogue": ["\"Que se passe t'il ?\"", "\"Qu'es que je fait la ?\"", "Alors comme sa, on redevient un enfant ? ", "Tu n’as apparemment pas le niveau requis pour rentrer dans notre école. ", "Je suis sur que tu n’arriverait même pas à manger un gâteau dans le dos de ta propre mère ! ", "Fais tes preuves !"],
+                 "libelleDialogue": ["\"Que se passe t'il ?\"", "\"Qu'es que je fait la ?\"", "Alors comme sa, on redevient un enfant ? ","Tu te trouve dans le bureau de ton père quand tu était un nourrisson. ", "Quelle plaisir de se retrouver dans son berceau !", "Bref, fini la plaisanterie !", "Tu n’as apparemment pas le niveau requis pour rentrer dans notre école. ", "Je suis sur que tu n’arriverait même pas à manger un gâteau dans le dos de ta propre mère ! ", "Fais tes preuves !"],
                  "styleLabel": ["it", "it"],
-                 "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "ArcadeCookie"],
+                 "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "ArcadeCookie"],
                  "BackgroundDialogue": ["nil", "nil"]
                  }, {
                  "idDialogue": "5",
