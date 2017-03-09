@@ -32,7 +32,7 @@ class InitViewController: UIViewController {
             
             print(headerViewComponent.frame)
             
-            headerViewComponent.timerLabel.text = "60s"
+            headerViewComponent.timerLabel.text = "600s"
             self.view.addSubview(headerViewComponent)
         }}
         
