@@ -38,7 +38,7 @@ class ClasseModalViewController: UIViewController {
             toViewController.DialogueNumber = 0
             let classeView : UIViewController = ChoiceClasseViewController()
            // classeView.dismiss(animated : false, completion: nil)
-            self.dismiss(animated: false, completion: nil)
+            //self.dismiss(animated: false, completion: nil)
 
         }
     }

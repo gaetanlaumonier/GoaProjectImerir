@@ -39,6 +39,11 @@
 		3F28F7F41E61F27C00920808 /* Objet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F31E61F27C00920808 /* Objet.swift */; };
 		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
+		3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */; };
+		3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3811E81372C00E342AE /* Quiz.storyboard */; };
+		3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3831E81376900E342AE /* ArcadeCookie.storyboard */; };
+		3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3861E8137B500E342AE /* Dialogue.storyboard */; };
+		3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
 		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
@@ -94,6 +99,11 @@
 		3F28F7F31E61F27C00920808 /* Objet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objet.swift; sourceTree = "<group>"; };
 		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
+		3F90A37F1E8136E100E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ChoiseClasse.storyboard; sourceTree = "<group>"; };
+		3F90A3811E81372C00E342AE /* Quiz.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Quiz.storyboard; path = ProjetImerirApp/Quiz.storyboard; sourceTree = "<group>"; };
+		3F90A3841E81376900E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArcadeCookie.storyboard; sourceTree = "<group>"; };
+		3F90A3861E8137B500E342AE /* Dialogue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dialogue.storyboard; path = ProjetImerirApp/Dialogue.storyboard; sourceTree = "<group>"; };
+		3F90A38A1E81382600E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjetImerirApp/Base.lproj/ArcadeRangement.storyboard; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 		3F28445C1E488E94001E8ED3 = {
 			isa = PBXGroup;
 			children = (
+				3F90A3881E8137C600E342AE /* Storyboard */,
 				3F2844671E488E94001E8ED3 /* ProjetImerirApp */,
 				3F28447C1E488E94001E8ED3 /* ProjetImerirAppTests */,
 				3F2844661E488E94001E8ED3 /* Products */,
@@ -147,9 +158,7 @@
 				3F2844891E488EA5001E8ED3 /* Json */,
 				3F2844881E488E9B001E8ED3 /* Picture/gif */,
 				3F2844681E488E94001E8ED3 /* AppDelegate.swift */,
-				3F28446C1E488E94001E8ED3 /* Main.storyboard */,
 				3F28446F1E488E94001E8ED3 /* Assets.xcassets */,
-				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
 				3F2844741E488E94001E8ED3 /* Info.plist */,
 				3F2844911E488F94001E8ED3 /* BuildElementApp.swift */,
 				3F2844931E488FA3001E8ED3 /* ProfilJoueur.swift */,
@@ -233,6 +242,20 @@
 			name = Bonus;
 			sourceTree = "<group>";
 		};
+		3F90A3881E8137C600E342AE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3F28446C1E488E94001E8ED3 /* Main.storyboard */,
+				3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */,
+				3F90A3861E8137B500E342AE /* Dialogue.storyboard */,
+				3F90A3831E81376900E342AE /* ArcadeCookie.storyboard */,
+				3F90A3811E81372C00E342AE /* Quiz.storyboard */,
+				3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */,
+				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		3FB88A751E52298A007C0BD6 /* Classe */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +313,7 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = N44QRNRP98;
+						DevelopmentTeam = 56URF3SB4V;
 						ProvisioningStyle = Automatic;
 					};
 					3F2844781E488E94001E8ED3 = {
@@ -325,14 +348,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */,
 				3F2844AA1E48B5E6001E8ED3 /* FinDirecteur.gif in Resources */,
 				3F2844731E488E94001E8ED3 /* LaunchScreen.storyboard in Resources */,
 				3F2844A61E48B5BE001E8ED3 /* QuestionsImerirApp.json in Resources */,
 				3F2844A71E48B5BE001E8ED3 /* DataSave.json in Resources */,
+				3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */,
 				3F2844701E488E94001E8ED3 /* Assets.xcassets in Resources */,
+				3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */,
 				3F2844A51E48B5BE001E8ED3 /* ClasseJoueur.json in Resources */,
 				3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */,
+				3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */,
 				3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */,
+				3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */,
 				3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +435,7 @@
 				3F28446D1E488E94001E8ED3 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ProjetImerirApp;
 			sourceTree = "<group>";
 		};
 		3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */ = {
@@ -415,6 +444,33 @@
 				3F2844721E488E94001E8ED3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ProjetImerirApp;
+			sourceTree = "<group>";
+		};
+		3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F90A37F1E8136E100E342AE /* Base */,
+			);
+			name = ChoiseClasse.storyboard;
+			path = ProjetImerirApp;
+			sourceTree = "<group>";
+		};
+		3F90A3831E81376900E342AE /* ArcadeCookie.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F90A3841E81376900E342AE /* Base */,
+			);
+			name = ArcadeCookie.storyboard;
+			path = ProjetImerirApp;
+			sourceTree = "<group>";
+		};
+		3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F90A38A1E81382600E342AE /* Base */,
+			);
+			name = ArcadeRangement.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -518,7 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = N44QRNRP98;
+				DEVELOPMENT_TEAM = 56URF3SB4V;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
@@ -532,7 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = N44QRNRP98;
+				DEVELOPMENT_TEAM = 56URF3SB4V;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;

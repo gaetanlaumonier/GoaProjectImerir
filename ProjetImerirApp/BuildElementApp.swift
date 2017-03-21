@@ -3,21 +3,25 @@
 //février : 
 
 //uml, reflexion tests
-//background chambre ado
 
 //mars :
 
 //relié les view
 //dismiss les view
-//reduction poids graphisme
 //segue button exit
 //Element graphique : arcade cookie ?
-//Background : chambre ado, Ecran titre, Ecran de fin, game over, les 4 arcades, les animations dans les jeux
-//gif
-//menu : revenir au menu 
+//Background : Ecran titre, Ecran de fin, game over, les animations dans les jeux
+//reflechir a la charte graphique et typographique
+
 //avril: 
-//background, graphisme
+//diviser les storyboard
+//gestion des questions
 //save
+//menu : revenir au menu
+//retaper note de cadrage, cahier des chagres, proposition technico commerciale
+
+//mai
+//gerer les animations, transition segue
 
 //a aborder reunion
 //Ce que jai fait (table view classe, gif, debut du jeu)
@@ -28,7 +32,6 @@
 
 //a demander a grabo :
 //dismiss, UML, Tests
-//
 
 
 

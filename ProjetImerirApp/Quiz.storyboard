@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u8R-0A-IOh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Question View Controller-->
+        <scene sceneID="1US-A5-vYk">
+            <objects>
+                <viewController id="u8R-0A-IOh" customClass="QuestionViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FoT-bb-auu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tp6-UT-o74"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g5P-2Y-N0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backgroundquestion" translatesAutoresizingMaskIntoConstraints="NO" id="lk0-Lv-VmH" userLabel="ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG9-XH-y1o" userLabel="LabelView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-PU-1VW" userLabel="QuestionView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="76" width="300" height="155.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-30-hen" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="5" width="280" height="148.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MA-9w-zWC">
+                                                <rect key="frame" x="10" y="5" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Info">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="InfoPush:" destination="u8R-0A-IOh" eventType="touchUpInside" id="5m4-db-61H"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pr-cL-hBr">
+                                                <rect key="frame" x="48" y="8" width="50" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Culture">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="CulturePush:" destination="u8R-0A-IOh" eventType="touchUpInside" id="y1A-Ws-8k3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.8287609869" blue="0.47699687330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="oPk-30-hen" firstAttribute="leading" secondItem="jQB-PU-1VW" secondAttribute="leading" constant="10" id="73m-cq-9mD"/>
+                                            <constraint firstItem="oPk-30-hen" firstAttribute="centerX" secondItem="jQB-PU-1VW" secondAttribute="centerX" id="KTG-Gq-sMf"/>
+                                            <constraint firstItem="oPk-30-hen" firstAttribute="height" secondItem="jQB-PU-1VW" secondAttribute="height" multiplier="0.95" id="QsT-fJ-JbS"/>
+                                            <constraint firstItem="oPk-30-hen" firstAttribute="top" secondItem="jQB-PU-1VW" secondAttribute="top" constant="5" id="rwH-DD-xwe"/>
+                                            <constraint firstAttribute="trailing" secondItem="oPk-30-hen" secondAttribute="trailing" constant="10" id="shx-9a-tyI"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 PV" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-XY-xp1" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="181.5" y="25" width="156.5" height="43"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <color key="textColor" red="0.99942404029999998" green="0.093268572379999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="33"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPQ-ry-yYN" userLabel="MarginRightView">
+                                        <rect key="frame" x="338" y="0.0" width="37" height="283.5"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc3-7S-dMv" userLabel="MarginLeftView">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="283.5"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63P-Er-H2L" userLabel="TimerLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="43" y="25" width="131" height="43"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="35"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8D-IL-Esk" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="155" y="25" width="65" height="28.5"/>
+                                        <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Switch">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="hackButton:" destination="u8R-0A-IOh" eventType="touchUpInside" id="euE-tI-cbK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GPQ-ry-yYN" secondAttribute="trailing" id="370-vH-1ya"/>
+                                    <constraint firstItem="jQB-PU-1VW" firstAttribute="height" secondItem="XG9-XH-y1o" secondAttribute="height" multiplier="0.55" id="4wk-gr-c80"/>
+                                    <constraint firstItem="3b9-XY-xp1" firstAttribute="top" secondItem="XG9-XH-y1o" secondAttribute="top" constant="25" id="56b-Ga-awa"/>
+                                    <constraint firstItem="jQB-PU-1VW" firstAttribute="centerX" secondItem="XG9-XH-y1o" secondAttribute="centerX" id="5pN-hj-Jsp"/>
+                                    <constraint firstAttribute="bottom" secondItem="GPQ-ry-yYN" secondAttribute="bottom" id="98f-ud-mkE"/>
+                                    <constraint firstItem="63P-Er-H2L" firstAttribute="width" secondItem="XG9-XH-y1o" secondAttribute="width" multiplier="0.35" id="Bgj-Ne-k0B"/>
+                                    <constraint firstAttribute="bottom" secondItem="lc3-7S-dMv" secondAttribute="bottom" id="D1z-vG-oU6"/>
+                                    <constraint firstItem="GPQ-ry-yYN" firstAttribute="height" secondItem="XG9-XH-y1o" secondAttribute="height" id="DVB-7j-Iqo"/>
+                                    <constraint firstItem="o8D-IL-Esk" firstAttribute="height" secondItem="XG9-XH-y1o" secondAttribute="height" multiplier="0.1" id="Edt-xh-vH3"/>
+                                    <constraint firstItem="lc3-7S-dMv" firstAttribute="width" secondItem="XG9-XH-y1o" secondAttribute="width" multiplier="0.1" id="Hy5-4s-2Ds"/>
+                                    <constraint firstItem="o8D-IL-Esk" firstAttribute="width" secondItem="XG9-XH-y1o" secondAttribute="width" multiplier="0.175" id="IAv-vz-tHB"/>
+                                    <constraint firstItem="o8D-IL-Esk" firstAttribute="top" secondItem="XG9-XH-y1o" secondAttribute="top" constant="25" id="Jl3-hh-2Km"/>
+                                    <constraint firstItem="63P-Er-H2L" firstAttribute="height" secondItem="XG9-XH-y1o" secondAttribute="height" multiplier="0.15" id="O41-M7-amg"/>
+                                    <constraint firstItem="lc3-7S-dMv" firstAttribute="height" secondItem="XG9-XH-y1o" secondAttribute="height" id="SUZ-IZ-8q0"/>
+                                    <constraint firstItem="GPQ-ry-yYN" firstAttribute="leading" secondItem="3b9-XY-xp1" secondAttribute="trailing" id="f2B-ti-P4U"/>
+                                    <constraint firstItem="lc3-7S-dMv" firstAttribute="leading" secondItem="XG9-XH-y1o" secondAttribute="leading" id="f4D-sW-bU6"/>
+                                    <constraint firstItem="63P-Er-H2L" firstAttribute="leading" secondItem="lc3-7S-dMv" secondAttribute="trailing" constant="5" id="h8V-RM-MjT"/>
+                                    <constraint firstItem="63P-Er-H2L" firstAttribute="top" secondItem="XG9-XH-y1o" secondAttribute="top" constant="25" id="kCu-46-V1f"/>
+                                    <constraint firstItem="GPQ-ry-yYN" firstAttribute="width" secondItem="XG9-XH-y1o" secondAttribute="width" multiplier="0.1" id="nAt-yw-1eF"/>
+                                    <constraint firstItem="3b9-XY-xp1" firstAttribute="height" secondItem="XG9-XH-y1o" secondAttribute="height" multiplier="0.15" id="o8q-Cx-PFl"/>
+                                    <constraint firstItem="o8D-IL-Esk" firstAttribute="centerX" secondItem="XG9-XH-y1o" secondAttribute="centerX" id="q5R-We-3VS"/>
+                                    <constraint firstItem="GPQ-ry-yYN" firstAttribute="top" secondItem="XG9-XH-y1o" secondAttribute="top" id="v6k-Z5-Y0Q"/>
+                                    <constraint firstItem="jQB-PU-1VW" firstAttribute="top" secondItem="3b9-XY-xp1" secondAttribute="bottom" constant="8" id="zQ1-9W-pZ3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNf-Hd-bqZ" userLabel="AnswerView">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="333.5"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-2h-rBR" userLabel="AButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="13.5" width="300" height="66"/>
+                                        <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="button">
+                                            <color key="titleColor" red="1" green="0.96232037999999998" blue="0.97556331100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="AButton:" destination="u8R-0A-IOh" eventType="touchUpInside" id="8Yw-1r-X9j"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RpU-6F-8QY" userLabel="BButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="93.5" width="300" height="66.5"/>
+                                        <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="button">
+                                            <color key="titleColor" red="1" green="0.96232037999999998" blue="0.97556331100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="BButton:" destination="u8R-0A-IOh" eventType="touchUpInside" id="boO-Gf-Pbq"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nlq-WB-vna" userLabel="CButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="173.5" width="300" height="67.5"/>
+                                        <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="button">
+                                            <color key="titleColor" red="1" green="0.96232037999999998" blue="0.97556331100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="CButton:" destination="u8R-0A-IOh" eventType="touchUpInside" id="71d-TA-n6s"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-s4-Kqd" userLabel="DButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="254.5" width="300" height="67"/>
+                                        <color key="backgroundColor" red="1" green="0.34260075369999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="button">
+                                            <color key="titleColor" red="0.99368433980000004" green="0.99942404029999998" blue="0.98125122330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="DButton:" destination="u8R-0A-IOh" eventType="touchUpInside" id="iqW-fd-brI"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-h2-C7i" userLabel="InputButtonValidate" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="140.5" y="189.5" width="94.5" height="67.5"/>
+                                        <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Valider">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="inputButtonValidate:" destination="u8R-0A-IOh" eventType="touchUpInside" id="HZY-oU-MGA"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-tC-gwe" userLabel="TopAMarginView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="13.5"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egY-3M-pZs" userLabel="TopBMarginView">
+                                        <rect key="frame" x="0.0" y="79.5" width="375" height="14"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NW1-wL-mPu" userLabel="TopCMarginView">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="13.5"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-nC-nXL" userLabel="TopDMarginView">
+                                        <rect key="frame" x="0.0" y="241" width="375" height="13.5"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-n6-zMy" userLabel="ResultatView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="33.5" width="300" height="283"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8I-4n-HTS" userLabel="ResultatLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="10" width="240" height="141.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" red="0.99620844630000005" green="0.99710461439999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXt-NH-eDQ" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="161.5" width="300" height="14"/>
+                                                <string key="text">-----------------------------------------------------------------------------------------------------------------------------------------------------</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW2-Uw-r2x" userLabel="BonneReponseLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="195.5" width="240" height="14.5"/>
+                                                <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.99116543580000005" green="0.95608584060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="QW2-Uw-r2x" firstAttribute="width" secondItem="7jQ-n6-zMy" secondAttribute="width" multiplier="0.8" id="4ua-U3-nRq"/>
+                                            <constraint firstItem="gXt-NH-eDQ" firstAttribute="top" secondItem="C8I-4n-HTS" secondAttribute="bottom" constant="10" id="90f-kP-UfP"/>
+                                            <constraint firstItem="C8I-4n-HTS" firstAttribute="top" secondItem="7jQ-n6-zMy" secondAttribute="top" constant="10" id="MVq-gs-MxK"/>
+                                            <constraint firstItem="QW2-Uw-r2x" firstAttribute="top" secondItem="gXt-NH-eDQ" secondAttribute="bottom" constant="20" id="ObJ-wG-naH"/>
+                                            <constraint firstItem="C8I-4n-HTS" firstAttribute="width" secondItem="7jQ-n6-zMy" secondAttribute="width" multiplier="0.8" id="gwJ-le-QpQ"/>
+                                            <constraint firstItem="QW2-Uw-r2x" firstAttribute="centerX" secondItem="7jQ-n6-zMy" secondAttribute="centerX" id="hnh-O6-PRP"/>
+                                            <constraint firstItem="C8I-4n-HTS" firstAttribute="centerX" secondItem="7jQ-n6-zMy" secondAttribute="centerX" id="jhE-DG-faV"/>
+                                            <constraint firstItem="gXt-NH-eDQ" firstAttribute="centerX" secondItem="7jQ-n6-zMy" secondAttribute="centerX" id="pMF-PW-kk9"/>
+                                            <constraint firstItem="gXt-NH-eDQ" firstAttribute="width" secondItem="7jQ-n6-zMy" secondAttribute="width" id="s23-cP-YGZ"/>
+                                            <constraint firstItem="C8I-4n-HTS" firstAttribute="height" secondItem="7jQ-n6-zMy" secondAttribute="height" multiplier="0.5" id="w6n-0D-XjR"/>
+                                            <constraint firstItem="gXt-NH-eDQ" firstAttribute="height" secondItem="7jQ-n6-zMy" secondAttribute="height" multiplier="0.05" id="wiY-ws-rEl"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="45"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtP-MK-giz" userLabel="InputAnswer">
+                                        <rect key="frame" x="94.5" y="129.5" width="187.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s2a-h2-C7i" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="1bn-8a-4hP"/>
+                                    <constraint firstItem="MbZ-2h-rBR" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="1kV-C8-nmQ"/>
+                                    <constraint firstItem="PQ7-tC-gwe" firstAttribute="top" secondItem="vNf-Hd-bqZ" secondAttribute="top" id="3Tv-XW-ecH"/>
+                                    <constraint firstItem="PQ7-tC-gwe" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" id="3WB-zS-J8o"/>
+                                    <constraint firstItem="NW1-wL-mPu" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.04" id="3sk-ex-v4y"/>
+                                    <constraint firstItem="egY-3M-pZs" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" id="48W-Yz-h4f"/>
+                                    <constraint firstItem="7jQ-n6-zMy" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="4Rn-qC-L5U"/>
+                                    <constraint firstItem="egY-3M-pZs" firstAttribute="top" secondItem="MbZ-2h-rBR" secondAttribute="bottom" id="5Oe-Pt-bdE"/>
+                                    <constraint firstItem="NW1-wL-mPu" firstAttribute="top" secondItem="RpU-6F-8QY" secondAttribute="bottom" id="5vJ-HR-8et"/>
+                                    <constraint firstItem="NW1-wL-mPu" firstAttribute="leading" secondItem="vNf-Hd-bqZ" secondAttribute="leading" id="92g-Yb-0j2"/>
+                                    <constraint firstItem="ulD-s4-Kqd" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="9Yz-o5-vOj"/>
+                                    <constraint firstItem="PQ7-tC-gwe" firstAttribute="leading" secondItem="vNf-Hd-bqZ" secondAttribute="leading" id="BNS-ir-hBe"/>
+                                    <constraint firstItem="RpU-6F-8QY" firstAttribute="top" secondItem="egY-3M-pZs" secondAttribute="bottom" id="DwG-AP-idX"/>
+                                    <constraint firstItem="7jQ-n6-zMy" firstAttribute="top" secondItem="PQ7-tC-gwe" secondAttribute="bottom" constant="20" id="FxB-ea-Uxo"/>
+                                    <constraint firstItem="nlq-WB-vna" firstAttribute="top" secondItem="NW1-wL-mPu" secondAttribute="bottom" id="LTO-VB-Pdt"/>
+                                    <constraint firstItem="7jQ-n6-zMy" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.85" id="M7i-i3-7f0"/>
+                                    <constraint firstItem="MbZ-2h-rBR" firstAttribute="top" secondItem="PQ7-tC-gwe" secondAttribute="bottom" id="MZP-hV-FQI"/>
+                                    <constraint firstItem="PQ7-tC-gwe" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="MnU-SW-bx4"/>
+                                    <constraint firstItem="PQ7-tC-gwe" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.04" id="N1v-YM-JZq"/>
+                                    <constraint firstItem="nlq-WB-vna" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="O8F-iC-yqt"/>
+                                    <constraint firstItem="s2a-h2-C7i" firstAttribute="top" secondItem="ZtP-MK-giz" secondAttribute="bottom" constant="30" id="OTb-Hw-gbb"/>
+                                    <constraint firstItem="MbZ-2h-rBR" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="Scx-qr-VlC"/>
+                                    <constraint firstItem="ulD-s4-Kqd" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="UgP-7E-VM6"/>
+                                    <constraint firstItem="RpU-6F-8QY" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="VS2-RZ-SK6"/>
+                                    <constraint firstItem="s2a-h2-C7i" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="X0J-qF-MN0"/>
+                                    <constraint firstItem="qBD-nC-nXL" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" id="Xwr-HR-EOi"/>
+                                    <constraint firstItem="nlq-WB-vna" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="Yeq-C9-WBh"/>
+                                    <constraint firstItem="ulD-s4-Kqd" firstAttribute="top" secondItem="qBD-nC-nXL" secondAttribute="bottom" id="acl-BP-HtN"/>
+                                    <constraint firstAttribute="trailing" secondItem="qBD-nC-nXL" secondAttribute="trailing" id="bMY-fL-4Up"/>
+                                    <constraint firstItem="qBD-nC-nXL" firstAttribute="leading" secondItem="vNf-Hd-bqZ" secondAttribute="leading" id="bfo-FP-rAE"/>
+                                    <constraint firstItem="ZtP-MK-giz" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="bmR-Ho-O1v"/>
+                                    <constraint firstItem="MbZ-2h-rBR" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="c6O-mE-Fwp"/>
+                                    <constraint firstItem="RpU-6F-8QY" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="dCg-vz-p4a"/>
+                                    <constraint firstItem="s2a-h2-C7i" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.25" id="dD1-EA-Hg7"/>
+                                    <constraint firstItem="RpU-6F-8QY" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="eeR-IQ-X9A"/>
+                                    <constraint firstItem="egY-3M-pZs" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.04" id="f6t-Wh-AGu" userLabel="TopBMarginView.height = 0.04 × height"/>
+                                    <constraint firstItem="egY-3M-pZs" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="h6e-m6-qmj"/>
+                                    <constraint firstItem="qBD-nC-nXL" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.04" id="jTN-KM-fwN"/>
+                                    <constraint firstItem="RpU-6F-8QY" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="jy2-fz-mj8"/>
+                                    <constraint firstItem="nlq-WB-vna" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="k5R-6T-4I1"/>
+                                    <constraint firstItem="qBD-nC-nXL" firstAttribute="top" secondItem="nlq-WB-vna" secondAttribute="bottom" id="l6r-wD-2iu"/>
+                                    <constraint firstItem="ZtP-MK-giz" firstAttribute="top" secondItem="MbZ-2h-rBR" secondAttribute="bottom" constant="50" id="oA0-U0-iIm"/>
+                                    <constraint firstItem="nlq-WB-vna" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="pPa-Ql-yJA"/>
+                                    <constraint firstItem="7jQ-n6-zMy" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="qIX-m4-O8h"/>
+                                    <constraint firstItem="ulD-s4-Kqd" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="s9O-hb-phz"/>
+                                    <constraint firstItem="egY-3M-pZs" firstAttribute="leading" secondItem="vNf-Hd-bqZ" secondAttribute="leading" id="t2g-4g-RXX"/>
+                                    <constraint firstItem="NW1-wL-mPu" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" id="vwA-BH-eG6"/>
+                                    <constraint firstAttribute="trailing" secondItem="PQ7-tC-gwe" secondAttribute="trailing" id="xY1-SF-fda"/>
+                                    <constraint firstItem="ZtP-MK-giz" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.5" id="zRt-tN-JmU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wt-gR-U6O" userLabel="DialogueView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Répond aux questions" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwf-CX-Pub" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="5" width="345" height="90.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bP-6i-qni" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="61" width="51" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Enigme">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="EnigmePush:" destination="u8R-0A-IOh" eventType="touchUpInside" id="nr7-8u-E2M"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tA5-s2-fqW" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="103" y="61" width="50" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Psycho">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="PsychoPush:" destination="u8R-0A-IOh" eventType="touchUpInside" id="rWp-aI-c3X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mix-dj-I0T" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="314" y="70" width="56" height="25"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="pjj-pw-Ema" kind="show" id="glL-i0-a5F"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Lwf-CX-Pub" firstAttribute="centerX" secondItem="9Wt-gR-U6O" secondAttribute="centerX" id="76L-ZS-Zlh"/>
+                                    <constraint firstItem="mix-dj-I0T" firstAttribute="height" secondItem="9Wt-gR-U6O" secondAttribute="height" multiplier="0.25" id="9dF-F5-pnU"/>
+                                    <constraint firstItem="Lwf-CX-Pub" firstAttribute="height" secondItem="9Wt-gR-U6O" secondAttribute="height" multiplier="0.9" id="ShJ-Ej-8tb"/>
+                                    <constraint firstItem="mix-dj-I0T" firstAttribute="width" secondItem="9Wt-gR-U6O" secondAttribute="width" multiplier="0.15" id="SyY-QU-STk"/>
+                                    <constraint firstAttribute="bottom" secondItem="mix-dj-I0T" secondAttribute="bottom" constant="5" id="fV4-Vy-Mir"/>
+                                    <constraint firstAttribute="trailing" secondItem="mix-dj-I0T" secondAttribute="trailing" constant="5" id="hH8-hM-XVz"/>
+                                    <constraint firstItem="Lwf-CX-Pub" firstAttribute="leading" secondItem="9Wt-gR-U6O" secondAttribute="leading" constant="15" id="inf-nX-Mjz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lwf-CX-Pub" secondAttribute="trailing" constant="15" id="oke-qR-rer"/>
+                                    <constraint firstItem="Lwf-CX-Pub" firstAttribute="top" secondItem="9Wt-gR-U6O" secondAttribute="top" constant="5" id="vSQ-xU-rW5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.71789736680000005" green="0.70674930039999995" blue="0.71039040649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9Wt-gR-U6O" secondAttribute="bottom" id="50h-wZ-tXM"/>
+                            <constraint firstItem="XG9-XH-y1o" firstAttribute="width" secondItem="lk0-Lv-VmH" secondAttribute="width" id="52N-hL-r8q"/>
+                            <constraint firstItem="lk0-Lv-VmH" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" id="Df6-Jm-4tL"/>
+                            <constraint firstItem="9Wt-gR-U6O" firstAttribute="top" secondItem="vNf-Hd-bqZ" secondAttribute="bottom" id="JL3-fS-A2R"/>
+                            <constraint firstItem="XG9-XH-y1o" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="NQg-YP-dya"/>
+                            <constraint firstItem="XG9-XH-y1o" firstAttribute="height" secondItem="lk0-Lv-VmH" secondAttribute="height" multiplier="0.5" id="ODo-km-Qiw"/>
+                            <constraint firstAttribute="trailing" secondItem="lk0-Lv-VmH" secondAttribute="trailing" id="OoU-LF-skc"/>
+                            <constraint firstItem="lk0-Lv-VmH" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="Rpm-3x-EvE"/>
+                            <constraint firstItem="lk0-Lv-VmH" firstAttribute="top" secondItem="g5P-2Y-N0Q" secondAttribute="top" id="S7t-6Z-EiE"/>
+                            <constraint firstItem="9Wt-gR-U6O" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" id="d9R-DU-fbL"/>
+                            <constraint firstAttribute="trailing" secondItem="XG9-XH-y1o" secondAttribute="trailing" id="dkP-6u-4gK"/>
+                            <constraint firstItem="3b9-XY-xp1" firstAttribute="width" secondItem="lk0-Lv-VmH" secondAttribute="width" multiplier="0.25" constant="62" id="f5v-Zs-Vpi"/>
+                            <constraint firstItem="9Wt-gR-U6O" firstAttribute="top" secondItem="lk0-Lv-VmH" secondAttribute="bottom" id="kRG-85-fFO"/>
+                            <constraint firstItem="9Wt-gR-U6O" firstAttribute="top" secondItem="lk0-Lv-VmH" secondAttribute="bottom" id="kfm-08-PVH"/>
+                            <constraint firstItem="vNf-Hd-bqZ" firstAttribute="width" secondItem="lk0-Lv-VmH" secondAttribute="width" id="lQF-0k-vWO"/>
+                            <constraint firstItem="vNf-Hd-bqZ" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="nMi-bD-CvV"/>
+                            <constraint firstItem="lk0-Lv-VmH" firstAttribute="height" secondItem="g5P-2Y-N0Q" secondAttribute="height" multiplier="0.85" id="pC1-9p-Yfo"/>
+                            <constraint firstAttribute="trailing" secondItem="9Wt-gR-U6O" secondAttribute="trailing" id="rOL-ix-BTi"/>
+                            <constraint firstItem="9Wt-gR-U6O" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="rpR-Gb-hRl"/>
+                            <constraint firstItem="XG9-XH-y1o" firstAttribute="top" secondItem="g5P-2Y-N0Q" secondAttribute="top" id="tbt-Ag-uru"/>
+                            <constraint firstItem="jQB-PU-1VW" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" multiplier="0.8" id="ups-g6-kbE"/>
+                            <constraint firstItem="vNf-Hd-bqZ" firstAttribute="height" secondItem="g5P-2Y-N0Q" secondAttribute="height" multiplier="0.5" id="yJl-bi-ZhT"/>
+                            <constraint firstAttribute="trailing" secondItem="vNf-Hd-bqZ" secondAttribute="trailing" id="yZD-34-SmC"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aGt-vM-Sbx" appends="YES" id="LfS-AM-P02"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundVIew" destination="lk0-Lv-VmH" id="THz-GW-NzF"/>
+                        <outlet property="InputAnswer" destination="ZtP-MK-giz" id="vGU-Fa-mPi"/>
+                        <outlet property="TimerLabel" destination="63P-Er-H2L" id="gOR-y3-AFm"/>
+                        <outlet property="bonneReponseLabel" destination="QW2-Uw-r2x" id="fEV-JS-PrP"/>
+                        <outlet property="dialogueLabel" destination="Lwf-CX-Pub" id="sjZ-MI-Ntu"/>
+                        <outlet property="dialogueView" destination="9Wt-gR-U6O" id="bsH-Wa-Jsz"/>
+                        <outlet property="hackButton" destination="o8D-IL-Esk" id="m0T-Wg-zIw"/>
+                        <outlet property="inputButtonValidate" destination="s2a-h2-C7i" id="f4V-L8-2Yz"/>
+                        <outlet property="lifePointLabel" destination="3b9-XY-xp1" id="wez-SP-LTe"/>
+                        <outlet property="questionLabel" destination="oPk-30-hen" id="j1G-2x-qvk"/>
+                        <outlet property="questionView" destination="jQB-PU-1VW" id="QOt-nC-fBg"/>
+                        <outlet property="resultatLabel" destination="C8I-4n-HTS" id="GRu-lI-poE"/>
+                        <outlet property="resultatView" destination="7jQ-n6-zMy" id="p01-6E-ppZ"/>
+                        <outletCollection property="Buttons" destination="MbZ-2h-rBR" collectionClass="NSMutableArray" id="6kh-he-1Oo"/>
+                        <outletCollection property="Buttons" destination="RpU-6F-8QY" collectionClass="NSMutableArray" id="fJp-Yh-Djk"/>
+                        <outletCollection property="Buttons" destination="nlq-WB-vna" collectionClass="NSMutableArray" id="A9A-jz-BhM"/>
+                        <outletCollection property="Buttons" destination="ulD-s4-Kqd" collectionClass="NSMutableArray" id="kG1-36-7eX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuT-e4-oUQ" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aGt-vM-Sbx">
+                    <connections>
+                        <action selector="HandleTouchDialogue:" destination="u8R-0A-IOh" id="UQd-b6-Sfu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="95" y="279"/>
+        </scene>
+        <!--UIViewController-4Vd-Vn-EX1-->
+        <scene sceneID="5L3-6G-Brl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-4Vd-Vn-EX1" id="pjj-pw-Ema" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcW-Qd-6s5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1370" y="315"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Backgroundquestion" width="1920" height="1920"/>
+    </resources>
+</document>
