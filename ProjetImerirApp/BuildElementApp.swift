@@ -16,9 +16,10 @@
 //avril: 
 //diviser les storyboard
 //gestion des questions
+//bug quiz reponse A
 //save
 //menu : revenir au menu
-//retaper note de cadrage, cahier des chagres, proposition technico commerciale
+//retaper note de cadrage, cahier des charges, proposition technico commerciale
 
 //mai
 //gerer les animations, transition segue
@@ -32,9 +33,6 @@
 
 //a demander a grabo :
 //dismiss, UML, Tests
-
-
-
 
 import UIKit
 

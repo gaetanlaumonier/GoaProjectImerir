@@ -18,23 +18,30 @@ class InitViewController: UIViewController {
     
     @IBOutlet weak var headerView: HeaderView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        MenuBackgroundView.loadGif(name: "FinDirecteur")
-      
-        
+       
+        headerView.lifePointLabel.isHidden = true
+        //  headerView.lifePointLabel.borderWidth = 10
+//        headerView.timerLabel?.text = "10"
+//        headerView.timerLabel?.isHidden = false
+//        headerView.lifePointLabel?.isHidden = true
+//        MenuBackgroundView.loadGif(name: "FinDirecteur")
+//        self.view.addSubview(headerView.timerLabel)
+//        self.view.addSubview(headerView.lifePointLabel)
+
+
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-        if let headerViewComponent = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
-            headerViewComponent.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
-            
-            print(headerViewComponent.frame)
-            
-            headerViewComponent.timerLabel.text = "600s"
-            self.view.addSubview(headerViewComponent)
-        }}
+//    override func viewDidAppear(_ animated: Bool) {
+//        if let headerViewComponent = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
+//            headerViewComponent.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
+//            
+//            print(headerViewComponent.frame)
+//            
+//            headerViewComponent.timerLabel.text = "40s"
+//            self.view.addSubview(headerViewComponent)
+//        }}
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,13 +56,13 @@ class InitViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "testQuiz" {
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker")
             
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker")
             let toViewController = segue.destination as! QuestionViewController
             toViewController.oneProfil = oneProfil
         } else if segue.identifier == "choiceName" {
             let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne")
-            
+          
             let toViewController = segue.destination as! NameModalViewController
             toViewController.oneProfil = oneProfil
 

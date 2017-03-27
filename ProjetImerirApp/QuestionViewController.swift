@@ -5,18 +5,18 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var BackgroundVIew: UIImageView!
     @IBOutlet var Buttons : [UIButton]!
+    @IBOutlet weak var themeActif: DesignableLabel!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var lifePointLabel: UILabel!
     @IBOutlet weak var dialogueLabel: UILabel!
     @IBOutlet weak var resultatLabel: UILabel!
     @IBOutlet weak var bonneReponseLabel: UILabel!
-    @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var dialogueView: UIView!
     @IBOutlet weak var questionView: UIView!
     @IBOutlet weak var InputAnswer: UITextField!
     @IBOutlet weak var resultatView: UIView!
     @IBOutlet weak var inputButtonValidate: UIButton!
     @IBOutlet weak var hackButton: UIButton!
+    @IBOutlet weak var headerView: HeaderView!
     
     
     var QuestionsComplete = [Question]()
@@ -27,7 +27,7 @@ class QuestionViewController: UIViewController {
     var TableauEnigme : [Question] = []
     var TableauPsycho : [Question] = []
     var themeQuestionActif = [Question]()
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
     var QuestionNumber = Int()
     var QuestionPose : Int = 0
     var messageSpecialLabel : Int = 0
@@ -36,7 +36,6 @@ class QuestionViewController: UIViewController {
     var resultatVrai = Int()
     var actionResultat = Int()
     var startTimer = Timer()
-    
     //variable de classe de joueur
     var chanceDuNoob : Bool = false
     var modeHackeurActive : Bool = false
@@ -51,7 +50,8 @@ class QuestionViewController: UIViewController {
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
-        lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        themeActif.text = "Culture Informatique"
+        //lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         for j in 0..<QuestionsComplete.count{
             switch QuestionsComplete[j].Topic{
             case "Info":
@@ -70,9 +70,11 @@ class QuestionViewController: UIViewController {
                 break
             }
         }
+
         themeQuestionActif = TableauInfo
         PickQuestion()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,6 +98,7 @@ class QuestionViewController: UIViewController {
     //Pose une question qui n'a pas été posée, lance le timer...
     func PickQuestion(){
         QuestionInit()
+        
         if themeQuestionActif.count > 0 && QuestionPose < themeQuestionActif.count {
             QuestionNumber = Int(arc4random_uniform(UInt32(themeQuestionActif.count)))
             while themeQuestionActif[QuestionNumber].AlreadyPick == true {
@@ -105,14 +108,14 @@ class QuestionViewController: UIViewController {
             formatAnswers()
             
             if themeQuestionActif[QuestionNumber].Timer != 0 {
-                TimerLabel.isHidden = false
+                headerView.timerLabel?.isHidden = false
                 countSeconde = Float(themeQuestionActif[QuestionNumber].Timer) * multiplicateurFonctionnaire
                 hackFunction()
-                TimerLabel.text = "\(Int(countSeconde))s"
+                headerView.timerLabel?.text = "\(Int(countSeconde))s"
                 startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionViewController.GestionTimer), userInfo: nil, repeats: true)
                 
             } else {
-                TimerLabel.isHidden = true
+                headerView.timerLabel?.isHidden = true
                 startTimer.invalidate()
             }
             
@@ -262,7 +265,7 @@ class QuestionViewController: UIViewController {
     //Gère l'écoulement du temps de question
     func GestionTimer(){
         countSeconde -= 1
-        TimerLabel.text = "\(Int(countSeconde))s"
+        headerView.timerLabel?.text = "\(Int(countSeconde))s"
         if countSeconde <= 0 {
             resultatReponseSwitch(stringReponse: "PasLeTime", typeOfQuestion: "PasLeTime")
         }
@@ -370,7 +373,7 @@ class QuestionViewController: UIViewController {
             QuestionPose += 1
             resultatView.isHidden = false
             bonneReponseLabel.isHidden = false
-            lifePointLabel.text = String("\(self.oneProfil.lifePoint) PV")
+            headerView.lifePointLabel?.text = String("\(self.oneProfil.lifePoint) PV")
             messageSpecialLabel = 1
         }
     }
@@ -386,6 +389,7 @@ class QuestionViewController: UIViewController {
         startTimer.invalidate()
         themeQuestionActif = TableauInfo
         dialogueLabel.text = "Questions d'informatique sélectionnées"
+        themeActif.text = "Culture Informatique"
         for i in 0..<themeQuestionActif.count{
             if themeQuestionActif[i].AlreadyPick == true{
                 QuestionPose += 1
@@ -400,6 +404,7 @@ class QuestionViewController: UIViewController {
         
         themeQuestionActif = TableauCulture
         dialogueLabel.text = "Questions de Culture Générale sélectionnées"
+        themeActif.text = "Culture Générale"
         for i in 0..<themeQuestionActif.count{
             if themeQuestionActif[i].AlreadyPick == true{
                 QuestionPose += 1
@@ -414,6 +419,7 @@ class QuestionViewController: UIViewController {
         
         themeQuestionActif = TableauEnigme
         dialogueLabel.text = "Enigmes sélectionnées"
+        themeActif.text = "Enigme"
         for i in 0..<themeQuestionActif.count{
             if themeQuestionActif[i].AlreadyPick == true{
                 QuestionPose += 1
@@ -428,6 +434,7 @@ class QuestionViewController: UIViewController {
         
         themeQuestionActif = TableauPsycho
         dialogueLabel.text = "Questions de Psychologie sélectionnées"
+        themeActif.text = "Psychologie"
         for i in 0..<themeQuestionActif.count{
             if themeQuestionActif[i].AlreadyPick == true{
                 QuestionPose += 1
@@ -445,7 +452,7 @@ class QuestionViewController: UIViewController {
         if messageSpecialLabel == 3 {
             resultatLabel.text = "GAME OVER"
             dialogueLabel.text = "GAME OVER"
-            lifePointLabel.text = "GAME OVER"
+            headerView.lifePointLabel?.text = "GAME OVER"
             questionLabel.text = "GAME OVER"
             bonneReponseLabel.text = "GAME OVER"
             for i in 0..<Buttons.count{

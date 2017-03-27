@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,14 +19,14 @@
                         <viewControllerLayoutGuide type="bottom" id="5fq-MJ-lM9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HmW-w0-tqe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id0-cq-8cB" userLabel="BackgroundView">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="1106.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="540.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-63-idK" userLabel="BackgroundImage">
-                                        <rect key="frame" x="0.0" y="-20" width="1024" height="1106.5"/>
+                                        <rect key="frame" x="0.0" y="-20" width="375" height="540.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,10 +38,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-Fm-0PV" userLabel="DialogueView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1093" width="1024" height="273"/>
+                                <rect key="frame" x="0.0" y="533.5" width="375" height="133.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-OP-NJv" userLabel="DialogueLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="52" y="13.5" width="921" height="246"/>
+                                        <rect key="frame" x="19.5" y="6.5" width="337" height="120.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -65,7 +69,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J2X-Fm-0PV" firstAttribute="leading" secondItem="HmW-w0-tqe" secondAttribute="leading" id="0YS-Jc-NUq"/>
                             <constraint firstItem="Id0-cq-8cB" firstAttribute="width" secondItem="HmW-w0-tqe" secondAttribute="width" id="VLY-pX-VAh"/>
@@ -80,7 +84,6 @@
                             <outletCollection property="gestureRecognizers" destination="ddU-Bh-RBJ" appends="YES" id="EuF-9R-XBi"/>
                         </connections>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="ipad12_9.fullscreen"/>
                     <connections>
                         <outlet property="dialogueLabel" destination="1Q9-OP-NJv" id="wHc-uy-868"/>
                         <outlet property="dialogueView" destination="J2X-Fm-0PV" id="8Ts-Rz-9lf"/>

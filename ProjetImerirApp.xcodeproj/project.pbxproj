@@ -105,7 +105,7 @@
 		3F90A3861E8137B500E342AE /* Dialogue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dialogue.storyboard; path = ProjetImerirApp/Dialogue.storyboard; sourceTree = "<group>"; };
 		3F90A38A1E81382600E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjetImerirApp/Base.lproj/ArcadeRangement.storyboard; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ProjetImerirApp/HeaderView.xib; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
 		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,6 @@
 		3F28445C1E488E94001E8ED3 = {
 			isa = PBXGroup;
 			children = (
-				3F90A3881E8137C600E342AE /* Storyboard */,
 				3F2844671E488E94001E8ED3 /* ProjetImerirApp */,
 				3F28447C1E488E94001E8ED3 /* ProjetImerirAppTests */,
 				3F2844661E488E94001E8ED3 /* Products */,
@@ -152,6 +151,7 @@
 		3F2844671E488E94001E8ED3 /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F90A3881E8137C600E342AE /* Storyboard/Xib */,
 				3F28F7E21E61F0A100920808 /* ArcadeRangement */,
 				3FB88A751E52298A007C0BD6 /* Classe */,
 				3F28448A1E488EB6001E8ED3 /* IBDesignable */,
@@ -173,7 +173,6 @@
 				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
 				3FBD2D651E48D66B00100027 /* ViewController.swift */,
 				3FB88A671E4F6396007C0BD6 /* HeaderView.swift */,
-				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
 				3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */,
 			);
 			path = ProjetImerirApp;
@@ -242,7 +241,7 @@
 			name = Bonus;
 			sourceTree = "<group>";
 		};
-		3F90A3881E8137C600E342AE /* Storyboard */ = {
+		3F90A3881E8137C600E342AE /* Storyboard/Xib */ = {
 			isa = PBXGroup;
 			children = (
 				3F28446C1E488E94001E8ED3 /* Main.storyboard */,
@@ -252,8 +251,10 @@
 				3F90A3811E81372C00E342AE /* Quiz.storyboard */,
 				3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */,
 				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
+				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
 			);
-			name = Storyboard;
+			name = Storyboard/Xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3FB88A751E52298A007C0BD6 /* Classe */ = {
