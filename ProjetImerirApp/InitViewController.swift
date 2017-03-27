@@ -21,7 +21,6 @@ class InitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        headerView.lifePointLabel.isHidden = true
         //  headerView.lifePointLabel.borderWidth = 10
 //        headerView.timerLabel?.text = "10"
 //        headerView.timerLabel?.isHidden = false
