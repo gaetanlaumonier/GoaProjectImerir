@@ -16,7 +16,7 @@ class NameModalViewController: UIViewController {
     @IBOutlet weak var contrainteLabel: UILabel!
     @IBOutlet weak var NameButton: UIButton!
     
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,6 @@ class NameModalViewController: UIViewController {
         print(oneProfil.name)
         print(oneProfil.lifePoint)
         print(oneProfil.classeJoueur)
-
 
     }
     
@@ -52,7 +51,7 @@ class NameModalViewController: UIViewController {
                 return false
             } else {
                 performSegue(withIdentifier: "newPart", sender: self)
-                let initView : UIViewController = InitViewController()
+                //let initView : UIViewController = InitViewController()
               //  initView.dismiss(animated: false, completion: nil)
                 //self.dismiss(animated: false, completion: nil)
                 return true

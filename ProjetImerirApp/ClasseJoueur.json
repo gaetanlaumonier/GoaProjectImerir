@@ -1,10 +1,5 @@
 {
     "ClasseJoueur": [{
-                     "idClasse":"Personne",
-                     "nomClasse":"Personne",
-                     "libelleClasse":"Vous n'êtes rien, personne, aucun pouvoir ne vous est accordé.",
-                     "pouvoirClasse":"Le pouvoir de ne pas en avoir."
-                     },{
                      "idClasse":"Geek",
                      "nomClasse":"Geek Enveloppé",
                      "libelleClasse":"Un geek accro au jeu vidéo. Passe ses journées devant son écran en rêvant de Hentaï et de championnats E-sports.",
@@ -16,7 +11,7 @@
                      "pouvoirClasse":"Gagne parfois des PV au lieu d’en perdre tout au long du jeu."
                      },{
                      "idClasse":"Hacker",
-                     "nomClasse":"Hacker Vicieu",
+                     "nomClasse":"Hacker Vicieux",
                      "libelleClasse":"Un personnage sombre qui n’a pas de règles, sauf celle de ne pas en avoir.",
                      "pouvoirClasse":"1 chance sur 3 de pouvoir switcher la question. Défie les règles dans les mini-jeux. "
                      },{
@@ -24,5 +19,10 @@
                      "nomClasse":"Fonctionnaire Calme",
                      "libelleClasse":"Un personnage fort sympathique qui prend le temps de vivre.",
                      "pouvoirClasse":"Plus de temps pour les épreuves en général (+40%)."
+                     },{
+                     "idClasse":"Personne",
+                     "nomClasse":"Personne",
+                     "libelleClasse":"Vous n'êtes rien, personne, aucun pouvoir ne vous est accordé.",
+                     "pouvoirClasse":"Le pouvoir de ne pas en avoir."
                      }]
 }

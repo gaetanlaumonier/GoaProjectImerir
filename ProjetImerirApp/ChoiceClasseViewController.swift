@@ -13,7 +13,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     var AllClasse = [ClasseJoueur]()
     var buttonSender : Int = 10
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle: 0, bonneReponseQuiz : 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
         cell.titleClasseLabel?.attributedText = underlineAttributedString
         
         cell.titleClasseLabel?.text = AllClasse[indexPath.row].nomClasse
+        cell.imageClasse?.image = UIImage(named : AllClasse[indexPath.row].idClasse )
         cell.libelleClasse?.text = AllClasse[indexPath.row].libelleClasse
         cell.pouvoirClasse?.text = AllClasse[indexPath.row].pouvoirClasse
         cell.classeButton?.tag = indexPath.row

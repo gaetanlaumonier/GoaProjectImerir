@@ -38,7 +38,8 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mom.loadGif(name: "Maman")
+
         cookie.layer.cornerRadius = cookie.frame.size.width/2
         progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         

@@ -10,12 +10,13 @@ import UIKit
 
 class ClasseTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageClasse: UIImageView!
     @IBOutlet weak var titleClasseLabel: DesignableLabel!
     @IBOutlet weak var libelleClasse: DesignableLabel!
     @IBOutlet weak var pouvoirClasse: DesignableLabel!
     @IBOutlet weak var classeButton: UIButton!
     
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

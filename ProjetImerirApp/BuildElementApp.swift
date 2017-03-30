@@ -6,15 +6,11 @@
 
 //mars :
 
-//relié les view
-//dismiss les view
-//segue button exit
-//Element graphique : arcade cookie ?
+//dismiss les view, segue button exit
 //Background : Ecran titre, Ecran de fin, game over, les animations dans les jeux
 //reflechir a la charte graphique et typographique
 
 //avril: 
-//diviser les storyboard
 //gestion des questions
 //bug quiz reponse A
 //save
@@ -22,6 +18,7 @@
 //retaper note de cadrage, cahier des charges, proposition technico commerciale
 
 //mai
+//musique
 //gerer les animations, transition segue
 
 //a aborder reunion

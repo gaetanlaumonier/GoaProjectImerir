@@ -17,6 +17,13 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var inputButtonValidate: UIButton!
     @IBOutlet weak var hackButton: UIButton!
     @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var saisieReponseLabel: DesignableLabel!
+    
+    //a supprimer apres
+    @IBOutlet weak var cultureTheme: UIButton!
+    @IBOutlet weak var psychoTheme: DesignableButton!
+    @IBOutlet weak var enigmeTheme: DesignableButton!
+    @IBOutlet weak var infoTheme: UIButton!
     
     
     var QuestionsComplete = [Question]()
@@ -27,7 +34,7 @@ class QuestionViewController: UIViewController {
     var TableauEnigme : [Question] = []
     var TableauPsycho : [Question] = []
     var themeQuestionActif = [Question]()
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0)
     var QuestionNumber = Int()
     var QuestionPose : Int = 0
     var messageSpecialLabel : Int = 0
@@ -41,17 +48,18 @@ class QuestionViewController: UIViewController {
     var modeHackeurActive : Bool = false
     var multiplicateurFonctionnaire : Float = 1
     
+    var serieQuestionActive : [String:Int] = ["cultureG" : 0, "info": 0, "enigme": 0, "psycho": 0]
+    var idQuestion : [String:Int] = ["cultureG" : 0, "info": 0, "enigme": 0, "psycho": 0]
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
         super.viewDidLoad()
-        // BackgroundVIew.loadGif(name: "DirecteurEnd")
+        // BackgroundView.loadGif(name: "DirecteurEnd")
         
         QuestionsComplete = buildQuestions()
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
-        themeActif.text = "Culture Informatique"
-        //lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         for j in 0..<QuestionsComplete.count{
             switch QuestionsComplete[j].Topic{
             case "Info":
@@ -70,6 +78,7 @@ class QuestionViewController: UIViewController {
                 break
             }
         }
+        print(serieQuestionActive)
 
         themeQuestionActif = TableauInfo
         PickQuestion()
@@ -80,18 +89,55 @@ class QuestionViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    //Gère les séries de question
+    func SerieQuestionGestion(){
+        if serieQuestionActive["cultureG"]!>0 && idQuestion["cultureG"]! < serieQuestionActive["cultureG"]!{
+            themeQuestionActif = TableauCulture
+            themeActif.text = "Culture Générale"
+            idQuestion["cultureG"]? += 1
+        } else if serieQuestionActive["info"]!>0 && idQuestion["info"]! < serieQuestionActive["info"]!{
+            themeQuestionActif = TableauInfo
+            themeActif.text = "Culture Informatique"
+            idQuestion["info"]? += 1
+        } else if serieQuestionActive["enigme"]!>0 && idQuestion["enigme"]! < serieQuestionActive["enigme"]!{
+            themeQuestionActif = TableauEnigme
+            themeActif.text = "Enigme"
+            idQuestion["enigme"]? += 1
+        } else if serieQuestionActive["psycho"]!>0 && idQuestion["psycho"]! < serieQuestionActive["psycho"]!{
+            themeQuestionActif = TableauPsycho
+            themeActif.text = "Psychologie"
+            idQuestion["psycho"]? += 1
+        } else {
+            if self.oneProfil.sceneActuelle == 1{
+                self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.bonneReponseQuiz*3)
+            }
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
+            {
+                self.oneProfil.sceneActuelle += 1
+                vc.oneProfil = self.oneProfil
+                present(vc, animated: true, completion: nil)
+            }else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
+            }
+        }
+        print(idQuestion)
+    }
+    
+    
     
     //Rend caché les éléments de l'AnswerView
     func QuestionInit(){
         for i in 0..<Buttons.count{
             Buttons[i].isHidden = true
         }
+        saisieReponseLabel.isHidden = true
         InputAnswer.isHidden = true
         inputButtonValidate.isHidden = true
         bonneReponseLabel.isHidden = true
         resultatView.isHidden = true
         reponseTrouverInput = false
-        
+        SerieQuestionGestion()
         
     }
     
@@ -246,6 +292,7 @@ class QuestionViewController: UIViewController {
             }
             break
         case "Input":
+            saisieReponseLabel.isHidden = false
             InputAnswer.isHidden = false
             inputButtonValidate.isHidden = false
             InputAnswer.text = ""
@@ -286,6 +333,7 @@ class QuestionViewController: UIViewController {
                 }
                 if(stringReponse == themeQuestionActif[QuestionNumber].Answer){
                     resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
+                    self.oneProfil.bonneReponseQuiz += 1
                 } else {
                     VerifNoobFunction()
                 }
@@ -295,11 +343,13 @@ class QuestionViewController: UIViewController {
                 break
             case "Input":
                 InputAnswer.isHidden = true
+                saisieReponseLabel.isHidden = true
                 inputButtonValidate.isHidden = true
                 for i in 0..<themeQuestionActif[QuestionNumber].Choice.count{
                     if(stringReponse == themeQuestionActif[QuestionNumber].Choice[i]){
                         resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
                         reponseTrouverInput = true
+                        self.oneProfil.bonneReponseQuiz += 1
                     }
                 }
                 if reponseTrouverInput == false {
@@ -360,6 +410,7 @@ class QuestionViewController: UIViewController {
                     Buttons[i].isHidden = true
                 }
                 InputAnswer.isHidden = true
+                saisieReponseLabel.isHidden = true
                 inputButtonValidate.isHidden = true
                 resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
                 self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!

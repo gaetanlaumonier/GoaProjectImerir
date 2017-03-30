@@ -14,32 +14,30 @@ class DialogueViewController: UIViewController {
     @IBOutlet weak var dialogueView: UIView!
     
     var AllDialogue = [Dialogue]()
-    var idDialogueNumber : Int = 0
     var DialogueNumber : Int = 0
     var nameTap : Bool = false
     var firstDialogue = true
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0)
+    var serieQuestion : [String:Int] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         AllDialogue = buildDialogue()
-        dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
-        GestionDialogue()        
-        print(oneProfil.name)
-        print(oneProfil.lifePoint)
-        print(oneProfil.classeJoueur)
+        dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
+        GestionDialogue()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: event function
     func NomExcla(){
       
-        dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) !"
+        dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.name) !"
         
-        guard AllDialogue[idDialogueNumber].styleLabel.isEmpty  else {
-            guard DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count else {
-             if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
+        guard AllDialogue[self.oneProfil.sceneActuelle].styleLabel.isEmpty  else {
+            guard DialogueNumber >= AllDialogue[self.oneProfil.sceneActuelle].styleLabel.count else {
+             if AllDialogue[self.oneProfil.sceneActuelle].styleLabel[DialogueNumber] == "it" {
                 dialogueLabel.text? += "\""
                 }
                 return
@@ -49,7 +47,7 @@ class DialogueViewController: UIViewController {
     }
     
     func NomInt(){
-        dialogueLabel.text = "\(AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber])\(self.oneProfil.name) ?"
+        dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.name) ?"
         
     }
     
@@ -67,13 +65,51 @@ class DialogueViewController: UIViewController {
 
     }
     
+    func SerieQuestion1(){
+        GestionSerieQuestion(cultureG: 5, info: 5, enigme: 4, psycho: 0)
+    }
+    
+    func SerieQuestion2(){
+        GestionSerieQuestion(cultureG: 0, info: 7, enigme: 3, psycho: 5)
+    }
+    
+    func SerieQuestion3(){
+        GestionSerieQuestion(cultureG: 5, info: 5, enigme: 3, psycho: 0)
+    }
+    
+    func SerieQuestion4(){
+        GestionSerieQuestion(cultureG: 0, info: 0, enigme: 3, psycho: 5)
+    }
+    
+    func GestionSerieQuestion(cultureG :Int, info: Int, enigme: Int, psycho: Int){
+        serieQuestion = ["cultureG" : cultureG, "info": info, "enigme": enigme, "psycho": psycho] as [String:Int]
+        if serieQuestion["enigme"] != 1 {
+            if let vc = UIStoryboard(name:"Quiz", bundle:nil).instantiateViewController(withIdentifier: "Question") as? QuestionViewController
+            {
+                vc.serieQuestionActive = self.serieQuestion
+                vc.oneProfil = self.oneProfil
+                present(vc, animated: true, completion: nil)
+            }else {
+                print("Could not instantiate view controller with identifier of type QuestionViewController")
+                return
+            }
+        }
+    }
+    
+    func ResultatFirstTest(){
+    dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.bonneReponseQuiz) questions."
+    }
+    
+    // MARK: dialogue gesture
     func GestionEnchainementDialogue(){
         if firstDialogue == false {
         DialogueNumber += 1
-        if DialogueNumber == AllDialogue[idDialogueNumber].libelleDialogue.count {
-            //firstDialogue = true
+        if DialogueNumber == AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue.count {
+            //a enlever plus tard
+            if(self.oneProfil.sceneActuelle != 1 || self.oneProfil.sceneActuelle == 5 || self.oneProfil.sceneActuelle == 9 || self.oneProfil.sceneActuelle == 11 || self.oneProfil.sceneActuelle == 0){
+                self.oneProfil.sceneActuelle += 1
+            }
             DialogueNumber = 0
-            idDialogueNumber += 1
             }
         } else {
             firstDialogue  = false
@@ -81,15 +117,15 @@ class DialogueViewController: UIViewController {
     }
     
     func GestionStyleDialogue(){
-        if AllDialogue[idDialogueNumber].styleLabel.isEmpty {
-            dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
+        if AllDialogue[self.oneProfil.sceneActuelle].styleLabel.isEmpty {
+            dialogueLabel.font = UIFont(name: "Futura", size: self.dialogueLabel.font.pointSize)
         } else {
-            if DialogueNumber >= AllDialogue[idDialogueNumber].styleLabel.count {
-                dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
-            } else if AllDialogue[idDialogueNumber].styleLabel[DialogueNumber] == "it" {
-                dialogueLabel.font = UIFont.italicSystemFont(ofSize: self.dialogueLabel.font.pointSize)
+            if DialogueNumber >= AllDialogue[self.oneProfil.sceneActuelle].styleLabel.count {
+                dialogueLabel.font = UIFont(name: "Futura", size: self.dialogueLabel.font.pointSize)
+            } else if AllDialogue[self.oneProfil.sceneActuelle].styleLabel[DialogueNumber] == "it" {
+                dialogueLabel.font = dialogueLabel.font.withTraits(traits: .traitItalic)
             } else {
-                dialogueLabel.font = UIFont.systemFont(ofSize: self.dialogueLabel.font.pointSize, weight : UIFontWeightRegular)
+                dialogueLabel.font = UIFont(name: "Futura", size: self.dialogueLabel.font.pointSize)
             }
         
         }
@@ -98,15 +134,15 @@ class DialogueViewController: UIViewController {
 
     func GestionEventDialogue(){
       
-        if AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber] != "nil" {
-//        let event = AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]
+        if AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber] != "nil" {
+//        let event = AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber]
 //        let selector = NSSelectorFromString(event)
 //        //let _ = #selector(selector)
 //        selector
 //        } else {
-//            dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+//            dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
 //        }
-            switch AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber] {
+            switch AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber] {
             case "NomExcla" :
                 NomExcla()
                 break
@@ -114,16 +150,29 @@ class DialogueViewController: UIViewController {
                 NomInt()
                 break
             case "ChoixClasse":
-                print("ok")
                 ChoixClasse()
                 break
+            case "SerieQuestion1":
+                SerieQuestion1()
+                break
+            case "SerieQuestion2":
+                SerieQuestion2()
+                break
+            case "SerieQuestion3":
+                SerieQuestion3()
+                break
+            case "SerieQuestion4":
+                SerieQuestion4()
+                break
+            case "resultatTest":
+                ResultatFirstTest()
+                break
             default:
-                dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+                dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
             break
             }
         } else {
-            print("lala")
-            dialogueLabel.text = AllDialogue[idDialogueNumber].libelleDialogue[DialogueNumber]
+            dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         }
     }
     func GestionDialogue(){
@@ -132,7 +181,7 @@ class DialogueViewController: UIViewController {
             GestionStyleDialogue()
             GestionEventDialogue()
     }
-//        switch AllDialogue[idDialogueNumber].eventDialogue[DialogueNumber]{
+//        switch AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber]{
 //        case "nil":
 //            GestionDialogue()
 //            
@@ -140,7 +189,7 @@ class DialogueViewController: UIViewController {
 //            
 //        case "choixClasse":
 //            break
-//            
+//
 //        default:
 //            print("Problème avec l'évènement du dialogue")
 //            break
@@ -152,15 +201,16 @@ class DialogueViewController: UIViewController {
         GestionDialogue()
     }
     
+    // MARK: segue gesture
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "choixClasseSegue" {
-            let toViewController = segue.destination as! ChoiceClasseViewController
-            toViewController.oneProfil = self.oneProfil
-            //self.dismiss(animated: false, completion: nil)
-        }
-     }
+//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "Quiz" {
+//            let toViewController = segue.destination as! QuestionViewController
+//            toViewController.oneProfil = self.oneProfil
+//            toViewController.serieQuestionActive = self.serieQuestion
+//            //self.dismiss(animated: false, completion: nil)
+//        }
+//     }
  
-    
 }

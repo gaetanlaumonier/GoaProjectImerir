@@ -30,10 +30,10 @@ extension UILabel {
             calculatedFont = UIFont(name: currentFontName, size: fontSize + 1.25)
             self.font = calculatedFont
         } else if screenSize.height < 900 {
-            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.5)
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.4)
             self.font = calculatedFont
         } else if screenSize.height < 1100 {
-            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2)
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.9)
             self.font = calculatedFont
         } else {
             calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.5)
@@ -51,6 +51,14 @@ extension String {
     
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
+    }
+}
+
+extension UIFont {
+func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
+    let descriptor = self.fontDescriptor
+        .withSymbolicTraits(UIFontDescriptorSymbolicTraits(traits))
+    return UIFont(descriptor: descriptor!, size: 0)
     }
 }
 

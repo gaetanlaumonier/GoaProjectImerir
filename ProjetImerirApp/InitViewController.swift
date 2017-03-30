@@ -25,7 +25,7 @@ class InitViewController: UIViewController {
 //        headerView.timerLabel?.text = "10"
 //        headerView.timerLabel?.isHidden = false
 //        headerView.lifePointLabel?.isHidden = true
-//        MenuBackgroundView.loadGif(name: "FinDirecteur")
+        MenuBackgroundView.loadGif(name: "FinDirecteur")
 //        self.view.addSubview(headerView.timerLabel)
 //        self.view.addSubview(headerView.lifePointLabel)
 
@@ -56,11 +56,16 @@ class InitViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "testQuiz" {
             
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker")
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker", sceneActuelle : 0, bonneReponseQuiz:0)
             let toViewController = segue.destination as! QuestionViewController
             toViewController.oneProfil = oneProfil
+//            toViewController.cultureTheme.isHidden = false
+//            toViewController.infoTheme.isHidden = false
+//            toViewController.enigmeTheme.isHidden = false
+//            toViewController.psychoTheme.isHidden = false
+
         } else if segue.identifier == "choiceName" {
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne")
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 0, bonneReponseQuiz:0)
           
             let toViewController = segue.destination as! NameModalViewController
             toViewController.oneProfil = oneProfil

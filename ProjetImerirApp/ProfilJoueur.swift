@@ -12,11 +12,19 @@ class ProfilJoueur {
     //Chaine de caractères de la classe
     var classeJoueur : String
     
-    init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String) {
+    //Moment du scénario atteint
+    var sceneActuelle : Int
+    
+    //Compte le nombre de bonne réponses aux questions (stats)
+    var bonneReponseQuiz : Int
+    
+    init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String, sceneActuelle : Int, bonneReponseQuiz : Int) {
         self.name = name
         self.lifePoint = lifePoint
         self.dictProfil = dictProfil
         self.classeJoueur = classeJoueur
+        self.sceneActuelle = sceneActuelle
+        self.bonneReponseQuiz = bonneReponseQuiz
     }
     
 }

@@ -15,7 +15,7 @@ class ClasseModalViewController: UIViewController {
     @IBOutlet weak var nonButton: DesignableButton!
     
     var classePlayer : String = ""
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,9 @@ class ClasseModalViewController: UIViewController {
             if classePlayer == "Geek" {
                 self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.lifePoint/2)
             }
+            self.oneProfil.sceneActuelle += 1
             toViewController.oneProfil = self.oneProfil
-            toViewController.idDialogueNumber = 1
-            toViewController.DialogueNumber = 0
-            let classeView : UIViewController = ChoiceClasseViewController()
+           // let classeView : UIViewController = ChoiceClasseViewController()
            // classeView.dismiss(animated : false, completion: nil)
             //self.dismiss(animated: false, completion: nil)
 
