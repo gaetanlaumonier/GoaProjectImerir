@@ -1,25 +1,21 @@
-//enigmes speciales (clik sur élément)
-
-//février : 
-
-//uml, reflexion tests
 
 //mars :
 
-//dismiss les view, segue button exit
 //Background : Ecran titre, Ecran de fin, game over, les animations dans les jeux
-//reflechir a la charte graphique et typographique
 
 //avril: 
-//gestion des questions
-//bug quiz reponse A
-//save
-//menu : revenir au menu
-//retaper note de cadrage, cahier des charges, proposition technico commerciale
+//fin des jeu, gestion des pv
+//fin du jeu
+//musique
 
 //mai
-//musique
-//gerer les animations, transition segue
+//save
+//retaper note de cadrage, cahier des charges, proposition technico commerciale
+
+//optionnel à voir vers la fin
+//reflechir a la charte graphique et typographique
+//uml, reflexion tests
+//menu : revenir au menu
 
 //a aborder reunion
 //Ce que jai fait (table view classe, gif, debut du jeu)
@@ -28,12 +24,16 @@
 //charte
 //reporting
 
+
+
+
 //a demander a grabo :
-//dismiss, UML, Tests
+//dismiss, UML, Tests, crash de l'appli sauvegarde oneprofil
 
 import UIKit
 
 struct Question{
+    var IdQuestion : Int!
     var Question : String!
     var Choice : [String]!
     var Answer : String?
@@ -84,8 +84,10 @@ func buildQuestions() -> [Question]{
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: file))
             let json = JSON(data: data)
+            var idQuestion : Int = 0
             for (_, dict) in json["Questions"] {
-                let thisObject = Question(Question: dict["Question"].stringValue,
+                let thisObject = Question(IdQuestion: idQuestion,
+                                          Question: dict["Question"].stringValue,
                                           Choice: dict["Choice"].arrayValue.map { $0.string!},
                                           Answer: dict["Answer"].stringValue,
                                           Topic: dict["Topic"].stringValue,
@@ -96,7 +98,9 @@ func buildQuestions() -> [Question]{
                                           ProfilConsequence : dict["ProfilConsequence"].arrayValue.map {$0.string!},
                                           HPLostArray : dict["HPLostArray"].arrayValue.map {$0.int!},
                                           Timer : dict["Timer"].floatValue)
-                questions.append(thisObject)            }
+                questions.append(thisObject)
+            idQuestion += 1
+            }
         } catch {
             print("JSON Processing Failed")
         }

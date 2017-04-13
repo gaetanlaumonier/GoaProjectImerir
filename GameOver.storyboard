@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FmF-sv-Dxr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wm3-zy-7be">
+            <objects>
+                <viewController id="FmF-sv-Dxr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="it6-fc-RMc"/>
+                        <viewControllerLayoutGuide type="bottom" id="WSK-fC-9QT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zdg-nU-Nen">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyI-fN-UIk" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="47" y="150" width="281" height="267"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="46"/>
+                                <color key="textColor" red="1" green="0.0187217119" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="0.93591099564880498" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXC-gF-Ued" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="93.5" y="437" width="187.5" height="100"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Retourner au menu">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.41753251903553301" green="0.41753251903553301" blue="0.41753251903553301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KXC-gF-Ued" firstAttribute="centerX" secondItem="Zdg-nU-Nen" secondAttribute="centerX" id="3tF-TC-9vU"/>
+                            <constraint firstItem="OyI-fN-UIk" firstAttribute="centerY" secondItem="Zdg-nU-Nen" secondAttribute="centerY" constant="-50" id="6HZ-bb-Lr4"/>
+                            <constraint firstItem="OyI-fN-UIk" firstAttribute="height" secondItem="Zdg-nU-Nen" secondAttribute="height" multiplier="0.4" id="QxU-ew-byR"/>
+                            <constraint firstItem="OyI-fN-UIk" firstAttribute="centerX" secondItem="Zdg-nU-Nen" secondAttribute="centerX" id="UYQ-vq-yoV"/>
+                            <constraint firstItem="OyI-fN-UIk" firstAttribute="width" secondItem="Zdg-nU-Nen" secondAttribute="width" multiplier="0.75" id="VBc-s5-T6R"/>
+                            <constraint firstItem="KXC-gF-Ued" firstAttribute="height" secondItem="Zdg-nU-Nen" secondAttribute="height" multiplier="0.15" id="ehR-PN-JJd"/>
+                            <constraint firstItem="KXC-gF-Ued" firstAttribute="top" secondItem="OyI-fN-UIk" secondAttribute="bottom" constant="20" id="uQM-Hb-4GE"/>
+                            <constraint firstItem="KXC-gF-Ued" firstAttribute="width" secondItem="Zdg-nU-Nen" secondAttribute="width" multiplier="0.5" id="yri-9h-nNc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXo-Ox-C1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2090" y="152"/>
+        </scene>
+    </scenes>
+</document>

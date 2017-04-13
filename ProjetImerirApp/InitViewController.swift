@@ -20,7 +20,12 @@ class InitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        self.view.alpha = 0
+        let screenSize = UIScreen.main.bounds.size
+        print(screenSize.height)
+        UIView.animate(withDuration: 1, delay: 0, options: .transitionCrossDissolve, animations: {
+            self.view.alpha = 1
+        } , completion: nil)
         //  headerView.lifePointLabel.borderWidth = 10
 //        headerView.timerLabel?.text = "10"
 //        headerView.timerLabel?.isHidden = false
@@ -56,7 +61,7 @@ class InitViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "testQuiz" {
             
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker", sceneActuelle : 0, bonneReponseQuiz:0)
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker", sceneActuelle : 0, bonneReponseQuiz:0, questionAlreadyPick:[])
             let toViewController = segue.destination as! QuestionViewController
             toViewController.oneProfil = oneProfil
 //            toViewController.cultureTheme.isHidden = false
@@ -65,11 +70,26 @@ class InitViewController: UIViewController {
 //            toViewController.psychoTheme.isHidden = false
 
         } else if segue.identifier == "choiceName" {
-            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 0, bonneReponseQuiz:0)
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 0, bonneReponseQuiz:0, questionAlreadyPick:[])
           
             let toViewController = segue.destination as! NameModalViewController
             toViewController.oneProfil = oneProfil
 
+        } else if segue.identifier == "Rangement"{
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 120, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Fonctionnaire", sceneActuelle : 0, bonneReponseQuiz:0, questionAlreadyPick:[])
+            
+            let toViewController = segue.destination as! RangementViewController
+            toViewController.oneProfil = oneProfil
+            
+        } else if segue.identifier == "Cookie" {
+            let oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 120, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Fonctionnaire", sceneActuelle : 0, bonneReponseQuiz:0, questionAlreadyPick:[])
+            let toViewController = segue.destination as! ViewController
+
+            UIView.animate(withDuration: 0, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.view.alpha = 0
+            } , completion: { success in
+                toViewController.oneProfil = oneProfil
+            })
         }
         
     }

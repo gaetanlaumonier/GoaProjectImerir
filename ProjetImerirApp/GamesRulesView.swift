@@ -8,13 +8,13 @@
 
 import UIKit
 
-@IBDesignable class HeaderView: UIView {
-
-
-    @IBOutlet weak var timerLabel: DesignableLabel!
-    @IBOutlet weak var settingImageView: UIImageView!
-
-    @IBOutlet weak var lifePointLabel: DesignableLabel!
+@IBDesignable class GamesRulesView: DesignableView {
+    
+    @IBOutlet weak var titre: DesignableLabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var label: DesignableLabel!
+    @IBOutlet weak var hint: DesignableLabel!
+    
     override init(frame: CGRect) {
         // 1. setup any properties here
         
@@ -33,7 +33,7 @@ import UIKit
         
         // 3. Setup view from .xib file
         xibSetup()
-    } 
+    }
     
     var view: UIView!
     
@@ -52,7 +52,7 @@ import UIKit
     func loadViewFromNib() -> UIView {
         
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "HeaderView", bundle: bundle)
+        let nib = UINib(nibName: "GamesRules", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view

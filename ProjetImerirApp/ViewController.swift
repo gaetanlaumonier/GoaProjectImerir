@@ -17,36 +17,46 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     @IBOutlet var mom: UIImageView!
     @IBOutlet var sad: UIImageView!
     @IBOutlet var happy: UIImageView!
+    @IBOutlet weak var headerView: HeaderView!
     
     var pageViewController:UIPageViewController!
     var pageViewLabels:[String]!
     var pageViewImages:[String]!
     var pageViewTitles:[String]!
     var pageViewHints:[String]!
-    
+    var decreaseTimer = Timer()
+    var myTimer : Timer!
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDuration:TimeInterval = 60
-    var playerClass = "Fonctionnaire"
+    var gameDurationTotal:TimeInterval = 10
+    var gameTimer : Int = 0
     var noob = false
     var geek = false
     var progressDecrease:Float = 0.002
+    
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[0])
     
     var hfromLeft = true
     var sfromLeft = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.alpha = 0
+        UIView.animate(withDuration: 5, delay: 0, options: .transitionCrossDissolve, animations: {
+            self.view.alpha = 1
+        } , completion: nil)
         mom.loadGif(name: "Maman")
-
+        gameTimer = Int(gameDurationTotal)
+        headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        headerView.timerLabel.text = "\(Int(gameDurationTotal)) s"
         cookie.layer.cornerRadius = cookie.frame.size.width/2
         progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         
-        pageViewLabels = ["Ce cookie ci-dessus représente ton principal objectif en tant que bébé rebel.", "Mais attention, une personne dont la gentillesse pourrait te parraitre familière ne te laissera pas accéder à ton but si facilement.","Cette jauge représente ta joie d'être bébé, la remplir te rendras moins grincheux"]
+        pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie."]
         pageViewImages = ["Cookie", "Mom","progressBar"]
         pageViewTitles = ["Le gâteau","La mère","La barre d'humeur"]
-        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Ne clique pas sur le cookie si elle te regarde", ""]
+        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Clique sur le cookie quand tu ne voit que ces cheveux.", "Ne laisse pas la jauge se vider."]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         
@@ -112,29 +122,53 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         // Lance la boucle d'affichage de mom
         hideMom()
         
-        Timer.scheduledTimer(timeInterval: gameDuration, target: self, selector: #selector(ViewController.endGame), userInfo: nil, repeats: false)
+       myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.TimerGesture), userInfo: nil, repeats: true)
     }
     
     func initPlayerClass() {
         
-        if playerClass == "Fonctionnaire" {
-            gameDuration = gameDuration * 1.4
-        } else if playerClass == "Geek" {
+        if self.oneProfil.classeJoueur == "Fonctionnaire" {
+            gameDurationTotal = gameDurationTotal * 1.4
+        } else if self.oneProfil.classeJoueur  == "Geek" {
             geek = true
-        } else if playerClass == "Noob" {
+        } else if self.oneProfil.classeJoueur  == "Noob" {
             noob = true
-        } else if playerClass == "Hacker" {
+        } else if self.oneProfil.classeJoueur  == "Hacker" {
             progressDecrease = 0.001
         }
         
     }
     
+    func TimerGesture(){
+        gameTimer -= 1
+        headerView.timerLabel.text = "\(Int(gameTimer)) s"
+        if gameTimer == 0 {
+            myTimer.invalidate()
+            endGame()
+        }
+    }
+    
     func endGame() {
-        //Segue
+        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
+        {
+            decreaseTimer.invalidate()
+            self.oneProfil.sceneActuelle += 1
+            vc.oneProfil = self.oneProfil
+            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                let myPresentingViewController = self.presentingViewController as! DialogueViewController
+                myPresentingViewController.view.alpha = 0
+                self.view.alpha = 0
+            } , completion: { success in
+            self.present(vc, animated: false, completion: nil)
+            })
+        }else {
+            print("Could not instantiate view controller with identifier of type DialogueViewController")
+            return
+        }
     }
     
     func decreaseScoreLoop() {
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.decreaseScore), userInfo: nil, repeats: true)
+        decreaseTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.decreaseScore), userInfo: nil, repeats: true)
     }
     
     func decreaseScore() {

@@ -11,12 +11,13 @@ import UIKit
 class RangementViewController: UIViewController {
 
     @IBOutlet var Conteneurs: [UIImageView]!
-    @IBOutlet var scoreLabel: DesignableLabel!
-    @IBOutlet var timerLabel: DesignableLabel!
+   
+    @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var scoreLabel: DesignableLabel!
 
-    var playerClass = "Hacker"
     var noob = false
     var animationMultiplier:CFTimeInterval = 1
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[0])
     
     var detritus = ["Boulette", "Poussiere", "Salete"]
     var vetements = ["Chaussette1", "Chaussette2", "Jean", "T-shirt"]
@@ -66,7 +67,7 @@ class RangementViewController: UIViewController {
         endGameTimer = Timer.scheduledTimer(withTimeInterval: 0.1 * slowGameFactor, repeats: true, block: {_ in
             if self.timeLeft > 0 {
                 self.timeLeft -= 0.1
-                self.timerLabel.text = String(format: "%.1f", self.timeLeft)
+            self.headerView.timerLabel.text = "\(Int(self.timeLeft)) s"
             } else {
                 self.endGame()
             }
@@ -75,18 +76,28 @@ class RangementViewController: UIViewController {
     
     func endGame() {
         endGameTimer.invalidate()
+//        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
+//        {
+//            self.oneProfil.sceneActuelle += 1
+//            vc.oneProfil = self.oneProfil
+//        self.dismiss(animated: false, completion: nil)
+//            present(vc, animated: true, completion: nil)
+//        }else {
+//            print("Could not instantiate view controller with identifier of type DialogueViewController")
+//            return
+//        }
     }
     
     func initPlayerClass() {
         
-        if playerClass == "Fonctionnaire" {
+        if self.oneProfil.classeJoueur == "Fonctionnaire" {
             gameDuration = gameDuration * 1.4
             animationMultiplier = 2
-        } else if playerClass == "Geek" {
+        } else if self.oneProfil.classeJoueur == "Geek" {
             objectSize = CGSize(width: 150, height: 150)
-        } else if playerClass == "Noob" {
+        } else if self.oneProfil.classeJoueur == "Noob" {
             noob = true
-        } else if playerClass == "Hacker" {
+        } else if self.oneProfil.classeJoueur == "Hacker" {
             startHacking()
         }
         
@@ -191,6 +202,8 @@ class RangementViewController: UIViewController {
             }
         }
         score -= 1
+        self.oneProfil.lifePoint -= 1
+        headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         updateScore()
         animateTo(objet: objet, position: objet.previousPosition, completion: {(finished: Bool) in
             if finished {
@@ -334,6 +347,9 @@ class RangementViewController: UIViewController {
     
     func slowTime() {
         slowGameFactor = 2
+        let lalat = endGameTimer
+        endGameTimer.invalidate()
+        lalat?.fire()
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {_ in
             self.slowGameFactor = 1
         })

@@ -21,9 +21,9 @@ class QuestionViewController: UIViewController {
     
     //a supprimer apres
     @IBOutlet weak var cultureTheme: UIButton!
-    @IBOutlet weak var psychoTheme: DesignableButton!
-    @IBOutlet weak var enigmeTheme: DesignableButton!
-    @IBOutlet weak var infoTheme: UIButton!
+    @IBOutlet weak var PsychoTheme: DesignableButton!
+    @IBOutlet weak var EnigmeTheme: DesignableButton!
+    @IBOutlet weak var InfoTheme: UIButton!
     
     
     var QuestionsComplete = [Question]()
@@ -34,8 +34,8 @@ class QuestionViewController: UIViewController {
     var TableauEnigme : [Question] = []
     var TableauPsycho : [Question] = []
     var themeQuestionActif = [Question]()
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0)
-    var QuestionNumber = Int()
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[] )
+    var QuestionNumber : Int = 0
     var QuestionPose : Int = 0
     var messageSpecialLabel : Int = 0
     var countSeconde : Float = 0
@@ -48,8 +48,10 @@ class QuestionViewController: UIViewController {
     var modeHackeurActive : Bool = false
     var multiplicateurFonctionnaire : Float = 1
     
-    var serieQuestionActive : [String:Int] = ["cultureG" : 0, "info": 0, "enigme": 0, "psycho": 0]
-    var idQuestion : [String:Int] = ["cultureG" : 0, "info": 0, "enigme": 0, "psycho": 0]
+    var serieQuestionActive : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
+    var endSerie : Bool = false
+    var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
+    
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,14 @@ class QuestionViewController: UIViewController {
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        headerView.timerLabel.textColor = .white
+        
+        for number in self.oneProfil.questionAlreadyPick {
+            QuestionsComplete[number].AlreadyPick = true
+        }
+        
         for j in 0..<QuestionsComplete.count{
+            
             switch QuestionsComplete[j].Topic{
             case "Info":
                 TableauInfo.append(QuestionsComplete[j])
@@ -78,50 +87,45 @@ class QuestionViewController: UIViewController {
                 break
             }
         }
-        print(serieQuestionActive)
-
-        themeQuestionActif = TableauInfo
         PickQuestion()
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     //Gère les séries de question
     func SerieQuestionGestion(){
-        if serieQuestionActive["cultureG"]!>0 && idQuestion["cultureG"]! < serieQuestionActive["cultureG"]!{
+        if serieQuestionActive["CultureG"]!>0 && idQuestion["CultureG"]! < serieQuestionActive["CultureG"]!{
             themeQuestionActif = TableauCulture
             themeActif.text = "Culture Générale"
-            idQuestion["cultureG"]? += 1
-        } else if serieQuestionActive["info"]!>0 && idQuestion["info"]! < serieQuestionActive["info"]!{
+        } else if serieQuestionActive["Info"]!>0 && idQuestion["Info"]! < serieQuestionActive["Info"]!{
             themeQuestionActif = TableauInfo
             themeActif.text = "Culture Informatique"
-            idQuestion["info"]? += 1
-        } else if serieQuestionActive["enigme"]!>0 && idQuestion["enigme"]! < serieQuestionActive["enigme"]!{
+        } else if serieQuestionActive["Enigme"]!>0 && idQuestion["Enigme"]! < serieQuestionActive["Enigme"]!{
             themeQuestionActif = TableauEnigme
             themeActif.text = "Enigme"
-            idQuestion["enigme"]? += 1
-        } else if serieQuestionActive["psycho"]!>0 && idQuestion["psycho"]! < serieQuestionActive["psycho"]!{
+        } else if serieQuestionActive["Psycho"]!>0 && idQuestion["Psycho"]! < serieQuestionActive["Psycho"]!{
             themeQuestionActif = TableauPsycho
             themeActif.text = "Psychologie"
-            idQuestion["psycho"]? += 1
         } else {
             if self.oneProfil.sceneActuelle == 1{
                 self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.bonneReponseQuiz*3)
             }
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
             {
+                endSerie = true
                 self.oneProfil.sceneActuelle += 1
-                vc.oneProfil = self.oneProfil
-                present(vc, animated: true, completion: nil)
+                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.view.alpha = 0
+                } , completion: { success in
+                    vc.oneProfil = self.oneProfil
+                    self.endQuestion()
+                    self.present(vc, animated: false, completion: nil)
+                    //self.dismiss(animated: false, completion: nil)
+                    
+                })
             }else {
                 print("Could not instantiate view controller with identifier of type DialogueViewController")
                 return
             }
         }
-        print(idQuestion)
     }
     
     
@@ -137,22 +141,21 @@ class QuestionViewController: UIViewController {
         bonneReponseLabel.isHidden = true
         resultatView.isHidden = true
         reponseTrouverInput = false
-        SerieQuestionGestion()
         
     }
     
     //Pose une question qui n'a pas été posée, lance le timer...
     func PickQuestion(){
+        SerieQuestionGestion()
         QuestionInit()
         
-        if themeQuestionActif.count > 0 && QuestionPose < themeQuestionActif.count {
+        if themeQuestionActif.count > 0 && QuestionPose < themeQuestionActif.count && endSerie == false{
             QuestionNumber = Int(arc4random_uniform(UInt32(themeQuestionActif.count)))
             while themeQuestionActif[QuestionNumber].AlreadyPick == true {
                 QuestionNumber = Int(arc4random_uniform(UInt32(themeQuestionActif.count)))
             }
             questionLabel.text = themeQuestionActif[QuestionNumber].Question
             formatAnswers()
-            
             if themeQuestionActif[QuestionNumber].Timer != 0 {
                 headerView.timerLabel?.isHidden = false
                 countSeconde = Float(themeQuestionActif[QuestionNumber].Timer) * multiplicateurFonctionnaire
@@ -172,9 +175,8 @@ class QuestionViewController: UIViewController {
             }
             
             messageSpecialLabel = 0
-            themeQuestionActif[QuestionNumber].AlreadyPick = true
         }else{
-            dialogueLabel.text = "Plus de question"
+            dialogueLabel.text = "Fin de série"
         }
         EndGame()
     }
@@ -324,7 +326,7 @@ class QuestionViewController: UIViewController {
             startTimer.invalidate()
             resultatVrai = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].bonneReponse.count)))
             actionResultat = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].gainPVReponse.count)))
-            themeQuestionActif[QuestionNumber].AlreadyPick = true
+            AlreadyPickGesture()
             switch typeOfQuestion {
             case "Button":
                 for i in 0..<Buttons.count{
@@ -397,11 +399,6 @@ class QuestionViewController: UIViewController {
                 }
                 
                 bonneReponseLabel.text = ("Tu as répondu : \(themeQuestionActif[QuestionNumber].Choice[IntReponse])")
-                if QuestionPose > 12 {
-                    
-                    print(self.oneProfil.dictProfil)
-                    
-                }
                 break
                 
             case "PasLeTime":
@@ -421,12 +418,35 @@ class QuestionViewController: UIViewController {
                 print("Erreur TypeOfQuestion")
                 break
             }
-            QuestionPose += 1
+            idQuestion[themeQuestionActif[QuestionNumber].Topic!]? += 1
             resultatView.isHidden = false
             bonneReponseLabel.isHidden = false
             headerView.lifePointLabel?.text = String("\(self.oneProfil.lifePoint) PV")
             messageSpecialLabel = 1
         }
+    }
+    
+    func AlreadyPickGesture(){
+        switch themeQuestionActif[QuestionNumber].Topic {
+        case "CultureG":
+            TableauCulture[QuestionNumber].AlreadyPick = true
+            break
+        case "Info":
+            TableauInfo[QuestionNumber].AlreadyPick = true
+            break
+        case "Enigme":
+            TableauEnigme[QuestionNumber].AlreadyPick = true
+            break
+        case "Psycho":
+            TableauPsycho[QuestionNumber].AlreadyPick = true
+            break
+        default:
+            fatalError("Problem with AlreadyPick func")
+            break
+        }
+        themeQuestionActif[QuestionNumber].AlreadyPick = true
+        QuestionsComplete[themeQuestionActif[QuestionNumber].IdQuestion].AlreadyPick = themeQuestionActif[QuestionNumber].AlreadyPick
+        QuestionPose += 1
     }
     
     func EndGame(){
@@ -439,7 +459,7 @@ class QuestionViewController: UIViewController {
         QuestionPose = 0
         startTimer.invalidate()
         themeQuestionActif = TableauInfo
-        dialogueLabel.text = "Questions d'informatique sélectionnées"
+        dialogueLabel.text = "Questions d'Informatique sélectionnées"
         themeActif.text = "Culture Informatique"
         for i in 0..<themeQuestionActif.count{
             if themeQuestionActif[i].AlreadyPick == true{
@@ -512,4 +532,14 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    func endQuestion(){
+        self.oneProfil.questionAlreadyPick.removeAll()
+        //print(self.oneProfil.questionAlreadyPick)
+        for question in QuestionsComplete {
+            if question.AlreadyPick == true {
+            self.oneProfil.questionAlreadyPick.append(question.IdQuestion)
+            }
+        }
+        print("one profil : ", self.oneProfil.questionAlreadyPick)
+    }
 }

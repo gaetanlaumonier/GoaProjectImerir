@@ -18,13 +18,17 @@ class ProfilJoueur {
     //Compte le nombre de bonne réponses aux questions (stats)
     var bonneReponseQuiz : Int
     
-    init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String, sceneActuelle : Int, bonneReponseQuiz : Int) {
+    //Stock des questions
+    var questionAlreadyPick : [Int]
+    
+    init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String, sceneActuelle : Int, bonneReponseQuiz : Int, questionAlreadyPick : [Int]) {
         self.name = name
         self.lifePoint = lifePoint
         self.dictProfil = dictProfil
         self.classeJoueur = classeJoueur
         self.sceneActuelle = sceneActuelle
         self.bonneReponseQuiz = bonneReponseQuiz
+        self.questionAlreadyPick = questionAlreadyPick
     }
     
 }

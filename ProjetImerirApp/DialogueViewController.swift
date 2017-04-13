@@ -12,15 +12,21 @@ class DialogueViewController: UIViewController {
     
     @IBOutlet weak var dialogueLabel: UILabel!
     @IBOutlet weak var dialogueView: UIView!
+    @IBOutlet weak var imageBackground: UIImageView!
     
     var AllDialogue = [Dialogue]()
     var DialogueNumber : Int = 0
     var nameTap : Bool = false
     var firstDialogue = true
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0)
+    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
     var serieQuestion : [String:Int] = [:]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.view.alpha = 0
+//        UIView.animate(withDuration: 5, delay: 0, options: .transitionCrossDissolve, animations: {
+//            self.view.alpha = 1
+//        } , completion: nil)
         AllDialogue = buildDialogue()
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         GestionDialogue()
@@ -54,9 +60,12 @@ class DialogueViewController: UIViewController {
     func ChoixClasse(){
         if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "choixClasse") as? ChoiceClasseViewController
         {
-            print("ok2")
-            vc.oneProfil = self.oneProfil
-            present(vc, animated: true, completion: nil)
+            UIView.animate(withDuration: 1, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.view.alpha = 0
+            } , completion: { success in
+                vc.oneProfil = self.oneProfil
+                self.present(vc, animated: false, completion: nil)
+            })
         }else {
             print("Could not instantiate view controller with identifier of type ChoiceClasseTableViewController")
             return
@@ -66,34 +75,80 @@ class DialogueViewController: UIViewController {
     }
     
     func SerieQuestion1(){
-        GestionSerieQuestion(cultureG: 5, info: 5, enigme: 4, psycho: 0)
+        GestionSerieQuestion(CultureG: 5, Info: 5, Enigme: 4, Psycho: 0)
     }
     
     func SerieQuestion2(){
-        GestionSerieQuestion(cultureG: 0, info: 7, enigme: 3, psycho: 5)
+        GestionSerieQuestion(CultureG: 0, Info: 7, Enigme: 3, Psycho: 5)
     }
     
     func SerieQuestion3(){
-        GestionSerieQuestion(cultureG: 5, info: 5, enigme: 3, psycho: 0)
+        GestionSerieQuestion(CultureG: 5, Info: 5, Enigme: 3, Psycho: 0)
     }
     
     func SerieQuestion4(){
-        GestionSerieQuestion(cultureG: 0, info: 0, enigme: 3, psycho: 5)
+        GestionSerieQuestion(CultureG: 0, Info: 0, Enigme: 3, Psycho: 5)
     }
     
-    func GestionSerieQuestion(cultureG :Int, info: Int, enigme: Int, psycho: Int){
-        serieQuestion = ["cultureG" : cultureG, "info": info, "enigme": enigme, "psycho": psycho] as [String:Int]
-        if serieQuestion["enigme"] != 1 {
+    func GestionSerieQuestion(CultureG :Int, Info: Int, Enigme: Int, Psycho: Int){
+        serieQuestion = ["CultureG" : CultureG, "Info": Info, "Enigme": Enigme, "Psycho": Psycho] as [String:Int]
+        if serieQuestion["Enigme"] != 1 {
             if let vc = UIStoryboard(name:"Quiz", bundle:nil).instantiateViewController(withIdentifier: "Question") as? QuestionViewController
             {
                 vc.serieQuestionActive = self.serieQuestion
-                vc.oneProfil = self.oneProfil
-                present(vc, animated: true, completion: nil)
+                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                   self.view.alpha = 0
+                } , completion: { success in
+                    vc.oneProfil = self.oneProfil
+                    self.present(vc, animated: false, completion: nil)
+                })
             }else {
                 print("Could not instantiate view controller with identifier of type QuestionViewController")
                 return
             }
         }
+    }
+    
+    func ArcadeCookieStart(){
+            if let vc = UIStoryboard(name:"ArcadeCookie", bundle:nil).instantiateInitialViewController() as? ViewController
+            {
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.view.alpha = 0
+                } , completion: { success in
+                    vc.oneProfil = self.oneProfil
+                    self.present(vc, animated: false, completion: nil)
+                })
+            }else {
+                print("Could not instantiate view controller with identifier of type ArcadeViewController")
+                return
+        }
+    }
+    
+    func ArcadeRangementStart(){
+        print("ArcadeRangement")
+
+        
+        
+    }
+    
+    func LabyrintheStart(){
+        
+        print("Labyrinthe")
+
+        
+    }
+    
+    func ArcadeConsoleStart(){
+        
+        print("ArcadeConsole")
+
+        
+    }
+    
+    func ArcadeBacStart(){
+        print("ArcadeBac")
+        
+        
     }
     
     func ResultatFirstTest(){
@@ -166,6 +221,20 @@ class DialogueViewController: UIViewController {
                 break
             case "resultatTest":
                 ResultatFirstTest()
+                break
+            case "ArcadeCookie":
+                ArcadeCookieStart()
+            case "ArcadeRangement":
+                ArcadeRangementStart()
+                break
+            case "Labyrinthe":
+                LabyrintheStart()
+                break
+            case "ArcadeConsole":
+                ArcadeConsoleStart()
+                break
+            case "ArcadeBac":
+                ArcadeBacStart()
                 break
             default:
                 dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]

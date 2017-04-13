@@ -14,7 +14,7 @@
         <!--Init View Controller-->
         <scene sceneID="fKK-cv-mZv">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-4Vd-Vn-EX1" id="4Vd-Vn-EX1" customClass="InitViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitController" modalTransitionStyle="crossDissolve" id="4Vd-Vn-EX1" customClass="InitViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uxd-nk-aTg"/>
                         <viewControllerLayoutGuide type="bottom" id="BKK-gC-96s"/>
@@ -110,7 +110,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="tqR-kN-dAE" kind="show" id="aCo-rN-K74"/>
+                                    <segue destination="tqR-kN-dAE" kind="show" identifier="Cookie" id="aCo-rN-K74"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4m-il-ZLc">
@@ -143,11 +143,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="3ri-Uz-tiR" kind="show" id="kRg-w0-dHU"/>
+                                    <segue destination="3ri-Uz-tiR" kind="show" identifier="Rangement" id="kRg-w0-dHU"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" id="2uk-rC-nca"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="48t-bf-GyB"/>
@@ -186,7 +186,7 @@
         <!--Name Modal View Controller-->
         <scene sceneID="jdZ-wy-D1W">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="yyN-R3-Zyy" customClass="NameModalViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="yyN-R3-Zyy" customClass="NameModalViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="kJd-fC-o84">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -253,7 +253,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="Q7s-W0-lYq" kind="show" identifier="newPart" id="LzA-yN-Ffb"/>
+                                                <action selector="startNewGame:" destination="yyN-R3-Zyy" eventType="touchUpInside" id="KSU-Ug-7Oe"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJD-Ih-37X" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
@@ -321,6 +321,7 @@
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="kkl-em-FWo" firstAttribute="centerY" secondItem="28Y-eL-vee" secondAttribute="centerY" id="2Vk-Xd-gc2"/>
                                 <constraint firstItem="kkl-em-FWo" firstAttribute="height" secondItem="28Y-eL-vee" secondAttribute="height" multiplier="0.5" id="3gF-uE-q3z"/>
@@ -343,14 +344,6 @@
             </objects>
             <point key="canvasLocation" x="-988" y="-1253"/>
         </scene>
-        <!--Dialogue-->
-        <scene sceneID="lOt-xh-SF6">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Dialogue" id="Q7s-W0-lYq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fAG-CY-gRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-582" y="-378"/>
-        </scene>
         <!--choixClasse-->
         <scene sceneID="ESi-J1-ttr">
             <objects>
@@ -367,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="-312" y="356"/>
         </scene>
-        <!--UIViewController-h1e-iz-tf4-->
+        <!--ArcadeCookie-->
         <scene sceneID="9wt-QC-aLB">
             <objects>
-                <viewControllerPlaceholder storyboardName="ArcadeCookie" referencedIdentifier="UIViewController-h1e-iz-tf4" id="tqR-kN-dAE" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ArcadeCookie" id="tqR-kN-dAE" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuJ-Hs-6BU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-651" y="1291"/>

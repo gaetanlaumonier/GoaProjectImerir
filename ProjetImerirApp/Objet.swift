@@ -22,7 +22,7 @@ class Objet: UIImageView {
     var rangementView:RangementView!
     var wiggleSpeed:CFTimeInterval! {
         get {
-            return self.rangementView.controller.timeLeft / 10 + 1
+            return self.rangementView.controller.timeLeft / 20 + 1
         }
     }
     

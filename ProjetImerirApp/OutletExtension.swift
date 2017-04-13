@@ -26,17 +26,29 @@ extension UILabel {
         if screenSize.height < 500 {
             calculatedFont = UIFont(name: currentFontName, size: fontSize * 1)
             self.font = calculatedFont
-        } else if screenSize.height < 700{
-            calculatedFont = UIFont(name: currentFontName, size: fontSize + 1.25)
+        } else if screenSize.height < 600{
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.1)
             self.font = calculatedFont
-        } else if screenSize.height < 900 {
+        } else if screenSize.height < 700{
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.3)
+            self.font = calculatedFont
+        } else if screenSize.height < 800 {
             calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.4)
             self.font = calculatedFont
-        } else if screenSize.height < 1100 {
-            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.9)
+        } else if screenSize.height < 900 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.5)
             self.font = calculatedFont
-        } else {
-            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.5)
+        } else if screenSize.height < 1000 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2)
+            self.font = calculatedFont
+        } else if screenSize.height < 1100 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.1)
+            self.font = calculatedFont
+        } else if screenSize.height < 2000 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.4)
+            self.font = calculatedFont
+        }else {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 3)
             self.font = calculatedFont
         }
     }
@@ -72,7 +84,7 @@ extension UIButton {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 1)
             self.titleLabel?.font = calculatedFont!
         } else if screenSize.height < 700{
-            calculatedFont = UIFont(name: currentFontName!, size: fontSize + 1.1)
+            calculatedFont = UIFont(name: currentFontName!, size: fontSize * 1.1)
             self.titleLabel?.font = calculatedFont!
         } else if screenSize.height < 900 {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 1.3)
@@ -80,8 +92,11 @@ extension UIButton {
         } else if screenSize.height < 1100 {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 2.1)
             self.titleLabel?.font = calculatedFont!
-        } else {
+        } else if screenSize.height < 1400 {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 2.5)
+            self.titleLabel?.font = calculatedFont!
+        }else {
+            calculatedFont = UIFont(name: currentFontName!, size: fontSize * 3)
             self.titleLabel?.font = calculatedFont!
         }
     }

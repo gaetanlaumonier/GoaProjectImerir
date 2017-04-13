@@ -13,7 +13,7 @@
         <!--Dialogue View Controller-->
         <scene sceneID="eJB-rY-ave">
             <objects>
-                <viewController storyboardIdentifier="Dialogue" id="NcZ-5p-QcB" customClass="DialogueViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dialogue" modalTransitionStyle="crossDissolve" id="NcZ-5p-QcB" customClass="DialogueViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8fq-ZX-QKp"/>
                         <viewControllerLayoutGuide type="bottom" id="5fq-MJ-lM9"/>
@@ -90,6 +90,7 @@
                     <connections>
                         <outlet property="dialogueLabel" destination="1Q9-OP-NJv" id="wHc-uy-868"/>
                         <outlet property="dialogueView" destination="J2X-Fm-0PV" id="8Ts-Rz-9lf"/>
+                        <outlet property="imageBackground" destination="Xwz-63-idK" id="nYK-d8-obv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccR-ed-HEX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,13 +24,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqL-Am-4R3" userLabel="TimerLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                    <rect key="frame" x="20" y="52" width="112.5" height="52"/>
+                    <rect key="frame" x="20" y="36" width="112.5" height="52"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                    <size key="shadowOffset" width="1" height="1"/>
+                    <size key="shadowOffset" width="2" height="2"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                             <real key="value" value="34"/>
@@ -44,7 +44,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100PV" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOl-6H-Qtl" userLabel="LifeLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                    <rect key="frame" x="177.5" y="52" width="150" height="52"/>
+                    <rect key="frame" x="177.5" y="36" width="150" height="52"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="33"/>
                     <color key="textColor" red="1" green="0.065431795061399733" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -59,17 +59,17 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="mOl-6H-Qtl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="Aof-iD-62o"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.3" id="B7C-qU-L1r"/>
                 <constraint firstItem="ZgU-cs-3AZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="MHy-ck-df6"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="UKz-6O-guN"/>
                 <constraint firstItem="ZgU-cs-3AZ" firstAttribute="leading" secondItem="mOl-6H-Qtl" secondAttribute="trailing" constant="5" id="f1W-t2-xAx"/>
+                <constraint firstItem="vqL-Am-4R3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="gQb-5u-z7F"/>
                 <constraint firstItem="mOl-6H-Qtl" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="gRv-qe-jTz"/>
-                <constraint firstAttribute="bottom" secondItem="mOl-6H-Qtl" secondAttribute="bottom" id="nkl-Ju-smX"/>
                 <constraint firstItem="ZgU-cs-3AZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="o0h-5i-aEP"/>
                 <constraint firstAttribute="trailing" secondItem="ZgU-cs-3AZ" secondAttribute="trailing" constant="5" id="tbW-i8-TRK"/>
                 <constraint firstItem="mOl-6H-Qtl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="yMq-sS-ZdU"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ycb-fU-Whf"/>
-                <constraint firstAttribute="bottom" secondItem="vqL-Am-4R3" secondAttribute="bottom" id="ylJ-5g-YYd"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
