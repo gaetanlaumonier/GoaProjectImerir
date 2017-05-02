@@ -11,6 +11,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var resultatLabel: UILabel!
     @IBOutlet weak var bonneReponseLabel: UILabel!
     @IBOutlet weak var dialogueView: UIView!
+    @IBOutlet weak var answerView: UIView!
     @IBOutlet weak var questionView: UIView!
     @IBOutlet weak var InputAnswer: UITextField!
     @IBOutlet weak var resultatView: UIView!
@@ -49,6 +50,7 @@ class QuestionViewController: UIViewController {
     var multiplicateurFonctionnaire : Float = 1
     
     var serieQuestionActive : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
+    var nbrQuestionSerie : Int = 0
     var endSerie : Bool = false
     var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
     
@@ -56,13 +58,15 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // BackgroundView.loadGif(name: "DirecteurEnd")
-        
+        self.view.alpha = 0
         QuestionsComplete = buildQuestions()
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
-        headerView.timerLabel.textColor = .white
+        headerView.timerLabel.textColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        
+       nbrQuestionSerie = (serieQuestionActive["CultureG"]!.hashValue + serieQuestionActive["Info"]!.hashValue + serieQuestionActive["Enigme"]!.hashValue + serieQuestionActive["Psycho"]!.hashValue)
         
         for number in self.oneProfil.questionAlreadyPick {
             QuestionsComplete[number].AlreadyPick = true
@@ -87,11 +91,18 @@ class QuestionViewController: UIViewController {
                 break
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        answerView.isHidden = false
+        questionView.isHidden = false
         PickQuestion()
+        FonduApparition(myView: self, myDelai: 1)
     }
     
     //Gère les séries de question
     func SerieQuestionGestion(){
+    
         if serieQuestionActive["CultureG"]!>0 && idQuestion["CultureG"]! < serieQuestionActive["CultureG"]!{
             themeQuestionActif = TableauCulture
             themeActif.text = "Culture Générale"
@@ -116,7 +127,7 @@ class QuestionViewController: UIViewController {
                     self.view.alpha = 0
                 } , completion: { success in
                     vc.oneProfil = self.oneProfil
-                    self.endQuestion()
+                    self.saveMyData()
                     self.present(vc, animated: false, completion: nil)
                     //self.dismiss(animated: false, completion: nil)
                     
@@ -128,19 +139,19 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    
-    
     //Rend caché les éléments de l'AnswerView
     func QuestionInit(){
-        for i in 0..<Buttons.count{
-            Buttons[i].isHidden = true
-        }
         saisieReponseLabel.isHidden = true
         InputAnswer.isHidden = true
         inputButtonValidate.isHidden = true
         bonneReponseLabel.isHidden = true
         resultatView.isHidden = true
         reponseTrouverInput = false
+        for i in 0..<Buttons.count{
+            Buttons[i].isHidden = true
+            Buttons[i].center.x = self.view.frame.width + (self.questionView.bounds.width/2 + 10)
+        }
+       
         
     }
     
@@ -178,7 +189,6 @@ class QuestionViewController: UIViewController {
         }else{
             dialogueLabel.text = "Fin de série"
         }
-        EndGame()
     }
     
     //Interprète la classe du joueur
@@ -278,37 +288,54 @@ class QuestionViewController: UIViewController {
     
     //Gère l'affichage des réponses selon le thème
     func formatAnswers(){
-        switch themeQuestionActif[QuestionNumber].TypeOfQuestion{
+        
+        self.questionView.center.x = self.view.frame.width + (self.questionView.bounds.width/2 + 10)
+        UIView.animate(withDuration: 0.25, animations: {
+            self.questionView.center.x = self.view.frame.width/2
+            
+        }, completion : { _ in
+        switch self.themeQuestionActif[self.QuestionNumber].TypeOfQuestion{
         case "Button":
             var choiceArray : [String] = []
-            choiceArray.append(themeQuestionActif[QuestionNumber].Answer!)
-            for i in 0..<themeQuestionActif[QuestionNumber].Choice.count{
-                choiceArray.append(themeQuestionActif[QuestionNumber].Choice[i])
+            choiceArray.append(self.themeQuestionActif[self.QuestionNumber].Answer!)
+            for i in 0..<self.themeQuestionActif[self.QuestionNumber].Choice.count{
+                choiceArray.append(self.themeQuestionActif[self.QuestionNumber].Choice[i])
+                
             }
             choiceArray.sort()
-            
-            for i in 0..<Buttons.count{
-                Buttons[i].isHidden = false
-                
-                Buttons[i].setTitle(choiceArray[i], for :UIControlState.normal)
+            for i in 0..<self.Buttons.count{
+                self.Buttons[i].isHidden = false
+                self.Buttons[i].setTitle(choiceArray[i], for :UIControlState.normal)
+                UIView.animate(withDuration: 0.25, delay : (TimeInterval(i)/4), animations: {
+                    self.Buttons[i].center.x = self.view.frame.width/2
+                })
             }
             break
         case "Input":
-            saisieReponseLabel.isHidden = false
-            InputAnswer.isHidden = false
-            inputButtonValidate.isHidden = false
-            InputAnswer.text = ""
+            self.saisieReponseLabel.isHidden = false
+            self.InputAnswer.isHidden = false
+            self.inputButtonValidate.isHidden = false
+            self.InputAnswer.text = ""
+            UIView.animate(withDuration: 0.5, animations: {
+                self.saisieReponseLabel.center.x = self.view.frame.width/2
+                self.InputAnswer.center.x = self.view.frame.width/2
+                self.inputButtonValidate.center.x = self.view.frame.width/2
+            })
             break
         case "Psycho":
-            for i in 0..<Buttons.count{
-                Buttons[i].isHidden = false
-                Buttons[i].setTitle(themeQuestionActif[QuestionNumber].Choice[i], for :UIControlState.normal)
+            for i in 0..<self.Buttons.count{
+                self.Buttons[i].isHidden = false
+                self.Buttons[i].setTitle(self.themeQuestionActif[self.QuestionNumber].Choice[i], for :UIControlState.normal)
+                UIView.animate(withDuration: 0.25, delay : (TimeInterval(i)/4), animations: {
+                    self.Buttons[i].center.x = self.view.frame.width/2
+                })
             }
             break
         default :
             print("erreur TypeOfQuestion")
             break
         }
+        })
     }
     
     //Gère l'écoulement du temps de question
@@ -340,7 +367,7 @@ class QuestionViewController: UIViewController {
                     VerifNoobFunction()
                 }
                 bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
-                dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions"
+                dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions sur \(nbrQuestionSerie) dans cette série."
                 
                 break
             case "Input":
@@ -358,7 +385,7 @@ class QuestionViewController: UIViewController {
                     VerifNoobFunction()
                 }
                 bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
-                dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions"
+                dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions sur \(nbrQuestionSerie) dans cette série."
                 
                 break
             case "Psycho":
@@ -396,6 +423,8 @@ class QuestionViewController: UIViewController {
                     self.oneProfil.lifePoint -= (themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])! + (self.oneProfil.dictProfil["profil_evil"])!
                     resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int((themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!) + (self.oneProfil.dictProfil["profil_evil"])!) PV."
                     dialogueLabel.text = "Tu as un profil assez diabolique, je ne suis pas sur que tu finira le jeu avec des réponses comme cela"
+                } else {
+                   dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions sur \(nbrQuestionSerie) dans cette série." 
                 }
                 
                 bonneReponseLabel.text = ("Tu as répondu : \(themeQuestionActif[QuestionNumber].Choice[IntReponse])")
@@ -447,12 +476,6 @@ class QuestionViewController: UIViewController {
         themeQuestionActif[QuestionNumber].AlreadyPick = true
         QuestionsComplete[themeQuestionActif[QuestionNumber].IdQuestion].AlreadyPick = themeQuestionActif[QuestionNumber].AlreadyPick
         QuestionPose += 1
-    }
-    
-    func EndGame(){
-        if self.oneProfil.lifePoint < 1 {
-            messageSpecialLabel = 3
-        }
     }
     
     @IBAction func InfoPush(_ sender: UIButton) {
@@ -520,26 +543,19 @@ class QuestionViewController: UIViewController {
             messageSpecialLabel = 0
             PickQuestion()
         }
-        if messageSpecialLabel == 3 {
-            resultatLabel.text = "GAME OVER"
-            dialogueLabel.text = "GAME OVER"
-            headerView.lifePointLabel?.text = "GAME OVER"
-            questionLabel.text = "GAME OVER"
-            bonneReponseLabel.text = "GAME OVER"
-            for i in 0..<Buttons.count{
-                Buttons[i].setTitle("GAME OVER", for: .normal)
-            }
-        }
     }
     
-    func endQuestion(){
+    
+    func saveMyData(){
         self.oneProfil.questionAlreadyPick.removeAll()
-        //print(self.oneProfil.questionAlreadyPick)
         for question in QuestionsComplete {
             if question.AlreadyPick == true {
-            self.oneProfil.questionAlreadyPick.append(question.IdQuestion)
+                self.oneProfil.questionAlreadyPick.append(question.IdQuestion)
             }
         }
-        print("one profil : ", self.oneProfil.questionAlreadyPick)
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+        
     }
 }

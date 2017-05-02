@@ -72,21 +72,22 @@ class NameModalViewController: UIViewController {
         } else if (nameField.text?.characters.count)! < 2 || (nameField.text?.characters.count)! > 12 {
             contrainteLabel.text = "de 2 à 12 lettres maximum !"
         } else {
-        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
         {
-            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                let myPresentingViewController = self.presentingViewController as! InitViewController
-                myPresentingViewController.view.alpha = 0
-                self.view.alpha = 0
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                    let myPresentingViewController = self.presentingViewController as! InitViewController
+                    myPresentingViewController.view.alpha = 0
+                    self.view.alpha = 0
                             } , completion: { success in
-                let namePlayer = self.nameField.text!.capitalizingFirstLetter()
-                self.oneProfil.name = namePlayer
-                vc.oneProfil = self.oneProfil
-                vc.view.alpha = 0
-                self.present(vc, animated: false, completion: nil)
-                                UIView.animate(withDuration: 4, delay: 0, options: .transitionCrossDissolve, animations: {
-                                    vc.view.alpha = 1
-                                }, completion : nil)
+                                let namePlayer = self.nameField.text!.capitalizingFirstLetter()
+                                self.oneProfil.name = namePlayer
+                                vc.oneProfil = self.oneProfil
+                                vc.view.alpha = 0
+                
+                                self.present(vc, animated: false, completion: nil)
+                                    UIView.animate(withDuration: 4, delay: 0, options: .transitionCrossDissolve, animations: {
+                                        vc.view.alpha = 1
+                                    }, completion : nil)
              //   self.dismiss(animated: false, completion: nil)
             })
         }else {

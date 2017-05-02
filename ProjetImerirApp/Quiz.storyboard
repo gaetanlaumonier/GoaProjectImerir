@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u8R-0A-IOh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u8R-0A-IOh">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0C-tI-DYe" userLabel="HeaderView" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="10" width="1024" height="164"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNf-Hd-bqZ" userLabel="AnswerView">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNf-Hd-bqZ" userLabel="AnswerView">
                                 <rect key="frame" x="0.0" y="491.5" width="1024" height="669.5"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-2h-rBR" userLabel="AButton" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
@@ -174,16 +174,16 @@
                                             <action selector="inputButtonValidate:" destination="u8R-0A-IOh" eventType="touchUpInside" id="HZY-oU-MGA"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-tC-gwe" userLabel="TopAMarginView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-tC-gwe" userLabel="TopAMarginView">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="33.5"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egY-3M-pZs" userLabel="TopBMarginView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egY-3M-pZs" userLabel="TopBMarginView">
                                         <rect key="frame" x="0.0" y="168" width="1024" height="26.5"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NW1-wL-mPu" userLabel="TopCMarginView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NW1-wL-mPu" userLabel="TopCMarginView">
                                         <rect key="frame" x="0.0" y="329" width="1024" height="27"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-nC-nXL" userLabel="TopDMarginView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-nC-nXL" userLabel="TopDMarginView">
                                         <rect key="frame" x="0.0" y="490" width="1024" height="27"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-n6-zMy" userLabel="ResultatView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
@@ -436,7 +436,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG9-XH-y1o" userLabel="LabelView">
                                 <rect key="frame" x="0.0" y="174" width="1024" height="348.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-PU-1VW" userLabel="QuestionView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-PU-1VW" userLabel="QuestionView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
                                         <rect key="frame" x="103" y="10" width="819" height="313.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-oZ-LjW" userLabel="ThemeQuestionActif" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
@@ -545,30 +545,28 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="9Wt-gR-U6O" secondAttribute="bottom" id="50h-wZ-tXM"/>
                             <constraint firstItem="XG9-XH-y1o" firstAttribute="width" secondItem="lk0-Lv-VmH" secondAttribute="width" id="52N-hL-r8q"/>
+                            <constraint firstItem="XG9-XH-y1o" firstAttribute="centerX" secondItem="g5P-2Y-N0Q" secondAttribute="centerX" id="CrI-wd-Ppp"/>
                             <constraint firstItem="lk0-Lv-VmH" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" id="Df6-Jm-4tL"/>
                             <constraint firstItem="9Wt-gR-U6O" firstAttribute="top" secondItem="vNf-Hd-bqZ" secondAttribute="bottom" id="JL3-fS-A2R"/>
-                            <constraint firstItem="XG9-XH-y1o" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="NQg-YP-dya"/>
                             <constraint firstItem="XG9-XH-y1o" firstAttribute="height" secondItem="lk0-Lv-VmH" secondAttribute="height" multiplier="0.3" id="ODo-km-Qiw"/>
                             <constraint firstItem="H0C-tI-DYe" firstAttribute="centerX" secondItem="g5P-2Y-N0Q" secondAttribute="centerX" id="Oie-mN-8al"/>
                             <constraint firstAttribute="trailing" secondItem="lk0-Lv-VmH" secondAttribute="trailing" id="OoU-LF-skc"/>
                             <constraint firstItem="lk0-Lv-VmH" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="Rpm-3x-EvE"/>
                             <constraint firstItem="lk0-Lv-VmH" firstAttribute="top" secondItem="g5P-2Y-N0Q" secondAttribute="top" id="S7t-6Z-EiE"/>
+                            <constraint firstItem="vNf-Hd-bqZ" firstAttribute="centerX" secondItem="g5P-2Y-N0Q" secondAttribute="centerX" id="UIH-2L-cWC"/>
                             <constraint firstItem="XG9-XH-y1o" firstAttribute="top" secondItem="H0C-tI-DYe" secondAttribute="bottom" id="Uq7-kg-Fd4"/>
                             <constraint firstItem="H0C-tI-DYe" firstAttribute="height" secondItem="g5P-2Y-N0Q" secondAttribute="height" multiplier="0.12" id="XQF-Yg-Fs3"/>
                             <constraint firstItem="H0C-tI-DYe" firstAttribute="top" secondItem="g5P-2Y-N0Q" secondAttribute="top" constant="10" id="a1U-DJ-3e8"/>
                             <constraint firstItem="9Wt-gR-U6O" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" id="d9R-DU-fbL"/>
-                            <constraint firstAttribute="trailing" secondItem="XG9-XH-y1o" secondAttribute="trailing" id="dkP-6u-4gK"/>
                             <constraint firstItem="9Wt-gR-U6O" firstAttribute="top" secondItem="lk0-Lv-VmH" secondAttribute="bottom" id="kRG-85-fFO"/>
                             <constraint firstItem="9Wt-gR-U6O" firstAttribute="top" secondItem="lk0-Lv-VmH" secondAttribute="bottom" id="kfm-08-PVH"/>
                             <constraint firstItem="vNf-Hd-bqZ" firstAttribute="width" secondItem="lk0-Lv-VmH" secondAttribute="width" id="lQF-0k-vWO"/>
                             <constraint firstItem="H0C-tI-DYe" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" id="mhB-hH-wc8"/>
-                            <constraint firstItem="vNf-Hd-bqZ" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="nMi-bD-CvV"/>
                             <constraint firstItem="lk0-Lv-VmH" firstAttribute="height" secondItem="g5P-2Y-N0Q" secondAttribute="height" multiplier="0.85" id="pC1-9p-Yfo"/>
                             <constraint firstAttribute="trailing" secondItem="9Wt-gR-U6O" secondAttribute="trailing" id="rOL-ix-BTi"/>
                             <constraint firstItem="9Wt-gR-U6O" firstAttribute="leading" secondItem="g5P-2Y-N0Q" secondAttribute="leading" id="rpR-Gb-hRl"/>
                             <constraint firstItem="jQB-PU-1VW" firstAttribute="width" secondItem="g5P-2Y-N0Q" secondAttribute="width" multiplier="0.8" id="ups-g6-kbE"/>
                             <constraint firstItem="vNf-Hd-bqZ" firstAttribute="height" secondItem="g5P-2Y-N0Q" secondAttribute="height" multiplier="0.49" id="yJl-bi-ZhT"/>
-                            <constraint firstAttribute="trailing" secondItem="vNf-Hd-bqZ" secondAttribute="trailing" id="yZD-34-SmC"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="aGt-vM-Sbx" appends="YES" id="LfS-AM-P02"/>
@@ -578,6 +576,7 @@
                     <connections>
                         <outlet property="BackgroundVIew" destination="lk0-Lv-VmH" id="THz-GW-NzF"/>
                         <outlet property="InputAnswer" destination="ZtP-MK-giz" id="vGU-Fa-mPi"/>
+                        <outlet property="answerView" destination="vNf-Hd-bqZ" id="Sy8-YX-MWM"/>
                         <outlet property="bonneReponseLabel" destination="QW2-Uw-r2x" id="fEV-JS-PrP"/>
                         <outlet property="cultureTheme" destination="5pr-cL-hBr" id="8ot-vG-9vn"/>
                         <outlet property="dialogueLabel" destination="Lwf-CX-Pub" id="sjZ-MI-Ntu"/>

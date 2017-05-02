@@ -4,106 +4,140 @@
                  "libelleDialogue": ["...", "\"Réveille toi ", "\"Aller, il faut que je me motive à me lever...\"", "\"Les tests sont dans une heure !\"", "\"Il faut que je me prépare.\"", "\"Ne sois pas en retard !\"", ""],
                  "styleLabel": ["it", "it", "it", "it", "it", "it", "it"],
                  "eventDialogue": ["nil", "NomExcla", "nil", "nil", "nil", "nil","ChoixClasse"],
-                 "BackgroundDialogue": ["Reveil", "png"]
+                 "BackgroundDialogue": ["Reveil", "gif"],
+                 "MusiqueDialogue":"MoonLit"
                  }, {
                  "idDialogue": "1",
                  "libelleDialogue": ["Bienvenu à l'IMÉRIR ", "Vous avez été conviez à participer à notre journée de test.", "Nous allons déterminer votre profil ainsi que votre niveau.", "Des questions de culture générale et d’informatique vont vous être posées aujourd’hui.", "Suivit par quelques énigmes de réflexions logiques.", "J’espère que vous y prendrez plaisir, bon courage !", ""],
                  "eventDialogue": ["NomExcla", "nil", "nil", "nil", "nil","nil", "SerieQuestion1"],
-                 "BackgroundDialogue": ["classe", "gif"]
+                 "BackgroundDialogue": ["SalleDeClasse", "gif"],
+                 "MusiqueDialogue":"BlueRidge"
                  }, {
                  "idDialogue": "2",
                  "libelleDialogue": ["C’est fini !", "Alors voyons voir sa… ","....", "........", "................", "Très bien, vous avez donc répondu juste à ", "3 PV vont vous être accordés par bonne réponse, pour la suite de notre test", "Nous allons désormais passer à l'entretien avec Mr le directeur. ", "Ne vous découragez pas ! ", "Etes vous vraiment prêt pour cela ?", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "resultatTest", "nil", "nil", "nil", "Apparition", "Labyrinthe"],
-                 "BackgroundDialogue": ["classe", "gif"]
+                 "BackgroundDialogue": ["SalleDeClasse", "gif"],
+                 "MusiqueDialogue":"BlueRidge"
                  }, {
                  "idDialogue": "3",
                  "libelleDialogue": ["As tu peur ", "Tu est seul ici... ", "Je suis sûr que tu n'arrivera pas au bout... ", "Essaye quand même... ", "... ", "Trouve la sortie... ", ""],
                  "eventDialogue": ["NomInt", "nil", "nil", "nil", "nil", "nil",  "StartLabyrinthe"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["nil", "nil"],
+                 "MusiqueDialogue":"TheDarkness"
                  }, {
                  "idDialogue": "4",
                  "libelleDialogue": ["\"Que se passe t'il ?\"", "\"Qu'es que je fait la ?\"", "Alors comme sa, on redevient un enfant ? ","Tu te trouve dans le bureau de ton père quand tu était un nourrisson. ", "Quelle plaisir de se retrouver dans son berceau !", "Bref, fini la plaisanterie !", "Tu n’as apparemment pas le niveau requis pour rentrer dans notre école. ", "Je suis sur que tu n’arriverait même pas à manger un gâteau dans le dos de ta propre mère ! ", "Fais tes preuves !", ""],
                  "styleLabel": ["it", "it"],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil","nil", "ArcadeCookie"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["Berceau", "png"],
+                 "MusiqueDialogue":"BedTime"
                  }, {
                  "idDialogue": "5",
                  "libelleDialogue": ["Félicitation nourrisson !", "Cette maman était effrayante... ", "J’ai désormais besoin d’en apprendre plus sur toi et sur ta connaissance. ", "Quelques questions générales sur l’informatique puis des questions de logiques vont suivre. ", "Je terminerai en douceur avec mes 'Questions Bonus'. ", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil","nil", "SerieQuestion2"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["Berceau", "png"],
+                 "MusiqueDialogue":"BedTime"
                  }, {
                  "idDialogue": "6",
                  "libelleDialogue": ["Bon très bien, nous arrivons à avancer.", "Cependant tu dois aussi apprendre l’ordre et la méthodologie.", "Regarde cette chambre !", "Pas fameux tout sa... ", "Aller hop on range !", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil","nil", "ArcadeRangement"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["Berceau", "png"],
+                 "MusiqueDialogue":"BedTime"
                  }, {
                  "idDialogue": "7",
                  "libelleDialogue": ["Voila désormais un espace propice à la réflexion. ", "Un bon développeur sait s'organiser.", "Tu l'apprendra par toi même.", "\"Es-ce que vous pourriez m'expliquer tout ce qui m'arrive depuis ce matin ?\"", "Chut ! Rendors toi !", ""],
                  "styleLabel": ["nil", "nil", "nil", "it"],
                  "eventDialogue": ["nil", "nil", "nil", "nil","nil", "TpChambreAdo"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["Berceau", "png"],
+                 "MusiqueDialogue":"BedTime"
                  }, {
                  "idDialogue": "8",
-                 "libelleDialogue": ["\"Et bien... Ou m'a t'il ammener cette fois ci ?\"", "\"J'ai l'impression que cette histoire va trop loin.\"", "\"Je voulais juste m'inscrire à cette école...\"", "\"Tout ce qui m'arrive est tellement étrange.\"", "\"Et qui est cette homme qui me fait endurer tout cela ?\"", "\"Hé Mais je connait cette endroit !\"", "\"C'est ma chambre quand j'était au lycée !\"", "\"Ne serais-ce pas ma vieille console ?\"", "\"Chouette, je vais faire une partie !\"", ""],
+                 "libelleDialogue": ["\"Et bien... Ou m'a t'il amener cette fois ci ?\"", "\"J'ai l'impression que cette histoire va trop loin.\"", "\"Je voulais juste m'inscrire à cette école...\"", "\"Tout ce qui m'arrive est tellement étrange.\"", "\"Et qui est cette homme qui me fait endurer tout cela ?\"", "\"Hé Mais je connait cette endroit !\"", "\"C'est ma chambre quand j'était au lycée !\"", "\"Ne serais-ce pas ma vieille console ?\"", "\"Chouette, je vais faire une partie !\"", ""],
                  "styleLabel": ["it", "it", "it", "it", "it", "it", "it", "it", "it", "it"],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "ArcadeConsole"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["ChambreAdo", "gif"],
+                 "MusiqueDialogue":"SomeDream"
                  }, {
                  "idDialogue": "9",
                  "libelleDialogue": ["Alors tu t’amuse bien ?", "Tu as un examen à réviser je te rappelle.", "Quelle examen ?", "C'est moi qui pose les questions ici. ", "Contrôle surprise !", ""],
                  "styleLabel": ["nil", "nil", "it"],
                  "eventDialogue": ["nil", "nil", "nil", "nil","nil", "SerieQuestion3"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["ChambreAdo", "gif"],
+                 "MusiqueDialogue":"SomeDream"
                  }, {
                  "idDialogue": "10",
                  "libelleDialogue": ["On est jamais trop bon, tu as encore besoins de révisions.", "\"Mais que voulez vous que je révise bon sang !\"", "Quelle question ", "Le bac bien sur ! ", "\"Le bac ? Vous plaisantez ?\"", "Tu comprendra à la fin si tu en a les compétences.", "Par chance, j'ai ce qu'il te faut pour t'entraîner ", "On est reparti !", ""],
                  "styleLabel": ["nil", "it", "nil", "nil", "it"],
                  "eventDialogue": ["nil", "nil", "NomExcla", "nil", "nil", "nil", "nil","nil", "ArcadeBac"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["ChambreAdo", "gif"],
+                 "MusiqueDialogue":"SomeDream"
                  }, {
                  "idDialogue": "11",
                  "libelleDialogue": ["Tout mes compliments ", "Réviser à une vitesse pareille était prodigieux !", "\"Enfin un compliment... \"", "Dernière ligne droite ! J’ai besoin d’en apprendre plus sur ta personnalité. ", "Répond à ces questions et tu pourra ensuite me prouver que tu est prêt. ", "\"Je vais enfin sortir de ce cauchemar ? Vraiment ?\"", "Rien n'est fait encore, contente toi d'accomplir ce que je te demande.", "\"Alors c'est reparti !\"", ""],
                  "styleLabel": ["nil", "nil", "it", "nil", "nil", "it", "nil", "it", "it"],
                  "eventDialogue": ["NomExcla", "nil", "nil", "nil", "nil", "nil", "nil","nil", "SerieQuestion4"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["ChambreAdo", "gif"],
+                 "MusiqueDialogue":"SomeDream"
                  }, {
                  "idDialogue": "12",
                  "libelleDialogue": ["On y est ", "Tu as fait tes preuves dans différents domaines.", "Tu as répondu à mes questions, et relevé mes défis avec succès. ", "Il est maintenant temps de retenter l’impossible... ", "\"Retenter ? L'impossible ?\"", "Le labyrinthe ! ", "\"Ah non je ne retourne pas là-bas !\"", "Parce que tu crois que tu as le choix ? Hilarant !", "Force et honneur ! Bonne chance.", ""],
                  "styleLabel": ["nil", "nil", "nil", "nil", "it", "nil", "nil", "it", "it"],
                  "eventDialogue": ["NomExcla", "nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "LabyrintheRevange"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["ChambreAdo", "gif"],
+                 "MusiqueDialogue":"SomeDream"
                  }, {
                  "idDialogue": "13",
                  "libelleDialogue": ["\"Driiiiiiiing !! \"", "\"Satané réveil...\"", "\"Qu'es ce que ?!\"", "\"C'était quoi ce rêve ?\"", "\"La silhouette ?\"", "\"L'enfance ?\"", "\"L'examen ?\"", "\"Le Labyrinthe ?\"", "\"Alors tout cela n'était pas réel ?\"", "\"C'était très perturbant en tout cas...\"", "\"Il faut vraiment que j'arrête les tisanes le soir...\"", "\"Hé mais c'est les tests de l'IMÉRIR aujourd'hui ?\"", "\"Allez vite il ne faut pas que je soit en retard !\"", ""],
                  "styleLabel": ["it", "it", "it", "it", "it","it","it","it","it","it","it","it","it", "it"],
-                 "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil", "nil", "MauvaiseFin"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil", "nil", "DialoguesFinaux"],
+                 "BackgroundDialogue": ["Reveil", "gif"],
+                 "MusiqueDialogue":"MoonLit"
                  }, {
                  "idDialogue": "14",
-                 "libelleDialogue": ["Et bien, et bien, qu’avons nous là !", "Une future recrue qui à passer les tests d’admission avec succès !", "Je me présente enfin à vous.", "Je suis le directeur de cette école.", "Je reconnais que ma méthode d’admission peut paraître quelque peu originale.", "Quelque peu originale ?! Vous avez faillit me tuer dans votre labyrinthe !", "Mais vous vous en êtes merveilleusement bien sorti !", "Voyez-vous, J’ai comme qui dirait quelques pouvoirs hérités d’un lointain peuple", "Ces pouvoirs m’ont permis de vous endormir et de vous faire passer ces épreuves dans votre sommeil.", "Je me trouve satisfait de vos résultat et me sens obligé de vous offrir une place dans notre école, avec votre accord.", "\"Comprenez que tout cela est assez perturbant tout de même...\"", "Ne soyez pas perturbé par les récents événements !", "Voyez y plutôt une preuve de notre investissement dans votre futur.", "Les nouvelles technologies sont importantes vous savez, elle nous permettront d’accomplir de grands projets dans quelques années.", "Mais pour le moment, réjouissez vous et bienvenu à l’IMÉRIR !", "\"Devrais-je me rejouir ?...\"", ""],
-                 "styleLabel": ["nil", "nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "it", "it"],
-                 "eventDialogue": ["nil", "ApparitionDirecteur", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "FinNormale"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "libelleDialogue": ["Et bien, et bien, qu’avons nous là !", "Une future recrue qui à passer les tests d’admission avec succès !", "Je me présente enfin à vous.", "Je suis le directeur de cette école.", "Je reconnais que ma méthode d’admission peut paraître quelque peu originale.", "Quelque peu originale ?! Vous avez faillit me tuer dans votre labyrinthe !", "Mais vous vous en êtes merveilleusement bien sorti !", "Voyez-vous, J’ai comme qui dirait quelques pouvoirs hérités d’un lointain peuple", "Ces pouvoirs m’ont permis de vous endormir et de vous faire passer ces épreuves dans votre sommeil.","Je vais de ce pas analyser vos résultats concernant les questions de psychologie...", "....", "........", "................", "Voici pour vos résultats.", "\"Fameux...\"", "Je me trouve satisfait de vos résultat et me sens obligé de vous offrir une place dans notre école, avec votre accord.", "\"Comprenez que tout cela est assez perturbant tout de même...\"", "Ne soyez pas perturbé par les récents événements !", "Voyez y plutôt une preuve de notre investissement dans votre futur.", "Les nouvelles technologies sont importantes vous savez, elle nous permettront d’accomplir de grands projets dans quelques années.", "Mais pour le moment, réjouissez vous et bienvenu à l’IMÉRIR !", "\"Devrais-je me rejouir ?...\"", ""],
+                 "styleLabel": ["nil", "nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "it", "nil", "it", "nil", "nil", "nil","nil", "it", "it"],
+                 "eventDialogue": ["nil", "ApparitionDirecteur", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil", "nil", "nil", "GestionPsycho","nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "nil", "DialoguesFinaux"],
+                 "BackgroundDialogue": ["FinDirecteur", "gif"],
+                 "MusiqueDialogue":"Mountain"
                  }, {
                  "idDialogue": "15",
-                 "libelleDialogue": ["Nous voici arriver au terme de cette aventure ! ", "\"Enfin !\"", "Je tient à me présenter à vous, ", "\"Attendais, mais c'est quoi cette endroit ?\"", "Je suis Xliglak, représentant de la planète Iméros. ", "\"J'ai envie de tomber dans les pommes...\"", "Je suis ce que vous appelez un 'extraterrestre'. ", "Tu as réussit les épreuves que je t’ai confié et prouvé ta valeur envers notre communauté avec une telle aisance ! ", "Cela fait bien longtemps que nous n’avons pas constatés des résultats aussi prodigieux.", "Nous avons fondé l’IMÉRIR il y a bien des années...", "\"Des extraterrestres ont fondés l'IMÉRIR ?\"", "Oui, le but étant de former des humains aux nouvelles technologies.", "Nous affectionnons ce domaine tout particulièrement.", "Cette technologie vous permettra bientôt de communiquer avec notre planète.", "\"Pourquoi moi ? Comment ai je fait tout cela ?\"", "Et bien, voyez vous, nous les Imériens arrivons à vous endormir pour ensuite contrôler vos rêves.", "N’y constatez aucune intrusion intempestives de vos pensées !", "Cependant c’est un moyen comme un autre de recrutement.", "Nous ne rencontrons jamais en personne nos prétendants.", "Seul les plus valheureux ont la chance de parler avec nous.", "\"Tout cela est fabuleux, mais très perturbant, vraiment...\"", "Vous vous en remettrait vite, rassurez vous.", "Nous repèrons un grand potentiel en votre personne.", "Ne paniquez pas, le directeur de l’école est au courant de ce qui se passe.", "Vous verrez qu’il est très sympatique avec ses recrues.", "D’ailleurs vous avez un entretien avec lui si je ne m’abuse ?", "\"Je dois encore passez un entretien ? Pour de vrai cette fois ?\"", "Oui, le test est fini, vous allez retrouvez la réalité.", "L'entretien ne sera qu'un détail dans votre cas.", "Nous vous souhaitons bon courage, futur Imérien, à bientôt peut être.", ""],
-                 "styleLabel": ["nil", "it", "nil", "it", "nil", "it","nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "nil", "it","it"],
-                 "eventDialogue": ["nil", "nil", "ApparitionMartien", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil","nil","nil", "TpDirecteur"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "libelleDialogue": ["Nous voici arriver au terme de cette aventure ! ", "\"Enfin !\"", "Je tient à me présenter à vous, ", "\"Attendais, mais c'est quoi cette endroit ?\"", "Je suis Xliglak, représentant de la planète Iméros. ", "\"J'ai envie de tomber dans les pommes...\"", "Je suis ce que vous appelez un 'extraterrestre'. ", "Tu as réussit les épreuves que je t’ai confié et prouvé ta valeur envers notre communauté avec une telle aisance ! ", "Cela fait bien longtemps que nous n’avons pas constatés des résultats aussi prodigieux.","Je vais de ce pas analyser vos résultats concernant les questions de psychologie...", "....", "........", "................", "Voici pour vos résultats.", "\"Fameux...\"", "Nous avons fondé l’IMÉRIR il y a bien des années...", "\"Des extraterrestres ont fondés l'IMÉRIR ?\"", "Oui, le but étant de former des humains aux nouvelles technologies.", "Nous affectionnons ce domaine tout particulièrement.", "Cette technologie vous permettra bientôt de communiquer avec notre planète.", "\"Pourquoi moi ? Comment ai je fait tout cela ?\"", "Et bien, voyez vous, nous les Imériens arrivons à vous endormir pour ensuite contrôler vos rêves.", "N’y constatez aucune intrusion intempestives de vos pensées !", "Cependant c’est un moyen comme un autre de recrutement.", "Nous ne rencontrons jamais en personne nos prétendants.", "Seul les plus valheureux ont la chance de parler avec nous.", "\"Tout cela est fabuleux, mais très perturbant, vraiment...\"", "Vous vous en remettrait vite, rassurez vous.", "Nous repèrons un grand potentiel en votre personne.", "Ne paniquez pas, le directeur de l’école est au courant de ce qui se passe.", "Vous verrez qu’il est très sympatique avec ses recrues.", "D’ailleurs vous avez un entretien avec lui si je ne m’abuse ?", "\"Je dois encore passez un entretien ? Pour de vrai cette fois ?\"", "Oui, le test est fini, vous allez retrouver la réalité.", "L'entretien ne sera qu'un détail dans votre cas.", "Nous vous souhaitons bon courage, futur Imérien, à bientôt peut être.", ""],
+                 "styleLabel": ["nil", "it", "nil", "it", "nil", "it","nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "it", "nil", "it", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "nil", "it","nil", "nil", "nil", "nil", "nil","it"],
+                 "eventDialogue": ["nil", "nil", "ApparitionMartien", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "GestionPsycho", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil","nil", "nil", "nil", "nil","nil","nil", "DialoguesFinaux"],
+                 "BackgroundDialogue": ["FinMartien", "gif"],
+                 "MusiqueDialogue":"PuzzleGame"
                  }, {
                  "idDialogue": "16",
-                 "libelleDialogue": ["Vous venez de finir le jeu et avez obtenu la fin cohérente.", "Vous pouvait cependant mieux faire, nous invitons à recommencer le jeu avec de meilleur résultat afin d'obtenir de meilleurs chute.", "Merci d'avoir jouer au jeu !", ""],
+                 "libelleDialogue": ["Vous venez de finir le jeu et avez obtenu la fin cohérente.", "Vous pouvait cependant mieux faire, nous invitons à recommencer le jeu avec de meilleur résultat afin d'obtenir de meilleurs fins.", "Merci d'avoir jouer au jeu !", ""],
                  "eventDialogue": ["nil", "nil","nil", "RetourMenu"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["nil", "nil"],
+                 "MusiqueDialogue":""
                  }, {
                  "idDialogue": "17",
-                 "libelleDialogue": ["Vous venez de finir le jeu et avez obtenu la fin surprenante.", "Le directeur est en effet plein de surprise. ", "Vous pouvez cependant encore faire mieux afin de dévoiler tout les secrets de l'école. ", "Nous vous invitons donc à recommencer le jeu avec de meilleurs résultats pour obtenir une meilleure fin. ", "Merci d'avoir jouer au jeu !", ""],
+                 "libelleDialogue": ["Vous venez de finir le jeu et avez obtenu la fin surprenante.", "Le directeur est en effet plein de surprises. ", "Vous pouvez cependant encore faire mieux afin de dévoiler tout les secrets de l'école. ", "Nous vous invitons donc à recommencer le jeu avec de meilleurs résultats pour obtenir une meilleure fin. ", "Merci d'avoir joué au jeu !", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil","nil", "RetourMenu"],
-                 "BackgroundDialogue": ["nil", "nil"]
+                 "BackgroundDialogue": ["nil", "nil"],
+                 "MusiqueDialogue":""
                  }, {
                  "idDialogue": "18",
-                 "libelleDialogue": ["Félicitation ! Vous venez de finir le jeu et avez obtenu la meilleure fin. ", "Vous êtes vraiment fort, ou alors vous avez sûrement recommencer plusieurs fois le jeu. ", "Merci d'avoir jouer au jeu, ce fut un plaisir de le développer !", ""],
+                 "libelleDialogue": ["Félicitation ! Vous venez de finir le jeu et avez obtenu la meilleure fin. ", "Vous êtes vraiment fort, où alors vous avez sûrement recommencé plusieurs fois le jeu. ", "Merci d'avoir joué au jeu, se fut un plaisir de le développer !", ""],
                  "eventDialogue": ["nil", "nil","nil", "RetourMenu"],
-                 "BackgroundDialogue": ["nil", "nil"]
-                 }]
+                 "BackgroundDialogue": ["SalleDirecteur", "gif"],
+                 "MusiqueDialogue":""
+                 }],
+    "Psychologie" : [{
+                     "profil_crieur": ["Une forte tête n'es-ce pas ?", "Vous auriez compris que celui qui hurle le plus fort remporte la partie ?", "On ne vous a jamais dit que vous agaçiez l'immense majorité des personnes que vous fréquentiez ?", "Il faut savoir se détendre, relativiter, analyser, descendre de temps à autre de son piédestral céleste.", "Sachez tirer parti de vos qualités (vous en avez)...", "...et vos défauts (vous en avez aussi), pour maximiser votre réussite.", ""],
+                     
+                     "profil_sociable": ["Quelle profil amical !", "Le bon copain idéal.", "Celui sur qui l'on peut toujours compter, prêt à sauver la veuve et l'orphelin !", "Faite attention de ne pas vous faire marcher dessus.", "Notre école recherche tout les jours des héros comme vous !", "Pensez quand même à ranger votre chambre de temps à autre.", ""],
+                     
+                     "profil_timide": ["Quelle faible profil...", "Vous seriez une personne timide, facilement manipulable par les autres.", "Celui qui crie le plus fort serait donc votre supérieur.", "À trop vouloir échapper au danger, vous allez voir la vie devenir banale, bancal, carcéral, fatal...", "Oh pardon je m'emporte, je suis gentil réellement vous savez ?", "On a toujours besoin de péons dans la société.", ""],
+                     
+                     "profil_innovateur": ["Un génie !", "Innovation, engagement, future, volonté, tel est votre vocabulaire.", "Ne soyez pas effrayé de l'avenir, sachez prendre du recul et analysé calmement chaque situation.", "Croyez en vos rêves, sans vous mettre une pression démesurée.", "Gardez les pieds sur terre, en vous investissants dans vos passions.", "Et votre bonheur futur ne sera qu'exponentiel avec le temps.", ""],
+                     
+                     "profil_evil": ["Je constate aussi un certain profil démoniaque !", "Vous n'hésiteriez apparemment pas à vendre votre propre enfant pour acheter la dernière carte graphique !", "Es-ce une bonne ou une mauvaise chose au final ?", "Je plaisante bien sur, vous ne feriez pas une chose pareille non ?", "Peu importe, avec une mentalité pareil, tu finirez surement majeur de promo puis Président de la République !", "Au passage, ne pensez pas à mettre le chaos dans l'école ou vous aurez affaire à moi.", ""],
+                     
+                     "profil_good": ["Je constate aussi une bonne personne en vous !", "Entre le bien et le mal, votre choix serait rapide.", "La société vous a inculquée de bonnes valeurs et vous les avez gardées.", "Nul doute que votre entourage doit vous apprécier.", "Une vie remplie de petites attentions et de plaisirs sains.", "J'espère quand même que vos petits-enfants penseront à vous appeler plus tard, ce qui vous emplirez de joie.", ""],
+                     
+                     "profil_equal": ["Je constate aussi que vous êtes une personne très équilibrée.", "Vous avez autant de réponses saines que nocives.", "Êtes-vous donc un ange malfaisant ou un démon au coeur sensible ?", "Tellement de choix nous sont toujours imposés...", "Devez-vous regarder le foot avec vos amis ? Préparer à manger pour votre moitié ? Changer la litière du chat ?", "Au final vous n'avez pas à choisir, restez une personne complète et devenez performant sur tout les tableaux !", ""],
+    }]
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FmF-sv-Dxr">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FmF-sv-Dxr">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,33 +10,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Over View Controller-->
         <scene sceneID="wm3-zy-7be">
             <objects>
-                <viewController id="FmF-sv-Dxr" sceneMemberID="viewController">
+                <viewController id="FmF-sv-Dxr" customClass="GameOverViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="it6-fc-RMc"/>
                         <viewControllerLayoutGuide type="bottom" id="WSK-fC-9QT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zdg-nU-Nen">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyI-fN-UIk" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="47" y="150" width="281" height="267"/>
+                                <rect key="frame" x="128" y="360" width="768" height="546"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="46"/>
                                 <color key="textColor" red="1" green="0.0187217119" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="1" green="0.93591099564880498" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="2" height="2"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="38"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXC-gF-Ued" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="93.5" y="437" width="187.5" height="100"/>
+                                <rect key="frame" x="102.5" y="926" width="819" height="205"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Retourner au menu">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.41753251903553301" green="0.41753251903553301" blue="0.41753251903553301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retourMenuButton:" destination="FmF-sv-Dxr" eventType="touchUpInside" id="n2g-re-QVs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,7 +61,7 @@
                             <constraint firstItem="OyI-fN-UIk" firstAttribute="width" secondItem="Zdg-nU-Nen" secondAttribute="width" multiplier="0.75" id="VBc-s5-T6R"/>
                             <constraint firstItem="KXC-gF-Ued" firstAttribute="height" secondItem="Zdg-nU-Nen" secondAttribute="height" multiplier="0.15" id="ehR-PN-JJd"/>
                             <constraint firstItem="KXC-gF-Ued" firstAttribute="top" secondItem="OyI-fN-UIk" secondAttribute="bottom" constant="20" id="uQM-Hb-4GE"/>
-                            <constraint firstItem="KXC-gF-Ued" firstAttribute="width" secondItem="Zdg-nU-Nen" secondAttribute="width" multiplier="0.5" id="yri-9h-nNc"/>
+                            <constraint firstItem="KXC-gF-Ued" firstAttribute="width" secondItem="Zdg-nU-Nen" secondAttribute="width" multiplier="0.8" id="yri-9h-nNc"/>
                         </constraints>
                     </view>
                 </viewController>

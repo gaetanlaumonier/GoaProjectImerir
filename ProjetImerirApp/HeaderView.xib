@@ -14,7 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
             <connections>
                 <outlet property="lifePointLabel" destination="mOl-6H-Qtl" id="Hbb-XS-L5h"/>
-                <outlet property="settingImageView" destination="ZgU-cs-3AZ" id="Bqd-YR-mYZ"/>
+                <outlet property="settingImage" destination="gqS-Gm-FdG" id="TVs-S6-6ul"/>
                 <outlet property="timerLabel" destination="vqL-Am-4R3" id="81e-Uk-Y7W"/>
             </connections>
         </placeholder>
@@ -37,12 +37,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoueCrantée" translatesAutoresizingMaskIntoConstraints="NO" id="ZgU-cs-3AZ">
-                    <rect key="frame" x="332.5" y="10" width="37.5" height="37.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ZgU-cs-3AZ" secondAttribute="height" id="BQS-MN-JDV"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100PV" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOl-6H-Qtl" userLabel="LifeLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
                     <rect key="frame" x="177.5" y="36" width="150" height="52"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="33"/>
@@ -56,18 +50,28 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqS-Gm-FdG" userLabel="Setting" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                    <rect key="frame" x="332.5" y="10" width="37.5" height="37.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="gqS-Gm-FdG" secondAttribute="height" id="4io-Qy-Kw5"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="RoueCrantée"/>
+                    <connections>
+                        <action selector="settingButton:" destination="-1" eventType="touchUpInside" id="HfV-vI-Gdm"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="gqS-Gm-FdG" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="0NU-H8-pK8"/>
+                <constraint firstItem="gqS-Gm-FdG" firstAttribute="leading" secondItem="mOl-6H-Qtl" secondAttribute="trailing" constant="5" id="7mc-je-Ce9"/>
                 <constraint firstItem="mOl-6H-Qtl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="Aof-iD-62o"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.3" id="B7C-qU-L1r"/>
-                <constraint firstItem="ZgU-cs-3AZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="MHy-ck-df6"/>
+                <constraint firstItem="gqS-Gm-FdG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="GOv-2W-7TO"/>
+                <constraint firstAttribute="trailing" secondItem="gqS-Gm-FdG" secondAttribute="trailing" constant="5" id="J7R-BJ-QCP"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="UKz-6O-guN"/>
-                <constraint firstItem="ZgU-cs-3AZ" firstAttribute="leading" secondItem="mOl-6H-Qtl" secondAttribute="trailing" constant="5" id="f1W-t2-xAx"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="gQb-5u-z7F"/>
                 <constraint firstItem="mOl-6H-Qtl" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="gRv-qe-jTz"/>
-                <constraint firstItem="ZgU-cs-3AZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="o0h-5i-aEP"/>
-                <constraint firstAttribute="trailing" secondItem="ZgU-cs-3AZ" secondAttribute="trailing" constant="5" id="tbW-i8-TRK"/>
                 <constraint firstItem="mOl-6H-Qtl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="yMq-sS-ZdU"/>
                 <constraint firstItem="vqL-Am-4R3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ycb-fU-Whf"/>
             </constraints>

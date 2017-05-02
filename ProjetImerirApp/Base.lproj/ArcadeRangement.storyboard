@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2k-9J-wmf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2k-9J-wmf">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,6 +39,12 @@
                                     <constraint firstAttribute="width" secondItem="1MT-6o-Spv" secondAttribute="height" id="y5n-Fc-tc4"/>
                                 </constraints>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleAspectFit" image="Armoire" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Lr-IHh">
+                                <rect key="frame" x="10" y="174" width="342" height="342"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2fb-Lr-IHh" secondAttribute="height" id="UJR-oS-Fxf"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-3P-BDx" userLabel="headerView" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="10" width="1024" height="164"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -54,12 +60,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleAspectFit" image="Armoire" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Lr-IHh">
-                                <rect key="frame" x="10" y="174" width="342" height="342"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2fb-Lr-IHh" secondAttribute="height" id="UJR-oS-Fxf"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -99,6 +99,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKY-12-SAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1284.9609375" y="1680.9663250366032"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="A4T-2x-9Yn">
+            <objects>
+                <pageViewController storyboardIdentifier="RangementPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ieM-ed-aU5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2o-83-Uze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="1132"/>
+        </scene>
+        <!--Content Rangement View Controller-->
+        <scene sceneID="7m8-OX-orO">
+            <objects>
+                <viewController storyboardIdentifier="ContentRangementViewController" id="EA0-gF-s6Y" customClass="ContentRangementViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ma-m1-3V1"/>
+                        <viewControllerLayoutGuide type="bottom" id="3hs-9q-N2u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mrw-6G-3Lq" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <connections>
+                        <outlet property="GamesRulesView" destination="Mrw-6G-3Lq" id="L8E-u2-wgk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oj-J8-Mn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="1979"/>
         </scene>
     </scenes>
     <resources>

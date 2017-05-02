@@ -16,20 +16,27 @@ class DialogueViewController: UIViewController {
     
     var AllDialogue = [Dialogue]()
     var DialogueNumber : Int = 0
+    var ExDialogueNumber : Int = 0
     var nameTap : Bool = false
     var firstDialogue = true
     var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
     var serieQuestion : [String:Int] = [:]
-   
+    var PsychoAnswer = [PsychoDialogue]()
+    var playerProfil : String = ""
+    var goodOrEvil : String = ""
+    var EndGameGesture : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.alpha = 0
-//        UIView.animate(withDuration: 5, delay: 0, options: .transitionCrossDissolve, animations: {
-//            self.view.alpha = 1
-//        } , completion: nil)
+        self.view.alpha = 0
         AllDialogue = buildDialogue()
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         GestionDialogue()
+        GestionBackground()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        FonduApparition(myView: self, myDelai: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,6 +81,10 @@ class DialogueViewController: UIViewController {
 
     }
     
+    func ResultatFirstTest(){
+        dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.bonneReponseQuiz) questions."
+    }
+    
     func SerieQuestion1(){
         GestionSerieQuestion(CultureG: 5, Info: 5, Enigme: 4, Psycho: 0)
     }
@@ -112,7 +123,7 @@ class DialogueViewController: UIViewController {
     func ArcadeCookieStart(){
             if let vc = UIStoryboard(name:"ArcadeCookie", bundle:nil).instantiateInitialViewController() as? ViewController
             {
-                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
                 } , completion: { success in
                     vc.oneProfil = self.oneProfil
@@ -125,8 +136,18 @@ class DialogueViewController: UIViewController {
     }
     
     func ArcadeRangementStart(){
-        print("ArcadeRangement")
-
+        if let vc = UIStoryboard(name:"ArcadeRangement", bundle:nil).instantiateInitialViewController() as? RangementViewController
+        {
+            UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.view.alpha = 0
+            } , completion: { success in
+                vc.oneProfil = self.oneProfil
+                self.present(vc, animated: false, completion: nil)
+            })
+        }else {
+            print("Could not instantiate view controller with identifier of type RangementViewController")
+            return
+        }
         
         
     }
@@ -151,36 +172,115 @@ class DialogueViewController: UIViewController {
         
     }
     
-    func ResultatFirstTest(){
-    dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.bonneReponseQuiz) questions."
+    func GestionEnd(){
+        if self.oneProfil.lifePoint >= 70 {
+            self.oneProfil.sceneActuelle += 2
+        } else if self.oneProfil.lifePoint >= 40 {
+            self.oneProfil.sceneActuelle += 1
+        }
+        EndGameGesture = false
     }
     
+    func DialoguesFinaux(){
+        self.oneProfil.sceneActuelle += 3
+        UIView.animate(withDuration: 5, animations: {
+            self.view.alpha = 0
+        }, completion: { sucess in
+            self.GestionBackground()
+            self.DialogueNumber = 0
+            self.firstDialogue = true
+            self.GestionDialogue()
+            self.FonduApparition(myView: self, myDelai: 1)
+        })
+    }
+    
+    func RetourMenu(){
+        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateInitialViewController() as? InitViewController
+        {
+            UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.view.alpha = 0
+            } , completion: { success in
+                self.present(vc, animated: false, completion: nil)
+            })
+        }else {
+            print("Could not instantiate view controller with identifier of type InitViewController")
+            return
+        }
+    }
+    
+    func PsychoResult(){
+         PsychoAnswer = buildPsychoDialogue()
+         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
+
+            if (self.oneProfil.dictProfil["profil_evil"]?.hashValue)! > (self.oneProfil.dictProfil["profil_good"]?.hashValue)! {
+                goodOrEvil = "profil_evil"
+            } else if (self.oneProfil.dictProfil["profil_evil"]?.hashValue)! < (self.oneProfil.dictProfil["profil_good"]?.hashValue)!{
+                goodOrEvil = "profil_good"
+            } else {
+                goodOrEvil = "profil_equal"
+        }
+        
+        self.oneProfil.dictProfil["profil_evil"] = nil
+        self.oneProfil.dictProfil["profil_good"] = nil
+        
+        for (key, value) in self.oneProfil.dictProfil {
+            if value == self.oneProfil.dictProfil.values.max(){
+                playerProfil = key
+            }
+        }
+        ExDialogueNumber = DialogueNumber + 1
+        DialogueNumber = 0
+        firstDialogue = true
+        
+        print(playerProfil)
+        print(goodOrEvil)
+    }
+
     // MARK: dialogue gesture
     func GestionEnchainementDialogue(){
-        if firstDialogue == false {
-        DialogueNumber += 1
-        if DialogueNumber == AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue.count {
-            //a enlever plus tard
-            if(self.oneProfil.sceneActuelle != 1 || self.oneProfil.sceneActuelle == 5 || self.oneProfil.sceneActuelle == 9 || self.oneProfil.sceneActuelle == 11 || self.oneProfil.sceneActuelle == 0){
-                self.oneProfil.sceneActuelle += 1
-            }
-            DialogueNumber = 0
-            }
-        } else {
-            firstDialogue  = false
+            if EndGameGesture == false {
+                if self.oneProfil.sceneActuelle == 13 && firstDialogue == true {
+                    EndGameGesture = true
+                    GestionEnd()
+                }
+                if firstDialogue == false {
+                    DialogueNumber += 1
+                    if DialogueNumber == AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue.count {
+                        //a enlever plus tard
+                        if(self.oneProfil.sceneActuelle != 1 || self.oneProfil.sceneActuelle == 5 || self.oneProfil.sceneActuelle == 9 || self.oneProfil.sceneActuelle == 11 || self.oneProfil.sceneActuelle == 0){
+                            self.oneProfil.sceneActuelle += 1
+                        }
+                        firstDialogue = true
+                        DialogueNumber = 0
+                    }
+                } else {
+                    firstDialogue  = false
+                }
+                
+            } else {
+                GestionEnd()
         }
     }
     
     func GestionStyleDialogue(){
+        
         if AllDialogue[self.oneProfil.sceneActuelle].styleLabel.isEmpty {
             dialogueLabel.font = UIFont(name: "Futura", size: self.dialogueLabel.font.pointSize)
+            dialogueLabel.textColor = .white
+
         } else {
             if DialogueNumber >= AllDialogue[self.oneProfil.sceneActuelle].styleLabel.count {
                 dialogueLabel.font = UIFont(name: "Futura", size: self.dialogueLabel.font.pointSize)
+                dialogueLabel.textColor = .white
+
             } else if AllDialogue[self.oneProfil.sceneActuelle].styleLabel[DialogueNumber] == "it" {
                 dialogueLabel.font = dialogueLabel.font.withTraits(traits: .traitItalic)
+                dialogueLabel.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+
             } else {
                 dialogueLabel.font = UIFont(name: "Futura", size: self.dialogueLabel.font.pointSize)
+                dialogueLabel.textColor = .white
+
             }
         
         }
@@ -236,6 +336,14 @@ class DialogueViewController: UIViewController {
             case "ArcadeBac":
                 ArcadeBacStart()
                 break
+            case "GestionPsycho":
+                PsychoResult()
+                break
+            case "DialoguesFinaux":
+                DialoguesFinaux()
+                break
+            case "RetourMenu":
+                RetourMenu()
             default:
                 dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
             break
@@ -244,42 +352,87 @@ class DialogueViewController: UIViewController {
             dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         }
     }
-    func GestionDialogue(){
+    
+    func GestionDialoguePsycho(){
         
+        if PsychoAnswer.isEmpty == false {
+        
+        if firstDialogue == false {
+            DialogueNumber += 1
+            
+        } else {
+            firstDialogue  = false
+        }
+        
+            if DialogueNumber >= PsychoAnswer[0].profilEvil.count - 1 && playerProfil != ""{
+                DialogueNumber = 0
+                playerProfil = ""
+            }
+            
+            if playerProfil != "" {
+                switch playerProfil {
+                case "profil_crieur":
+                        dialogueLabel.text = PsychoAnswer[0].profilCrieur[DialogueNumber]
+                    break
+                case "profil_sociable":
+                    dialogueLabel.text = PsychoAnswer[0].profilSociable[DialogueNumber]
+                    break
+                case "profil_timide":
+                    dialogueLabel.text = PsychoAnswer[0].profilTimide[DialogueNumber]
+                    break
+                case "profil_innovateur":
+                    dialogueLabel.text = PsychoAnswer[0].profilInnovateur[DialogueNumber]
+                    break
+                default:
+                    playerProfil = ""
+                    break
+                }
+            }
+        
+            if playerProfil == ""{
+                switch goodOrEvil {
+                case "profil_evil":
+                    dialogueLabel.text = PsychoAnswer[0].profilEvil[DialogueNumber]
+                    break
+                case "profil_good":
+                    dialogueLabel.text = PsychoAnswer[0].profilGood[DialogueNumber]
+                    break
+                case "profil_equal":
+                    dialogueLabel.text = PsychoAnswer[0].profilEqual[DialogueNumber]
+                default:
+                    fatalError("error psycho2 traitment")
+                }
+                if DialogueNumber == PsychoAnswer[0].profilEvil.count - 1{
+                    DialogueNumber = ExDialogueNumber
+                    goodOrEvil = ""
+                    dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
+                }
+            }
+        }
+    }
+    
+    func GestionDialogue(){
+        if goodOrEvil == "" {
             GestionEnchainementDialogue()
             GestionStyleDialogue()
             GestionEventDialogue()
+        } else {
+            GestionDialoguePsycho()
+        }
     }
-//        switch AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber]{
-//        case "nil":
-//            GestionDialogue()
-//            
-//            break
-//            
-//        case "choixClasse":
-//            break
-//
-//        default:
-//            print("Problème avec l'évènement du dialogue")
-//            break
-//        }
-
     
+    func GestionBackground(){
+
+        if AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[1] == "gif"{
+    imageBackground.loadGif(name: AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[0])
+        } else {
+            imageBackground.image = UIImage(named: AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[0])
+        }
+    }
     
     @IBAction func DialogueTap(_ sender: UITapGestureRecognizer) {
         GestionDialogue()
     }
     
-    // MARK: segue gesture
-    
-//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "Quiz" {
-//            let toViewController = segue.destination as! QuestionViewController
-//            toViewController.oneProfil = self.oneProfil
-//            toViewController.serieQuestionActive = self.serieQuestion
-//            //self.dismiss(animated: false, completion: nil)
-//        }
-//     }
  
 }

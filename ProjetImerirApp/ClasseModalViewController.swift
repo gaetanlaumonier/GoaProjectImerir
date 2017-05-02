@@ -26,7 +26,7 @@ class ClasseModalViewController: UIViewController {
     @IBAction func goToDialogue(_ sender: Any) {
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
         {
-            UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+            UIView.animate(withDuration: 1, delay: 0, options: .transitionCrossDissolve, animations: {
                 let myPresentingViewController = self.presentingViewController as! ChoiceClasseViewController
                 myPresentingViewController.view.alpha = 0
                 self.view.alpha = 0

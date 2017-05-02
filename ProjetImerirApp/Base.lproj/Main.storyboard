@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Vd-Vn-EX1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Vd-Vn-EX1">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-Bu-ab5" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="615" width="512" height="137"/>
+                                <rect key="frame" x="256" y="437.5" width="512" height="137"/>
                                 <color key="backgroundColor" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -53,19 +53,21 @@
                                     <segue destination="yyN-R3-Zyy" kind="presentation" identifier="choiceName" id="r1y-L3-Zpd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ImerirApp" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-OW-Qej" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Banale Journée" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-OW-Qej" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
                                 <rect key="frame" x="103" y="80" width="819" height="273"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.41753251899999999" green="0.41753251899999999" blue="0.41753251899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="27"/>
+                                        <real key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-gN-kua" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="802" width="512" height="137"/>
+                                <rect key="frame" x="256" y="968" width="512" height="137"/>
                                 <color key="backgroundColor" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -91,30 +93,55 @@
                                     <segue destination="R4g-lO-tom" kind="show" identifier="testQuiz" id="Xsh-Mh-Xnq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-Ph-VKQ" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="1316" width="99" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.50649360809999999" blue="0.53760114309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="CookieArcade"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-BW-Mo9" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="256" y="614.5" width="512" height="137"/>
+                                <color key="backgroundColor" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Charger une partie">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="tqR-kN-dAE" kind="show" identifier="Cookie" id="aCo-rN-K74"/>
+                                    <action selector="ChargerPartie:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="V62-EZ-uWD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDf-ZF-V2R" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="256" y="791.5" width="512" height="136.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Mode Arcade">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4m-il-ZLc">
-                                <rect key="frame" x="153" y="597" width="140" height="30"/>
+                                <rect key="frame" x="61" y="629" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94443314968498948" green="1" blue="0.024529002761293328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="classe">
@@ -124,26 +151,19 @@
                                     <segue destination="znS-gv-j27" kind="show" identifier="choixClasseSegue" id="3Ib-yD-O5s"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-s1-xZM" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="142" y="1316" width="81" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.50649360809999999" blue="0.53760114309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Rangement"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaQ-mP-7NA" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="30" y="668" width="77" height="30"/>
+                                <state key="normal" title="Game Over"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="3ri-Uz-tiR" kind="show" identifier="Rangement" id="kRg-w0-dHU"/>
+                                    <action selector="gameOver:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="FX7-lV-PsJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,28 +171,35 @@
                         <constraints>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" id="2uk-rC-nca"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="48t-bf-GyB"/>
-                            <constraint firstItem="ETK-s1-xZM" firstAttribute="baseline" secondItem="Jxr-Ph-VKQ" secondAttribute="baseline" id="F21-Wo-abM"/>
+                            <constraint firstItem="SDf-ZF-V2R" firstAttribute="top" secondItem="MXK-BW-Mo9" secondAttribute="bottom" constant="40" id="8WD-Od-pmw"/>
+                            <constraint firstItem="SDf-ZF-V2R" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="Ecj-1H-J3c"/>
+                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="EmL-K9-yFC"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.8" id="HUx-K4-8pj"/>
-                            <constraint firstItem="Jxr-Ph-VKQ" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leadingMargin" id="OaY-ij-ebq"/>
+                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="top" secondItem="R5H-Bu-ab5" secondAttribute="bottom" constant="40" id="LAK-bb-J6c"/>
+                            <constraint firstItem="tyc-gN-kua" firstAttribute="top" secondItem="SDf-ZF-V2R" secondAttribute="bottom" constant="40" id="MFO-Xt-XI1"/>
+                            <constraint firstItem="SaQ-mP-7NA" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leadingMargin" constant="10" id="NI8-hN-f5f"/>
+                            <constraint firstItem="SDf-ZF-V2R" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="P0f-wi-ppd"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="PuU-cX-xRo"/>
+                            <constraint firstItem="SaQ-mP-7NA" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="Sw2-hY-rPr"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.2" id="VMX-Cb-oVS"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Vob-aI-BRH"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="Waa-wW-PPa"/>
+                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="XtX-hc-6sp"/>
+                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="YPT-f2-Jfy"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="a7r-7g-Bfr"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="fDf-Yn-tkM"/>
-                            <constraint firstItem="ETK-s1-xZM" firstAttribute="leading" secondItem="Jxr-Ph-VKQ" secondAttribute="trailing" constant="23" id="fUb-td-26S"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="gUq-mQ-JJf"/>
-                            <constraint firstItem="tyc-gN-kua" firstAttribute="top" secondItem="R5H-Bu-ab5" secondAttribute="bottom" constant="50" id="lpx-GP-oAd"/>
+                            <constraint firstItem="SDf-ZF-V2R" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="ihE-AL-uUc"/>
+                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="lhC-dC-Lsa"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="top" secondItem="uxd-nk-aTg" secondAttribute="bottom" constant="80" id="lyp-li-c6Y"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="mKS-vf-mhg"/>
-                            <constraint firstAttribute="bottom" secondItem="Jxr-Ph-VKQ" secondAttribute="bottom" constant="20" symbolic="YES" id="qRj-yX-aQx"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="rAq-O9-Zuc"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="uFQ-G8-3xX"/>
-                            <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="xwk-kN-lNp"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="DataLoadingButton" destination="MXK-BW-Mo9" id="P6t-j6-FXn"/>
                         <outlet property="MenuBackgroundView" destination="3lF-mz-r9V" id="dTK-rY-SZ0"/>
                         <outlet property="newPartieButton" destination="R5H-Bu-ab5" id="iiz-cU-dfz"/>
                         <outlet property="quizButton" destination="tyc-gN-kua" id="vZ5-JG-yEt"/>
@@ -200,7 +227,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quel est ton nom ?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-tS-f4E" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
                                             <rect key="frame" x="71.5" y="30" width="573.5" height="102.5"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                            <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <size key="shadowOffset" width="1" height="1"/>
@@ -213,7 +240,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez votre nom" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vND-3A-TCc" userLabel="ContrainteLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
                                             <rect key="frame" x="71.5" y="190" width="573.5" height="102.5"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                            <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <size key="shadowOffset" width="1" height="1"/>
@@ -231,7 +258,7 @@
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMx-lC-2jQ" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
                                             <rect key="frame" x="179" y="390" width="358.5" height="102.5"/>
-                                            <color key="backgroundColor" red="0.38122620559999998" green="0.16111875319999999" blue="0.071343979609999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
                                             <state key="normal" title="C'est parti !">
@@ -246,7 +273,7 @@
                                                     <real key="value" value="17"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
@@ -258,7 +285,7 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJD-Ih-37X" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
                                             <rect key="frame" x="250.5" y="502.5" width="215" height="102.5"/>
-                                            <color key="backgroundColor" red="0.38122620559999998" green="0.16111875319999999" blue="0.071343979609999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
                                             <state key="normal" title="Retour">
@@ -273,7 +300,7 @@
                                                     <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
@@ -284,7 +311,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.485485" green="0.203184" blue="0.0925034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.3019008078" green="0.29598118410000002" blue="0.30782043149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="utr-30-AxL" firstAttribute="top" secondItem="vND-3A-TCc" secondAttribute="bottom" constant="15" id="4EO-kU-ye1"/>
                                         <constraint firstItem="vND-3A-TCc" firstAttribute="centerX" secondItem="kkl-em-FWo" secondAttribute="centerX" id="4NA-EL-IWk"/>
@@ -312,7 +339,7 @@
                                             <real key="value" value="30"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="2"/>
@@ -359,38 +386,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6L5-qO-ysy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-312" y="356"/>
-        </scene>
-        <!--ArcadeCookie-->
-        <scene sceneID="9wt-QC-aLB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ArcadeCookie" id="tqR-kN-dAE" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PuJ-Hs-6BU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-651" y="1291"/>
-        </scene>
-        <!--PageViewController-->
-        <scene sceneID="6f9-nb-cst">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PageViewController" storyboardName="ArcadeCookie" referencedIdentifier="PageViewController" id="uwx-lj-idA" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i3V-Ob-yOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-517" y="779"/>
-        </scene>
-        <!--ContentViewController-->
-        <scene sceneID="3HD-A2-2ID">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ContentViewController" storyboardName="ArcadeCookie" referencedIdentifier="ContentViewController" id="GFX-N6-xe3" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ifb-iR-Ygi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="408" y="2107"/>
-        </scene>
-        <!--ArcadeRangement-->
-        <scene sceneID="OJ3-Sx-cPn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ArcadeRangement" id="3ri-Uz-tiR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Wd-G8-kzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1284.9609375" y="1680.9663250366032"/>
         </scene>
     </scenes>
     <resources>

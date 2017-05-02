@@ -17,27 +17,16 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.alpha = 0
-        UIView.animate(withDuration: 1, delay: 0, options: .transitionCrossDissolve, animations: {
-            self.view.alpha = 1
-        } , completion: nil)
         AllClasse = buildClasseJoueur()
+        self.view.alpha = 0
         tableView.allowsSelection = false
-        print(oneProfil.name)
-        print(oneProfil.lifePoint)
-        print(oneProfil.classeJoueur)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        FonduApparition(myView: self, myDelai: 1)
     }
+    
     
     // MARK: - Table view data source
     

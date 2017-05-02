@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2551461E8C0C1400AD0320 /* Silhouette.gif */; };
-		3F2551491E8C0DF300AD0320 /* Maman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2551481E8C0DF300AD0320 /* Maman.gif */; };
 		3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */; };
 		3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844681E488E94001E8ED3 /* AppDelegate.swift */; };
 		3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */; };
@@ -39,18 +38,31 @@
 		3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7EF1E61F21200920808 /* SomeHelp.swift */; };
 		3F28F7F21E61F26600920808 /* RangementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F11E61F26600920808 /* RangementView.swift */; };
 		3F28F7F41E61F27C00920808 /* Objet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F31E61F27C00920808 /* Objet.swift */; };
+		3F323F151E9E7915001490B9 /* GamesRules.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F323F141E9E7915001490B9 /* GamesRules.xib */; };
+		3F323F171E9E7978001490B9 /* GamesRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F323F161E9E7978001490B9 /* GamesRulesView.swift */; };
 		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
+		3F6BFA101E9FA65400C0732F /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */; };
+		3F728DFD1EB08CCA000D3F8A /* ContentRangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */; };
+		3F80C2211EA65FBB006D1430 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */; };
 		3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */; };
 		3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3811E81372C00E342AE /* Quiz.storyboard */; };
 		3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3831E81376900E342AE /* ArcadeCookie.storyboard */; };
 		3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3861E8137B500E342AE /* Dialogue.storyboard */; };
 		3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */; };
+		3FA680281EB87FA10045EA6E /* ChambreAdo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680231EB87FA10045EA6E /* ChambreAdo.gif */; };
+		3FA680291EB87FA10045EA6E /* FinMartien.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680241EB87FA10045EA6E /* FinMartien.gif */; };
+		3FA6802A1EB87FA10045EA6E /* Reveil.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680251EB87FA10045EA6E /* Reveil.gif */; };
+		3FA6802B1EB87FA10045EA6E /* SalleDeClasse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */; };
+		3FA6802C1EB87FA10045EA6E /* SalleDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */; };
+		3FB74A281E96454700D68DB2 /* Maman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FB74A271E96454700D68DB2 /* Maman.gif */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
 		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
 		3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D631E48D65400100027 /* ContentViewController.swift */; };
 		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
+		3FC333291EAA05B700D94B1B /* Parametres.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC333281EAA05B700D94B1B /* Parametres.storyboard */; };
+		3FC3332B1EADEED800D94B1B /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */; };
 		3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +78,6 @@
 
 /* Begin PBXFileReference section */
 		3F2551461E8C0C1400AD0320 /* Silhouette.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Silhouette.gif; sourceTree = "<group>"; };
-		3F2551481E8C0DF300AD0320 /* Maman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Maman.gif; sourceTree = "<group>"; };
 		3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844651E488E94001E8ED3 /* ProjetImerirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetImerirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2844681E488E94001E8ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,18 +112,31 @@
 		3F28F7EF1E61F21200920808 /* SomeHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeHelp.swift; sourceTree = "<group>"; };
 		3F28F7F11E61F26600920808 /* RangementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementView.swift; sourceTree = "<group>"; };
 		3F28F7F31E61F27C00920808 /* Objet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objet.swift; sourceTree = "<group>"; };
+		3F323F141E9E7915001490B9 /* GamesRules.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamesRules.xib; sourceTree = "<group>"; };
+		3F323F161E9E7978001490B9 /* GamesRulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesRulesView.swift; sourceTree = "<group>"; };
 		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
+		3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
+		3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRangementViewController.swift; sourceTree = "<group>"; };
+		3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		3F90A37F1E8136E100E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ChoiseClasse.storyboard; sourceTree = "<group>"; };
 		3F90A3811E81372C00E342AE /* Quiz.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Quiz.storyboard; path = ProjetImerirApp/Quiz.storyboard; sourceTree = "<group>"; };
 		3F90A3841E81376900E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArcadeCookie.storyboard; sourceTree = "<group>"; };
 		3F90A3861E8137B500E342AE /* Dialogue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dialogue.storyboard; path = ProjetImerirApp/Dialogue.storyboard; sourceTree = "<group>"; };
 		3F90A38A1E81382600E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjetImerirApp/Base.lproj/ArcadeRangement.storyboard; sourceTree = "<group>"; };
+		3FA680231EB87FA10045EA6E /* ChambreAdo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ChambreAdo.gif; sourceTree = "<group>"; };
+		3FA680241EB87FA10045EA6E /* FinMartien.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinMartien.gif; sourceTree = "<group>"; };
+		3FA680251EB87FA10045EA6E /* Reveil.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Reveil.gif; sourceTree = "<group>"; };
+		3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SalleDeClasse.gif; sourceTree = "<group>"; };
+		3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SalleDirecteur.gif; sourceTree = "<group>"; };
+		3FB74A271E96454700D68DB2 /* Maman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Maman.gif; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ProjetImerirApp/HeaderView.xib; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
 		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FC333281EAA05B700D94B1B /* Parametres.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Parametres.storyboard; sourceTree = "<group>"; };
+		3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
 		3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,8 +168,8 @@
 				3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */,
 				3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */,
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
-				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
-				3FBD2D651E48D66B00100027 /* ViewController.swift */,
+				3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */,
+				3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -171,6 +195,7 @@
 		3F2844671E488E94001E8ED3 /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3FB74A261E94E84B00D68DB2 /* ArcadeCookie */,
 				3F25514C1E8D176B00AD0320 /* ViewController */,
 				3F90A3881E8137C600E342AE /* Storyboard/Xib */,
 				3F28F7E21E61F0A100920808 /* ArcadeRangement */,
@@ -201,7 +226,12 @@
 			isa = PBXGroup;
 			children = (
 				3F2551461E8C0C1400AD0320 /* Silhouette.gif */,
-				3F2551481E8C0DF300AD0320 /* Maman.gif */,
+				3FB74A271E96454700D68DB2 /* Maman.gif */,
+				3FA680231EB87FA10045EA6E /* ChambreAdo.gif */,
+				3FA680241EB87FA10045EA6E /* FinMartien.gif */,
+				3FA680251EB87FA10045EA6E /* Reveil.gif */,
+				3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */,
+				3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */,
 				3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */,
 			);
 			name = Picture/gif;
@@ -225,6 +255,7 @@
 				3F28448D1E488F23001E8ED3 /* DesignableButton.swift */,
 				3F28448F1E488F30001E8ED3 /* DesignableLabel.swift */,
 				3FB88A671E4F6396007C0BD6 /* HeaderView.swift */,
+				3F323F161E9E7978001490B9 /* GamesRulesView.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -236,6 +267,7 @@
 				3F4EFD731E50DF4900316A2B /* RangementViewController.swift */,
 				3F28F7F11E61F26600920808 /* RangementView.swift */,
 				3F28F7F31E61F27C00920808 /* Objet.swift */,
+				3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */,
 			);
 			name = ArcadeRangement;
 			sourceTree = "<group>";
@@ -265,9 +297,21 @@
 				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
 				3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */,
 				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
+				3F323F141E9E7915001490B9 /* GamesRules.xib */,
+				3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */,
+				3FC333281EAA05B700D94B1B /* Parametres.storyboard */,
 			);
 			name = Storyboard/Xib;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		3FB74A261E94E84B00D68DB2 /* ArcadeCookie */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
+				3FBD2D651E48D66B00100027 /* ViewController.swift */,
+			);
+			name = ArcadeCookie;
 			sourceTree = "<group>";
 		};
 		3FB88A751E52298A007C0BD6 /* Classe */ = {
@@ -364,17 +408,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */,
+				3FC333291EAA05B700D94B1B /* Parametres.storyboard in Resources */,
 				3F2844731E488E94001E8ED3 /* LaunchScreen.storyboard in Resources */,
 				3F2844A61E48B5BE001E8ED3 /* QuestionsImerirApp.json in Resources */,
+				3FA680281EB87FA10045EA6E /* ChambreAdo.gif in Resources */,
 				3F2844A71E48B5BE001E8ED3 /* DataSave.json in Resources */,
+				3FA6802C1EB87FA10045EA6E /* SalleDirecteur.gif in Resources */,
 				3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */,
+				3F323F151E9E7915001490B9 /* GamesRules.xib in Resources */,
 				3F2844701E488E94001E8ED3 /* Assets.xcassets in Resources */,
 				3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */,
+				3FB74A281E96454700D68DB2 /* Maman.gif in Resources */,
+				3FA680291EB87FA10045EA6E /* FinMartien.gif in Resources */,
 				3F2844A51E48B5BE001E8ED3 /* ClasseJoueur.json in Resources */,
 				3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */,
+				3F6BFA101E9FA65400C0732F /* GameOver.storyboard in Resources */,
+				3FA6802B1EB87FA10045EA6E /* SalleDeClasse.gif in Resources */,
 				3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */,
 				3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */,
-				3F2551491E8C0DF300AD0320 /* Maman.gif in Resources */,
+				3FA6802A1EB87FA10045EA6E /* Reveil.gif in Resources */,
 				3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */,
 				3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */,
 				3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */,
@@ -401,10 +453,13 @@
 				3F28F7E61E61F1CF00920808 /* FreezeTime.swift in Sources */,
 				3F2844921E488F94001E8ED3 /* BuildElementApp.swift in Sources */,
 				3F28449C1E48B515001E8ED3 /* InitViewController.swift in Sources */,
+				3F323F171E9E7978001490B9 /* GamesRulesView.swift in Sources */,
 				3F28F7EC1E61F1FB00920808 /* ScoreUp.swift in Sources */,
 				3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */,
 				3F28F7EE1E61F20400920808 /* ScoreDown.swift in Sources */,
 				3F28F7F21E61F26600920808 /* RangementView.swift in Sources */,
+				3FC3332B1EADEED800D94B1B /* ParametresViewController.swift in Sources */,
+				3F80C2211EA65FBB006D1430 /* GameOverViewController.swift in Sources */,
 				3F28F7E41E61F1A800920808 /* Bonus.swift in Sources */,
 				3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */,
 				3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */,
@@ -419,6 +474,7 @@
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
 				3F28F7F41E61F27C00920808 /* Objet.swift in Sources */,
 				3F28F7EA1E61F1ED00920808 /* SlowTime.swift in Sources */,
+				3F728DFD1EB08CCA000D3F8A /* ContentRangementViewController.swift in Sources */,
 				3F28F7E81E61F1E200920808 /* FreezeObjects.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */,

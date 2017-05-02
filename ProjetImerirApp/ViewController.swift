@@ -34,18 +34,18 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     var noob = false
     var geek = false
     var progressDecrease:Float = 0.002
-    
+    var AllClasse = [ClasseJoueur()]
+    var idClasse : Int = 0
     var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[0])
     
     var hfromLeft = true
     var sfromLeft = true
+    var gamePause : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.alpha = 0
-        UIView.animate(withDuration: 5, delay: 0, options: .transitionCrossDissolve, animations: {
-            self.view.alpha = 1
-        } , completion: nil)
+        AllClasse = buildClasseJoueur()
+
         mom.loadGif(name: "Maman")
         gameTimer = Int(gameDurationTotal)
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
@@ -53,12 +53,31 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         cookie.layer.cornerRadius = cookie.frame.size.width/2
         progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         
-        pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie."]
-        pageViewImages = ["Cookie", "Mom","progressBar"]
-        pageViewTitles = ["Le gâteau","La mère","La barre d'humeur"]
-        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Clique sur le cookie quand tu ne voit que ces cheveux.", "Ne laisse pas la jauge se vider."]
+        switch self.oneProfil.classeJoueur{
+            case "Geek":
+            idClasse = 0
+            break
+        case "Noob":
+            idClasse = 1
+            break
+        case "Hacker":
+            idClasse = 2
+            break
+        case "Fonctionnaire":
+            idClasse = 3
+            break
+        case "Personne":
+            idClasse = 4
+            break
+        default:
+            break
+        }
+        pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeCookie as String)"]
+        pageViewImages = ["Cookie", "Mom","progressBar", "\(AllClasse[idClasse].idClasse as String)"]
+        pageViewTitles = ["Le gâteau","La mère","La barre d'humeur", "\(AllClasse[idClasse].idClasse as String)"]
+        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Clique sur le cookie quand tu ne voit que ces cheveux.", "Ne laisse pas la jauge se vider.", ""]
         
-        pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
+        pageViewController = storyboard?.instantiateViewController(withIdentifier: "CookiePageViewController") as! UIPageViewController
         
         pageViewController.dataSource = self
         
@@ -101,6 +120,7 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     
     override func viewDidAppear(_ animated: Bool) {
 //        hideMom()
+      //  FonduApparition(myView: self, myDelai: 1)
     }
     
     func initGame() {
@@ -154,9 +174,8 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
             decreaseTimer.invalidate()
             self.oneProfil.sceneActuelle += 1
             vc.oneProfil = self.oneProfil
+            self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                let myPresentingViewController = self.presentingViewController as! DialogueViewController
-                myPresentingViewController.view.alpha = 0
                 self.view.alpha = 0
             } , completion: { success in
             self.present(vc, animated: false, completion: nil)
@@ -166,18 +185,26 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
             return
         }
     }
+    func saveMyData(){
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+    }
+
     
     func decreaseScoreLoop() {
         decreaseTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.decreaseScore), userInfo: nil, repeats: true)
     }
     
     func decreaseScore() {
+        if gamePause == false {
         if progress >= progressDecrease {
             progress -= progressDecrease
         } else if progress > 0 {
             progress = 0
         }
         updateProgressBar()
+        }
     }
     
     func addGestures() {
@@ -460,7 +487,7 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
             return ContentViewController()
         }
         
-        let vc:ContentViewController = storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+        let vc:ContentViewController = storyboard?.instantiateViewController(withIdentifier: "CookieContentViewController") as! ContentViewController
         
         vc.actualImage = pageViewImages[index]
         vc.actualLabel = pageViewLabels[index]

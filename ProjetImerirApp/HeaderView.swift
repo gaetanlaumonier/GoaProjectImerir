@@ -12,8 +12,33 @@ import UIKit
 
 
     @IBOutlet weak var timerLabel: DesignableLabel!
-    @IBOutlet weak var settingImageView: UIImageView!
 
+    @IBOutlet weak var settingImage: DesignableButton!
+    
+    
+    @IBAction func settingButton(_ sender: UIButton) {
+        
+        
+        if let vc = UIStoryboard(name:"Parametres", bundle:nil).instantiateInitialViewController() as? ParametresViewController
+        {
+            let topController = UIApplication.topViewController()
+                topController?.present(vc, animated: true, completion: nil)
+            
+        } else {
+            print("Could not instantiate view controller with identifier of type ParametresViewController")
+            return
+        }
+    }
+    
+//    @IBAction func settingPush(_ sender: UIButton) {
+//        //settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .selected)
+//        
+//       //settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .focused)
+//
+//        settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .highlighted)
+//     
+//    }
+    
     @IBOutlet weak var lifePointLabel: DesignableLabel!
     override init(frame: CGRect) {
         // 1. setup any properties here
