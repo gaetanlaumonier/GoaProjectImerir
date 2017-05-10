@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class InitViewController: UIViewController {
     
@@ -20,24 +21,20 @@ class InitViewController: UIViewController {
     @IBOutlet weak var headerView: HeaderView!
     
     var oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 50, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker", sceneActuelle : 0, bonneReponseQuiz:0, questionAlreadyPick:[])    
+    var backgroundMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let screenSize = UIScreen.main.bounds.size
         print(screenSize.height)
-
-        //  headerView.lifePointLabel.borderWidth = 10
-//        headerView.timerLabel?.text = "10"
-//        headerView.timerLabel?.isHidden = false
-//        headerView.lifePointLabel?.isHidden = true
-        MenuBackgroundView.loadGif(name: "FinDirecteur")
-//        self.view.addSubview(headerView.timerLabel)
-//        self.view.addSubview(headerView.lifePointLabel)
-
-
+        backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
+        MenuBackgroundView.loadGif(name: "LabSortie")
 
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
 //    override func viewDidAppear(_ animated: Bool) {
 //        if let headerViewComponent = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as? HeaderView {
 //            headerViewComponent.frame = CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height*0.15)
@@ -74,12 +71,15 @@ class InitViewController: UIViewController {
             print("classe", mySaveData.classeJoueur)
             print("questionpick", mySaveData.questionAlreadyPick)
             print("scene", mySaveData.sceneActuelle)
+            bruitageMusicPlayer = GestionBruitage(filename: "Air", volume : 0.8)
 
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
             {
-                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                UIView.animate(withDuration: 4.5, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
+                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
             } , completion: { success in
+                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = mySaveData
                 self.present(vc, animated: false, completion: nil)
             })
@@ -88,6 +88,7 @@ class InitViewController: UIViewController {
             return
             }
         } else {
+            bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
             DataLoadingButton.setTitle("Sauvegarde vide", for: .normal)
         }
     }
@@ -108,9 +109,9 @@ class InitViewController: UIViewController {
 //            toViewController.psychoTheme.isHidden = false
 
         } else if segue.identifier == "choiceName" {
-            oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":4, "profil_sociable" : 4, "profil_timide":4, "profil_innovateur":4, "profil_evil":4, "profil_good":4], classeJoueur : "Hacker", sceneActuelle : 0, bonneReponseQuiz:0, questionAlreadyPick:[])
-            self.dismiss(animated: true, completion: nil)
+           self.oneProfil = ProfilJoueur(name : "myPlayer", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz: 0, questionAlreadyPick:[])
             let toViewController = segue.destination as! NameModalViewController
+            bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
             toViewController.oneProfil = self.oneProfil
 
         } else if segue.identifier == "Rangement"{
@@ -127,10 +128,10 @@ class InitViewController: UIViewController {
                 self.view.alpha = 0
             } , completion: { success in
                 toViewController.oneProfil = self.oneProfil
-            })
+            })} else if segue.identifier == "Credits" {
+    bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+            }
         }
-        
-    }
     
     @IBAction func gameOver(_ sender: Any) {
         var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

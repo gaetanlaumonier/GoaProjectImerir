@@ -1,5 +1,6 @@
 import UIKit
 import ImageIO
+import AVFoundation
 
 //Fichier regroupant les extensions des éléments.
 //Permet d'importer des gifs ou de modifier la taille de police des éléments
@@ -312,10 +313,54 @@ extension UIApplication
 extension UIViewController{
     
     func FonduApparition(myView : UIViewController, myDelai : Int){
-    myView.view.alpha = 0
     UIView.animate(withDuration: TimeInterval(myDelai), animations: {
     myView.view.alpha = 1
     })
+        
     }
     
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func GestionMusic(filename: String) -> AVAudioPlayer{
+        var backgroundMusicPlayer = AVAudioPlayer()
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
+            
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print("Content can not be played")
+            }
+        }else{
+            print("filename is wrong")
+        }
+        
+        backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+        backgroundMusicPlayer.volume = 0
+        backgroundMusicPlayer.setVolume(1, fadeDuration: 1)
+        
+        return backgroundMusicPlayer
+    }
+    func GestionBruitage(filename: String, volume : Float) -> AVAudioPlayer{
+        var backgroundMusicPlayer = AVAudioPlayer()
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
+            
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print("Content can not be played")
+            }
+        }else{
+            print("filename is wrong")
+        }
+        //backgroundMusicPlayer.numberOfLoops = 0
+        backgroundMusicPlayer.volume = volume
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+        
+        return backgroundMusicPlayer
+    }
 }

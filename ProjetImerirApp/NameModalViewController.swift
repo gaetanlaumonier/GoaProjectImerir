@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NameModalViewController: UIViewController {
     
@@ -17,12 +18,14 @@ class NameModalViewController: UIViewController {
     @IBOutlet weak var NameButton: UIButton!
     
     var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz: 0, questionAlreadyPick:[])
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
     }
+    
     
     // MARK: - Navigation
     
@@ -64,40 +67,63 @@ class NameModalViewController: UIViewController {
 
     @IBAction func startNewGame(_ sender: UIButton) {
         
+        let myPresentingViewController = self.presentingViewController as! InitViewController
         let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789éàêèâ")
         if nameField.text?.rangeOfCharacter(from: characterset.inverted) != nil {
             contrainteLabel.text = "Pas de caractères spéciaux !"
+            myPresentingViewController.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
+
         } else if nameField.text == "" {
             contrainteLabel.text = "N'oublie pas de rentrer un nom !"
+            myPresentingViewController.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
         } else if (nameField.text?.characters.count)! < 2 || (nameField.text?.characters.count)! > 12 {
             contrainteLabel.text = "de 2 à 12 lettres maximum !"
+            myPresentingViewController.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
         } else {
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
         {
-                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                    let myPresentingViewController = self.presentingViewController as! InitViewController
-                    myPresentingViewController.view.alpha = 0
-                    self.view.alpha = 0
-                            } , completion: { success in
-                                let namePlayer = self.nameField.text!.capitalizingFirstLetter()
-                                self.oneProfil.name = namePlayer
-                                vc.oneProfil = self.oneProfil
-                                vc.view.alpha = 0
-                
-                                self.present(vc, animated: false, completion: nil)
-                                    UIView.animate(withDuration: 4, delay: 0, options: .transitionCrossDissolve, animations: {
-                                        vc.view.alpha = 1
-                                    }, completion : nil)
+            
+                bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+            myPresentingViewController.bruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.8)
+            myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.nameView.alpha = CGFloat(0)
+                    
+                } , completion: { _ in
+                    UIView.animate(withDuration: 2.5, animations: {
+                                myPresentingViewController.view.alpha = 0
+                                    self.view.alpha = 0
+                                }, completion : { _ in
+                                myPresentingViewController.backgroundMusicPlayer.stop()
+                                    let namePlayer = self.nameField.text!.capitalizingFirstLetter()
+                                     self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":4, "profil_sociable" : 0, "profil_timide":4, "profil_innovateur":0, "profil_evil":4, "profil_good":4], classeJoueur : "Hacker", sceneActuelle : 13, bonneReponseQuiz:20, questionAlreadyPick:[])
+                                    self.oneProfil.name = namePlayer
+                                    self.saveMyData()
+                                    
+                                    vc.oneProfil = self.oneProfil
+                                //    self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+
+                                    self.present(vc, animated: false, completion: nil)
+
+                                })
+                    })
              //   self.dismiss(animated: false, completion: nil)
-            })
-        }else {
+        } else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")
             return
+            }
         }
-    }
     }
     
     @IBAction func dismissButton(_ sender: UIButton) {
+        bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
         self.dismiss(animated: true, completion: nil)
+    }
+
+    func saveMyData(){
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+        
     }
 }

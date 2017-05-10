@@ -6,6 +6,7 @@
 //  Copyright © 2017 Student. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 
 class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -14,19 +15,20 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     var AllClasse = [ClasseJoueur]()
     var buttonSender : Int = 10
     var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle: 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AllClasse = buildClasseJoueur()
         self.view.alpha = 0
+        AllClasse = buildClasseJoueur()
         tableView.allowsSelection = false
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         FonduApparition(myView: self, myDelai: 1)
     }
     
+
     
     // MARK: - Table view data source
     
@@ -60,6 +62,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func ClasseSelected(sender : UIButton){
         buttonSender = sender.tag
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -81,6 +84,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
             let classePlayer = AllClasse[buttonSender].idClasse
             toViewController.classePlayer = classePlayer!
             toViewController.oneProfil = self.oneProfil
+            
         }
     }
     

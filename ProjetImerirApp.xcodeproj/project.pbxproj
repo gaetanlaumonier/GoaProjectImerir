@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F086FBB1EC3532D0021A68E /* BackgroundMartien.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB61EC3532D0021A68E /* BackgroundMartien.gif */; };
+		3F086FBC1EC3532D0021A68E /* Directeur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB71EC3532D0021A68E /* Directeur.gif */; };
+		3F086FBD1EC3532D0021A68E /* Martien1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB81EC3532D0021A68E /* Martien1.gif */; };
+		3F086FBE1EC3532D0021A68E /* Martien2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB91EC3532D0021A68E /* Martien2.gif */; };
+		3F086FC11EC366810021A68E /* DownDraft.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FBF1EC366810021A68E /* DownDraft.mp3 */; };
+		3F086FC21EC366810021A68E /* MadScientist.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FC01EC366810021A68E /* MadScientist.mp3 */; };
+		3F086FC41EC372FE0021A68E /* BackgroundDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FC31EC372FE0021A68E /* BackgroundDirecteur.gif */; };
 		3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2551461E8C0C1400AD0320 /* Silhouette.gif */; };
-		3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */; };
 		3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844681E488E94001E8ED3 /* AppDelegate.swift */; };
 		3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */; };
 		3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F28446C1E488E94001E8ED3 /* Main.storyboard */; };
@@ -41,6 +47,14 @@
 		3F323F151E9E7915001490B9 /* GamesRules.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F323F141E9E7915001490B9 /* GamesRules.xib */; };
 		3F323F171E9E7978001490B9 /* GamesRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F323F161E9E7978001490B9 /* GamesRulesView.swift */; };
 		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
+		3F5342F51EC1FE6900995A06 /* Mountainside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F41EC1FE6900995A06 /* Mountainside.mp3 */; };
+		3F5342F71EC2025500995A06 /* Bedtime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F61EC2025500995A06 /* Bedtime.mp3 */; };
+		3F5342FD1EC2138900995A06 /* Air.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F81EC2138900995A06 /* Air.mp3 */; };
+		3F5342FE1EC2138900995A06 /* Bonus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F91EC2138900995A06 /* Bonus.mp3 */; };
+		3F5342FF1EC2138900995A06 /* Clik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342FA1EC2138900995A06 /* Clik.mp3 */; };
+		3F5343001EC2138900995A06 /* ClikBad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342FB1EC2138900995A06 /* ClikBad.mp3 */; };
+		3F5343011EC2138900995A06 /* ClikGood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342FC1EC2138900995A06 /* ClikGood.mp3 */; };
+		3F5343031EC2163700995A06 /* Lab4voies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F5343021EC2163700995A06 /* Lab4voies.gif */; };
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
 		3F6BFA101E9FA65400C0732F /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */; };
 		3F728DFD1EB08CCA000D3F8A /* ContentRangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */; };
@@ -51,10 +65,19 @@
 		3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3861E8137B500E342AE /* Dialogue.storyboard */; };
 		3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */; };
 		3FA680281EB87FA10045EA6E /* ChambreAdo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680231EB87FA10045EA6E /* ChambreAdo.gif */; };
-		3FA680291EB87FA10045EA6E /* FinMartien.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680241EB87FA10045EA6E /* FinMartien.gif */; };
 		3FA6802A1EB87FA10045EA6E /* Reveil.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680251EB87FA10045EA6E /* Reveil.gif */; };
 		3FA6802B1EB87FA10045EA6E /* SalleDeClasse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */; };
 		3FA6802C1EB87FA10045EA6E /* SalleDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */; };
+		3FA680371EB8E0F30045EA6E /* LabCulDeSac.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6802E1EB8E0F30045EA6E /* LabCulDeSac.gif */; };
+		3FA680381EB8E0F30045EA6E /* LabDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6802F1EB8E0F30045EA6E /* LabDroite.gif */; };
+		3FA680391EB8E0F30045EA6E /* LabFace.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680301EB8E0F30045EA6E /* LabFace.gif */; };
+		3FA6803A1EB8E0F30045EA6E /* LabFaceDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680311EB8E0F30045EA6E /* LabFaceDroite.gif */; };
+		3FA6803B1EB8E0F30045EA6E /* LabFaceGauche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680321EB8E0F30045EA6E /* LabFaceGauche.gif */; };
+		3FA6803C1EB8E0F30045EA6E /* LabGauche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680331EB8E0F30045EA6E /* LabGauche.gif */; };
+		3FA6803D1EB8E0F30045EA6E /* LabGaucheDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680341EB8E0F30045EA6E /* LabGaucheDroite.gif */; };
+		3FA6803E1EB8E0F30045EA6E /* LabSortie.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680351EB8E0F30045EA6E /* LabSortie.gif */; };
+		3FA680621EBA0AF90045EA6E /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA680611EBA0AF90045EA6E /* CreditViewController.swift */; };
+		3FA680641EBA0BDF0045EA6E /* Credit.json in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680631EBA0BDF0045EA6E /* Credit.json */; };
 		3FB74A281E96454700D68DB2 /* Maman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FB74A271E96454700D68DB2 /* Maman.gif */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
@@ -63,6 +86,19 @@
 		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
 		3FC333291EAA05B700D94B1B /* Parametres.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC333281EAA05B700D94B1B /* Parametres.storyboard */; };
 		3FC3332B1EADEED800D94B1B /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */; };
+		3FCABF951EC1CB9A0072BAEB /* BlueRidge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF841EC1CB9A0072BAEB /* BlueRidge.mp3 */; };
+		3FCABF961EC1CB9A0072BAEB /* Bog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF851EC1CB9A0072BAEB /* Bog.mp3 */; };
+		3FCABF971EC1CB9A0072BAEB /* Delivering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF861EC1CB9A0072BAEB /* Delivering.mp3 */; };
+		3FCABF991EC1CB9A0072BAEB /* Fantasy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF881EC1CB9A0072BAEB /* Fantasy.mp3 */; };
+		3FCABF9A1EC1CB9A0072BAEB /* LostJungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF891EC1CB9A0072BAEB /* LostJungle.mp3 */; };
+		3FCABF9C1EC1CB9A0072BAEB /* MistyBog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8B1EC1CB9A0072BAEB /* MistyBog.mp3 */; };
+		3FCABF9D1EC1CB9A0072BAEB /* Moonlit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8C1EC1CB9A0072BAEB /* Moonlit.mp3 */; };
+		3FCABF9E1EC1CB9A0072BAEB /* PuzzleGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8D1EC1CB9A0072BAEB /* PuzzleGame.mp3 */; };
+		3FCABF9F1EC1CB9A0072BAEB /* SodiumVapor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8E1EC1CB9A0072BAEB /* SodiumVapor.mp3 */; };
+		3FCABFA01EC1CB9A0072BAEB /* SomeDreamy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8F1EC1CB9A0072BAEB /* SomeDreamy.mp3 */; };
+		3FCABFA21EC1CB9A0072BAEB /* SurrealChase.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF911EC1CB9A0072BAEB /* SurrealChase.mp3 */; };
+		3FCABFA31EC1CB9A0072BAEB /* TheDarkness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF921EC1CB9A0072BAEB /* TheDarkness.mp3 */; };
+		3FCABFA41EC1CB9A0072BAEB /* TheyreClosing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF931EC1CB9A0072BAEB /* TheyreClosing.mp3 */; };
 		3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +113,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F086FB61EC3532D0021A68E /* BackgroundMartien.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundMartien.gif; sourceTree = "<group>"; };
+		3F086FB71EC3532D0021A68E /* Directeur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Directeur.gif; sourceTree = "<group>"; };
+		3F086FB81EC3532D0021A68E /* Martien1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Martien1.gif; sourceTree = "<group>"; };
+		3F086FB91EC3532D0021A68E /* Martien2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Martien2.gif; sourceTree = "<group>"; };
+		3F086FBF1EC366810021A68E /* DownDraft.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DownDraft.mp3; sourceTree = "<group>"; };
+		3F086FC01EC366810021A68E /* MadScientist.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MadScientist.mp3; sourceTree = "<group>"; };
+		3F086FC31EC372FE0021A68E /* BackgroundDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundDirecteur.gif; sourceTree = "<group>"; };
 		3F2551461E8C0C1400AD0320 /* Silhouette.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Silhouette.gif; sourceTree = "<group>"; };
-		3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844651E488E94001E8ED3 /* ProjetImerirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetImerirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2844681E488E94001E8ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +157,14 @@
 		3F323F141E9E7915001490B9 /* GamesRules.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamesRules.xib; sourceTree = "<group>"; };
 		3F323F161E9E7978001490B9 /* GamesRulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesRulesView.swift; sourceTree = "<group>"; };
 		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
+		3F5342F41EC1FE6900995A06 /* Mountainside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mountainside.mp3; sourceTree = "<group>"; };
+		3F5342F61EC2025500995A06 /* Bedtime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bedtime.mp3; sourceTree = "<group>"; };
+		3F5342F81EC2138900995A06 /* Air.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Air.mp3; sourceTree = "<group>"; };
+		3F5342F91EC2138900995A06 /* Bonus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bonus.mp3; sourceTree = "<group>"; };
+		3F5342FA1EC2138900995A06 /* Clik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clik.mp3; sourceTree = "<group>"; };
+		3F5342FB1EC2138900995A06 /* ClikBad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClikBad.mp3; sourceTree = "<group>"; };
+		3F5342FC1EC2138900995A06 /* ClikGood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClikGood.mp3; sourceTree = "<group>"; };
+		3F5343021EC2163700995A06 /* Lab4voies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Lab4voies.gif; sourceTree = "<group>"; };
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
 		3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
 		3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRangementViewController.swift; sourceTree = "<group>"; };
@@ -125,10 +175,19 @@
 		3F90A3861E8137B500E342AE /* Dialogue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dialogue.storyboard; path = ProjetImerirApp/Dialogue.storyboard; sourceTree = "<group>"; };
 		3F90A38A1E81382600E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjetImerirApp/Base.lproj/ArcadeRangement.storyboard; sourceTree = "<group>"; };
 		3FA680231EB87FA10045EA6E /* ChambreAdo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ChambreAdo.gif; sourceTree = "<group>"; };
-		3FA680241EB87FA10045EA6E /* FinMartien.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinMartien.gif; sourceTree = "<group>"; };
 		3FA680251EB87FA10045EA6E /* Reveil.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Reveil.gif; sourceTree = "<group>"; };
 		3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SalleDeClasse.gif; sourceTree = "<group>"; };
 		3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SalleDirecteur.gif; sourceTree = "<group>"; };
+		3FA6802E1EB8E0F30045EA6E /* LabCulDeSac.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabCulDeSac.gif; sourceTree = "<group>"; };
+		3FA6802F1EB8E0F30045EA6E /* LabDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabDroite.gif; sourceTree = "<group>"; };
+		3FA680301EB8E0F30045EA6E /* LabFace.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFace.gif; sourceTree = "<group>"; };
+		3FA680311EB8E0F30045EA6E /* LabFaceDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFaceDroite.gif; sourceTree = "<group>"; };
+		3FA680321EB8E0F30045EA6E /* LabFaceGauche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFaceGauche.gif; sourceTree = "<group>"; };
+		3FA680331EB8E0F30045EA6E /* LabGauche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabGauche.gif; sourceTree = "<group>"; };
+		3FA680341EB8E0F30045EA6E /* LabGaucheDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabGaucheDroite.gif; sourceTree = "<group>"; };
+		3FA680351EB8E0F30045EA6E /* LabSortie.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabSortie.gif; sourceTree = "<group>"; };
+		3FA680611EBA0AF90045EA6E /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		3FA680631EBA0BDF0045EA6E /* Credit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Credit.json; sourceTree = "<group>"; };
 		3FB74A271E96454700D68DB2 /* Maman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Maman.gif; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ProjetImerirApp/HeaderView.xib; sourceTree = "<group>"; };
@@ -137,6 +196,19 @@
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FC333281EAA05B700D94B1B /* Parametres.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Parametres.storyboard; sourceTree = "<group>"; };
 		3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
+		3FCABF841EC1CB9A0072BAEB /* BlueRidge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlueRidge.mp3; sourceTree = "<group>"; };
+		3FCABF851EC1CB9A0072BAEB /* Bog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bog.mp3; sourceTree = "<group>"; };
+		3FCABF861EC1CB9A0072BAEB /* Delivering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Delivering.mp3; sourceTree = "<group>"; };
+		3FCABF881EC1CB9A0072BAEB /* Fantasy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fantasy.mp3; sourceTree = "<group>"; };
+		3FCABF891EC1CB9A0072BAEB /* LostJungle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LostJungle.mp3; sourceTree = "<group>"; };
+		3FCABF8B1EC1CB9A0072BAEB /* MistyBog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MistyBog.mp3; sourceTree = "<group>"; };
+		3FCABF8C1EC1CB9A0072BAEB /* Moonlit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Moonlit.mp3; sourceTree = "<group>"; };
+		3FCABF8D1EC1CB9A0072BAEB /* PuzzleGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PuzzleGame.mp3; sourceTree = "<group>"; };
+		3FCABF8E1EC1CB9A0072BAEB /* SodiumVapor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SodiumVapor.mp3; sourceTree = "<group>"; };
+		3FCABF8F1EC1CB9A0072BAEB /* SomeDreamy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SomeDreamy.mp3; sourceTree = "<group>"; };
+		3FCABF911EC1CB9A0072BAEB /* SurrealChase.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SurrealChase.mp3; sourceTree = "<group>"; };
+		3FCABF921EC1CB9A0072BAEB /* TheDarkness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheDarkness.mp3; sourceTree = "<group>"; };
+		3FCABF931EC1CB9A0072BAEB /* TheyreClosing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheyreClosing.mp3; sourceTree = "<group>"; };
 		3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +242,7 @@
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
 				3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */,
 				3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */,
+				3FA680611EBA0AF90045EA6E /* CreditViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -178,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				3F2844671E488E94001E8ED3 /* ProjetImerirApp */,
+				3FCABF821EC1CB720072BAEB /* Audio */,
 				3F28447C1E488E94001E8ED3 /* ProjetImerirAppTests */,
 				3F2844661E488E94001E8ED3 /* Products */,
 			);
@@ -228,11 +302,23 @@
 				3F2551461E8C0C1400AD0320 /* Silhouette.gif */,
 				3FB74A271E96454700D68DB2 /* Maman.gif */,
 				3FA680231EB87FA10045EA6E /* ChambreAdo.gif */,
-				3FA680241EB87FA10045EA6E /* FinMartien.gif */,
 				3FA680251EB87FA10045EA6E /* Reveil.gif */,
+				3FA6802E1EB8E0F30045EA6E /* LabCulDeSac.gif */,
+				3FA6802F1EB8E0F30045EA6E /* LabDroite.gif */,
+				3FA680301EB8E0F30045EA6E /* LabFace.gif */,
+				3FA680311EB8E0F30045EA6E /* LabFaceDroite.gif */,
+				3FA680321EB8E0F30045EA6E /* LabFaceGauche.gif */,
+				3F5343021EC2163700995A06 /* Lab4voies.gif */,
+				3FA680331EB8E0F30045EA6E /* LabGauche.gif */,
+				3FA680341EB8E0F30045EA6E /* LabGaucheDroite.gif */,
+				3F086FC31EC372FE0021A68E /* BackgroundDirecteur.gif */,
+				3F086FB61EC3532D0021A68E /* BackgroundMartien.gif */,
+				3F086FB71EC3532D0021A68E /* Directeur.gif */,
+				3F086FB81EC3532D0021A68E /* Martien1.gif */,
+				3F086FB91EC3532D0021A68E /* Martien2.gif */,
+				3FA680351EB8E0F30045EA6E /* LabSortie.gif */,
 				3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */,
 				3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */,
-				3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */,
 			);
 			name = Picture/gif;
 			sourceTree = "<group>";
@@ -244,6 +330,7 @@
 				3F2844A21E48B5BE001E8ED3 /* QuestionsImerirApp.json */,
 				3F2844A31E48B5BE001E8ED3 /* DataSave.json */,
 				3F2844A41E48B5BE001E8ED3 /* Dialogue.json */,
+				3FA680631EBA0BDF0045EA6E /* Credit.json */,
 			);
 			name = Json;
 			sourceTree = "<group>";
@@ -320,6 +407,52 @@
 				3F2844931E488FA3001E8ED3 /* ProfilJoueur.swift */,
 			);
 			name = Classe;
+			sourceTree = "<group>";
+		};
+		3FCABF821EC1CB720072BAEB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3FCABFA61EC1CC3A0072BAEB /* Buitages */,
+				3FCABFA51EC1CBC30072BAEB /* Backgrounds */,
+			);
+			name = Audio;
+			path = ProjetImerirApp;
+			sourceTree = "<group>";
+		};
+		3FCABFA51EC1CBC30072BAEB /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				3F5342F61EC2025500995A06 /* Bedtime.mp3 */,
+				3FCABF841EC1CB9A0072BAEB /* BlueRidge.mp3 */,
+				3FCABF851EC1CB9A0072BAEB /* Bog.mp3 */,
+				3FCABF861EC1CB9A0072BAEB /* Delivering.mp3 */,
+				3FCABF881EC1CB9A0072BAEB /* Fantasy.mp3 */,
+				3FCABF891EC1CB9A0072BAEB /* LostJungle.mp3 */,
+				3FCABF8B1EC1CB9A0072BAEB /* MistyBog.mp3 */,
+				3F086FBF1EC366810021A68E /* DownDraft.mp3 */,
+				3F086FC01EC366810021A68E /* MadScientist.mp3 */,
+				3FCABF8C1EC1CB9A0072BAEB /* Moonlit.mp3 */,
+				3FCABF8D1EC1CB9A0072BAEB /* PuzzleGame.mp3 */,
+				3FCABF8E1EC1CB9A0072BAEB /* SodiumVapor.mp3 */,
+				3FCABF8F1EC1CB9A0072BAEB /* SomeDreamy.mp3 */,
+				3FCABF911EC1CB9A0072BAEB /* SurrealChase.mp3 */,
+				3FCABF921EC1CB9A0072BAEB /* TheDarkness.mp3 */,
+				3FCABF931EC1CB9A0072BAEB /* TheyreClosing.mp3 */,
+				3F5342F41EC1FE6900995A06 /* Mountainside.mp3 */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		3FCABFA61EC1CC3A0072BAEB /* Buitages */ = {
+			isa = PBXGroup;
+			children = (
+				3F5342F81EC2138900995A06 /* Air.mp3 */,
+				3F5342F91EC2138900995A06 /* Bonus.mp3 */,
+				3F5342FA1EC2138900995A06 /* Clik.mp3 */,
+				3F5342FB1EC2138900995A06 /* ClikBad.mp3 */,
+				3F5342FC1EC2138900995A06 /* ClikGood.mp3 */,
+			);
+			name = Buitages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,29 +541,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */,
+				3F086FBB1EC3532D0021A68E /* BackgroundMartien.gif in Resources */,
+				3FA680381EB8E0F30045EA6E /* LabDroite.gif in Resources */,
 				3FC333291EAA05B700D94B1B /* Parametres.storyboard in Resources */,
+				3FCABF9A1EC1CB9A0072BAEB /* LostJungle.mp3 in Resources */,
+				3FCABF9F1EC1CB9A0072BAEB /* SodiumVapor.mp3 in Resources */,
+				3F5343001EC2138900995A06 /* ClikBad.mp3 in Resources */,
+				3F086FC21EC366810021A68E /* MadScientist.mp3 in Resources */,
+				3F5343011EC2138900995A06 /* ClikGood.mp3 in Resources */,
+				3FA6803E1EB8E0F30045EA6E /* LabSortie.gif in Resources */,
 				3F2844731E488E94001E8ED3 /* LaunchScreen.storyboard in Resources */,
 				3F2844A61E48B5BE001E8ED3 /* QuestionsImerirApp.json in Resources */,
+				3F086FBC1EC3532D0021A68E /* Directeur.gif in Resources */,
+				3FA680391EB8E0F30045EA6E /* LabFace.gif in Resources */,
+				3FCABF991EC1CB9A0072BAEB /* Fantasy.mp3 in Resources */,
 				3FA680281EB87FA10045EA6E /* ChambreAdo.gif in Resources */,
+				3FCABFA31EC1CB9A0072BAEB /* TheDarkness.mp3 in Resources */,
 				3F2844A71E48B5BE001E8ED3 /* DataSave.json in Resources */,
+				3FA680641EBA0BDF0045EA6E /* Credit.json in Resources */,
 				3FA6802C1EB87FA10045EA6E /* SalleDirecteur.gif in Resources */,
 				3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */,
+				3F5343031EC2163700995A06 /* Lab4voies.gif in Resources */,
 				3F323F151E9E7915001490B9 /* GamesRules.xib in Resources */,
+				3FA6803A1EB8E0F30045EA6E /* LabFaceDroite.gif in Resources */,
+				3FCABF961EC1CB9A0072BAEB /* Bog.mp3 in Resources */,
+				3F5342FF1EC2138900995A06 /* Clik.mp3 in Resources */,
+				3F5342F71EC2025500995A06 /* Bedtime.mp3 in Resources */,
 				3F2844701E488E94001E8ED3 /* Assets.xcassets in Resources */,
+				3FA6803C1EB8E0F30045EA6E /* LabGauche.gif in Resources */,
+				3FA680371EB8E0F30045EA6E /* LabCulDeSac.gif in Resources */,
 				3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */,
+				3FCABF951EC1CB9A0072BAEB /* BlueRidge.mp3 in Resources */,
+				3F5342FE1EC2138900995A06 /* Bonus.mp3 in Resources */,
 				3FB74A281E96454700D68DB2 /* Maman.gif in Resources */,
-				3FA680291EB87FA10045EA6E /* FinMartien.gif in Resources */,
+				3FCABF9C1EC1CB9A0072BAEB /* MistyBog.mp3 in Resources */,
 				3F2844A51E48B5BE001E8ED3 /* ClasseJoueur.json in Resources */,
-				3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */,
 				3F6BFA101E9FA65400C0732F /* GameOver.storyboard in Resources */,
+				3F086FC11EC366810021A68E /* DownDraft.mp3 in Resources */,
+				3FCABFA41EC1CB9A0072BAEB /* TheyreClosing.mp3 in Resources */,
+				3FCABF971EC1CB9A0072BAEB /* Delivering.mp3 in Resources */,
 				3FA6802B1EB87FA10045EA6E /* SalleDeClasse.gif in Resources */,
+				3FA6803B1EB8E0F30045EA6E /* LabFaceGauche.gif in Resources */,
 				3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */,
+				3F086FBD1EC3532D0021A68E /* Martien1.gif in Resources */,
+				3FCABFA21EC1CB9A0072BAEB /* SurrealChase.mp3 in Resources */,
+				3F086FBE1EC3532D0021A68E /* Martien2.gif in Resources */,
+				3F5342FD1EC2138900995A06 /* Air.mp3 in Resources */,
 				3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */,
+				3F5342F51EC1FE6900995A06 /* Mountainside.mp3 in Resources */,
+				3FA6803D1EB8E0F30045EA6E /* LabGaucheDroite.gif in Resources */,
 				3FA6802A1EB87FA10045EA6E /* Reveil.gif in Resources */,
+				3FCABFA01EC1CB9A0072BAEB /* SomeDreamy.mp3 in Resources */,
+				3F086FC41EC372FE0021A68E /* BackgroundDirecteur.gif in Resources */,
+				3FCABF9E1EC1CB9A0072BAEB /* PuzzleGame.mp3 in Resources */,
 				3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */,
 				3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */,
 				3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */,
 				3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */,
+				3FCABF9D1EC1CB9A0072BAEB /* Moonlit.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +648,7 @@
 				3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
 				3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */,
+				3FA680621EBA0AF90045EA6E /* CreditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

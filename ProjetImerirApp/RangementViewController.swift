@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RangementViewController: UIViewController, UIPageViewControllerDataSource {
 
@@ -44,6 +45,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var pageViewTitles:[String]!
     var pageViewHints:[String]!
     var gamePause : Bool = false
+    var backgroundMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +54,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.text = "\(Int(gameDuration)) s"
         AllClasse = buildClasseJoueur()
-        
+        backgroundMusicPlayer = GestionMusic(filename: "Fantasy")
+
         switch self.oneProfil.classeJoueur{
         case "Geek":
             idClasse = 0
@@ -156,8 +160,10 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 self.view.alpha = 0
             } , completion: { success in
+                self.backgroundMusicPlayer.stop()
                 self.present(vc, animated: false, completion: nil)
             })
         }else {
@@ -572,6 +578,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     }
     
     func hideModal() {
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         for subview in self.view.subviews {
             guard subview is UIVisualEffectView else {
                 continue

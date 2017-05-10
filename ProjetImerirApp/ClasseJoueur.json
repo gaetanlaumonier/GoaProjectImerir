@@ -4,7 +4,7 @@
                      "nomClasse":"Geek Enveloppé",
                      "libelleClasse":"Un geek accro au jeu vidéo. Passe ses journées devant son écran en rêvant de Hentaï et de championnats E-sports.",
                      "pouvoirClasse":"PV augmenté en début de partie (+50%). Effets graphiques dans les jeux.",
-                     "arcadeCookie":"les effets visuelles sont accentués.",
+                     "arcadeCookie":"les effets visuels sont accentués.",
                      "arcadeRangement":"les objets à ranger sont plus gros.",
                      "arcadeConsole":"les éléments cliquable sont plus gros.",
                      "arcadeBac":"",
@@ -18,7 +18,7 @@
                      "arcadeRangement":"les objets mal rangés ont une chance de faire gagner des points.",
                      "arcadeConsole":"",
                      "arcadeBac":"",
-                     "labyrinthe":"moins de pièges sont présents"
+                     "labyrinthe":"moins de pièges sont présents."
                      },{
                      "idClasse":"Hacker",
                      "nomClasse":"Hacker Vicieux",

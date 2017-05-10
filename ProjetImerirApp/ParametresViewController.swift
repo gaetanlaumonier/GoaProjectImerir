@@ -6,12 +6,16 @@
 //  Copyright © 2017 Student. All rights reserved.
 //
 import UIKit
+import AVFoundation
 
 class ParametresViewController: UIViewController {
 
 var myPresentingViewController = UIViewController()
-    
+var bruitageMusicPlayer = AVAudioPlayer()
+
     override func viewDidLoad() {
+        self.view.alpha = 0
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         myPresentingViewController = self.presentingViewController!
                switch myPresentingViewController as UIViewController {
             case is QuestionViewController:
@@ -42,12 +46,44 @@ var myPresentingViewController = UIViewController()
         if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateInitialViewController() as? InitViewController
         {
             myPresentingViewController.view.alpha = 0
-        
-            UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.view.alpha = 0
-            } , completion: { success in
-                self.present(vc, animated: false, completion: nil)
-            })
+            bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+           
+            switch myPresentingViewController as UIViewController {
+            case is QuestionViewController:
+                let presentingViewType = myPresentingViewController as! QuestionViewController
+                 UIView.animate(withDuration: 2.5, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.view.alpha = 0
+                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                 }, completion : { _ in
+                    presentingViewType.backgroundMusicPlayer.stop()
+                    self.present(vc, animated: false)
+                 })
+                break
+            case is ViewController:
+                let presentingViewType = myPresentingViewController as! ViewController
+                 UIView.animate(withDuration: 2.5, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.view.alpha = 0
+                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                 }, completion : { _ in
+                    presentingViewType.backgroundMusicPlayer.stop()
+                    self.present(vc, animated: false)
+                 })
+                break
+            case is RangementViewController:
+                let presentingViewType = myPresentingViewController as! RangementViewController
+                 UIView.animate(withDuration: 2.5, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.view.alpha = 0
+                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                 }, completion : { _ in
+                    presentingViewType.backgroundMusicPlayer.stop()
+                    self.present(vc, animated: false)
+                 })
+                
+                break
+            default:
+                print("No backgroundmusicplayer")
+                break
+            }
         }else {
             print("Could not instantiate view controller with identifier of type InitViewController")
             return
@@ -55,6 +91,7 @@ var myPresentingViewController = UIViewController()
     }
     
     @IBAction func restartButton(_ sender: UIButton) {
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         switch myPresentingViewController as UIViewController {
         case is QuestionViewController:
             let presentingViewType = myPresentingViewController as! QuestionViewController
@@ -83,7 +120,7 @@ var myPresentingViewController = UIViewController()
             break
         }
 
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 //    func headerViewExist(vc : String) -> Bool {

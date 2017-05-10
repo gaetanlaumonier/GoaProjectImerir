@@ -14,6 +14,7 @@ class ProfilJoueur : NSObject, NSCoding{
                     let topController = UIApplication.topViewController()
                     UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
                         topController?.view.alpha = 0
+                        
                     } , completion: { success in
                         topController?.present(vc, animated: false, completion: nil)
                     })

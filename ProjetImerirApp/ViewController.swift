@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControllerDataSource {
     
@@ -41,11 +41,13 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     var hfromLeft = true
     var sfromLeft = true
     var gamePause : Bool = false
+    var backgroundMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AllClasse = buildClasseJoueur()
-
+        backgroundMusicPlayer = GestionMusic(filename: "MadScientist")
         mom.loadGif(name: "Maman")
         gameTimer = Int(gameDurationTotal)
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
@@ -75,7 +77,7 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
         pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeCookie as String)"]
         pageViewImages = ["Cookie", "Mom","progressBar", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Le gâteau","La mère","La barre d'humeur", "\(AllClasse[idClasse].idClasse as String)"]
-        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Clique sur le cookie quand tu ne voit que ces cheveux.", "Ne laisse pas la jauge se vider.", ""]
+        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Clique sur le cookie quand tu ne voit que ses cheveux.", "Ne laisse pas la jauge se vider.", ""]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "CookiePageViewController") as! UIPageViewController
         
@@ -176,8 +178,10 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 self.view.alpha = 0
             } , completion: { success in
+                self.backgroundMusicPlayer.stop()
             self.present(vc, animated: false, completion: nil)
             })
         }else {
@@ -462,6 +466,7 @@ class ViewController: UIViewController, CAAnimationDelegate, UIPageViewControlle
     }
     
     func hideModal() {
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
             for subview in self.view.subviews {
                 guard subview is UIVisualEffectView else {
                     continue

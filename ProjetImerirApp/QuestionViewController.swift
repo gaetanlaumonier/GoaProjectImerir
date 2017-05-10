@@ -1,5 +1,6 @@
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     
@@ -53,19 +54,22 @@ class QuestionViewController: UIViewController {
     var nbrQuestionSerie : Int = 0
     var endSerie : Bool = false
     var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
+    var backgroundMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
         super.viewDidLoad()
         // BackgroundView.loadGif(name: "DirecteurEnd")
         self.view.alpha = 0
+        QuestionMusicGesture()
         QuestionsComplete = buildQuestions()
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.textColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
-        
+
        nbrQuestionSerie = (serieQuestionActive["CultureG"]!.hashValue + serieQuestionActive["Info"]!.hashValue + serieQuestionActive["Enigme"]!.hashValue + serieQuestionActive["Psycho"]!.hashValue)
         
         for number in self.oneProfil.questionAlreadyPick {
@@ -125,11 +129,12 @@ class QuestionViewController: UIViewController {
                 self.oneProfil.sceneActuelle += 1
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
+                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
                 } , completion: { success in
+                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.saveMyData()
                     self.present(vc, animated: false, completion: nil)
-                    //self.dismiss(animated: false, completion: nil)
                     
                 })
             }else {
@@ -361,9 +366,11 @@ class QuestionViewController: UIViewController {
                     Buttons[i].isHidden = true
                 }
                 if(stringReponse == themeQuestionActif[QuestionNumber].Answer){
+                    bruitageMusicPlayer = GestionBruitage(filename: "ClikGood", volume : 0.8)
                     resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
                     self.oneProfil.bonneReponseQuiz += 1
                 } else {
+                    bruitageMusicPlayer = GestionBruitage(filename: "ClikBad", volume : 1)
                     VerifNoobFunction()
                 }
                 bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
@@ -379,11 +386,15 @@ class QuestionViewController: UIViewController {
                         resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
                         reponseTrouverInput = true
                         self.oneProfil.bonneReponseQuiz += 1
+                        bruitageMusicPlayer = GestionBruitage(filename: "ClikGood", volume : 0.8)
+
                     }
                 }
                 if reponseTrouverInput == false {
                     VerifNoobFunction()
+                    bruitageMusicPlayer = GestionBruitage(filename: "ClikBad", volume : 1)
                 }
+                
                 bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
                 dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions sur \(nbrQuestionSerie) dans cette série."
                 
@@ -435,6 +446,7 @@ class QuestionViewController: UIViewController {
                     Buttons[i].setTitle("", for :UIControlState.normal)
                     Buttons[i].isHidden = true
                 }
+                bruitageMusicPlayer = GestionBruitage(filename: "ClikBad", volume : 1)
                 InputAnswer.isHidden = true
                 saisieReponseLabel.isHidden = true
                 inputButtonValidate.isHidden = true
@@ -557,5 +569,13 @@ class QuestionViewController: UIViewController {
         maData.appendPathComponent("saveGame")
         NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
         
+    }
+    
+    func QuestionMusicGesture(){
+        if self.oneProfil.sceneActuelle >= 1 && self.oneProfil.sceneActuelle <= 5 {
+            backgroundMusicPlayer = GestionMusic(filename: "Bog")
+        } else {
+            backgroundMusicPlayer = GestionMusic(filename: "SodiumVapor")
+        }
     }
 }

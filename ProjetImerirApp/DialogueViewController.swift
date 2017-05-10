@@ -5,7 +5,7 @@
 //  Created by Student on 02/02/2017.
 //  Copyright © 2017 Student. All rights reserved.
 //
-
+import AVFoundation
 import UIKit
 
 class DialogueViewController: UIViewController {
@@ -25,6 +25,10 @@ class DialogueViewController: UIViewController {
     var playerProfil : String = ""
     var goodOrEvil : String = ""
     var EndGameGesture : Bool = false
+    var backgroundMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer = AVAudioPlayer()
+    var tapEnable : Bool = false
+    var personnages = [UIImageView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +37,13 @@ class DialogueViewController: UIViewController {
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         GestionDialogue()
         GestionBackground()
+        backgroundMusicPlayer = GestionMusic(filename: AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         FonduApparition(myView: self, myDelai: 1)
+        tapEnable = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +58,7 @@ class DialogueViewController: UIViewController {
         guard AllDialogue[self.oneProfil.sceneActuelle].styleLabel.isEmpty  else {
             guard DialogueNumber >= AllDialogue[self.oneProfil.sceneActuelle].styleLabel.count else {
              if AllDialogue[self.oneProfil.sceneActuelle].styleLabel[DialogueNumber] == "it" {
-                dialogueLabel.text? += "\""
+                dialogueLabel.text? += " \""
                 }
                 return
             }
@@ -79,6 +86,43 @@ class DialogueViewController: UIViewController {
         }
  
 
+    }
+    
+    func ApparitionSilhouette(){
+        backgroundMusicPlayer = GestionMusic(filename: "DownDraft")
+        backgroundMusicPlayer.numberOfLoops = 0
+        ApparitionPersonnage(namePersonnage: "Silhouette", fadeInDelay: 8, myTag: 0, taille : 0.75)
+        
+    }
+    
+    func ApparitionPersonnage(namePersonnage : String, fadeInDelay : TimeInterval, myTag : Int, taille : CGFloat){
+        
+        print(personnages.isEmpty)
+     //   if personnages.isEmpty == false {
+            tapEnable = false
+            dialogueView.layer.zPosition = 100
+            let personnage = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            personnages.append(personnage)
+            personnages[myTag].loadGif(name: namePersonnage)
+            personnages[myTag].alpha = 0
+            view.addSubview(personnages[myTag])
+            personnages[myTag].translatesAutoresizingMaskIntoConstraints = false
+            
+            view.addConstraints([
+                NSLayoutConstraint(item: personnages[myTag], attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: personnages[myTag], attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: taille, constant: 0)
+                
+                ])
+            view.addConstraints([
+                NSLayoutConstraint(item: personnages[myTag], attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: taille, constant: 0),
+                NSLayoutConstraint(item: personnages[myTag], attribute: .bottomMargin, relatedBy: .equal, toItem: dialogueView, attribute: .top, multiplier: 1, constant: +20)
+                ])
+            UIView.animate(withDuration: fadeInDelay, animations: {
+                self.personnages[myTag].alpha = 1
+            }, completion : { _ in
+                self.tapEnable = true
+            })
+   //     }
     }
     
     func ResultatFirstTest(){
@@ -109,7 +153,9 @@ class DialogueViewController: UIViewController {
                 vc.serieQuestionActive = self.serieQuestion
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                    self.view.alpha = 0
+                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 } , completion: { success in
+                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.present(vc, animated: false, completion: nil)
                 })
@@ -125,7 +171,9 @@ class DialogueViewController: UIViewController {
             {
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
+                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 } , completion: { success in
+                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.present(vc, animated: false, completion: nil)
                 })
@@ -140,7 +188,9 @@ class DialogueViewController: UIViewController {
         {
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
+                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
             } , completion: { success in
+                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 self.present(vc, animated: false, completion: nil)
             })
@@ -153,7 +203,8 @@ class DialogueViewController: UIViewController {
     }
     
     func LabyrintheStart(){
-        
+        //silhouette.removeFromSuperview()
+
         print("Labyrinthe")
 
         
@@ -181,11 +232,40 @@ class DialogueViewController: UIViewController {
         EndGameGesture = false
     }
     
+    func ApparitionDirecteur(){
+         dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])"
+        UIView.animate(withDuration: 10, animations: {
+            self.personnages[0].alpha = 0
+            self.ApparitionPersonnage(namePersonnage: "Directeur", fadeInDelay: 10, myTag: 1, taille: 0.5)
+        }, completion : { _ in
+        self.personnages[0].removeFromSuperview()
+        })
+    }
+    
+    func ApparitionMartien(){
+        dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])"
+        UIView.animate(withDuration: 10, animations: {
+            self.personnages[0].alpha = 0
+            self.ApparitionPersonnage(namePersonnage: "Martien1", fadeInDelay: 10, myTag: 1, taille: 0.75)
+        }, completion : { _ in
+            self.personnages[0].removeFromSuperview()
+        })
+    }
+    
+    func CorrectAnswer(){
+         dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.bonneReponseQuiz) questions de quiz sur 40."
+    }
+    
     func DialoguesFinaux(){
         self.oneProfil.sceneActuelle += 3
         UIView.animate(withDuration: 5, animations: {
             self.view.alpha = 0
+            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
         }, completion: { sucess in
+            for obj in self.personnages {
+                obj.removeFromSuperview()
+            }
+            self.backgroundMusicPlayer.stop()
             self.GestionBackground()
             self.DialogueNumber = 0
             self.firstDialogue = true
@@ -244,6 +324,7 @@ class DialogueViewController: UIViewController {
                     GestionEnd()
                 }
                 if firstDialogue == false {
+                    bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume: 0.5)
                     DialogueNumber += 1
                     if DialogueNumber == AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue.count {
                         //a enlever plus tard
@@ -307,6 +388,9 @@ class DialogueViewController: UIViewController {
             case "ChoixClasse":
                 ChoixClasse()
                 break
+            case "Apparition":
+                ApparitionSilhouette()
+                break
             case "SerieQuestion1":
                 SerieQuestion1()
                 break
@@ -339,6 +423,15 @@ class DialogueViewController: UIViewController {
             case "GestionPsycho":
                 PsychoResult()
                 break
+            case "CorrectAnswer":
+                CorrectAnswer()
+                break
+            case "ApparitionDirecteur":
+                ApparitionDirecteur()
+                break
+            case "ApparitionMartien":
+                ApparitionMartien()
+                break
             case "DialoguesFinaux":
                 DialoguesFinaux()
                 break
@@ -359,6 +452,7 @@ class DialogueViewController: UIViewController {
         
         if firstDialogue == false {
             DialogueNumber += 1
+            bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume: 0.5)
             
         } else {
             firstDialogue  = false
@@ -405,7 +499,7 @@ class DialogueViewController: UIViewController {
                 if DialogueNumber == PsychoAnswer[0].profilEvil.count - 1{
                     DialogueNumber = ExDialogueNumber
                     goodOrEvil = ""
-                    dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
+                    GestionEventDialogue()
                 }
             }
         }
@@ -422,17 +516,24 @@ class DialogueViewController: UIViewController {
     }
     
     func GestionBackground(){
-
+        
+        
         if AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[1] == "gif"{
     imageBackground.loadGif(name: AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[0])
         } else {
             imageBackground.image = UIImage(named: AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[0])
         }
+        if AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[0] == "BackgroundDirecteur" || AllDialogue[self.oneProfil.sceneActuelle].backgroundDialogue[0] == "BackgroundMartien" {
+            ApparitionPersonnage(namePersonnage: "Silhouette", fadeInDelay: 3, myTag: 0, taille : 0.65)
+        }
     }
+        
+ 
     
     @IBAction func DialogueTap(_ sender: UITapGestureRecognizer) {
+        if tapEnable == true {
         GestionDialogue()
+        }
     }
-    
  
 }

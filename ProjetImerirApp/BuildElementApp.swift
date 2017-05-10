@@ -1,41 +1,35 @@
 
-//mars :
-
-//Background : Ecran titre, Ecran de fin, les animations dans les jeux
 
 //avril: 
 //menu pause
 //integrer rangement
 //musique
+//bug nouvelles parti
+//test dialogue style
 
 //mai
 //save
+//bruitage
+//wiki
 //integrer labyrinthe 1
 //integrer labyrinthe 2
 //integrer console
 //integrer bac
 //background integration
 //retaper note de cadrage, cahier des charges, proposition technico commerciale
-//Mode arcade
+//icone de l'appli
 
+//a integrer a chaque jeux : header, musique, background, traitement de la fin, bruitage, pause
 
-//optionnel à voir vers la fin
-//reflechir a la charte graphique et typographique
-//uml, reflexion tests
-
-//a aborder reunion
-//Ce que jai fait
-//Ce qu'il a fait
-//game rules classe impact
+//nato
+//3 jeu
+//Traitement de la fin des jeux
 //rangement -> bug object z index armoire, bug objet header view, timer general
 //first background laby
-//frequence de save
-//ecran titre
-//charte
-//reporting
-// sound : Musique de Eric Matyas
-//www.soundimage.org
 
+//optionnel à voir vers la fin
+//uml, reflexion tests
+//mode arcade
 
 
 //a demander a grabo :
@@ -103,6 +97,13 @@ struct PsychoDialogue {
 
 }
 
+struct Credit {
+    
+    var idLabel : Int
+    var textLabel : String
+    var typeLabel : String
+    
+}
 
 //Création de l'Objet des questions à partir du json
 func buildQuestions() -> [Question]{
@@ -217,7 +218,7 @@ func buildDialogue() -> [Dialogue]{
             print("JSON Processing Failed")
         }
     } else {
-        print("Fichier ProfilJoueur introuvable, vérifier la route et l'orthographe !")
+        print("Fichier Dialogue introuvable, vérifier la route et l'orthographe !")
     }
     return allDialogue
 }
@@ -246,7 +247,33 @@ func buildPsychoDialogue() -> [PsychoDialogue]{
             print("JSON Processing Failed")
         }
     } else {
-        print("Fichier ProfilJoueur introuvable, vérifier la route et l'orthographe !")
+        print("Fichier Dialogue introuvable, vérifier la route et l'orthographe !")
     }
     return allPsychoDialogue
+}
+
+
+//Création de l'Objet des Crédits à partir du json
+func buildCredit() -> [Credit]{
+    var allCredit = [Credit]()
+    if let file = Bundle.main.path(forResource: "Credit", ofType: "json") {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: file))
+            
+            let json = JSON(data: data)
+            
+            for (_, dict) in json["Credit"] {
+                let thisObject = Credit(idLabel: dict["idLabel"].intValue,
+                                        textLabel: dict["textLabel"].stringValue,
+                                        typeLabel: dict["typeLabel"].stringValue)
+                
+                allCredit.append(thisObject)
+            }
+        } catch {
+            print("JSON Processing Failed")
+        }
+    } else {
+        print("Fichier Credit introuvable, vérifier la route et l'orthographe !")
+    }
+    return allCredit
 }
