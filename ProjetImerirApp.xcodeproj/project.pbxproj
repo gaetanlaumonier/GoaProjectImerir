@@ -40,12 +40,33 @@
 		3F28F7F21E61F26600920808 /* RangementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F11E61F26600920808 /* RangementView.swift */; };
 		3F28F7F41E61F27C00920808 /* Objet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F31E61F27C00920808 /* Objet.swift */; };
 		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
+		3F55C0BB1EBA01CD009FC631 /* BeteGrise.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0BA1EBA01CD009FC631 /* BeteGrise.gif */; };
+		3F55C0BD1EBA01D5009FC631 /* BeteVerte.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0BC1EBA01D5009FC631 /* BeteVerte.gif */; };
+		3F55C0BF1EBA01E2009FC631 /* BeteRouge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0BE1EBA01E2009FC631 /* BeteRouge.gif */; };
+		3F55C0DF1EBF69ED009FC631 /* MazePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0DE1EBF69ED009FC631 /* MazePlayer.swift */; };
+		3F55C0E11EBF6A26009FC631 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0E01EBF6A26009FC631 /* Room.swift */; };
+		3F55C0E31EBF6A4E009FC631 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0E21EBF6A4E009FC631 /* Potion.swift */; };
+		3F55C0E51EBF6A69009FC631 /* StrangeBat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0E41EBF6A69009FC631 /* StrangeBat.swift */; };
+		3F55C0E71EC2497C009FC631 /* LabGaucheDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0E61EC2497C009FC631 /* LabGaucheDroite.gif */; };
+		3F55C0E91EC249A8009FC631 /* Lab4voies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0E81EC249A8009FC631 /* Lab4voies.gif */; };
+		3F6505E61EB9BD94001D3DFA /* Potion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F6505E51EB9BD94001D3DFA /* Potion.gif */; };
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
+		3F7D43B81EB86DA10010BF98 /* Piege.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D43B71EB86DA10010BF98 /* Piege.gif */; };
 		3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */; };
 		3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3811E81372C00E342AE /* Quiz.storyboard */; };
 		3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3831E81376900E342AE /* ArcadeCookie.storyboard */; };
 		3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3861E8137B500E342AE /* Dialogue.storyboard */; };
 		3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */; };
+		3FA4E0AD1E94C76400C25445 /* ArcadeLabyrinthe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0AC1E94C76400C25445 /* ArcadeLabyrinthe.storyboard */; };
+		3FA4E0B01E94CAAD00C25445 /* LabyrintheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E0AF1E94CAAD00C25445 /* LabyrintheViewController.swift */; };
+		3FA4E0B21E94CB5000C25445 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B11E94CB5000C25445 /* Maze.swift */; };
+		3FA4E0BA1E962C2800C25445 /* LabCulDeSac.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B31E962C2800C25445 /* LabCulDeSac.gif */; };
+		3FA4E0BB1E962C2800C25445 /* LabDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B41E962C2800C25445 /* LabDroite.gif */; };
+		3FA4E0BC1E962C2800C25445 /* LabFace.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B51E962C2800C25445 /* LabFace.gif */; };
+		3FA4E0BD1E962C2800C25445 /* LabFaceDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B61E962C2800C25445 /* LabFaceDroite.gif */; };
+		3FA4E0BE1E962C2800C25445 /* LabFaceGauche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B71E962C2800C25445 /* LabFaceGauche.gif */; };
+		3FA4E0BF1E962C2800C25445 /* LabGauche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B81E962C2800C25445 /* LabGauche.gif */; };
+		3FA4E0C01E962C2800C25445 /* LabSortie.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B91E962C2800C25445 /* LabSortie.gif */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
 		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
@@ -102,12 +123,33 @@
 		3F28F7F11E61F26600920808 /* RangementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementView.swift; sourceTree = "<group>"; };
 		3F28F7F31E61F27C00920808 /* Objet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objet.swift; sourceTree = "<group>"; };
 		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
+		3F55C0BA1EBA01CD009FC631 /* BeteGrise.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeteGrise.gif; sourceTree = "<group>"; };
+		3F55C0BC1EBA01D5009FC631 /* BeteVerte.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeteVerte.gif; sourceTree = "<group>"; };
+		3F55C0BE1EBA01E2009FC631 /* BeteRouge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeteRouge.gif; sourceTree = "<group>"; };
+		3F55C0DE1EBF69ED009FC631 /* MazePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazePlayer.swift; sourceTree = "<group>"; };
+		3F55C0E01EBF6A26009FC631 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		3F55C0E21EBF6A4E009FC631 /* Potion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
+		3F55C0E41EBF6A69009FC631 /* StrangeBat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrangeBat.swift; sourceTree = "<group>"; };
+		3F55C0E61EC2497C009FC631 /* LabGaucheDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabGaucheDroite.gif; sourceTree = "<group>"; };
+		3F55C0E81EC249A8009FC631 /* Lab4voies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Lab4voies.gif; sourceTree = "<group>"; };
+		3F6505E51EB9BD94001D3DFA /* Potion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Potion.gif; sourceTree = "<group>"; };
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
+		3F7D43B71EB86DA10010BF98 /* Piege.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Piege.gif; sourceTree = "<group>"; };
 		3F90A37F1E8136E100E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ChoiseClasse.storyboard; sourceTree = "<group>"; };
 		3F90A3811E81372C00E342AE /* Quiz.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Quiz.storyboard; path = ProjetImerirApp/Quiz.storyboard; sourceTree = "<group>"; };
 		3F90A3841E81376900E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArcadeCookie.storyboard; sourceTree = "<group>"; };
 		3F90A3861E8137B500E342AE /* Dialogue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dialogue.storyboard; path = ProjetImerirApp/Dialogue.storyboard; sourceTree = "<group>"; };
 		3F90A38A1E81382600E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjetImerirApp/Base.lproj/ArcadeRangement.storyboard; sourceTree = "<group>"; };
+		3FA4E0AC1E94C76400C25445 /* ArcadeLabyrinthe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArcadeLabyrinthe.storyboard; sourceTree = "<group>"; };
+		3FA4E0AF1E94CAAD00C25445 /* LabyrintheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabyrintheViewController.swift; sourceTree = "<group>"; };
+		3FA4E0B11E94CB5000C25445 /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		3FA4E0B31E962C2800C25445 /* LabCulDeSac.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabCulDeSac.gif; sourceTree = "<group>"; };
+		3FA4E0B41E962C2800C25445 /* LabDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabDroite.gif; sourceTree = "<group>"; };
+		3FA4E0B51E962C2800C25445 /* LabFace.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFace.gif; sourceTree = "<group>"; };
+		3FA4E0B61E962C2800C25445 /* LabFaceDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFaceDroite.gif; sourceTree = "<group>"; };
+		3FA4E0B71E962C2800C25445 /* LabFaceGauche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFaceGauche.gif; sourceTree = "<group>"; };
+		3FA4E0B81E962C2800C25445 /* LabGauche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabGauche.gif; sourceTree = "<group>"; };
+		3FA4E0B91E962C2800C25445 /* LabSortie.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabSortie.gif; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ProjetImerirApp/HeaderView.xib; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
@@ -171,6 +213,7 @@
 		3F2844671E488E94001E8ED3 /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3FA4E0AE1E94C87E00C25445 /* ArcadeLabyrinthe */,
 				3F25514C1E8D176B00AD0320 /* ViewController */,
 				3F90A3881E8137C600E342AE /* Storyboard/Xib */,
 				3F28F7E21E61F0A100920808 /* ArcadeRangement */,
@@ -200,6 +243,20 @@
 		3F2844881E488E9B001E8ED3 /* Picture/gif */ = {
 			isa = PBXGroup;
 			children = (
+				3F55C0E81EC249A8009FC631 /* Lab4voies.gif */,
+				3F55C0E61EC2497C009FC631 /* LabGaucheDroite.gif */,
+				3F55C0BA1EBA01CD009FC631 /* BeteGrise.gif */,
+				3F55C0BC1EBA01D5009FC631 /* BeteVerte.gif */,
+				3F55C0BE1EBA01E2009FC631 /* BeteRouge.gif */,
+				3F6505E51EB9BD94001D3DFA /* Potion.gif */,
+				3F7D43B71EB86DA10010BF98 /* Piege.gif */,
+				3FA4E0B31E962C2800C25445 /* LabCulDeSac.gif */,
+				3FA4E0B41E962C2800C25445 /* LabDroite.gif */,
+				3FA4E0B51E962C2800C25445 /* LabFace.gif */,
+				3FA4E0B61E962C2800C25445 /* LabFaceDroite.gif */,
+				3FA4E0B71E962C2800C25445 /* LabFaceGauche.gif */,
+				3FA4E0B81E962C2800C25445 /* LabGauche.gif */,
+				3FA4E0B91E962C2800C25445 /* LabSortie.gif */,
 				3F2551461E8C0C1400AD0320 /* Silhouette.gif */,
 				3F2551481E8C0DF300AD0320 /* Maman.gif */,
 				3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */,
@@ -265,9 +322,23 @@
 				3F2844711E488E94001E8ED3 /* LaunchScreen.storyboard */,
 				3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */,
 				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
+				3FA4E0AC1E94C76400C25445 /* ArcadeLabyrinthe.storyboard */,
 			);
 			name = Storyboard/Xib;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		3FA4E0AE1E94C87E00C25445 /* ArcadeLabyrinthe */ = {
+			isa = PBXGroup;
+			children = (
+				3FA4E0AF1E94CAAD00C25445 /* LabyrintheViewController.swift */,
+				3FA4E0B11E94CB5000C25445 /* Maze.swift */,
+				3F55C0DE1EBF69ED009FC631 /* MazePlayer.swift */,
+				3F55C0E01EBF6A26009FC631 /* Room.swift */,
+				3F55C0E21EBF6A4E009FC631 /* Potion.swift */,
+				3F55C0E41EBF6A69009FC631 /* StrangeBat.swift */,
+			);
+			name = ArcadeLabyrinthe;
 			sourceTree = "<group>";
 		};
 		3FB88A751E52298A007C0BD6 /* Classe */ = {
@@ -363,21 +434,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F55C0E71EC2497C009FC631 /* LabGaucheDroite.gif in Resources */,
 				3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */,
 				3F2844731E488E94001E8ED3 /* LaunchScreen.storyboard in Resources */,
 				3F2844A61E48B5BE001E8ED3 /* QuestionsImerirApp.json in Resources */,
+				3F7D43B81EB86DA10010BF98 /* Piege.gif in Resources */,
 				3F2844A71E48B5BE001E8ED3 /* DataSave.json in Resources */,
+				3F6505E61EB9BD94001D3DFA /* Potion.gif in Resources */,
+				3FA4E0BA1E962C2800C25445 /* LabCulDeSac.gif in Resources */,
+				3FA4E0BC1E962C2800C25445 /* LabFace.gif in Resources */,
+				3FA4E0C01E962C2800C25445 /* LabSortie.gif in Resources */,
 				3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */,
 				3F2844701E488E94001E8ED3 /* Assets.xcassets in Resources */,
+				3F55C0BD1EBA01D5009FC631 /* BeteVerte.gif in Resources */,
 				3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */,
 				3F2844A51E48B5BE001E8ED3 /* ClasseJoueur.json in Resources */,
+				3FA4E0AD1E94C76400C25445 /* ArcadeLabyrinthe.storyboard in Resources */,
+				3F55C0BB1EBA01CD009FC631 /* BeteGrise.gif in Resources */,
 				3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */,
 				3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */,
+				3FA4E0BD1E962C2800C25445 /* LabFaceDroite.gif in Resources */,
 				3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */,
 				3F2551491E8C0DF300AD0320 /* Maman.gif in Resources */,
 				3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */,
 				3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */,
+				3FA4E0BE1E962C2800C25445 /* LabFaceGauche.gif in Resources */,
+				3FA4E0BB1E962C2800C25445 /* LabDroite.gif in Resources */,
+				3F55C0E91EC249A8009FC631 /* Lab4voies.gif in Resources */,
+				3F55C0BF1EBA01E2009FC631 /* BeteRouge.gif in Resources */,
 				3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */,
+				3FA4E0BF1E962C2800C25445 /* LabGauche.gif in Resources */,
 				3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,18 +484,21 @@
 			files = (
 				3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */,
 				3F2844901E488F30001E8ED3 /* DesignableLabel.swift in Sources */,
+				3F55C0E11EBF6A26009FC631 /* Room.swift in Sources */,
 				3F28F7E61E61F1CF00920808 /* FreezeTime.swift in Sources */,
 				3F2844921E488F94001E8ED3 /* BuildElementApp.swift in Sources */,
 				3F28449C1E48B515001E8ED3 /* InitViewController.swift in Sources */,
 				3F28F7EC1E61F1FB00920808 /* ScoreUp.swift in Sources */,
 				3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */,
 				3F28F7EE1E61F20400920808 /* ScoreDown.swift in Sources */,
+				3F55C0E31EBF6A4E009FC631 /* Potion.swift in Sources */,
 				3F28F7F21E61F26600920808 /* RangementView.swift in Sources */,
 				3F28F7E41E61F1A800920808 /* Bonus.swift in Sources */,
 				3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */,
 				3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */,
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
 				3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */,
+				3FA4E0B21E94CB5000C25445 /* Maze.swift in Sources */,
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
 				3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */,
 				3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */,
@@ -418,7 +507,10 @@
 				3F28448C1E488EE5001E8ED3 /* DesignableView.swift in Sources */,
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
 				3F28F7F41E61F27C00920808 /* Objet.swift in Sources */,
+				3F55C0DF1EBF69ED009FC631 /* MazePlayer.swift in Sources */,
+				3FA4E0B01E94CAAD00C25445 /* LabyrintheViewController.swift in Sources */,
 				3F28F7EA1E61F1ED00920808 /* SlowTime.swift in Sources */,
+				3F55C0E51EBF6A69009FC631 /* StrangeBat.swift in Sources */,
 				3F28F7E81E61F1E200920808 /* FreezeObjects.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */,

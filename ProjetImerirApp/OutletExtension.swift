@@ -7,11 +7,12 @@ import ImageIO
 
 extension UIImageView {
     
-    public func loadGif(name: String) {
+    public func loadGif(name: String, completion: (() -> Swift.Void)? = nil) {
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
             DispatchQueue.main.async {
                 self.image = image
+                completion?()
             }
         }
     }
@@ -263,4 +264,12 @@ extension UIImage {
         return animation
     }
     
+}
+
+extension Collection where Indices.Iterator.Element == Index {
+    
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Generator.Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
 }

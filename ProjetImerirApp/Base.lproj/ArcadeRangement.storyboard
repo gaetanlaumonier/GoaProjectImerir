@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2k-9J-wmf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2k-9J-wmf">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="width" secondItem="2fb-Lr-IHh" secondAttribute="height" id="UJR-oS-Fxf"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" image="Coffre a jouet" translatesAutoresizingMaskIntoConstraints="NO" id="ZAT-aC-Zzf">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" image="CoffreAJouet" translatesAutoresizingMaskIntoConstraints="NO" id="ZAT-aC-Zzf">
                                 <rect key="frame" x="662" y="10" width="342" height="342"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZAT-aC-Zzf" secondAttribute="height" id="mHb-D7-w70"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcf-8x-uOG" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="488.5" y="172.5" width="47.5" height="17"/>
+                                <rect key="frame" x="488.5" y="173" width="47.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
     </scenes>
     <resources>
         <image name="Armoire" width="715" height="720"/>
-        <image name="Coffre a jouet" width="354" height="360"/>
+        <image name="CoffreAJouet" width="708" height="720"/>
         <image name="Poubelle" width="689" height="720"/>
         <image name="Sheep" width="1920" height="1920"/>
     </resources>
