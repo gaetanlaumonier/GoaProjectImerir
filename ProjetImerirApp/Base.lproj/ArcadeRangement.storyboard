@@ -15,7 +15,7 @@
         <!--Rangement View Controller-->
         <scene sceneID="mXQ-1n-7sJ">
             <objects>
-                <viewController id="N2k-9J-wmf" customClass="RangementViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="N2k-9J-wmf" customClass="RangementViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z1w-TZ-zER"/>
                         <viewControllerLayoutGuide type="bottom" id="wC7-vk-agk"/>
@@ -27,14 +27,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sheep" translatesAutoresizingMaskIntoConstraints="NO" id="dXE-z5-7Ev">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleAspectFit" image="Armoire" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Lr-IHh">
-                                <rect key="frame" x="10" y="10" width="342" height="342"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2fb-Lr-IHh" secondAttribute="height" id="UJR-oS-Fxf"/>
-                                </constraints>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" image="CoffreAJouet" translatesAutoresizingMaskIntoConstraints="NO" id="ZAT-aC-Zzf">
-                                <rect key="frame" x="662" y="10" width="342" height="342"/>
+                                <rect key="frame" x="662" y="174" width="342" height="342"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZAT-aC-Zzf" secondAttribute="height" id="mHb-D7-w70"/>
                                 </constraints>
@@ -45,58 +39,58 @@
                                     <constraint firstAttribute="width" secondItem="1MT-6o-Spv" secondAttribute="height" id="y5n-Fc-tc4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcf-8x-uOG" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="488.5" y="173" width="47.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxU-m3-2zv" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="10" y="20" width="342" height="61"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleAspectFit" image="Armoire" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Lr-IHh">
+                                <rect key="frame" x="10" y="174" width="342" height="342"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="zUA-l7-5Qp"/>
+                                    <constraint firstAttribute="width" secondItem="2fb-Lr-IHh" secondAttribute="height" id="UJR-oS-Fxf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-3P-BDx" userLabel="headerView" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="164"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-SS-8gv" userLabel="ScoreLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="384" y="194" width="256" height="273"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IBV-3P-BDx" firstAttribute="width" secondItem="dXE-z5-7Ev" secondAttribute="width" id="4zo-6R-NI6"/>
                             <constraint firstItem="1MT-6o-Spv" firstAttribute="centerX" secondItem="dXE-z5-7Ev" secondAttribute="centerX" id="C5k-CX-kTm"/>
-                            <constraint firstItem="2fb-Lr-IHh" firstAttribute="top" secondItem="Z1w-TZ-zER" secondAttribute="bottom" constant="10" id="F1C-3F-1k2"/>
-                            <constraint firstItem="QxU-m3-2zv" firstAttribute="top" secondItem="oxQ-kC-MbD" secondAttribute="top" constant="20" symbolic="YES" id="FcB-IS-gVF"/>
+                            <constraint firstItem="iGC-SS-8gv" firstAttribute="centerX" secondItem="oxQ-kC-MbD" secondAttribute="centerX" id="HfC-dZ-QI7"/>
                             <constraint firstItem="2fb-Lr-IHh" firstAttribute="leading" secondItem="dXE-z5-7Ev" secondAttribute="leading" constant="10" id="J9T-pY-LXF"/>
-                            <constraint firstItem="Qcf-8x-uOG" firstAttribute="centerX" secondItem="dXE-z5-7Ev" secondAttribute="centerX" id="Kke-kD-tRV"/>
                             <constraint firstItem="dXE-z5-7Ev" firstAttribute="bottom" secondItem="wC7-vk-agk" secondAttribute="top" id="Kz1-m6-1mK"/>
+                            <constraint firstItem="iGC-SS-8gv" firstAttribute="width" secondItem="oxQ-kC-MbD" secondAttribute="width" multiplier="0.25" id="LUy-60-Yp6"/>
+                            <constraint firstItem="IBV-3P-BDx" firstAttribute="top" secondItem="oxQ-kC-MbD" secondAttribute="top" constant="10" id="OW9-w6-xlF"/>
                             <constraint firstItem="dXE-z5-7Ev" firstAttribute="leading" secondItem="oxQ-kC-MbD" secondAttribute="leading" id="Oo0-iG-0WC"/>
-                            <constraint firstItem="QxU-m3-2zv" firstAttribute="width" secondItem="2fb-Lr-IHh" secondAttribute="width" id="VAa-op-o98"/>
                             <constraint firstItem="dXE-z5-7Ev" firstAttribute="top" secondItem="oxQ-kC-MbD" secondAttribute="top" id="WUC-EN-V0R"/>
+                            <constraint firstItem="IBV-3P-BDx" firstAttribute="centerX" secondItem="oxQ-kC-MbD" secondAttribute="centerX" id="Wub-H8-oKA"/>
+                            <constraint firstItem="iGC-SS-8gv" firstAttribute="height" secondItem="oxQ-kC-MbD" secondAttribute="height" multiplier="0.2" id="XbW-Oz-ve3"/>
                             <constraint firstAttribute="trailing" secondItem="dXE-z5-7Ev" secondAttribute="trailing" id="bfl-fP-TKs"/>
                             <constraint firstAttribute="bottom" secondItem="1MT-6o-Spv" secondAttribute="bottom" constant="20" symbolic="YES" id="eNT-qZ-C5H"/>
-                            <constraint firstItem="Qcf-8x-uOG" firstAttribute="centerY" secondItem="2fb-Lr-IHh" secondAttribute="centerY" id="ekc-Kc-w05"/>
+                            <constraint firstItem="iGC-SS-8gv" firstAttribute="top" secondItem="IBV-3P-BDx" secondAttribute="bottom" constant="20" id="fbD-rl-kmB"/>
+                            <constraint firstItem="IBV-3P-BDx" firstAttribute="width" secondItem="oxQ-kC-MbD" secondAttribute="width" id="heJ-AC-H7r"/>
                             <constraint firstItem="ZAT-aC-Zzf" firstAttribute="width" secondItem="dXE-z5-7Ev" secondAttribute="width" multiplier="1/3" id="kcl-e4-AXq"/>
                             <constraint firstItem="ZAT-aC-Zzf" firstAttribute="trailing" secondItem="oxQ-kC-MbD" secondAttribute="trailingMargin" id="nX8-B2-sqO"/>
+                            <constraint firstItem="IBV-3P-BDx" firstAttribute="height" secondItem="dXE-z5-7Ev" secondAttribute="height" multiplier="0.12" id="ncH-6P-gpr"/>
                             <constraint firstItem="ZAT-aC-Zzf" firstAttribute="top" secondItem="2fb-Lr-IHh" secondAttribute="top" id="nzv-1K-IHJ"/>
                             <constraint firstItem="1MT-6o-Spv" firstAttribute="width" secondItem="dXE-z5-7Ev" secondAttribute="width" multiplier="1/3" id="q5d-BQ-ag1"/>
-                            <constraint firstItem="QxU-m3-2zv" firstAttribute="trailing" secondItem="2fb-Lr-IHh" secondAttribute="trailing" id="wv0-YW-gw0"/>
+                            <constraint firstItem="2fb-Lr-IHh" firstAttribute="top" secondItem="IBV-3P-BDx" secondAttribute="bottom" id="vC2-I3-3Ja"/>
                             <constraint firstItem="2fb-Lr-IHh" firstAttribute="width" secondItem="dXE-z5-7Ev" secondAttribute="width" multiplier="1/3" id="yC1-Sv-qhT"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="scoreLabel" destination="Qcf-8x-uOG" id="7CA-AB-72M"/>
-                        <outlet property="timerLabel" destination="QxU-m3-2zv" id="pCD-aw-TFl"/>
+                        <outlet property="headerView" destination="IBV-3P-BDx" id="6U9-OJ-K5a"/>
+                        <outlet property="scoreLabel" destination="iGC-SS-8gv" id="KlO-zr-H51"/>
                         <outletCollection property="Conteneurs" destination="2fb-Lr-IHh" collectionClass="NSMutableArray" id="DBm-cp-Fea"/>
                         <outletCollection property="Conteneurs" destination="ZAT-aC-Zzf" collectionClass="NSMutableArray" id="T61-eW-8Yh"/>
                         <outletCollection property="Conteneurs" destination="1MT-6o-Spv" collectionClass="NSMutableArray" id="NM6-5K-p6B"/>
@@ -105,6 +99,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKY-12-SAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1284.9609375" y="1680.9663250366032"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="A4T-2x-9Yn">
+            <objects>
+                <pageViewController storyboardIdentifier="RangementPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ieM-ed-aU5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2o-83-Uze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="1132"/>
+        </scene>
+        <!--Content Rangement View Controller-->
+        <scene sceneID="7m8-OX-orO">
+            <objects>
+                <viewController storyboardIdentifier="ContentRangementViewController" id="EA0-gF-s6Y" customClass="ContentRangementViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ma-m1-3V1"/>
+                        <viewControllerLayoutGuide type="bottom" id="3hs-9q-N2u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mrw-6G-3Lq" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <connections>
+                        <outlet property="GamesRulesView" destination="Mrw-6G-3Lq" id="L8E-u2-wgk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oj-J8-Mn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="1979"/>
         </scene>
     </scenes>
     <resources>

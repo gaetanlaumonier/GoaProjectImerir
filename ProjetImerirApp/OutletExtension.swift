@@ -1,5 +1,6 @@
 import UIKit
 import ImageIO
+import AVFoundation
 
 //Fichier regroupant les extensions des éléments.
 //Permet d'importer des gifs ou de modifier la taille de police des éléments
@@ -27,17 +28,29 @@ extension UILabel {
         if screenSize.height < 500 {
             calculatedFont = UIFont(name: currentFontName, size: fontSize * 1)
             self.font = calculatedFont
-        } else if screenSize.height < 700{
-            calculatedFont = UIFont(name: currentFontName, size: fontSize + 1.25)
+        } else if screenSize.height < 600{
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.1)
             self.font = calculatedFont
-        } else if screenSize.height < 900 {
+        } else if screenSize.height < 700{
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.3)
+            self.font = calculatedFont
+        } else if screenSize.height < 800 {
             calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.4)
             self.font = calculatedFont
-        } else if screenSize.height < 1100 {
-            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.9)
+        } else if screenSize.height < 900 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.5)
             self.font = calculatedFont
-        } else {
-            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.5)
+        } else if screenSize.height < 1000 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2)
+            self.font = calculatedFont
+        } else if screenSize.height < 1100 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.1)
+            self.font = calculatedFont
+        } else if screenSize.height < 2000 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.4)
+            self.font = calculatedFont
+        }else {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 3)
             self.font = calculatedFont
         }
     }
@@ -73,7 +86,7 @@ extension UIButton {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 1)
             self.titleLabel?.font = calculatedFont!
         } else if screenSize.height < 700{
-            calculatedFont = UIFont(name: currentFontName!, size: fontSize + 1.1)
+            calculatedFont = UIFont(name: currentFontName!, size: fontSize * 1.1)
             self.titleLabel?.font = calculatedFont!
         } else if screenSize.height < 900 {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 1.3)
@@ -81,8 +94,11 @@ extension UIButton {
         } else if screenSize.height < 1100 {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 2.1)
             self.titleLabel?.font = calculatedFont!
-        } else {
+        } else if screenSize.height < 1400 {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 2.5)
+            self.titleLabel?.font = calculatedFont!
+        }else {
+            calculatedFont = UIFont(name: currentFontName!, size: fontSize * 3)
             self.titleLabel?.font = calculatedFont!
         }
     }
@@ -271,5 +287,91 @@ extension Collection where Indices.Iterator.Element == Index {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
     subscript (safe index: Index) -> Generator.Element? {
         return indices.contains(index) ? self[index] : nil
+        
+    }
+}
+
+extension UIApplication
+{
+    class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?
+    {
+        if let nav = base as? UINavigationController
+        {
+            let top = topViewController(nav.visibleViewController)
+            return top
+        }
+        
+        if let tab = base as? UITabBarController
+        {
+            if let selected = tab.selectedViewController
+            {
+                let top = topViewController(selected)
+                return top
+            }
+        }
+        
+        if let presented = base?.presentedViewController
+        {
+            let top = topViewController(presented)
+            return top
+        }
+        return base
+    }
+    
+}
+
+extension UIViewController{
+    
+    func FonduApparition(myView : UIViewController, myDelai : Int){
+    UIView.animate(withDuration: TimeInterval(myDelai), animations: {
+    myView.view.alpha = 1
+    })
+        
+    }
+    
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func GestionMusic(filename: String) -> AVAudioPlayer{
+        var backgroundMusicPlayer = AVAudioPlayer()
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
+            
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print("Content can not be played")
+            }
+        }else{
+            print("filename is wrong")
+        }
+        
+        backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+        backgroundMusicPlayer.volume = 0
+        backgroundMusicPlayer.setVolume(1, fadeDuration: 1)
+        
+        return backgroundMusicPlayer
+    }
+    
+    func GestionBruitage(filename: String, volume : Float) -> AVAudioPlayer{
+        var backgroundMusicPlayer = AVAudioPlayer()
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
+            
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print("Content can not be played")
+            }
+        }else{
+            print("filename is wrong")
+        }
+        //backgroundMusicPlayer.numberOfLoops = 0
+        backgroundMusicPlayer.volume = volume
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+        
+        return backgroundMusicPlayer
     }
 }

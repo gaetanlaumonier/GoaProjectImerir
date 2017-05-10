@@ -11,11 +11,8 @@ import UIKit
 
 class ContentViewController: UIViewController {
     
-    @IBOutlet var titre: DesignableLabel!
-    @IBOutlet var label: UILabel!
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var hint: DesignableLabel!
-    
+    @IBOutlet var GamesRulesView: GamesRulesView!
+
     var pageIndex:Int!
     var actualImage:String!
     var actualLabel:String!
@@ -34,40 +31,42 @@ class ContentViewController: UIViewController {
             progressBar.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(progressBar)
             view.addConstraints([
-                NSLayoutConstraint(item: progressBar, attribute: .centerX, relatedBy: .equal, toItem: imageView, attribute: .centerX, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: progressBar, attribute: .centerY, relatedBy: .equal, toItem: imageView, attribute: .centerY, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: progressBar, attribute: .centerX, relatedBy: .equal, toItem: GamesRulesView.imageView, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: progressBar, attribute: .centerY, relatedBy: .equal, toItem: GamesRulesView.imageView, attribute: .centerY, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: progressBar, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.5, constant: 0)
                 ])
             
             Timer.scheduledTimer(timeInterval: 1/60, target: self, selector: #selector(ContentViewController.animateProgressBar), userInfo: nil, repeats: true)
+        } else if actualImage == "Mom" {
+            GamesRulesView.imageView.loadGif(name: "Maman")
         } else {
-            imageView.image = UIImage(named: actualImage)
+            print(actualImage)
+            GamesRulesView?.imageView.image = UIImage(named: actualImage)
         }
 
         if actualHint != "" {
-            hint.text = "Astuce : " + actualHint
+           GamesRulesView.hint.text = "Astuce : " + actualHint
         } else {
-            hint.text = ""
+           GamesRulesView.hint.text = ""
         }
         
         
-        titre.text = actualTitle
-        label.text = actualLabel
-        label.sizeToFit()
+      GamesRulesView.titre.text = actualTitle
+      GamesRulesView.label.text = actualLabel
+      GamesRulesView.label.sizeToFit()
 
         if isLastPage {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: view.bounds.width/3, height: 20 ))
-            button.setupButtonDynamicSize(fontSize: 12)
-            button.setTitleColor(.blue, for: .normal)
+            button.setupButtonDynamicSize(fontSize: 16)
+            button.setTitleColor(.white, for: .normal)
             button.setTitle("Je suis prêt", for: .normal)
-            
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self.parent?.parent!, action: #selector(ViewController.hideModal), for: .touchUpInside)
             
             view.addSubview(button)
             view.addConstraints([
                 NSLayoutConstraint(item: button, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: button, attribute: .bottomMargin, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -20)
+                NSLayoutConstraint(item: button, attribute: .bottomMargin, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)
                 ])
             
         }

@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
-class RangementViewController: UIViewController {
+class RangementViewController: UIViewController, UIPageViewControllerDataSource {
 
     @IBOutlet var Conteneurs: [UIImageView]!
-    @IBOutlet var scoreLabel: DesignableLabel!
-    @IBOutlet var timerLabel: DesignableLabel!
+   
+    @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var scoreLabel: DesignableLabel!
 
-    var playerClass = "Hacker"
     var noob = false
     var animationMultiplier:CFTimeInterval = 1
+    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[0])
     
     var detritus = ["Boulette", "Poussiere", "Salete"]
     var vetements = ["Chaussette1", "Chaussette2", "Jean", "T-shirt"]
@@ -29,23 +31,97 @@ class RangementViewController: UIViewController {
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 60.0
-    var timeLeft = 60.0
+    var gameDuration = 10.0
+    var timeLeft = 10.0
     var slowGameFactor = 1.0
-    
     var originalSize:CGFloat!
     
     var endGameTimer:Timer!
+    var AllClasse = [ClasseJoueur]()
+    var idClasse : Int = 0
+    var pageViewController: UIPageViewController!
+    var pageViewLabels:[String]!
+    var pageViewImages:[String]!
+    var pageViewTitles:[String]!
+    var pageViewHints:[String]!
+    var gamePause : Bool = false
+    var backgroundMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initGame()
+        headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        headerView.timerLabel.text = "\(Int(gameDuration)) s"
+        AllClasse = buildClasseJoueur()
+        backgroundMusicPlayer = GestionMusic(filename: "Fantasy")
+
+        switch self.oneProfil.classeJoueur{
+        case "Geek":
+            idClasse = 0
+            break
+        case "Noob":
+            idClasse = 1
+            break
+        case "Hacker":
+            idClasse = 2
+            break
+        case "Fonctionnaire":
+            idClasse = 3
+            break
+        case "Personne":
+            idClasse = 4
+        default:
+            break
+        }
+        
+        pageViewLabels = ["Cet objet est un de tes objectifs, ton but est de le ranger dans le bon conteneur.", "Les jouets vont dans le coffre, les déchets dans la poubelle et les vêtements dans l'armoire.","Touche une icône \"bonus\" pour voir ce qu'il rapporte.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeRangement as String)"]
+        pageViewImages = ["LaserGun", "CoffreAJouet","Bonus", "\(AllClasse[idClasse].idClasse as String)"]
+        pageViewTitles = ["Les Objets","Les Conteneurs","Les Bonus", "\(AllClasse[idClasse].idClasse as String)"]
+        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perd de la vie quand tu te trompe de conteneur.", "La majorité des bonus a un impact positif.", ""]
+        
+        pageViewController = storyboard?.instantiateViewController(withIdentifier: "RangementPageViewController") as! UIPageViewController
+        
+        pageViewController.dataSource = self
+        
+        let startVC = viewControllerAtIndex(index: 0)
+        
+        pageViewController.setViewControllers([startVC], direction: .forward, animated: true, completion: nil)
+        
+        var modal = view.frame
+        modal.size.width = modal.width*0.75
+        modal.size.height = modal.height*0.5
+        
+        pageViewController.view.frame = modal
+        pageViewController.view.center = view.center
+        
+        
+        UIGraphicsBeginImageContext(pageViewController.view.frame.size)
+        UIImage(named: "Background Kid")?.draw(in: pageViewController.view.bounds)
+        
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        
+//        UIGraphicsEndImageContext()
+//        
+//        pageViewController.view.backgroundColor = UIColor(patternImage: image)
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.8
+        
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        
+        
+        addChildViewController(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startGame()
+        //FonduApparition(myView: self, myDelai: 1)
     }
     
     func initGame() {
@@ -66,7 +142,7 @@ class RangementViewController: UIViewController {
         endGameTimer = Timer.scheduledTimer(withTimeInterval: 0.1 * slowGameFactor, repeats: true, block: {_ in
             if self.timeLeft > 0 {
                 self.timeLeft -= 0.1
-                self.timerLabel.text = String(format: "%.1f", self.timeLeft)
+            self.headerView.timerLabel.text = "\(Int(self.timeLeft)) s"
             } else {
                 self.endGame()
             }
@@ -75,18 +151,40 @@ class RangementViewController: UIViewController {
     
     func endGame() {
         endGameTimer.invalidate()
+        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
+        {
+            self.oneProfil.sceneActuelle += 1
+            vc.oneProfil = self.oneProfil
+            self.saveMyData()
+            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                self.view.alpha = 0
+            } , completion: { success in
+                self.backgroundMusicPlayer.stop()
+                self.present(vc, animated: false, completion: nil)
+            })
+        }else {
+            print("Could not instantiate view controller with identifier of type DialogueViewController")
+            return
+        }
+    }
+    
+    func saveMyData(){
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
     }
     
     func initPlayerClass() {
         
-        if playerClass == "Fonctionnaire" {
+        if self.oneProfil.classeJoueur == "Fonctionnaire" {
             gameDuration = gameDuration * 1.4
             animationMultiplier = 2
-        } else if playerClass == "Geek" {
+        } else if self.oneProfil.classeJoueur == "Geek" {
             objectSize = CGSize(width: 150, height: 150)
-        } else if playerClass == "Noob" {
+        } else if self.oneProfil.classeJoueur == "Noob" {
             noob = true
-        } else if playerClass == "Hacker" {
+        } else if self.oneProfil.classeJoueur == "Hacker" {
             startHacking()
         }
         
@@ -191,6 +289,8 @@ class RangementViewController: UIViewController {
             }
         }
         score -= 1
+        self.oneProfil.lifePoint -= 1
+        headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         updateScore()
         animateTo(objet: objet, position: objet.previousPosition, completion: {(finished: Bool) in
             if finished {
@@ -221,7 +321,7 @@ class RangementViewController: UIViewController {
     }
     
     func animateOut(objet: Objet) {
-        UIView.animate(withDuration: 1 * animationMultiplier, delay: 0, options: [.allowUserInteraction], animations: {_ in
+        UIView.animate(withDuration: 0.5 * animationMultiplier, delay: 0, options: [.allowUserInteraction], animations: {_ in
             objet.isDying = true
             objet.isUserInteractionEnabled = false
             objet.isWiggling = false
@@ -334,6 +434,9 @@ class RangementViewController: UIViewController {
     
     func slowTime() {
         slowGameFactor = 2
+        let lalat = endGameTimer
+        endGameTimer.invalidate()
+        lalat?.fire()
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {_ in
             self.slowGameFactor = 1
         })
@@ -470,4 +573,89 @@ class RangementViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func hideModal() {
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+        for subview in self.view.subviews {
+            guard subview is UIVisualEffectView else {
+                continue
+            }
+            
+            UIView.animate(withDuration: 1, animations: {_ in
+                self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+            })
+            
+            UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {_ in
+                subview.alpha = 0
+            }, completion: { finished in
+                subview.removeFromSuperview()
+                self.pageViewController.view.removeFromSuperview()
+                self.initGame()
+                self.startGame()
+            })
+        }
+    }
+    
+    func viewControllerAtIndex(index: Int) -> ContentRangementViewController {
+        
+        if pageViewLabels.count == 0 || index >= pageViewLabels.count {
+            return ContentRangementViewController()
+        }
+        
+        let vc:ContentRangementViewController = storyboard?.instantiateViewController(withIdentifier: "ContentRangementViewController") as! ContentRangementViewController
+        
+        vc.actualImage = pageViewImages[index]
+        vc.actualLabel = pageViewLabels[index]
+        vc.actualTitle = pageViewTitles[index]
+        vc.actualHint = pageViewHints[index]
+        vc.pageIndex = index
+        
+        if index == pageViewLabels.count - 1 {
+            vc.isLastPage = true
+        }
+        
+        return vc
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        let vc = viewController as! ContentRangementViewController
+        var index = vc.pageIndex as Int
+        
+        if index == 0 || index == NSNotFound {
+            return nil
+        }
+        
+        index -= 1
+        
+        return viewControllerAtIndex(index: index)
+        
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        let vc = viewController as! ContentRangementViewController
+        var index = vc.pageIndex as Int
+        
+        if index == NSNotFound {
+            return nil
+        }
+        
+        index += 1
+        
+        if index == pageViewLabels.count {
+            return nil
+        }
+        
+        return viewControllerAtIndex(index: index)
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return pageViewLabels.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
 }

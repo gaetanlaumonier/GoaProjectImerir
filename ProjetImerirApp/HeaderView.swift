@@ -5,16 +5,77 @@
 //  Created by Student on 11/02/2017.
 //  Copyright © 2017 Student. All rights reserved.
 //
-
+import AVFoundation
 import UIKit
 
 @IBDesignable class HeaderView: UIView {
 
-
+    
     @IBOutlet weak var timerLabel: DesignableLabel!
-    @IBOutlet weak var settingImageView: UIImageView!
 
+    @IBOutlet weak var settingImage: DesignableButton!
+    
+    
+    @IBAction func settingButton(_ sender: UIButton) {
+        
+        
+        if let vc = UIStoryboard(name:"Parametres", bundle:nil).instantiateInitialViewController() as? ParametresViewController
+        {
+            let topController = UIApplication.topViewController()
+                topController?.present(vc, animated: true, completion: nil)
+            
+        } else {
+            print("Could not instantiate view controller with identifier of type ParametresViewController")
+            return
+        }
+    }
+    
+//    @IBAction func settingPush(_ sender: UIButton) {
+//        //settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .selected)
+//        
+//       //settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .focused)
+//
+//        settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .highlighted)
+//     
+//    }
+    
     @IBOutlet weak var lifePointLabel: DesignableLabel!
+    //{
+//        willSet {
+//            print("New value is \(newValue)")
+//        }
+//        didSet {
+//            print("Old value is \(oldValue)")
+//        }
+//        didSet {
+//           
+//            let truncated = lifePointLabel.text?.index((lifePointLabel.text?.endIndex)!, offsetBy: -3)
+//            let indexTruncated = lifePointLabel.text?.substring(to: truncated!)
+//           //let string = lifePointLabel.text!.substring(to: truncated!)
+//           // print(Int(string)!
+//            let oldTruncated = oldValue?.text?.index((oldValue?.text?.endIndex)!, offsetBy: -3)
+//            let indexOldTruncated = oldValue?.text?.substring(to: (oldTruncated)!)
+//            
+//            if Int(indexTruncated!)! > Int((indexOldTruncated)!)! {
+//                UIView.animate(withDuration: 0.25, animations: {
+//                    self.lifePointLabel.shadowColor = UIColor(colorLiteralRed: 127/255, green: 1, blue: 22/255, alpha: 1)
+//                },completion : { _ in
+//                    UIView.animate(withDuration: 0.25, animations: {
+//                        self.lifePointLabel.shadowColor = UIColor(colorLiteralRed: 80/255, green: 80/255, blue: 80/255, alpha: 1)
+//                    })
+//                })
+//            } else {
+//                UIView.animate(withDuration: 0.25, animations: {
+//                    self.lifePointLabel.shadowColor = UIColor(colorLiteralRed: 1, green: 192/255, blue: 22/255, alpha: 1)
+//                },completion : { _ in
+//                    UIView.animate(withDuration: 0.25, animations: {
+//                        self.lifePointLabel.shadowColor = UIColor(colorLiteralRed: 80/255, green: 80/255, blue: 80/255, alpha: 1)
+//                    })
+//                })
+//                }
+//        }
+//    }
+    
     override init(frame: CGRect) {
         // 1. setup any properties here
         
@@ -57,43 +118,4 @@ import UIKit
         
         return view
     }
-    
-//    func setup(){
-//        view = loadViewFromNib()
-//        view.frame = bounds
-//     //   view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.flexibleHeight
-//        addSubview(view)
-//        
-//    //    let bundle = Bundle(for: type(of: self))
-//        
-//  //      self.view = bundle.loadNibNamed("HeaderView", owner:self, options:nil)!.first as! UIView!
-//    }
-//    
-//    func loadViewFromNib() -> UIView {
-//        let bundle = Bundle(for: type(of: self))
-//        let nib = UINib(nibName:"HeaderView", bundle: bundle)
-//        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-//       
-//        return view
-//    }
-//    
-//    @IBInspectable var myTimerText : String?
-//        {
-//        get {
-//            return timerLabel.text
-//        }
-//        set (myTimerText){
-//            timerLabel.text = myTimerText
-//        }
-//    }
-//
-//    @IBInspectable var myLifePointText : String?
-//        {
-//            get {
-//                return lifePointLabel.text
-//            }
-//            set (myLifePointText){
-//                lifePointLabel.text = myLifePointText
-//            }
-//        }
 }

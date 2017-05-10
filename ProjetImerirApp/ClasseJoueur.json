@@ -3,26 +3,52 @@
                      "idClasse":"Geek",
                      "nomClasse":"Geek Enveloppé",
                      "libelleClasse":"Un geek accro au jeu vidéo. Passe ses journées devant son écran en rêvant de Hentaï et de championnats E-sports.",
-                     "pouvoirClasse":"PV augmenté en début de partie (+50%). Effets graphiques dans les jeux."
+                     "pouvoirClasse":"PV augmenté en début de partie (+50%). Effets graphiques dans les jeux.",
+                     "arcadeCookie":"les effets visuels sont accentués.",
+                     "arcadeRangement":"les objets à ranger sont plus gros.",
+                     "arcadeConsole":"les éléments cliquable sont plus gros.",
+                     "arcadeBac":"",
+                     "labyrinthe":"un peu plus de potions sont présentes."
                      },{
                      "idClasse":"Noob",
                      "nomClasse":"Gros Noob",
                      "libelleClasse":" Le noob est un novice qui a parfois la chance du débutant. Un jour il sera aussi fort que le hacker...",
-                     "pouvoirClasse":"Gagne parfois des PV au lieu d’en perdre tout au long du jeu."
+                     "pouvoirClasse":"Gagne parfois des PV au lieu d’en perdre tout au long du jeu.",
+                     "arcadeCookie":"les pertes de PV ont une chance de se transformer en gains.",
+                     "arcadeRangement":"les objets mal rangés ont une chance de faire gagner des points.",
+                     "arcadeConsole":"",
+                     "arcadeBac":"",
+                     "labyrinthe":"moins de pièges sont présents."
                      },{
                      "idClasse":"Hacker",
                      "nomClasse":"Hacker Vicieux",
                      "libelleClasse":"Un personnage sombre qui n’a pas de règles, sauf celle de ne pas en avoir.",
-                     "pouvoirClasse":"1 chance sur 3 de pouvoir switcher la question. Défie les règles dans les mini-jeux. "
+                     "pouvoirClasse":"1 chance sur 3 de pouvoir switcher la question. Défie les règles dans les mini-jeux. ",
+                     "arcadeCookie":"la barre de progression diminue deux fois moins vite.",
+                     "arcadeRangement":"les objets ont une chance d'aller se ranger tout seul.",
+                     "arcadeConsole":"",
+                     "arcadeBac":"",
+                     "labyrinthe":"le champ de vision de la mini-map est augmenté."
                      },{
                      "idClasse":"Fonctionnaire",
                      "nomClasse":"Fonctionnaire Calme",
                      "libelleClasse":"Un personnage fort sympathique qui prend le temps de vivre.",
-                     "pouvoirClasse":"Plus de temps pour les épreuves en général (+40%)."
+                     "pouvoirClasse":"Plus de temps pour les épreuves en général (+40%).",
+                     "arcadeCookie":"l'épreuve dure 40% plus longtemps.",
+                     "arcadeRangement":"l'épreuve dure 40% plus longtemps.",
+                     "arcadeConsole":"",
+                     "arcadeBac":"",
+                     "labyrinthe":"la vitesse des monstres apparaissant à l'écran est diminuée."
                      },{
                      "idClasse":"Personne",
                      "nomClasse":"Personne",
                      "libelleClasse":"Vous n'êtes rien, personne, aucun pouvoir ne vous est accordé.",
-                     "pouvoirClasse":"Le pouvoir de ne pas en avoir."
+                     "pouvoirClasse":"Le pouvoir de ne pas en avoir.",
+                     "arcadeCookie":"tu n'as accès à aucun bonus.",
+                     "arcadeRangement":"tu n'as toujours pas obtenu de bonus.",
+                     "arcadeConsole":"aucun bonus ne t'es accordés, bon courage.",
+                     "arcadeBac":"tu est anonyme, sans bonus, rien ne t'aidera.",
+                     "labyrinthe":"tu désirerais encore un bonus, mais non."
                      }]
+    
 }

@@ -1,39 +1,44 @@
-//enigmes speciales (clik sur élément)
 
-//février : 
-
-//uml, reflexion tests
-
-//mars :
-
-//dismiss les view, segue button exit
-//Background : Ecran titre, Ecran de fin, game over, les animations dans les jeux
-//reflechir a la charte graphique et typographique
 
 //avril: 
-//gestion des questions
-//bug quiz reponse A
-//save
-//menu : revenir au menu
-//retaper note de cadrage, cahier des charges, proposition technico commerciale
+//menu pause
+//integrer rangement
+//musique
+//bug nouvelles parti
+//test dialogue style
 
 //mai
-//musique
-//gerer les animations, transition segue
+//save
+//bruitage
+//wiki
+//integrer labyrinthe 1
+//integrer labyrinthe 2
+//integrer console
+//integrer bac
+//background integration
+//retaper note de cadrage, cahier des charges, proposition technico commerciale
+//icone de l'appli
 
-//a aborder reunion
-//Ce que jai fait (table view classe, gif, debut du jeu)
-//Ce qu'il a fait
-//graphisme
-//charte
-//reporting
+//a integrer a chaque jeux : header, musique, background, traitement de la fin, bruitage, pause
+
+//nato
+//3 jeu
+//Traitement de la fin des jeux
+//rangement -> bug object z index armoire, bug objet header view, timer general
+//first background laby
+
+//optionnel à voir vers la fin
+//uml, reflexion tests
+//mode arcade
+
 
 //a demander a grabo :
-//dismiss, UML, Tests
+//dismiss, UML, Tests, crash de l'appli
 
 import UIKit
 
 struct Question{
+    var IdQuestion : Int!
     var Question : String!
     var Choice : [String]!
     var Answer : String?
@@ -62,7 +67,12 @@ struct ClasseJoueur {
     var nomClasse : String!
     var libelleClasse : String!
     var pouvoirClasse : String!
-    
+    var arcadeCookie : String!
+    var arcadeRangement : String!
+    var arcadeConsole : String!
+    var arcadeBac : String!
+    var labyrinthe : String!
+
 }
 
 struct Dialogue {
@@ -72,9 +82,28 @@ struct Dialogue {
     var styleLabel : [String]
     var eventDialogue : [String]
     var backgroundDialogue : [String]
+    var musiqueDialogue : String
 }
 
+struct PsychoDialogue {
+    
+    var profilCrieur : [String]
+    var profilSociable : [String]
+    var profilTimide : [String]
+    var profilInnovateur : [String]
+    var profilEvil : [String]
+    var profilGood : [String]
+    var profilEqual : [String]
 
+}
+
+struct Credit {
+    
+    var idLabel : Int
+    var textLabel : String
+    var typeLabel : String
+    
+}
 
 //Création de l'Objet des questions à partir du json
 func buildQuestions() -> [Question]{
@@ -84,8 +113,10 @@ func buildQuestions() -> [Question]{
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: file))
             let json = JSON(data: data)
+            var idQuestion : Int = 0
             for (_, dict) in json["Questions"] {
-                let thisObject = Question(Question: dict["Question"].stringValue,
+                let thisObject = Question(IdQuestion: idQuestion,
+                                          Question: dict["Question"].stringValue,
                                           Choice: dict["Choice"].arrayValue.map { $0.string!},
                                           Answer: dict["Answer"].stringValue,
                                           Topic: dict["Topic"].stringValue,
@@ -96,7 +127,9 @@ func buildQuestions() -> [Question]{
                                           ProfilConsequence : dict["ProfilConsequence"].arrayValue.map {$0.string!},
                                           HPLostArray : dict["HPLostArray"].arrayValue.map {$0.int!},
                                           Timer : dict["Timer"].floatValue)
-                questions.append(thisObject)            }
+                questions.append(thisObject)
+            idQuestion += 1
+            }
         } catch {
             print("JSON Processing Failed")
         }
@@ -144,7 +177,14 @@ func buildClasseJoueur() -> [ClasseJoueur]{
                 let thisObject = ClasseJoueur(idClasse: dict["idClasse"].stringValue,
                                               nomClasse: dict["nomClasse"].stringValue,
                                               libelleClasse: dict["libelleClasse"].stringValue,
-                                              pouvoirClasse: dict["pouvoirClasse"].stringValue)
+                                              pouvoirClasse: dict["pouvoirClasse"].stringValue,
+                                              arcadeCookie: dict["arcadeCookie"].stringValue,
+                                              arcadeRangement: dict["arcadeRangement"].stringValue,
+                                              arcadeConsole: dict["arcadeConsole"].stringValue,
+                                              arcadeBac: dict["arcadeBac"].stringValue,
+                                              labyrinthe: dict["labyrinthe"].stringValue
+                    
+)
                 allClasse.append(thisObject)
             }
         } catch {
@@ -170,14 +210,70 @@ func buildDialogue() -> [Dialogue]{
                                           libelleDialogue: dict["libelleDialogue"].arrayValue.map { $0.string!},
                                           styleLabel: dict["styleLabel"].arrayValue.map { $0.string!},
                                           eventDialogue: dict["eventDialogue"].arrayValue.map { $0.string!},
-                                          backgroundDialogue: dict["backgroundDialogue"].arrayValue.map { $0.string!})
+                                          backgroundDialogue: dict["BackgroundDialogue"].arrayValue.map { $0.string!},
+                                          musiqueDialogue: dict["MusiqueDialogue"].stringValue)
                 allDialogue.append(thisObject)
             }
         } catch {
             print("JSON Processing Failed")
         }
     } else {
-        print("Fichier ProfilJoueur introuvable, vérifier la route et l'orthographe !")
+        print("Fichier Dialogue introuvable, vérifier la route et l'orthographe !")
     }
     return allDialogue
+}
+
+//Création de l'Objet des dialogues de psychologie à partir du json
+func buildPsychoDialogue() -> [PsychoDialogue]{
+    var allPsychoDialogue = [PsychoDialogue]()
+    if let file = Bundle.main.path(forResource: "Dialogue", ofType: "json") {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: file))
+            
+            let json = JSON(data: data)
+            
+            for (_, dict) in json["Psychologie"] {
+                let thisObject = PsychoDialogue(profilCrieur: dict["profil_crieur"].arrayValue.map { $0.string!},
+                                          profilSociable: dict["profil_sociable"].arrayValue.map { $0.string!},
+                                          profilTimide: dict["profil_timide"].arrayValue.map { $0.string!},
+                                          profilInnovateur: dict["profil_innovateur"].arrayValue.map { $0.string!},
+                                          profilEvil: dict["profil_evil"].arrayValue.map { $0.string!},
+                                          profilGood: dict["profil_good"].arrayValue.map { $0.string!},
+                                          profilEqual: dict["profil_equal"].arrayValue.map { $0.string!})
+
+                allPsychoDialogue.append(thisObject)
+            }
+        } catch {
+            print("JSON Processing Failed")
+        }
+    } else {
+        print("Fichier Dialogue introuvable, vérifier la route et l'orthographe !")
+    }
+    return allPsychoDialogue
+}
+
+
+//Création de l'Objet des Crédits à partir du json
+func buildCredit() -> [Credit]{
+    var allCredit = [Credit]()
+    if let file = Bundle.main.path(forResource: "Credit", ofType: "json") {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: file))
+            
+            let json = JSON(data: data)
+            
+            for (_, dict) in json["Credit"] {
+                let thisObject = Credit(idLabel: dict["idLabel"].intValue,
+                                        textLabel: dict["textLabel"].stringValue,
+                                        typeLabel: dict["typeLabel"].stringValue)
+                
+                allCredit.append(thisObject)
+            }
+        } catch {
+            print("JSON Processing Failed")
+        }
+    } else {
+        print("Fichier Credit introuvable, vérifier la route et l'orthographe !")
+    }
+    return allCredit
 }

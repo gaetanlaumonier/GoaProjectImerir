@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F086FBB1EC3532D0021A68E /* BackgroundMartien.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB61EC3532D0021A68E /* BackgroundMartien.gif */; };
+		3F086FBC1EC3532D0021A68E /* Directeur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB71EC3532D0021A68E /* Directeur.gif */; };
+		3F086FBD1EC3532D0021A68E /* Martien1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB81EC3532D0021A68E /* Martien1.gif */; };
+		3F086FBE1EC3532D0021A68E /* Martien2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FB91EC3532D0021A68E /* Martien2.gif */; };
+		3F086FC11EC366810021A68E /* DownDraft.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FBF1EC366810021A68E /* DownDraft.mp3 */; };
+		3F086FC21EC366810021A68E /* MadScientist.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FC01EC366810021A68E /* MadScientist.mp3 */; };
+		3F086FC41EC372FE0021A68E /* BackgroundDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F086FC31EC372FE0021A68E /* BackgroundDirecteur.gif */; };
 		3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2551461E8C0C1400AD0320 /* Silhouette.gif */; };
-		3F2551491E8C0DF300AD0320 /* Maman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F2551481E8C0DF300AD0320 /* Maman.gif */; };
-		3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */; };
 		3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2844681E488E94001E8ED3 /* AppDelegate.swift */; };
 		3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */; };
 		3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F28446C1E488E94001E8ED3 /* Main.storyboard */; };
@@ -39,27 +44,33 @@
 		3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7EF1E61F21200920808 /* SomeHelp.swift */; };
 		3F28F7F21E61F26600920808 /* RangementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F11E61F26600920808 /* RangementView.swift */; };
 		3F28F7F41E61F27C00920808 /* Objet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28F7F31E61F27C00920808 /* Objet.swift */; };
+		3F323F151E9E7915001490B9 /* GamesRules.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F323F141E9E7915001490B9 /* GamesRules.xib */; };
+		3F323F171E9E7978001490B9 /* GamesRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F323F161E9E7978001490B9 /* GamesRulesView.swift */; };
 		3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EFD731E50DF4900316A2B /* RangementViewController.swift */; };
+		3F5342F51EC1FE6900995A06 /* Mountainside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F41EC1FE6900995A06 /* Mountainside.mp3 */; };
+		3F5342F71EC2025500995A06 /* Bedtime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F61EC2025500995A06 /* Bedtime.mp3 */; };
+		3F5342FD1EC2138900995A06 /* Air.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F81EC2138900995A06 /* Air.mp3 */; };
+		3F5342FE1EC2138900995A06 /* Bonus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342F91EC2138900995A06 /* Bonus.mp3 */; };
+		3F5342FF1EC2138900995A06 /* Clik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342FA1EC2138900995A06 /* Clik.mp3 */; };
+		3F5343001EC2138900995A06 /* ClikBad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342FB1EC2138900995A06 /* ClikBad.mp3 */; };
+		3F5343011EC2138900995A06 /* ClikGood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5342FC1EC2138900995A06 /* ClikGood.mp3 */; };
 		3F55C0BB1EBA01CD009FC631 /* BeteGrise.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0BA1EBA01CD009FC631 /* BeteGrise.gif */; };
 		3F55C0BD1EBA01D5009FC631 /* BeteVerte.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0BC1EBA01D5009FC631 /* BeteVerte.gif */; };
 		3F55C0BF1EBA01E2009FC631 /* BeteRouge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0BE1EBA01E2009FC631 /* BeteRouge.gif */; };
-		3F55C0DF1EBF69ED009FC631 /* MazePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0DE1EBF69ED009FC631 /* MazePlayer.swift */; };
-		3F55C0E11EBF6A26009FC631 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0E01EBF6A26009FC631 /* Room.swift */; };
-		3F55C0E31EBF6A4E009FC631 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0E21EBF6A4E009FC631 /* Potion.swift */; };
-		3F55C0E51EBF6A69009FC631 /* StrangeBat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C0E41EBF6A69009FC631 /* StrangeBat.swift */; };
 		3F55C0E71EC2497C009FC631 /* LabGaucheDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0E61EC2497C009FC631 /* LabGaucheDroite.gif */; };
 		3F55C0E91EC249A8009FC631 /* Lab4voies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C0E81EC249A8009FC631 /* Lab4voies.gif */; };
 		3F6505E61EB9BD94001D3DFA /* Potion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F6505E51EB9BD94001D3DFA /* Potion.gif */; };
 		3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */; };
+		3F6BFA101E9FA65400C0732F /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */; };
+		3F728DFD1EB08CCA000D3F8A /* ContentRangementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */; };
 		3F7D43B81EB86DA10010BF98 /* Piege.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D43B71EB86DA10010BF98 /* Piege.gif */; };
+		3F80C2211EA65FBB006D1430 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */; };
 		3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */; };
 		3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3811E81372C00E342AE /* Quiz.storyboard */; };
 		3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3831E81376900E342AE /* ArcadeCookie.storyboard */; };
 		3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3861E8137B500E342AE /* Dialogue.storyboard */; };
 		3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F90A3891E81382600E342AE /* ArcadeRangement.storyboard */; };
 		3FA4E0AD1E94C76400C25445 /* ArcadeLabyrinthe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0AC1E94C76400C25445 /* ArcadeLabyrinthe.storyboard */; };
-		3FA4E0B01E94CAAD00C25445 /* LabyrintheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E0AF1E94CAAD00C25445 /* LabyrintheViewController.swift */; };
-		3FA4E0B21E94CB5000C25445 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B11E94CB5000C25445 /* Maze.swift */; };
 		3FA4E0BA1E962C2800C25445 /* LabCulDeSac.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B31E962C2800C25445 /* LabCulDeSac.gif */; };
 		3FA4E0BB1E962C2800C25445 /* LabDroite.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B41E962C2800C25445 /* LabDroite.gif */; };
 		3FA4E0BC1E962C2800C25445 /* LabFace.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B51E962C2800C25445 /* LabFace.gif */; };
@@ -67,11 +78,38 @@
 		3FA4E0BE1E962C2800C25445 /* LabFaceGauche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B71E962C2800C25445 /* LabFaceGauche.gif */; };
 		3FA4E0BF1E962C2800C25445 /* LabGauche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B81E962C2800C25445 /* LabGauche.gif */; };
 		3FA4E0C01E962C2800C25445 /* LabSortie.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E0B91E962C2800C25445 /* LabSortie.gif */; };
+		3FA680281EB87FA10045EA6E /* ChambreAdo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680231EB87FA10045EA6E /* ChambreAdo.gif */; };
+		3FA6802A1EB87FA10045EA6E /* Reveil.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680251EB87FA10045EA6E /* Reveil.gif */; };
+		3FA6802B1EB87FA10045EA6E /* SalleDeClasse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */; };
+		3FA6802C1EB87FA10045EA6E /* SalleDirecteur.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */; };
+		3FA680621EBA0AF90045EA6E /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA680611EBA0AF90045EA6E /* CreditViewController.swift */; };
+		3FB74A281E96454700D68DB2 /* Maman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FB74A271E96454700D68DB2 /* Maman.gif */; };
 		3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A671E4F6396007C0BD6 /* HeaderView.swift */; };
 		3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */; };
 		3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */; };
 		3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D631E48D65400100027 /* ContentViewController.swift */; };
 		3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD2D651E48D66B00100027 /* ViewController.swift */; };
+		3FC333291EAA05B700D94B1B /* Parametres.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC333281EAA05B700D94B1B /* Parametres.storyboard */; };
+		3FC3332B1EADEED800D94B1B /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */; };
+		3FCABF951EC1CB9A0072BAEB /* BlueRidge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF841EC1CB9A0072BAEB /* BlueRidge.mp3 */; };
+		3FCABF961EC1CB9A0072BAEB /* Bog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF851EC1CB9A0072BAEB /* Bog.mp3 */; };
+		3FCABF971EC1CB9A0072BAEB /* Delivering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF861EC1CB9A0072BAEB /* Delivering.mp3 */; };
+		3FCABF991EC1CB9A0072BAEB /* Fantasy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF881EC1CB9A0072BAEB /* Fantasy.mp3 */; };
+		3FCABF9A1EC1CB9A0072BAEB /* LostJungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF891EC1CB9A0072BAEB /* LostJungle.mp3 */; };
+		3FCABF9C1EC1CB9A0072BAEB /* MistyBog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8B1EC1CB9A0072BAEB /* MistyBog.mp3 */; };
+		3FCABF9D1EC1CB9A0072BAEB /* Moonlit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8C1EC1CB9A0072BAEB /* Moonlit.mp3 */; };
+		3FCABF9E1EC1CB9A0072BAEB /* PuzzleGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8D1EC1CB9A0072BAEB /* PuzzleGame.mp3 */; };
+		3FCABF9F1EC1CB9A0072BAEB /* SodiumVapor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8E1EC1CB9A0072BAEB /* SodiumVapor.mp3 */; };
+		3FCABFA01EC1CB9A0072BAEB /* SomeDreamy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF8F1EC1CB9A0072BAEB /* SomeDreamy.mp3 */; };
+		3FCABFA21EC1CB9A0072BAEB /* SurrealChase.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF911EC1CB9A0072BAEB /* SurrealChase.mp3 */; };
+		3FCABFA31EC1CB9A0072BAEB /* TheDarkness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF921EC1CB9A0072BAEB /* TheDarkness.mp3 */; };
+		3FCABFA41EC1CB9A0072BAEB /* TheyreClosing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FCABF931EC1CB9A0072BAEB /* TheyreClosing.mp3 */; };
+		3FD8A89A1EC3A3360088BEB2 /* LabyrintheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8A8941EC3A3360088BEB2 /* LabyrintheViewController.swift */; };
+		3FD8A89B1EC3A3360088BEB2 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8A8951EC3A3360088BEB2 /* Maze.swift */; };
+		3FD8A89C1EC3A3360088BEB2 /* MazePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8A8961EC3A3360088BEB2 /* MazePlayer.swift */; };
+		3FD8A89D1EC3A3360088BEB2 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8A8971EC3A3360088BEB2 /* Potion.swift */; };
+		3FD8A89E1EC3A3360088BEB2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8A8981EC3A3360088BEB2 /* Room.swift */; };
+		3FD8A89F1EC3A3360088BEB2 /* StrangeBat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8A8991EC3A3360088BEB2 /* StrangeBat.swift */; };
 		3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,9 +124,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F086FB61EC3532D0021A68E /* BackgroundMartien.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundMartien.gif; sourceTree = "<group>"; };
+		3F086FB71EC3532D0021A68E /* Directeur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Directeur.gif; sourceTree = "<group>"; };
+		3F086FB81EC3532D0021A68E /* Martien1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Martien1.gif; sourceTree = "<group>"; };
+		3F086FB91EC3532D0021A68E /* Martien2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Martien2.gif; sourceTree = "<group>"; };
+		3F086FBF1EC366810021A68E /* DownDraft.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DownDraft.mp3; sourceTree = "<group>"; };
+		3F086FC01EC366810021A68E /* MadScientist.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MadScientist.mp3; sourceTree = "<group>"; };
+		3F086FC31EC372FE0021A68E /* BackgroundDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundDirecteur.gif; sourceTree = "<group>"; };
 		3F2551461E8C0C1400AD0320 /* Silhouette.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Silhouette.gif; sourceTree = "<group>"; };
-		3F2551481E8C0DF300AD0320 /* Maman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Maman.gif; sourceTree = "<group>"; };
-		3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FinDirecteur.gif; sourceTree = "<group>"; };
 		3F2844651E488E94001E8ED3 /* ProjetImerirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetImerirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2844681E488E94001E8ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -122,27 +165,33 @@
 		3F28F7EF1E61F21200920808 /* SomeHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeHelp.swift; sourceTree = "<group>"; };
 		3F28F7F11E61F26600920808 /* RangementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementView.swift; sourceTree = "<group>"; };
 		3F28F7F31E61F27C00920808 /* Objet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objet.swift; sourceTree = "<group>"; };
+		3F323F141E9E7915001490B9 /* GamesRules.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamesRules.xib; sourceTree = "<group>"; };
+		3F323F161E9E7978001490B9 /* GamesRulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesRulesView.swift; sourceTree = "<group>"; };
 		3F4EFD731E50DF4900316A2B /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
+		3F5342F41EC1FE6900995A06 /* Mountainside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mountainside.mp3; sourceTree = "<group>"; };
+		3F5342F61EC2025500995A06 /* Bedtime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bedtime.mp3; sourceTree = "<group>"; };
+		3F5342F81EC2138900995A06 /* Air.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Air.mp3; sourceTree = "<group>"; };
+		3F5342F91EC2138900995A06 /* Bonus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bonus.mp3; sourceTree = "<group>"; };
+		3F5342FA1EC2138900995A06 /* Clik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clik.mp3; sourceTree = "<group>"; };
+		3F5342FB1EC2138900995A06 /* ClikBad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClikBad.mp3; sourceTree = "<group>"; };
+		3F5342FC1EC2138900995A06 /* ClikGood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClikGood.mp3; sourceTree = "<group>"; };
 		3F55C0BA1EBA01CD009FC631 /* BeteGrise.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeteGrise.gif; sourceTree = "<group>"; };
 		3F55C0BC1EBA01D5009FC631 /* BeteVerte.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeteVerte.gif; sourceTree = "<group>"; };
 		3F55C0BE1EBA01E2009FC631 /* BeteRouge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeteRouge.gif; sourceTree = "<group>"; };
-		3F55C0DE1EBF69ED009FC631 /* MazePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazePlayer.swift; sourceTree = "<group>"; };
-		3F55C0E01EBF6A26009FC631 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
-		3F55C0E21EBF6A4E009FC631 /* Potion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
-		3F55C0E41EBF6A69009FC631 /* StrangeBat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrangeBat.swift; sourceTree = "<group>"; };
 		3F55C0E61EC2497C009FC631 /* LabGaucheDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabGaucheDroite.gif; sourceTree = "<group>"; };
 		3F55C0E81EC249A8009FC631 /* Lab4voies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Lab4voies.gif; sourceTree = "<group>"; };
 		3F6505E51EB9BD94001D3DFA /* Potion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Potion.gif; sourceTree = "<group>"; };
 		3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
+		3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
+		3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRangementViewController.swift; sourceTree = "<group>"; };
 		3F7D43B71EB86DA10010BF98 /* Piege.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Piege.gif; sourceTree = "<group>"; };
+		3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		3F90A37F1E8136E100E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ChoiseClasse.storyboard; sourceTree = "<group>"; };
 		3F90A3811E81372C00E342AE /* Quiz.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Quiz.storyboard; path = ProjetImerirApp/Quiz.storyboard; sourceTree = "<group>"; };
 		3F90A3841E81376900E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ArcadeCookie.storyboard; sourceTree = "<group>"; };
 		3F90A3861E8137B500E342AE /* Dialogue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dialogue.storyboard; path = ProjetImerirApp/Dialogue.storyboard; sourceTree = "<group>"; };
 		3F90A38A1E81382600E342AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjetImerirApp/Base.lproj/ArcadeRangement.storyboard; sourceTree = "<group>"; };
 		3FA4E0AC1E94C76400C25445 /* ArcadeLabyrinthe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArcadeLabyrinthe.storyboard; sourceTree = "<group>"; };
-		3FA4E0AF1E94CAAD00C25445 /* LabyrintheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabyrintheViewController.swift; sourceTree = "<group>"; };
-		3FA4E0B11E94CB5000C25445 /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
 		3FA4E0B31E962C2800C25445 /* LabCulDeSac.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabCulDeSac.gif; sourceTree = "<group>"; };
 		3FA4E0B41E962C2800C25445 /* LabDroite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabDroite.gif; sourceTree = "<group>"; };
 		3FA4E0B51E962C2800C25445 /* LabFace.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFace.gif; sourceTree = "<group>"; };
@@ -150,11 +199,38 @@
 		3FA4E0B71E962C2800C25445 /* LabFaceGauche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabFaceGauche.gif; sourceTree = "<group>"; };
 		3FA4E0B81E962C2800C25445 /* LabGauche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabGauche.gif; sourceTree = "<group>"; };
 		3FA4E0B91E962C2800C25445 /* LabSortie.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LabSortie.gif; sourceTree = "<group>"; };
+		3FA680231EB87FA10045EA6E /* ChambreAdo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ChambreAdo.gif; sourceTree = "<group>"; };
+		3FA680251EB87FA10045EA6E /* Reveil.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Reveil.gif; sourceTree = "<group>"; };
+		3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SalleDeClasse.gif; sourceTree = "<group>"; };
+		3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SalleDirecteur.gif; sourceTree = "<group>"; };
+		3FA680611EBA0AF90045EA6E /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		3FB74A271E96454700D68DB2 /* Maman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Maman.gif; sourceTree = "<group>"; };
 		3FB88A671E4F6396007C0BD6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ProjetImerirApp/HeaderView.xib; sourceTree = "<group>"; };
 		3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
 		3FBD2D631E48D65400100027 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FBD2D651E48D66B00100027 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FC333281EAA05B700D94B1B /* Parametres.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Parametres.storyboard; sourceTree = "<group>"; };
+		3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
+		3FCABF841EC1CB9A0072BAEB /* BlueRidge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlueRidge.mp3; sourceTree = "<group>"; };
+		3FCABF851EC1CB9A0072BAEB /* Bog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bog.mp3; sourceTree = "<group>"; };
+		3FCABF861EC1CB9A0072BAEB /* Delivering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Delivering.mp3; sourceTree = "<group>"; };
+		3FCABF881EC1CB9A0072BAEB /* Fantasy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fantasy.mp3; sourceTree = "<group>"; };
+		3FCABF891EC1CB9A0072BAEB /* LostJungle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LostJungle.mp3; sourceTree = "<group>"; };
+		3FCABF8B1EC1CB9A0072BAEB /* MistyBog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MistyBog.mp3; sourceTree = "<group>"; };
+		3FCABF8C1EC1CB9A0072BAEB /* Moonlit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Moonlit.mp3; sourceTree = "<group>"; };
+		3FCABF8D1EC1CB9A0072BAEB /* PuzzleGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PuzzleGame.mp3; sourceTree = "<group>"; };
+		3FCABF8E1EC1CB9A0072BAEB /* SodiumVapor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SodiumVapor.mp3; sourceTree = "<group>"; };
+		3FCABF8F1EC1CB9A0072BAEB /* SomeDreamy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SomeDreamy.mp3; sourceTree = "<group>"; };
+		3FCABF911EC1CB9A0072BAEB /* SurrealChase.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SurrealChase.mp3; sourceTree = "<group>"; };
+		3FCABF921EC1CB9A0072BAEB /* TheDarkness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheDarkness.mp3; sourceTree = "<group>"; };
+		3FCABF931EC1CB9A0072BAEB /* TheyreClosing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheyreClosing.mp3; sourceTree = "<group>"; };
+		3FD8A8941EC3A3360088BEB2 /* LabyrintheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabyrintheViewController.swift; sourceTree = "<group>"; };
+		3FD8A8951EC3A3360088BEB2 /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		3FD8A8961EC3A3360088BEB2 /* MazePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazePlayer.swift; sourceTree = "<group>"; };
+		3FD8A8971EC3A3360088BEB2 /* Potion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
+		3FD8A8981EC3A3360088BEB2 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		3FD8A8991EC3A3360088BEB2 /* StrangeBat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrangeBat.swift; sourceTree = "<group>"; };
 		3FF9C5BA1E54A4C20036C096 /* ChoiceClasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,8 +262,9 @@
 				3FB88A731E52297E007C0BD6 /* ClasseTableViewCell.swift */,
 				3F6575E71E545BB3000C008A /* ClasseModalViewController.swift */,
 				3F28446A1E488E94001E8ED3 /* QuestionViewController.swift */,
-				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
-				3FBD2D651E48D66B00100027 /* ViewController.swift */,
+				3F80C2201EA65FBB006D1430 /* GameOverViewController.swift */,
+				3FC3332A1EADEED800D94B1B /* ParametresViewController.swift */,
+				3FA680611EBA0AF90045EA6E /* CreditViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -196,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				3F2844671E488E94001E8ED3 /* ProjetImerirApp */,
+				3FCABF821EC1CB720072BAEB /* Audio */,
 				3F28447C1E488E94001E8ED3 /* ProjetImerirAppTests */,
 				3F2844661E488E94001E8ED3 /* Products */,
 			);
@@ -213,7 +291,8 @@
 		3F2844671E488E94001E8ED3 /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
-				3FA4E0AE1E94C87E00C25445 /* ArcadeLabyrinthe */,
+				3FD8A8931EC3A2C10088BEB2 /* ArcadeLabyrinthe */,
+				3FB74A261E94E84B00D68DB2 /* ArcadeCookie */,
 				3F25514C1E8D176B00AD0320 /* ViewController */,
 				3F90A3881E8137C600E342AE /* Storyboard/Xib */,
 				3F28F7E21E61F0A100920808 /* ArcadeRangement */,
@@ -258,8 +337,16 @@
 				3FA4E0B81E962C2800C25445 /* LabGauche.gif */,
 				3FA4E0B91E962C2800C25445 /* LabSortie.gif */,
 				3F2551461E8C0C1400AD0320 /* Silhouette.gif */,
-				3F2551481E8C0DF300AD0320 /* Maman.gif */,
-				3F25514A1E8C0F3900AD0320 /* FinDirecteur.gif */,
+				3FB74A271E96454700D68DB2 /* Maman.gif */,
+				3FA680231EB87FA10045EA6E /* ChambreAdo.gif */,
+				3FA680251EB87FA10045EA6E /* Reveil.gif */,
+				3F086FC31EC372FE0021A68E /* BackgroundDirecteur.gif */,
+				3F086FB61EC3532D0021A68E /* BackgroundMartien.gif */,
+				3F086FB71EC3532D0021A68E /* Directeur.gif */,
+				3F086FB81EC3532D0021A68E /* Martien1.gif */,
+				3F086FB91EC3532D0021A68E /* Martien2.gif */,
+				3FA680261EB87FA10045EA6E /* SalleDeClasse.gif */,
+				3FA680271EB87FA10045EA6E /* SalleDirecteur.gif */,
 			);
 			name = Picture/gif;
 			sourceTree = "<group>";
@@ -282,6 +369,7 @@
 				3F28448D1E488F23001E8ED3 /* DesignableButton.swift */,
 				3F28448F1E488F30001E8ED3 /* DesignableLabel.swift */,
 				3FB88A671E4F6396007C0BD6 /* HeaderView.swift */,
+				3F323F161E9E7978001490B9 /* GamesRulesView.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -293,6 +381,7 @@
 				3F4EFD731E50DF4900316A2B /* RangementViewController.swift */,
 				3F28F7F11E61F26600920808 /* RangementView.swift */,
 				3F28F7F31E61F27C00920808 /* Objet.swift */,
+				3F728DFC1EB08CCA000D3F8A /* ContentRangementViewController.swift */,
 			);
 			name = ArcadeRangement;
 			sourceTree = "<group>";
@@ -323,22 +412,21 @@
 				3F90A37E1E8136E100E342AE /* ChoiseClasse.storyboard */,
 				3FB88A6B1E51AA00007C0BD6 /* HeaderView.xib */,
 				3FA4E0AC1E94C76400C25445 /* ArcadeLabyrinthe.storyboard */,
+				3F323F141E9E7915001490B9 /* GamesRules.xib */,
+				3F6BFA0F1E9FA65400C0732F /* GameOver.storyboard */,
+				3FC333281EAA05B700D94B1B /* Parametres.storyboard */,
 			);
 			name = Storyboard/Xib;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		3FA4E0AE1E94C87E00C25445 /* ArcadeLabyrinthe */ = {
+		3FB74A261E94E84B00D68DB2 /* ArcadeCookie */ = {
 			isa = PBXGroup;
 			children = (
-				3FA4E0AF1E94CAAD00C25445 /* LabyrintheViewController.swift */,
-				3FA4E0B11E94CB5000C25445 /* Maze.swift */,
-				3F55C0DE1EBF69ED009FC631 /* MazePlayer.swift */,
-				3F55C0E01EBF6A26009FC631 /* Room.swift */,
-				3F55C0E21EBF6A4E009FC631 /* Potion.swift */,
-				3F55C0E41EBF6A69009FC631 /* StrangeBat.swift */,
+				3FBD2D631E48D65400100027 /* ContentViewController.swift */,
+				3FBD2D651E48D66B00100027 /* ViewController.swift */,
 			);
-			name = ArcadeLabyrinthe;
+			name = ArcadeCookie;
 			sourceTree = "<group>";
 		};
 		3FB88A751E52298A007C0BD6 /* Classe */ = {
@@ -347,6 +435,65 @@
 				3F2844931E488FA3001E8ED3 /* ProfilJoueur.swift */,
 			);
 			name = Classe;
+			sourceTree = "<group>";
+		};
+		3FCABF821EC1CB720072BAEB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3FCABFA61EC1CC3A0072BAEB /* Buitages */,
+				3FCABFA51EC1CBC30072BAEB /* Backgrounds */,
+			);
+			name = Audio;
+			path = ProjetImerirApp;
+			sourceTree = "<group>";
+		};
+		3FCABFA51EC1CBC30072BAEB /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				3F5342F61EC2025500995A06 /* Bedtime.mp3 */,
+				3FCABF841EC1CB9A0072BAEB /* BlueRidge.mp3 */,
+				3FCABF851EC1CB9A0072BAEB /* Bog.mp3 */,
+				3FCABF861EC1CB9A0072BAEB /* Delivering.mp3 */,
+				3FCABF881EC1CB9A0072BAEB /* Fantasy.mp3 */,
+				3FCABF891EC1CB9A0072BAEB /* LostJungle.mp3 */,
+				3FCABF8B1EC1CB9A0072BAEB /* MistyBog.mp3 */,
+				3F086FBF1EC366810021A68E /* DownDraft.mp3 */,
+				3F086FC01EC366810021A68E /* MadScientist.mp3 */,
+				3FCABF8C1EC1CB9A0072BAEB /* Moonlit.mp3 */,
+				3FCABF8D1EC1CB9A0072BAEB /* PuzzleGame.mp3 */,
+				3FCABF8E1EC1CB9A0072BAEB /* SodiumVapor.mp3 */,
+				3FCABF8F1EC1CB9A0072BAEB /* SomeDreamy.mp3 */,
+				3FCABF911EC1CB9A0072BAEB /* SurrealChase.mp3 */,
+				3FCABF921EC1CB9A0072BAEB /* TheDarkness.mp3 */,
+				3FCABF931EC1CB9A0072BAEB /* TheyreClosing.mp3 */,
+				3F5342F41EC1FE6900995A06 /* Mountainside.mp3 */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		3FCABFA61EC1CC3A0072BAEB /* Buitages */ = {
+			isa = PBXGroup;
+			children = (
+				3F5342F81EC2138900995A06 /* Air.mp3 */,
+				3F5342F91EC2138900995A06 /* Bonus.mp3 */,
+				3F5342FA1EC2138900995A06 /* Clik.mp3 */,
+				3F5342FB1EC2138900995A06 /* ClikBad.mp3 */,
+				3F5342FC1EC2138900995A06 /* ClikGood.mp3 */,
+			);
+			name = Buitages;
+			sourceTree = "<group>";
+		};
+		3FD8A8931EC3A2C10088BEB2 /* ArcadeLabyrinthe */ = {
+			isa = PBXGroup;
+			children = (
+				3FD8A8941EC3A3360088BEB2 /* LabyrintheViewController.swift */,
+				3FD8A8951EC3A3360088BEB2 /* Maze.swift */,
+				3FD8A8961EC3A3360088BEB2 /* MazePlayer.swift */,
+				3FD8A8971EC3A3360088BEB2 /* Potion.swift */,
+				3FD8A8981EC3A3360088BEB2 /* Room.swift */,
+				3FD8A8991EC3A3360088BEB2 /* StrangeBat.swift */,
+			);
+			name = ArcadeLabyrinthe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +583,13 @@
 			files = (
 				3F55C0E71EC2497C009FC631 /* LabGaucheDroite.gif in Resources */,
 				3F90A3851E81376900E342AE /* ArcadeCookie.storyboard in Resources */,
+				3F086FBB1EC3532D0021A68E /* BackgroundMartien.gif in Resources */,
+				3FC333291EAA05B700D94B1B /* Parametres.storyboard in Resources */,
+				3FCABF9A1EC1CB9A0072BAEB /* LostJungle.mp3 in Resources */,
+				3FCABF9F1EC1CB9A0072BAEB /* SodiumVapor.mp3 in Resources */,
+				3F5343001EC2138900995A06 /* ClikBad.mp3 in Resources */,
+				3F086FC21EC366810021A68E /* MadScientist.mp3 in Resources */,
+				3F5343011EC2138900995A06 /* ClikGood.mp3 in Resources */,
 				3F2844731E488E94001E8ED3 /* LaunchScreen.storyboard in Resources */,
 				3F2844A61E48B5BE001E8ED3 /* QuestionsImerirApp.json in Resources */,
 				3F7D43B81EB86DA10010BF98 /* Piege.gif in Resources */,
@@ -444,18 +598,45 @@
 				3FA4E0BA1E962C2800C25445 /* LabCulDeSac.gif in Resources */,
 				3FA4E0BC1E962C2800C25445 /* LabFace.gif in Resources */,
 				3FA4E0C01E962C2800C25445 /* LabSortie.gif in Resources */,
+				3F086FBC1EC3532D0021A68E /* Directeur.gif in Resources */,
+				3FCABF991EC1CB9A0072BAEB /* Fantasy.mp3 in Resources */,
+				3FA680281EB87FA10045EA6E /* ChambreAdo.gif in Resources */,
+				3FCABFA31EC1CB9A0072BAEB /* TheDarkness.mp3 in Resources */,
+				3F2844A71E48B5BE001E8ED3 /* DataSave.json in Resources */,
+				3FA6802C1EB87FA10045EA6E /* SalleDirecteur.gif in Resources */,
 				3F90A3801E8136E100E342AE /* ChoiseClasse.storyboard in Resources */,
+				3F323F151E9E7915001490B9 /* GamesRules.xib in Resources */,
+				3FCABF961EC1CB9A0072BAEB /* Bog.mp3 in Resources */,
+				3F5342FF1EC2138900995A06 /* Clik.mp3 in Resources */,
+				3F5342F71EC2025500995A06 /* Bedtime.mp3 in Resources */,
 				3F2844701E488E94001E8ED3 /* Assets.xcassets in Resources */,
 				3F55C0BD1EBA01D5009FC631 /* BeteVerte.gif in Resources */,
 				3F90A3821E81372C00E342AE /* Quiz.storyboard in Resources */,
+				3FCABF951EC1CB9A0072BAEB /* BlueRidge.mp3 in Resources */,
+				3F5342FE1EC2138900995A06 /* Bonus.mp3 in Resources */,
+				3FB74A281E96454700D68DB2 /* Maman.gif in Resources */,
+				3FCABF9C1EC1CB9A0072BAEB /* MistyBog.mp3 in Resources */,
 				3F2844A51E48B5BE001E8ED3 /* ClasseJoueur.json in Resources */,
 				3FA4E0AD1E94C76400C25445 /* ArcadeLabyrinthe.storyboard in Resources */,
 				3F55C0BB1EBA01CD009FC631 /* BeteGrise.gif in Resources */,
-				3F25514B1E8C0F3900AD0320 /* FinDirecteur.gif in Resources */,
 				3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */,
 				3FA4E0BD1E962C2800C25445 /* LabFaceDroite.gif in Resources */,
+				3F6BFA101E9FA65400C0732F /* GameOver.storyboard in Resources */,
+				3F086FC11EC366810021A68E /* DownDraft.mp3 in Resources */,
+				3FCABFA41EC1CB9A0072BAEB /* TheyreClosing.mp3 in Resources */,
+				3FCABF971EC1CB9A0072BAEB /* Delivering.mp3 in Resources */,
+				3FA6802B1EB87FA10045EA6E /* SalleDeClasse.gif in Resources */,
+				3F2551471E8C0C1400AD0320 /* Silhouette.gif in Resources */,
+				3F086FBD1EC3532D0021A68E /* Martien1.gif in Resources */,
+				3FCABFA21EC1CB9A0072BAEB /* SurrealChase.mp3 in Resources */,
+				3F086FBE1EC3532D0021A68E /* Martien2.gif in Resources */,
+				3F5342FD1EC2138900995A06 /* Air.mp3 in Resources */,
 				3FB88A6C1E51AA00007C0BD6 /* HeaderView.xib in Resources */,
-				3F2551491E8C0DF300AD0320 /* Maman.gif in Resources */,
+				3F5342F51EC1FE6900995A06 /* Mountainside.mp3 in Resources */,
+				3FA6802A1EB87FA10045EA6E /* Reveil.gif in Resources */,
+				3FCABFA01EC1CB9A0072BAEB /* SomeDreamy.mp3 in Resources */,
+				3F086FC41EC372FE0021A68E /* BackgroundDirecteur.gif in Resources */,
+				3FCABF9E1EC1CB9A0072BAEB /* PuzzleGame.mp3 in Resources */,
 				3F90A3871E8137B500E342AE /* Dialogue.storyboard in Resources */,
 				3F28446E1E488E94001E8ED3 /* Main.storyboard in Resources */,
 				3FA4E0BE1E962C2800C25445 /* LabFaceGauche.gif in Resources */,
@@ -465,6 +646,7 @@
 				3F90A38B1E81382600E342AE /* ArcadeRangement.storyboard in Resources */,
 				3FA4E0BF1E962C2800C25445 /* LabGauche.gif in Resources */,
 				3F2844A81E48B5BE001E8ED3 /* Dialogue.json in Resources */,
+				3FCABF9D1EC1CB9A0072BAEB /* Moonlit.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,39 +665,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F4EFD741E50DF4900316A2B /* RangementViewController.swift in Sources */,
+				3FD8A89C1EC3A3360088BEB2 /* MazePlayer.swift in Sources */,
+				3FD8A89E1EC3A3360088BEB2 /* Room.swift in Sources */,
 				3F2844901E488F30001E8ED3 /* DesignableLabel.swift in Sources */,
-				3F55C0E11EBF6A26009FC631 /* Room.swift in Sources */,
 				3F28F7E61E61F1CF00920808 /* FreezeTime.swift in Sources */,
 				3F2844921E488F94001E8ED3 /* BuildElementApp.swift in Sources */,
 				3F28449C1E48B515001E8ED3 /* InitViewController.swift in Sources */,
+				3F323F171E9E7978001490B9 /* GamesRulesView.swift in Sources */,
+				3FD8A89A1EC3A3360088BEB2 /* LabyrintheViewController.swift in Sources */,
 				3F28F7EC1E61F1FB00920808 /* ScoreUp.swift in Sources */,
 				3FBD2D641E48D65400100027 /* ContentViewController.swift in Sources */,
 				3F28F7EE1E61F20400920808 /* ScoreDown.swift in Sources */,
-				3F55C0E31EBF6A4E009FC631 /* Potion.swift in Sources */,
 				3F28F7F21E61F26600920808 /* RangementView.swift in Sources */,
+				3FC3332B1EADEED800D94B1B /* ParametresViewController.swift in Sources */,
+				3F80C2211EA65FBB006D1430 /* GameOverViewController.swift in Sources */,
 				3F28F7E41E61F1A800920808 /* Bonus.swift in Sources */,
 				3FBD2D661E48D66B00100027 /* ViewController.swift in Sources */,
 				3F2844AE1E48B8E9001E8ED3 /* SwiftyJSON.swift in Sources */,
 				3F2844961E488FB9001E8ED3 /* OutletExtension.swift in Sources */,
 				3FF9C5BB1E54A4C20036C096 /* ChoiceClasseViewController.swift in Sources */,
-				3FA4E0B21E94CB5000C25445 /* Maze.swift in Sources */,
 				3F28446B1E488E94001E8ED3 /* QuestionViewController.swift in Sources */,
 				3F2844691E488E94001E8ED3 /* AppDelegate.swift in Sources */,
 				3FB88A741E52297E007C0BD6 /* ClasseTableViewCell.swift in Sources */,
+				3FD8A89D1EC3A3360088BEB2 /* Potion.swift in Sources */,
 				3F2844941E488FA3001E8ED3 /* ProfilJoueur.swift in Sources */,
 				3F28449E1E48B55D001E8ED3 /* NameModalViewController.swift in Sources */,
 				3F28448C1E488EE5001E8ED3 /* DesignableView.swift in Sources */,
 				3F28449A1E48B4F7001E8ED3 /* DialogueViewController.swift in Sources */,
 				3F28F7F41E61F27C00920808 /* Objet.swift in Sources */,
-				3F55C0DF1EBF69ED009FC631 /* MazePlayer.swift in Sources */,
-				3FA4E0B01E94CAAD00C25445 /* LabyrintheViewController.swift in Sources */,
 				3F28F7EA1E61F1ED00920808 /* SlowTime.swift in Sources */,
-				3F55C0E51EBF6A69009FC631 /* StrangeBat.swift in Sources */,
+				3F728DFD1EB08CCA000D3F8A /* ContentRangementViewController.swift in Sources */,
 				3F28F7E81E61F1E200920808 /* FreezeObjects.swift in Sources */,
 				3FB88A681E4F6396007C0BD6 /* HeaderView.swift in Sources */,
 				3F28F7F01E61F21200920808 /* SomeHelp.swift in Sources */,
 				3F28448E1E488F23001E8ED3 /* DesignableButton.swift in Sources */,
 				3F6575E81E545BB3000C008A /* ClasseModalViewController.swift in Sources */,
+				3FA680621EBA0AF90045EA6E /* CreditViewController.swift in Sources */,
+				3FD8A89B1EC3A3360088BEB2 /* Maze.swift in Sources */,
+				3FD8A89F1EC3A3360088BEB2 /* StrangeBat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
