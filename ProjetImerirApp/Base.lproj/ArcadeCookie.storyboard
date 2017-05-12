@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h1e-iz-tf4">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cookie View Controller-->
+        <scene sceneID="Ce9-4p-mOM">
+            <objects>
+                <viewController storyboardIdentifier="ArcadeCookie" modalTransitionStyle="crossDissolve" id="h1e-iz-tf4" customClass="CookieViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sh0-GN-uGQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="j2a-Q7-nr5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y5q-9Y-sZD">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArcadeCookie" translatesAutoresizingMaskIntoConstraints="NO" id="Wk6-ki-bh3">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Cookie" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-gL-EVB">
+                                <rect key="frame" x="25" y="224" width="973" height="956"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-XP-Qm6">
+                                <rect key="frame" x="60" y="198" width="904" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="tJi-LB-h66"/>
+                                </constraints>
+                            </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-ag-5hq">
+                                <rect key="frame" x="553" y="920.5" width="461" height="437.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b7P-ag-5hq" secondAttribute="height" multiplier="1/0.95" id="T7G-Fn-kO0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sad" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-7o-JBK">
+                                <rect key="frame" x="30" y="174" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WEZ-pL-7Et"/>
+                                    <constraint firstAttribute="width" constant="50" id="nco-iI-lql"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Happy" translatesAutoresizingMaskIntoConstraints="NO" id="OPh-ya-jkV">
+                                <rect key="frame" x="944" y="174" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EFm-Fx-dGZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="yWS-dC-xLW"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-Ew-6Hr" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="164"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qhV-XP-Qm6" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="23j-bs-tvb"/>
+                            <constraint firstItem="qhV-XP-Qm6" firstAttribute="leading" secondItem="y5q-9Y-sZD" secondAttribute="leadingMargin" constant="40" id="3i4-3J-IZr"/>
+                            <constraint firstItem="fuG-gL-EVB" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="7cR-PC-wDd"/>
+                            <constraint firstItem="j2a-Q7-nr5" firstAttribute="top" secondItem="b7P-ag-5hq" secondAttribute="bottom" constant="8" symbolic="YES" id="9fQ-Em-Z1V"/>
+                            <constraint firstItem="hKw-Ew-6Hr" firstAttribute="height" secondItem="y5q-9Y-sZD" secondAttribute="height" multiplier="0.12" id="Ez6-PK-H45"/>
+                            <constraint firstItem="Wk6-ki-bh3" firstAttribute="centerY" secondItem="y5q-9Y-sZD" secondAttribute="centerY" id="LvS-tL-Ojp"/>
+                            <constraint firstItem="b7P-ag-5hq" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" multiplier="0.45" id="Srb-Hn-KbR"/>
+                            <constraint firstItem="hKw-Ew-6Hr" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" id="TFM-b4-bD4"/>
+                            <constraint firstAttribute="trailing" secondItem="b7P-ag-5hq" secondAttribute="trailing" constant="10" id="Vfp-zV-2sB"/>
+                            <constraint firstItem="fuG-gL-EVB" firstAttribute="height" secondItem="y5q-9Y-sZD" secondAttribute="height" multiplier="0.7" id="WxD-Hy-F10"/>
+                            <constraint firstItem="fuG-gL-EVB" firstAttribute="top" secondItem="OPh-ya-jkV" secondAttribute="bottom" id="Zw1-Eg-903"/>
+                            <constraint firstItem="hKw-Ew-6Hr" firstAttribute="top" secondItem="Sh0-GN-uGQ" secondAttribute="bottom" constant="10" id="aQi-6x-68I"/>
+                            <constraint firstItem="Wk6-ki-bh3" firstAttribute="height" secondItem="y5q-9Y-sZD" secondAttribute="height" id="bJm-gD-9do"/>
+                            <constraint firstItem="FnW-7o-JBK" firstAttribute="leading" secondItem="qhV-XP-Qm6" secondAttribute="leading" constant="-30" id="d8Q-cJ-ZXT"/>
+                            <constraint firstItem="fuG-gL-EVB" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" multiplier="0.95" id="eos-qc-M5Q"/>
+                            <constraint firstItem="FnW-7o-JBK" firstAttribute="centerY" secondItem="qhV-XP-Qm6" secondAttribute="centerY" id="fqx-90-2Th"/>
+                            <constraint firstItem="OPh-ya-jkV" firstAttribute="top" secondItem="hKw-Ew-6Hr" secondAttribute="bottom" id="kab-zR-Qga"/>
+                            <constraint firstItem="hKw-Ew-6Hr" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="kdn-at-QL5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qhV-XP-Qm6" secondAttribute="trailing" constant="40" id="pE6-84-cdi"/>
+                            <constraint firstItem="OPh-ya-jkV" firstAttribute="trailing" secondItem="qhV-XP-Qm6" secondAttribute="trailing" constant="30" id="qn4-39-Xy8"/>
+                            <constraint firstItem="OPh-ya-jkV" firstAttribute="centerY" secondItem="qhV-XP-Qm6" secondAttribute="centerY" id="ufm-5C-e88"/>
+                            <constraint firstItem="Wk6-ki-bh3" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="y7Z-WR-EcY"/>
+                            <constraint firstItem="Wk6-ki-bh3" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" id="ysP-EI-733"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="Cookie" destination="fuG-gL-EVB" id="ywo-8A-rKY"/>
+                        <outlet property="background" destination="Wk6-ki-bh3" id="8YG-cH-uwz"/>
+                        <outlet property="happy" destination="OPh-ya-jkV" id="gRl-nM-vUF"/>
+                        <outlet property="headerView" destination="hKw-Ew-6Hr" id="EF5-Kl-Jb6"/>
+                        <outlet property="mom" destination="b7P-ag-5hq" id="kaa-K6-3lL"/>
+                        <outlet property="progressBar" destination="qhV-XP-Qm6" id="neh-5w-QcQ"/>
+                        <outlet property="sad" destination="FnW-7o-JBK" id="4uR-iF-qyL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63e-5E-4qx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="1693"/>
+        </scene>
+        <!--Content Cookie View Controller-->
+        <scene sceneID="iZG-uy-iA6">
+            <objects>
+                <viewController storyboardIdentifier="CookieContentViewController" modalTransitionStyle="crossDissolve" id="9aI-fO-37Q" customClass="ContentCookieViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xLf-pF-Sgm"/>
+                        <viewControllerLayoutGuide type="bottom" id="BhA-Ik-2EK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PnU-Nx-6YX" userLabel="GamesRulesView" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="GamesRulesView" destination="PnU-Nx-6YX" id="5gR-02-aCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8h-nr-N9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="2276"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="1V8-0f-jo6">
+            <objects>
+                <pageViewController storyboardIdentifier="CookiePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="BoF-Oj-c5h" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwq-yz-Jcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="1452"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArcadeCookie" width="720" height="720"/>
+        <image name="Cookie" width="400" height="400"/>
+        <image name="Happy" width="255" height="240"/>
+        <image name="Sad" width="600" height="561"/>
+    </resources>
+</document>

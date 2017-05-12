@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
+            <connections>
+                <outlet property="hint" destination="jlS-KW-3GV" id="kCh-zo-J2Q"/>
+                <outlet property="imageView" destination="z9B-HE-LTT" id="a7J-9s-CKx"/>
+                <outlet property="label" destination="f39-5K-XMc" id="X31-c7-SwQ"/>
+                <outlet property="titre" destination="CA2-io-Wcg" id="qbk-93-JtR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eFA-kg-KOi" userLabel="GamesRules" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le titre" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA2-io-Wcg" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                    <rect key="frame" x="8" y="23" width="1008" height="150.5"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.22223984769999999" green="0.21570338159999999" blue="0.21570338159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La règle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f39-5K-XMc" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                    <rect key="frame" x="18" y="456.5" width="988" height="410"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.22223984769999999" green="0.21570338159999999" blue="0.21570338159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineSpace">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9B-HE-LTT">
+                    <rect key="frame" x="376" y="183.5" width="273" height="273"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="z9B-HE-LTT" secondAttribute="height" id="wOs-ot-PRN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un indice" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlS-KW-3GV" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                    <rect key="frame" x="18" y="876.5" width="988" height="245.5"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.22223984769999999" green="0.21570338159999999" blue="0.21570338159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.3019008078" green="0.29598118410000002" blue="0.30782043149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="f39-5K-XMc" firstAttribute="top" secondItem="z9B-HE-LTT" secondAttribute="bottom" id="64d-xg-SpZ"/>
+                <constraint firstAttribute="trailingMargin" secondItem="jlS-KW-3GV" secondAttribute="trailing" constant="10" id="8Xs-yt-82j"/>
+                <constraint firstItem="f39-5K-XMc" firstAttribute="centerX" secondItem="eFA-kg-KOi" secondAttribute="centerX" id="F7e-pi-XJ5"/>
+                <constraint firstItem="f39-5K-XMc" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.3" id="IXX-iE-T34"/>
+                <constraint firstAttribute="trailingMargin" secondItem="f39-5K-XMc" secondAttribute="trailing" constant="10" id="OO7-9v-hXT"/>
+                <constraint firstItem="f39-5K-XMc" firstAttribute="leading" secondItem="eFA-kg-KOi" secondAttribute="leadingMargin" constant="10" id="Sc9-hU-ext"/>
+                <constraint firstAttribute="trailingMargin" secondItem="CA2-io-Wcg" secondAttribute="trailing" id="TXn-eG-EBt"/>
+                <constraint firstItem="jlS-KW-3GV" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.18" id="UTb-o4-LmP"/>
+                <constraint firstItem="CA2-io-Wcg" firstAttribute="leading" secondItem="eFA-kg-KOi" secondAttribute="leadingMargin" id="dKO-t3-I1A"/>
+                <constraint firstItem="jlS-KW-3GV" firstAttribute="leading" secondItem="eFA-kg-KOi" secondAttribute="leadingMargin" constant="10" id="fAZ-Xk-cdR"/>
+                <constraint firstItem="CA2-io-Wcg" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.11" id="h11-kv-3aC"/>
+                <constraint firstItem="CA2-io-Wcg" firstAttribute="top" secondItem="eFA-kg-KOi" secondAttribute="topMargin" constant="15" id="hXv-Rj-BcY"/>
+                <constraint firstItem="z9B-HE-LTT" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.2" id="k0m-b7-naM"/>
+                <constraint firstItem="jlS-KW-3GV" firstAttribute="top" secondItem="f39-5K-XMc" secondAttribute="bottom" constant="10" id="o7K-BX-VJr"/>
+                <constraint firstItem="z9B-HE-LTT" firstAttribute="centerX" secondItem="eFA-kg-KOi" secondAttribute="centerX" id="qmu-WX-99i"/>
+                <constraint firstItem="CA2-io-Wcg" firstAttribute="centerX" secondItem="z9B-HE-LTT" secondAttribute="centerX" id="vDd-Zo-zuJ"/>
+                <constraint firstItem="z9B-HE-LTT" firstAttribute="top" secondItem="CA2-io-Wcg" secondAttribute="bottom" constant="10" id="wHf-fg-p7G"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="30"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="2"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+</document>

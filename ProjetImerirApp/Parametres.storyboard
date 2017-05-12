@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ynb-Qd-JX7">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parametres View Controller-->
+        <scene sceneID="Ccg-O6-Uyb">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="ynb-Qd-JX7" customClass="ParametresViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="XYw-5N-aVe">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mDL-Pb-NwL">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEl-Jg-Gml" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                    <rect key="frame" x="205" y="478" width="614" height="410"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCf-Nt-X3V" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="92" y="0.0" width="430" height="164"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.22223984771573602" green="0.21570338160644967" blue="0.21570338160644967" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <size key="shadowOffset" width="2" height="2"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="18"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-Zj-A7y" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="154" y="164" width="307.5" height="81.5"/>
+                                            <color key="backgroundColor" red="0.15123334390862941" green="0.15123334390862941" blue="0.15123334390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <size key="titleShadowOffset" width="1" height="1"/>
+                                            <state key="normal" title="Reprendre">
+                                                <color key="titleColor" red="0.99201911220000005" green="1" blue="0.98081586539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.20808217005076146" green="0.20196210622573907" blue="0.20196210622573907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="restartButton:" destination="ynb-Qd-JX7" eventType="touchUpInside" id="FP3-DM-FgV"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lp1-pi-Xl3" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="154" y="265.5" width="307.5" height="82"/>
+                                            <color key="backgroundColor" red="0.15123334390862941" green="0.15123334390862941" blue="0.15123334390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <size key="titleShadowOffset" width="1" height="1"/>
+                                            <state key="normal" title="Quitter">
+                                                <color key="titleColor" red="0.99201911220000005" green="1" blue="0.98081586539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.20808217005076146" green="0.20196210622573907" blue="0.20196210622573907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="exitButton:" destination="ynb-Qd-JX7" eventType="touchUpInside" id="MP6-Wf-sOC"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.30190080778992584" green="0.29598118410777047" blue="0.30782043147208127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Lp1-pi-Xl3" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.5" id="3Wd-z4-QDh"/>
+                                        <constraint firstItem="PCf-Nt-X3V" firstAttribute="height" secondItem="jEl-Jg-Gml" secondAttribute="height" multiplier="0.4" id="9Bi-bX-6IN"/>
+                                        <constraint firstItem="Lp1-pi-Xl3" firstAttribute="centerX" secondItem="jEl-Jg-Gml" secondAttribute="centerX" id="Hwr-jn-wVt"/>
+                                        <constraint firstItem="4Kx-Zj-A7y" firstAttribute="centerX" secondItem="jEl-Jg-Gml" secondAttribute="centerX" id="I8f-p8-SXi"/>
+                                        <constraint firstItem="PCf-Nt-X3V" firstAttribute="centerX" secondItem="jEl-Jg-Gml" secondAttribute="centerX" id="P0v-Be-JxH"/>
+                                        <constraint firstItem="4Kx-Zj-A7y" firstAttribute="height" secondItem="jEl-Jg-Gml" secondAttribute="height" multiplier="0.2" id="QkT-sL-oAj"/>
+                                        <constraint firstItem="PCf-Nt-X3V" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.7" id="XN5-Qi-TKC"/>
+                                        <constraint firstItem="Lp1-pi-Xl3" firstAttribute="height" secondItem="jEl-Jg-Gml" secondAttribute="height" multiplier="0.2" id="b5W-FU-0DC"/>
+                                        <constraint firstItem="4Kx-Zj-A7y" firstAttribute="top" secondItem="PCf-Nt-X3V" secondAttribute="bottom" id="eyB-iA-YYS"/>
+                                        <constraint firstItem="Lp1-pi-Xl3" firstAttribute="top" secondItem="4Kx-Zj-A7y" secondAttribute="bottom" constant="20" id="f8N-rr-C0D"/>
+                                        <constraint firstItem="4Kx-Zj-A7y" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.5" id="p2d-J8-g8b"/>
+                                        <constraint firstItem="PCf-Nt-X3V" firstAttribute="top" secondItem="jEl-Jg-Gml" secondAttribute="top" id="xLu-ZI-a14"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="40"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="jEl-Jg-Gml" firstAttribute="centerY" secondItem="mDL-Pb-NwL" secondAttribute="centerY" id="5EZ-dR-kJW"/>
+                                <constraint firstItem="jEl-Jg-Gml" firstAttribute="width" secondItem="mDL-Pb-NwL" secondAttribute="width" multiplier="0.6" id="Lgs-8G-k8N"/>
+                                <constraint firstItem="jEl-Jg-Gml" firstAttribute="centerX" secondItem="mDL-Pb-NwL" secondAttribute="centerX" id="Pr4-MK-EFR"/>
+                                <constraint firstItem="jEl-Jg-Gml" firstAttribute="height" secondItem="mDL-Pb-NwL" secondAttribute="height" multiplier="0.3" id="gmJ-KU-bmM"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DqU-j9-m3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="94"/>
+        </scene>
+    </scenes>
+</document>
