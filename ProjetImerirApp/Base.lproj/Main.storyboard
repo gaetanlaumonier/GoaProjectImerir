@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Vd-Vn-EX1">
-    <device id="ipad12_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Vd-Vn-EX1">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,22 +19,22 @@
                         <viewControllerLayoutGuide type="bottom" id="BKK-gC-96s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V2U-jB-sko">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LabSortie.gif" translatesAutoresizingMaskIntoConstraints="NO" id="3lF-mz-r9V">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOd-Sd-a8B">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cvV-2h-sw2">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Banale Journée" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-OW-Qej" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="77" y="68.5" width="870" height="273"/>
+                                <rect key="frame" x="31" y="36.666666666666671" width="352" height="147.33333333333331"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +47,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-Bu-ab5" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="448" width="512" height="136.5"/>
+                                <rect key="frame" x="103.66666666666669" y="227.66666666666669" width="207" height="73.666666666666686"/>
                                 <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -75,7 +74,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-gN-kua" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="948" width="512" height="136.5"/>
+                                <rect key="frame" x="103.66666666666669" y="538.33333333333348" width="207" height="73.666666666666629"/>
                                 <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -102,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-BW-Mo9" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="614.5" width="512" height="137"/>
+                                <rect key="frame" x="103.66666666666669" y="331.33333333333331" width="207" height="73.333333333333371"/>
                                 <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Charger une partie">
@@ -128,7 +127,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDf-ZF-V2R" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="781.5" width="512" height="136.5"/>
+                                <rect key="frame" x="103.66666666666669" y="434.66666666666669" width="207" height="73.666666666666629"/>
                                 <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Mode Arcade">
@@ -150,23 +149,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaQ-mP-7NA" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="30" y="668" width="77" height="30"/>
-                                <state key="normal" title="Game Over"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.40434644669999997" blue="0.10374948270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="gameOver:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="FX7-lV-PsJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnn-YC-hLC" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="256" y="1114.5" width="512" height="136.5"/>
+                                <rect key="frame" x="103.66666666666669" y="642" width="207" height="73.666666666666629"/>
                                 <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Crédits">
@@ -204,12 +188,10 @@
                             <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="EmL-K9-yFC"/>
                             <constraint firstItem="MXK-BW-Mo9" firstAttribute="top" secondItem="R5H-Bu-ab5" secondAttribute="bottom" constant="30" id="LAK-bb-J6c"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="top" secondItem="SDf-ZF-V2R" secondAttribute="bottom" constant="30" id="MFO-Xt-XI1"/>
-                            <constraint firstItem="SaQ-mP-7NA" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leadingMargin" constant="10" id="NI8-hN-f5f"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.85" id="NyE-G1-D2y"/>
                             <constraint firstItem="SDf-ZF-V2R" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="P0f-wi-ppd"/>
                             <constraint firstItem="tnn-YC-hLC" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="PFl-zT-blQ"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="PuU-cX-xRo"/>
-                            <constraint firstItem="SaQ-mP-7NA" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="Sw2-hY-rPr"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Vob-aI-BRH"/>
                             <constraint firstItem="tyc-gN-kua" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.5" id="Waa-wW-PPa"/>
                             <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="XtX-hc-6sp"/>
@@ -247,14 +229,14 @@
             <objects>
                 <viewController modalPresentationStyle="overCurrentContext" id="23D-lh-nEh" customClass="CreditViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="gDP-dq-RKa">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="center" id="kJd-dS-DTM">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-Ps-eWA">
-                                    <rect key="frame" x="102.5" y="20" width="819" height="136.5"/>
+                                    <rect key="frame" x="41.333333333333343" y="20" width="331.33333333333337" height="73.666666666666671"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -294,17 +276,17 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="yyN-R3-Zyy" customClass="NameModalViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="kJd-fC-o84">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="28Y-eL-vee">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkl-em-FWo" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
-                                    <rect key="frame" x="153.5" y="341.5" width="717" height="683"/>
+                                    <rect key="frame" x="62" y="184" width="290" height="368"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quel est ton nom ?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-tS-f4E" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="72" y="30" width="573" height="102.5"/>
+                                            <rect key="frame" x="29.333333333333314" y="30" width="231.33333333333337" height="55.333333333333314"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -317,7 +299,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez votre nom" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vND-3A-TCc" userLabel="ContrainteLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="72" y="190" width="573" height="102.5"/>
+                                            <rect key="frame" x="29.333333333333314" y="95.666666666666686" width="231.33333333333337" height="55"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -330,13 +312,13 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utr-30-AxL">
-                                            <rect key="frame" x="179.5" y="307.5" width="358" height="67.5"/>
+                                            <rect key="frame" x="72.666666666666671" y="165.66666666666669" width="144.66666666666663" height="36"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMx-lC-2jQ" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="179.5" y="390" width="358" height="102.5"/>
+                                            <rect key="frame" x="72.666666666666671" y="216.66666666666669" width="144.66666666666663" height="55.333333333333314"/>
                                             <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
@@ -363,7 +345,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJD-Ih-37X" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="250.5" y="502.5" width="215" height="102.5"/>
+                                            <rect key="frame" x="101" y="282" width="87" height="55.333333333333371"/>
                                             <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
@@ -453,8 +435,8 @@
         <!--Quiz-->
         <scene sceneID="3nH-FH-ui8">
             <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" id="R4g-lO-tom" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6L5-qO-ysy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Quiz" id="R4g-lO-tom" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-312" y="356"/>
         </scene>

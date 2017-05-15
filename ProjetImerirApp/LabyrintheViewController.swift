@@ -158,7 +158,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     func initGame() {
         
-        //Start with alpha 0 so the initial background image is not displayed while game logic is loading
+        //Start with alpha 0 so the initial background image is not displayed while game is being initialized
         view.alpha = 0
         
         if self.oneProfil.classeJoueur == "Geek" {
@@ -184,7 +184,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func createMaze() {
-        mazeObj = Maze(width: 21, height: 21)
+        mazeObj = Maze(width: 19, height: 19)
         maze = mazeObj.data
         
         if isFirstMaze {
@@ -748,17 +748,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         cellLayer.backgroundColor = UIColor.red.cgColor
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    
     func saveMyData(){
         var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         maData.appendPathComponent("saveGame")
         NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
-    }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func hideModal() {
@@ -780,7 +781,6 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                 if self.isFirstMaze {
                      self.firstGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                         self.elapsedTime += 1
-                        print("lala")
                         if self.elapsedTime >= 30 {
                     self.endGame()
                         }

@@ -106,6 +106,12 @@ extension UIButton {
 
 extension UIImage {
     
+    private struct gifProperties {
+        static var duration = 0
+    }
+    
+    static var lastLoadedGIFDuration: Int { return gifProperties.duration }
+    
     public class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
@@ -172,10 +178,6 @@ extension UIImage {
         }
         
         delay = delayObject as? Double ?? 0
-        
-        if delay < 0.1 {
-            delay = 0.1 // Make sure they're not too fast
-        }
         
         return delay
     }
@@ -254,7 +256,8 @@ extension UIImage {
             for val: Int in delays {
                 sum += val
             }
-            
+
+            self.gifProperties.duration = sum - delays.last!
             return sum
         }()
         

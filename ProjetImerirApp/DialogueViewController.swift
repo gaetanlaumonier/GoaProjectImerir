@@ -210,6 +210,7 @@ class DialogueViewController: UIViewController {
                 self.personnages[0].removeFromSuperview()
                 self.backgroundMusicPlayer.stop()
                 self.backgroundMusicPlayer = self.GestionMusic(filename: "TheDarkness")
+                self.imageBackground.image = UIImage(named: "Lab4voies.gif")
                 self.imageBackground.loadGif(name: "Lab4voies")
                 self.imageBackground.alpha = 0
                 self.dialogueView.alpha = 0
@@ -259,7 +260,18 @@ class DialogueViewController: UIViewController {
     
     func ArcadeConsoleStart(){
         
-        print("ArcadeConsole")
+        if let vc = UIStoryboard(name:"ArcadeConsole", bundle:nil).instantiateInitialViewController() as? ConsoleViewController
+        {
+            UIView.animate(withDuration: 1, animations: {
+                self.view.alpha = 0
+            } , completion: { _ in
+                vc.oneProfil = self.oneProfil
+                self.present(vc, animated: false, completion: nil)
+            })
+        }else {
+            print("Could not instantiate view controller with identifier of type ConsoleViewController")
+            return
+        }
 
         
     }

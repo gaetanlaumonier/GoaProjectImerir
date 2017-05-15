@@ -96,7 +96,7 @@ class NameModalViewController: UIViewController {
                                 }, completion : { _ in
                                 myPresentingViewController.backgroundMusicPlayer.stop()
                                     let namePlayer = self.nameField.text!.capitalizingFirstLetter()
-                                     self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":4, "profil_sociable" : 0, "profil_timide":4, "profil_innovateur":0, "profil_evil":4, "profil_good":4], classeJoueur : "Geek", sceneActuelle : 0, bonneReponseQuiz:20, questionAlreadyPick:[])
+                                     self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":4, "profil_sociable" : 0, "profil_timide":4, "profil_innovateur":0, "profil_evil":4, "profil_good":4], classeJoueur : "Geek", sceneActuelle : 8, bonneReponseQuiz:20, questionAlreadyPick:[])
                                     self.oneProfil.name = namePlayer
                                     self.saveMyData()
                                     

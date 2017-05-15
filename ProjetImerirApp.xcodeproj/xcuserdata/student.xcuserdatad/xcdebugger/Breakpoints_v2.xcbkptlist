@@ -159,8 +159,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
             endingLineNumber = "176"
-            landmarkName = "saveMyData()"
-            landmarkType = "7">
+            landmarkName = "RangementViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -191,8 +191,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
             endingLineNumber = "256"
-            landmarkName = "onObjectDropped(objet:)"
-            landmarkType = "7">
+            landmarkName = "RangementViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -287,7 +287,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "476"
             endingLineNumber = "476"
-            landmarkName = "drawSpikes()"
+            landmarkName = "loadRoom(_:_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -303,7 +303,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "474"
             endingLineNumber = "474"
-            landmarkName = "drawSpikes()"
+            landmarkName = "loadRoom(_:_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -319,7 +319,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
             endingLineNumber = "376"
-            landmarkName = "loadRoom(_:_:completion:)"
+            landmarkName = "looseHealth(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -351,8 +351,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "imagesList"
-            landmarkType = "24">
+            landmarkName = "LabyrintheViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -367,7 +367,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "512"
             endingLineNumber = "512"
-            landmarkName = "drawNextBat()"
+            landmarkName = "getRoomImage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -383,7 +383,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "initGame()"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -399,8 +399,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "652"
             endingLineNumber = "652"
-            landmarkName = "didReceiveMemoryWarning()"
+            landmarkName = "handleBatTap(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/ConsoleViewController.swift"
+            timestampString = "516511244.324688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
+            landmarkName = "startHealSpawner()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/ConsoleViewController.swift"
+            timestampString = "516511244.324688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "ConsoleViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

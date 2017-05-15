@@ -3,10 +3,10 @@ import UIKit
 class ProfilJoueur : NSObject, NSCoding{
     
     //Nom du joueur
-    var name : String
+    var name : String = ""
     
     //Point de vie du joueur
-    var lifePoint : Int {
+    var lifePoint : Int = 0 {
         didSet{
             if lifePoint <= 0 {
                 if let vc = UIStoryboard(name:"GameOver", bundle:nil).instantiateInitialViewController() as? GameOverViewController
@@ -31,16 +31,20 @@ class ProfilJoueur : NSObject, NSCoding{
     var dictProfil : [String:Int]
     
     //Chaine de caractères de la classe
-    var classeJoueur : String
+    var classeJoueur : String = ""
     
     //Moment du scénario atteint
-    var sceneActuelle : Int
+    var sceneActuelle : Int = 0
     
     //Compte le nombre de bonne réponses aux questions (stats)
-    var bonneReponseQuiz : Int
+    var bonneReponseQuiz : Int = 0
     
     //Stock des questions
-    var questionAlreadyPick : [Int]
+    var questionAlreadyPick : [Int] = []
+    
+    override init() {
+        self.dictProfil = ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0]
+    }
     
     init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String, sceneActuelle : Int, bonneReponseQuiz : Int, questionAlreadyPick : [Int]) {
         self.name = name

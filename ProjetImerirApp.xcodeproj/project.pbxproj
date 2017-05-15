@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3F28447E1E488E94001E8ED3 /* ProjetImerirAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */; };
+		3F659C751EC73ACC00E64121 /* ArcadeConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */; };
+		3F659C791EC74C3600E64121 /* AlienMissile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C781EC74C3600E64121 /* AlienMissile.gif */; };
+		3F659C7C1EC74CD500E64121 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */; };
+		3F659C881EC789A900E64121 /* Explosion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C871EC789A900E64121 /* Explosion.gif */; };
+		3F659C8A1EC7C5AD00E64121 /* SpaceHeal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C891EC7C5AD00E64121 /* SpaceHeal.gif */; };
+		3F659C901EC8C8DB00E64121 /* SpaceBonus.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C8F1EC8C8DB00E64121 /* SpaceBonus.gif */; };
+		3F659C941EC8D5D000E64121 /* SpaceBackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C931EC8D5D000E64121 /* SpaceBackground.gif */; };
+		3F659C961EC8D64500E64121 /* SpaceBomb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C951EC8D64500E64121 /* SpaceBomb.gif */; };
+		3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */; };
+		3F659C9A1EC925CA00E64121 /* SpaceBonusHD.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */; };
 		3FD1AC8E1EC5AF60008F66CB /* Air.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC751EC5AF60008F66CB /* Air.mp3 */; };
 		3FD1AC8F1EC5AF60008F66CB /* Bonus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */; };
 		3FD1AC901EC5AF60008F66CB /* Clik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC771EC5AF60008F66CB /* Clik.mp3 */; };
@@ -113,6 +123,7 @@
 		3FD1AD571EC5AF6D008F66CB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1AD031EC5AF6D008F66CB /* SwiftyJSON.swift */; };
 		3FD1AD581EC5AF6D008F66CB /* BuildElementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1AD041EC5AF6D008F66CB /* BuildElementApp.swift */; };
 		3FD1AD591EC5AF6D008F66CB /* OutletExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1AD051EC5AF6D008F66CB /* OutletExtension.swift */; };
+		3FEDCED61EC9521500491CAD /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDCED51EC9521500491CAD /* Spaceship.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +141,16 @@
 		3F2844791E488E94001E8ED3 /* ProjetImerirAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetImerirAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetImerirAppTests.swift; sourceTree = "<group>"; };
 		3F28447F1E488E94001E8ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArcadeConsole.storyboard; path = ProjetImerirApp/ArcadeConsole.storyboard; sourceTree = "<group>"; };
+		3F659C781EC74C3600E64121 /* AlienMissile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AlienMissile.gif; sourceTree = "<group>"; };
+		3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		3F659C871EC789A900E64121 /* Explosion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Explosion.gif; sourceTree = "<group>"; };
+		3F659C891EC7C5AD00E64121 /* SpaceHeal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceHeal.gif; sourceTree = "<group>"; };
+		3F659C8F1EC8C8DB00E64121 /* SpaceBonus.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBonus.gif; sourceTree = "<group>"; };
+		3F659C931EC8D5D000E64121 /* SpaceBackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBackground.gif; sourceTree = "<group>"; };
+		3F659C951EC8D64500E64121 /* SpaceBomb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBomb.gif; sourceTree = "<group>"; };
+		3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentConsoleViewController.swift; sourceTree = "<group>"; };
+		3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBonusHD.gif; sourceTree = "<group>"; };
 		3FD1AC751EC5AF60008F66CB /* Air.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Air.mp3; sourceTree = "<group>"; };
 		3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bonus.mp3; sourceTree = "<group>"; };
 		3FD1AC771EC5AF60008F66CB /* Clik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clik.mp3; sourceTree = "<group>"; };
@@ -235,6 +256,7 @@
 		3FD1AD031EC5AF6D008F66CB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		3FD1AD041EC5AF6D008F66CB /* BuildElementApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildElementApp.swift; sourceTree = "<group>"; };
 		3FD1AD051EC5AF6D008F66CB /* OutletExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutletExtension.swift; sourceTree = "<group>"; };
+		3FEDCED51EC9521500491CAD /* Spaceship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +303,16 @@
 				3F28447F1E488E94001E8ED3 /* Info.plist */,
 			);
 			path = ProjetImerirAppTests;
+			sourceTree = "<group>";
+		};
+		3F659C7A1EC74CA700E64121 /* ArcadeConsole */ = {
+			isa = PBXGroup;
+			children = (
+				3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */,
+				3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */,
+				3FEDCED51EC9521500491CAD /* Spaceship.swift */,
+			);
+			name = ArcadeConsole;
 			sourceTree = "<group>";
 		};
 		3FD1AC7A1EC5AF60008F66CB /* Buitages */ = {
@@ -384,6 +416,7 @@
 				3FD1ACC81EC5AF6D008F66CB /* GameOver.storyboard */,
 				3FD1ACC91EC5AF6D008F66CB /* GamesRules.xib */,
 				3FD1ACCA1EC5AF6D008F66CB /* Parametres.storyboard */,
+				3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */,
 			);
 			name = Storyboard/Xib;
 			path = ..;
@@ -449,6 +482,13 @@
 		3FD1ACFF1EC5AF6D008F66CB /* Picture/gif */ = {
 			isa = PBXGroup;
 			children = (
+				3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */,
+				3F659C951EC8D64500E64121 /* SpaceBomb.gif */,
+				3F659C931EC8D5D000E64121 /* SpaceBackground.gif */,
+				3F659C8F1EC8C8DB00E64121 /* SpaceBonus.gif */,
+				3F659C891EC7C5AD00E64121 /* SpaceHeal.gif */,
+				3F659C871EC789A900E64121 /* Explosion.gif */,
+				3F659C781EC74C3600E64121 /* AlienMissile.gif */,
 				3FD1ACE61EC5AF6D008F66CB /* Lab4voies.gif */,
 				3FD1ACE71EC5AF6D008F66CB /* LabGaucheDroite.gif */,
 				3FD1ACE81EC5AF6D008F66CB /* BeteGrise.gif */,
@@ -481,6 +521,7 @@
 		3FD1AD061EC5AF6D008F66CB /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F659C7A1EC74CA700E64121 /* ArcadeConsole */,
 				3FD1ACAB1EC5AF6D008F66CB /* ArcadeLabyrinthe */,
 				3FD1ACAE1EC5AF6D008F66CB /* ArcadeCookie */,
 				3FD1ACB91EC5AF6D008F66CB /* ViewController */,
@@ -551,7 +592,7 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 56URF3SB4V;
+						DevelopmentTeam = N44QRNRP98;
 						ProvisioningStyle = Automatic;
 					};
 					3F2844781E488E94001E8ED3 = {
@@ -601,6 +642,8 @@
 				3FD1AD3A1EC5AF6D008F66CB /* Dialogue.json in Resources */,
 				3FD1AC9B1EC5AF60008F66CB /* MadScientist.mp3 in Resources */,
 				3FD1AC991EC5AF60008F66CB /* MistyBog.mp3 in Resources */,
+				3F659C901EC8C8DB00E64121 /* SpaceBonus.gif in Resources */,
+				3F659C791EC74C3600E64121 /* AlienMissile.gif in Resources */,
 				3FD1AD451EC5AF6D008F66CB /* LabFaceDroite.gif in Resources */,
 				3FD1AD441EC5AF6D008F66CB /* LabFace.gif in Resources */,
 				3FD1AD3C1EC5AF6D008F66CB /* LabGaucheDroite.gif in Resources */,
@@ -620,12 +663,14 @@
 				3FD1AD241EC5AF6D008F66CB /* GamesRules.xib in Resources */,
 				3FD1AD521EC5AF6D008F66CB /* SalleDeClasse.gif in Resources */,
 				3FD1AD3F1EC5AF6D008F66CB /* BeteRouge.gif in Resources */,
+				3F659C9A1EC925CA00E64121 /* SpaceBonusHD.gif in Resources */,
 				3FD1AD201EC5AF6D008F66CB /* ChoiseClasse.storyboard in Resources */,
 				3FD1AC8F1EC5AF60008F66CB /* Bonus.mp3 in Resources */,
 				3FD1AC9C1EC5AF60008F66CB /* Moonlit.mp3 in Resources */,
 				3FD1AD391EC5AF6D008F66CB /* Credit.json in Resources */,
 				3FD1AD561EC5AF6D008F66CB /* Info.plist in Resources */,
 				3FD1AC9A1EC5AF60008F66CB /* DownDraft.mp3 in Resources */,
+				3F659C751EC73ACC00E64121 /* ArcadeConsole.storyboard in Resources */,
 				3FD1AD4B1EC5AF6D008F66CB /* ChambreAdo.gif in Resources */,
 				3FD1AD1D1EC5AF6D008F66CB /* ArcadeCookie.storyboard in Resources */,
 				3FD1AD221EC5AF6D008F66CB /* ArcadeLabyrinthe.storyboard in Resources */,
@@ -633,6 +678,8 @@
 				3FD1AC941EC5AF60008F66CB /* BlueRidge.mp3 in Resources */,
 				3FD1AD371EC5AF6D008F66CB /* ClasseJoueur.json in Resources */,
 				3FD1AD481EC5AF6D008F66CB /* LabSortie.gif in Resources */,
+				3F659C881EC789A900E64121 /* Explosion.gif in Resources */,
+				3F659C961EC8D64500E64121 /* SpaceBomb.gif in Resources */,
 				3FD1AD3B1EC5AF6D008F66CB /* Lab4voies.gif in Resources */,
 				3FD1AD251EC5AF6D008F66CB /* Parametres.storyboard in Resources */,
 				3FD1AC951EC5AF60008F66CB /* Bog.mp3 in Resources */,
@@ -645,6 +692,8 @@
 				3FD1AD4F1EC5AF6D008F66CB /* Directeur.gif in Resources */,
 				3FD1AD1F1EC5AF6D008F66CB /* LaunchScreen.storyboard in Resources */,
 				3FD1AC8E1EC5AF60008F66CB /* Air.mp3 in Resources */,
+				3F659C8A1EC7C5AD00E64121 /* SpaceHeal.gif in Resources */,
+				3F659C941EC8D5D000E64121 /* SpaceBackground.gif in Resources */,
 				3FD1AD3E1EC5AF6D008F66CB /* BeteVerte.gif in Resources */,
 				3FD1AC911EC5AF60008F66CB /* ClikBad.mp3 in Resources */,
 				3FD1AD4C1EC5AF6D008F66CB /* Reveil.gif in Resources */,
@@ -678,6 +727,7 @@
 				3FD1AD571EC5AF6D008F66CB /* SwiftyJSON.swift in Sources */,
 				3FD1AD0A1EC5AF6D008F66CB /* Potion.swift in Sources */,
 				3FD1AD141EC5AF6D008F66CB /* ClasseTableViewCell.swift in Sources */,
+				3FEDCED61EC9521500491CAD /* Spaceship.swift in Sources */,
 				3FD1AD101EC5AF6D008F66CB /* InitViewController.swift in Sources */,
 				3FD1AD311EC5AF6D008F66CB /* ProfilJoueur.swift in Sources */,
 				3FD1AD171EC5AF6D008F66CB /* GameOverViewController.swift in Sources */,
@@ -688,6 +738,8 @@
 				3FD1AD2D1EC5AF6D008F66CB /* RangementViewController.swift in Sources */,
 				3FD1AD121EC5AF6D008F66CB /* DialogueViewController.swift in Sources */,
 				3FD1AD0C1EC5AF6D008F66CB /* StrangeBat.swift in Sources */,
+				3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */,
+				3F659C7C1EC74CD500E64121 /* ConsoleViewController.swift in Sources */,
 				3FD1AD0D1EC5AF6D008F66CB /* ContentLabyrintheViewController.swift in Sources */,
 				3FD1AD2B1EC5AF6D008F66CB /* ScoreDown.swift in Sources */,
 				3FD1AD351EC5AF6D008F66CB /* HeaderView.swift in Sources */,
@@ -875,10 +927,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 56URF3SB4V;
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.GoaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -889,10 +941,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 56URF3SB4V;
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.GoaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

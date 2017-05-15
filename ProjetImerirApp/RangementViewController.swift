@@ -200,7 +200,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
             imageView.contentMode = UIViewContentMode.scaleAspectFit
             imageView.alpha = 0
             
-            view.insertSubview(imageView, aboveSubview: Conteneurs[2])
+            view.insertSubview(imageView, aboveSubview: Conteneurs[0])
 
             objetViews.append(imageView)
             animateIn(objet: imageView)

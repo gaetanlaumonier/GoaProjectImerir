@@ -45,18 +45,22 @@
                "typeLabel": "texte"
                }, {
                "idLabel": "11",
+               "textLabel": "MillionthVector",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "12",
                "textLabel": "Recherche Graphique",
                "typeLabel": "sousTitre"
                }, {
-               "idLabel": "12",
+               "idLabel": "13",
                "textLabel": "Anthony Natoli",
                "typeLabel": "texte"
                },{
-               "idLabel": "13",
+               "idLabel": "14",
                "textLabel":"Wiki du jeu",
                "typeLabel": "sousTitre"
                },{
-               "idLabel": "14",
+               "idLabel": "15",
                "textLabel": "fr.la-banale-journee.wikia.com",
                "typeLabel": "texte"
                }
