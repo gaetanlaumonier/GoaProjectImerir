@@ -17,20 +17,27 @@ class ClasseModalViewController: UIViewController {
     @IBOutlet weak var nonButton: DesignableButton!
     
     var classePlayer : String = ""
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
+    var oneProfil = ProfilJoueur()
     var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.alpha = 0
         confirmationLabel.text = "Es tu sur d'être \(classePlayer) ?"
-     
+        self.ouiButton.alpha = 0
+        self.nonButton.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 1, animations: {
-            self.view.alpha = 1
+
+        self.ouiButton.layer.cornerRadius = self.view.bounds.width / 20
+        self.nonButton.layer.cornerRadius = self.view.bounds.width / 20
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.ouiButton.alpha = 1
+            self.nonButton.alpha = 1
+
         })
+        
     }
     
     @IBAction func goToDialogue(_ sender: Any) {
@@ -51,7 +58,7 @@ class ClasseModalViewController: UIViewController {
                     myDialogueViewController.backgroundMusicPlayer.stop()
                     self.oneProfil.classeJoueur = self.classePlayer
                     if self.classePlayer == "Geek" {
-                        self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.lifePoint/2)
+                        self.oneProfil.lifePoint = self.oneProfil.lifePoint + 40
                     }
                     self.oneProfil.sceneActuelle += 1
                     self.saveMyData()

@@ -25,7 +25,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "J'espère que ton cerveau fonctionne bien lui...",
                   "HPLost": 3,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En quelle année le World Wide Web a t'il été crée ?",
                   "Choice": ["1974", "1965", "1982"],
@@ -45,14 +45,14 @@
                   "HPLost": 3,
                   "Timer": 15
                   }, {
-                  "Question": "Quelle commande permet le déplacement sur le disque sous linux ?",
+                  "Question": "Quelle commande de console permet le déplacement sur le disque sous linux ?",
                   "Choice": ["Cf", "Dep", "Dp"],
                   "Answer": "Cd",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
                   "FeedBack": null,
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quel est ce langage ? System.out.println ('Bonjour!')",
                   "Choice": ["C", "HTML", "PHP"],
@@ -68,7 +68,7 @@
                   "Answer": "Swift",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "On en entend beaucoup parler !",
+                  "FeedBack": "On en a beaucoup entendu parler !",
                   "HPLost": 1,
                   "Timer": 15
                   }, {
@@ -79,7 +79,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Etat D'Inceste ?",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Qu’est-ce qu’un chevron ?",
                   "Choice": ["/", "\"", "'"],
@@ -97,7 +97,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Lequel de ces mot n’est pas un type de variable ?",
                   "Choice": [ "String", "Integer", "Float"],
@@ -115,7 +115,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Ce faire virer de son entreprise, sale histoire...",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Qu’appelle-t-on machine virtuelle ?",
                   "Choice": ["Une intelligence artificielle", "Un boitier d’ordinateur vide", "Un serveur"],
@@ -124,7 +124,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quelle entreprise n’a jamais vendu d’ordinateurs portables ?",
                   "Choice": ["Samsung", "Sony", "Panasonic"],
@@ -133,7 +133,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Aller, au pif !",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Quel est le rôle d’une carte mère ?",
                   "Choice": ["Donner des ordres aux composants", "Protéger les différents composants", "Permettre une ventilation des composants"],
@@ -142,7 +142,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Quelle est le langage de programmation le plus vieux ?",
                   "Choice": ["Java", "C++", "Ruby"],
@@ -169,7 +169,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Il fut un réel progrès comme composant",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En langage binaire, lequel de ces calcul est vrai ?",
                   "Choice": ["1+1=0", "1+1=1", "1+1=11"],
@@ -178,7 +178,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Y'a pas 2 ?!",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "L’iPhone 7 contient environs …… pixels :",
                   "Choice": ["5 000 000", "500 000", "100 000"],
@@ -190,7 +190,7 @@
                   "Timer": 15
                   }, {
                   "Question": "En hexadécimal on peut compter jusqu’à ?",
-                  "Choice": ["7", "16", "D"],
+                  "Choice": ["7", "17", "D"],
                   "Answer": "F",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
@@ -223,7 +223,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "On se rappelle de ses premiers cours de réseau !",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quel est le nom du principal protocol de communication serveur/client ?",
                   "Choice": ["TCP/IP", "SMTP", "FTP"],
@@ -232,7 +232,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quelle était la vitesse de transfert du premier disque dur ?",
                   "Choice": ["5.4 Go/s", "3.2 Mo/s", "320 o/s"],
@@ -259,7 +259,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Après on passe au type 'double'",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quel est le rôle d’un service web ?",
                   "Choice": ["Sécuriser les systèmes de paiement en ligne", "Générer une documentation en ligne", "Fournir des données sur un utilisateur" ],
@@ -268,7 +268,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Lequel de ces robots existe ?",
                   "Choice": ["Mishi", "Nara", "Mashado"],
@@ -277,7 +277,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Robot Français !",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En 2016, sur 10 personnes ayant un smartphone dans le monde, combien possèdent un android ?",
                   "Choice": ["7", "5", "6" ],
@@ -286,7 +286,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En quelle année la disposition actuelle AZERTY des touches de claviers d’ordinateurs a-t-elle été inventée ?",
                   "Choice": ["1956", "1923", "1967"],
@@ -295,7 +295,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Un peu plus de culture",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En quelle année le jeu PONG a-t-il été inventé ?",
                   "Choice": ["1953", "1985", "1962"],
@@ -304,7 +304,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Un des tout premiers jeu vidéo",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En Java, pour un entier i = 1, si j’écris i += ++i, quel valeur prendra désormais i ?",
                   "Choice": ["2", "4", "1"],
@@ -313,7 +313,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Aller, c'est pas si dur !",
                   "HPLost": 3,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Où peut-on admirer la Joconde?",
                   "Choice": ["Au musée de l’Ermitage, à Saint-Pétersbourg", "Au château de Versailles", "Au musée d’Orsay, à Paris"],
@@ -322,7 +322,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Une oeuvre entourée de mystère",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Quel est l'auteur du Misanthrope ?",
                   "Choice": ["Diderot", "Racine", "Rousseau"],
@@ -331,7 +331,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Un misanthrope est un personnage détestant le genre humain",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Les terres émergées du globe terrestre représentent …",
                   "Choice": ["50% de la surface totale", "20% de la surface totale", "40% de la surface totale"],
@@ -340,7 +340,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Malgré cela, des gens meurent de soifs...",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Quelle est la capitale du Luxembourg ?",
                   "Choice": ["Geneves", "Francfort", "Bruges"],
@@ -349,7 +349,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Attention",
                   "HPLost": 3,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Où se trouve la prison d'Alcatraz ?",
                   "Choice": ["à Los Angeles", "à Alcatraz", "à Sacramento"],
@@ -358,7 +358,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Al Capone y a séjourné",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Quelle est la capitale de l'Australie ?",
                   "Choice": ["Melbourne", "Adelaide", "Sydney"],
@@ -367,7 +367,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quel était le prénom du \"Che\" Guevara ?",
                   "Choice": ["Augusto", "Alfonso", "Javier"],
@@ -376,7 +376,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "\"Che\" c'était pas son prénom ?",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quelle est la date du débarquement en Normandie durant le Seconde Guerre Mondiale ?",
                   "Choice": ["18 août 1945", "12 juillet 1944", "24 septembre 1945"],
@@ -385,7 +385,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Un jour historique",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En quelle année l’O.N.U a-t-elle été crée?",
                   "Choice": ["1939", "1919", "1953"],
@@ -394,7 +394,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Répond à la question",
                   "HPLost": 3,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En quelle année \"le Titanic\" a-t-il fait naufrage?",
                   "Choice": ["1917", "1907", "1902"],
@@ -403,7 +403,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Repond à la question",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "La chute du mur de Berlin, c'était en...",
                   "Choice": ["1987", "1991", "1985"],
@@ -448,7 +448,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Et Lincoln ?! ",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "En quelle année survient la catastrophe de Tchernobyl?",
                   "Choice": ["1991", "1981", "1976"],
@@ -457,7 +457,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Repond à la question",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Les Trente glorieuses sont des années de gloire de la France entre…",
                   "Choice": ["1975 à 2003", "1955 à 1983", "1965 à 1993"],
@@ -466,7 +466,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Prémice de la consommation de masse",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "Quel est la capitale du Panama ?",
                   "Choice": ["Sucre", "Lima", "Quito"],
@@ -475,7 +475,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Y'a un piège ?",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quel est la racine carrée de 196 ?",
                   "Choice": ["16", "15", "13"],
@@ -520,7 +520,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Y'a plus dur quand même",
                   "HPLost": 3,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Résoudre le calcul 2^8:",
                   "Choice": ["512", "1024", "128"],
@@ -529,7 +529,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "2*2*2*2*2...",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 35
                   }, {
                   "Question": "Convertir le chiffre romain suivant : MCMLXVIII",
                   "Choice": ["573", "2030", "2158"],
@@ -556,7 +556,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Oui, le précurseur de ton dernier smartphone",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Qui a considérablement participé à l’invention de l’ordinateur au XXe siècle?",
                   "Choice": ["Bill Gates", "Steve jobs", "Nicola Tesla"],
@@ -565,7 +565,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Un grand génie",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Quel dirigeant fut le premier à utiliser la bombe nucléaire ?",
                   "Choice": ["Vladimir Poutine", "Winston Churchill", "Kim Jong Il"],
@@ -574,7 +574,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "The first massive atomic killer",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 25
                   }, {
                   "Question": "A Combien équivaut environ la vitesse du son ?",
                   "Choice": ["1000m/s", "1040m/s", "300m/s"],
@@ -583,7 +583,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Franchir le mur du son",
                   "HPLost": 2,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "A Combien équivaut environ la vitesse de la lumière ?",
                   "Choice": ["100 000m/s", "400 000m/s", "200 000m/s"],
@@ -601,7 +601,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Vomissement ?",
                   "HPLost": 1,
-                  "Timer": 15
+                  "Timer": 20
                   }, {
                   "Question": "Combien de gouttes d'eau peut-on mettre dans un verre vide ?",
                   "Choice": ["une", "1", "Une"],
@@ -610,7 +610,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "À la goutte près ?",
                   "HPLost": 3,
-                  "Timer": 15
+                  "Timer": 60
                   }, {
                   "Question": "C'est mieux que dieu, c'est pire que le diable, les pauvres en ont, les riches en ont besoin et si on en mange, on meurt.",
                   "Choice": ["Rien", "rien"],
@@ -630,7 +630,7 @@
                   "HPLost": 2,
                   "Timer": 60
                   }, {
-                  "Question": "Compléter cette suite logique : 0 - 10 -11 - 21 - 22 - 32 - ?",
+                  "Question": "Compléter cette suite logique : 0 - 10 - 11 - 21 - 22 - 32 - ?",
                   "Choice": ["34", "43", "61"],
                   "Answer": "51",
                   "Topic": "Enigme",
@@ -682,7 +682,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Un seul se démarque du lot",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 40
                   }, {
                   "Question": "Trouvez l'intrus",
                   "Choice": ["Ingénu", "Crédule", "Niai"],
@@ -691,7 +691,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Ne soit pas un des quatres",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 40
                   }, {
                   "Question": "Retrouver l'anagramme du mot caché : Grade dans l’armée / qui concerne la majorité : AERELNG",
                   "Choice": ["général", "general", "GÉNÉRAL", "GENERAL", "Général", "General"],
@@ -700,7 +700,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Tu trouve sa dur ?",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }, {
                   "Question": "Retrouver l'anagramme du mot caché : Aide une entreprise / Programme informatique : OGILILCE ",
                   "Choice": ["LOGICIEL", "logiciel", "Logiciel"],
@@ -709,7 +709,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Tu en utilise tout les jours",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }, {
                   "Question": "Retrouver l'anagramme du mot caché : Lettre en Majuscule / Grande importance / Pôle majeur d’un pays : APATICLE",
                   "Choice": ["Capitale", "CAPITALE", "capitale"],
@@ -718,7 +718,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Aide : Anagramme du mot 'ARMY' = 'MARY' ",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }, {
                   "Question": "Retrouver l'anagramme du mot caché : Moyen de communication moderne / Facilement transportable : ORELBAPT",
                   "Choice": ["PORTABLE", "portable", "Portable"],
@@ -727,7 +727,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Aide : Anagramme du mot 'POLICE' = 'PICOLE' ",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }, {
                   "Question": "Retrouver l'anagramme du mot caché : Preuve de maturité / ce que n’a pas le débutant : ECERIXPEEN",
                   "Choice": ["EXPERIENCE", "Expérience", "Experience", "EXPÉRIENCE", "expérience", "experience"],
@@ -736,7 +736,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Tu en aura un jour",
                   "HPLost": 2,
-                  "Timer":30
+                  "Timer":45
                   }, {
                   "Question": "Indice pour la police, lorsqu'ils ont besoin d'un portrait. Nombreux dans les cuisines, bourrés de mécanique et travaillent beaucoup dans les usines. Qui-es ce ?",
                   "Choice": ["Robot", "Robots", "ROBOT", "ROBOTS", "robot", "robots"],
@@ -745,7 +745,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "L'imérir te forme à en créer",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 60
                   }, {
                   "Question": "Quel est le volume de terre qui se trouve dans un trou carré creusé dans le sol, et mesurant 2 mètres de côté et 2 mètres de profondeur ?",
                   "Choice": ["0"],
@@ -754,7 +754,7 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Répond à la question",
                   "HPLost": 3,
-                  "Timer": 30
+                  "Timer": 60
                   }, {
                   "Question": "Sur un pommier, il y a 6 branches. Sur ces 6 branches, on trouve 4 branches. Sur ces 4 branches, 5 branches qui ont chacunes 6 poires. Combien y'a t'il de poires ?",
                   "Choice": ["0"],
@@ -835,7 +835,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Et le 'Y' dans tout sa ?",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }, {
                   "Question": "Quelle lettre se trouve avant le 'e'",
                   "Choice": ["K", "O", "P"],
@@ -844,7 +844,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "...",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }, {
                   "Question": "Quelle lettre se trouve avant le 'i'",
                   "Choice": ["K", "G", "P"],
@@ -853,7 +853,7 @@
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Aller, rappel toi l'alphabet",
                   "HPLost": 2,
-                  "Timer": 30
+                  "Timer": 45
                   }
                   , {
                   "Question": "Ta motivation dans la vie ?",
@@ -1013,8 +1013,8 @@
                   
                   ],
     "AnswersReactions": [{
-                         "bonneReponse" : ["Bien joué ! ", "Pas mal ! ", "Je suis fière de toi ! ", "Bonne réponse ! ", "Tu as bien répondu ! ", "Impressionnant ! ", "Bravo ! ", "Super ! ", "Quelle intelligence ! ", "Epoustoufflant ! ", "Admirable ! ", "Remarquable ! ", "Merveilleux cette réponse ! ", "Extraordinaire ! ", "Quelle Eclatante réponse ! ", "Formidable ! ", "Prodigieux ", "Réponse exemplaire !", "Parfait ! ", "Ta supériorité est inconstestable ! ", "Perspicace le bougre ! ", "Quelle génie ! ", "Loupé ! Non je plaisante, c'est la bonne réponse ! "],
-                         "mauvaiseReponse" : ["Deçevant... ", "Loupé ! ", "Pas loin.. mais non ! ", "Mauvaise réponse... ", "Non ! ", "C'est pas encore sa... ", "Erreur ! ", "Tu t'es trompé sur ce coup... ", "Quelle abération ! ", "Quelle bêtise ! ", "J'espère que tu blague... ", "Quelle faux pas... ", "C'est de la folie pure... ", "Inexacte ! ", "Faux ", "Surprenant de maladresse... ", "Non non et non ! ", "J'ai bien fait de ne pas croire en toi... ", "Je ris de ton manque de connaissance... ", "Bien joué ! enfin non c'est faux... ", "Tu pense avoir la bonne réponse ? Et bien c'est la mauvaise ! ", "Perdu ! ", "Pas fameux...", "Vrai ! Non c'est faux... "],
+                         "bonneReponse" : ["Bien joué ! ", "Pas mal ! ", "Je suis fière de toi ! ", "Bonne réponse ! ", "Tu as bien répondu ! ", "Impressionnant ! ", "Bravo ! ", "Super ! ", "Quelle intelligence ! ", "Epoustoufflant ! ", "Admirable ! ", "Remarquable ! ", "Merveilleux cette réponse ! ", "Extraordinaire ! ", "Quelle Eclatante réponse ! ", "Formidable ! ", "Prodigieux ", "Réponse exemplaire !", "Parfait ! ", "Ta supériorité est incontestable ! ", "Perspicace le bougre ! ", "Quelle génie ! ", "Loupé ! Non je plaisante, c'est la bonne réponse ! "],
+                         "mauvaiseReponse" : ["Deçevant... ", "Loupé ! ", "Pas loin.. Mais non ! ", "Mauvaise réponse... ", "Non ! ", "C'est pas encore sa... ", "Erreur ! ", "Tu t'es trompé sur ce coup... ", "Quelle abération ! ", "Quelle bêtise ! ", "J'espère que tu blague... ", "Quelle faux pas... ", "C'est de la folie pure... ", "Inexacte ! ", "Faux ", "Surprenant de maladresse... ", "Non non et non ! ", "J'ai bien fait de ne pas croire en toi... ", "Je ris de ton manque de connaissance... ", "Bien joué ! enfin non c'est faux... ", "Tu pense avoir la bonne réponse ? Et bien c'est la mauvaise ! ", "Perdu ! ", "Pas fameux...", "Vrai ! Non c'est faux... "],
                          "gainPVReponse" : ["Tu remporte ", "Tu gagne ", "Tu décroche ", "Tu emporte ", "Tu reçoit ", "Tu obtient ", "Tu progresse de "],
                          "pertePVReponse" : ["Tu perds ", "Tu y laisse ", "Tu as été dépossédé de ", "Tu as perdus ", "Dis adieu à tes ", "Dis au revoir à ", "Tu t'affaiblis de "],
                          "chanceDuNoob":["Quelle incroyable chance du débutant ! Ta mauvaise réponse te permet de gagner ", "Pas mal le noob, en répondant faux tu gagne ", "Mauvaise réponse ! Grâce à ta classe tu gagne ", "Faux ! Ta classe te permet de gagner ", "Chance du noob ! En répondant faux tu remporte ", "Réponse fausse ! Mais ta classe te fait rapporter ", "Ce n'est pas sa ! Cependant ton noobisme te rapporte "]

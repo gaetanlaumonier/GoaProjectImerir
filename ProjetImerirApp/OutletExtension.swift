@@ -325,11 +325,34 @@ extension UIApplication
 
 extension UIViewController{
     
+
     func FonduApparition(myView : UIViewController, myDelai : Int){
     UIView.animate(withDuration: TimeInterval(myDelai), animations: {
     myView.view.alpha = 1
     })
         
+
+    }
+    
+    func changeColorLabelGood(label: UILabel){
+        UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            label.textColor = UIColor(red: 0, green: 1, blue: 17/255, alpha: 0.9)
+        }, completion: { _ in
+            UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                label.textColor = UIColor(red: 1, green: 17/255, blue: 0, alpha: 1)
+            })
+        })
+    }
+    
+    func changeColorLabelBad(label :UILabel){
+        
+        UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            label.textColor = UIColor(red: 1, green: 170/255, blue: 0, alpha: 0.9)
+        }, completion: { _ in
+            UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                label.textColor = UIColor(red: 1, green: 17/255, blue: 0, alpha: 1)
+            })
+        })
     }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -371,6 +394,25 @@ extension UIViewController{
             print("filename is wrong")
         }
         bruitageMusicPlayer.numberOfLoops = 0
+        bruitageMusicPlayer.volume = volume
+        bruitageMusicPlayer.prepareToPlay()
+        bruitageMusicPlayer.play()
+     
+        return bruitageMusicPlayer
+    }
+    
+    func GestionBruitageLoop(filename: String, volume : Float) -> AVAudioPlayer {
+        var bruitageMusicPlayer = AVAudioPlayer()
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
+            do {
+                bruitageMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print("Content can not be played")
+            }
+        }else{
+            print("filename is wrong")
+        }
+        bruitageMusicPlayer.numberOfLoops = -1
         bruitageMusicPlayer.volume = volume
         bruitageMusicPlayer.prepareToPlay()
         bruitageMusicPlayer.play()

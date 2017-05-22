@@ -36,7 +36,7 @@ class QuestionViewController: UIViewController {
     var TableauEnigme : [Question] = []
     var TableauPsycho : [Question] = []
     var themeQuestionActif = [Question]()
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[] )
+    var oneProfil = ProfilJoueur()
     var QuestionNumber : Int = 0
     var QuestionPose : Int = 0
     var messageSpecialLabel : Int = 0
@@ -49,7 +49,6 @@ class QuestionViewController: UIViewController {
     var chanceDuNoob : Bool = false
     var modeHackeurActive : Bool = false
     var multiplicateurFonctionnaire : Float = 1
-    
     var serieQuestionActive : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
     var nbrQuestionSerie : Int = 0
     var endSerie : Bool = false
@@ -100,6 +99,7 @@ class QuestionViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         answerView.isHidden = false
         questionView.isHidden = false
+        hackButton.layer.cornerRadius = view.bounds.width / 20
         PickQuestion()
         FonduApparition(myView: self, myDelai: 1)
     }
@@ -121,7 +121,7 @@ class QuestionViewController: UIViewController {
             themeActif.text = "Psychologie"
         } else {
             if self.oneProfil.sceneActuelle == 1{
-                self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.bonneReponseQuiz*3)
+                self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.statsQuiz["bonneReponseQuiz"]! * 3)
             }
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
             {
@@ -230,16 +230,19 @@ class QuestionViewController: UIViewController {
     
     func VerifNoobFunction(){
         if chanceDuNoob == true {
-            let intChanceDuNoob = Int(arc4random_uniform(UInt32(3)))
+            let intChanceDuNoob = Int(arc4random_uniform(UInt32(5)))
             if intChanceDuNoob == 2 {
                 resultatLabel.text = "\(AllAnswersReactions[0].chanceDuNoob[actionResultat]) \(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
                 self.oneProfil.lifePoint += themeQuestionActif[QuestionNumber].HPLost!
+                changeColorLabelGood(label: headerView.lifePointLabel)
             } else {
                 resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+                changeColorLabelBad(label: headerView.lifePointLabel)
                 self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
             }
         }else {
             resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+            changeColorLabelBad(label: headerView.lifePointLabel)
             self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
         }
     }
@@ -355,6 +358,7 @@ class QuestionViewController: UIViewController {
     //Analyse la réponse donnée selon le type de la question
     func resultatReponseSwitch(stringReponse : String, typeOfQuestion : String){
         if messageSpecialLabel == 0 {
+            hackButton.isHidden = true
             startTimer.invalidate()
             resultatVrai = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].bonneReponse.count)))
             actionResultat = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].gainPVReponse.count)))
@@ -368,7 +372,7 @@ class QuestionViewController: UIViewController {
                 if(stringReponse == themeQuestionActif[QuestionNumber].Answer){
                     bruitageMusicPlayer = GestionBruitage(filename: "ClikGood", volume : 0.8)
                     resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
-                    self.oneProfil.bonneReponseQuiz += 1
+                    self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1
                 } else {
                     bruitageMusicPlayer = GestionBruitage(filename: "ClikBad", volume : 1)
                     VerifNoobFunction()
@@ -378,6 +382,7 @@ class QuestionViewController: UIViewController {
                 
                 break
             case "Input":
+                self.view.endEditing(true)
                 InputAnswer.isHidden = true
                 saisieReponseLabel.isHidden = true
                 inputButtonValidate.isHidden = true
@@ -385,7 +390,7 @@ class QuestionViewController: UIViewController {
                     if(stringReponse == themeQuestionActif[QuestionNumber].Choice[i]){
                         resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
                         reponseTrouverInput = true
-                        self.oneProfil.bonneReponseQuiz += 1
+                        self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1
                         bruitageMusicPlayer = GestionBruitage(filename: "ClikGood", volume : 0.8)
 
                     }
@@ -401,6 +406,7 @@ class QuestionViewController: UIViewController {
                 break
             case "Psycho":
                 let IntReponse : Int = Int(stringReponse)!
+                bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
                 let profilNameAnswer : String = themeQuestionActif[QuestionNumber].ProfilConsequence![IntReponse]
                 for i in 0..<Buttons.count{
                     Buttons[i].setTitle("", for :UIControlState.normal)
@@ -431,6 +437,7 @@ class QuestionViewController: UIViewController {
                 }
                 resultatLabel.text = "Ta réponse est retenu, cela me servira par la suite"
                 if themeQuestionActif[QuestionNumber].HPLostArray[IntReponse] != 0 {
+                    changeColorLabelBad(label: headerView.lifePointLabel)
                     self.oneProfil.lifePoint -= (themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])! + (self.oneProfil.dictProfil["profil_evil"])!
                     resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int((themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!) + (self.oneProfil.dictProfil["profil_evil"])!) PV."
                     dialogueLabel.text = "Tu as un profil assez diabolique, je ne suis pas sur que tu finira le jeu avec des réponses comme cela"
@@ -446,11 +453,13 @@ class QuestionViewController: UIViewController {
                     Buttons[i].setTitle("", for :UIControlState.normal)
                     Buttons[i].isHidden = true
                 }
+                self.view.endEditing(true)
                 bruitageMusicPlayer = GestionBruitage(filename: "ClikBad", volume : 1)
                 InputAnswer.isHidden = true
                 saisieReponseLabel.isHidden = true
                 inputButtonValidate.isHidden = true
                 resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+                changeColorLabelBad(label: headerView.lifePointLabel)
                 self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
                 bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
                 break
@@ -462,7 +471,9 @@ class QuestionViewController: UIViewController {
             idQuestion[themeQuestionActif[QuestionNumber].Topic!]? += 1
             resultatView.isHidden = false
             bonneReponseLabel.isHidden = false
+   
             headerView.lifePointLabel?.text = String("\(self.oneProfil.lifePoint) PV")
+     
             messageSpecialLabel = 1
         }
     }

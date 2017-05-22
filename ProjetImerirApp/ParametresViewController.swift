@@ -91,16 +91,28 @@ var bruitageMusicPlayer = AVAudioPlayer()
                 
                 break
             case is LabyrintheViewController:
-                let presentingViewType = myPresentingViewController as! LabyrintheViewController
-                UIView.animate(withDuration: 2.5, animations: {
-                    self.view.alpha = 0
-                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
-                }, completion : { _ in
-                    presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
-                })
                 
-                break
+                let presentingViewType = myPresentingViewController as! LabyrintheViewController
+                if presentingViewType.isFirstMaze == true {
+                    let dialogueView = presentingViewType.presentingViewController as! DialogueViewController
+                    UIView.animate(withDuration: 2.5, animations: {
+                        self.view.alpha = 0
+                        dialogueView.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    }, completion : { _ in
+                        dialogueView.backgroundMusicPlayer.stop()
+                        self.present(vc, animated: false)
+                    })
+                    break
+                } else {
+                    UIView.animate(withDuration: 2.5, animations: {
+                        self.view.alpha = 0
+                        presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    }, completion : { _ in
+                        presentingViewType.backgroundMusicPlayer.stop()
+                        self.present(vc, animated: false)
+                    })
+                    break
+                }
             case is ConsoleViewController:
                 let presentingViewType = myPresentingViewController as! ConsoleViewController
                 presentingViewType.pauseGame()

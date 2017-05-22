@@ -18,7 +18,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
 
     var noob = false
     var animationMultiplier:CFTimeInterval = 1
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[0])
+    var oneProfil = ProfilJoueur()
     
     var detritus = ["Boulette", "Poussiere", "Salete"]
     var vetements = ["Chaussette1", "Chaussette2", "Jean", "T-shirt"]
@@ -31,8 +31,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 10.0
-    var timeLeft = 10.0
+    var gameDuration = 30.0
+    var timeLeft = 30.0
     var slowGameFactor = 1.0
     var originalSize:CGFloat!
     
@@ -47,6 +47,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var gamePause : Bool = false
     var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var objInContainer : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         headerView.timerLabel.text = "\(Int(gameDuration)) s"
         AllClasse = buildClasseJoueur()
         backgroundMusicPlayer = GestionMusic(filename: "Fantasy")
+        backgroundMusicPlayer.volume = 0.8
 
         switch self.oneProfil.classeJoueur{
         case "Geek":
@@ -78,7 +80,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         pageViewLabels = ["Cet objet est un de tes objectifs, ton but est de le ranger dans le bon conteneur.", "Les jouets vont dans le coffre, les déchets dans la poubelle et les vêtements dans l'armoire.","Touche une icône \"bonus\" pour voir ce qu'il rapporte.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeRangement as String)"]
         pageViewImages = ["LaserGun", "CoffreAJouet","Bonus", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Les Objets","Les Conteneurs","Les Bonus", "\(AllClasse[idClasse].idClasse as String)"]
-        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perd de la vie quand tu te trompe de conteneur.", "La majorité des bonus a un impact positif.", ""]
+        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perd de la vie quand tu te trompe de conteneur.", "La majorité des bonus a un impact positif.", "Atteint au moins 50 de score pour limiter la casse."]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "RangementPageViewController") as! UIPageViewController
         
@@ -148,11 +150,35 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         })
     }
     
+    func scoreGestureFinal(){
+        if score <= 20 {
+            self.oneProfil.lifePoint -= 15
+        } else if score <= 30 {
+            self.oneProfil.lifePoint -= 10
+        } else if score <= 50 {
+            self.oneProfil.lifePoint -= 5
+        } else if score <= 70 {
+            self.oneProfil.lifePoint -= 2
+        }
+        
+        if score < 71 {
+            changeColorLabelBad(label: headerView.lifePointLabel)
+            headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        }
+    }
+    
     func endGame() {
         endGameTimer.invalidate()
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
         {
             self.oneProfil.sceneActuelle += 1
+            scoreGestureFinal()
+            if objInContainer != 0 {
+                self.oneProfil.statsRangement["pourcentage"]! = 100 * (self.oneProfil.statsRangement["goodClassification"]! / objInContainer)
+            } else {
+                self.oneProfil.statsRangement["goodClassification"]! = 0
+            }
+
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
@@ -244,6 +270,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func onObjectDropped(objet: Objet) {
         if let conteneur = isInContainer(objet: objet) {
+            objInContainer += 1
             if isInGoodContainer(objet: objet, conteneur: conteneur) {
                 onValidContainer(objet: objet)
             } else {
@@ -270,6 +297,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func onValidContainer(objet: Objet) {
         score += 1
+        self.oneProfil.statsRangement["goodClassification"]! += 1
         updateScore()
         animateOut(objet: objet)
     }
@@ -289,6 +317,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         }
         score -= 1
         self.oneProfil.lifePoint -= 1
+        changeColorLabelBad(label: headerView.lifePointLabel)
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         updateScore()
         animateTo(objet: objet, position: objet.previousPosition, completion: {(finished: Bool) in

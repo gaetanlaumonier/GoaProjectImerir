@@ -17,8 +17,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var spaceship: Spaceship!
     var shield: UIImageView!
     
-    var gameDuration:CFTimeInterval = 60
-    var timeLeft:CFTimeInterval = 60
+    var gameDuration:CFTimeInterval = 20
+    var timeLeft:CFTimeInterval = 20
     
     var spawnFromTop = true
     var missileSize:CGSize!
@@ -52,13 +52,18 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var AllClasse = [ClasseJoueur]()
     
     var backgroundMusicPlayer = AVAudioPlayer()
-    var bruitageMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayer1 = AVAudioPlayer()
+    var bruitageMusicPlayer2 = AVAudioPlayer()
+    var bruitageMusicPlayer3 = AVAudioPlayer()
+    var bonusBruitageMusicPlayer = AVAudioPlayer()
+    var bruit : Int = 0
+    var nbrMissile : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         background.loadGif(name: "SpaceBackground")
-        
+        backgroundMusicPlayer = GestionMusic(filename: "Steamtech")
         initProfil()
         initPageView()
         
@@ -67,7 +72,6 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         defineConstants()
     }
     
@@ -122,7 +126,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                           "\(AllClasse[idClasse].idClasse as String)"]
         
         pageViewHints = ["Ton vaisseau ne se déplace que sur l'axe horizontal.",
-                         "Plus tu es loin de l'explosion, moins tu subiras de dégâts",
+                         "Plus tu es loin de l'explosion, moins tu subiras de dégâts.",
                          "Tu deviens invincible pendant un court moment.",
                          "Leurs déplacements aléatoires ont une similarité.",
                          "Tu as acheté le jeu sur ta console, donc pas de malus ici !",
@@ -219,7 +223,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         anim.duration = 10 * speedFactor
         anim.fromValue = 0
-        anim.toValue = M_PI * 2
+        anim.toValue = Double.pi * 2
         anim.repeatCount = .infinity
         anim.fillMode = kCAFillModeForwards
         
@@ -359,16 +363,16 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         pauseGame()
         activateShield(10.0)
         
-        let myPresentingViewController = self.presentingViewController as! DialogueViewController
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
             self.oneProfil.sceneActuelle += 1
+            self.oneProfil.statsConsole["pourcentage"] = 100 - (100 * self.oneProfil.statsConsole["missileHit"]! / nbrMissile)
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
-                myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                 self.view.alpha = 0
             } , completion: { _ in
-                myPresentingViewController.backgroundMusicPlayer.stop()
+                self.backgroundMusicPlayer.stop()
                 self.present(vc, animated: false, completion: nil)
             })
         }else {
@@ -410,7 +414,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             }
             
             self.spawnMissile()
-            
+            self.nbrMissile += 1
             self.spawnFromTop = !self.spawnFromTop
             
             self.startMissileSpawner()
@@ -566,7 +570,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         
         if !spawnFromTop {
             decalage = -decalage
-            angle = CGFloat(M_PI)
+            angle = CGFloat(Double.pi)
         }
         
         missile.transform = CGAffineTransform(rotationAngle: angle)
@@ -614,7 +618,16 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             
             let explosionView = UIImageView(frame: CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: missile.bounds.height*2, height: missile.bounds.height*2)))
             explosionView.center = CGPoint(x: pres.position.x, y: pres.position.y)
-            
+            if bruit == 0 {
+                self.bruitageMusicPlayer1 = GestionBruitage(filename: "Explosion", volume: 0.8)
+                bruit += 1
+            } else if bruit == 1{
+                self.bruitageMusicPlayer2 = GestionBruitage(filename: "Explosion", volume: 0.8)
+                bruit += 1
+            } else {
+                self.bruitageMusicPlayer3 = GestionBruitage(filename: "Explosion", volume: 0.8)
+                bruit = 0
+            }
             view.addSubview(explosionView)
             explosionView.loadGif(name: "Explosion", completion: { _ in
                 let duration = CFTimeInterval(UIImage.lastLoadedGIFDuration)
@@ -648,7 +661,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             let distance = abs(explosion.midX - spaceship.center.x)
             
             let damage =  (aoeWidth - distance) / aoeWidth * 2 + 1
-            
+            self.oneProfil.statsConsole["missileHit"]! += 1
             looseHealth(Int(round(damage)))
         }
     }
@@ -665,9 +678,9 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             }
         }
         
+        changeColorLabelBad(label: headerView.lifePointLabel)
         oneProfil.lifePoint -= amount
         headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
-
         activateShield(1.0 * speedFactor)
         
     }
@@ -788,16 +801,17 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             
             itemTouched.layer.removeAnimation(forKey: "position")
             itemTouched.layer.add(anim, forKey: nil)
-            
+            self.gainHealth(3)
+            bonusBruitageMusicPlayer = GestionBruitage(filename: "Bonus", volume: 1)
+
             UIView.animate(withDuration: anim.duration * 1/3, delay: anim.duration * 2/3, animations: { _ in
                 itemTouched.alpha = 0
             }, completion: { _ in
                 self.healViews.remove(at: self.healViews.index(of: itemTouched)!)
                 itemTouched.removeFromSuperview()
-                self.gainHealth(3)
             })
         } else if bonusViews.contains(itemTouched) {
-            
+            bonusBruitageMusicPlayer = GestionBruitage(filename: "Bonus", volume: 1)
             UIView.animate(withDuration: 1, animations: { _ in
                 itemTouched.alpha = 0
             }, completion: { _ in
@@ -813,6 +827,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     }
     
     func gainHealth(_ amount: Int) {
+        changeColorLabelGood(label: headerView.lifePointLabel)
         oneProfil.lifePoint += amount
         headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
     }
@@ -866,7 +881,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     }
     
     func hideModal() {
-        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+        bruitageMusicPlayer1 = GestionBruitage(filename: "Clik", volume : 1)
         for subview in self.view.subviews {
             
             guard subview is UIVisualEffectView else {

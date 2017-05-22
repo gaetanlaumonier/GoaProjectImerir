@@ -22,10 +22,9 @@ class ProfilJoueur : NSObject, NSCoding{
                     print("Could not instantiate view controller")
                     return
                 }
-                }
+            }
         }
     }
-    
     
     //Profil pour les questions de psychologie
     var dictProfil : [String:Int]
@@ -36,23 +35,50 @@ class ProfilJoueur : NSObject, NSCoding{
     //Moment du scénario atteint
     var sceneActuelle : Int = 0
     
-    //Compte le nombre de bonne réponses aux questions (stats)
-    var bonneReponseQuiz : Int = 0
+    //Regroupe les statistiques du quiz
+    var statsQuiz : [String:Int]!
     
+    //Regroupe les statistiques de l'arcadeCookie
+    var statsCookie : [String:Int]!
+
+    //Regroupe les statistiques de l'arcadeRangement
+    var statsRangement : [String:Int]!
+
+    //Regroupe les statistiques de l'arcadeConsole
+    var statsConsole : [String:Int]!
+
+    //Regroupe les statistiques de l'arcadeBac
+    var statsBac : [String:Int]!
+
+    //Regroupe les statistiques du labyrinthe
+    var statsLabyrinthe : [String:Int]!
+
     //Stock des questions
     var questionAlreadyPick : [Int] = []
     
     override init() {
         self.dictProfil = ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0]
+
+        self.statsQuiz = ["bonneReponseQuiz":0, "pourcentage" : 0]
+        self.statsCookie = ["cookieGoodTaped":0, "pourcentage" : 0]
+        self.statsRangement = ["goodClassification":0, "pourcentage" : 0]
+        self.statsConsole = ["missileHit":0, "pourcentage" : 0]
+        self.statsBac = ["goodClassification":0, "pourcentage" : 0]
+        self.statsLabyrinthe = ["timeSpent":0, "batKilled" : 0]
     }
     
-    init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String, sceneActuelle : Int, bonneReponseQuiz : Int, questionAlreadyPick : [Int]) {
+    init(name: String, lifePoint : Int, dictProfil : [String:Int], classeJoueur : String, sceneActuelle : Int, statsQuiz : [String:Int], statsCookie : [String:Int], statsRangement : [String:Int], statsConsole : [String:Int], statsBac : [String:Int], statsLabyrinthe : [String:Int], questionAlreadyPick : [Int]) {
         self.name = name
         self.lifePoint = lifePoint
         self.dictProfil = dictProfil
         self.classeJoueur = classeJoueur
         self.sceneActuelle = sceneActuelle
-        self.bonneReponseQuiz = bonneReponseQuiz
+        self.statsQuiz = statsQuiz
+        self.statsCookie = statsCookie
+        self.statsRangement = statsRangement
+        self.statsConsole = statsConsole
+        self.statsBac = statsBac
+        self.statsLabyrinthe = statsLabyrinthe
         self.questionAlreadyPick = questionAlreadyPick
     }
  
@@ -62,7 +88,13 @@ class ProfilJoueur : NSObject, NSCoding{
         aCoder.encode(dictProfil, forKey: "myDictProfil")
         aCoder.encode(classeJoueur, forKey: "myClasseJoueur")
         aCoder.encodeCInt(Int32(sceneActuelle), forKey: "mySceneActuelle")
-        aCoder.encodeCInt(Int32(bonneReponseQuiz), forKey: "myBonneReponseQuiz")
+        aCoder.encode(statsQuiz, forKey: "myStatsQuiz")
+        aCoder.encode(statsCookie, forKey: "myStatsCookie")
+        aCoder.encode(statsRangement, forKey: "myStatsRangement")
+        aCoder.encode(statsConsole, forKey: "myStatsConsole")
+        aCoder.encode(statsBac, forKey: "myStatsBac")
+        aCoder.encode(statsLabyrinthe, forKey: "myStatsLabyrinthe")
+
         aCoder.encode(questionAlreadyPick, forKey: "myQuestionAlreadyPick")
         
     }
@@ -73,7 +105,12 @@ class ProfilJoueur : NSObject, NSCoding{
         let dictProfil = aDecoder.decodeObject(forKey: "myDictProfil") as? [String:Int]
         let classeJoueur = aDecoder.decodeObject(forKey: "myClasseJoueur") as? String
         let sceneActuelle = aDecoder.decodeInteger(forKey: "mySceneActuelle")
-        let bonneReponseQuiz = aDecoder.decodeInteger(forKey: "myBonneReponseQuiz")
+        let statsQuiz = aDecoder.decodeObject(forKey: "myStatsQuiz") as! [String:Int]
+        let statsCookie = aDecoder.decodeObject(forKey: "myStatsCookie") as! [String:Int]
+        let statsRangement = aDecoder.decodeObject(forKey: "myStatsRangement") as! [String:Int]
+        let statsConsole = aDecoder.decodeObject(forKey: "myStatsConsole") as! [String:Int]
+        let statsBac = aDecoder.decodeObject(forKey: "myStatsBac") as! [String:Int]
+        let statsLabyrinthe = aDecoder.decodeObject(forKey: "myStatsLabyrinthe") as! [String:Int]
         let questionAlreadyPick = aDecoder.decodeObject(forKey: "myQuestionAlreadyPick")  as! [Int]
         
         self.name = name!
@@ -81,10 +118,13 @@ class ProfilJoueur : NSObject, NSCoding{
         self.dictProfil = dictProfil!
         self.classeJoueur = classeJoueur!
         self.sceneActuelle = sceneActuelle
-        self.bonneReponseQuiz = bonneReponseQuiz
+        self.statsQuiz = statsQuiz
+        self.statsCookie = statsCookie
+        self.statsRangement = statsRangement
+        self.statsConsole = statsConsole
+        self.statsBac = statsBac
+        self.statsLabyrinthe = statsLabyrinthe
         self.questionAlreadyPick = questionAlreadyPick
     }
 
 }
-
-

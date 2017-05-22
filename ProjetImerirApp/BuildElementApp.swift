@@ -2,35 +2,19 @@
 
 //avril: 
 //menu pause
-//integrer rangement
-//musique
-//bug nouvelles parti
 //test dialogue style
 
 //mai
-//save
-//bruitage
 //wiki
-//integrer labyrinthe 1
-//integrer labyrinthe 2
-//integrer console
-//integrer bac
-//background integration
-//retaper note de cadrage, cahier des charges, proposition technico commerciale
-//icone de l'appli
 
 //a integrer a chaque jeux : header, musique, background, traitement de la fin, bruitage, pause
-
 //nato
 //3 jeu
 //Traitement de la fin des jeux
-//rangement -> bug object z index armoire, bug objet header view, timer general
-//first background laby
 
 //optionnel à voir vers la fin
 //uml, reflexion tests
 //mode arcade
-
 
 //a demander a grabo :
 //dismiss, UML, Tests, crash de l'appli

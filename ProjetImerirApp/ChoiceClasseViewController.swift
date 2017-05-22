@@ -14,7 +14,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     var AllClasse = [ClasseJoueur]()
     var buttonSender : Int = 10
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle: 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
+    var oneProfil = ProfilJoueur()
     var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
@@ -28,22 +28,22 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
         FonduApparition(myView: self, myDelai: 1)
     }
     
-
+    
     
     // MARK: - Table view data source
     
-     func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return AllClasse.count
     }
     
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classeCell", for: indexPath) as! ClasseTableViewCell
         
         //soulignement du titre

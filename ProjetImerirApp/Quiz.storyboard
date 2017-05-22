@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u8R-0A-IOh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u8R-0A-IOh">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,7 +148,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-h2-C7i" userLabel="InputButtonValidate" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="384" y="298" width="256.5" height="134"/>
+                                        <rect key="frame" x="384" y="238" width="256.5" height="134"/>
                                         <color key="backgroundColor" red="1" green="0.32607960740000003" blue="0.0015390543939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
@@ -251,7 +251,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisie la réponse :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdp-CW-zzG" userLabel="SaisieLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="179" y="146" width="666" height="67"/>
+                                        <rect key="frame" x="179" y="116" width="666" height="67"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -264,7 +264,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtP-MK-giz" userLabel="InputAnswer">
-                                        <rect key="frame" x="179" y="218" width="666" height="30"/>
+                                        <rect key="frame" x="179" y="188" width="666" height="30"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -291,7 +292,7 @@
                                     <constraint firstItem="PQ7-tC-gwe" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="MnU-SW-bx4"/>
                                     <constraint firstItem="PQ7-tC-gwe" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.05" id="N1v-YM-JZq"/>
                                     <constraint firstItem="nlq-WB-vna" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="O8F-iC-yqt"/>
-                                    <constraint firstItem="s2a-h2-C7i" firstAttribute="top" secondItem="ZtP-MK-giz" secondAttribute="bottom" constant="50" id="OTb-Hw-gbb"/>
+                                    <constraint firstItem="s2a-h2-C7i" firstAttribute="top" secondItem="ZtP-MK-giz" secondAttribute="bottom" constant="20" id="OTb-Hw-gbb"/>
                                     <constraint firstItem="MbZ-2h-rBR" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="Scx-qr-VlC"/>
                                     <constraint firstItem="ulD-s4-Kqd" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="UgP-7E-VM6"/>
                                     <constraint firstItem="RpU-6F-8QY" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="VS2-RZ-SK6"/>
@@ -315,7 +316,7 @@
                                     <constraint firstItem="RpU-6F-8QY" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="jy2-fz-mj8"/>
                                     <constraint firstItem="nlq-WB-vna" firstAttribute="height" secondItem="vNf-Hd-bqZ" secondAttribute="height" multiplier="0.2" id="k5R-6T-4I1"/>
                                     <constraint firstItem="qBD-nC-nXL" firstAttribute="top" secondItem="nlq-WB-vna" secondAttribute="bottom" id="l6r-wD-2iu"/>
-                                    <constraint firstItem="ZtP-MK-giz" firstAttribute="top" secondItem="MbZ-2h-rBR" secondAttribute="bottom" constant="50" id="oA0-U0-iIm"/>
+                                    <constraint firstItem="ZtP-MK-giz" firstAttribute="top" secondItem="MbZ-2h-rBR" secondAttribute="bottom" constant="20" id="oA0-U0-iIm"/>
                                     <constraint firstItem="nlq-WB-vna" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="pPa-Ql-yJA"/>
                                     <constraint firstItem="7jQ-n6-zMy" firstAttribute="width" secondItem="vNf-Hd-bqZ" secondAttribute="width" multiplier="0.8" id="qIX-m4-O8h"/>
                                     <constraint firstItem="ulD-s4-Kqd" firstAttribute="centerX" secondItem="vNf-Hd-bqZ" secondAttribute="centerX" id="s9O-hb-phz"/>
@@ -365,30 +366,6 @@
                                             <action selector="PsychoPush:" destination="u8R-0A-IOh" eventType="touchUpInside" id="rWp-aI-c3X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mix-dj-I0T" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="865.5" y="149" width="153.5" height="51"/>
-                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="11"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="pjj-pw-Ema" kind="show" id="glL-i0-a5F"/>
-                                        </connections>
-                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pr-cL-hBr">
                                         <rect key="frame" x="30" y="117" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -415,11 +392,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Lwf-CX-Pub" firstAttribute="centerX" secondItem="9Wt-gR-U6O" secondAttribute="centerX" id="76L-ZS-Zlh"/>
-                                    <constraint firstItem="mix-dj-I0T" firstAttribute="height" secondItem="9Wt-gR-U6O" secondAttribute="height" multiplier="0.25" id="9dF-F5-pnU"/>
                                     <constraint firstItem="Lwf-CX-Pub" firstAttribute="height" secondItem="9Wt-gR-U6O" secondAttribute="height" multiplier="0.9" id="ShJ-Ej-8tb"/>
-                                    <constraint firstItem="mix-dj-I0T" firstAttribute="width" secondItem="9Wt-gR-U6O" secondAttribute="width" multiplier="0.15" id="SyY-QU-STk"/>
-                                    <constraint firstAttribute="bottom" secondItem="mix-dj-I0T" secondAttribute="bottom" constant="5" id="fV4-Vy-Mir"/>
-                                    <constraint firstAttribute="trailing" secondItem="mix-dj-I0T" secondAttribute="trailing" constant="5" id="hH8-hM-XVz"/>
                                     <constraint firstItem="Lwf-CX-Pub" firstAttribute="leading" secondItem="9Wt-gR-U6O" secondAttribute="leading" constant="15" id="inf-nX-Mjz"/>
                                     <constraint firstAttribute="trailing" secondItem="Lwf-CX-Pub" secondAttribute="trailing" constant="15" id="oke-qR-rer"/>
                                     <constraint firstItem="Lwf-CX-Pub" firstAttribute="top" secondItem="9Wt-gR-U6O" secondAttribute="top" constant="5" id="vSQ-xU-rW5"/>
@@ -473,7 +446,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="2"/>
@@ -607,14 +580,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="94.921875" y="278.91654465592973"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="5L3-6G-Brl">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="pjj-pw-Ema" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IcW-Qd-6s5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1370" y="315"/>
         </scene>
     </scenes>
     <resources>

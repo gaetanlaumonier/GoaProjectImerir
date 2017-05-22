@@ -29,20 +29,21 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDurationTotal:TimeInterval = 10
+    var gameDurationTotal:TimeInterval = 20
     var gameTimer : Int = 0
     var noob = false
     var geek = false
     var progressDecrease:Float = 0.002
     var AllClasse = [ClasseJoueur()]
     var idClasse : Int = 0
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 10, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek", sceneActuelle : 1, bonneReponseQuiz : 0, questionAlreadyPick:[0])
+    var oneProfil = ProfilJoueur()
     
     var hfromLeft = true
     var sfromLeft = true
     var gamePause : Bool = false
     var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var cookieTaped : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +76,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeCookie as String)"]
         pageViewImages = ["Cookie", "Mom","progressBar", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Le gâteau","La mère","La barre d'humeur", "\(AllClasse[idClasse].idClasse as String)"]
-        pageViewHints = ["Les bébés aussi ont plusieurs doigts", "Clique sur le cookie quand tu ne voit que ses cheveux.", "Ne laisse pas la jauge se vider.", ""]
+        pageViewHints = ["Les bébés aussi ont plusieurs doigts.", "Clique sur le cookie quand tu ne voit que ses cheveux.", "Perte de 5 pv si elle n'est pas remplie à moitié à la fin.", ""]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "CookiePageViewController") as! UIPageViewController
         
@@ -176,8 +177,20 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     func endGame() {
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
         {
+            if progress <= 0.5 {
+            self.oneProfil.lifePoint = self.oneProfil.lifePoint - 5
+            changeColorLabelBad(label: headerView.lifePointLabel)
+            self.headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+            }
+            
             decreaseTimer.invalidate()
             self.oneProfil.sceneActuelle += 1
+            if cookieTaped != 0 {
+            self.oneProfil.statsCookie["pourcentage"]! = 100 * self.oneProfil.statsCookie["cookieGoodTaped"]! / cookieTaped
+            } else {
+                self.oneProfil.statsCookie["pourcentage"]! = 0
+            }
+
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
@@ -222,9 +235,12 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     }
     
     func cookieClicked(tapGR: UITapGestureRecognizer){
+       cookieTaped += 1
         if isReallyClicked(tapGR: tapGR){
             if isMomWatching {
-                
+                changeColorLabelBad(label: headerView.lifePointLabel)
+                self.oneProfil.lifePoint -= 1
+                headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
                 if progress > 0.01 {
                     if noob {
                         progress = progress - 0.01 * (Float(arc4random_uniform(2)) + 1.0)
@@ -246,7 +262,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
                 } else if progress < 1 {
                     progress = 1
                 }
-                
+             self.oneProfil.statsCookie["cookieGoodTaped"]! += 1
             }
             
             drawParticle(at: tapGR.location(in: view))
@@ -402,10 +418,10 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
         if hfromLeft {
             hfromLeft = !hfromLeft
-            anim.toValue = M_PI_4
+            anim.toValue = Double.pi / 4
         } else {
             hfromLeft = !hfromLeft
-            anim.toValue = -M_PI_4
+            anim.toValue = -Double.pi / 4
         }
         
         anim.duration = drand48() / 2 + 0.5
@@ -422,10 +438,10 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
         if sfromLeft {
             sfromLeft = !sfromLeft
-            anim.toValue = M_PI_4
+            anim.toValue = Double.pi / 4
         } else {
             sfromLeft = !sfromLeft
-            anim.toValue = -M_PI_4
+            anim.toValue = -Double.pi / 4
         }
         
         anim.duration = drand48() / 2 + 0.5
