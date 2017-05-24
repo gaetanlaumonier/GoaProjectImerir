@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="1091" width="1024" height="275"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-OP-NJv" userLabel="DialogueLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="52" y="13.5" width="921" height="248"/>
+                                        <rect key="frame" x="51" y="13.5" width="922" height="247.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9x-pw-GRz">
-                                        <rect key="frame" x="942.5" y="193.5" width="71.5" height="71.5"/>
+                                        <rect key="frame" x="932" y="190.5" width="71" height="71.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="a9x-pw-GRz" secondAttribute="height" multiplier="1:1" id="iTM-pF-XE2"/>
@@ -66,11 +66,11 @@
                                 <constraints>
                                     <constraint firstItem="1Q9-OP-NJv" firstAttribute="centerY" secondItem="J2X-Fm-0PV" secondAttribute="centerY" id="PrH-On-czP"/>
                                     <constraint firstItem="1Q9-OP-NJv" firstAttribute="height" secondItem="J2X-Fm-0PV" secondAttribute="height" multiplier="0.9" id="Yn5-dj-2Gr"/>
-                                    <constraint firstAttribute="trailing" secondItem="a9x-pw-GRz" secondAttribute="trailing" constant="10" id="aAK-N2-BeO"/>
+                                    <constraint firstAttribute="trailing" secondItem="a9x-pw-GRz" secondAttribute="trailing" multiplier="1.02" id="aAK-N2-BeO"/>
                                     <constraint firstItem="1Q9-OP-NJv" firstAttribute="centerX" secondItem="J2X-Fm-0PV" secondAttribute="centerX" id="cpX-GC-oia"/>
                                     <constraint firstItem="a9x-pw-GRz" firstAttribute="width" secondItem="J2X-Fm-0PV" secondAttribute="width" multiplier="0.07" id="qiH-qs-d9f"/>
                                     <constraint firstItem="1Q9-OP-NJv" firstAttribute="width" secondItem="J2X-Fm-0PV" secondAttribute="width" multiplier="0.9" id="rmD-ao-Mgf"/>
-                                    <constraint firstAttribute="bottom" secondItem="a9x-pw-GRz" secondAttribute="bottom" constant="10" id="tOP-E0-ryL"/>
+                                    <constraint firstAttribute="bottom" secondItem="a9x-pw-GRz" secondAttribute="bottom" multiplier="1.05" id="tOP-E0-ryL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">

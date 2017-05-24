@@ -17,8 +17,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var spaceship: Spaceship!
     var shield: UIImageView!
     
-    var gameDuration:CFTimeInterval = 20
-    var timeLeft:CFTimeInterval = 20
+    var gameDuration:CFTimeInterval = 40
+    var timeLeft:CFTimeInterval = 40
     
     var spawnFromTop = true
     var missileSize:CGSize!

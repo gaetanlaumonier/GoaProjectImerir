@@ -12,6 +12,11 @@
 //3 jeu
 //Traitement de la fin des jeux
 
+//mercredi question, commit
+//jeudi wiki, fin des jeux, test
+//vendredi test, commentaires
+//samedi revision oral et redactionnel
+
 //optionnel à voir vers la fin
 //uml, reflexion tests
 //mode arcade

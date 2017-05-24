@@ -788,7 +788,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                         
                         self.elapsedTime += 1
                         if self.isFirstMaze {
-                            if self.elapsedTime >= 10 {
+                            if self.elapsedTime >= 40 {
                                 self.endGame()
                             }
                         }

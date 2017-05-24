@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ynb-Qd-JX7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ynb-Qd-JX7">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-Zj-A7y" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="154" y="164" width="307.5" height="81.5"/>
+                                            <rect key="frame" x="123.5" y="164" width="368.5" height="81.5"/>
                                             <color key="backgroundColor" red="0.15123334390862941" green="0.15123334390862941" blue="0.15123334390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
@@ -65,7 +65,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lp1-pi-Xl3" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="154" y="265.5" width="307.5" height="82"/>
+                                            <rect key="frame" x="123.5" y="265.5" width="368.5" height="82"/>
                                             <color key="backgroundColor" red="0.15123334390862941" green="0.15123334390862941" blue="0.15123334390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
@@ -94,7 +94,7 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.30190080778992584" green="0.29598118410777047" blue="0.30782043147208127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="Lp1-pi-Xl3" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.5" id="3Wd-z4-QDh"/>
+                                        <constraint firstItem="Lp1-pi-Xl3" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.6" id="3Wd-z4-QDh"/>
                                         <constraint firstItem="PCf-Nt-X3V" firstAttribute="height" secondItem="jEl-Jg-Gml" secondAttribute="height" multiplier="0.4" id="9Bi-bX-6IN"/>
                                         <constraint firstItem="Lp1-pi-Xl3" firstAttribute="centerX" secondItem="jEl-Jg-Gml" secondAttribute="centerX" id="Hwr-jn-wVt"/>
                                         <constraint firstItem="4Kx-Zj-A7y" firstAttribute="centerX" secondItem="jEl-Jg-Gml" secondAttribute="centerX" id="I8f-p8-SXi"/>
@@ -104,7 +104,7 @@
                                         <constraint firstItem="Lp1-pi-Xl3" firstAttribute="height" secondItem="jEl-Jg-Gml" secondAttribute="height" multiplier="0.2" id="b5W-FU-0DC"/>
                                         <constraint firstItem="4Kx-Zj-A7y" firstAttribute="top" secondItem="PCf-Nt-X3V" secondAttribute="bottom" id="eyB-iA-YYS"/>
                                         <constraint firstItem="Lp1-pi-Xl3" firstAttribute="top" secondItem="4Kx-Zj-A7y" secondAttribute="bottom" constant="20" id="f8N-rr-C0D"/>
-                                        <constraint firstItem="4Kx-Zj-A7y" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.5" id="p2d-J8-g8b"/>
+                                        <constraint firstItem="4Kx-Zj-A7y" firstAttribute="width" secondItem="jEl-Jg-Gml" secondAttribute="width" multiplier="0.6" id="p2d-J8-g8b"/>
                                         <constraint firstItem="PCf-Nt-X3V" firstAttribute="top" secondItem="jEl-Jg-Gml" secondAttribute="top" id="xLu-ZI-a14"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>

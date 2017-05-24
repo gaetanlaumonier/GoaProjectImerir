@@ -22,6 +22,7 @@ class ClasseModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.classeView.alpha = 0
         confirmationLabel.text = "Es tu sur d'être \(classePlayer) ?"
         self.ouiButton.alpha = 0
         self.nonButton.alpha = 0
@@ -31,13 +32,15 @@ class ClasseModalViewController: UIViewController {
 
         self.ouiButton.layer.cornerRadius = self.view.bounds.width / 20
         self.nonButton.layer.cornerRadius = self.view.bounds.width / 20
-        
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.classeView.alpha = 1
+        }, completion : { _ in
+           UIView.animate(withDuration: 0.3, animations: {
             self.ouiButton.alpha = 1
             self.nonButton.alpha = 1
-
-        })
+           })
         
+        })
     }
     
     @IBAction func goToDialogue(_ sender: Any) {

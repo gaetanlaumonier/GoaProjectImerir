@@ -31,8 +31,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 30.0
-    var timeLeft = 30.0
+    var gameDuration = 40.0
+    var timeLeft = 40.0
     var slowGameFactor = 1.0
     var originalSize:CGFloat!
     
@@ -48,6 +48,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var objInContainer : Int = 0
+    var goodObjectInContainer : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,11 +101,6 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         
         UIGraphicsBeginImageContext(pageViewController.view.frame.size)
         
-//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-//        
-//        UIGraphicsEndImageContext()
-//        
-//        pageViewController.view.backgroundColor = UIColor(patternImage: image)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -171,20 +167,21 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         endGameTimer.invalidate()
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
         {
-            self.oneProfil.sceneActuelle += 1
-            scoreGestureFinal()
-            if objInContainer != 0 {
-                self.oneProfil.statsRangement["pourcentage"]! = 100 * (self.oneProfil.statsRangement["goodClassification"]! / objInContainer)
-            } else {
-                self.oneProfil.statsRangement["goodClassification"]! = 0
-            }
-
-            vc.oneProfil = self.oneProfil
-            self.saveMyData()
-            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 self.view.alpha = 0
             } , completion: { success in
+                self.oneProfil.sceneActuelle += 1
+                self.scoreGestureFinal()
+                if self.objInContainer != 0 {
+                    self.oneProfil.statsRangement["pourcentage"]! = 100 * self.goodObjectInContainer / self.objInContainer
+                } else {
+                    self.oneProfil.statsRangement["goodClassification"]! = 0
+                }
+                self.oneProfil.statsRangement["goodClassification"]! = self.goodObjectInContainer
+                
+                vc.oneProfil = self.oneProfil
+                self.saveMyData()
                 self.backgroundMusicPlayer.stop()
                 self.present(vc, animated: false, completion: nil)
             })
@@ -297,7 +294,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func onValidContainer(objet: Objet) {
         score += 1
-        self.oneProfil.statsRangement["goodClassification"]! += 1
+        goodObjectInContainer += 1
         updateScore()
         animateOut(objet: objet)
     }
@@ -521,7 +518,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
                 self.animateTo(objet: objet, position: position, completion: {(finished: Bool) in
                     
                     if finished {
-                        
+                        self.objInContainer += 1
                         self.onValidContainer(objet: objet)
                     }
                     

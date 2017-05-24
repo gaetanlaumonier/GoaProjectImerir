@@ -29,7 +29,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDurationTotal:TimeInterval = 20
+    var gameDurationTotal:TimeInterval = 30
     var gameTimer : Int = 0
     var noob = false
     var geek = false

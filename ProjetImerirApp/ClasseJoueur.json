@@ -42,7 +42,7 @@
                      },{
                      "idClasse":"Personne",
                      "nomClasse":"Personne",
-                     "libelleClasse":"Vous n'êtes rien, personne, aucun pouvoir ne vous est accordé.",
+                     "libelleClasse":"Vous n'êtes rien, personne, aucun pouvoir ne vous est accordé. 100 Points de vie de base.",
                      "pouvoirClasse":"Le pouvoir de ne pas en avoir.",
                      "arcadeCookie":"tu n'as accès à aucun bonus.",
                      "arcadeRangement":"tu n'as toujours pas obtenu de bonus.",

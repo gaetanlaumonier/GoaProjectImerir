@@ -84,4 +84,8 @@ import UIKit
         
         return view
     }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return settingImage.point(inside: convert(point, to: settingImage), with: event)
+    }
 }

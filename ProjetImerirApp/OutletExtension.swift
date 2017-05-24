@@ -324,9 +324,8 @@ extension UIApplication
 }
 
 extension UIViewController{
-    
 
-    func FonduApparition(myView : UIViewController, myDelai : Int){
+    func FonduApparition(myView : UIViewController, myDelai : Float){
     UIView.animate(withDuration: TimeInterval(myDelai), animations: {
     myView.view.alpha = 1
     })
