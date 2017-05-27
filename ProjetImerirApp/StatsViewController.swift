@@ -17,7 +17,7 @@ class StatsViewController: UIViewController, UITableViewDataSource, UITableViewD
     var titreLibelle = ["Quiz", "ArcadeCookie", "ArcadeRangement", "ArcadeConsole", "ArcadeBac", "Labyrinthe"]
     
     var firstStatLibelle = ["Nombre de bonnes réponses :", "Tap réussit :", "Rangement réussit :", "Missile touché :", "Cours appris :", "Temps dans le labyrinthe final :"]
-    var secondStatLibelle = ["Pourcentage :", "Pourcentage :", "Pourcentage :", "Pourcentage d'esquive :", "Pourcentage d'efficacité :", "Monstre tué :"]
+    var secondStatLibelle = ["Pourcentage de réussite:", "Pourcentage de réussite:", "Pourcentage de réussite:", "Pourcentage d'esquive :", "Pourcentage d'efficacité :", "Monstre tué :"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ class StatsViewController: UIViewController, UITableViewDataSource, UITableViewD
             break
         case 5 :
             let timeSpent = secondsToHoursMinutesSeconds(seconds: self.oneProfil.statsLabyrinthe["timeSpent"]!)
-            cell.firstResultLabel.text = "\(timeSpent.0)h, \(timeSpent.1)m"
+            cell.firstResultLabel.text = "\(timeSpent.1)m, \(timeSpent.2)s"
             cell.secondResultLabel.text = "\(self.oneProfil.statsLabyrinthe["batKilled"]!)%"
             break
         default:

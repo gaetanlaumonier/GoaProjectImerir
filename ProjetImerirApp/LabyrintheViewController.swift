@@ -60,6 +60,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var minimapCells = [(x:Int,y:Int,layer:CALayer)]()
     var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayerMonstre = AVAudioPlayer()
     var firstGameTimer = Timer()
     var elapsedTime = Int()
     var killMonster = AVAudioPlayer()
@@ -394,9 +395,10 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     func endGame() {
         
-        let myPresentingViewController = self.presentingViewController as! DialogueViewController
+        
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
         if isFirstMaze == true {
+            let myPresentingViewController = self.presentingViewController as! DialogueViewController
                 firstGameTimer.invalidate()
                 self.oneProfil.sceneActuelle += 1
                 vc.oneProfil = self.oneProfil
@@ -405,20 +407,29 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                     myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.view.alpha = 0
                     self.bruitageMusicPlayer.setVolume(0, fadeDuration: 1)
+                    self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                 } , completion: { success in
+                    self.bruitageMusicPlayerMonstre.stop()
+                    self.bruitageMusicPlayer.stop()
                     myPresentingViewController.backgroundMusicPlayer.stop()
                     self.present(vc, animated: false, completion: nil)
                 })
         } else {
                 self.oneProfil.sceneActuelle += 1
                 self.oneProfil.statsLabyrinthe["timeSpent"] = self.elapsedTime
-                self.oneProfil.statsLabyrinthe["batKilled"] = 100 * self.nbrBatKilled / self.nbrBatAppear
-                vc.oneProfil = self.oneProfil
+            if nbrBatAppear < 1 {
+                self.oneProfil.statsLabyrinthe["batKilled"] = 100
+            } else {
+            self.oneProfil.statsLabyrinthe["batKilled"] = 100 * self.nbrBatKilled / self.nbrBatAppear
+            }
+            vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
                     self.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
+                    self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                     self.view.alpha = 0
                 }, completion: { success in
+                    self.bruitageMusicPlayerMonstre.stop()
                     self.backgroundMusicPlayer.stop()
                     self.present(vc, animated: false, completion: nil)
                 })
@@ -636,9 +647,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
         
         if bat.speed > 2 {
-            bruitageMusicPlayer = GestionBruitageLoop(filename: "MonstresHigh", volume: 0.5)
+            bruitageMusicPlayerMonstre = GestionBruitageLoop(filename: "MonstresHigh", volume: 0.5)
         } else {
-            bruitageMusicPlayer = GestionBruitageLoop(filename: "MonstreLow", volume: 0.5)
+            bruitageMusicPlayerMonstre = GestionBruitageLoop(filename: "MonstreLow", volume: 0.5)
         }
         UIView.animate(withDuration: 3/bat.speed/speedFactor, delay: 0, options: .curveEaseIn ,animations: { _ in
             let size = (drand48()/2 + 1) * Double(self.view.bounds.midX)
@@ -648,7 +659,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }, completion: { (finished) in
             
             if finished {
-                self.bruitageMusicPlayer.stop()
+                self.bruitageMusicPlayerMonstre.stop()
                 self.looseHealth(Int(arc4random_uniform(4)) + 1)
                 self.killBat()
             }
@@ -674,7 +685,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func killBat() {
         
         if let bat = currentBat {
-            bruitageMusicPlayer.stop()
+            bruitageMusicPlayerMonstre.stop()
             killMonster = GestionBruitage(filename: "MonstreTaped", volume: 0.8)
             freezeBat()
             currentBat = nil

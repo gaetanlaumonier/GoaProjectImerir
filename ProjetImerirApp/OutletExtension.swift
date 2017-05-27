@@ -6,19 +6,8 @@ import AVFoundation
 //Permet d'importer des gifs ou de modifier la taille de police des éléments
 //selon la taille de l'écran utilisé
 
-extension UIImageView {
-    
-    public func loadGif(name: String, completion: (() -> Swift.Void)? = nil) {
-        DispatchQueue.global().async {
-            let image = UIImage.gif(name: name)
-            DispatchQueue.main.async {
-                self.image = image
-                completion?()
-            }
-        }
-    }
-}
 
+//Change dynamiquement la font size des labels
 extension UILabel {
     func setupLabelDynamicSize(fontSize:CGFloat) {
         let screenSize = UIScreen.main.bounds.size
@@ -56,6 +45,7 @@ extension UILabel {
     }
 }
 
+//Met en majuscule la première lettre du nom du joueur en début de partie
 extension String {
     func capitalizingFirstLetter() -> String {
         let first = String(characters.prefix(1)).capitalized
@@ -68,6 +58,7 @@ extension String {
     }
 }
 
+//Permet d'accéder au futura italique
 extension UIFont {
 func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
     let descriptor = self.fontDescriptor
@@ -76,6 +67,7 @@ func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
     }
 }
 
+//Change dynamiquement la font size des boutons
 extension UIButton {
     func setupButtonDynamicSize(fontSize:CGFloat) {
         let screenSize = UIScreen.main.bounds.size
@@ -100,6 +92,20 @@ extension UIButton {
         }else {
             calculatedFont = UIFont(name: currentFontName!, size: fontSize * 3)
             self.titleLabel?.font = calculatedFont!
+        }
+    }
+}
+
+//Permet d'incorporer des gifs animés dans le jeu
+extension UIImageView {
+    
+    public func loadGif(name: String, completion: (() -> Swift.Void)? = nil) {
+        DispatchQueue.global().async {
+            let image = UIImage.gif(name: name)
+            DispatchQueue.main.async {
+                self.image = image
+                completion?()
+            }
         }
     }
 }
@@ -294,6 +300,7 @@ extension Collection where Indices.Iterator.Element == Index {
     }
 }
 
+//Permet d'accéder n'importe quand à la vue présente (utile pour le gameOver)
 extension UIApplication
 {
     class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?
@@ -323,6 +330,7 @@ extension UIApplication
     
 }
 
+//Permet à une vue d'apparaître en FadeIn
 extension UIViewController{
 
     func FonduApparition(myView : UIViewController, myDelai : Float){
@@ -333,6 +341,7 @@ extension UIViewController{
 
     }
     
+    //Change dynamiquement la couleur du lifePointLabel en vert en cas de gain de PV
     func changeColorLabelGood(label: UILabel){
         UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
             label.textColor = UIColor(red: 0, green: 1, blue: 17/255, alpha: 0.9)
@@ -343,6 +352,7 @@ extension UIViewController{
         })
     }
     
+    //Change dynamiquement la couleur du lifePointLabel en orange en cas de perte de PV
     func changeColorLabelBad(label :UILabel){
         
         UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
@@ -354,10 +364,12 @@ extension UIViewController{
         })
     }
     
+    //Cache le keyboard dans le jeu en cas de toucher externe au keyboard
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    //Lit une musique en boucle
     func GestionMusic(filename: String) -> AVAudioPlayer{
         var backgroundMusicPlayer = AVAudioPlayer()
         if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
@@ -380,6 +392,7 @@ extension UIViewController{
         return backgroundMusicPlayer
     }
     
+    //Lit un bruitage une fois
     func GestionBruitage(filename: String, volume : Float) -> AVAudioPlayer{
         var bruitageMusicPlayer = AVAudioPlayer()
         if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
@@ -400,6 +413,7 @@ extension UIViewController{
         return bruitageMusicPlayer
     }
     
+    //Lit un bruitage en boucle (ex : monstre dans le labyrinthe)
     func GestionBruitageLoop(filename: String, volume : Float) -> AVAudioPlayer {
         var bruitageMusicPlayer = AVAudioPlayer()
         if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {

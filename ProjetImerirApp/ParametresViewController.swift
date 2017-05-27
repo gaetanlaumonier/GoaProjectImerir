@@ -66,7 +66,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController = vc
                  })
                 break
             case is CookieViewController:
@@ -76,7 +77,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController = vc
                  })
                 break
             case is RangementViewController:
@@ -86,7 +88,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController = vc
                  })
                 
                 break
@@ -100,7 +103,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                         dialogueView.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                     }, completion : { _ in
                         dialogueView.backgroundMusicPlayer.stop()
-                        self.present(vc, animated: false)
+                        vc.firstMenuForRun = false
+                        self.view.window?.rootViewController = vc
                     })
                     break
                 } else {
@@ -109,7 +113,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                         presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                     }, completion : { _ in
                         presentingViewType.backgroundMusicPlayer.stop()
-                        self.present(vc, animated: false)
+                        vc.firstMenuForRun = false
+                        self.view.window?.rootViewController = vc
                     })
                     break
                 }
@@ -121,7 +126,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController? = vc
                 })
                 
                 break
@@ -182,8 +188,5 @@ var bruitageMusicPlayer = AVAudioPlayer()
 
         dismiss(animated: true, completion: nil)
     }
-    
-//    func headerViewExist(vc : String) -> Bool {
-//        
-//    }
+
 }

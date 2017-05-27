@@ -5,7 +5,7 @@
                   "Answer": "RAM",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Autrement dit, la mémoire rapide quoi...",
+                  "FeedBack": "C'était pas dur",
                   "HPLost": 3,
                   "Timer": 15
                   }, {
@@ -23,7 +23,7 @@
                   "Answer": "Processeur",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "J'espère que ton cerveau fonctionne bien lui...",
+                  "FeedBack": null,
                   "HPLost": 3,
                   "Timer": 20
                   }, {
@@ -37,7 +37,7 @@
                   "Timer": 15
                   }, {
                   "Question": "Laquelle de ces lettres désigne un langage de programmation ?",
-                  "Choice": ["B", "A", "D"] ,
+                  "Choice": ["B", "A", "D"],
                   "Answer": "C",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
@@ -56,7 +56,7 @@
                   }, {
                   "Question": "Quel est ce langage ? System.out.println ('Bonjour!')",
                   "Choice": ["C", "HTML", "PHP"],
-                  "Answer" : "Java",
+                  "Answer": "Java",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Facile, facile..",
@@ -68,7 +68,7 @@
                   "Answer": "Swift",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "On en a beaucoup entendu parler !",
+                  "FeedBack": "Ce jeu a été entièrement codé en Swift",
                   "HPLost": 1,
                   "Timer": 15
                   }, {
@@ -77,7 +77,7 @@
                   "Answer": "Environnement de développement intégré",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Etat D'Inceste ?",
+                  "FeedBack": "J'aurais dit \"État D'Ivresse\"",
                   "HPLost": 1,
                   "Timer": 20
                   }, {
@@ -95,13 +95,13 @@
                   "Answer": "Des espaces avant les phrases",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 25
                   }, {
                   "Question": "Lequel de ces mot n’est pas un type de variable ?",
-                  "Choice": [ "String", "Integer", "Float"],
-                  "Answer":"Square",
+                  "Choice": ["String", "Integer", "Float"],
+                  "Answer": "Square",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
                   "FeedBack": "Ce jeu est vraiment facile !",
@@ -122,16 +122,16 @@
                   "Answer": "Un ordinateur émulé",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 20
                   }, {
-                  "Question": "Quelle entreprise n’a jamais vendu d’ordinateurs portables ?",
+                  "Question": "Quelle entreprise n’a jamais vendue d’ordinateurs portables ?",
                   "Choice": ["Samsung", "Sony", "Panasonic"],
                   "Answer": "Canon",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Aller, au pif !",
+                  "FeedBack": "Panasonic a vendu des ordinateurs ?!",
                   "HPLost": 1,
                   "Timer": 25
                   }, {
@@ -140,7 +140,7 @@
                   "Answer": "Mettre en relation les composants",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 25
                   }, {
@@ -158,7 +158,7 @@
                   "Answer": "Javascript",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Le petit dernier de la famille",
+                  "FeedBack": "Javascript, le petit dernier de la famille",
                   "HPLost": 1,
                   "Timer": 15
                   }, {
@@ -167,16 +167,16 @@
                   "Answer": "Plus rapide à l'exécution",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Il fut un réel progrès comme composant",
+                  "FeedBack": "Grand progrès comme composant",
                   "HPLost": 2,
                   "Timer": 20
                   }, {
-                  "Question": "En langage binaire, lequel de ces calcul est vrai ?",
-                  "Choice": ["1+1=0", "1+1=1", "1+1=11"],
+                  "Question": "En langage binaire, lequel de ces calculs est vrai ?",
+                  "Choice": ["1+1=0", "1+1=1", "1+1=2"],
                   "Answer": "1+1=10",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Y'a pas 2 ?!",
+                  "FeedBack": "Le rédacteur de la question est un marrant",
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -198,17 +198,17 @@
                   "HPLost": 1,
                   "Timer": 15
                   }, {
-                  "Question": "Laquelle de ces valeur est la plus grande ?",
+                  "Question": "Laquelle de ces valeurs est la plus grande ?",
                   "Choice": ["Mégaoctet", "Gigaoctet", "Octet"],
                   "Answer": "Téraoctet",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Toujours plus, bientôt l'UltraOctet !",
+                  "FeedBack": null,
                   "HPLost": 3,
                   "Timer": 15
                   }, {
                   "Question": "Un Mio est égal à ?",
-                  "Choice": ["1024 Ko", "1000 Ko", "1048Kio" ],
+                  "Choice": ["1024 Ko", "1000 Ko", "1048Kio"],
                   "Answer": "1048Ko",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
@@ -230,7 +230,7 @@
                   "Answer": "HTTP",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 1,
                   "Timer": 20
                   }, {
@@ -248,7 +248,7 @@
                   "Answer": "Hard Disk",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 1,
                   "Timer": 15
                   }, {
@@ -257,16 +257,16 @@
                   "Answer": "2 147 483 647",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Après on passe au type 'double'",
+                  "FeedBack": "Après on passe au type 'Double'",
                   "HPLost": 1,
                   "Timer": 20
                   }, {
                   "Question": "Quel est le rôle d’un service web ?",
-                  "Choice": ["Sécuriser les systèmes de paiement en ligne", "Générer une documentation en ligne", "Fournir des données sur un utilisateur" ],
+                  "Choice": ["Sécuriser les systèmes de paiement en ligne", "Générer une documentation en ligne", "Fournir des données sur un utilisateur"],
                   "Answer": "Permettre l’échange de données entre applications",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 1,
                   "Timer": 25
                   }, {
@@ -275,16 +275,16 @@
                   "Answer": "Nao",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Robot Français !",
+                  "FeedBack": "Nao est un robot français !",
                   "HPLost": 2,
                   "Timer": 20
                   }, {
                   "Question": "En 2016, sur 10 personnes ayant un smartphone dans le monde, combien possèdent un android ?",
-                  "Choice": ["7", "5", "6" ],
+                  "Choice": ["7", "5", "6"],
                   "Answer": "8",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": "Tu est donc une minorité",
                   "HPLost": 1,
                   "Timer": 20
                   }, {
@@ -293,7 +293,7 @@
                   "Answer": "1985",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Un peu plus de culture",
+                  "FeedBack": "Un peu plus de culture ne fait pas de mal",
                   "HPLost": 1,
                   "Timer": 20
                   }, {
@@ -311,7 +311,7 @@
                   "Answer": "3",
                   "Topic": "Info",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Aller, c'est pas si dur !",
+                  "FeedBack": "Aller, c'etait pas bien dur !",
                   "HPLost": 3,
                   "Timer": 20
                   }, {
@@ -320,7 +320,7 @@
                   "Answer": "Au musée du Louvre, à Paris",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Une oeuvre entourée de mystère",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 25
                   }, {
@@ -347,7 +347,7 @@
                   "Answer": "Luxembourg",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Attention",
+                  "FeedBack": null,
                   "HPLost": 3,
                   "Timer": 20
                   }, {
@@ -365,7 +365,7 @@
                   "Answer": "Canberra",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -383,7 +383,7 @@
                   "Answer": "6 juin 1944",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Un jour historique",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -392,7 +392,7 @@
                   "Answer": "1945",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 3,
                   "Timer": 20
                   }, {
@@ -401,7 +401,7 @@
                   "Answer": "1912",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Repond à la question",
+                  "FeedBack": null,
                   "HPLost": 1,
                   "Timer": 20
                   }, {
@@ -419,7 +419,7 @@
                   "Answer": "Nixon",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Affaire d'espionnage politique américaine",
+                  "FeedBack": null,
                   "HPLost": 1,
                   "Timer": 15
                   }, {
@@ -428,16 +428,16 @@
                   "Answer": "Oslo",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "On les connais toute, mais laquelle est en Norvège ?",
+                  "FeedBack": "Pas facile de les distinguer",
                   "HPLost": 2,
                   "Timer": 15
                   }, {
                   "Question": "En 1940, quelle est la capitale de l’État français dirigé par Pétain?",
                   "Choice": ["Paris", "Lyon", "Lille"],
-                  "Answer": "Vicky",
+                  "Answer": "Vichy",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 15
                   }, {
@@ -446,7 +446,7 @@
                   "Answer": "Roosevelt",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Et Lincoln ?! ",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -455,7 +455,7 @@
                   "Answer": "1986",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Repond à la question",
+                  "FeedBack": null,
                   "HPLost": 1,
                   "Timer": 20
                   }, {
@@ -464,7 +464,7 @@
                   "Answer": "1945 à 1973",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Prémice de la consommation de masse",
+                  "FeedBack": "Période prémice à la consommation de masse",
                   "HPLost": 2,
                   "Timer": 25
                   }, {
@@ -473,7 +473,7 @@
                   "Answer": "Panama",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Y'a un piège ?",
+                  "FeedBack": "Trop drôle",
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -491,7 +491,7 @@
                   "Answer": "169",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Qui dit algo, dit mathématiques",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 30
                   }, {
@@ -500,7 +500,7 @@
                   "Answer": "216",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Repond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 30
                   }, {
@@ -509,7 +509,7 @@
                   "Answer": "33",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Facile, Facile",
+                  "FeedBack": "Facile, facile",
                   "HPLost": 2,
                   "Timer": 30
                   }, {
@@ -527,7 +527,7 @@
                   "Answer": "256",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "2*2*2*2*2...",
+                  "FeedBack": "2*2*2*2*2*2*2*2",
                   "HPLost": 2,
                   "Timer": 35
                   }, {
@@ -536,9 +536,9 @@
                   "Answer": "1968",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Aller si tu te plante, c'est pas grave",
+                  "FeedBack": null,
                   "HPLost": 2,
-                  "Timer":30
+                  "Timer": 30
                   }, {
                   "Question": "Quelle fruit a influencé le physicien Isaac Newton lors de sa découverte sur la gravité ?",
                   "Choice": ["Une poire", "Une banane", "Une orange"],
@@ -554,7 +554,7 @@
                   "Answer": "Alexander Graham Bell",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Oui, le précurseur de ton dernier smartphone",
+                  "FeedBack": "Le précurseur de ton dernier smartphone",
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -581,7 +581,7 @@
                   "Answer": "340m/s",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Franchir le mur du son",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 20
                   }, {
@@ -590,7 +590,7 @@
                   "Answer": "300 000m/s",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 15
                   }, {
@@ -599,16 +599,16 @@
                   "Answer": "G",
                   "Topic": "CultureG",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Vomissement ?",
+                  "FeedBack": "G équivaut à \"Gravité\"",
                   "HPLost": 1,
                   "Timer": 20
                   }, {
                   "Question": "Combien de gouttes d'eau peut-on mettre dans un verre vide ?",
                   "Choice": ["une", "1", "Une"],
-                  "Answer": "Avec une goutte, le verre n'est plus vide",
+                  "Answer": "Une seule",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "À la goutte près ?",
+                  "FeedBack": "Avec une goutte, le verre n'est plus vide",
                   "HPLost": 3,
                   "Timer": 60
                   }, {
@@ -626,7 +626,7 @@
                   "Answer": "100",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Tes yeux te trahissent",
+                  "FeedBack": "Après onze, cent et le prochain nombre à s'écrire en 4 lettres",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -635,7 +635,7 @@
                   "Answer": "51",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": "On augmente de 1 la somme des chiffres du prochain nombre",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -644,7 +644,7 @@
                   "Answer": "121",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Aller on réflechit",
+                  "FeedBack": "Double le prochain nombre et ajoute lui sa place dans la file + 1",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -653,16 +653,16 @@
                   "Answer": "69",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Encore des maths",
+                  "FeedBack": "Une fois sur 2 on double ou on ajoute 3",
                   "HPLost": 2,
-                  "Timer":60
+                  "Timer": 60
                   }, {
                   "Question": "Compléter cette suite logique : 6 - 9 - 15 - 27 - 51 - ?",
                   "Choice": ["52", "54", "75"],
                   "Answer": "99",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Un enfant de 3 mois à répondu juste",
+                  "FeedBack": "Double et soustrait 3",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -671,7 +671,7 @@
                   "Answer": "Le chat",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Si tu répond juste tu deviens immortel",
+                  "FeedBack": "Le rédacteur de cette question s'est surpassé",
                   "HPLost": 3,
                   "Timer": 60
                   }, {
@@ -680,7 +680,7 @@
                   "Answer": "Gros",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Un seul se démarque du lot",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 40
                   }, {
@@ -689,7 +689,7 @@
                   "Answer": "Grossier",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Ne soit pas un des quatres",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 40
                   }, {
@@ -707,7 +707,7 @@
                   "Answer": "LOGICIEL",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Tu en utilise tout les jours",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 45
                   }, {
@@ -716,7 +716,7 @@
                   "Answer": "CAPITALE",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Aide : Anagramme du mot 'ARMY' = 'MARY' ",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 45
                   }, {
@@ -725,7 +725,7 @@
                   "Answer": "PORTABLE",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Aide : Anagramme du mot 'POLICE' = 'PICOLE' ",
+                  "FeedBack": "L'anagramme du mot 'POLICE' est 'PICOLE' ",
                   "HPLost": 2,
                   "Timer": 45
                   }, {
@@ -736,14 +736,14 @@
                   "TypeOfQuestion": "Input",
                   "FeedBack": "Tu en aura un jour",
                   "HPLost": 2,
-                  "Timer":45
+                  "Timer": 45
                   }, {
                   "Question": "Indice pour la police, lorsqu'ils ont besoin d'un portrait. Nombreux dans les cuisines, bourrés de mécanique et travaillent beaucoup dans les usines. Qui-es ce ?",
                   "Choice": ["Robot", "Robots", "ROBOT", "ROBOTS", "robot", "robots"],
                   "Answer": "Les Robots",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "L'imérir te forme à en créer",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -752,25 +752,25 @@
                   "Answer": "0",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": "Si le sol est creusé, il n'y a plus de terre",
                   "HPLost": 3,
                   "Timer": 60
                   }, {
                   "Question": "Sur un pommier, il y a 6 branches. Sur ces 6 branches, on trouve 4 branches. Sur ces 4 branches, 5 branches qui ont chacunes 6 poires. Combien y'a t'il de poires ?",
                   "Choice": ["0"],
-                  "Answer": "0 'poire' dans un 'pommier'",
+                  "Answer": "0",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": "Les poires dans les pommiers n'ont toujours pas étaient inventés",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
-                  "Question": "Mr Boidelot entend 21 tintements de verres chez son voisin, combien de convives y a t'il chez son voisin (chaque convive trinque avec les autres convives une seule fois).",
+                  "Question": "Mr Boidelot entend 21 tintements de verres chez son voisin, combien de convives y a t'il chez son voisin (chaque convives trinquent avec les autres convives une seule fois).",
                   "Choice": ["7"],
-                  "Answer": "7 convives",
+                  "Answer": "7",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Santé !",
+                  "FeedBack": "6+5+4+3+2+1",
                   "HPLost": 1,
                   "Timer": 60
                   }, {
@@ -779,7 +779,7 @@
                   "Answer": "Le 'A'",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "C'ette énigme est abracadabrante",
+                  "FeedBack": "Abracadabrant !",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -788,16 +788,16 @@
                   "Answer": "4 enfants, 2 filles et 2 garçons",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Tu va y arriver",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 60
                   }, {
                   "Question": "J'ai des billes, toutes sont rouges sauf deux, toutes sont vertes sauf deux, et toutes sont bleues sauf deux. Combien de billes je possède ?",
                   "Choice": ["3"],
-                  "Answer": "3, une de chaques",
+                  "Answer": "3",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Répond à la question",
+                  "FeedBack": "Une de chaque",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -806,25 +806,25 @@
                   "Answer": "3 chats",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Sa porte à reflexion",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 60
                   }, {
-                  "Question":"Un microbe se multiplie par deux chaque seconde. Après une minute un pot de confiture en est rempli. En combien de secondes le bocal sera rempli, si on démarre avec 4 microbes ?",
+                  "Question": "Un microbe se multiplie par deux chaque seconde. Après une minute un pot de confiture en est rempli. En combien de secondes le bocal sera rempli, si on démarre avec 4 microbes ?",
                   "Choice": ["58"],
                   "Answer": "58 secondes",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Sa fera combien de microbes à la fin ?!",
+                  "FeedBack": null,
                   "HPLost": 2,
                   "Timer": 60
                   }, {
                   "Question": "Quelle lettre n'a pas sa place dans la série suivante : A B D J O P Q R ?",
                   "Choice": ["J", "j"],
-                  "Answer": "'J' n'a pas de boucle fermante",
+                  "Answer": "J",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Input",
-                  "FeedBack": "Le looser",
+                  "FeedBack": "C'est la seule lettre à ne pas avoir de boucle fermante",
                   "HPLost": 2,
                   "Timer": 60
                   }, {
@@ -833,7 +833,7 @@
                   "Answer": "T",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Et le 'Y' dans tout sa ?",
+                  "FeedBack": "Dans l'énoncé, 'T' est avanT 'z'",
                   "HPLost": 2,
                   "Timer": 45
                   }, {
@@ -842,7 +842,7 @@
                   "Answer": "E",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "...",
+                  "FeedBack": "Dans l'énoncé, 'E' est avant lE 'e'",
                   "HPLost": 2,
                   "Timer": 45
                   }, {
@@ -851,175 +851,181 @@
                   "Answer": "H",
                   "Topic": "Enigme",
                   "TypeOfQuestion": "Button",
-                  "FeedBack": "Aller, rappel toi l'alphabet",
+                  "FeedBack": "Difficulté augmentée",
                   "HPLost": 2,
                   "Timer": 45
-                  }
-                  , {
+                  }, {
                   "Question": "Ta motivation dans la vie ?",
-                  "Choice": ["Gagner beaucoup d’argent", "Rencontrer de nombreuses personnes", "Me reposer dès que possible", "Me développer dans ma passion"],
+                  "Choice": ["Gagner beaucoup d’argent", "Rencontrer de nombreuses personnes", "Me reposer chez moi dès que possible", "Me développer dans ma passion"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_crieur","profil_sociable","profil_timide","profil_innovateur"],
-                  "FeedBack": "Nous sommes tous motivés par quelque chose",
-                  "HPLostArray": [0,0,0,0]
-
+                  "ProfilConsequence": ["profil_crieur", "profil_sociable", "profil_timide", "profil_innovateur"],
+                  "FeedBackPsycho": ["argentAnswer", "sociableAnswer", "timideAnswer", "creatifAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
+                  
                   }, {
                   "Question": "Le sens de la vie selon toi ?",
                   "Choice": ["Je ne l’ai pas encore trouvé", "Rencontrer des extraterrestres", "Faire son chemin et ne pas se laisser faire ", "Rester avec les gens qui me sont chère"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_timide","profil_crieur","profil_innovateur","profil_sociable"],
-                  "FeedBack": "La question existencielle",
-                  "HPLostArray": [0,0,0,0]
-
+                  "ProfilConsequence": ["profil_timide", "profil_innovateur", "profil_crieur", "profil_sociable"],
+                  "FeedBackPsycho": ["timideAnswer", "creatifAnswer", "crieurAnswer", "sociableAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
+                  
                   }, {
                   "Question": "Tu possède le droit de vie une fois, qui sauvera tu ?",
                   "Choice": ["Le medecin qui t’a sauvé la vie", "Une personne ravisante à qui tu plait", "Ta nourrice d’enfance", "Une femme enceinte"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_good","profil_evil","profil_sociable","profil_good"],
-                  "FeedBack": "Et qui laissera tu mourir 'lol'",
-                  "HPLostArray": [0,2,0,0]
+                  "ProfilConsequence": ["profil_good", "profil_evil", "profil_sociable", "profil_good"],
+                  "FeedBackPsycho": ["sociableAnswer", "romantiqueAnswer", "sociableAnswer", "sociableAnswer"],
+                  "HPLostArray": [0, 2, 0, 0]
                   }, {
                   "Question": "En conduisant tu croise une voiture accidenté. Une place disponible, qui choisit tu d’amener ?",
                   "Choice": ["La grand mère entre la vie et la mort", "Le porte-feuille des accidentés", "Un ami blessé, à qui tu est redevable", "Personne, tu a un rencard"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_good","profil_evil","profil_good","profil_evil"],
-                  "FeedBack": "Et qui laissera tu sur le bas-côté ?",
-                  "HPLostArray": [0,2,0,2]
+                  "ProfilConsequence": ["profil_good", "profil_evil", "profil_good", "profil_evil"],
+                  "FeedBackPsycho": ["sociableAnswer", "argentAnswer", "sociableAnswer", "evilAnswer"],
+                  "HPLostArray": [0, 2, 0, 2]
                   }, {
                   "Question": "À la croisée des chemins plusieurs routes s’offre à toi, laquelle choisis tu ?",
-                  "Choice": ["La route calme qui se n’arrête jamais", "La route aux milles dangers qui amène au trésor", "La route des sirènes enivrantes puis meurtrières", "La route mystère"],
+                  "Choice": ["La route calme qui se n’arrête jamais", "La route aux milles dangers qui amène au trésor", "La route des sirènes enivrantes et meurtrières", "La route mystère"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_timide","profil_crieur","profil_evil","profil_innovateur"],
-                  "FeedBack": "Le chemin de la vie, ou de la mort",
-                  "HPLostArray": [0,0,2,0]
+                  "ProfilConsequence": ["profil_timide", "profil_crieur", "profil_evil", "profil_innovateur"],
+                  "FeedBackPsycho": ["timideAnswer", "crieurAnswer", "evilAnswer", "creatifAnswer"],
+                  "HPLostArray": [0, 0, 2, 0]
                   }, {
                   "Question": "Un pouvoir te serait accordé, lequel choisirai tu ?",
                   "Choice": ["La manipulation mentale", "La super-force", "La paix sur terre", "La téléportation"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_evil","profil_crieur","profil_good","profil_innovateur"],
-                  "FeedBack": "Le pouvoir de dirigée le monde !",
-                  "HPLostArray": [1,0,0,0]
+                  "ProfilConsequence": ["profil_evil", "profil_crieur", "profil_good", "profil_innovateur"],
+                  "FeedBackPsycho": ["evilAnswer", "crieurAnswer", "soumisAnswer", "creatifAnswer"],
+                  "HPLostArray": [1, 0, 0, 0]
                   }, {
                   "Question": "Tu aurai le don d’être totalement épanoui dans un domaine, lequel choisirai tu ?",
                   "Choice": ["Une grande famille heureuse ", "Un don et une réussite dans ta passion", "Une amitié sans faille", "Un amour parfait"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_timide","profil_innovateur","profil_sociable","profil_timide"],
-                  "FeedBack": "Et si ma passion c'est ma femme avec qui j'ai fondée une famille, qui est aussi ma meilleur amie ?",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_timide", "profil_innovateur", "profil_sociable", "profil_timide"],
+                  "FeedBackPsycho": ["sociableAnswer", "creatifAnswer", "sociableAnswer", "romantiqueAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "A choisir que préfères tu ?",
                   "Choice": ["Vivre dans un pays riche et puissant", "Vivre dans un monde sans guerre", "Vivre dans un monde sans maladie", "Vivre dans un monde sans faim"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_crieur","profil_sociable","profil_innovateur","profil_timide"],
-                  "FeedBack": "Vivre dans une galaxie lointaine, très lointaine..",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_crieur", "profil_sociable", "profil_innovateur", "profil_timide"],
+                  "FeedBackPsycho": ["argentAnswer", "soumisAnswer", "creatifAnswer", "sociableAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "Une pandémie est déclarée, les vaccins sont limités, que faire ?",
                   "Choice": ["Donner le vaccin aux personalité 'importantes' du monde uniquement", "Donner une faible dose à toutes les personnes sans promesse de reussite", "Garder le vaccin pour toi et ton entourage", "Donner le vaccin aux habitants de ton pays uniquement"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_evil","profil_sociable","profil_evil","profil_timide"],
-                  "FeedBack": "Ces questions sont tordues.",
-                  "HPLostArray": [3,0,2,0]
+                  "ProfilConsequence": ["profil_evil", "profil_sociable", "profil_evil", "profil_timide"],
+                  "FeedBackPsycho": ["crieurAnswer", "soumisAnswer", "evilAnswer", "evilAnswer"],
+                  "HPLostArray": [3, 0, 2, 0]
                   }, {
                   "Question": "Quelle serait ta journée idéale ?",
                   "Choice": ["Des activités varié en plein air ", "Geeker du lever au coucher", "Dormir puis regarder une série entière", "Travailler et préparer ton futur"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_sociable","profil_timide","profil_evil","profil_innovateur"],
-                  "FeedBack": "Moi j'aime bien jouer aux billes ",
-                  "HPLostArray": [0,0,2,0]
+                  "ProfilConsequence": ["profil_sociable", "profil_timide", "profil_evil", "profil_innovateur"],
+                  "FeedBackPsycho": ["sociableAnswer", "timideAnswer", "evilAnswer", "creatifAnswer"],
+                  "HPLostArray": [0, 0, 2, 0]
                   }, {
                   "Question": "Vous êtes en réunion et un membre ne partage pas vos opinions. Il trouve que vos suggestions sont inappropriées. Vous êtes exaspéré. Comment réagissez-vous?",
                   "Choice": ["Vous lui manifestez ouvertement votre agacement", "Vous prenez votre mal en patience", "Vous lui donnez raison pour lui faire plaisir", "Vous attendez après la réunion pour essayer de trouver un arrangement"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_crieur","profil_innovateur","profil_timide","profil_sociable"],
-                  "FeedBack": "Je le tape",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_crieur", "profil_innovateur", "profil_timide", "profil_sociable"],
+                  "FeedBackPsycho": ["crieurAnswer", "creatifAnswer", "soumisAnswer", "sociableAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "Vous ne vous sentez pas bien dans votre équipe de travail. Vous avez l’impression qu’on ne vous accepte pas. Que faites-vous?",
                   "Choice": ["Ce n'est pas un problème et vous continuez de faire votre travail", "Vous êtes gentil avec ceux qui le sont et ne vous occupez pas des autres", "Vous en parlez avec votre conjoint et vous suivrez ses conseils", "Vous exposez le problème au chef d’équipe et au représentant syndical"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_innovateur","profil_sociable","profil_timide","profil_crieur"],
-                  "FeedBack": "Je les tape",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_innovateur", "profil_sociable", "profil_timide", "profil_crieur"],
+                  "FeedBackPsycho": ["creatifAnswer", "sociableAnswer", "soumisAnswer", "crieurAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "Première journée dans l’entreprise. À la réception, on vous dit que la personne chargée de vous accueillir est absente pour la semaine. Que faites-vous?",
                   "Choice": ["Vous demandez où se trouve votre bureau et vous vous mettez au travail", "Vous demandez est votre bureau et vous faites le tour des collègues", "Vous demandez où est votre bureau et attendez qu’on vous donne du travail", "Vous demandez à faire appeler la personne pour avoir des consignes"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_innovateur","profil_sociable","profil_timide","profil_crieur"],
-                  "FeedBack": "Vacances !",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_innovateur", "profil_sociable", "profil_timide", "profil_crieur"],
+                  "FeedBackPsycho": ["creatifAnswer", "sociableAnswer", "timideAnswer", "crieurAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "Vous remarquez qu’un de vos collègues amène chez lui du matériel appartenant à l'entreprise où vous travaillez. Comment réagiriez-vous ?",
                   "Choice": ["Je l'informe que je suis au courant et je n’en parle à personne", "Je ne l'informe pas et je le dénonce à mes supérieurs", "Je ne l'informe pas et je demande conseil à mon supérieur immédiat", "Je l'informe que je suis au courant et j'en parle à l'entourage"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_timide","profil_crieur","profil_innovateur","profil_sociable"],
-                  "FeedBack": "Répond à la question",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_timide", "profil_crieur", "profil_innovateur", "profil_evil"],
+                  "FeedBackPsycho": ["timideAnswer", "crieurAnswer", "creatifAnswer", "evilAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "Si tu devais mourir demain que ferais tu ?",
                   "Choice": ["J’irais voir les gens que j’aime", "Je réaliserai tous mes fantasmes", "Je développerai un système pour transférer ma pensée dans un robot", "Je tuerait des gens"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_sociable","profil_crieur","profil_innovateur","profil_evil"],
-                  "FeedBack": "Il y a une réponse bizarre, je te laisse deviner laquelle",
-                  "HPLostArray": [0,0,0,6]
+                  "ProfilConsequence": ["profil_sociable", "profil_crieur", "profil_innovateur", "profil_evil"],
+                  "FeedBackPsycho": ["sociableAnswer", "crieurAnswer", "creatifAnswer", "evilAnswer"],
+                  "HPLostArray": [0, 0, 0, 6]
                   }, {
                   "Question": "Une météorite se dirige sur la terre, que fais tu ?",
                   "Choice": ["Je donne mon maximum pour développer une solution", "Je fais mes adieux à mes proches", "J'envoie toute mes finances à la NASA", "Je tuerait des gens"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_innovateur","profil_sociable","profil_crieur","profil_evil"],
-                  "FeedBack": "Il y a une réponse bizarre, je te laisse deviner laquelle",
-                  "HPLostArray": [0,0,0,6]
+                  "ProfilConsequence": ["profil_innovateur", "profil_sociable", "profil_crieur", "profil_evil"],
+                  "FeedBackPsycho": ["creatifAnswer", "sociableAnswer", "crieurAnswer", "evilAnswer"],
+                  "HPLostArray": [0, 0, 0, 6]
                   }, {
                   "Question": "Aujourd’hui journée de la liberté totale et non-punitive, que fais tu ?",
                   "Choice": ["Je cherche à voler ma banque", "Je me cache à mon domicile et j’attend", "Je hackerai le site de la Maison Blanche", "Je tuerait des gens"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_crieur","profil_timide","profil_innovateur","profil_evil"],
-                  "FeedBack": "Une des réponses est faite pour moi",
-                  "HPLostArray": [0,0,0,6]
+                  "ProfilConsequence": ["profil_crieur", "profil_timide", "profil_innovateur", "profil_evil"],
+                  "FeedBackPsycho": ["argentAnswer", "timideAnswer", "creatifAnswer", "evilAnswer"],
+                  "HPLostArray": [0, 0, 0, 6]
                   }, {
                   "Question": "Tu vis avec 5 euros par jour, que fais-tu ?",
                   "Choice": ["Je fais la manche et joue à des jeux d’argent", "Je mange pour 5 euros par jour", "Je fais la manche et économiser mon argent", "Je cherche un travail"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_crieur","profil_sociable","profil_timide","profil_innovateur"],
-                  "FeedBack": "Sa fait 6 baguettes de pains par jour !",
-                  "HPLostArray": [0,0,0,0]
+                  "ProfilConsequence": ["profil_crieur", "profil_sociable", "profil_timide", "profil_innovateur"],
+                  "FeedBackPsycho": ["argentAnswer", "droleAnswer", "timideAnswer", "creatifAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "Tu ne quittes jamais ta maison sans ___ ?",
                   "Choice": ["Ton téléphone", "Le sourire", "Avoir mis des vêtements", "Un objectif"],
                   "Topic": "Psycho",
                   "TypeOfQuestion": "Psycho",
-                  "ProfilConsequence" : ["profil_timide","profil_sociable","profil_evil","profil_innovateur"],
-                  "FeedBack": "Mes chaussettes fétiches",
-                  "HPLostArray": [0,0,3,0]
+                  "ProfilConsequence": ["profil_timide", "profil_sociable", "profil_evil", "profil_innovateur"],
+                  "FeedBackPsycho": ["argentAnswer", "sociableAnswer", "droleAnswer", "creatifAnswer"],
+                  "HPLostArray": [0, 0, 0, 0]
                   }
                   
                   ],
     "AnswersReactions": [{
-                         "bonneReponse" : ["Bien joué ! ", "Pas mal ! ", "Je suis fière de toi ! ", "Bonne réponse ! ", "Tu as bien répondu ! ", "Impressionnant ! ", "Bravo ! ", "Super ! ", "Quelle intelligence ! ", "Epoustoufflant ! ", "Admirable ! ", "Remarquable ! ", "Merveilleux cette réponse ! ", "Extraordinaire ! ", "Quelle Eclatante réponse ! ", "Formidable ! ", "Prodigieux ", "Réponse exemplaire !", "Parfait ! ", "Ta supériorité est incontestable ! ", "Perspicace le bougre ! ", "Quelle génie ! ", "Loupé ! Non je plaisante, c'est la bonne réponse ! "],
-                         "mauvaiseReponse" : ["Deçevant... ", "Loupé ! ", "Pas loin.. Mais non ! ", "Mauvaise réponse... ", "Non ! ", "C'est pas encore sa... ", "Erreur ! ", "Tu t'es trompé sur ce coup... ", "Quelle abération ! ", "Quelle bêtise ! ", "J'espère que tu blague... ", "Quelle faux pas... ", "C'est de la folie pure... ", "Inexacte ! ", "Faux ", "Surprenant de maladresse... ", "Non non et non ! ", "J'ai bien fait de ne pas croire en toi... ", "Je ris de ton manque de connaissance... ", "Bien joué ! enfin non c'est faux... ", "Tu pense avoir la bonne réponse ? Et bien c'est la mauvaise ! ", "Perdu ! ", "Pas fameux...", "Vrai ! Non c'est faux... "],
-                         "gainPVReponse" : ["Tu remporte ", "Tu gagne ", "Tu décroche ", "Tu emporte ", "Tu reçoit ", "Tu obtient ", "Tu progresse de "],
-                         "pertePVReponse" : ["Tu perds ", "Tu y laisse ", "Tu as été dépossédé de ", "Tu as perdus ", "Dis adieu à tes ", "Dis au revoir à ", "Tu t'affaiblis de "],
-                         "chanceDuNoob":["Quelle incroyable chance du débutant ! Ta mauvaise réponse te permet de gagner ", "Pas mal le noob, en répondant faux tu gagne ", "Mauvaise réponse ! Grâce à ta classe tu gagne ", "Faux ! Ta classe te permet de gagner ", "Chance du noob ! En répondant faux tu remporte ", "Réponse fausse ! Mais ta classe te fait rapporter ", "Ce n'est pas sa ! Cependant ton noobisme te rapporte "]
+                         "bonneReponse": ["Bien joué ! ", "Pas mal ! ", "Je suis fière de toi ! ", "Bonne réponse ! ", "Tu as bien répondu ! ", "Impressionnant ! ", "Bravo ! ", "Super ! ", "Quelle intelligence ! ", "Epoustoufflant ! ", "Admirable ! ", "Remarquable ! ", "Merveilleux cette réponse ! ", "Extraordinaire ! ", "Quelle Eclatante réponse ! ", "Formidable ! ", "Prodigieux ", "Réponse exemplaire !", "Parfait ! ", "Ta supériorité est incontestable ! ", "Perspicace le bougre ! ", "Quelle génie ! ", "Loupé ! Non je plaisante, c'est la bonne réponse ! "],
+                         "mauvaiseReponse": ["Deçevant... ", "Loupé ! ", "Pas loin.. Mais non ! ", "Mauvaise réponse... ", "Non ! ", "C'est pas encore sa... ", "Erreur ! ", "Tu t'es trompé sur ce coup... ", "Quelle abération ! ", "Quelle bêtise ! ", "J'espère que tu blague... ", "Quelle faux pas... ", "C'est de la folie pure... ", "Inexacte ! ", "Faux ", "Surprenant de maladresse... ", "Non non et non ! ", "J'ai bien fait de ne pas croire en toi... ", "Je ris de ton manque de connaissance... ", "Bien joué ! enfin non c'est faux... ", "Tu pense avoir la bonne réponse ? Et bien c'est la mauvaise ! ", "Perdu ! ", "Pas fameux...", "Vrai ! Non c'est faux... "],
+                         "gainPVReponse": ["Tu remporte ", "Tu gagne ", "Tu décroche ", "Tu emporte ", "Tu reçoit ", "Tu obtient ", "Tu progresse de "],
+                         "pertePVReponse": ["Tu perds ", "Tu y laisse ", "Tu as été dépossédé de ", "Tu as perdus ", "Dis adieu à tes ", "Dis au revoir à ", "Tu t'affaiblis de "],
+                         "chanceDuNoob": ["Quelle incroyable chance du débutant ! Ta mauvaise réponse te permet de gagner ", "Pas mal le noob, en répondant faux tu gagne ", "Mauvaise réponse ! Grâce à ta classe tu gagne ", "Faux ! Ta classe te permet de gagner ", "Chance du noob ! En répondant faux tu remporte ", "Réponse fausse ! Mais ta classe te fait rapporter ", "Ce n'est pas sa ! Cependant ton noobisme te rapporte "],
+                         "evilAnswer": ["Ta réponse n'est pas gentil, tu perds des points de vie.", "Ta réponse est méchante, tu perds des points de vie.", "C'est vicieux, tu perds des points de vie.", "Tu est maléfique et démoniaque, tu perds des points de vie."],
+                         "droleAnswer": ["Ah toi tu connais bien l'humour !", "Tu est décidement très drôle !"],
+                         "argentAnswer": ["L'argent semble faire ton bonheur.", "Le temps c'est de l'argent comme on dit."],
+                         "sociableAnswer": ["Ta réponse est vraiment très sympatique !", "Sympa ! J'aimerais bien être ami avec toi.", "La sociabilité semble te correspondre.", "Le bon copain idéal !"],
+                         "romantiqueAnswer": ["L'amour est donc important à tes yeux.", "Être amoureux semble être un sentiment plaisant à tes yeux?"],
+                         "timideAnswer": ["Ne serais tu pas timide à tout hasard ?", "Tu est discret dans la vie, non ?", "La timidité peu permettre d'éviter le conflit"],
+                         "soumisAnswer": ["Cette réponse me laisse à penser que tu est soumis.", "Tu ne souhaiterais pas être un peu plus agressif ?"],
+                         "creatifAnswer": ["Réponse ingénieuse, continue !", "C'est avec des réponses comme cela que l'on construit le monde de demain.", "Tu attises ma curiosité !", "Avec de la volonté, tout est possible."],
+                         "crieurAnswer": ["Je pense qu'on ne se débarrasse pas de toi facilement !", "Tu mise sur la force et la volonté pour réussir.", "Il ne vaut mieux pas te chercher de problèmes à toi !"]
+                         
                          }]
 }
-
-
-

@@ -27,22 +27,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1093"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-63-idK" userLabel="BackgroundImage">
-                                        <rect key="frame" x="0.0" y="-20" width="1024" height="1126"/>
+                                        <rect key="frame" x="0.0" y="-20" width="1024" height="1147.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Xwz-63-idK" firstAttribute="height" secondItem="Id0-cq-8cB" secondAttribute="height" multiplier="1.03" id="JrH-tM-Ksd"/>
+                                    <constraint firstItem="Xwz-63-idK" firstAttribute="height" secondItem="Id0-cq-8cB" secondAttribute="height" multiplier="1.05" id="JrH-tM-Ksd"/>
                                     <constraint firstItem="Xwz-63-idK" firstAttribute="centerX" secondItem="Id0-cq-8cB" secondAttribute="centerX" id="NWi-ph-uMh"/>
                                     <constraint firstItem="Xwz-63-idK" firstAttribute="top" secondItem="Id0-cq-8cB" secondAttribute="top" constant="-20" id="OXc-g3-HPe"/>
                                     <constraint firstItem="Xwz-63-idK" firstAttribute="width" secondItem="Id0-cq-8cB" secondAttribute="width" id="vW7-Hu-yYa"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-Fm-0PV" userLabel="DialogueView" customClass="DesignableView" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1091" width="1024" height="275"/>
+                                <rect key="frame" x="0.0" y="1093" width="1024" height="273"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-OP-NJv" userLabel="DialogueLabel" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                        <rect key="frame" x="51" y="13.5" width="922" height="247.5"/>
+                                        <rect key="frame" x="51" y="13.5" width="922" height="246"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9x-pw-GRz">
-                                        <rect key="frame" x="932" y="190.5" width="71" height="71.5"/>
+                                        <rect key="frame" x="932" y="189" width="71" height="71.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="a9x-pw-GRz" secondAttribute="height" multiplier="1:1" id="iTM-pF-XE2"/>
@@ -87,8 +87,8 @@
                             <constraint firstItem="J2X-Fm-0PV" firstAttribute="leading" secondItem="HmW-w0-tqe" secondAttribute="leading" id="0YS-Jc-NUq"/>
                             <constraint firstItem="Id0-cq-8cB" firstAttribute="width" secondItem="HmW-w0-tqe" secondAttribute="width" id="VLY-pX-VAh"/>
                             <constraint firstItem="J2X-Fm-0PV" firstAttribute="width" secondItem="HmW-w0-tqe" secondAttribute="width" id="Xyi-U3-akd"/>
-                            <constraint firstItem="J2X-Fm-0PV" firstAttribute="height" secondItem="HmW-w0-tqe" secondAttribute="height" multiplier="0.2" constant="2" id="aem-IF-h08"/>
-                            <constraint firstItem="J2X-Fm-0PV" firstAttribute="top" secondItem="Id0-cq-8cB" secondAttribute="bottom" constant="-2" id="gCU-fv-jgk"/>
+                            <constraint firstAttribute="bottom" secondItem="J2X-Fm-0PV" secondAttribute="bottom" id="aZd-m6-9V3"/>
+                            <constraint firstItem="J2X-Fm-0PV" firstAttribute="top" secondItem="Id0-cq-8cB" secondAttribute="bottom" id="gCU-fv-jgk"/>
                             <constraint firstItem="Id0-cq-8cB" firstAttribute="height" secondItem="HmW-w0-tqe" secondAttribute="height" multiplier="0.8" id="ph2-iK-DTp"/>
                             <constraint firstItem="Id0-cq-8cB" firstAttribute="leading" secondItem="HmW-w0-tqe" secondAttribute="leading" id="yyu-Hy-Vph"/>
                             <constraint firstItem="Id0-cq-8cB" firstAttribute="top" secondItem="8fq-ZX-QKp" secondAttribute="bottom" id="zau-k9-cts"/>

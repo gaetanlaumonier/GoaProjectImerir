@@ -14,7 +14,7 @@
                  "MusiqueDialogue": "BlueRidge"
                  }, {
                  "idDialogue": "2",
-                 "libelleDialogue": ["C’est fini !", "Alors voyons voir sa… ", "....", "........", "................", "Très bien, vous avez donc répondu juste à ", "3 PV vont vous être accordés par bonne réponse, pour la suite de notre test.", "Nous allons désormais passer à l'entretien avec Mr le directeur. ", "Ne vous découragez pas ! ", "Êtes-vous vraiment prêt pour cela ?", "Dormez !", ""],
+                 "libelleDialogue": ["C’est fini !", "Alors voyons voir sa… ", "....", "........", "................", "Très bien, vous avez donc répondu juste à ", "2 PV vont vous être accordés par bonne réponse, pour la suite de notre test.", "Nous allons désormais passer à l'entretien avec Mr le directeur. ", "Ne vous découragez pas ! ", "Êtes-vous vraiment prêt pour cela ?", "Dormez !", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "resultatTest", "nil", "nil", "nil", "Apparition", "nil", "LabyrintheFirst"],
                  "BackgroundDialogue": ["SalleDeClasse", "gif"],
                  "MusiqueDialogue": "BlueRidge"

@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le titre" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA2-io-Wcg" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                    <rect key="frame" x="8" y="23" width="1008" height="150.5"/>
+                    <rect key="frame" x="8" y="13" width="1008" height="150.5"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La règle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f39-5K-XMc" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                    <rect key="frame" x="18" y="456.5" width="988" height="382.5"/>
+                    <rect key="frame" x="18" y="446.5" width="988" height="369"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -55,13 +55,13 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9B-HE-LTT">
-                    <rect key="frame" x="376" y="183.5" width="273" height="273"/>
+                    <rect key="frame" x="376" y="173.5" width="273" height="273"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="z9B-HE-LTT" secondAttribute="height" id="wOs-ot-PRN"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un indice" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlS-KW-3GV" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                    <rect key="frame" x="18" y="839" width="988" height="245.5"/>
+                    <rect key="frame" x="18" y="815.5" width="988" height="245.5"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                 <constraint firstItem="f39-5K-XMc" firstAttribute="top" secondItem="z9B-HE-LTT" secondAttribute="bottom" id="64d-xg-SpZ"/>
                 <constraint firstAttribute="trailingMargin" secondItem="jlS-KW-3GV" secondAttribute="trailing" constant="10" id="8Xs-yt-82j"/>
                 <constraint firstItem="f39-5K-XMc" firstAttribute="centerX" secondItem="eFA-kg-KOi" secondAttribute="centerX" id="F7e-pi-XJ5"/>
-                <constraint firstItem="f39-5K-XMc" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.28" id="IXX-iE-T34"/>
+                <constraint firstItem="f39-5K-XMc" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.27" id="IXX-iE-T34"/>
                 <constraint firstAttribute="trailingMargin" secondItem="f39-5K-XMc" secondAttribute="trailing" constant="10" id="OO7-9v-hXT"/>
                 <constraint firstItem="f39-5K-XMc" firstAttribute="leading" secondItem="eFA-kg-KOi" secondAttribute="leadingMargin" constant="10" id="Sc9-hU-ext"/>
                 <constraint firstAttribute="trailingMargin" secondItem="CA2-io-Wcg" secondAttribute="trailing" id="TXn-eG-EBt"/>
@@ -87,7 +87,7 @@
                 <constraint firstItem="CA2-io-Wcg" firstAttribute="leading" secondItem="eFA-kg-KOi" secondAttribute="leadingMargin" id="dKO-t3-I1A"/>
                 <constraint firstItem="jlS-KW-3GV" firstAttribute="leading" secondItem="eFA-kg-KOi" secondAttribute="leadingMargin" constant="10" id="fAZ-Xk-cdR"/>
                 <constraint firstItem="CA2-io-Wcg" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.11" id="h11-kv-3aC"/>
-                <constraint firstItem="CA2-io-Wcg" firstAttribute="top" secondItem="eFA-kg-KOi" secondAttribute="topMargin" constant="15" id="hXv-Rj-BcY"/>
+                <constraint firstItem="CA2-io-Wcg" firstAttribute="top" secondItem="eFA-kg-KOi" secondAttribute="topMargin" constant="5" id="hXv-Rj-BcY"/>
                 <constraint firstItem="z9B-HE-LTT" firstAttribute="height" secondItem="eFA-kg-KOi" secondAttribute="height" multiplier="0.2" id="k0m-b7-naM"/>
                 <constraint firstItem="jlS-KW-3GV" firstAttribute="top" secondItem="f39-5K-XMc" secondAttribute="bottom" id="o7K-BX-VJr"/>
                 <constraint firstItem="z9B-HE-LTT" firstAttribute="centerX" secondItem="eFA-kg-KOi" secondAttribute="centerX" id="qmu-WX-99i"/>

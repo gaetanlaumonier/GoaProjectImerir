@@ -16,7 +16,8 @@ class ProfilJoueur : NSObject, NSCoding{
                         topController?.view.alpha = 0
                         
                     } , completion: { success in
-                        topController?.present(vc, animated: false, completion: nil)
+                        topController?.view.window?.rootViewController = vc
+                       // topController?.present(vc, animated: false, completion: nil)
                     })
                 }else {
                     print("Could not instantiate view controller")
@@ -82,6 +83,7 @@ class ProfilJoueur : NSObject, NSCoding{
         self.questionAlreadyPick = questionAlreadyPick
     }
  
+    //Encode l'objet pour la sauvegarde interne
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "myName")
         aCoder.encodeCInt(Int32(lifePoint), forKey: "myLifePoint")
@@ -94,11 +96,10 @@ class ProfilJoueur : NSObject, NSCoding{
         aCoder.encode(statsConsole, forKey: "myStatsConsole")
         aCoder.encode(statsBac, forKey: "myStatsBac")
         aCoder.encode(statsLabyrinthe, forKey: "myStatsLabyrinthe")
-
         aCoder.encode(questionAlreadyPick, forKey: "myQuestionAlreadyPick")
         
     }
-
+    //Décode l'objet pour la sauvegarde interne
     required init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: "myName") as? String
         let lifePoint = aDecoder.decodeInteger(forKey: "myLifePoint")

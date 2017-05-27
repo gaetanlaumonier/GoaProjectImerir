@@ -22,6 +22,7 @@ class NameModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameField.autocorrectionType = .no
         
     }
     
@@ -41,7 +42,7 @@ class NameModalViewController: UIViewController {
         } else {
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
             {
-                
+                self.view.endEditing(true)
                 bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
                 myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.8)
                 myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
@@ -55,18 +56,12 @@ class NameModalViewController: UIViewController {
                     }, completion : { _ in
                         myPresentingViewController.backgroundMusicPlayer.stop()
                         let namePlayer = self.nameField.text!.capitalizingFirstLetter()
-                        self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Noob", sceneActuelle : 0, statsQuiz : ["bonneReponseQuiz":0, "pourcentage" : 0], statsCookie : ["cookieGoodTaped":0, "pourcentage" : 0], statsRangement : ["goodClassification":0, "pourcentage" : 0], statsConsole : ["missileHit":0, "pourcentage" : 0], statsBac : ["goodClassification":0, "pourcentage" : 0], statsLabyrinthe : ["timeSpent":0, "batKilled" : 0], questionAlreadyPick:[])
+                        self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 0, statsQuiz : ["bonneReponseQuiz":0, "pourcentage" : 0], statsCookie : ["cookieGoodTaped":0, "pourcentage" : 0], statsRangement : ["goodClassification":0, "pourcentage" : 0], statsConsole : ["missileHit":0, "pourcentage" : 0], statsBac : ["goodClassification":0, "pourcentage" : 0], statsLabyrinthe : ["timeSpent":0, "batKilled" : 0], questionAlreadyPick:[])
                         self.oneProfil.name = namePlayer
                         self.saveMyData()
                         
                         vc.oneProfil = self.oneProfil
-                        print(self)
-                        self.present(vc, animated: false, completion: nil)
-                      //  self.presentingViewController?.dismiss(animated: false, completion: nil)
-                       // self.show(vc, sender: self)
-                        print(self)
-                    //    self.dismiss(animated: false, completion: {
-                      //  print(self)})
+                        self.view.window?.rootViewController? = vc
                         
                     })
                 })
@@ -84,7 +79,7 @@ class NameModalViewController: UIViewController {
     
     @IBAction func upKeyboard(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
-        self.nameView.frame.origin.y = self.view.bounds.height/7
+            self.nameView.frame.origin.y = self.view.bounds.height/7
         })
     }
     
@@ -92,9 +87,8 @@ class NameModalViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.nameView.center.y = self.view.center.y
         })
-
+        
     }
-    
     
     func saveMyData(){
         var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

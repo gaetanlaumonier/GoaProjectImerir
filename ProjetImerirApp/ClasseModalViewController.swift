@@ -35,7 +35,7 @@ class ClasseModalViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.classeView.alpha = 1
         }, completion : { _ in
-           UIView.animate(withDuration: 0.3, animations: {
+           UIView.animate(withDuration: 0.4, animations: {
             self.ouiButton.alpha = 1
             self.nonButton.alpha = 1
            })
@@ -67,26 +67,9 @@ class ClasseModalViewController: UIViewController {
                     self.saveMyData()
                     
                     vc.oneProfil = self.oneProfil
-                    //vc.view.alpha = 0
-                    //  print(self)
-                    //                print("presentingViewController",self.presentingViewController)
-                    //                print("presentationController",self.presentationController)
-                    //                print("presentedViewController",self.presentedViewController)
-                    self.present(vc, animated: false)
-                    //self.dismiss(animated: false, completion:{
-                        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        //show window
-                        //appDelegate.window?.rootViewController = vc
-                        //                    print("presentingViewController",self.presentingViewController?.presentingViewController)
-                        //                    print("presentingViewController",self.presentationController?.presentingViewController)
-                        //                    print("presentedViewController",self.presentationController?.presentedViewController)
-                        //                    print("presentationController",self.presentedViewController?.presentationController)
-                        //                    print("presentedViewController",self.presentedViewController?.presentedViewController)
-                        //                    print("presentingViewController",self.presentedViewController?.presentingViewController)
-                        //
-                        //                    print("self",self)
-                        
-                        //self.presentingViewController?.dismiss(animated: false, completion: nil)
+             
+                    self.view.window?.rootViewController = vc
+               
                 })
             })
            

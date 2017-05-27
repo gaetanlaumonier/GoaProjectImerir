@@ -10,16 +10,21 @@ import UIKit
 
 @IBDesignable class DesignableView: UIView {
     
+    //Change dynamiquement par l'interface graphique le cornerRadius de la view
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet{
             self.layer.cornerRadius = cornerRadius
         }
     }
+    
+    //Change dynamiquement par l'interface graphique le borderWidth de la view
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet{
             self.layer.borderWidth = borderWidth
         }
     }
+    
+    //Change dynamiquement par l'interface graphique le borderColor de la view
     @IBInspectable var borderColor: UIColor = UIColor.white {
         didSet{
             self.layer.borderColor = borderColor.cgColor

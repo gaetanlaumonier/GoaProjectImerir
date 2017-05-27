@@ -17,35 +17,46 @@ class InitViewController: UIViewController {
     @IBOutlet weak var MenuBackgroundView: UIImageView!
     @IBOutlet weak var statsButton: DesignableButton!
     
+    @IBOutlet weak var launchScreenImageView: UIImageView!
+    
     var oneProfil = ProfilJoueur()
     var backgroundMusicPlayer = AVAudioPlayer()
     var myBruitageMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var oneLabel = 0
     var mySaveData = ProfilJoueur()
+    var firstMenuForRun : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.alpha = 0
         backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
         MenuBackgroundView.loadGif(name: "LabSortie")
-        enabledButton()
-        
+        if firstMenuForRun == true {
+        } else {
+            self.launchScreenImageView.isHidden = true
+            self.view.alpha = 0
+            
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        FonduApparition(myView: self, myDelai: 0.5)
+        enabledButton()
+        if firstMenuForRun == true {
+            UIView.animate(withDuration: 1.5, animations: {
+                self.launchScreenImageView.alpha = 0
+            })
+        } else {
+            FonduApparition(myView: self, myDelai: 1)
+        }
+        
     }
     
     @IBAction func ChargerPartie(_ sender: UIButton) {
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
         
-            //            print("name", mySaveData.name)
-            //            print("life :", mySaveData.lifePoint)
-            //            print("dict", mySaveData.dictProfil)
-            //            print("bonnereponse", mySaveData.bonneReponseQuiz)
-            //            print("classe", mySaveData.classeJoueur)
-            //            print("questionpick", mySaveData.questionAlreadyPick)
-            //            print("scene", mySaveData.sceneActuelle)
+        if let mySaveData = NSKeyedUnarchiver.unarchiveObject(withFile: maData.path) as? ProfilJoueur {
+    
             myBruitageMusicPlayer = GestionBruitage(filename: "Air", volume : 0.8)
             
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
@@ -56,59 +67,65 @@ class InitViewController: UIViewController {
                     self.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
                 } , completion: { success in
                     self.backgroundMusicPlayer.stop()
-                    vc.oneProfil = self.mySaveData
-                    self.present(vc, animated: false, completion: nil)
+                    vc.oneProfil = mySaveData
+                    self.view.window?.rootViewController = vc
                 })
             }else {
                 print("Could not instantiate view controller with identifier of type DialogueViewController")
                 return
-            }
-        }
-    
-    @IBAction func StatsButton(_ sender: Any) {
-        
-                if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "StatsViewController") as? StatsViewController
-                {
-                    vc.modalTransitionStyle = .crossDissolve
-                    vc.modalPresentationStyle = .overCurrentContext
-                    vc.oneProfil = self.mySaveData
-                    self.present(vc, animated: false, completion: nil)
-                }else {
-                    print("Could not instantiate view controller with identifier of type StatsViewController")
-                    return
-            }
+            } }
     }
     
-//    func popLabelMessage(message : String){
-//        if oneLabel == 0 {
-//            oneLabel = 1
-//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width * 0.8, height: view.frame.height * 0.1))
-//        label.center.x = view.frame.width/2
-//        label.center.y = newPartieButton.frame.origin.y - 40
-//        label.textAlignment = .center
-//        label.font = UIFont(name: "Futura", size: 17)
-//        label.text = message
-//        label.setupLabelDynamicSize(fontSize: 17)
-//        label.numberOfLines = 0
-//        label.layer.shadowOffset = CGSize(width: 1, height: 1)
-//        label.layer.shadowOpacity = 1
-//        label.layer.shadowRadius = 1
-//        label.textColor = UIColor(red: 1, green: 212/255, blue: 24/192, alpha: 0.9)
-//        label.alpha = 0
-//        self.view.addSubview(label)
-//        UIView.animate(withDuration: 0.5, animations: {
-//        label.alpha = 1
-//        }, completion : { _ in
-//            UIView.animate(withDuration: 2, delay: 3, animations: {
-//            label.alpha = 0
-//            }, completion: { _ in
-//           label.removeFromSuperview()
-//                self.oneLabel = 0
-//                })
-//            })
-//        }
-//    }
+    @IBAction func StatsButton(_ sender: Any) {
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        
+        if let mySaveData = NSKeyedUnarchiver.unarchiveObject(withFile: maData.path) as? ProfilJoueur {
+            if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "StatsViewController") as? StatsViewController
+            {
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.oneProfil = mySaveData
+                self.present(vc, animated: false, completion: nil)
+            }else {
+                print("Could not instantiate view controller with identifier of type StatsViewController")
+                return
+            }}
+    }
     
+    //Fonction abandonnée d'apparition de label personnalisé
+    
+    //    func popLabelMessage(message : String){
+    //        if oneLabel == 0 {
+    //            oneLabel = 1
+    //        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width * 0.8, height: view.frame.height * 0.1))
+    //        label.center.x = view.frame.width/2
+    //        label.center.y = newPartieButton.frame.origin.y - 40
+    //        label.textAlignment = .center
+    //        label.font = UIFont(name: "Futura", size: 17)
+    //        label.text = message
+    //        label.setupLabelDynamicSize(fontSize: 17)
+    //        label.numberOfLines = 0
+    //        label.layer.shadowOffset = CGSize(width: 1, height: 1)
+    //        label.layer.shadowOpacity = 1
+    //        label.layer.shadowRadius = 1
+    //        label.textColor = UIColor(red: 1, green: 212/255, blue: 24/192, alpha: 0.9)
+    //        label.alpha = 0
+    //        self.view.addSubview(label)
+    //        UIView.animate(withDuration: 0.5, animations: {
+    //        label.alpha = 1
+    //        }, completion : { _ in
+    //            UIView.animate(withDuration: 2, delay: 3, animations: {
+    //            label.alpha = 0
+    //            }, completion: { _ in
+    //           label.removeFromSuperview()
+    //                self.oneLabel = 0
+    //                })
+    //            })
+    //        }
+    //    }
+    
+    //Disable les buttons "stats" et "charger"
     func enabledButton(){
         var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         maData.appendPathComponent("saveGame")
@@ -118,16 +135,16 @@ class InitViewController: UIViewController {
             if mySaveData.statsLabyrinthe["timeSpent"]!.hashValue < 1 {
                 statsButton.isEnabled = false
                 statsButton.alpha = 0.5
-
+                
             }
         } else {
             statsButton.isEnabled = false
             DataLoadingButton.isEnabled = false
             statsButton.alpha = 0.5
             DataLoadingButton.alpha = 0.5
-
+            
         }
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

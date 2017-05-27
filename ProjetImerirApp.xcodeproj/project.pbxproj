@@ -19,7 +19,6 @@
 		3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */; };
 		3F659C9A1EC925CA00E64121 /* SpaceBonusHD.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */; };
 		3F73F8811ECB243400E1F0E3 /* MonstreTaped.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F73F8801ECB243400E1F0E3 /* MonstreTaped.mp3 */; };
-		3FB8F8E01ED565B1004151FB /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8F8DF1ED565B1004151FB /* LaunchScreenViewController.swift */; };
 		3FD1AC8E1EC5AF60008F66CB /* Air.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC751EC5AF60008F66CB /* Air.mp3 */; };
 		3FD1AC8F1EC5AF60008F66CB /* Bonus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */; };
 		3FD1AC901EC5AF60008F66CB /* Clik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC771EC5AF60008F66CB /* Clik.mp3 */; };
@@ -161,7 +160,6 @@
 		3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentConsoleViewController.swift; sourceTree = "<group>"; };
 		3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBonusHD.gif; sourceTree = "<group>"; };
 		3F73F8801ECB243400E1F0E3 /* MonstreTaped.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonstreTaped.mp3; sourceTree = "<group>"; };
-		3FB8F8DF1ED565B1004151FB /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		3FD1AC751EC5AF60008F66CB /* Air.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Air.mp3; sourceTree = "<group>"; };
 		3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bonus.mp3; sourceTree = "<group>"; };
 		3FD1AC771EC5AF60008F66CB /* Clik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clik.mp3; sourceTree = "<group>"; };
@@ -425,7 +423,6 @@
 				3FD1ACB81EC5AF6D008F66CB /* CreditViewController.swift */,
 				3FF66F1F1ECC7E920042E99B /* StatsViewController.swift */,
 				3FF66F211ECC7EAC0042E99B /* StatsTableViewCell.swift */,
-				3FB8F8DF1ED565B1004151FB /* LaunchScreenViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -775,7 +772,6 @@
 				3FD1AD0C1EC5AF6D008F66CB /* StrangeBat.swift in Sources */,
 				3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */,
 				3F659C7C1EC74CD500E64121 /* ConsoleViewController.swift in Sources */,
-				3FB8F8E01ED565B1004151FB /* LaunchScreenViewController.swift in Sources */,
 				3FD1AD0D1EC5AF6D008F66CB /* ContentLabyrintheViewController.swift in Sources */,
 				3FD1AD2B1EC5AF6D008F66CB /* ScoreDown.swift in Sources */,
 				3FD1AD351EC5AF6D008F66CB /* HeaderView.swift in Sources */,

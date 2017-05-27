@@ -1,10 +1,4 @@
-//
-//  DialogueViewController.swift
-//  GoaProject
-//
-//  Created by Student on 02/02/2017.
-//  Copyright © 2017 Student. All rights reserved.
-//
+
 import AVFoundation
 import UIKit
 
@@ -35,7 +29,6 @@ class DialogueViewController: UIViewController {
         super.viewDidLoad()
         self.view.alpha = 0
         AllDialogue = buildDialogue()
-        print(self.oneProfil.sceneActuelle)
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         GestionDialogue()
         GestionBackground()
@@ -50,10 +43,10 @@ class DialogueViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         FonduApparition(myView: self, myDelai: 1)
         GestionArrow()
-
         tapEnable = true
     }
     
+    //Gère la flèche de dialogue en bas a droite de l'écran
     func GestionArrow() {
         
         let layer = CAShapeLayer()
@@ -76,7 +69,7 @@ class DialogueViewController: UIViewController {
         arrowView.layer.addSublayer(layer)
     }
     
-    // MARK: event function
+    //Fontion intégrant le name du joueur dans les dialogues
     func NomExcla(){
         
         dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.name) !"
@@ -97,6 +90,8 @@ class DialogueViewController: UIViewController {
         
     }
     
+    // MARK: navigation gesture
+
     func ChoixClasse(){
         if let vc = UIStoryboard(name:"ChoiseClasse", bundle:nil).instantiateViewController(withIdentifier: "choixClasse") as? ChoiceClasseViewController
         {
@@ -123,6 +118,7 @@ class DialogueViewController: UIViewController {
         
     }
     
+    //Permet de faire appaître un personnage au centre de l'écran en fondu
     func ApparitionPersonnage(namePersonnage : String, fadeInDelay : TimeInterval, myTag : Int, taille : CGFloat){
         
         tapEnable = false
@@ -156,6 +152,7 @@ class DialogueViewController: UIViewController {
         dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.statsQuiz["bonneReponseQuiz"]!) questions."
     }
     
+    //Gère les séries de question du quiz
     func SerieQuestion1(){
         GestionSerieQuestion(CultureG: 5, Info: 5, Enigme: 4, Psycho: 0)
     }
@@ -185,7 +182,7 @@ class DialogueViewController: UIViewController {
                 } , completion: { success in
                     self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
-                    self.present(vc, animated: false, completion: nil)
+                    self.view.window?.rootViewController = vc
                 })
             }else {
                 print("Could not instantiate view controller with identifier of type QuestionViewController")
@@ -204,7 +201,7 @@ class DialogueViewController: UIViewController {
             } , completion: { success in
                 self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
-                self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type ArcadeViewController")
@@ -222,7 +219,7 @@ class DialogueViewController: UIViewController {
             } , completion: { success in
                 self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
-                self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type RangementViewController")
@@ -241,6 +238,9 @@ class DialogueViewController: UIViewController {
             self.imageBackground.loadGif(name: "ChambreAdo")
             self.backgroundMusicPlayer.stop()
             self.backgroundMusicPlayer = self.GestionMusic(filename: "SomeDreamy")
+            self.oneProfil.sceneActuelle += 1
+            self.firstDialogue = true
+            self.DialogueNumber = 0
             self.GestionDialogue()
             UIView.animate(withDuration: 3, animations: {
                 self.view.alpha = 1
@@ -264,14 +264,16 @@ class DialogueViewController: UIViewController {
             self.imageBackground.alpha = 0
             self.dialogueView.alpha = 0
             self.view.alpha = 1
-            
+            self.oneProfil.sceneActuelle += 1
+            self.firstDialogue = true
+            self.DialogueNumber = 0
             self.GestionDialogue()
             UIView.animate(withDuration: 2, delay : 1, animations: {
                 self.imageBackground.alpha = 0.6
                 self.dialogueView.alpha = 1
             }, completion : { _ in
                 self.arrowView.isHidden = false
-
+                
             })
         })
     }
@@ -304,7 +306,7 @@ class DialogueViewController: UIViewController {
                 self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 vc.isFirstMaze = false
-                self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type LabyrintheViewController")
@@ -323,7 +325,8 @@ class DialogueViewController: UIViewController {
             } , completion: { _ in
                 self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
-                self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
+                //self.present(vc, animated: false, completion: nil)
             })
         }else {
             print("Could not instantiate view controller with identifier of type ConsoleViewController")
@@ -335,7 +338,9 @@ class DialogueViewController: UIViewController {
     
     func ArcadeBacStart(){
         print("ArcadeBac")
-        
+        self.oneProfil.sceneActuelle += 1
+        self.firstDialogue = true
+        self.DialogueNumber = 0
         
     }
     
@@ -375,7 +380,7 @@ class DialogueViewController: UIViewController {
     func DialoguesFinaux(){
         self.oneProfil.sceneActuelle += 3
         UIView.animate(withDuration: 0.25, animations: {
-        self.arrowView.alpha = 0
+            self.arrowView.alpha = 0
         })
         UIView.animate(withDuration: 5, animations: {
             self.view.alpha = 0
@@ -399,7 +404,8 @@ class DialogueViewController: UIViewController {
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
             } , completion: { success in
-                self.present(vc, animated: false, completion: nil)
+                vc.firstMenuForRun = false
+                self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type InitViewController")
@@ -431,11 +437,11 @@ class DialogueViewController: UIViewController {
         DialogueNumber = 0
         firstDialogue = true
         
-        print(playerProfil)
-        print(goodOrEvil)
     }
     
     // MARK: dialogue gesture
+    
+    //Gère l'enchainement des dialogues au clic
     func GestionEnchainementDialogue(){
         if EndGameGesture == false {
             if self.oneProfil.sceneActuelle == 13 && firstDialogue == true {
@@ -443,20 +449,20 @@ class DialogueViewController: UIViewController {
                 GestionEnd()
             }
             if firstDialogue == false {
-               
+                
                 if self.oneProfil.sceneActuelle != 2 && DialogueNumber != 11 || self.oneProfil.sceneActuelle == 2 && DialogueNumber != 11 {
                     if self.oneProfil.sceneActuelle != 7 && DialogueNumber != 5 || self.oneProfil.sceneActuelle == 7 && DialogueNumber != 5 {
-                        print(self.oneProfil.sceneActuelle)
-                        print(DialogueNumber)
+                        
                         self.bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume: 0.5)
                     }
                 }
                 DialogueNumber += 1
                 if DialogueNumber == AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue.count {
-                    //a enlever plus tard
-                    if(self.oneProfil.sceneActuelle != 1 || self.oneProfil.sceneActuelle == 5 || self.oneProfil.sceneActuelle == 9 || self.oneProfil.sceneActuelle == 11 || self.oneProfil.sceneActuelle == 0){
-                        self.oneProfil.sceneActuelle += 1
-                    }
+//                    if(self.oneProfil.sceneActuelle != 1 || self.oneProfil.sceneActuelle == 5 || self.oneProfil.sceneActuelle == 9 || self.oneProfil.sceneActuelle == 11 || self.oneProfil.sceneActuelle == 0){
+//                    if self.oneProfil.sceneActuelle == 5 {
+//                        self.oneProfil.sceneActuelle += 1
+////                    }
+//                    }
                     firstDialogue = true
                     DialogueNumber = 0
                 }
@@ -469,6 +475,7 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //Gère le style du dialogue, italique ou non
     func GestionStyleDialogue(){
         
         if AllDialogue[self.oneProfil.sceneActuelle].styleLabel.isEmpty {
@@ -493,17 +500,11 @@ class DialogueViewController: UIViewController {
         }
     }
     
-    
+    //Gère les évenements présents dans le dialogue
     func GestionEventDialogue(){
         
         if AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber] != "nil" {
-            //        let event = AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber]
-            //        let selector = NSSelectorFromString(event)
-            //        //let _ = #selector(selector)
-            //        selector
-            //        } else {
-            //            dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
-            //        }
+           
             switch AllDialogue[self.oneProfil.sceneActuelle].eventDialogue[DialogueNumber] {
             case "NomExcla" :
                 NomExcla()
@@ -580,6 +581,7 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //Gère les dialogues d'analyse psychologique de fin de partie
     func GestionDialoguePsycho(){
         
         if PsychoAnswer.isEmpty == false {
@@ -638,7 +640,9 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //Fonction générale appelée au clic sur la vue
     func GestionDialogue(){
+        
         if goodOrEvil == "" {
             GestionEnchainementDialogue()
             GestionStyleDialogue()

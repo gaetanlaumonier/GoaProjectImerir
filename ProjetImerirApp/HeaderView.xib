@@ -14,7 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
             <connections>
                 <outlet property="lifePointLabel" destination="mOl-6H-Qtl" id="Hbb-XS-L5h"/>
-                <outlet property="settingImage" destination="gqS-Gm-FdG" id="TVs-S6-6ul"/>
+                <outlet property="settingImage" destination="gqS-Gm-FdG" id="aRE-jV-h1F"/>
                 <outlet property="timerLabel" destination="vqL-Am-4R3" id="81e-Uk-Y7W"/>
             </connections>
         </placeholder>
