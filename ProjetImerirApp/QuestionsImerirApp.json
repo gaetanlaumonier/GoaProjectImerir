@@ -879,7 +879,7 @@
                   "TypeOfQuestion": "Psycho",
                   "ProfilConsequence": ["profil_good", "profil_evil", "profil_sociable", "profil_good"],
                   "FeedBackPsycho": ["sociableAnswer", "romantiqueAnswer", "sociableAnswer", "sociableAnswer"],
-                  "HPLostArray": [0, 2, 0, 0]
+                  "HPLostArray": [0, 0, 0, 0]
                   }, {
                   "Question": "En conduisant tu croise une voiture accidenté. Une place disponible, qui choisit tu d’amener ?",
                   "Choice": ["La grand mère entre la vie et la mort", "Le porte-feuille des accidentés", "Un ami blessé, à qui tu est redevable", "Personne, tu a un rencard"],
@@ -887,7 +887,7 @@
                   "TypeOfQuestion": "Psycho",
                   "ProfilConsequence": ["profil_good", "profil_evil", "profil_good", "profil_evil"],
                   "FeedBackPsycho": ["sociableAnswer", "argentAnswer", "sociableAnswer", "evilAnswer"],
-                  "HPLostArray": [0, 2, 0, 2]
+                  "HPLostArray": [0, 0, 0, 2]
                   }, {
                   "Question": "À la croisée des chemins plusieurs routes s’offre à toi, laquelle choisis tu ?",
                   "Choice": ["La route calme qui se n’arrête jamais", "La route aux milles dangers qui amène au trésor", "La route des sirènes enivrantes et meurtrières", "La route mystère"],
@@ -927,7 +927,7 @@
                   "TypeOfQuestion": "Psycho",
                   "ProfilConsequence": ["profil_evil", "profil_sociable", "profil_evil", "profil_timide"],
                   "FeedBackPsycho": ["crieurAnswer", "soumisAnswer", "evilAnswer", "evilAnswer"],
-                  "HPLostArray": [3, 0, 2, 0]
+                  "HPLostArray": [0, 0, 2, 1]
                   }, {
                   "Question": "Quelle serait ta journée idéale ?",
                   "Choice": ["Des activités varié en plein air ", "Geeker du lever au coucher", "Dormir puis regarder une série entière", "Travailler et préparer ton futur"],
@@ -967,7 +967,7 @@
                   "TypeOfQuestion": "Psycho",
                   "ProfilConsequence": ["profil_timide", "profil_crieur", "profil_innovateur", "profil_evil"],
                   "FeedBackPsycho": ["timideAnswer", "crieurAnswer", "creatifAnswer", "evilAnswer"],
-                  "HPLostArray": [0, 0, 0, 0]
+                  "HPLostArray": [0, 0, 0, 1]
                   }, {
                   "Question": "Si tu devais mourir demain que ferais tu ?",
                   "Choice": ["J’irais voir les gens que j’aime", "Je réaliserai tous mes fantasmes", "Je développerai un système pour transférer ma pensée dans un robot", "Je tuerait des gens"],
