@@ -48,6 +48,7 @@ class QuestionViewController: UIViewController {
     var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
     var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var readyPopup: UIView!
     
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
@@ -90,8 +91,16 @@ class QuestionViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         hackButton.layer.cornerRadius = view.bounds.width / 20
-        PickQuestion()
+        
         FonduApparition(myView: self, myDelai: 1)
+        
+        // Appuyer sur l'écran pour commencer la série
+        readyPopup = endGamePopup(text: "Appuie sur l'écran pour commencer la série de questions.", onClick: #selector(pickFirstQuestion))
+    }
+    
+    func pickFirstQuestion() {
+        readyPopup.removeFromSuperview()
+        PickQuestion()
     }
     
     //Gère les séries de question
@@ -138,6 +147,7 @@ class QuestionViewController: UIViewController {
     func QuestionInit(){
         
         self.saisieReponseLabel.alpha = 0
+        self.saisieReponseLabel.textColor = .white
         self.InputAnswer.alpha = 0
         self.inputButtonValidate.alpha = 0
         self.resultatLabel.alpha = 0
@@ -408,7 +418,7 @@ class QuestionViewController: UIViewController {
                 self.view.endEditing(true)
                 
                 for i in 0..<self.themeQuestionActif[self.QuestionNumber].Choice.count{
-                    if(stringReponse == self.themeQuestionActif[self.QuestionNumber].Choice[i]){
+                    if(stringReponse.trimmingCharacters(in: .whitespacesAndNewlines) == self.themeQuestionActif[self.QuestionNumber].Choice[i]){
                         self.resultatLabel.text = "\(self.AllAnswersReactions[0].bonneReponse[self.resultatVrai])"
                         self.reponseTrouverInput = true
                         self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1

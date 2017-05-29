@@ -337,10 +337,23 @@ class DialogueViewController: UIViewController {
     }
     
     func ArcadeBacStart(){
-        print("ArcadeBac")
-        self.oneProfil.sceneActuelle += 1
-        self.firstDialogue = true
-        self.DialogueNumber = 0
+        
+        if let vc = UIStoryboard(name:"ArcadeBac", bundle:nil).instantiateInitialViewController() as? BacViewController
+        {
+            arrowView.isHidden = true
+            UIView.animate(withDuration: 2, animations: {
+                self.view.alpha = 0
+                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+            } , completion: { _ in
+                self.backgroundMusicPlayer.stop()
+                vc.oneProfil = self.oneProfil
+                self.view.window?.rootViewController = vc
+                //self.present(vc, animated: false, completion: nil)            
+            })
+        }else {
+            print("Could not instantiate view controller with identifier of type ConsoleViewController")
+            return
+        }
         
     }
     

@@ -106,12 +106,12 @@ class ProfilJoueur : NSObject, NSCoding{
         let dictProfil = aDecoder.decodeObject(forKey: "myDictProfil") as? [String:Int]
         let classeJoueur = aDecoder.decodeObject(forKey: "myClasseJoueur") as? String
         let sceneActuelle = aDecoder.decodeInteger(forKey: "mySceneActuelle")
-        let statsQuiz = aDecoder.decodeObject(forKey: "myStatsQuiz") as! [String:Int]
-        let statsCookie = aDecoder.decodeObject(forKey: "myStatsCookie") as! [String:Int]
-        let statsRangement = aDecoder.decodeObject(forKey: "myStatsRangement") as! [String:Int]
-        let statsConsole = aDecoder.decodeObject(forKey: "myStatsConsole") as! [String:Int]
-        let statsBac = aDecoder.decodeObject(forKey: "myStatsBac") as! [String:Int]
-        let statsLabyrinthe = aDecoder.decodeObject(forKey: "myStatsLabyrinthe") as! [String:Int]
+        let statsQuiz = aDecoder.decodeObject(forKey: "myStatsQuiz") as? [String:Int]
+        let statsCookie = aDecoder.decodeObject(forKey: "myStatsCookie") as? [String:Int]
+        let statsRangement = aDecoder.decodeObject(forKey: "myStatsRangement") as? [String:Int]
+        let statsConsole = aDecoder.decodeObject(forKey: "myStatsConsole") as? [String:Int]
+        let statsBac = aDecoder.decodeObject(forKey: "myStatsBac") as? [String:Int]
+        let statsLabyrinthe = aDecoder.decodeObject(forKey: "myStatsLabyrinthe") as? [String:Int]
         let questionAlreadyPick = aDecoder.decodeObject(forKey: "myQuestionAlreadyPick")  as! [Int]
         
         self.name = name!

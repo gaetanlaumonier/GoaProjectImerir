@@ -29,7 +29,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDurationTotal:TimeInterval = 30
+    var gameDurationTotal:TimeInterval = 60
     var gameTimer : Int = 0
     var noob = false
     var geek = false
@@ -47,15 +47,25 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AllClasse = buildClasseJoueur()
+        
+        
         backgroundMusicPlayer = GestionMusic(filename: "MadScientist")
         mom.loadGif(name: "Maman")
         
         cookie.layer.cornerRadius = cookie.frame.size.width/2
         progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         
+        initProfil()
+        initPageView()
+        
+        initGame()
+    }
+    
+    func initProfil() {
+        AllClasse = buildClasseJoueur()
+        
         switch self.oneProfil.classeJoueur{
-            case "Geek":
+        case "Geek":
             idClasse = 0
             break
         case "Noob":
@@ -73,6 +83,9 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         default:
             break
         }
+    }
+    
+    func initPageView() {
         pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeCookie as String)"]
         pageViewImages = ["Cookie", "Mom","progressBar", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Le gâteau","La mère","La barre d'humeur", "\(AllClasse[idClasse].idClasse as String)"]
@@ -110,45 +123,32 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)
-
+        
         
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParentViewController: self)
-        
-        initGame()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-//        hideMom()
-      //  FonduApparition(myView: self, myDelai: 1)
-    }
     
+    
+    
+    
+    //// GAME INITIALIZATION ////
+    
+    // Called in viewDidLoad
     func initGame() {
         
         // Gère les variables a modifier selon la classe du joueur
         initPlayerClass()
         
-        //Initialise le headerView 
+        //Initialise le headerView
         gameTimer = Int(gameDurationTotal)
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.text = "\(Int(gameDurationTotal)) s"
         
         // Initialise l'interface
         initHUD()
-    }
-    
-    func startGame() {
-        // Ajoute la gestion du tap sur le Cookie
-        addGestures()
-        
-        // Lance la boucle qui diminue le score
-        decreaseScoreLoop()
-        
-        // Lance la boucle d'affichage de mom
-        hideMom()
-        
-       myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CookieViewController.TimerGesture), userInfo: nil, repeats: true)
     }
     
     func initPlayerClass() {
@@ -162,7 +162,48 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         } else if self.oneProfil.classeJoueur  == "Hacker" {
             progressDecrease = 0.001
         }
+    }
+    
+    func initHUD() {
+        updateProgressBar()
+        animateSmileys()
+    }
+    
+    // Called on game rules modal closed
+    func startGame() {
+        // Ajoute la gestion du tap sur le Cookie
+        addGestures()
         
+        // Lance la boucle qui diminue le score
+        decreaseScoreLoop()
+        
+        // Lance la boucle d'affichage de mom
+        hideMom()
+        
+        // Lance la boucle du timer
+        myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CookieViewController.TimerGesture), userInfo: nil, repeats: true)
+    }
+    
+    func addGestures() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(CookieViewController.cookieClicked))
+        
+        cookie.isUserInteractionEnabled = true
+        cookie.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func decreaseScoreLoop() {
+        decreaseTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CookieViewController.decreaseScore), userInfo: nil, repeats: true)
+    }
+    
+    func decreaseScore() {
+        if gamePause == false {
+            if progress >= progressDecrease {
+                progress -= progressDecrease
+            } else if progress > 0 {
+                progress = 0
+            }
+            updateProgressBar()
+        }
     }
     
     func TimerGesture(){
@@ -174,23 +215,47 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         }
     }
     
+    func updateProgressBar() {
+        progressBar.setProgress(progress, animated: true)
+        progressBar.progressTintColor = UIColor(red: 1 - CGFloat(progress), green: CGFloat(progress), blue: 0.0, alpha: 1.0)
+    }
+    
+    
+    
+    //// GAME ENDING ////
+    
     func endGame() {
-        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
-        {
-            if progress <= 0.5 {
-            self.oneProfil.lifePoint = self.oneProfil.lifePoint - 5
+        let finalHealth = Int((progress - 0.5) * 20)
+        
+        oneProfil.lifePoint += finalHealth
+        
+        var dialogText = "Tu as rempli \(Int(progress * 100))% de la barre d'humeur.\n\n"
+        
+        if finalHealth > 0 {
+            changeColorLabelGood(label: headerView.lifePointLabel)
+            dialogText += "Tu gagnes \(finalHealth) PV !"
+        } else if finalHealth < 0 {
             changeColorLabelBad(label: headerView.lifePointLabel)
-            self.headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
-            }
-            
-            decreaseTimer.invalidate()
+            dialogText += "Tu perds \(abs(finalHealth)) PV !"
+        } else {
+            dialogText += "Tu es pile dans la moyenne !"
+        }
+        headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
+        
+        let _ = endGamePopup(text: dialogText, onClick: #selector(returnToDialog))
+    }
+    
+    func returnToDialog() {
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
+            self.decreaseTimer.invalidate()
             self.oneProfil.sceneActuelle += 1
-            if cookieTaped != 0 {
-            self.oneProfil.statsCookie["pourcentage"]! = 100 * self.oneProfil.statsCookie["cookieGoodTaped"]! / cookieTaped
+            if self.cookieTaped != 0 {
+                self.oneProfil.statsCookie["pourcentage"]! = 100 * self.oneProfil.statsCookie["cookieGoodTaped"]! / self.cookieTaped
             } else {
                 self.oneProfil.statsCookie["pourcentage"]! = 0
             }
-
+            
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
@@ -198,13 +263,14 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
                 self.view.alpha = 0
             } , completion: { success in
                 self.backgroundMusicPlayer.stop()
-            self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
             })
-        }else {
+        } else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")
             return
         }
     }
+    
     func saveMyData(){
         var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         maData.appendPathComponent("saveGame")
@@ -212,27 +278,8 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     }
 
     
-    func decreaseScoreLoop() {
-        decreaseTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CookieViewController.decreaseScore), userInfo: nil, repeats: true)
-    }
     
-    func decreaseScore() {
-        if gamePause == false {
-        if progress >= progressDecrease {
-            progress -= progressDecrease
-        } else if progress > 0 {
-            progress = 0
-        }
-        updateProgressBar()
-        }
-    }
-    
-    func addGestures() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(CookieViewController.cookieClicked))
-        
-        cookie.isUserInteractionEnabled = true
-        cookie.addGestureRecognizer(tapGestureRecognizer)
-    }
+    //// GAME LOGIC ////
     
     func cookieClicked(tapGR: UITapGestureRecognizer){
        cookieTaped += 1
@@ -271,6 +318,28 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         }
     }
     
+    //// Consider the round shape of the cookie
+    func isReallyClicked(tapGR: UITapGestureRecognizer) -> Bool {
+        let tap = tapGR.location(in: view)
+        let center = cookie.center
+        
+        let distanceX = center.x - tap.x
+        let distanceY = center.y - tap.y
+        
+        let distance = sqrt((distanceX * distanceX) + (distanceY * distanceY))
+        let rayon = cookie.frame.width/2
+        
+        if distance <= rayon {
+            return true
+        }
+        
+        return false
+    }
+    
+    
+    
+    //// GRAPHICS ////
+    
     func animateCookie(){
         
         let anim = CABasicAnimation(keyPath: "transform.scale.x")
@@ -294,23 +363,6 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
         cookie.layer.add(anim, forKey: nil)
         cookie.layer.add(anim2, forKey: nil)
-    }
-    
-    func isReallyClicked(tapGR: UITapGestureRecognizer) -> Bool {
-        let tap = tapGR.location(in: view)
-        let center = cookie.center
-        
-        let distanceX = center.x - tap.x
-        let distanceY = center.y - tap.y
-        
-        let distance = sqrt((distanceX * distanceX) + (distanceY * distanceY))
-        let rayon = cookie.frame.width/2
-        
-        if distance <= rayon {
-            return true
-        }
-        
-        return false
     }
     
     func drawParticle(at: CGPoint) {
@@ -351,6 +403,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
     }
     
+    // Give a random ending position for drawing particle
     func randomPos(origin: CGPoint) -> CGPoint {
         var decalageY:CGFloat = 1
         if isMomWatching { decalageY = -1 }
@@ -361,6 +414,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         return CGPoint(x: posX, y: posY)
     }
     
+    // Remove particles when animation is finished
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             if let imageView = anim.value(forKey: "particle") as? UIImageView {
@@ -369,15 +423,9 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         }
     }
     
-    func initHUD() {
-        updateProgressBar()
-        animateSmileys()
-    }
     
-    func updateProgressBar() {
-        progressBar.setProgress(progress, animated: true)
-        progressBar.progressTintColor = UIColor(red: 1 - CGFloat(progress), green: CGFloat(progress), blue: 0.0, alpha: 1.0)
-    }
+    
+    //// Monkeys in progressView animations ////
     
     func animateSmileys() {
         
@@ -452,6 +500,10 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         Timer.scheduledTimer(timeInterval: anim.duration * 2, target: self, selector: #selector(CookieViewController.animateSadRotate), userInfo: nil, repeats: false)
     }
     
+    
+    
+    //// MOM ////
+    
     func hideMom() {
         isMomWatching = false
         toggleMom()
@@ -483,6 +535,10 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     func randomInterval() -> TimeInterval {
         return TimeInterval(exactly: Float(arc4random()) / Float(UINT32_MAX) * 4 + 1)!
     }
+    
+    
+    
+    //// PAGE VIEW ////
     
     func hideModal() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)

@@ -31,8 +31,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 40.0
-    var timeLeft = 40.0
+    var gameDuration = 60.0
+    var timeLeft = 60.0
     var slowGameFactor = 1.0
     var originalSize:CGFloat!
     
@@ -81,7 +81,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         pageViewLabels = ["Cet objet est un de tes objectifs, ton but est de le ranger dans le bon conteneur.", "Les jouets vont dans le coffre, les déchets dans la poubelle et les vêtements dans l'armoire.","Touche une icône \"bonus\" pour voir ce qu'il rapporte.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeRangement as String)"]
         pageViewImages = ["LaserGun", "CoffreAJouet","Bonus", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Les Objets","Les Conteneurs","Les Bonus", "\(AllClasse[idClasse].idClasse as String)"]
-        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perd de la vie quand tu te trompe de conteneur.", "La majorité des bonus a un impact positif.", "Atteint au moins 50 de score pour limiter la casse."]
+        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perds de la vie quand tu te trompe de conteneur.", "La majorité des bonus a un impact positif.", ""]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "RangementPageViewController") as! UIPageViewController
         
@@ -118,7 +118,6 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //FonduApparition(myView: self, myDelai: 1)
     }
     
     func initGame() {
@@ -139,7 +138,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         endGameTimer = Timer.scheduledTimer(withTimeInterval: 0.1 * slowGameFactor, repeats: true, block: {_ in
             if self.timeLeft > 0 {
                 self.timeLeft -= 0.1
-            self.headerView.timerLabel.text = "\(Int(self.timeLeft)) s"
+                self.headerView.timerLabel.text = "\(Int(self.timeLeft)) s"
             } else {
                 self.endGame()
             }
@@ -165,14 +164,37 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func endGame() {
         endGameTimer.invalidate()
+        
+        let objPerSecond = Double(goodObjectInContainer) / gameDuration
+        
+        let finalHealth = Int(objPerSecond * 10 - 10)
+        
+        oneProfil.lifePoint += finalHealth
+        
+        var dialogText = "Tu as rangé ta chambre à une vitesse de \(String(format: "%.2f", objPerSecond)) objets par seconde.\n\n"
+        
+        if finalHealth > 0 {
+            changeColorLabelGood(label: headerView.lifePointLabel)
+            dialogText += "Tu gagnes \(finalHealth) PV !"
+        } else if finalHealth < 0 {
+            changeColorLabelBad(label: headerView.lifePointLabel)
+            dialogText += "Tu perds \(abs(finalHealth)) PV !"
+        } else {
+            dialogText += "Tu es pile dans la moyenne !"
+        }
+        headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
+        
+        let _ = endGamePopup(text: dialogText, onClick: #selector(returnToDialog))
+    }
+    
+    func returnToDialog() {
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
         {
-                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 self.view.alpha = 0
             } , completion: { success in
                 self.oneProfil.sceneActuelle += 1
-                self.scoreGestureFinal()
                 if self.objInContainer != 0 {
                     self.oneProfil.statsRangement["pourcentage"]! = 100 * self.goodObjectInContainer / self.objInContainer
                 } else {
@@ -183,7 +205,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
                 vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 self.backgroundMusicPlayer.stop()
-                self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")
@@ -224,7 +246,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
             imageView.alpha = 0
             
             view.insertSubview(imageView, aboveSubview: Conteneurs[0])
-
+            print(objetViews)
             objetViews.append(imageView)
             animateIn(objet: imageView)
         }
@@ -395,6 +417,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
                     self.animateTo(objet: objet, position: position, completion: {(finished: Bool) in
                         
                         if finished {
+                            self.objInContainer += 1
                             self.onValidContainer(objet: objet)
                         }
                         
@@ -460,11 +483,12 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func slowTime() {
         slowGameFactor = 2
-        let lalat = endGameTimer
         endGameTimer.invalidate()
-        lalat?.fire()
+        startEndTimer()
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {_ in
             self.slowGameFactor = 1
+            self.endGameTimer.invalidate()
+            self.startEndTimer()
         })
     }
     
@@ -561,6 +585,11 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func spawnBonusLoop() {
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {_ in
+            
+            guard self.endGameTimer.isValid else {
+                return
+            }
+            
             if drand48() < 0.5 {
                 self.spawnRandomBonus()
             }

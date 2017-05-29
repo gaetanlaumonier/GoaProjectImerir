@@ -132,10 +132,11 @@ class InitViewController: UIViewController {
         
         if let mySaveData = NSKeyedUnarchiver.unarchiveObject(withFile: maData.path) as? ProfilJoueur {
             //  mySaveData.statsLabyrinthe["timeSpent"]! += 1
-            if mySaveData.statsLabyrinthe["timeSpent"]!.hashValue < 1 {
-                statsButton.isEnabled = false
-                statsButton.alpha = 0.5
-                
+            if let timeSpent = mySaveData.statsLabyrinthe["timeSpent"] {
+                if timeSpent.hashValue < 1 {
+                    statsButton.isEnabled = false
+                    statsButton.alpha = 0.5
+                }
             }
         } else {
             statsButton.isEnabled = false

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F25E4C91ECC7FE9009AAEEC /* ArcadeBac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */; };
+		3F25E4CC1ECC813A009AAEEC /* BacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */; };
+		3F25E4D01ECC90D5009AAEEC /* Fiche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */; };
 		3F28447E1E488E94001E8ED3 /* ProjetImerirAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */; };
 		3F659C751EC73ACC00E64121 /* ArcadeConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */; };
 		3F659C791EC74C3600E64121 /* AlienMissile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C781EC74C3600E64121 /* AlienMissile.gif */; };
@@ -18,7 +21,11 @@
 		3F659C961EC8D64500E64121 /* SpaceBomb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C951EC8D64500E64121 /* SpaceBomb.gif */; };
 		3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */; };
 		3F659C9A1EC925CA00E64121 /* SpaceBonusHD.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */; };
-		3F73F8811ECB243400E1F0E3 /* MonstreTaped.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F73F8801ECB243400E1F0E3 /* MonstreTaped.mp3 */; };
+		3F8E113E1ED5BD91004EC072 /* RulesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E113D1ED5BD91004EC072 /* RulesPageViewController.swift */; };
+		3F9BE7211ED9C71B00F67C75 /* FicheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9BE7201ED9C71B00F67C75 /* FicheView.xib */; };
+		3FC57A7A1EDB2CE300F5A7E1 /* BoireCafe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57A791EDB2CE300F5A7E1 /* BoireCafe.mp3 */; };
+		3FC57A7C1EDB2CED00F5A7E1 /* Fenetre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57A7B1EDB2CED00F5A7E1 /* Fenetre.mp3 */; };
+		3FC57A7E1EDB2CF300F5A7E1 /* BolCereale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57A7D1EDB2CF300F5A7E1 /* BolCereale.mp3 */; };
 		3FD1AC8E1EC5AF60008F66CB /* Air.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC751EC5AF60008F66CB /* Air.mp3 */; };
 		3FD1AC8F1EC5AF60008F66CB /* Bonus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */; };
 		3FD1AC901EC5AF60008F66CB /* Clik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1AC771EC5AF60008F66CB /* Clik.mp3 */; };
@@ -121,6 +128,8 @@
 		3FD1AD571EC5AF6D008F66CB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1AD031EC5AF6D008F66CB /* SwiftyJSON.swift */; };
 		3FD1AD581EC5AF6D008F66CB /* BuildElementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1AD041EC5AF6D008F66CB /* BuildElementApp.swift */; };
 		3FD1AD591EC5AF6D008F66CB /* OutletExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1AD051EC5AF6D008F66CB /* OutletExtension.swift */; };
+		3FD6B7A11ECF548800495579 /* ContentBacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6B7A01ECF548800495579 /* ContentBacViewController.swift */; };
+		3FED6BB91ED9D1FB00672CDE /* MonstreTaped.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FED6BB81ED9D1FB00672CDE /* MonstreTaped.mp3 */; };
 		3FEDCED61EC9521500491CAD /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDCED51EC9521500491CAD /* Spaceship.swift */; };
 		3FF144151EC9E8A400B1567E /* Steamtech.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FF144141EC9E8A400B1567E /* Steamtech.mp3 */; };
 		3FF144291ECAF8EC00B1567E /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FF144231ECAF8EC00B1567E /* Explosion.mp3 */; };
@@ -145,6 +154,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArcadeBac.storyboard; path = ProjetImerirApp/ArcadeBac.storyboard; sourceTree = "<group>"; };
+		3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacViewController.swift; sourceTree = "<group>"; };
+		3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiche.swift; sourceTree = "<group>"; };
 		3F2844651E488E94001E8ED3 /* ProjetImerirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetImerirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2844791E488E94001E8ED3 /* ProjetImerirAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetImerirAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetImerirAppTests.swift; sourceTree = "<group>"; };
@@ -159,7 +171,11 @@
 		3F659C951EC8D64500E64121 /* SpaceBomb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBomb.gif; sourceTree = "<group>"; };
 		3F659C971EC91BD200E64121 /* ContentConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentConsoleViewController.swift; sourceTree = "<group>"; };
 		3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBonusHD.gif; sourceTree = "<group>"; };
-		3F73F8801ECB243400E1F0E3 /* MonstreTaped.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonstreTaped.mp3; sourceTree = "<group>"; };
+		3F8E113D1ED5BD91004EC072 /* RulesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesPageViewController.swift; sourceTree = "<group>"; };
+		3F9BE7201ED9C71B00F67C75 /* FicheView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FicheView.xib; path = ProjetImerirApp/FicheView.xib; sourceTree = "<group>"; };
+		3FC57A791EDB2CE300F5A7E1 /* BoireCafe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BoireCafe.mp3; sourceTree = "<group>"; };
+		3FC57A7B1EDB2CED00F5A7E1 /* Fenetre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fenetre.mp3; sourceTree = "<group>"; };
+		3FC57A7D1EDB2CF300F5A7E1 /* BolCereale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BolCereale.mp3; sourceTree = "<group>"; };
 		3FD1AC751EC5AF60008F66CB /* Air.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Air.mp3; sourceTree = "<group>"; };
 		3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bonus.mp3; sourceTree = "<group>"; };
 		3FD1AC771EC5AF60008F66CB /* Clik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clik.mp3; sourceTree = "<group>"; };
@@ -263,6 +279,8 @@
 		3FD1AD031EC5AF6D008F66CB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		3FD1AD041EC5AF6D008F66CB /* BuildElementApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildElementApp.swift; sourceTree = "<group>"; };
 		3FD1AD051EC5AF6D008F66CB /* OutletExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutletExtension.swift; sourceTree = "<group>"; };
+		3FD6B7A01ECF548800495579 /* ContentBacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentBacViewController.swift; sourceTree = "<group>"; };
+		3FED6BB81ED9D1FB00672CDE /* MonstreTaped.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonstreTaped.mp3; sourceTree = "<group>"; };
 		3FEDCED51EC9521500491CAD /* Spaceship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
 		3FF144141EC9E8A400B1567E /* Steamtech.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Steamtech.mp3; sourceTree = "<group>"; };
 		3FF144231ECAF8EC00B1567E /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
@@ -294,6 +312,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F25E4CA1ECC810C009AAEEC /* ArcadeBac */ = {
+			isa = PBXGroup;
+			children = (
+				3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */,
+				3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */,
+				3FD6B7A01ECF548800495579 /* ContentBacViewController.swift */,
+			);
+			name = ArcadeBac;
+			sourceTree = "<group>";
+		};
 		3F28445C1E488E94001E8ED3 = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +363,9 @@
 		3FD1AC7A1EC5AF60008F66CB /* Buitages */ = {
 			isa = PBXGroup;
 			children = (
+				3FC57A7D1EDB2CF300F5A7E1 /* BolCereale.mp3 */,
+				3FC57A7B1EDB2CED00F5A7E1 /* Fenetre.mp3 */,
+				3FC57A791EDB2CE300F5A7E1 /* BoireCafe.mp3 */,
 				3FD1AC751EC5AF60008F66CB /* Air.mp3 */,
 				3FD1AC761EC5AF60008F66CB /* Bonus.mp3 */,
 				3FD1AC771EC5AF60008F66CB /* Clik.mp3 */,
@@ -343,7 +374,7 @@
 				3FF144231ECAF8EC00B1567E /* Explosion.mp3 */,
 				3FF144241ECAF8EC00B1567E /* MonstreLow.mp3 */,
 				3FF144251ECAF8EC00B1567E /* MonstresHigh.mp3 */,
-				3F73F8801ECB243400E1F0E3 /* MonstreTaped.mp3 */,
+				3FED6BB81ED9D1FB00672CDE /* MonstreTaped.mp3 */,
 				3FF144261ECAF8EC00B1567E /* Piege.mp3 */,
 				3FF144271ECAF8EC00B1567E /* Potion.mp3 */,
 				3FF144281ECAF8EC00B1567E /* Sortie.mp3 */,
@@ -443,6 +474,8 @@
 				3FD1ACC91EC5AF6D008F66CB /* GamesRules.xib */,
 				3FD1ACCA1EC5AF6D008F66CB /* Parametres.storyboard */,
 				3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */,
+				3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */,
+				3F9BE7201ED9C71B00F67C75 /* FicheView.xib */,
 			);
 			name = Storyboard/Xib;
 			path = ..;
@@ -490,6 +523,7 @@
 				3FD1ACDD1EC5AF6D008F66CB /* DesignableLabel.swift */,
 				3FD1ACDE1EC5AF6D008F66CB /* HeaderView.swift */,
 				3FD1ACDF1EC5AF6D008F66CB /* GamesRulesView.swift */,
+				3F8E113D1ED5BD91004EC072 /* RulesPageViewController.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -547,6 +581,7 @@
 		3FD1AD061EC5AF6D008F66CB /* ProjetImerirApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F25E4CA1ECC810C009AAEEC /* ArcadeBac */,
 				3F659C7A1EC74CA700E64121 /* ArcadeConsole */,
 				3FD1ACAB1EC5AF6D008F66CB /* ArcadeLabyrinthe */,
 				3FD1ACAE1EC5AF6D008F66CB /* ArcadeCookie */,
@@ -617,7 +652,7 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WBDN29Q285;
+						DevelopmentTeam = N44QRNRP98;
 						ProvisioningStyle = Automatic;
 					};
 					3F2844781E488E94001E8ED3 = {
@@ -656,21 +691,24 @@
 				3FD1AD511EC5AF6D008F66CB /* Martien2.gif in Resources */,
 				3FD1AD231EC5AF6D008F66CB /* GameOver.storyboard in Resources */,
 				3FD1AC9D1EC5AF60008F66CB /* PuzzleGame.mp3 in Resources */,
-				3F73F8811ECB243400E1F0E3 /* MonstreTaped.mp3 in Resources */,
 				3FD1AD411EC5AF6D008F66CB /* Piege.gif in Resources */,
 				3FD1AD431EC5AF6D008F66CB /* LabDroite.gif in Resources */,
 				3FD1AD491EC5AF6D008F66CB /* Silhouette.gif in Resources */,
 				3FD1ACA11EC5AF60008F66CB /* TheDarkness.mp3 in Resources */,
 				3FF1442E1ECAF8EC00B1567E /* Sortie.mp3 in Resources */,
+				3FC57A7A1EDB2CE300F5A7E1 /* BoireCafe.mp3 in Resources */,
+				3FC57A7E1EDB2CF300F5A7E1 /* BolCereale.mp3 in Resources */,
 				3FD1AD1B1EC5AF6D008F66CB /* ArcadeRangement.storyboard in Resources */,
 				3FD1AD1C1EC5AF6D008F66CB /* Dialogue.storyboard in Resources */,
 				3FF1442A1ECAF8EC00B1567E /* MonstreLow.mp3 in Resources */,
+				3FED6BB91ED9D1FB00672CDE /* MonstreTaped.mp3 in Resources */,
 				3FD1AC9E1EC5AF60008F66CB /* SodiumVapor.mp3 in Resources */,
 				3FD1AD1E1EC5AF6D008F66CB /* Quiz.storyboard in Resources */,
 				3FD1AD3A1EC5AF6D008F66CB /* Dialogue.json in Resources */,
 				3FF144151EC9E8A400B1567E /* Steamtech.mp3 in Resources */,
 				3FD1AC9B1EC5AF60008F66CB /* MadScientist.mp3 in Resources */,
 				3FD1AC991EC5AF60008F66CB /* MistyBog.mp3 in Resources */,
+				3F25E4C91ECC7FE9009AAEEC /* ArcadeBac.storyboard in Resources */,
 				3F659C901EC8C8DB00E64121 /* SpaceBonus.gif in Resources */,
 				3F659C791EC74C3600E64121 /* AlienMissile.gif in Resources */,
 				3FD1AD451EC5AF6D008F66CB /* LabFaceDroite.gif in Resources */,
@@ -678,6 +716,7 @@
 				3FD1AD3C1EC5AF6D008F66CB /* LabGaucheDroite.gif in Resources */,
 				3FD1AD531EC5AF6D008F66CB /* SalleDirecteur.gif in Resources */,
 				3FD1AD4E1EC5AF6D008F66CB /* BackgroundMartien.gif in Resources */,
+				3FC57A7C1EDB2CED00F5A7E1 /* Fenetre.mp3 in Resources */,
 				3FD1AC981EC5AF60008F66CB /* LostJungle.mp3 in Resources */,
 				3FD1ACA01EC5AF60008F66CB /* SurrealChase.mp3 in Resources */,
 				3FD1AC901EC5AF60008F66CB /* Clik.mp3 in Resources */,
@@ -725,6 +764,7 @@
 				3F659C8A1EC7C5AD00E64121 /* SpaceHeal.gif in Resources */,
 				3F659C941EC8D5D000E64121 /* SpaceBackground.gif in Resources */,
 				3FD1AD3E1EC5AF6D008F66CB /* BeteVerte.gif in Resources */,
+				3F9BE7211ED9C71B00F67C75 /* FicheView.xib in Resources */,
 				3FD1AC911EC5AF60008F66CB /* ClikBad.mp3 in Resources */,
 				3FD1AD4C1EC5AF6D008F66CB /* Reveil.gif in Resources */,
 				3FF66F1C1ECB5A520042E99B /* Fantasy.mp3 in Resources */,
@@ -752,6 +792,7 @@
 				3FD1AD2A1EC5AF6D008F66CB /* ScoreUp.swift in Sources */,
 				3FD1AD2E1EC5AF6D008F66CB /* RangementView.swift in Sources */,
 				3FD1AD261EC5AF6D008F66CB /* Bonus.swift in Sources */,
+				3F8E113E1ED5BD91004EC072 /* RulesPageViewController.swift in Sources */,
 				3FD1AD181EC5AF6D008F66CB /* ParametresViewController.swift in Sources */,
 				3FD1AD2C1EC5AF6D008F66CB /* SomeHelp.swift in Sources */,
 				3FD1AD0E1EC5AF6D008F66CB /* ContentCookieViewController.swift in Sources */,
@@ -770,6 +811,7 @@
 				3FD1AD2D1EC5AF6D008F66CB /* RangementViewController.swift in Sources */,
 				3FD1AD121EC5AF6D008F66CB /* DialogueViewController.swift in Sources */,
 				3FD1AD0C1EC5AF6D008F66CB /* StrangeBat.swift in Sources */,
+				3FD6B7A11ECF548800495579 /* ContentBacViewController.swift in Sources */,
 				3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */,
 				3F659C7C1EC74CD500E64121 /* ConsoleViewController.swift in Sources */,
 				3FD1AD0D1EC5AF6D008F66CB /* ContentLabyrintheViewController.swift in Sources */,
@@ -780,6 +822,8 @@
 				3FD1AD291EC5AF6D008F66CB /* SlowTime.swift in Sources */,
 				3FD1AD271EC5AF6D008F66CB /* FreezeTime.swift in Sources */,
 				3FD1AD321EC5AF6D008F66CB /* DesignableView.swift in Sources */,
+				3F25E4CC1ECC813A009AAEEC /* BacViewController.swift in Sources */,
+				3F25E4D01ECC90D5009AAEEC /* Fiche.swift in Sources */,
 				3FD1AD131EC5AF6D008F66CB /* ChoiceClasseViewController.swift in Sources */,
 				3FD1AD331EC5AF6D008F66CB /* DesignableButton.swift in Sources */,
 				3FD1AD151EC5AF6D008F66CB /* ClasseModalViewController.swift in Sources */,
@@ -960,11 +1004,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WBDN29Q285;
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -977,11 +1021,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WBDN29Q285;
+				DEVELOPMENT_TEAM = N44QRNRP98;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApp;
+				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

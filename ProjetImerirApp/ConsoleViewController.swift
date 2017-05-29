@@ -14,6 +14,10 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     @IBOutlet var headerView: HeaderView!
     @IBOutlet var background: UIImageView!
     
+    var bomb:UIImageView!
+    var bombDuration:CFTimeInterval!
+    var initialBombSequence = [UIImage]()
+    
     var spaceship: Spaceship!
     var shield: UIImageView!
     
@@ -58,6 +62,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var bonusBruitageMusicPlayer = AVAudioPlayer()
     var bruit : Int = 0
     var nbrMissile : Int = 0
+    var missileHit = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -247,6 +252,19 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         
         missileSize = CGSize(width: missileWidth, height: image.size.height * ratio)
         
+        bomb = UIImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width*0.8, height: view.bounds.width*0.8))
+        
+        bomb.isHidden = true
+        bomb.loadGif(name: "SpaceBomb", completion: { _ in
+            self.bombDuration = CFTimeInterval(UIImage.lastLoadedGIFDuration)
+            if let seq = self.bomb.animationImages {
+                print(seq)
+                self.initialBombSequence = seq
+            }
+            self.bomb.stopAnimating()
+        })
+        
+        view.insertSubview(bomb, aboveSubview: background)
         
         bonusList.append((bonusBomb, "Tir de suppression !"))
         bonusList.append((bonusShield, "Le don de Xliglak !"))
@@ -255,22 +273,16 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     
     func bonusBomb() {
         
-        let bomb = UIImageView(frame: CGRect(x: 0, y: 0, width: spaceship.bounds.width*4, height: spaceship.bounds.width*4))
-        
         bomb.center = spaceship.center
+        bomb.isHidden = false
+        bomb.animationImages = initialBombSequence
+        dropBomb(area: bomb.frame)
         
-        bomb.loadGif(name: "SpaceBomb", completion: { _ in
-            
-            let duration = CFTimeInterval(UIImage.lastLoadedGIFDuration)
-
-            self.view.insertSubview(bomb, aboveSubview: self.background)
-            
-            self.dropBomb(area: bomb.frame)
-            
-            Timer.scheduledTimer(withTimeInterval: duration / 1000, repeats: false, block: { _ in
-                bomb.removeFromSuperview()
-            })
+        Timer.scheduledTimer(withTimeInterval: bombDuration/1000, repeats: false, block: { _ in
+            self.bomb.isHidden = true
+            self.bomb.stopAnimating()
         })
+
         
     }
     
@@ -361,19 +373,20 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     
     func endGame() {
         pauseGame()
-        activateShield(10.0)
+        activateShield(20.0)
         
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
-            self.oneProfil.sceneActuelle += 1
-            self.oneProfil.statsConsole["pourcentage"] = 100 - (100 * self.oneProfil.statsConsole["missileHit"]! / nbrMissile)
-            vc.oneProfil = self.oneProfil
-            self.saveMyData()
+            oneProfil.sceneActuelle += 1
+            oneProfil.statsConsole["pourcentage"] = 100 - (100 * missileHit / nbrMissile)
+            oneProfil.statsConsole["missileHit"] = missileHit
+            vc.oneProfil = oneProfil
+            saveMyData()
             UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                 self.view.alpha = 0
             } , completion: { _ in
                 self.backgroundMusicPlayer.stop()
-                self.present(vc, animated: false, completion: nil)
+                self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")
@@ -661,7 +674,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             let distance = abs(explosion.midX - spaceship.center.x)
             
             let damage =  (aoeWidth - distance) / aoeWidth * 2 + 1
-            self.oneProfil.statsConsole["missileHit"]! += 1
+            self.missileHit += 1
             looseHealth(Int(round(damage)))
         }
     }
@@ -781,23 +794,13 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             
             let anim = CAKeyframeAnimation(keyPath: "position")
             
-            let oldPath = itemTouched.layer.animation(forKey: "position")?.value(forKey: "path") as! CGPath
-            let finalPoint = oldPath.currentPoint
-
-            let newX: CGFloat!
-            if finalPoint.x > view.bounds.midX {
-                newX = 0 - finalPoint.x
-            } else {
-                newX = view.bounds.width + finalPoint.x
-            }
-            
             let path = UIBezierPath()
-            path.move(to: itemTouched.layer.presentation()!.frame.origin)
-            path.addQuadCurve(to: headerView.lifePointLabel.center, controlPoint: CGPoint(x: newX, y: finalPoint.y))
+            path.move(to: itemTouched.layer.presentation()!.position)
+            path.addLine(to: headerView.lifePointLabel.center)
             
             anim.path = path.cgPath
             anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            anim.duration = 3 * speedFactor
+            anim.duration = 1 * speedFactor
             
             itemTouched.layer.removeAnimation(forKey: "position")
             itemTouched.layer.add(anim, forKey: nil)

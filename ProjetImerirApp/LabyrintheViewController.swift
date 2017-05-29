@@ -66,15 +66,22 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var killMonster = AVAudioPlayer()
     var nbrBatKilled : Int = 0
     var nbrBatAppear : Int = 0
+    var orientationView:UIView!
     
     enum Direction : Int {
         case North, East, South, West
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initProfil()
+        initPageView()
+        
+        initGame()
+    }
+    
+    func initProfil() {
         AllClasse = buildClasseJoueur()
         switch self.oneProfil.classeJoueur{
         case "Geek":
@@ -94,7 +101,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         default:
             break
         }
-        
+    }
+    
+    func initPageView() {
         pageViewLabels = ["Oriente toi dans le labyrinthe en cliquant sur les flèches directionnelles.", "Ramasse les potions pour retrouver des points de vie.","Attention au piège ! Ne passe que s'ils sont désarmés.", "Si un monstre apparaît, clique vite dessus !", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].labyrinthe as String)"]
         pageViewImages = ["FlecheDroite", "Potion","Piege","BeteVerte", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Se Diriger","Les Potions","Les Pièges", "Les Monstres", "\(AllClasse[idClasse].idClasse as String)"]
@@ -114,7 +123,6 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         pageViewController.view.frame = modal
         pageViewController.view.center = view.center
-//        UIGraphicsBeginImageContext(pageViewController.view.frame.size)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -128,14 +136,14 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParentViewController: self)
-        
-        initGame()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.isHidden = true
+        
         //Init graphics that require the view to be displayed
         initMaze()
     }
@@ -145,24 +153,31 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     //// GAME INITIALIZATION ////
     
+    // Called in viewDidAppear
     func initMaze() {
         
+        // Generate a random maze using Maze class
         createMaze()
         
+        // Spawn the player in the middle of the maze
         spawnPlayer(Int(maze.count/2), Int(maze.count/2))
         
+        // Create the minimap
         initMap()
         
+        // Load the initial room where the player has spawned
         loadRoom(player.x, player.y, completion: { _ in
+            
             UIView.animate(withDuration: 0.5, animations: { _ in
                 self.view.alpha = 1
             })
         })
     }
     
+    // Called in viewDidLoad
     func initGame() {
         
-        //Start with alpha 0 so the initial background image is not displayed while game is being initialized
+        // Start with alpha 0 so the initial background image is not displayed while game is being initialized
         view.alpha = 0
         
         if self.oneProfil.classeJoueur == "Geek" {
@@ -171,7 +186,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         potionView.loadGif(name: "Potion")
         
-        //Remade GIF displaying method to be able to get the current image displaying
+        // Remade GIF displaying method to be able to get the current image displaying
         spikes.loadGif(name: "Piege", completion: { _ in
             self.setupSpikesDict()
             self.spikes.image = nil
@@ -179,11 +194,11 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             self.animateSpikes()
         })
         
-        //Add gesture recognizer to the view itself for tapping moving bats (to manage presentationLayer)
+        // Add gesture recognizer to the view itself for tapping moving bats (to manage presentationLayer)
         batGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBatTap))
         view.addGestureRecognizer(batGestureRecognizer)
         
-        //Add gesture recognizers to arrows
+        // Add gesture recognizers to arrows
         initArrows()
         
     }
@@ -212,6 +227,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Unproudly hand made gif (making possible the hacker's bonus and verification of currently displayed image)
     func setupSpikesDict() {
         
         if let img = self.spikes.image {
@@ -219,16 +235,12 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             if let imgList = img.images {
                 
                 spikesImages.append((img: imgList[0], dmg:0))
-                spikesImages.append((img: imgList[1], dmg:1))
                 
-                if self.oneProfil.classeJoueur != "Hacker" {
-                    spikesImages.append((img: imgList[2], dmg:2))
-                    spikesImages.append((img: imgList[3], dmg:2))
+                if oneProfil.classeJoueur == "Hacker" {
+                    spikesImages.append((img: imgList[0], dmg:0))
                 }
                 
-                spikesImages.append((img: imgList[4], dmg:1))
-                spikesImages.append((img: imgList[0], dmg:0))
-
+                spikesImages.append((img: imgList[3], dmg:3))
             }
         }
         
@@ -268,6 +280,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     //// GLOBAL FUNCTIONS & IBActions ////
     
+    // On arrow tapped
     func arrowTapped(_ sender: UITapGestureRecognizer) {
         
         guard let arrowView = sender.view else {
@@ -300,6 +313,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         })
     }
     
+    // On potion tapped
     @IBAction func onPotionTaken(_ sender: Any) {
         if let potion = currentRoom.potion {
             
@@ -317,6 +331,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Return the current spikes sequence (image and damage supposed to deal), called on leaving a room
     func findCurrentSpikeSeq() -> (img: UIImage, dmg: Int)? {
         if let currentImage = self.spikes.image {
             return spikesImages.first(where: { $0.img == currentImage })
@@ -325,6 +340,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         return nil
     }
     
+    // Avoid playing song when trap should deal 0 damage (when it is disabled)
     func manageSpikes() {
         if !spikes.isHidden {
             if let currentSeq = findCurrentSpikeSeq() {
@@ -336,18 +352,21 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Sometimes arrows has to be visible but disabled
     func disableArrows() {
         for arrow in arrowsList {
             arrow.value.isUserInteractionEnabled = false
         }
     }
     
+    // Hides every arrows (on entering a room that must display monsters)
     func hideArrows() {
         for arrow in arrowsList {
             arrow.value.alpha = 0
         }
     }
     
+    // Make arrows visible and user interaction enabled
     func enableArrows() {
         for arrow in arrowsList {
             
@@ -364,6 +383,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Function for loosing health (manages noob class)
     func looseHealth(_ amount: Int) {
         
         guard amount != 0 else {
@@ -387,15 +407,20 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
     }
     
+    // Function for gaining health
     func gainHealth(_ amount: Int) {
         changeColorLabelGood(label: headerView.lifePointLabel)
         self.oneProfil.lifePoint += amount
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
     }
     
+    
+    
+    
+    //// GAME ENDING ////
+    
+    // On timer ended for first maze, on exit found for the second one
     func endGame() {
-        
-        
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
         if isFirstMaze == true {
             let myPresentingViewController = self.presentingViewController as! DialogueViewController
@@ -412,7 +437,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                     self.bruitageMusicPlayerMonstre.stop()
                     self.bruitageMusicPlayer.stop()
                     myPresentingViewController.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false, completion: nil)
+                    self.view.window?.rootViewController = vc
                 })
         } else {
                 self.oneProfil.sceneActuelle += 1
@@ -431,7 +456,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                 }, completion: { success in
                     self.bruitageMusicPlayerMonstre.stop()
                     self.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false, completion: nil)
+                    self.view.window?.rootViewController = vc
                 })
             }
         }else {
@@ -440,8 +465,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    func saveMyData(){
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+    }
+    
+    
+    
+    
     //// GAME LOGIC ////
     
+    // Take an enum parameter which is passed by the arrow (player orientation is managed here)
     func moveTo(_ direction: Direction, completion: (() -> Swift.Void)? = nil) {
         
         let trueDirection = Direction(rawValue: (direction.rawValue + player.orientation.rawValue) % 4)!
@@ -469,6 +504,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         })
     }
     
+    // Global function for loading a new/old room
     func loadRoom(_ x: Int, _ y: Int, completion: (() -> Swift.Void)? = nil) {
         
         guard maze[x][y] == Maze.Cell.Space else {
@@ -480,8 +516,6 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             endGame()
             return
         }
-        
-        drawMinimapAdjacentCells()
         
         if !spikes.isHidden && spikes.image == spikes.image?.images?[2] {
             looseHealth(5)
@@ -497,6 +531,8 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         let imageName = getRoomImage()
         
+        drawMinimapAdjacentCells()
+        
         redrawHUD()
         
         background.loadGif(name: imageName, completion: {_ in
@@ -504,6 +540,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         })
     }
     
+    // Return the string of the current room's image
     func getRoomImage() -> String {
         
         if player.x == maze.count - 2 && player.y == maze.count - 3 {
@@ -532,6 +569,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         return "LabSortie"
     }
     
+    // Allow room to know which arrows it can display
     func getAvalaibleDirections(room: Room) -> [Direction] {
         
         if let cells = room.possibleCells {
@@ -554,10 +592,12 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         return directions
     }
     
+    // Called on every room that is loaded
     func isExitRoom() -> Bool {
         return player.x == maze.count-1 && player.y == maze.count-3
     }
     
+    // Return the Room object if the player has already visited it
     func getKnownRoom(_ location: (x: Int, y: Int)) -> Room? {
         return knownRooms.first(where: { $0.x == location.x && $0.y == location.y })
     }
@@ -567,12 +607,14 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     //// ROOM RELATED EVENTS ////
     
+    // Called on loading a new room
     func redrawHUD() {
         drawArrows()
         drawPotion()
         drawSpikes()
     }
     
+    // Hide bad arrows
     func drawArrows() {
         for arrow in arrowsList {
             arrow.value.isHidden = true
@@ -584,6 +626,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // If room has generated a potion, draw it
     func drawPotion() {
         if let potion = currentRoom.potion {
             potionView.isHidden = false
@@ -591,6 +634,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Manage spikes on current room
     func drawSpikes() {
         
         spikes.isHidden = true
@@ -613,6 +657,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Draw the next monster, can be called multiple times depending on the number of monsters the room should display
     func drawNextBat() {
 
         guard !currentRoom.bats.isEmpty else {
@@ -667,6 +712,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         })
     }
     
+    // On monster tapped
     func handleBatTap(_ sender: UITapGestureRecognizer) {
         
         guard currentBat != nil else {
@@ -682,6 +728,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Manage monster's death
     func killBat() {
         
         if let bat = currentBat {
@@ -701,6 +748,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Freeze the monster before it disappears, gif animation is canceled
     func freezeBat() {
         if let pres = currentBat.layer.presentation() {
             currentBat.layer.frame = pres.frame
@@ -715,6 +763,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     //// MINIMAP ////
     
+    // Draw minimap depending on maze's dimensions
     func initMap() {
         let cellSize = minimap.frame.width / CGFloat(maze.count)
         
@@ -731,13 +780,40 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         let randomRotate = arc4random_uniform(4)
         
-        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(.pi * Double(randomRotate)))
+        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * Double(randomRotate)))
+        
+        let cellLayer = getMinimapCell(player.y, player.x)
+        orientationView = UIView(frame: cellLayer.frame)
+        
+        let path = UIBezierPath()
+        path.addArc(withCenter: minimap.layer.convert(cellLayer.position, to: cellLayer), radius: cellLayer.bounds.width/2, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
+        
+        let layer = CAShapeLayer()
+        layer.fillColor = UIColor.red.cgColor
+        layer.path = path.cgPath
+        
+        let fovPath = UIBezierPath()
+        fovPath.move(to: minimap.layer.convert(cellLayer.position, to: cellLayer))
+        fovPath.addLine(to: CGPoint(x: -cellLayer.bounds.width, y: -cellLayer.bounds.height * 2))
+        fovPath.addQuadCurve(to: CGPoint(x: cellLayer.bounds.width * 2, y: -cellLayer.bounds.height * 2), controlPoint: CGPoint(x: cellLayer.bounds.midX, y: -cellLayer.bounds.height * 3))
+        
+        let fovLayer = CAShapeLayer()
+        fovLayer.path = fovPath.cgPath
+        fovLayer.fillColor = UIColor.red.cgColor
+        fovLayer.opacity = 0.4
+        
+        layer.addSublayer(fovLayer)
+        orientationView.layer.addSublayer(layer)
+        
+        minimap.addSubview(orientationView)
     }
     
+    // Return the layer for a cell of the minimap
     func getMinimapCell(_ x: Int,_ y: Int) -> CALayer {
         return minimapCells.first(where: { $0.x == x && $0.y == y })!.layer
     }
     
+    // Refresh minimap cell layer at position (x,y)
     func drawMinimapCell(x: Int, y: Int) {
 
         if let cell = maze[safe: y]?[safe: x] {
@@ -752,6 +828,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
     }
     
+    // Call drawMinimapCell depending on player field of view, manage player's position too
     func drawMinimapAdjacentCells() {
         
         let visionRange:Int
@@ -768,15 +845,25 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             }
         }
         
-        let cellLayer = getMinimapCell(player.y, player.x)
-        cellLayer.backgroundColor = UIColor.red.cgColor
+        rotatePlayerArrow()
     }
     
-    func saveMyData(){
-        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        maData.appendPathComponent("saveGame")
-        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+    // Rotate the player red cone
+    func rotatePlayerArrow() {
+        let cellLayer = getMinimapCell(player.y, player.x)
+        orientationView.frame.origin = cellLayer.frame.origin
+        orientationView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2) * CGFloat(player.orientation.rawValue))
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    
+    //// RULES PAGE VIEW ////
     
     func hideModal() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 0.7)

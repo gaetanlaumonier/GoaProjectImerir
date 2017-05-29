@@ -26,6 +26,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidAppear(_ animated: Bool) {
         FonduApparition(myView: self, myDelai: 1)
+        tableView.flashScrollIndicators()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

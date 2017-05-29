@@ -45,6 +45,36 @@ extension UILabel {
     }
 }
 
+extension CATextLayer {
+    func setupLabelDynamicSize(fontSize:CGFloat) {
+        let screenSize = UIScreen.main.bounds.size
+        
+        if screenSize.height < 500 {
+            self.fontSize = fontSize * 1
+        } else if screenSize.height < 600{
+            self.fontSize = fontSize * 1.1
+        } else if screenSize.height < 700{
+            self.fontSize = fontSize * 1.3
+        } else if screenSize.height < 800 {
+            self.fontSize = fontSize * 1.4
+        } else if screenSize.height < 900 {
+            self.fontSize = fontSize * 1.5
+        } else if screenSize.height < 1000 {
+            self.fontSize = fontSize * 2
+        } else if screenSize.height < 1100 {
+            self.fontSize = fontSize * 2.1
+        } else if screenSize.height < 2000 {
+            self.fontSize = fontSize * 2.4
+        }else {
+            self.fontSize = fontSize * 3
+        }
+    }
+    
+    func copyLayer() -> CATextLayer? {
+        return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as? CATextLayer
+    }
+}
+
 //Met en majuscule la première lettre du nom du joueur en début de partie
 extension String {
     func capitalizingFirstLetter() -> String {
@@ -332,6 +362,36 @@ extension UIApplication
 
 //Permet à une vue d'apparaître en FadeIn
 extension UIViewController{
+    
+    func endGamePopup(text: String, onClick: Selector? = nil) -> UIView {
+        
+        UIGraphicsEndImageContext()
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+
+        let label = DesignableLabel(frame: view.frame)
+        label.textAlignment = .center
+        label.text = text
+        label.numberOfLines = 0
+        label.setupLabelDynamicSize(fontSize: 24)
+        
+        blurEffectView.addSubview(label)
+        
+        if let _ = onClick {
+            let gesture = UITapGestureRecognizer(target: self, action: onClick)
+            
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+                blurEffectView.addGestureRecognizer(gesture)
+            })
+        }
+        
+        return blurEffectView
+    }
 
     func FonduApparition(myView : UIViewController, myDelai : Float){
     UIView.animate(withDuration: TimeInterval(myDelai), animations: {
@@ -431,5 +491,24 @@ extension UIViewController{
         bruitageMusicPlayer.play()
         
         return bruitageMusicPlayer
+    }
+}
+
+extension Array {
+    var shuffled: Array {
+        var array = self
+        indices.dropLast().forEach {
+            guard case let index = Int(arc4random_uniform(UInt32(count - $0))) + $0, index != $0 else { return }
+            swap(&array[$0], &array[index])
+        }
+        return array
+    }
+}
+
+extension UIView
+{
+    func copyView() -> UIView?
+    {
+        return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as? UIView
     }
 }

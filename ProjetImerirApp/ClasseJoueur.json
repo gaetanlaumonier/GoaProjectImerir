@@ -7,7 +7,7 @@
                      "arcadeCookie":"les effets visuels sont accentués.",
                      "arcadeRangement":"les objets à ranger sont plus gros.",
                      "arcadeConsole":"les orbes stellaires sont plus grosses et apparaissent plus souvent.",
-                     "arcadeBac":"",
+                     "arcadeBac":"le bol de céréales se remplit plus rapidement",
                      "labyrinthe":"la limite de soin des potions monte a 90PV."
                      },{
                      "idClasse":"Noob",
@@ -17,7 +17,7 @@
                      "arcadeCookie":"les pertes de points de vie ont une chance de se transformer en gains.",
                      "arcadeRangement":"les objets mal rangés ont une chance de faire gagner des points.",
                      "arcadeConsole":"1 chance sur 5 de déclencher une explosion lorsqu'un missile vous touche.",
-                     "arcadeBac":"",
+                     "arcadeBac":"1 chance sur 6 a chaque seconde qu'une fiche de révision se traite toute seule.",
                      "labyrinthe":"les dégâts reçus peuvent redonner des points de vie."
                      },{
                      "idClasse":"Hacker",
@@ -27,8 +27,8 @@
                      "arcadeCookie":"la barre de progression diminue deux fois moins vite.",
                      "arcadeRangement":"les objets ont une chance d'aller se ranger tout seul.",
                      "arcadeConsole":"les missiles explosent parfois en vol.",
-                     "arcadeBac":"",
-                     "labyrinthe":"le champ de vision de la mini-map est augmenté et les pièges font moins mal."
+                     "arcadeBac":"la tasse de café se remplit instantanément.",
+                     "labyrinthe":"le champ de vision de la mini-map est augmenté et les pièges restent inactifs plus longtemps."
                      },{
                      "idClasse":"Fonctionnaire",
                      "nomClasse":"Fonctionnaire Calme",
@@ -37,7 +37,7 @@
                      "arcadeCookie":"l'épreuve dure 40% plus longtemps.",
                      "arcadeRangement":"l'épreuve dure 40% plus longtemps.",
                      "arcadeConsole":"le jeu est 40% plus long et plus lent.",
-                     "arcadeBac":"",
+                     "arcadeBac":"le jeu est 40% plus long et plus lent, la fenêtre s'ouvre plus rapidement.",
                      "labyrinthe":"la vitesse des monstres est diminuée."
                      },{
                      "idClasse":"Personne",

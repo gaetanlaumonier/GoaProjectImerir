@@ -8,23 +8,36 @@
 
 import UIKit
 
-
+// One controller is returned for each page of the pageView, this controller having its own variables is then able to draw its content
 class ContentCookieViewController: UIViewController {
     
     @IBOutlet var GamesRulesView: GamesRulesView!
 
     var pageIndex:Int!
+    
+    // Image string is processed in viewDidLoad function
     var actualImage:String!
+    
+    // Rule of the current page
     var actualLabel:String!
+    
+    // Title of the current page
     var actualTitle:String!
+    
+    // Hint of the current page
     var actualHint:String!
+    
+    // Used to draw the "ready up" button
     var isLastPage = false
+    
+    // Stored so it can be animated from another function
     var progressBar = UIProgressView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if actualImage == "progressBar" {
+            // Draw progressView with constraints
             progressBar.progress = 0.5
             progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
             progressBar.progressTintColor = UIColor(red: 0.5, green: 0.5, blue: 0.0, alpha: 1.0)
@@ -38,9 +51,10 @@ class ContentCookieViewController: UIViewController {
             
             Timer.scheduledTimer(timeInterval: 1/60, target: self, selector: #selector(ContentCookieViewController.animateProgressBar), userInfo: nil, repeats: true)
         } else if actualImage == "Mom" {
+            // Load GIF
             GamesRulesView.imageView.loadGif(name: "Maman")
         } else {
-            print(actualImage)
+            // Load image
             GamesRulesView?.imageView.image = UIImage(named: actualImage)
         }
 
@@ -55,8 +69,9 @@ class ContentCookieViewController: UIViewController {
       GamesRulesView.label.text = actualLabel
       GamesRulesView.label.sizeToFit()
 
+        
         if isLastPage {
-            
+            // Draw the "ready up" button
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: view.bounds.width/4, height: 20 ))
             button.setTitleColor(.white, for: .normal)
             button.setTitle("Je suis prêt", for: .normal)
@@ -92,15 +107,4 @@ class ContentCookieViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
