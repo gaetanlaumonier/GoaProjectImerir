@@ -17,13 +17,13 @@ class StrangeBat {
         
         if rand < 0.33 {
             self.name = "BeteRouge"
-            self.speed = 2
+            self.speed = 2.3
         } else if rand < 0.66 {
             self.name = "BeteVerte"
-            self.speed = 1
+            self.speed = 1.5
         } else {
             self.name = "BeteGrise"
-            self.speed = 1.5
+            self.speed = 1.8
         }
     }
 }

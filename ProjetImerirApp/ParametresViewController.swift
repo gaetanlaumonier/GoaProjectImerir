@@ -32,12 +32,16 @@ var bruitageMusicPlayer = AVAudioPlayer()
             presentingViewType.endGameTimer.invalidate()
             presentingViewType.gamePause = true
             break
-               case is LabyrintheViewController:
-                let presentingViewType = myPresentingViewController as! LabyrintheViewController
-                if presentingViewType.isFirstMaze {
+        case is LabyrintheViewController:
+            let presentingViewType = myPresentingViewController as! LabyrintheViewController
+            if presentingViewType.isFirstMaze {
                 presentingViewType.firstGameTimer.invalidate()
-                }
-                break
+            }
+            break
+        case is ConsoleViewController:
+            let presentingViewType = myPresentingViewController as! ConsoleViewController
+            presentingViewType.pauseGame()
+            break
         default:
             print("No timer")
             break
@@ -62,7 +66,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController = vc
                  })
                 break
             case is CookieViewController:
@@ -72,7 +77,8 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController = vc
                  })
                 break
             case is RangementViewController:
@@ -82,18 +88,46 @@ var bruitageMusicPlayer = AVAudioPlayer()
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController = vc
                  })
                 
                 break
             case is LabyrintheViewController:
+                
                 let presentingViewType = myPresentingViewController as! LabyrintheViewController
+                if presentingViewType.isFirstMaze == true {
+                    let dialogueView = presentingViewType.presentingViewController as! DialogueViewController
+                    UIView.animate(withDuration: 2.5, animations: {
+                        self.view.alpha = 0
+                        dialogueView.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    }, completion : { _ in
+                        dialogueView.backgroundMusicPlayer.stop()
+                        vc.firstMenuForRun = false
+                        self.view.window?.rootViewController = vc
+                    })
+                    break
+                } else {
+                    UIView.animate(withDuration: 2.5, animations: {
+                        self.view.alpha = 0
+                        presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    }, completion : { _ in
+                        presentingViewType.backgroundMusicPlayer.stop()
+                        vc.firstMenuForRun = false
+                        self.view.window?.rootViewController = vc
+                    })
+                    break
+                }
+            case is ConsoleViewController:
+                let presentingViewType = myPresentingViewController as! ConsoleViewController
+                presentingViewType.pauseGame()
                 UIView.animate(withDuration: 2.5, animations: {
                     self.view.alpha = 0
                     presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 }, completion : { _ in
                     presentingViewType.backgroundMusicPlayer.stop()
-                    self.present(vc, animated: false)
+                    vc.firstMenuForRun = false
+                    self.view.window?.rootViewController? = vc
                 })
                 
                 break
@@ -143,6 +177,10 @@ var bruitageMusicPlayer = AVAudioPlayer()
                 })
             }
             break
+        case is ConsoleViewController:
+            let presentingViewType = myPresentingViewController as! ConsoleViewController
+            presentingViewType.resumeGame()
+            break
         default:
             print("No timer")
             break
@@ -150,8 +188,5 @@ var bruitageMusicPlayer = AVAudioPlayer()
 
         dismiss(animated: true, completion: nil)
     }
-    
-//    func headerViewExist(vc : String) -> Bool {
-//        
-//    }
+
 }

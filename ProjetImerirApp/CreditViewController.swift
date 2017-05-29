@@ -45,6 +45,7 @@ class CreditViewController: UIViewController {
             label.layer.shadowOpacity = 1
             label.layer.shadowColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
             var interval:TimeInterval = 0
+            label.layer.shouldRasterize = true
             
             switch credit.typeLabel {
                 case "titre":

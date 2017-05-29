@@ -14,7 +14,7 @@
                  "MusiqueDialogue": "BlueRidge"
                  }, {
                  "idDialogue": "2",
-                 "libelleDialogue": ["C’est fini !", "Alors voyons voir sa… ", "....", "........", "................", "Très bien, vous avez donc répondu juste à ", "3 PV vont vous être accordés par bonne réponse, pour la suite de notre test", "Nous allons désormais passer à l'entretien avec Mr le directeur. ", "Ne vous découragez pas ! ", "Etes vous vraiment prêt pour cela ?", "Dormez !", ""],
+                 "libelleDialogue": ["C’est fini !", "Alors voyons voir sa… ", "....", "........", "................", "Très bien, vous avez donc répondu juste à ", "2 PV vont vous être accordés par bonne réponse, pour la suite de notre test.", "Nous allons désormais passer à l'entretien avec Mr le directeur. ", "Ne vous découragez pas ! ", "Êtes-vous vraiment prêt pour cela ?", "Dormez !", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "resultatTest", "nil", "nil", "nil", "Apparition", "nil", "LabyrintheFirst"],
                  "BackgroundDialogue": ["SalleDeClasse", "gif"],
                  "MusiqueDialogue": "BlueRidge"
@@ -33,7 +33,7 @@
                  "MusiqueDialogue": "Bedtime"
                  }, {
                  "idDialogue": "5",
-                 "libelleDialogue": ["Félicitation nourrisson !", "Cette maman était effrayante... ", "J’ai désormais besoin d’en apprendre plus sur toi et sur ta connaissance. ", "Quelques questions générales sur l’informatique puis des questions de logiques vont suivre. ", "Je terminerai en douceur avec mes 'Questions Bonus'. ", ""],
+                 "libelleDialogue": ["Félicitation nourrisson !", "Cette maman était effrayante... ", "J’ai désormais besoin d’en apprendre plus sur toi et sur ta connaissance. ", "Quelques questions générales sur l’informatique puis des questions de logique vont suivrent. ", "Je terminerai en douceur avec mes 'Questions Bonus'. ", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "SerieQuestion2"],
                  "BackgroundDialogue": ["Berceau", "png"],
                  "MusiqueDialogue": "Bedtime"
@@ -59,14 +59,14 @@
                  "MusiqueDialogue": "SomeDreamy"
                  }, {
                  "idDialogue": "9",
-                 "libelleDialogue": ["Alors tu t’amuse bien ?", "Tu as un examen à réviser je te rappelle.", "Quelle examen ?", "C'est moi qui pose les questions ici. ", "Contrôle surprise !", ""],
+                 "libelleDialogue": ["Alors tu t’amuse bien ?", "Tu as un examen à réviser je te rappelle.", "\" Quelle examen ? \"", "C'est moi qui pose les questions ici. ", "Contrôle surprise !", ""],
                  "styleLabel": ["nil", "nil", "it"],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "SerieQuestion3"],
                  "BackgroundDialogue": ["ChambreAdo", "gif"],
                  "MusiqueDialogue": "SomeDreamy"
                  }, {
                  "idDialogue": "10",
-                 "libelleDialogue": ["On est jamais trop bon, tu as encore besoins de révisions.", "\" Mais que voulez vous que je révise bon sang ! \"", "Quelle question ", "Le bac bien sur ! ", "\" Le bac ? Vous plaisantez ? \"", "Tu comprendra à la fin si tu en a les compétences.", "Par chance, j'ai ce qu'il te faut pour t'entraîner. ", "On est reparti !", ""],
+                 "libelleDialogue": ["On est jamais trop bon, tu as encore besoins de révisions.", "\" Mais que voulez vous que je révise bon sang ?! \"", "Quelle question ", "Le bac bien sur ! ", "\" Le bac ? Vous plaisantez ? \"", "Tu comprendra à la fin si tu en a les compétences.", "Par chance, j'ai ce qu'il te faut pour t'entraîner. ", "On est reparti !", ""],
                  "styleLabel": ["nil", "it", "nil", "nil", "it"],
                  "eventDialogue": ["nil", "nil", "NomExcla", "nil", "nil", "nil", "nil", "nil", "ArcadeBac"],
                  "BackgroundDialogue": ["ChambreAdo", "gif"],
@@ -94,7 +94,7 @@
                  "MusiqueDialogue": "Moonlit"
                  }, {
                  "idDialogue": "14",
-                 "libelleDialogue": ["Vous voila !", "Et bien, et bien, qu’avons nous là !", "Une future recrue qui a passé  les tests d’admission avec succès !", "Je me présente enfin à vous.", "Je suis le directeur de cette école.", "Je reconnais que ma méthode d’admission peut paraître quelque peu originale.", "\" Quelque peu originale ?! Vous avez faillit me tuer dans votre labyrinthe ! \"", "Mais vous vous en êtes merveilleusement bien sorti !", "Voyez-vous, J’ai comme qui dirait quelques pouvoirs hérités d’un lointain peuple", "Ces pouvoirs m’ont permis de vous endormir et de vous faire passer ces épreuves dans votre sommeil.", "Je vais de ce pas analyser vos résultats concernant les questions de psychologie...", "....", "........", "................", "Vous avez aussi répondu juste à ", "Voici pour vos résultats.", "\" Fameux... \"", "Je me trouve satisfait de vos résultat et me sens obligé de vous offrir une place dans notre école, avec votre accord.", "\" Comprenez que tout cela est assez perturbant tout de même... \"", "Ne soyez pas perturbé par les récents événements !", "Voyez y plutôt une preuve de notre investissement dans votre futur.", "Les nouvelles technologies sont importantes vous savez, elle nous permettront d’accomplir de grands projets dans quelques années.", "Mais pour le moment, réjouissez vous et bienvenu à l’IMÉRIR !", "\" Devrais-je me rejouir ?... \"", ""],
+                 "libelleDialogue": ["Vous voila !", "Et bien, et bien, qu’avons nous là !", "Une future recrue qui a passé  les tests d’admission avec succès !", "Je me présente enfin à vous.", "Je suis le directeur de cette école.", "Je reconnais que ma méthode d’admission peut paraître quelque peu originale.", "\" Quelque peu originale ?! Vous avez faillit me tuer dans votre labyrinthe ! \"", "Mais vous vous en êtes merveilleusement bien sorti !", "Voyez-vous, J’ai comme qui dirait quelques pouvoirs hérités d’un lointain peuple.", "Ces pouvoirs m’ont permis de vous endormir et de vous faire passer ces épreuves dans votre sommeil.", "Je vais de ce pas analyser vos résultats concernant les questions de psychologie...", "....", "........", "................", "Vous avez aussi répondu juste à ", "Voici pour vos résultats.", "\" Fameux... \"", "Je me trouve satisfait de vos résultat et me sens obligé de vous offrir une place dans notre école, avec votre accord.", "\" Comprenez que tout cela est assez perturbant tout de même... \"", "Ne soyez pas perturbé par les récents événements !", "Voyez y plutôt une preuve de notre investissement dans votre futur.", "Les nouvelles technologies sont importantes vous savez, elle nous permettront d’accomplir de grands projets dans quelques années.", "Mais pour le moment, réjouissez vous et bienvenu à l’IMÉRIR !", "\" Devrais-je me rejouir ?... \"", ""],
                  "styleLabel": ["nil", "nil", "nil", "nil", "nil", "nil", "it", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "it", "nil", "it", "nil", "nil", "nil", "nil", "it", "it"],
                  "eventDialogue": ["nil", "nil", "nil", "ApparitionDirecteur", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "GestionPsycho", "CorrectAnswer", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "nil", "DialoguesFinaux"],
                  "BackgroundDialogue": ["BackgroundDirecteur", "gif"],
@@ -134,7 +134,7 @@
                     
                     "profil_innovateur": ["Un génie !", "Innovation, engagement, future, volonté, tel est votre vocabulaire.", "Ne soyez pas effrayé de l'avenir, sachez prendre du recul et analysé calmement chaque situation.", "Croyez en vos rêves, sans vous mettre une pression démesurée.", "Gardez les pieds sur terre, en vous investissants dans vos passions.", "Et votre bonheur futur ne sera qu'exponentiel avec le temps.", ""],
                     
-                    "profil_evil": ["Je constate aussi un certain profil démoniaque !", "Vous n'hésiteriez apparemment pas à vendre votre propre enfant pour acheter la dernière carte graphique !", "Es-ce une bonne ou une mauvaise chose au final ?", "Je plaisante bien sur, vous ne feriez pas une chose pareille non ?", "Peu importe, avec une mentalité pareil, tu finirez surement majeur de promo puis Président de la République !", "Au passage, ne pensez pas à mettre le chaos dans l'école ou vous aurez affaire à moi.", ""],
+                    "profil_evil": ["Je constate aussi un certain profil démoniaque !", "Vous n'hésiteriez apparemment pas à vendre votre propre enfant pour acheter la dernière carte graphique !", "Es-ce une bonne ou une mauvaise chose au final ?", "Je plaisante bien sur, vous ne feriez pas une chose pareille non ?", "Peu importe, avec une mentalité pareil, vous finirez surement majeur de promo puis Président de la République.", "Au passage, ne pensez pas à mettre le chaos dans l'école ou vous aurez affaire à moi.", ""],
                     
                     "profil_good": ["Je constate aussi une bonne personne en vous !", "Entre le bien et le mal, votre choix serait rapide.", "La société vous a inculquée de bonnes valeurs et vous les avez gardées.", "Nul doute que votre entourage doit vous apprécier.", "Une vie remplie de petites attentions et de plaisirs sains.", "J'espère quand même que vos petits-enfants penseront à vous appeler plus tard, ce qui vous emplirez de joie.", ""],
                     

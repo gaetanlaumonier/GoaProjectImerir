@@ -28,7 +28,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var mazeObj:Maze!
     var maze: [[Maze.Cell]]!
     
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
+    var oneProfil = ProfilJoueur()
 
     var pageViewController:UIPageViewController!
     var pageViewLabels:[String]!
@@ -60,8 +60,12 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var minimapCells = [(x:Int,y:Int,layer:CALayer)]()
     var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var bruitageMusicPlayerMonstre = AVAudioPlayer()
     var firstGameTimer = Timer()
     var elapsedTime = Int()
+    var killMonster = AVAudioPlayer()
+    var nbrBatKilled : Int = 0
+    var nbrBatAppear : Int = 0
     
     enum Direction : Int {
         case North, East, South, West
@@ -158,7 +162,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     func initGame() {
         
-        //Start with alpha 0 so the initial background image is not displayed while game logic is loading
+        //Start with alpha 0 so the initial background image is not displayed while game is being initialized
         view.alpha = 0
         
         if self.oneProfil.classeJoueur == "Geek" {
@@ -181,10 +185,11 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         //Add gesture recognizers to arrows
         initArrows()
+        
     }
     
     func createMaze() {
-        mazeObj = Maze(width: 21, height: 21)
+        mazeObj = Maze(width: 11, height: 11)
         maze = mazeObj.data
         
         if isFirstMaze {
@@ -268,7 +273,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         guard let arrowView = sender.view else {
             return
         }
-        
+        self.bruitageMusicPlayer = self.GestionBruitage(filename: "Clik", volume: 0.9)
         UIView.animate(withDuration: 0.3, animations: { _ in
             arrowView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         })
@@ -301,7 +306,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             if self.oneProfil.lifePoint < healthLimit {
                 gainHealth(potion.health)
             }
-            
+            bruitageMusicPlayer = GestionBruitage(filename: "Potion", volume: 0.6)
             currentRoom.potion = nil
             UIView.animate(withDuration: 0.5, animations: { _ in
                 self.potionView.alpha = 0
@@ -323,6 +328,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func manageSpikes() {
         if !spikes.isHidden {
             if let currentSeq = findCurrentSpikeSeq() {
+                if currentSeq.dmg != 0 {
+                bruitageMusicPlayer = GestionBruitage(filename: "Piege", volume: 0.5)
+                }
                 looseHealth(currentSeq.dmg)
             }
         }
@@ -363,7 +371,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
         
         if self.oneProfil.classeJoueur == "Noob" {
-            if drand48() < 0.3 {
+            if drand48() < 0.2 {
                 gainHealth(amount)
                 return
             }
@@ -373,54 +381,62 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         anim.byValue = CGFloat(0.2) * CGFloat(amount)
         anim.autoreverses = true
         anim.duration = 0.5
+        changeColorLabelBad(label: headerView.lifePointLabel)
         self.oneProfil.lifePoint -= amount
         damageOverlay.layer.add(anim, forKey: nil)
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
     }
     
     func gainHealth(_ amount: Int) {
+        changeColorLabelGood(label: headerView.lifePointLabel)
         self.oneProfil.lifePoint += amount
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
     }
     
     func endGame() {
         
-        let myPresentingViewController = self.presentingViewController as! DialogueViewController
+        
+        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
         if isFirstMaze == true {
-            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
-            {
+            let myPresentingViewController = self.presentingViewController as! DialogueViewController
                 firstGameTimer.invalidate()
                 self.oneProfil.sceneActuelle += 1
                 vc.oneProfil = self.oneProfil
                 self.saveMyData()
-                UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
+                UIView.animate(withDuration: 7, animations: {
                     myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.view.alpha = 0
+                    self.bruitageMusicPlayer.setVolume(0, fadeDuration: 1)
+                    self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                 } , completion: { success in
+                    self.bruitageMusicPlayerMonstre.stop()
+                    self.bruitageMusicPlayer.stop()
                     myPresentingViewController.backgroundMusicPlayer.stop()
                     self.present(vc, animated: false, completion: nil)
                 })
-            }else {
-                print("Could not instantiate view controller with identifier of type DialogueViewController")
-                return
-            }
         } else {
-            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
-            {
                 self.oneProfil.sceneActuelle += 1
-                vc.oneProfil = self.oneProfil
+                self.oneProfil.statsLabyrinthe["timeSpent"] = self.elapsedTime
+            if nbrBatAppear < 1 {
+                self.oneProfil.statsLabyrinthe["batKilled"] = 100
+            } else {
+            self.oneProfil.statsLabyrinthe["batKilled"] = 100 * self.nbrBatKilled / self.nbrBatAppear
+            }
+            vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
                     self.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
+                    self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                     self.view.alpha = 0
                 }, completion: { success in
+                    self.bruitageMusicPlayerMonstre.stop()
                     self.backgroundMusicPlayer.stop()
                     self.present(vc, animated: false, completion: nil)
                 })
-            }else {
+            }
+        }else {
                 print("Could not instantiate view controller with identifier of type DialogueViewController")
                 return
-            }
         }
     }
     
@@ -460,6 +476,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }
         
         guard !isExitRoom() else {
+            bruitageMusicPlayer = GestionBruitage(filename: "Sortie", volume: 1)
             endGame()
             return
         }
@@ -610,7 +627,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         let batView = UIImageView(frame: CGRect(origin: CGPoint(x: posX, y: view.center.y) , size: CGSize(width: 1, height: 1)))
         
         self.view.insertSubview(batView, belowSubview: damageOverlay)
-
+        nbrBatAppear += 1
         currentBat = batView
         batView.loadGif(name: bat.name, completion: { _ in
             batView.transform = CGAffineTransform(rotationAngle: -0.2)
@@ -624,11 +641,16 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         let speedFactor:Double
         
         if self.oneProfil.classeJoueur == "Fonctionnaire" {
-            speedFactor = 0.6
+            speedFactor = 0.75
         } else {
             speedFactor = 1
         }
         
+        if bat.speed > 2 {
+            bruitageMusicPlayerMonstre = GestionBruitageLoop(filename: "MonstresHigh", volume: 0.5)
+        } else {
+            bruitageMusicPlayerMonstre = GestionBruitageLoop(filename: "MonstreLow", volume: 0.5)
+        }
         UIView.animate(withDuration: 3/bat.speed/speedFactor, delay: 0, options: .curveEaseIn ,animations: { _ in
             let size = (drand48()/2 + 1) * Double(self.view.bounds.midX)
             let randX = Double(arc4random_uniform(UInt32(Double(self.view.bounds.width) + size))) - size
@@ -637,6 +659,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }, completion: { (finished) in
             
             if finished {
+                self.bruitageMusicPlayerMonstre.stop()
                 self.looseHealth(Int(arc4random_uniform(4)) + 1)
                 self.killBat()
             }
@@ -649,11 +672,11 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         guard currentBat != nil else {
             return
         }
-        
         if let pres = currentBat.layer.presentation() {
             let tapLocation = sender.location(in: currentBat.superview)
             
             if pres.frame.contains(tapLocation) {
+                nbrBatKilled += 1
                 self.killBat()
             }
         }
@@ -662,12 +685,13 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func killBat() {
         
         if let bat = currentBat {
-            
+            bruitageMusicPlayerMonstre.stop()
+            killMonster = GestionBruitage(filename: "MonstreTaped", volume: 0.8)
             freezeBat()
             currentBat = nil
             self.currentRoom.bats.remove(at: 0)
             self.drawNextBat()
-            
+
             UIView.animate(withDuration: 1, animations: { _ in
                 bat.alpha = 0
             }, completion: { _ in
@@ -707,7 +731,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         let randomRotate = arc4random_uniform(4)
         
-        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * Double(randomRotate)))
+        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(.pi * Double(randomRotate)))
     }
     
     func getMinimapCell(_ x: Int,_ y: Int) -> CALayer {
@@ -747,22 +771,15 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         let cellLayer = getMinimapCell(player.y, player.x)
         cellLayer.backgroundColor = UIColor.red.cgColor
     }
-
+    
     func saveMyData(){
         var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         maData.appendPathComponent("saveGame")
         NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
     }
     
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func hideModal() {
-        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 0.7)
         for subview in self.view.subviews {
             guard subview is UIVisualEffectView else {
                 continue
@@ -777,17 +794,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             }, completion: { finished in
                 subview.removeFromSuperview()
                 self.pageViewController.view.removeFromSuperview()
-                if self.isFirstMaze {
+                
                      self.firstGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+                        
                         self.elapsedTime += 1
-                        print("lala")
-                        if self.elapsedTime >= 30 {
-                    self.endGame()
+                        if self.isFirstMaze {
+                            if self.elapsedTime >= 40 {
+                                self.endGame()
+                            }
                         }
-                     })
-                    }
+                    })
                 })
-        }
+            }
     }
     
     func viewControllerAtIndex(index: Int) -> ContentLabyrintheViewController {

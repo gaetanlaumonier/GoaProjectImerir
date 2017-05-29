@@ -1,21 +1,16 @@
-//
-//  ElementDataView.swift
-//  ProjetImerirApp
-//
-//  Created by Student on 11/02/2017.
-//  Copyright © 2017 Student. All rights reserved.
-//
+
 import AVFoundation
 import UIKit
 
+//Classe du header dans les jeux et le quiz
 @IBDesignable class HeaderView: UIView {
 
-    
+    //Temps, s'il y en a
     @IBOutlet weak var timerLabel: DesignableLabel!
-
+    
     @IBOutlet weak var settingImage: DesignableButton!
     
-    
+    //Roue crantée des paramètres
     @IBAction func settingButton(_ sender: UIButton) {
         
         
@@ -30,15 +25,7 @@ import UIKit
         }
     }
     
-//    @IBAction func settingPush(_ sender: UIButton) {
-//        //settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .selected)
-//        
-//       //settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .focused)
-//
-//        settingImage.setImage(#imageLiteral(resourceName: "RoueCranteePush"), for: .highlighted)
-//     
-//    }
-    
+    //Label des points de vie
     @IBOutlet weak var lifePointLabel: DesignableLabel!
 
     
@@ -83,5 +70,9 @@ import UIKit
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return settingImage.point(inside: convert(point, to: settingImage), with: event)
     }
 }

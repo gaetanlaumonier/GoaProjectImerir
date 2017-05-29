@@ -6,19 +6,8 @@ import AVFoundation
 //Permet d'importer des gifs ou de modifier la taille de police des éléments
 //selon la taille de l'écran utilisé
 
-extension UIImageView {
-    
-    public func loadGif(name: String, completion: (() -> Swift.Void)? = nil) {
-        DispatchQueue.global().async {
-            let image = UIImage.gif(name: name)
-            DispatchQueue.main.async {
-                self.image = image
-                completion?()
-            }
-        }
-    }
-}
 
+//Change dynamiquement la font size des labels
 extension UILabel {
     func setupLabelDynamicSize(fontSize:CGFloat) {
         let screenSize = UIScreen.main.bounds.size
@@ -56,6 +45,7 @@ extension UILabel {
     }
 }
 
+//Met en majuscule la première lettre du nom du joueur en début de partie
 extension String {
     func capitalizingFirstLetter() -> String {
         let first = String(characters.prefix(1)).capitalized
@@ -68,6 +58,7 @@ extension String {
     }
 }
 
+//Permet d'accéder au futura italique
 extension UIFont {
 func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
     let descriptor = self.fontDescriptor
@@ -76,6 +67,7 @@ func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
     }
 }
 
+//Change dynamiquement la font size des boutons
 extension UIButton {
     func setupButtonDynamicSize(fontSize:CGFloat) {
         let screenSize = UIScreen.main.bounds.size
@@ -104,7 +96,27 @@ extension UIButton {
     }
 }
 
+//Permet d'incorporer des gifs animés dans le jeu
+extension UIImageView {
+    
+    public func loadGif(name: String, completion: (() -> Swift.Void)? = nil) {
+        DispatchQueue.global().async {
+            let image = UIImage.gif(name: name)
+            DispatchQueue.main.async {
+                self.image = image
+                completion?()
+            }
+        }
+    }
+}
+
 extension UIImage {
+    
+    private struct gifProperties {
+        static var duration = 0
+    }
+    
+    static var lastLoadedGIFDuration: Int { return gifProperties.duration }
     
     public class func gif(data: Data) -> UIImage? {
         // Create source from data
@@ -172,10 +184,6 @@ extension UIImage {
         }
         
         delay = delayObject as? Double ?? 0
-        
-        if delay < 0.1 {
-            delay = 0.1 // Make sure they're not too fast
-        }
         
         return delay
     }
@@ -254,7 +262,8 @@ extension UIImage {
             for val: Int in delays {
                 sum += val
             }
-            
+
+            self.gifProperties.duration = sum - delays.last!
             return sum
         }()
         
@@ -291,6 +300,7 @@ extension Collection where Indices.Iterator.Element == Index {
     }
 }
 
+//Permet d'accéder n'importe quand à la vue présente (utile pour le gameOver)
 extension UIApplication
 {
     class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?
@@ -320,19 +330,46 @@ extension UIApplication
     
 }
 
+//Permet à une vue d'apparaître en FadeIn
 extension UIViewController{
-    
-    func FonduApparition(myView : UIViewController, myDelai : Int){
+
+    func FonduApparition(myView : UIViewController, myDelai : Float){
     UIView.animate(withDuration: TimeInterval(myDelai), animations: {
     myView.view.alpha = 1
     })
         
+
     }
     
+    //Change dynamiquement la couleur du lifePointLabel en vert en cas de gain de PV
+    func changeColorLabelGood(label: UILabel){
+        UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            label.textColor = UIColor(red: 0, green: 1, blue: 17/255, alpha: 0.9)
+        }, completion: { _ in
+            UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                label.textColor = UIColor(red: 1, green: 17/255, blue: 0, alpha: 1)
+            })
+        })
+    }
+    
+    //Change dynamiquement la couleur du lifePointLabel en orange en cas de perte de PV
+    func changeColorLabelBad(label :UILabel){
+        
+        UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            label.textColor = UIColor(red: 1, green: 170/255, blue: 0, alpha: 0.9)
+        }, completion: { _ in
+            UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                label.textColor = UIColor(red: 1, green: 17/255, blue: 0, alpha: 1)
+            })
+        })
+    }
+    
+    //Cache le keyboard dans le jeu en cas de toucher externe au keyboard
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    //Lit une musique en boucle
     func GestionMusic(filename: String) -> AVAudioPlayer{
         var backgroundMusicPlayer = AVAudioPlayer()
         if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
@@ -355,6 +392,7 @@ extension UIViewController{
         return backgroundMusicPlayer
     }
     
+    //Lit un bruitage une fois
     func GestionBruitage(filename: String, volume : Float) -> AVAudioPlayer{
         var bruitageMusicPlayer = AVAudioPlayer()
         if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
@@ -368,6 +406,26 @@ extension UIViewController{
             print("filename is wrong")
         }
         bruitageMusicPlayer.numberOfLoops = 0
+        bruitageMusicPlayer.volume = volume
+        bruitageMusicPlayer.prepareToPlay()
+        bruitageMusicPlayer.play()
+     
+        return bruitageMusicPlayer
+    }
+    
+    //Lit un bruitage en boucle (ex : monstre dans le labyrinthe)
+    func GestionBruitageLoop(filename: String, volume : Float) -> AVAudioPlayer {
+        var bruitageMusicPlayer = AVAudioPlayer()
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp3") {
+            do {
+                bruitageMusicPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print("Content can not be played")
+            }
+        }else{
+            print("filename is wrong")
+        }
+        bruitageMusicPlayer.numberOfLoops = -1
         bruitageMusicPlayer.volume = volume
         bruitageMusicPlayer.prepareToPlay()
         bruitageMusicPlayer.play()

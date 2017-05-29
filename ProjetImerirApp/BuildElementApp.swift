@@ -1,54 +1,47 @@
 
-
-//avril: 
-//menu pause
-//integrer rangement
-//musique
-//bug nouvelles parti
-//test dialogue style
-
-//mai
-//save
-//bruitage
-//wiki
-//integrer labyrinthe 1
-//integrer labyrinthe 2
-//integrer console
-//integrer bac
-//background integration
-//retaper note de cadrage, cahier des charges, proposition technico commerciale
-//icone de l'appli
-
 //a integrer a chaque jeux : header, musique, background, traitement de la fin, bruitage, pause
-
-//nato
-//3 jeu
 //Traitement de la fin des jeux
-//rangement -> bug object z index armoire, bug objet header view, timer general
-//first background laby
 
-//optionnel à voir vers la fin
-//uml, reflexion tests
-//mode arcade
-
-
-//a demander a grabo :
-//dismiss, UML, Tests, crash de l'appli
+//mercredi question, commit
+//jeudi wiki, fin des jeux, test
+//vendredi test, commentaires
+//samedi revision oral et redactionnel
 
 import UIKit
 
+//Structure générale des questions du quiz
 struct Question{
+    
     var IdQuestion : Int!
+    
+    //énoncé
     var Question : String!
+    
+    //réponse possible
     var Choice : [String]!
+    
+    //réponse juste
     var Answer : String?
+    
+    //thème de la question
     var Topic : String!
+    
+    //A t'elle était déja posé ?
     var AlreadyPick : Bool!
+    
+    //Type de la question (Button, textfield ou psychologie)
     var TypeOfQuestion : String!
+    
+    //Message de retour
     var FeedBack: String!
+    var FeedBackPsycho: [String]!
+    
+    //PV Perdu si mauvaise réponse
     var HPLost : Int!
     var ProfilConsequence : [String]!
     var HPLostArray : [Int]!
+    
+    //timer de la question
     var Timer : Float!
 }
 
@@ -59,14 +52,30 @@ struct AnswersReactions{
     var gainPVReponse : [String]!
     var pertePVReponse : [String]!
     var chanceDuNoob : [String]!
+    var evilAnswer : [String]!
+    var droleAnswer : [String]!
+    var argentAnswer : [String]!
+    var sociableAnswer : [String]!
+    var romantiqueAnswer : [String]!
+    var timideAnswer : [String]!
+    var soumisAnswer : [String]!
+    var creatifAnswer : [String]!
+    var crieurAnswer : [String]!
+    
 }
 
 struct ClasseJoueur {
     
     var idClasse : String!
     var nomClasse : String!
+    
+    //Libellé dans le choix de classe
     var libelleClasse : String!
+    
+    //Libellé du pouvoir de la classe
     var pouvoirClasse : String!
+    
+    //Avantage de la classe dans les jeux
     var arcadeCookie : String!
     var arcadeRangement : String!
     var arcadeConsole : String!
@@ -78,13 +87,24 @@ struct ClasseJoueur {
 struct Dialogue {
     
     var idDialogue : Int
+    
+    //Texte du dialogue
     var libelleDialogue : [String]
+    
+    //Le héros parle ou non ?
     var styleLabel : [String]
+    
+    //gestion des évenements
     var eventDialogue : [String]
+    
+    //background de la scène
     var backgroundDialogue : [String]
+    
+    //musique de la scène
     var musiqueDialogue : String
 }
 
+//Structure des dialogues du bilan psychologique de fin de partie
 struct PsychoDialogue {
     
     var profilCrieur : [String]
@@ -97,10 +117,15 @@ struct PsychoDialogue {
 
 }
 
+//Structure des crédits
 struct Credit {
     
     var idLabel : Int
+    
+    //Libellé du crédit
     var textLabel : String
+    
+    //Gère les titres, sous titres et texte
     var typeLabel : String
     
 }
@@ -123,6 +148,7 @@ func buildQuestions() -> [Question]{
                                           AlreadyPick: false,
                                           TypeOfQuestion: dict["TypeOfQuestion"].stringValue,
                                           FeedBack: dict["FeedBack"].stringValue,
+                                          FeedBackPsycho : dict["FeedBackPsycho"].arrayValue.map {$0.string!},
                                           HPLost: dict["HPLost"].intValue,
                                           ProfilConsequence : dict["ProfilConsequence"].arrayValue.map {$0.string!},
                                           HPLostArray : dict["HPLostArray"].arrayValue.map {$0.int!},
@@ -153,7 +179,18 @@ func buildAnswersReactions() -> [AnswersReactions]{
                                                   mauvaiseReponse: dict["mauvaiseReponse"].arrayValue.map { $0.string!},
                                                   gainPVReponse: dict["gainPVReponse"].arrayValue.map { $0.string!},
                                                   pertePVReponse: dict["pertePVReponse"].arrayValue.map { $0.string!},
-                                                  chanceDuNoob: dict["chanceDuNoob"].arrayValue.map { $0.string!})
+                                                  chanceDuNoob: dict["chanceDuNoob"].arrayValue.map { $0.string!},
+                                                  evilAnswer: dict["evilAnswer"].arrayValue.map { $0.string!},
+                                                  droleAnswer: dict["droleAnswer"].arrayValue.map { $0.string!},
+                                                  argentAnswer: dict["argentAnswer"].arrayValue.map { $0.string!},
+                                                  sociableAnswer: dict["sociableAnswer"].arrayValue.map { $0.string!},
+                                                  romantiqueAnswer: dict["romantiqueAnswer"].arrayValue.map { $0.string!},
+                                                  timideAnswer: dict["timideAnswer"].arrayValue.map { $0.string!},
+                                                  soumisAnswer: dict["soumisAnswer"].arrayValue.map { $0.string!},
+                                                  creatifAnswer: dict["creatifAnswer"].arrayValue.map { $0.string!},
+                                                  crieurAnswer: dict["crieurAnswer"].arrayValue.map { $0.string!}
+                )
+                
                 answersReactions.append(thisObject)
             }
         } catch {

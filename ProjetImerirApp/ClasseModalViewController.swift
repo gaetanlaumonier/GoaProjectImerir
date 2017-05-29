@@ -17,19 +17,29 @@ class ClasseModalViewController: UIViewController {
     @IBOutlet weak var nonButton: DesignableButton!
     
     var classePlayer : String = ""
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "", sceneActuelle : 0, bonneReponseQuiz : 0, questionAlreadyPick:[])
+    var oneProfil = ProfilJoueur()
     var bruitageMusicPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.alpha = 0
+        self.classeView.alpha = 0
         confirmationLabel.text = "Es tu sur d'être \(classePlayer) ?"
-     
+        self.ouiButton.alpha = 0
+        self.nonButton.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 1, animations: {
-            self.view.alpha = 1
+
+        self.ouiButton.layer.cornerRadius = self.view.bounds.width / 20
+        self.nonButton.layer.cornerRadius = self.view.bounds.width / 20
+        UIView.animate(withDuration: 0.5, animations: {
+            self.classeView.alpha = 1
+        }, completion : { _ in
+           UIView.animate(withDuration: 0.4, animations: {
+            self.ouiButton.alpha = 1
+            self.nonButton.alpha = 1
+           })
+        
         })
     }
     
@@ -51,32 +61,15 @@ class ClasseModalViewController: UIViewController {
                     myDialogueViewController.backgroundMusicPlayer.stop()
                     self.oneProfil.classeJoueur = self.classePlayer
                     if self.classePlayer == "Geek" {
-                        self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.lifePoint/2)
+                        self.oneProfil.lifePoint = self.oneProfil.lifePoint + 40
                     }
                     self.oneProfil.sceneActuelle += 1
                     self.saveMyData()
                     
                     vc.oneProfil = self.oneProfil
-                    //vc.view.alpha = 0
-                    //  print(self)
-                    //                print("presentingViewController",self.presentingViewController)
-                    //                print("presentationController",self.presentationController)
-                    //                print("presentedViewController",self.presentedViewController)
-                    self.present(vc, animated: false)
-                    //self.dismiss(animated: false, completion:{
-                        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        //show window
-                        //appDelegate.window?.rootViewController = vc
-                        //                    print("presentingViewController",self.presentingViewController?.presentingViewController)
-                        //                    print("presentingViewController",self.presentationController?.presentingViewController)
-                        //                    print("presentedViewController",self.presentationController?.presentedViewController)
-                        //                    print("presentationController",self.presentedViewController?.presentationController)
-                        //                    print("presentedViewController",self.presentedViewController?.presentedViewController)
-                        //                    print("presentingViewController",self.presentedViewController?.presentingViewController)
-                        //
-                        //                    print("self",self)
-                        
-                        //self.presentingViewController?.dismiss(animated: false, completion: nil)
+             
+                    self.view.window?.rootViewController = vc
+               
                 })
             })
            
