@@ -29,7 +29,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDurationTotal:TimeInterval = 60
+    var gameDurationTotal:TimeInterval = 40
     var gameTimer : Int = 0
     var noob = false
     var geek = false
@@ -45,10 +45,14 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var bruitageMusicPlayer = AVAudioPlayer()
     var cookieTaped : Int = 0
     
+    var embedViewController:EmbedViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        embedViewController = getEmbedViewController()
+        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
         backgroundMusicPlayer = GestionMusic(filename: "MadScientist")
         mom.loadGif(name: "Maman")
         
@@ -263,7 +267,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
                 self.view.alpha = 0
             } , completion: { success in
                 self.backgroundMusicPlayer.stop()
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         } else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")

@@ -1,36 +1,38 @@
 //
-//  ProjetImerirAppTests.swift
-//  ProjetImerirAppTests
+//  ProjetImerirAppTests.swift
+//  ProjetImerirAppTests
 //
-//  Created by Student on 06/02/2017.
-//  Copyright © 2017 Student. All rights reserved.
+//  Created by Student on 06/02/2017.
+//  Copyright © 2017 Student. All rights reserved.
 //
 
+import UIKit
 import XCTest
 @testable import ProjetImerirApp
 
 class ProjetImerirAppTests: XCTestCase {
     
+    var vc = NameModalViewController()
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testNameCheck() {
+        let badNames = ["","l","le test unitaire a 12","Ēric"]
+        let goodNames = ["Jean-Yves","Gaetan","Mon prénom"]
+        
+        for name in badNames {
+            let result = vc.getErrorMessage(for: name)
+            // Error was returned
+            XCTAssertNotNil(result, "Le nom \(name) ne devrait pas être valide.")
+        }
+        
+        for name in goodNames {
+            let result = vc.getErrorMessage(for: name)
+            // Aucune erreur n'est retournée
+            XCTAssertNil(result, "Le nom \(name) devrait être invalide.")
         }
     }
-    
 }

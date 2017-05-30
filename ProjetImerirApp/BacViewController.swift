@@ -58,9 +58,13 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     var goodSheets = 0
     var totalSheets = 0
     
+    var embedViewController:EmbedViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        embedViewController = getEmbedViewController()
+        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
         backgroundMusicPlayer = GestionMusic(filename: "SurrealChase")
         setSubjectsToStudy()
         
@@ -97,6 +101,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     
     //// GAME INITIALIZATION ////
     
+    // Init random subjects to study
     func setSubjectsToStudy() {
         let toPop = Int(matieresList.count/2)
         var toStudy = matieresList
@@ -108,6 +113,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         self.toStudy = toStudy
     }
     
+    // Init profil
     func initProfil() {
         AllClasse = buildClasseJoueur()
         switch self.oneProfil.classeJoueur{
@@ -130,6 +136,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // Init page view
     func initPageView() {
         
         pageViewLabels = ["Voici la liste des matières que tu devras réviser : \(toStudy.joined(separator: ", ")).",
@@ -194,13 +201,14 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         pageViewController.didMove(toParentViewController: self)
     }
 
-    
+    // Init header view
     func initHeaderView() {
         headerView.timerLabel.textColor = .white
         headerView.timerLabel.text = "\(Int(gameDuration)) s"
         headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
     }
     
+    // Modify variables depending on player's class
     func initClasses() {
         switch oneProfil.classeJoueur {
             case "Geek":
@@ -220,6 +228,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // Add white shadow to a view (aka. coffee, window, bowl)
     func addShadow(on view: UIView) {
         view.layer.shadowColor = UIColor.white.cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -227,6 +236,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         view.clipsToBounds = false
     }
 
+    // Add shadows to side swipe indicators
     func initSwipeIndicatorsShadows() {
         
         let binPath = UIBezierPath(rect: CGRect(x: -paperBin.bounds.width - paperBin.frame.origin.x, y: 0, width: paperBin.bounds.width, height: paperBin.bounds.height))
@@ -252,6 +262,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         checkmark.layer.addSublayer(checkmarkLayer)
     }
     
+    // Add progress bars
     func createProgressViews() {
         let fatigueBar = UIProgressView(frame: CGRect(x: 100, y: 100, width: view.bounds.width/2, height: 10))
         fatigueBar.progress = 1
@@ -265,7 +276,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         fatigueBar.layer.borderWidth = 0.3
         
         let scale = CGAffineTransform(scaleX: 1, y: 10)
-        let rotate = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+        let rotate = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         fatigueBar.transform = scale.concatenating(rotate)
         
         self.fatigueBar = fatigueBar
@@ -311,6 +322,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     
     //// GLOBAL FUNCTIONS AND TIMERS ////
     
+    // Start global timers which could be paused
     func startGameTimers() {
         
         timers["game"] = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
@@ -363,26 +375,31 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // Loose health
     func looseHealth(_ amount: Int) {
         oneProfil.lifePoint -= amount
         headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
     }
     
+    // Gain health
     func gainHealth(_ amount: Int) {
         oneProfil.lifePoint += amount
         headerView.lifePointLabel.text = "\(oneProfil.lifePoint) PV"
     }
     
+    // Pause timers
     func pauseGame() {
         for timer in timers {
             timer.value.invalidate()
         }
     }
     
+    // Resume game
     func resumeGame() {
         startGameTimers()
     }
     
+    // Endgame - move to dialogue
     func endGame() {
         pauseGame()
         
@@ -401,7 +418,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
                 self.view.alpha = 0
             } , completion: { _ in
                 self.backgroundMusicPlayer.stop()
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")
@@ -414,6 +431,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     
     //// GAME LOGIC - IBActions ////
     
+    // Pan gesture manager
     @IBAction func onSwipe(_ sender: UIPanGestureRecognizer) {
         
         guard sender.view != nil else {
@@ -423,11 +441,13 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         let origin =  CGPoint(x: 0, y: 0)
         let translation : CGPoint = sender.translation(in: sender.view)
         
+        // Rotate depending on finger's position
         let txy = CGAffineTransform(translationX: translation.x, y: -abs(translation.x) / 15)
         let rot = CGAffineTransform(rotationAngle: translation.x / 1500)
         let t = rot.concatenating(txy);
         sender.view!.transform = t
         
+        // Show swipe indicators
         if (translation.x > view.bounds.width/4) {
             checkmark.isHidden = false
         } else if (translation.x < -view.bounds.width/4) {
@@ -437,7 +457,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
             paperBin.isHidden = true
         }
 
-        
+        // Manage actions when touch ends
         if sender.state == UIGestureRecognizerState.ended {
             
             if (translation.x > view.bounds.width/4) {
@@ -459,6 +479,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // On window tapped
     @IBAction func onWindowOpened(_ sender: UITapGestureRecognizer) {
         if let view = sender.view! as? UIImageView {
             
@@ -475,6 +496,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // On coffee tapped
     @IBAction func onCoffeeDrunk(_ sender: UITapGestureRecognizer) {
         if let view = sender.view! as? UIImageView {
             
@@ -503,6 +525,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // On bowl tapped
     @IBAction func onCerealEaten(_ sender: UITapGestureRecognizer) {
         if let view = sender.view! as? UIImageView {
             
@@ -523,6 +546,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     
     //// GAME LOGIC - PRIMARY ////
     
+    // Called when sheet is dropped on the right side of the screen
     func swapToRight(_ view: UIView) {
         
         view.tag = 10
@@ -537,6 +561,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         onSheetStudied(view)
     }
     
+    // Called when sheet is dropped on the left side of the screen
     func swapToLeft(_ view: UIView) {
         
         view.tag = 10
@@ -551,6 +576,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         onSheetThrown(view)
     }
     
+    // When sheet is dropped on the right
     func onSheetStudied(_ sheet: UIView) {
         let sheet = sheet as! Fiche
         onSheetSwiped(sheet)
@@ -564,6 +590,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // When sheet is dropped on the left
     func onSheetThrown(_ sheet: UIView) {
         let sheet = sheet as! Fiche
         onSheetSwiped(sheet)
@@ -576,6 +603,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    // On sheet swiped (left or right)
     func onSheetSwiped(_ sheet: Fiche) {
         currentSheets.remove(at: currentSheets.index(of: sheet)!)
         
@@ -587,6 +615,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         createNewSheet()
     }
     
+    // Create new sheet view
     func createNewSheet() {
         let sheet = Fiche(frame: ficheView.frame, matiere: getRandomMatiere())
         

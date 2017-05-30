@@ -16,11 +16,11 @@ class InitViewController: UIViewController {
     @IBOutlet weak var DataLoadingButton: DesignableButton!
     @IBOutlet weak var MenuBackgroundView: UIImageView!
     @IBOutlet weak var statsButton: DesignableButton!
-    
     @IBOutlet weak var launchScreenImageView: UIImageView!
     
     var oneProfil = ProfilJoueur()
-    var backgroundMusicPlayer = AVAudioPlayer()
+    var embedViewController:EmbedViewController!
+    var backgroundMusicPlayer: AVAudioPlayer!
     var myBruitageMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var oneLabel = 0
@@ -29,7 +29,11 @@ class InitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        embedViewController = getEmbedViewController()
+        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
         backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
+        
         MenuBackgroundView.loadGif(name: "LabSortie")
         if firstMenuForRun == true {
         } else {
@@ -68,7 +72,7 @@ class InitViewController: UIViewController {
                 } , completion: { success in
                     self.backgroundMusicPlayer.stop()
                     vc.oneProfil = mySaveData
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                 })
             }else {
                 print("Could not instantiate view controller with identifier of type DialogueViewController")

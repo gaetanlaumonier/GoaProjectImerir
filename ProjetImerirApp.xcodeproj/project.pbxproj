@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F05B9241EDD6AC6002649AE /* EmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */; };
+		3F07DE781EDDBFCD0050130F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F07DE771EDDBFCD0050130F /* GameKit.framework */; };
 		3F25E4C91ECC7FE9009AAEEC /* ArcadeBac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */; };
 		3F25E4CC1ECC813A009AAEEC /* BacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */; };
 		3F25E4D01ECC90D5009AAEEC /* Fiche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */; };
@@ -154,16 +156,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedViewController.swift; sourceTree = "<group>"; };
+		3F07DE771EDDBFCD0050130F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArcadeBac.storyboard; path = ProjetImerirApp/ArcadeBac.storyboard; sourceTree = "<group>"; };
-		3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacViewController.swift; sourceTree = "<group>"; };
+		3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BacViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiche.swift; sourceTree = "<group>"; };
 		3F2844651E488E94001E8ED3 /* ProjetImerirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetImerirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2844791E488E94001E8ED3 /* ProjetImerirAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetImerirAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetImerirAppTests.swift; sourceTree = "<group>"; };
+		3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetImerirAppTests.swift; sourceTree = "<group>"; usesTabs = 0; };
 		3F28447F1E488E94001E8ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArcadeConsole.storyboard; path = ProjetImerirApp/ArcadeConsole.storyboard; sourceTree = "<group>"; };
 		3F659C781EC74C3600E64121 /* AlienMissile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AlienMissile.gif; sourceTree = "<group>"; };
-		3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ConsoleViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F659C871EC789A900E64121 /* Explosion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Explosion.gif; sourceTree = "<group>"; };
 		3F659C891EC7C5AD00E64121 /* SpaceHeal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceHeal.gif; sourceTree = "<group>"; };
 		3F659C8F1EC8C8DB00E64121 /* SpaceBonus.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBonus.gif; sourceTree = "<group>"; };
@@ -196,7 +200,7 @@
 		3FD1AC891EC5AF60008F66CB /* TheDarkness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheDarkness.mp3; sourceTree = "<group>"; };
 		3FD1AC8A1EC5AF60008F66CB /* TheyreClosing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheyreClosing.mp3; sourceTree = "<group>"; };
 		3FD1AC8B1EC5AF60008F66CB /* Mountainside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mountainside.mp3; sourceTree = "<group>"; };
-		3FD1ACA41EC5AF6D008F66CB /* LabyrintheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabyrintheViewController.swift; sourceTree = "<group>"; };
+		3FD1ACA41EC5AF6D008F66CB /* LabyrintheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LabyrintheViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3FD1ACA51EC5AF6D008F66CB /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
 		3FD1ACA61EC5AF6D008F66CB /* MazePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazePlayer.swift; sourceTree = "<group>"; };
 		3FD1ACA71EC5AF6D008F66CB /* Potion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
@@ -204,14 +208,14 @@
 		3FD1ACA91EC5AF6D008F66CB /* StrangeBat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrangeBat.swift; sourceTree = "<group>"; };
 		3FD1ACAA1EC5AF6D008F66CB /* ContentLabyrintheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentLabyrintheViewController.swift; sourceTree = "<group>"; };
 		3FD1ACAC1EC5AF6D008F66CB /* ContentCookieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCookieViewController.swift; sourceTree = "<group>"; };
-		3FD1ACAD1EC5AF6D008F66CB /* CookieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieViewController.swift; sourceTree = "<group>"; };
-		3FD1ACAF1EC5AF6D008F66CB /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		3FD1ACAD1EC5AF6D008F66CB /* CookieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CookieViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3FD1ACAF1EC5AF6D008F66CB /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = InitViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3FD1ACB01EC5AF6D008F66CB /* NameModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameModalViewController.swift; sourceTree = "<group>"; };
-		3FD1ACB11EC5AF6D008F66CB /* DialogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueViewController.swift; sourceTree = "<group>"; };
-		3FD1ACB21EC5AF6D008F66CB /* ChoiceClasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceClasseViewController.swift; sourceTree = "<group>"; };
+		3FD1ACB11EC5AF6D008F66CB /* DialogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DialogueViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3FD1ACB21EC5AF6D008F66CB /* ChoiceClasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChoiceClasseViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3FD1ACB31EC5AF6D008F66CB /* ClasseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseTableViewCell.swift; sourceTree = "<group>"; };
 		3FD1ACB41EC5AF6D008F66CB /* ClasseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClasseModalViewController.swift; sourceTree = "<group>"; };
-		3FD1ACB51EC5AF6D008F66CB /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		3FD1ACB51EC5AF6D008F66CB /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = QuestionViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3FD1ACB61EC5AF6D008F66CB /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		3FD1ACB71EC5AF6D008F66CB /* ParametresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
 		3FD1ACB81EC5AF6D008F66CB /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +238,7 @@
 		3FD1ACD01EC5AF6D008F66CB /* ScoreUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreUp.swift; sourceTree = "<group>"; };
 		3FD1ACD11EC5AF6D008F66CB /* ScoreDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreDown.swift; sourceTree = "<group>"; };
 		3FD1ACD21EC5AF6D008F66CB /* SomeHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeHelp.swift; sourceTree = "<group>"; };
-		3FD1ACD41EC5AF6D008F66CB /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementViewController.swift; sourceTree = "<group>"; };
+		3FD1ACD41EC5AF6D008F66CB /* RangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RangementViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3FD1ACD51EC5AF6D008F66CB /* RangementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangementView.swift; sourceTree = "<group>"; };
 		3FD1ACD61EC5AF6D008F66CB /* Objet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objet.swift; sourceTree = "<group>"; };
 		3FD1ACD71EC5AF6D008F66CB /* ContentRangementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRangementViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F07DE781EDDBFCD0050130F /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +317,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F05B9201EDD5DD4002649AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F07DE771EDDBFCD0050130F /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F25E4CA1ECC810C009AAEEC /* ArcadeBac */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +342,7 @@
 				3FD1AC8D1EC5AF60008F66CB /* Audio */,
 				3F28447C1E488E94001E8ED3 /* ProjetImerirAppTests */,
 				3F2844661E488E94001E8ED3 /* Products */,
+				3F05B9201EDD5DD4002649AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -454,6 +468,7 @@
 				3FD1ACB81EC5AF6D008F66CB /* CreditViewController.swift */,
 				3FF66F1F1ECC7E920042E99B /* StatsViewController.swift */,
 				3FF66F211ECC7EAC0042E99B /* StatsTableViewCell.swift */,
+				3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -652,8 +667,13 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = N44QRNRP98;
+						DevelopmentTeam = 8BNRNG4PCS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					3F2844781E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -792,6 +812,7 @@
 				3FD1AD2A1EC5AF6D008F66CB /* ScoreUp.swift in Sources */,
 				3FD1AD2E1EC5AF6D008F66CB /* RangementView.swift in Sources */,
 				3FD1AD261EC5AF6D008F66CB /* Bonus.swift in Sources */,
+				3F05B9241EDD6AC6002649AE /* EmbedViewController.swift in Sources */,
 				3F8E113E1ED5BD91004EC072 /* RulesPageViewController.swift in Sources */,
 				3FD1AD181EC5AF6D008F66CB /* ParametresViewController.swift in Sources */,
 				3FD1AD2C1EC5AF6D008F66CB /* SomeHelp.swift in Sources */,
@@ -1004,11 +1025,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = N44QRNRP98;
+				DEVELOPMENT_TEAM = 8BNRNG4PCS;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.imerir.banalejournee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1021,11 +1042,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = N44QRNRP98;
+				DEVELOPMENT_TEAM = 8BNRNG4PCS;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = student.ProjetImerirApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.imerir.banalejournee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

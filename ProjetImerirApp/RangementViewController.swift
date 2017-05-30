@@ -31,8 +31,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 60.0
-    var timeLeft = 60.0
+    var gameDuration = 30.0
+    var timeLeft = 30.0
     var slowGameFactor = 1.0
     var originalSize:CGFloat!
     
@@ -50,12 +50,17 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var objInContainer : Int = 0
     var goodObjectInContainer : Int = 0
     
+    var embedViewController:EmbedViewController!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.text = "\(Int(gameDuration)) s"
         AllClasse = buildClasseJoueur()
+        embedViewController = getEmbedViewController()
+        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
         backgroundMusicPlayer = GestionMusic(filename: "Fantasy")
         backgroundMusicPlayer.volume = 0.8
 
@@ -205,7 +210,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
                 vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 self.backgroundMusicPlayer.stop()
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")

@@ -68,6 +68,8 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var nbrBatAppear : Int = 0
     var orientationView:UIView!
     
+    var embedViewController:EmbedViewController!
+    
     enum Direction : Int {
         case North, East, South, West
     }
@@ -211,7 +213,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             maze[maze.count-2][maze.count-3] = Maze.Cell.Wall
             
         } else {
-            backgroundMusicPlayer = GestionMusic(filename: "TheyreClosing")
+            embedViewController = getEmbedViewController()
+        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
+        backgroundMusicPlayer = GestionMusic(filename: "TheyreClosing")
         }
     }
     
@@ -431,13 +435,15 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                 UIView.animate(withDuration: 7, animations: {
                     myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.view.alpha = 0
+                  //  self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.bruitageMusicPlayer.setVolume(0, fadeDuration: 1)
                     self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                 } , completion: { success in
                     self.bruitageMusicPlayerMonstre.stop()
+                 //   self.backgroundMusicPlayer.stop()
                     self.bruitageMusicPlayer.stop()
                     myPresentingViewController.backgroundMusicPlayer.stop()
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                 })
         } else {
                 self.oneProfil.sceneActuelle += 1
@@ -456,7 +462,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                 }, completion: { success in
                     self.bruitageMusicPlayerMonstre.stop()
                     self.backgroundMusicPlayer.stop()
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                 })
             }
         }else {
@@ -780,13 +786,13 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         let randomRotate = arc4random_uniform(4)
         
-        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * Double(randomRotate)))
+        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * Double(randomRotate)))
         
         let cellLayer = getMinimapCell(player.y, player.x)
         orientationView = UIView(frame: cellLayer.frame)
         
         let path = UIBezierPath()
-        path.addArc(withCenter: minimap.layer.convert(cellLayer.position, to: cellLayer), radius: cellLayer.bounds.width/2, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
+        path.addArc(withCenter: minimap.layer.convert(cellLayer.position, to: cellLayer), radius: cellLayer.bounds.width/2, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
         
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.red.cgColor
@@ -852,7 +858,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func rotatePlayerArrow() {
         let cellLayer = getMinimapCell(player.y, player.x)
         orientationView.frame.origin = cellLayer.frame.origin
-        orientationView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2) * CGFloat(player.orientation.rawValue))
+        orientationView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2) * CGFloat(player.orientation.rawValue))
     }
     
     override func didReceiveMemoryWarning() {
@@ -886,7 +892,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                         
                         self.elapsedTime += 1
                         if self.isFirstMaze {
-                            if self.elapsedTime >= 40 {
+                            if self.elapsedTime >= 30 {
                                 self.endGame()
                             }
                         }

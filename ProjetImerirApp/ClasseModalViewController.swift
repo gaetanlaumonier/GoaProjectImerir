@@ -19,9 +19,14 @@ class ClasseModalViewController: UIViewController {
     var classePlayer : String = ""
     var oneProfil = ProfilJoueur()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var embedViewController:EmbedViewController!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        embedViewController = getEmbedViewController()
+        
         self.classeView.alpha = 0
         confirmationLabel.text = "Es tu sur d'être \(classePlayer) ?"
         self.ouiButton.alpha = 0
@@ -44,21 +49,20 @@ class ClasseModalViewController: UIViewController {
     }
     
     @IBAction func goToDialogue(_ sender: Any) {
-        let myPresentingViewController = self.presentingViewController as! ChoiceClasseViewController
-        let myDialogueViewController = self.presentingViewController?.presentingViewController as! DialogueViewController
+        let myPresentingViewController = self.presentingViewController?.childViewControllers.first as! ChoiceClasseViewController
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
         {
             self.bruitageMusicPlayer = self.GestionBruitage(filename: "Clik", volume : 1)
             UIView.animate(withDuration: 1, animations: {
             self.classeView.alpha = 0
+
             }, completion: { _ in
                 UIView.animate(withDuration: 2, animations: {
                     myPresentingViewController.view.alpha = 0
                     self.view.alpha = 0
-                    myDialogueViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
-                    
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 } , completion: { success in
-                    myDialogueViewController.backgroundMusicPlayer.stop()
+                    self.embedViewController.backgroundMusicPlayer.stop()
                     self.oneProfil.classeJoueur = self.classePlayer
                     if self.classePlayer == "Geek" {
                         self.oneProfil.lifePoint = self.oneProfil.lifePoint + 40
@@ -67,8 +71,9 @@ class ClasseModalViewController: UIViewController {
                     self.saveMyData()
                     
                     vc.oneProfil = self.oneProfil
-             
-                    self.view.window?.rootViewController = vc
+                    
+                    self.dismiss(animated: false, completion: nil)
+                    self.embedViewController.showScene(vc)
                
                 })
             })

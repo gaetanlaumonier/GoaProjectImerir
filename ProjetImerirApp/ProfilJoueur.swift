@@ -12,6 +12,42 @@ class ProfilJoueur : NSObject, NSCoding{
                 if let vc = UIStoryboard(name:"GameOver", bundle:nil).instantiateInitialViewController() as? GameOverViewController
                 {
                     let topController = UIApplication.topViewController()
+                   
+                    switch topController! {
+                    case is QuestionViewController:
+                        let presentingViewType = topController as! QuestionViewController
+                        presentingViewType.startTimer.invalidate()
+                        break
+                    case is CookieViewController:
+                        let presentingViewType = topController as! CookieViewController
+                        presentingViewType.myTimer.invalidate()
+                        presentingViewType.gamePause = true
+                        break
+                    case is RangementViewController:
+                        let presentingViewType = topController as! RangementViewController
+                        presentingViewType.endGameTimer.invalidate()
+                        presentingViewType.gamePause = true
+                        break
+                    case is LabyrintheViewController:
+                        let presentingViewType = topController as! LabyrintheViewController
+                        if presentingViewType.isFirstMaze {
+                            presentingViewType.firstGameTimer.invalidate()
+                        }
+                        break
+                    case is ConsoleViewController:
+                        let presentingViewType = topController as! ConsoleViewController
+                        presentingViewType.pauseGame()
+                        break
+                    case is BacViewController:
+                        let presentingViewType = topController as! BacViewController
+                        presentingViewType.pauseGame()
+                        break
+                        
+                    default:
+                        print("No timer")
+                        break
+                    }
+
                     UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
                         topController?.view.alpha = 0
                         

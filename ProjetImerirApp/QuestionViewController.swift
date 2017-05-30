@@ -50,6 +50,8 @@ class QuestionViewController: UIViewController {
     var bruitageMusicPlayer = AVAudioPlayer()
     var readyPopup: UIView!
     
+    var embedViewController:EmbedViewController!
+    
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,7 @@ class QuestionViewController: UIViewController {
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
+        InputAnswer.autocorrectionType = .no
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.textColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
@@ -133,7 +136,7 @@ class QuestionViewController: UIViewController {
                     self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.saveMyData()
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                     
                 })
             }else {
@@ -727,6 +730,9 @@ class QuestionViewController: UIViewController {
     
     //Gère la musique de fond du quiz
     func QuestionMusicGesture(){
+        embedViewController = getEmbedViewController()
+        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
+        
         if self.oneProfil.sceneActuelle >= 1 && self.oneProfil.sceneActuelle <= 5 {
             backgroundMusicPlayer = GestionMusic(filename: "Bog")
         } else {

@@ -16,6 +16,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     var buttonSender : Int = 10
     var oneProfil = ProfilJoueur()
     var bruitageMusicPlayer = AVAudioPlayer()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
