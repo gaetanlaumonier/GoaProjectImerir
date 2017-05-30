@@ -71,9 +71,8 @@ class ParametresViewController: UIViewController {
                  UIView.animate(withDuration: 2.5, animations: {
                     self.view.alpha = 0
                     presentingViewType.view.alpha = 0
-                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
-                    presentingViewType.backgroundMusicPlayer.stop()
                     vc.firstMenuForRun = false
                     self.dismiss(animated: false, completion: nil)
                     self.embedViewController.showScene(vc)
@@ -84,9 +83,8 @@ class ParametresViewController: UIViewController {
                  UIView.animate(withDuration: 2.5, animations: {
                     self.view.alpha = 0
                     presentingViewType.view.alpha = 0
-                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
-                    presentingViewType.backgroundMusicPlayer.stop()
                     vc.firstMenuForRun = false
                     self.dismiss(animated: false, completion: nil)
                     self.embedViewController.showScene(vc)
@@ -97,9 +95,8 @@ class ParametresViewController: UIViewController {
                  UIView.animate(withDuration: 2.5, animations: {
                     self.view.alpha = 0
                     presentingViewType.view.alpha = 0
-                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                  }, completion : { _ in
-                    presentingViewType.backgroundMusicPlayer.stop()
                     vc.firstMenuForRun = false
                     self.dismiss(animated: false, completion: nil)
                     self.embedViewController.showScene(vc)
@@ -114,9 +111,8 @@ class ParametresViewController: UIViewController {
                     UIView.animate(withDuration: 2.5, animations: {
                         self.view.alpha = 0
                         presentingViewType.view.alpha = 0
-                        dialogueView.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                        dialogueView.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                     }, completion : { _ in
-                        dialogueView.backgroundMusicPlayer.stop()
                         vc.firstMenuForRun = false
                         self.dismiss(animated: false, completion: nil)
                         self.embedViewController.showScene(vc)
@@ -126,9 +122,8 @@ class ParametresViewController: UIViewController {
                     UIView.animate(withDuration: 2.5, animations: {
                         self.view.alpha = 0
                         presentingViewType.view.alpha = 0
-                        presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                        presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                     }, completion : { _ in
-                        presentingViewType.backgroundMusicPlayer.stop()
                         vc.firstMenuForRun = false
                         self.embedViewController.showScene(vc)
                     })
@@ -140,9 +135,8 @@ class ParametresViewController: UIViewController {
                 UIView.animate(withDuration: 2.5, animations: {
                     self.view.alpha = 0
                     presentingViewType.view.alpha = 0
-                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 }, completion : { _ in
-                    presentingViewType.backgroundMusicPlayer.stop()
                     vc.firstMenuForRun = false
                     self.dismiss(animated: false, completion: nil)
                     self.embedViewController.showScene(vc)
@@ -155,9 +149,8 @@ class ParametresViewController: UIViewController {
                 UIView.animate(withDuration: 2.5, animations: {
                     self.view.alpha = 0
                     presentingViewType.view.alpha = 0
-                    presentingViewType.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 }, completion : { _ in
-                    presentingViewType.backgroundMusicPlayer.stop()
                     vc.firstMenuForRun = false
                     self.dismiss(animated: false, completion: nil)
                     self.embedViewController.showScene(vc)

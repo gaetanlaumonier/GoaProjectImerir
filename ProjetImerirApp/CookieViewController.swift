@@ -29,7 +29,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDurationTotal:TimeInterval = 40
+    var gameDurationTotal:TimeInterval = 20
     var gameTimer : Int = 0
     var noob = false
     var geek = false
@@ -41,7 +41,6 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var hfromLeft = true
     var sfromLeft = true
     var gamePause : Bool = false
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var cookieTaped : Int = 0
     
@@ -52,8 +51,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
         
         embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
-        backgroundMusicPlayer = GestionMusic(filename: "MadScientist")
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "MadScientist")
         mom.loadGif(name: "Maman")
         
         cookie.layer.cornerRadius = cookie.frame.size.width/2
@@ -263,10 +261,9 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
             vc.oneProfil = self.oneProfil
             self.saveMyData()
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 self.view.alpha = 0
             } , completion: { success in
-                self.backgroundMusicPlayer.stop()
                 self.embedViewController.showScene(vc)
             })
         } else {

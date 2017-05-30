@@ -12,7 +12,8 @@ class ProfilJoueur : NSObject, NSCoding{
                 if let vc = UIStoryboard(name:"GameOver", bundle:nil).instantiateInitialViewController() as? GameOverViewController
                 {
                     let topController = UIApplication.topViewController()
-                   
+                   // var embedViewController:EmbedViewController!
+                    
                     switch topController! {
                     case is QuestionViewController:
                         let presentingViewType = topController as! QuestionViewController
@@ -52,7 +53,7 @@ class ProfilJoueur : NSObject, NSCoding{
                         topController?.view.alpha = 0
                         
                     } , completion: { success in
-                        topController?.view.window?.rootViewController = vc
+                     //   topController?.embedViewController.showScene(vc)
                        // topController?.present(vc, animated: false, completion: nil)
                     })
                 }else {

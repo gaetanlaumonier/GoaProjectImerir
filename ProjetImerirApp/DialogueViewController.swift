@@ -20,7 +20,6 @@ class DialogueViewController: UIViewController {
     var playerProfil : String = ""
     var goodOrEvil : String = ""
     var EndGameGesture : Bool = false
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var tapEnable : Bool = false
     var personnages = [UIImageView]()
@@ -35,12 +34,11 @@ class DialogueViewController: UIViewController {
         GestionDialogue()
         GestionBackground()
         embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
-        backgroundMusicPlayer = GestionMusic(filename: AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue)
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue)
         if AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue == "Bedtime" {
-            backgroundMusicPlayer.volume = 0.6
+            embedViewController.backgroundMusicPlayer.volume = 0.6
         } else if AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue == "SomeDreamy" {
-            backgroundMusicPlayer.volume = 0.8
+            embedViewController.backgroundMusicPlayer.volume = 0.8
         }
     }
     
@@ -115,8 +113,8 @@ class DialogueViewController: UIViewController {
     }
     
     func ApparitionSilhouette(){
-        backgroundMusicPlayer = GestionMusic(filename: "DownDraft")
-        backgroundMusicPlayer.numberOfLoops = 0
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "DownDraft")
+        embedViewController.backgroundMusicPlayer.numberOfLoops = 0
         ApparitionPersonnage(namePersonnage: "Silhouette", fadeInDelay: 6, myTag: 0, taille : 0.75)
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         
@@ -183,9 +181,8 @@ class DialogueViewController: UIViewController {
                 arrowView.isHidden = true
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 } , completion: { success in
-                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.embedViewController.showScene(vc)
                 })
@@ -203,9 +200,8 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
             } , completion: { success in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 self.embedViewController.showScene(vc)
             })
@@ -222,9 +218,8 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 self.embedViewController.showScene(vc)
             
@@ -241,11 +236,10 @@ class DialogueViewController: UIViewController {
         arrowView.isHidden = true
         UIView.animate(withDuration: 2, delay : 1, animations: {
             self.view.alpha = 0
-            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+            self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
         } , completion: { success in
             self.imageBackground.loadGif(name: "ChambreAdo")
-            self.backgroundMusicPlayer.stop()
-            self.backgroundMusicPlayer = self.GestionMusic(filename: "SomeDreamy")
+            self.embedViewController.backgroundMusicPlayer = self.GestionMusic(filename: "SomeDreamy")
             self.oneProfil.sceneActuelle += 1
             self.firstDialogue = true
             self.DialogueNumber = 0
@@ -263,12 +257,11 @@ class DialogueViewController: UIViewController {
         arrowView.isHidden = true
         UIView.animate(withDuration: 3, animations: {
             self.view.alpha = 0
-            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+            self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
         } , completion: { success in
             self.imageBackground.loadGif(name: "Lab4voies")
             self.personnages[0].removeFromSuperview()
-            self.backgroundMusicPlayer.stop()
-            self.backgroundMusicPlayer = self.GestionMusic(filename: "TheDarkness")
+            self.embedViewController.backgroundMusicPlayer = self.GestionMusic(filename: "TheDarkness")
             self.imageBackground.alpha = 0
             self.dialogueView.alpha = 0
             self.view.alpha = 1
@@ -296,10 +289,8 @@ class DialogueViewController: UIViewController {
             } , completion: { success in
                 vc.oneProfil = self.oneProfil
                 vc.isFirstMaze = true
-             //   vc.backgroundMusicPlayer = self.backgroundMusicPlayer
-                //self.backgroundMusicPlayer.stop()
+              //  vc.embedViewController.backgroundMusicPlayer = self.embedViewController.backgroundMusicPlayer
                 self.embedViewController.showScene(vc)
-                //self.view.window?.rootViewController = vc
             })
         }else {
             print("Could not instantiate view controller with identifier of type LabyrintheViewController")
@@ -314,9 +305,8 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 4, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 3.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 3.5)
             } , completion: { success in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 vc.isFirstMaze = false
                 self.embedViewController.showScene(vc)
@@ -335,9 +325,8 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 self.embedViewController.showScene(vc)
                 //self.present(vc, animated: false, completion: nil)
@@ -358,9 +347,8 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 self.embedViewController.showScene(vc)
                 //self.present(vc, animated: false, completion: nil)
@@ -414,13 +402,12 @@ class DialogueViewController: UIViewController {
         })
         UIView.animate(withDuration: 5, animations: {
             self.view.alpha = 0
-            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
+            self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
         }, completion: { sucess in
             self.GestionBackground()
             for obj in self.personnages {
                 obj.removeFromSuperview()
             }
-            self.backgroundMusicPlayer.stop()
             self.firstDialogue = true
             self.DialogueNumber = 0
             self.GestionDialogue()

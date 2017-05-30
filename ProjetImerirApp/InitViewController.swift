@@ -20,7 +20,6 @@ class InitViewController: UIViewController {
     
     var oneProfil = ProfilJoueur()
     var embedViewController:EmbedViewController!
-    var backgroundMusicPlayer: AVAudioPlayer!
     var myBruitageMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var oneLabel = 0
@@ -31,8 +30,7 @@ class InitViewController: UIViewController {
         super.viewDidLoad()
         
         embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
-        backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
         
         MenuBackgroundView.loadGif(name: "LabSortie")
         if firstMenuForRun == true {
@@ -68,9 +66,8 @@ class InitViewController: UIViewController {
                 
                 UIView.animate(withDuration: 4.5, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
                 } , completion: { success in
-                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = mySaveData
                     self.embedViewController.showScene(vc)
                 })

@@ -46,7 +46,6 @@ class QuestionViewController: UIViewController {
     var nbrQuestionSerie : Int = 0
     var endSerie : Bool = false
     var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var readyPopup: UIView!
     
@@ -131,9 +130,8 @@ class QuestionViewController: UIViewController {
                 self.oneProfil.sceneActuelle += 1
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
                 } , completion: { success in
-                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.saveMyData()
                     self.embedViewController.showScene(vc)
@@ -731,12 +729,11 @@ class QuestionViewController: UIViewController {
     //Gère la musique de fond du quiz
     func QuestionMusicGesture(){
         embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
         
         if self.oneProfil.sceneActuelle >= 1 && self.oneProfil.sceneActuelle <= 5 {
-            backgroundMusicPlayer = GestionMusic(filename: "Bog")
+            embedViewController.backgroundMusicPlayer = GestionMusic(filename: "Bog")
         } else {
-            backgroundMusicPlayer = GestionMusic(filename: "SodiumVapor")
+            embedViewController.backgroundMusicPlayer = GestionMusic(filename: "SodiumVapor")
         }
     }
     

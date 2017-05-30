@@ -58,7 +58,6 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var currentBat:UIImageView!
     var batGestureRecognizer:UITapGestureRecognizer!
     var minimapCells = [(x:Int,y:Int,layer:CALayer)]()
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayerMonstre = AVAudioPlayer()
     var firstGameTimer = Timer()
@@ -208,14 +207,13 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func createMaze() {
         mazeObj = Maze(width: 11, height: 11)
         maze = mazeObj.data
-        
+        embedViewController = getEmbedViewController()
+
         if isFirstMaze {
             maze[maze.count-2][maze.count-3] = Maze.Cell.Wall
             
         } else {
-            embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
-        backgroundMusicPlayer = GestionMusic(filename: "TheyreClosing")
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "TheyreClosing")
         }
     }
     
@@ -427,22 +425,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func endGame() {
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
         if isFirstMaze == true {
-            let myPresentingViewController = self.presentingViewController as! DialogueViewController
+          //  let myPresentingViewController = self.presentingViewController!.childViewControllers.first as! DialogueViewController
                 firstGameTimer.invalidate()
                 self.oneProfil.sceneActuelle += 1
                 vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
-                    myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.view.alpha = 0
-                  //  self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.bruitageMusicPlayer.setVolume(0, fadeDuration: 1)
                     self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                 } , completion: { success in
-                    self.bruitageMusicPlayerMonstre.stop()
-                 //   self.backgroundMusicPlayer.stop()
                     self.bruitageMusicPlayer.stop()
-                    myPresentingViewController.backgroundMusicPlayer.stop()
                     self.embedViewController.showScene(vc)
                 })
         } else {
@@ -456,12 +450,11 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
                     self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                     self.view.alpha = 0
                 }, completion: { success in
                     self.bruitageMusicPlayerMonstre.stop()
-                    self.backgroundMusicPlayer.stop()
                     self.embedViewController.showScene(vc)
                 })
             }
@@ -892,7 +885,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                         
                         self.elapsedTime += 1
                         if self.isFirstMaze {
-                            if self.elapsedTime >= 30 {
+                            if self.elapsedTime >= 10 {
                                 self.endGame()
                             }
                         }

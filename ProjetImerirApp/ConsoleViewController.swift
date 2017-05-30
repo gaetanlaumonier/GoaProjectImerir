@@ -71,8 +71,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
 
         background.loadGif(name: "SpaceBackground")
         embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
-        backgroundMusicPlayer = GestionMusic(filename: "Steamtech")
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "Steamtech")
         initProfil()
         initPageView()
         
@@ -386,10 +385,9 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             vc.oneProfil = oneProfil
             saveMyData()
             UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                 self.view.alpha = 0
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 self.embedViewController.showScene(vc)
             })
         }else {

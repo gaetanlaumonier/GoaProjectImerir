@@ -62,7 +62,6 @@ class ClasseModalViewController: UIViewController {
                     self.view.alpha = 0
                     self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 } , completion: { success in
-                    self.embedViewController.backgroundMusicPlayer.stop()
                     self.oneProfil.classeJoueur = self.classePlayer
                     if self.classePlayer == "Geek" {
                         self.oneProfil.lifePoint = self.oneProfil.lifePoint + 40

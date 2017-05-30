@@ -21,8 +21,8 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var paperBin: UIImageView!
     @IBOutlet var checkmark: UIImageView!
     
-    var gameDuration = 60.0
-    var timeLeft = 60.0
+    var gameDuration = 20.0
+    var timeLeft = 20.0
     var timers = [String:Timer]()
     
     var currentSheets = [Fiche]()
@@ -51,7 +51,6 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     var idClasse = 0
     var AllClasse = [ClasseJoueur]()
     
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     
     var studiedSheets = 0
@@ -64,8 +63,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
         
         embedViewController = getEmbedViewController()
-        backgroundMusicPlayer = embedViewController.backgroundMusicPlayer
-        backgroundMusicPlayer = GestionMusic(filename: "SurrealChase")
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "SurrealChase")
         setSubjectsToStudy()
         
         initProfil()
@@ -414,10 +412,9 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
             vc.oneProfil = oneProfil
             saveMyData()
             UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                 self.view.alpha = 0
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 self.embedViewController.showScene(vc)
             })
         }else {
