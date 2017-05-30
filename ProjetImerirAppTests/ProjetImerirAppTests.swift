@@ -1,9 +1,9 @@
 //
-//  ProjetImerirAppTests.swift
-//  ProjetImerirAppTests
+//  ProjetImerirAppTests.swift
+//  ProjetImerirAppTests
 //
-//  Created by Student on 06/02/2017.
-//  Copyright © 2017 Student. All rights reserved.
+//  Created by Student on 06/02/2017.
+//  Copyright © 2017 Student. All rights reserved.
 //
 
 import UIKit
@@ -40,5 +40,4 @@ class ProjetImerirAppTests: XCTestCase {
             XCTAssertNil(result, "Le nom \(name) devrait être invalide.")
         }
     }
-    
 }

@@ -19,11 +19,26 @@ class NameModalViewController: UIViewController {
     
     var oneProfil = ProfilJoueur()
     var bruitageMusicPlayer = AVAudioPlayer()
+    var embedViewController:EmbedViewController!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameField.autocorrectionType = .no
         
+        embedViewController = getEmbedViewController()
+    }
+    
+    func getErrorMessage(for name: String) -> String? {
+        
+        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789éèàêèâôöëç-ûÔÖÛÇÉÈÊËÀÂ ")
+        if name.rangeOfCharacter(from: characterset.inverted) != nil {
+            return "Pas de caractères spéciaux !"
+        } else if name == "" {
+            return "N'oublie pas de rentrer un nom !"
+        } else if (name.characters.count) < 2 || (name.characters.count) > 12 {
+            return "de 2 à 12 lettres maximum !"
+        }
+        return nil
     }
     
     func getErrorMessage(for name: String) -> String? {
@@ -42,6 +57,8 @@ class NameModalViewController: UIViewController {
     }
     
     @IBAction func startNewGame(_ sender: UIButton) {
+
+        let myPresentingViewController = self.presentingViewController!.childViewControllers.first as! InitViewController
         
         let myPresentingViewController = self.presentingViewController as! InitViewController
         
@@ -54,7 +71,7 @@ class NameModalViewController: UIViewController {
                 self.view.endEditing(true)
                 bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
                 myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.8)
-                myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                myPresentingViewController.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.nameView.alpha = CGFloat(0)
                     
@@ -63,14 +80,15 @@ class NameModalViewController: UIViewController {
                         myPresentingViewController.view.alpha = 0
                         self.view.alpha = 0
                     }, completion : { _ in
-                        myPresentingViewController.backgroundMusicPlayer.stop()
                         let namePlayer = self.nameField.text!.capitalizingFirstLetter()
                         self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 3, statsQuiz : ["bonneReponseQuiz":0, "pourcentage" : 0], statsCookie : ["cookieGoodTaped":0, "pourcentage" : 0], statsRangement : ["goodClassification":0, "pourcentage" : 0], statsConsole : ["missileHit":0, "pourcentage" : 0], statsBac : ["goodClassification":0, "pourcentage" : 0], statsLabyrinthe : ["timeSpent":0, "batKilled" : 0], questionAlreadyPick:[])
                         self.oneProfil.name = namePlayer
                         self.saveMyData()
                         
                         vc.oneProfil = self.oneProfil
-                        self.view.window?.rootViewController? = vc
+                        self.dismiss(animated: false, completion: nil)
+                        //self.view.window?.rootViewController? = vc
+                        self.embedViewController.showScene(vc)
                         
                     })
                 })

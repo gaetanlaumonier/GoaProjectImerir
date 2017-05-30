@@ -61,7 +61,7 @@ class ContentBacViewController: UIViewController {
             fatigueBar.layer.borderWidth = 0.3
             
             let scale = CGAffineTransform(scaleX: 1, y: 10)
-            let rotate = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+            let rotate = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
             fatigueBar.transform = scale.concatenating(rotate)
             
             fatigueBar.translatesAutoresizingMaskIntoConstraints = false

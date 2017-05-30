@@ -377,6 +377,12 @@ extension UIViewController{
         label.textAlignment = .center
         label.text = text
         label.numberOfLines = 0
+        label.font = UIFont(name: "Futura", size: 17)
+        label.layer.shouldRasterize = true
+        label.layer.shadowOffset = CGSize(width: 1, height: 1)
+        label.layer.shadowOpacity = 1
+        label.layer.shadowRadius = 1
+        label.alpha = 0.8
         label.setupLabelDynamicSize(fontSize: 24)
         
         blurEffectView.addSubview(label)
@@ -491,6 +497,21 @@ extension UIViewController{
         
         return bruitageMusicPlayer
     }
+    
+    //Retourne la controller parent qui sert de conteneur à tous les viewController
+    func getEmbedViewController() -> EmbedViewController! {
+        
+        if let embedVc = self.presentingViewController as? EmbedViewController {
+            return embedVc
+        }
+        
+        if let embedVc = self.parent as? EmbedViewController {
+            return embedVc
+        }
+        
+        return EmbedViewController()
+    }
+    
 }
 
 extension Array {

@@ -7,6 +7,12 @@
 //vendredi test, commentaires
 //samedi revision oral et redactionnel
 
+//addchildviewcontroller(vc)
+//vc.loadviewifneed
+//addsubview
+//transition
+//removefromsuperview
+
 import UIKit
 
 //Structure générale des questions du quiz

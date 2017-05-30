@@ -31,8 +31,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 60.0
-    var timeLeft = 60.0
+    var gameDuration = 20.0
+    var timeLeft = 20.0
     var slowGameFactor = 1.0
     var originalSize:CGFloat!
     
@@ -45,10 +45,12 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var pageViewTitles:[String]!
     var pageViewHints:[String]!
     var gamePause : Bool = false
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var objInContainer : Int = 0
     var goodObjectInContainer : Int = 0
+    
+    var embedViewController:EmbedViewController!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +58,9 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.text = "\(Int(gameDuration)) s"
         AllClasse = buildClasseJoueur()
-        backgroundMusicPlayer = GestionMusic(filename: "Fantasy")
-        backgroundMusicPlayer.volume = 0.8
+        embedViewController = getEmbedViewController()
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "Fantasy")
+        embedViewController.backgroundMusicPlayer.volume = 0.8
 
         switch self.oneProfil.classeJoueur{
         case "Geek":
@@ -191,7 +194,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
         {
             UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 self.view.alpha = 0
             } , completion: { success in
                 self.oneProfil.sceneActuelle += 1
@@ -204,8 +207,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
                 
                 vc.oneProfil = self.oneProfil
                 self.saveMyData()
-                self.backgroundMusicPlayer.stop()
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")

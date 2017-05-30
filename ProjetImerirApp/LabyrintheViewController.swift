@@ -58,7 +58,6 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var currentBat:UIImageView!
     var batGestureRecognizer:UITapGestureRecognizer!
     var minimapCells = [(x:Int,y:Int,layer:CALayer)]()
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayerMonstre = AVAudioPlayer()
     var firstGameTimer = Timer()
@@ -216,12 +215,13 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func createMaze() {
         mazeObj = Maze(width: 11, height: 11)
         maze = mazeObj.data
-        
+        embedViewController = getEmbedViewController()
+
         if isFirstMaze {
             maze[maze.count-2][maze.count-3] = Maze.Cell.Wall
             
         } else {
-            backgroundMusicPlayer = GestionMusic(filename: "TheyreClosing")
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "TheyreClosing")
         }
     }
     
@@ -433,21 +433,19 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func endGame() {
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
         if isFirstMaze == true {
-            let myPresentingViewController = self.presentingViewController as! DialogueViewController
+          //  let myPresentingViewController = self.presentingViewController!.childViewControllers.first as! DialogueViewController
                 firstGameTimer.invalidate()
                 self.oneProfil.sceneActuelle += 1
                 vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
-                    myPresentingViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.view.alpha = 0
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.bruitageMusicPlayer.setVolume(0, fadeDuration: 1)
                     self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                 } , completion: { success in
-                    self.bruitageMusicPlayerMonstre.stop()
                     self.bruitageMusicPlayer.stop()
-                    myPresentingViewController.backgroundMusicPlayer.stop()
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                 })
         } else {
                 self.oneProfil.sceneActuelle += 1
@@ -460,13 +458,12 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
                     self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
                     self.view.alpha = 0
                 }, completion: { success in
                     self.bruitageMusicPlayerMonstre.stop()
-                    self.backgroundMusicPlayer.stop()
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                 })
             }
         }else {
@@ -840,13 +837,13 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         let randomRotate = arc4random_uniform(4)
         
-        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * Double(randomRotate)))
+        minimap.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * Double(randomRotate)))
         
         let cellLayer = getMinimapCell(player.y, player.x)
         orientationView = UIView(frame: cellLayer.frame)
         
         let path = UIBezierPath()
-        path.addArc(withCenter: minimap.layer.convert(cellLayer.position, to: cellLayer), radius: cellLayer.bounds.width/2, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
+        path.addArc(withCenter: minimap.layer.convert(cellLayer.position, to: cellLayer), radius: cellLayer.bounds.width/2, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
         
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.red.cgColor
@@ -912,7 +909,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func rotatePlayerArrow() {
         let cellLayer = getMinimapCell(player.y, player.x)
         orientationView.frame.origin = cellLayer.frame.origin
-        orientationView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2) * CGFloat(player.orientation.rawValue))
+        orientationView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2) * CGFloat(player.orientation.rawValue))
     }
     
     override func didReceiveMemoryWarning() {
@@ -946,7 +943,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                         
                         self.elapsedTime += 1
                         if self.isFirstMaze {
-                            if self.elapsedTime >= 40 {
+                            if self.elapsedTime >= 10 {
                                 self.endGame()
                             }
                         }

@@ -20,10 +20,11 @@ class DialogueViewController: UIViewController {
     var playerProfil : String = ""
     var goodOrEvil : String = ""
     var EndGameGesture : Bool = false
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var tapEnable : Bool = false
     var personnages = [UIImageView]()
+    
+    var embedViewController:EmbedViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,12 @@ class DialogueViewController: UIViewController {
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         GestionDialogue()
         GestionBackground()
-        backgroundMusicPlayer = GestionMusic(filename: AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue)
+        embedViewController = getEmbedViewController()
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue)
         if AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue == "Bedtime" {
-            backgroundMusicPlayer.volume = 0.6
+            embedViewController.backgroundMusicPlayer.volume = 0.6
         } else if AllDialogue[self.oneProfil.sceneActuelle].musiqueDialogue == "SomeDreamy" {
-            backgroundMusicPlayer.volume = 0.8
+            embedViewController.backgroundMusicPlayer.volume = 0.8
         }
     }
     
@@ -100,7 +102,7 @@ class DialogueViewController: UIViewController {
                 self.view.alpha = 0
             } , completion: { success in
                 vc.oneProfil = self.oneProfil
-                self.present(vc, animated: false, completion: nil)
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type ChoiceClasseTableViewController")
@@ -111,8 +113,8 @@ class DialogueViewController: UIViewController {
     }
     
     func ApparitionSilhouette(){
-        backgroundMusicPlayer = GestionMusic(filename: "DownDraft")
-        backgroundMusicPlayer.numberOfLoops = 0
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "DownDraft")
+        embedViewController.backgroundMusicPlayer.numberOfLoops = 0
         ApparitionPersonnage(namePersonnage: "Silhouette", fadeInDelay: 6, myTag: 0, taille : 0.75)
         dialogueLabel.text = AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber]
         
@@ -138,7 +140,7 @@ class DialogueViewController: UIViewController {
             ])
         view.addConstraints([
             NSLayoutConstraint(item: personnages[myTag], attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: taille, constant: 0),
-            NSLayoutConstraint(item: personnages[myTag], attribute: .bottomMargin, relatedBy: .equal, toItem: dialogueView, attribute: .top, multiplier: 1, constant: +30)
+            NSLayoutConstraint(item: personnages[myTag], attribute: .bottomMargin, relatedBy: .equal, toItem: dialogueView, attribute: .top, multiplier: 1.05, constant: 0)
             ])
         UIView.animate(withDuration: fadeInDelay, animations: {
             self.personnages[myTag].alpha = 1
@@ -169,6 +171,7 @@ class DialogueViewController: UIViewController {
         GestionSerieQuestion(CultureG: 0, Info: 0, Enigme: 3, Psycho: 5)
     }
     
+    //Lance la série de question
     func GestionSerieQuestion(CultureG :Int, Info: Int, Enigme: Int, Psycho: Int){
         serieQuestion = ["CultureG" : CultureG, "Info": Info, "Enigme": Enigme, "Psycho": Psycho] as [String:Int]
         if serieQuestion["Enigme"] != 1 {
@@ -178,11 +181,10 @@ class DialogueViewController: UIViewController {
                 arrowView.isHidden = true
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                 } , completion: { success in
-                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                 })
             }else {
                 print("Could not instantiate view controller with identifier of type QuestionViewController")
@@ -191,17 +193,17 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //lance l'arcadeCookie
     func ArcadeCookieStart(){
         if let vc = UIStoryboard(name:"ArcadeCookie", bundle:nil).instantiateInitialViewController() as? CookieViewController
         {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
             } , completion: { success in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type ArcadeViewController")
@@ -209,17 +211,18 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //lance l'arcadeRangemenr
     func ArcadeRangementStart(){
         if let vc = UIStoryboard(name:"ArcadeRangement", bundle:nil).instantiateInitialViewController() as? RangementViewController
         {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
-            } , completion: { success in
-                self.backgroundMusicPlayer.stop()
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+            } , completion: { _ in
                 vc.oneProfil = self.oneProfil
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
+            
             })
         }else {
             print("Could not instantiate view controller with identifier of type RangementViewController")
@@ -233,11 +236,10 @@ class DialogueViewController: UIViewController {
         arrowView.isHidden = true
         UIView.animate(withDuration: 2, delay : 1, animations: {
             self.view.alpha = 0
-            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+            self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
         } , completion: { success in
             self.imageBackground.loadGif(name: "ChambreAdo")
-            self.backgroundMusicPlayer.stop()
-            self.backgroundMusicPlayer = self.GestionMusic(filename: "SomeDreamy")
+            self.embedViewController.backgroundMusicPlayer = self.GestionMusic(filename: "SomeDreamy")
             self.oneProfil.sceneActuelle += 1
             self.firstDialogue = true
             self.DialogueNumber = 0
@@ -255,12 +257,11 @@ class DialogueViewController: UIViewController {
         arrowView.isHidden = true
         UIView.animate(withDuration: 3, animations: {
             self.view.alpha = 0
-            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+            self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
         } , completion: { success in
             self.imageBackground.loadGif(name: "Lab4voies")
             self.personnages[0].removeFromSuperview()
-            self.backgroundMusicPlayer.stop()
-            self.backgroundMusicPlayer = self.GestionMusic(filename: "TheDarkness")
+            self.embedViewController.backgroundMusicPlayer = self.GestionMusic(filename: "TheDarkness")
             self.imageBackground.alpha = 0
             self.dialogueView.alpha = 0
             self.view.alpha = 1
@@ -278,6 +279,7 @@ class DialogueViewController: UIViewController {
         })
     }
     
+    //lance le labyrinthe
     func StartLabyrinthe(){
         if let vc = UIStoryboard(name:"ArcadeLabyrinthe", bundle:nil).instantiateInitialViewController() as? LabyrintheViewController
         {
@@ -287,7 +289,8 @@ class DialogueViewController: UIViewController {
             } , completion: { success in
                 vc.oneProfil = self.oneProfil
                 vc.isFirstMaze = true
-                self.present(vc, animated: false, completion: nil)
+              //  vc.embedViewController.backgroundMusicPlayer = self.embedViewController.backgroundMusicPlayer
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type LabyrintheViewController")
@@ -295,18 +298,18 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //Lance le labyrinthe
     func LabyrintheRevange(){
         if let vc = UIStoryboard(name:"ArcadeLabyrinthe", bundle:nil).instantiateInitialViewController() as? LabyrintheViewController
         {
             arrowView.isHidden = true
             UIView.animate(withDuration: 4, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 3.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 3.5)
             } , completion: { success in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
                 vc.isFirstMaze = false
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type LabyrintheViewController")
@@ -314,6 +317,7 @@ class DialogueViewController: UIViewController {
         }
     }
     
+    //Lance l'arcadeConsole
     func ArcadeConsoleStart(){
         
         if let vc = UIStoryboard(name:"ArcadeConsole", bundle:nil).instantiateInitialViewController() as? ConsoleViewController
@@ -321,11 +325,10 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
                 //self.present(vc, animated: false, completion: nil)
             })
         }else {
@@ -336,6 +339,7 @@ class DialogueViewController: UIViewController {
         
     }
     
+    //Lance l'arcadeBac
     func ArcadeBacStart(){
         
         if let vc = UIStoryboard(name:"ArcadeBac", bundle:nil).instantiateInitialViewController() as? BacViewController
@@ -343,12 +347,11 @@ class DialogueViewController: UIViewController {
             arrowView.isHidden = true
             UIView.animate(withDuration: 2, animations: {
                 self.view.alpha = 0
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
                 vc.oneProfil = self.oneProfil
-                self.view.window?.rootViewController = vc
-                //self.present(vc, animated: false, completion: nil)            
+                self.embedViewController.showScene(vc)
+                //self.present(vc, animated: false, completion: nil)
             })
         }else {
             print("Could not instantiate view controller with identifier of type ConsoleViewController")
@@ -366,6 +369,7 @@ class DialogueViewController: UIViewController {
         EndGameGesture = false
     }
     
+    //Fait apparaître le personnage au milieu de l'écran en fondu
     func ApparitionDirecteur(){
         dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])"
         UIView.animate(withDuration: 10, animations: {
@@ -376,6 +380,7 @@ class DialogueViewController: UIViewController {
         })
     }
     
+    //Fait apparaître le personnage au milieu de l'écran en fondu
     func ApparitionMartien(){
         dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])"
         UIView.animate(withDuration: 10, animations: {
@@ -397,13 +402,12 @@ class DialogueViewController: UIViewController {
         })
         UIView.animate(withDuration: 5, animations: {
             self.view.alpha = 0
-            self.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
+            self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 4)
         }, completion: { sucess in
             self.GestionBackground()
             for obj in self.personnages {
                 obj.removeFromSuperview()
             }
-            self.backgroundMusicPlayer.stop()
             self.firstDialogue = true
             self.DialogueNumber = 0
             self.GestionDialogue()
@@ -412,13 +416,13 @@ class DialogueViewController: UIViewController {
     }
     
     func RetourMenu(){
-        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateInitialViewController() as? InitViewController
+        if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController
         {
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.view.alpha = 0
             } , completion: { success in
                 vc.firstMenuForRun = false
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type InitViewController")

@@ -21,8 +21,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var spaceship: Spaceship!
     var shield: UIImageView!
     
-    var gameDuration:CFTimeInterval = 40
-    var timeLeft:CFTimeInterval = 40
+    var gameDuration:CFTimeInterval = 30
+    var timeLeft:CFTimeInterval = 30
     
     var spawnFromTop = true
     var missileSize:CGSize!
@@ -64,11 +64,14 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var nbrMissile : Int = 0
     var missileHit = 0
     
+    var embedViewController:EmbedViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         background.loadGif(name: "SpaceBackground")
-        backgroundMusicPlayer = GestionMusic(filename: "Steamtech")
+        embedViewController = getEmbedViewController()
+        embedViewController.backgroundMusicPlayer = GestionMusic(filename: "Steamtech")
         initProfil()
         initPageView()
         
@@ -382,11 +385,10 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             vc.oneProfil = oneProfil
             saveMyData()
             UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                 self.view.alpha = 0
             } , completion: { _ in
-                self.backgroundMusicPlayer.stop()
-                self.view.window?.rootViewController = vc
+                self.embedViewController.showScene(vc)
             })
         }else {
             print("Could not instantiate view controller with identifier of type DialogueViewController")

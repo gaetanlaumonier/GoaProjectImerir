@@ -46,9 +46,10 @@ class QuestionViewController: UIViewController {
     var nbrQuestionSerie : Int = 0
     var endSerie : Bool = false
     var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
-    var backgroundMusicPlayer = AVAudioPlayer()
     var bruitageMusicPlayer = AVAudioPlayer()
     var readyPopup: UIView!
+    
+    var embedViewController:EmbedViewController!
     
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class QuestionViewController: UIViewController {
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
+        InputAnswer.autocorrectionType = .no
         headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
         headerView.timerLabel.textColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
@@ -128,12 +130,11 @@ class QuestionViewController: UIViewController {
                 self.oneProfil.sceneActuelle += 1
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.view.alpha = 0
-                    self.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
                 } , completion: { success in
-                    self.backgroundMusicPlayer.stop()
                     vc.oneProfil = self.oneProfil
                     self.saveMyData()
-                    self.view.window?.rootViewController = vc
+                    self.embedViewController.showScene(vc)
                     
                 })
             }else {
@@ -727,10 +728,12 @@ class QuestionViewController: UIViewController {
     
     //Gère la musique de fond du quiz
     func QuestionMusicGesture(){
+        embedViewController = getEmbedViewController()
+        
         if self.oneProfil.sceneActuelle >= 1 && self.oneProfil.sceneActuelle <= 5 {
-            backgroundMusicPlayer = GestionMusic(filename: "Bog")
+            embedViewController.backgroundMusicPlayer = GestionMusic(filename: "Bog")
         } else {
-            backgroundMusicPlayer = GestionMusic(filename: "SodiumVapor")
+            embedViewController.backgroundMusicPlayer = GestionMusic(filename: "SodiumVapor")
         }
     }
     
