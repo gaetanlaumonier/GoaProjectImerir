@@ -1,13 +1,6 @@
-//
-//  ContentLabyrintheViewController.swift
-//  ProjetImerirApp
-//
-//  Created by Student on 11/05/2017.
-//  Copyright © 2017 Student. All rights reserved.
-//
-
 import UIKit
 
+/// One controller is returned for each page of the pageView, this controller having its own variables is then able to draw its content
 class ContentLabyrintheViewController: UIViewController {
 
     @IBOutlet var GamesRulesView: GamesRulesView!

@@ -1,17 +1,21 @@
-//
-//  StrangeBat.swift
-//  ProjetImerirApp
-//
-//  Created by Student on 07/05/2017.
-//  Copyright © 2017 Student. All rights reserved.
-//
-
 import UIKit
 
+/** This class is used to generate monsters in maze minigame. Each new StrangeBat is randomly generated from 3 premade objects.
+ - BeteRouge = 2.3 speed
+ - BeteVerte = 1.5 speed
+ - BeteGrise = 1.8 speed
+ 
+ Each name matches an image string located in Assets.xcassets folder.
+ */
 class StrangeBat {
+    
+    /// Speed value of the StrangeBat.
     var speed: Double!
+    
+    /// Asset name of the StrangeBat.
     var name: String!
     
+    /// Create a new StrangeBat picked randomly from 3 premade name/speed values.
     init() {
         let rand = drand48()
         

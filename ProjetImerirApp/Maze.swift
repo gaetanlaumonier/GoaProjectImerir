@@ -8,18 +8,39 @@
 
 import UIKit
 
-
+/**
+ Custom class that generates a [[Cell]] array for a given width and height
+ */
 class Maze {
     
+    /**
+     Type of a maze cell.
+     - Space
+     - Wall
+     */
     enum Cell {
         case Space, Wall
     }
     
+    /// Contains maze's data
     var data: [[Cell]] = []
+    
+    /// Width with which the maze was generated
     var width: Int!
+    
+    /// Height with which the maze was generated
     var height: Int!
     
-    // Generate a random maze.
+    /**
+     Generate a random maze.
+     
+     - parameters:
+        - width: Number of Cells in a subarray. Must be odd.
+        - height: Number of subarrays. Must be odd.
+     
+     - Important:
+     Each border Cell will be a Cell.Space
+     */
     init(width: Int, height: Int) {
         self.width = width
         self.height = height
@@ -41,7 +62,7 @@ class Maze {
     }
     
     // Carve starting at x, y.
-    func carve(x: Int, y: Int) {
+    private func carve(x: Int, y: Int) {
         let upx = [1, -1, 0, 0]
         let upy = [0, 0, 1, -1]
         var dir = Int(arc4random_uniform(4))
@@ -62,7 +83,7 @@ class Maze {
         }
     }
     
-    // Show the maze.
+    /// Print maze into Debugger.
     func show() {
         for row in data {
             for cell in row {

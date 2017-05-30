@@ -357,7 +357,6 @@ extension UIApplication
         }
         return base
     }
-    
 }
 
 //Permet à une vue d'apparaître en FadeIn

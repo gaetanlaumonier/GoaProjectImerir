@@ -68,8 +68,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var nbrBatAppear : Int = 0
     var orientationView:UIView!
     
+    /**
+     Associate a number from 0 to 4 to a direction
+     - Direction.North.rawValue = 0
+     - Direction.East.rawValue = 1
+     - Direction.South.rawValue = 2
+     - Direction.West.rawValue = 3
+     */
     enum Direction : Int {
-        case North, East, South, West
+        case North /// rawValue is equal to 0
+        case East /// rawValue is equal to 1
+        case South /// rawValue is equal to 2
+        case West /// rawValue is equal to 3
     }
     
     override func viewDidLoad() {
@@ -158,7 +168,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         // Generate a random maze using Maze class
         createMaze()
-        
+
         // Spawn the player in the middle of the maze
         spawnPlayer(Int(maze.count/2), Int(maze.count/2))
         
@@ -474,9 +484,20 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     
     
-    //// GAME LOGIC ////
+    // GAME LOGIC ////
     
-    // Take an enum parameter which is passed by the arrow (player orientation is managed here)
+    /**
+     Move the player towards the given direction. Called when the player taps on any directional arrow.
+     
+     Player's orientation is updated depending on its old value and on the given direction.
+     
+     Player's position in maze is updated too and then passed to loadRoom() function.
+     
+     - parameters:
+        - direction: Direction value that represents where the player should head towards.
+        - completion: Refers to loadRoom's completion block.
+     
+     */
     func moveTo(_ direction: Direction, completion: (() -> Swift.Void)? = nil) {
         
         let trueDirection = Direction(rawValue: (direction.rawValue + player.orientation.rawValue) % 4)!
@@ -504,7 +525,22 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         })
     }
     
-    // Global function for loading a new/old room
+    /**
+     Global function for loading a room located in a Maze.
+     
+     If the room that has to be loaded is the exit room, call the endGame() function.
+     
+     If room has already been visited, push the old room to currentRoom variable.
+     
+     Then update the background image of the current view, call the room related functions.
+     
+     Finally, redraw HUD.
+     
+     - parameters:
+        - x: x position of the room.
+        - y: y position of the room.
+        - completion: Code block that is executed after room's image has been rendered in view.
+     */
     func loadRoom(_ x: Int, _ y: Int, completion: (() -> Swift.Void)? = nil) {
         
         guard maze[x][y] == Maze.Cell.Space else {
@@ -528,7 +564,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             currentRoom = Room(x: x, y: y)
             knownRooms.append(currentRoom)
         }
-        
+
         let imageName = getRoomImage()
         
         drawMinimapAdjacentCells()
@@ -540,7 +576,17 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         })
     }
     
-    // Return the string of the current room's image
+    /**
+     Gives the image name that has to be displayed for the current room.
+     
+     Takes into account the orientation of the player and the possible moves of the room.
+     
+     Finally, returns exit room if the player's position is the exit room position (bottom right)
+     
+     - note: For the first room, rotates the player's orientation so that there is a room behind him since every room images have a back path.
+     
+     - returns: Image name of the current room.
+     */
     func getRoomImage() -> String {
         
         if player.x == maze.count - 2 && player.y == maze.count - 3 {
@@ -569,7 +615,15 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         return "LabSortie"
     }
     
-    // Allow room to know which arrows it can display
+    /**
+     Test the 4 possible Direction from the current room.
+     
+     If the cell towards the Direction is a Cell.Space, add it to the stored var *possibleCells* of the room
+     
+     - note: Returns *possibleCells* room's var if it was already set.
+     
+     - returns: Array of possible Direction of the current room.
+     */
     func getAvalaibleDirections(room: Room) -> [Direction] {
         
         if let cells = room.possibleCells {
@@ -592,12 +646,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         return directions
     }
     
-    // Called on every room that is loaded
+    /// - returns: True if the player's position is the exit room position.
     func isExitRoom() -> Bool {
         return player.x == maze.count-1 && player.y == maze.count-3
     }
     
-    // Return the Room object if the player has already visited it
+    /**
+     Returns either the already visited Room or nil if it hasn't been visited yet.
+     
+     - parameter location: (x,y) tuple representing the position of the room.
+     
+     - returns: The Room for position x,y if it has already been visited.
+     */
     func getKnownRoom(_ location: (x: Int, y: Int)) -> Room? {
         return knownRooms.first(where: { $0.x == location.x && $0.y == location.y })
     }

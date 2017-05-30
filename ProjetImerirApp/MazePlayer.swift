@@ -1,18 +1,23 @@
-//
-//  MazePlayer.swift
-//  ProjetImerirApp
-//
-//  Created by Student on 07/05/2017.
-//  Copyright © 2017 Student. All rights reserved.
-//
-
+/**
+ Represents the player from the maze minigame
+*/
 class MazePlayer {
     
+    /**
+     Associate a number from 0 to 4 to a direction
+     - Orientation.North.rawValue = 0
+     - Orientation.East.rawValue = 1
+     - Orientation.South.rawValue = 2
+     - Orientation.West.rawValue = 3
+     */
     enum Orientation : Int {
-        case North, East, South, West
+        case North /// rawValue is equal to 0
+        case East /// rawValue is equal to 1
+        case South /// rawValue is equal to 2
+        case West /// rawValue is equal to 3
     }
     
-    var x:Int!
-    var y:Int!
-    var orientation:Orientation = .North
+    var x:Int! /// X Position of the player in maze's array.
+    var y:Int! /// Y Position of the player in maze's array.
+    var orientation:Orientation = .North /// The player's orientation.
 }
