@@ -2,7 +2,7 @@
 import AVFoundation
 import UIKit
 
-//Classe du header dans les jeux et le quiz
+/// Classe du header dans les jeux et le quiz
 @IBDesignable class HeaderView: UIView {
 
     //Temps, s'il y en a

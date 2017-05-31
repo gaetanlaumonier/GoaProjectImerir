@@ -11,38 +11,86 @@ import AVFoundation
 
 class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource {
     
+    /// Viasually represents the background image in the view.
     @IBOutlet var background: UIImageView!
     
+    /// Represents the view where the player's informations are displayed.
     @IBOutlet weak var headerView: HeaderView!
+    
+    /// Represents the left arrow view.
     @IBOutlet var arrowLeft: UIImageView!
+    
+    /// Represents the down arrow view.
     @IBOutlet var arrowDown: UIImageView!
+    
+    /// Represents the right arrow view.
     @IBOutlet var arrowRight: UIImageView!
+    
+    /// Represents the up arrow view.
     @IBOutlet var arrowUp: UIImageView!
     
+    /// Represents the spikes view.
     @IBOutlet var spikes: UIImageView!
+    
+    /// Represents the potion view.
     @IBOutlet var potionView: UIImageView!
     
+    /// Represents the red overlay view which is animated on taking damage.
     @IBOutlet var damageOverlay: UIImageView!
-    @IBOutlet var minimap: UIView!
     
+    /// Represents the minimap square view which is used as a container for cell layers.
+    @IBOutlet var minimap: UIView!
+
+    
+    /// The object made from Maze class. Can be used to print the maze object via show() function.
     var mazeObj:Maze!
+    
+    /// Array where the maze's cells informations are stored in. Cells can be .space or .wall
     var maze: [[Maze.Cell]]!
     
+    
+    /// Retrieves the player's data.
     var oneProfil = ProfilJoueur()
-
+    
+    /// Represents the controller that is used to store each controllers of the page views.
     var pageViewController:UIPageViewController!
+    
+    /// Array containing the label text for each page view.
     var pageViewLabels:[String]!
+    
+    /// Array containing an image text which is managed by the content view controller to display or draw an image in the page's image view frame.
     var pageViewImages:[String]!
+    
+    /// Array containing the title text for each page view.
     var pageViewTitles:[String]!
+    
+    /// Array containing an optional hint for each page view.
     var pageViewHints:[String]!
+    
+    /// Id used to retrieve the player's class related informations from ClasseJoueur.json
     var idClasse : Int = 0
     
+    
+    /// Is true if the game is running for the first time. When it is, the exit door is removed and a short timer is fired, when the timer ends, the endGame() function is called.
     var isFirstMaze = false
+    
+    /// Represents the player into the maze game context.
+    ///
+    /// Stores the player's position and his orientation.
     var player = MazePlayer()
+    
+    /// Represents the current room that is displayed on the screen.
+    ///
+    /// Room objects can store values that allow you to know if the room should display a potion, bats, or even spikes. A room also stores his X and Y position in the maze and its possibles moves.
     var currentRoom:Room!
+    
+    /// Health limit for potions to take effect.
     var healthLimit = 80
+    
+    /// Array of all possible classes data which are retrieved from the ClasseJoueur.json
     var AllClasse = [ClasseJoueur]()
     
+    /// Tuples that relate each possible image string for a room to his available directions.
     var imagesList = [("LabFace",[Direction.North,Direction.South]),
                       ("LabFaceGauche",[Direction.North,Direction.West,Direction.South]),
                       ("LabFaceDroite",[Direction.North,Direction.East,Direction.South]),
@@ -52,21 +100,49 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                       ("LabGaucheDroite",[Direction.East,Direction.West,Direction.South]),
                       ("Lab4voies",[Direction.North,Direction.East,Direction.South,Direction.West])]
     
+    /// Stores every rooms the player has already visited.
     var knownRooms = [Room]()
+    
+    /// Stores an image view for each possible Direction.
     var arrowsList:[Direction:UIImageView]!
+    
+    /// Stores each image sequence related to the amount of damages it should deal on stepping on it.
     var spikesImages = [(img: UIImage, dmg: Int)]()
+    
+    /// Stores the current bat that is displayed on the screen. Otherwise, returns nil.
     var currentBat:UIImageView!
+    
+    /// Tap gesture recognizer that is added to the view itself. Each tap does call the handleBatTap() function which determinates if a bat was tapped or not.
     var batGestureRecognizer:UITapGestureRecognizer!
+    
+    /// Array of tuples containing for each X,Y position an associated CALayer representing a cell in the minimap.
     var minimapCells = [(x:Int,y:Int,layer:CALayer)]()
+    
+    /// AVFoundation object that is used to play fx sounds that are related to the maze game.
     var bruitageMusicPlayer = AVAudioPlayer()
+    
+    /// AVFoundation object that is used to play looping sounds related to the bats.
     var bruitageMusicPlayerMonstre = AVAudioPlayer()
+    
+    // TODO : REMOVE
     var firstGameTimer = Timer()
+    
+    /// Represents the time left before ending the game in the first maze context.
     var elapsedTime = Int()
+    
+    /// AVFoundation object used to play sound effect of the dying bats. Is isolated from the bruitageMusicPlayer so that they don't cancel each other.
     var killMonster = AVAudioPlayer()
+    
+    /// Stores the number of bats killed. Used to write in statistics.
     var nbrBatKilled : Int = 0
+    
+    /// Stores the number of bats displayed. Used to write in statistics.
     var nbrBatAppear : Int = 0
+    
+    /// The red cone indicating where the player faces on the minimap.
     var orientationView:UIView!
     
+    /// Parent view controller used to play background sounds and leave this controller.
     var embedViewController:EmbedViewController!
     
     /**

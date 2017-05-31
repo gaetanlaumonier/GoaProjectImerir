@@ -262,54 +262,60 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     
     // Add progress bars
     func createProgressViews() {
-        let fatigueBar = UIProgressView(frame: CGRect(x: 100, y: 100, width: view.bounds.width/2, height: 10))
+        
+        let yScale = view.bounds.height/100
+        
+        let fatigueBar = UIProgressView(frame: CGRect(x: 0, y: headerView.bounds.height + view.bounds.height/20, width: view.bounds.width/2, height: 10))
         fatigueBar.progress = 1
         fatigueBar.trackTintColor = .white
         fatigueBar.progressTintColor = .blue
         
-        fatigueBar.layer.cornerRadius = 15
+        fatigueBar.layer.cornerRadius = yScale
         fatigueBar.clipsToBounds = true
         
         fatigueBar.layer.borderColor = UIColor.gray.cgColor
         fatigueBar.layer.borderWidth = 0.3
+        fatigueBar.center.x = view.center.x
         
-        let scale = CGAffineTransform(scaleX: 1, y: 10)
+        let scale = CGAffineTransform(scaleX: 1, y: yScale)
         let rotate = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         fatigueBar.transform = scale.concatenating(rotate)
         
         self.fatigueBar = fatigueBar
         view.insertSubview(fatigueBar, aboveSubview: window)
         
-        let hungerBar = UIProgressView(frame: CGRect(x: 100, y: 130, width: view.bounds.width/2, height: 10))
+        let hungerBar = UIProgressView(frame: CGRect(x: 0, y: headerView.bounds.height + view.bounds.height/10, width: view.bounds.width/2, height: 10))
         
         hungerBar.progress = 1
         hungerBar.trackTintColor = .white
         hungerBar.progressTintColor = .green
         
-        hungerBar.layer.cornerRadius = 15
+        hungerBar.layer.cornerRadius = yScale
         hungerBar.clipsToBounds = true
         
         hungerBar.layer.borderColor = UIColor.gray.cgColor
         hungerBar.layer.borderWidth = 0.3
+        print(hungerBar.bounds.width)
+        hungerBar.center.x = view.center.x
         
         hungerBar.transform = scale.concatenating(rotate)
         
         self.hungerBar = hungerBar
         view.insertSubview(hungerBar, aboveSubview: window)
         
-        let eyeIcon = UIImageView(frame: CGRect(x: fatigueBar.frame.origin.x + fatigueBar.frame.width - 30,
+        let eyeIcon = UIImageView(frame: CGRect(x: fatigueBar.frame.origin.x + fatigueBar.bounds.width - yScale * 3,
                                                 y: 0,
-                                                width: fatigueBar.bounds.height * 20,
-                                                height: fatigueBar.bounds.height * 20))
+                                                width: fatigueBar.bounds.height * yScale * 3,
+                                                height: fatigueBar.bounds.height * yScale * 3))
         eyeIcon.image = UIImage(named: "OeilIcon")
         eyeIcon.center.y = fatigueBar.center.y
         
         view.insertSubview(eyeIcon, aboveSubview: fatigueBar)
         
-        let bowlIcon = UIImageView(frame: CGRect(x: hungerBar.frame.origin.x + hungerBar.frame.width - 30,
+        let bowlIcon = UIImageView(frame: CGRect(x: hungerBar.frame.origin.x + hungerBar.bounds.width - yScale * 3,
                                                  y: 0,
-                                                 width: hungerBar.bounds.height * 20,
-                                                 height: hungerBar.bounds.height * 20))
+                                                 width: hungerBar.bounds.height * yScale * 3,
+                                                 height: hungerBar.bounds.height * yScale * 3))
         bowlIcon.image = UIImage(named: "BolIcon")
         bowlIcon.center.y = hungerBar.center.y
         
