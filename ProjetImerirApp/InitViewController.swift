@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GameKit
 
 class InitViewController: UIViewController {
     
@@ -92,6 +93,32 @@ class InitViewController: UIViewController {
                 print("Could not instantiate view controller with identifier of type StatsViewController")
                 return
             }}
+    }
+    
+    @IBAction func onTrophyTapped(_ sender: UITapGestureRecognizer) {
+        
+        myBruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 0.5)
+
+        if embedViewController.gcEnabled {
+            
+            let bestScoreInt = GKScore(leaderboardIdentifier: embedViewController.LEADERBOARD_ID)
+            bestScoreInt.value = Int64(102)
+            
+            GKScore.report([bestScoreInt]) { (error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    print("Best Score submitted to your Leaderboard!")
+                    let gcVC = GKGameCenterViewController()
+                    gcVC.gameCenterDelegate = self.embedViewController
+                    gcVC.viewState = .leaderboards
+                    gcVC.leaderboardIdentifier = self.embedViewController.LEADERBOARD_ID
+                    self.present(gcVC, animated: true, completion: nil)
+                }
+            }
+        } else {
+            embedViewController.authenticateLocalPlayer()
+        }
     }
     
     //Fonction abandonnée d'apparition de label personnalisé

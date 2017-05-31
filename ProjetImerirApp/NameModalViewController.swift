@@ -27,24 +27,10 @@ class NameModalViewController: UIViewController {
         
         embedViewController = getEmbedViewController()
     }
-    
+        
     func getErrorMessage(for name: String) -> String? {
         
         let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789éèàêèâôöëç-ûÔÖÛÇÉÈÊËÀÂ ")
-        if name.rangeOfCharacter(from: characterset.inverted) != nil {
-            return "Pas de caractères spéciaux !"
-        } else if name == "" {
-            return "N'oublie pas de rentrer un nom !"
-        } else if (name.characters.count) < 2 || (name.characters.count) > 12 {
-            return "de 2 à 12 lettres maximum !"
-        }
-        return nil
-    }
-    
-    func getErrorMessage(for name: String) -> String? {
-        
-        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789éèàêèâôöëç-ûÔÖÛÇÉÈÊËÀÂ")
-        
         if name.rangeOfCharacter(from: characterset.inverted) != nil {
             return "Pas de caractères spéciaux !"
         } else if name == "" {
@@ -59,9 +45,7 @@ class NameModalViewController: UIViewController {
     @IBAction func startNewGame(_ sender: UIButton) {
 
         let myPresentingViewController = self.presentingViewController!.childViewControllers.first as! InitViewController
-        
-        let myPresentingViewController = self.presentingViewController as! InitViewController
-        
+                
         if let msgError = getErrorMessage(for: nameField.text!) {
             contrainteLabel.text = msgError
             self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)

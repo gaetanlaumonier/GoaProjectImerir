@@ -342,7 +342,7 @@
 				3FD1AC8D1EC5AF60008F66CB /* Audio */,
 				3F28447C1E488E94001E8ED3 /* ProjetImerirAppTests */,
 				3F2844661E488E94001E8ED3 /* Products */,
-				3F63214A1EDD4CC400B0405E /* Frameworks */,
+				3F05B9201EDD5DD4002649AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -678,7 +678,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};

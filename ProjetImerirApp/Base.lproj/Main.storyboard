@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Vd-Vn-EX1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="udD-PG-bRI">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5nu-Ak-QDN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q3F-KF-jA3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
@@ -167,14 +168,26 @@
                                     <segue destination="23D-lh-nEh" kind="presentation" identifier="Credits" modalTransitionStyle="crossDissolve" id="dOC-LB-Dsj"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trophee" translatesAutoresizingMaskIntoConstraints="NO" id="oSt-JL-3Uj">
+                                <rect key="frame" x="20" y="1243.5" width="102.5" height="102.5"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oSt-JL-3Uj" secondAttribute="height" id="ATQ-vy-1QM"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mAs-7h-q3d" appends="YES" id="zNO-zu-dgZ"/>
+                                </connections>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-ug-tVy">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oSt-JL-3Uj" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.1" id="1Li-EJ-3A2"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" id="2uk-rC-nca"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="48t-bf-GyB"/>
+                            <constraint firstItem="BKK-gC-96s" firstAttribute="top" secondItem="oSt-JL-3Uj" secondAttribute="bottom" constant="20" id="56m-pF-CV8"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="8se-Ds-hFG"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" id="BUX-jm-3Bw"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="EHw-07-coc"/>
@@ -184,6 +197,7 @@
                             <constraint firstItem="j6W-ew-jUV" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.65" id="OQN-39-dAx"/>
                             <constraint firstItem="tnn-YC-hLC" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="PFl-zT-blQ"/>
                             <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="PuU-cX-xRo"/>
+                            <constraint firstItem="oSt-JL-3Uj" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leading" constant="20" id="TSY-OY-7jY"/>
                             <constraint firstItem="Rbq-ug-tVy" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leading" id="UeQ-Ta-FJH"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Vob-aI-BRH"/>
                             <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="XtX-hc-6sp"/>
@@ -199,6 +213,7 @@
                             <constraint firstItem="tnn-YC-hLC" firstAttribute="top" secondItem="j6W-ew-jUV" secondAttribute="bottom" constant="30" id="nxx-tz-DaB"/>
                             <constraint firstAttribute="bottom" secondItem="Rbq-ug-tVy" secondAttribute="bottom" id="p6t-ag-HsM"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="rAq-O9-Zuc"/>
+                            <constraint firstItem="Rbq-ug-tVy" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="uCN-sR-93N"/>
                             <constraint firstItem="j6W-ew-jUV" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="vde-xX-Ki0"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="wQa-0V-6Dg"/>
                             <constraint firstItem="Rbq-ug-tVy" firstAttribute="top" secondItem="V2U-jB-sko" secondAttribute="top" id="waf-An-B0O"/>
@@ -218,6 +233,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcd-u5-Lpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mAs-7h-q3d">
+                    <connections>
+                        <action selector="onTrophyTapped:" destination="4Vd-Vn-EX1" id="RJD-Jj-NHf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1371.0144927536232" y="314.67391304347831"/>
         </scene>
@@ -236,7 +256,7 @@
                                     <rect key="frame" x="102.5" y="136.5" width="819" height="1093"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistiques" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijt-nC-ooL" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="81.5" y="20" width="656" height="109.5"/>
+                                            <rect key="frame" x="82" y="20" width="655" height="109.5"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -254,17 +274,17 @@
                                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <prototypes>
                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatCell" rowHeight="166" id="TZL-cd-IDx" customClass="StatsTableViewCell" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28" width="819" height="166"/>
+                                                    <rect key="frame" x="0.0" y="28" width="820" height="166"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZL-cd-IDx" id="EFq-Qq-HFe">
-                                                        <rect key="frame" x="0.0" y="0.0" width="819" height="166"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="820" height="166"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1W1-Bn-16Q">
                                                                 <rect key="frame" x="0.0" y="-0.5" width="819" height="166"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arcade Rangement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYy-qO-bkN" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="81.5" y="0.0" width="656" height="57.5"/>
+                                                                        <rect key="frame" x="82.5" y="0.0" width="655" height="57.5"/>
                                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                                         <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -303,7 +323,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pourcentage réussit" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVn-6g-HI3" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="107.5" width="532.5" height="50.5"/>
+                                                                        <rect key="frame" x="10.5" y="108" width="532" height="49.5"/>
                                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                                         <color key="textColor" red="1" green="0.96898381870093919" blue="0.73511697495103423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -319,7 +339,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCq-PA-fvd" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="542.5" y="107.5" width="245.5" height="50.5"/>
+                                                                        <rect key="frame" x="542.5" y="108" width="245.5" height="49.5"/>
                                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                                         <color key="textColor" red="1" green="0.96898381870093919" blue="0.73511697495103423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -493,7 +513,7 @@
                                     <rect key="frame" x="153.5" y="341.5" width="717" height="683"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quel est ton nom ?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-tS-f4E" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="72" y="30" width="573" height="102.5"/>
+                                            <rect key="frame" x="71.5" y="30" width="573" height="102.5"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -505,8 +525,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGl-eg-BSq" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="72" y="190" width="573" height="102.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De 2 à 12 lettres maximum !" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGl-eg-BSq" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="71.5" y="190" width="573" height="102.5"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -518,7 +538,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utr-30-AxL">
-                                            <rect key="frame" x="180" y="308" width="358" height="67.5"/>
+                                            <rect key="frame" x="179.5" y="307.5" width="358.5" height="67.5"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -529,7 +549,7 @@
                                             </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMx-lC-2jQ" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="180" y="390.5" width="358" height="102"/>
+                                            <rect key="frame" x="179.5" y="390" width="358.5" height="102"/>
                                             <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
@@ -556,7 +576,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJD-Ih-37X" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                            <rect key="frame" x="250.5" y="502.5" width="215" height="102.5"/>
+                                            <rect key="frame" x="250" y="502" width="215.5" height="103"/>
                                             <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <size key="titleShadowOffset" width="1" height="1"/>
@@ -647,5 +667,6 @@
     <resources>
         <image name="LabSortie.gif" width="939" height="1196"/>
         <image name="LaunchScreen" width="1125" height="1600"/>
+        <image name="Trophee" width="329" height="360"/>
     </resources>
 </document>

@@ -4,7 +4,7 @@
 class MazePlayer {
     
     /**
-     Associate a number from 0 to 4 to a direction
+     Associate a number from 0 to 3 to a direction
      - Orientation.North.rawValue = 0
      - Orientation.East.rawValue = 1
      - Orientation.South.rawValue = 2

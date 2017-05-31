@@ -67,8 +67,10 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var nbrBatAppear : Int = 0
     var orientationView:UIView!
     
+    var embedViewController:EmbedViewController!
+    
     /**
-     Associate a number from 0 to 4 to a direction
+     Associate a number from 0 to 3 to a direction
      - Direction.North.rawValue = 0
      - Direction.East.rawValue = 1
      - Direction.South.rawValue = 2
@@ -619,7 +621,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
      
      - note: Returns *possibleCells* room's var if it was already set.
      
-     - returns: Array of possible Direction of the current room.
+     - returns: An array of possible Direction of the current room.
      */
     func getAvalaibleDirections(room: Room) -> [Direction] {
         
