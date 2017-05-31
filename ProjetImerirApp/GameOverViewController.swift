@@ -9,8 +9,8 @@ class GameOverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         embedViewController = getEmbedViewController()
+        embedViewController.view.alpha = 1
     }
 
     @IBAction func retourMenuButton(_

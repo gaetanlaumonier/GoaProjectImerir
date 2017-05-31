@@ -24,8 +24,8 @@ class NameModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         embedViewController = getEmbedViewController()
+        nameField.becomeFirstResponder()
     }
         
     func getErrorMessage(for name: String) -> String? {

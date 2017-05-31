@@ -509,9 +509,13 @@ extension UIViewController{
             return embedVc
         }
         
+        if let embedVc = self as? EmbedViewController {
+            return embedVc
+        }
+
+        print("EMBED VIEW CONTROLLER NOT FOUND")
         return EmbedViewController()
     }
-    
 }
 
 extension Array {

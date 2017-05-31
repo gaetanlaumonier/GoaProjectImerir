@@ -11,10 +11,10 @@ class ProfilJoueur : NSObject, NSCoding{
             if lifePoint <= 0 {
                 if let vc = UIStoryboard(name:"GameOver", bundle:nil).instantiateInitialViewController() as? GameOverViewController
                 {
-                    let topController = UIApplication.topViewController()
+                    let topController = UIApplication.topViewController()!
                    // var embedViewController:EmbedViewController!
                     
-                    switch topController! {
+                    switch topController {
                     case is QuestionViewController:
                         let presentingViewType = topController as! QuestionViewController
                         presentingViewType.startTimer.invalidate()
@@ -48,14 +48,16 @@ class ProfilJoueur : NSObject, NSCoding{
                         print("No timer")
                         break
                     }
-
-                    UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                        topController?.view.alpha = 0
-                        
+                    if let embedVc = topController as? EmbedViewController {
+                    
+                    UIView.animate(withDuration: 3, animations: {
+                        embedVc.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                        embedVc.view.alpha = 0
                     } , completion: { success in
-                     //   topController?.embedViewController.showScene(vc)
-                       // topController?.present(vc, animated: false, completion: nil)
+                        embedVc.showScene(vc)
+                        
                     })
+                    }
                 }else {
                     print("Could not instantiate view controller")
                     return
