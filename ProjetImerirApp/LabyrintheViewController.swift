@@ -161,7 +161,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         initProfil()
         initPageView()
         
@@ -511,7 +511,6 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func endGame() {
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
         if isFirstMaze == true {
-          //  let myPresentingViewController = self.presentingViewController!.childViewControllers.first as! DialogueViewController
                 firstGameTimer.invalidate()
                 self.oneProfil.sceneActuelle += 1
                 vc.oneProfil = self.oneProfil
@@ -520,7 +519,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                     self.view.alpha = 0
                     self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
                     self.bruitageMusicPlayer.setVolume(0, fadeDuration: 1)
-                    self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
+                    
+                    self.bruitageMusicPlayerMonstre?.setVolume(0, fadeDuration: 1)
+
                 } , completion: { success in
                     self.bruitageMusicPlayer.stop()
                     self.embedViewController.showScene(vc)
@@ -537,10 +538,10 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
                     self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 5.5)
-                    self.bruitageMusicPlayerMonstre.setVolume(0, fadeDuration: 1)
+                    self.bruitageMusicPlayerMonstre?.setVolume(0, fadeDuration: 1)
                     self.view.alpha = 0
                 }, completion: { success in
-                    self.bruitageMusicPlayerMonstre.stop()
+                    self.bruitageMusicPlayerMonstre?.stop()
                     self.embedViewController.showScene(vc)
                 })
             }
@@ -799,7 +800,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             self.enableArrows()
             return
         }
-        
+
         let bat = currentRoom.bats.first!
         
         let posX = CGFloat(Double(view.bounds.width) * ((drand48() / 2) + 0.25))
@@ -839,7 +840,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         }, completion: { (finished) in
             
             if finished {
-                self.bruitageMusicPlayerMonstre.stop()
+                self.bruitageMusicPlayerMonstre?.stop()
                 self.looseHealth(Int(arc4random_uniform(4)) + 1)
                 self.killBat()
             }
@@ -867,7 +868,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func killBat() {
         
         if let bat = currentBat {
-            bruitageMusicPlayerMonstre.stop()
+            bruitageMusicPlayerMonstre?.stop()
             killMonster = GestionBruitage(filename: "MonstreTaped", volume: 0.8)
             freezeBat()
             currentBat = nil

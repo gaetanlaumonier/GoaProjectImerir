@@ -57,7 +57,7 @@ class NameModalViewController: UIViewController {
             {
                 self.view.endEditing(true)
                 bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
-                myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.8)
+                myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.4)
                 myPresentingViewController.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.nameView.alpha = CGFloat(0)
@@ -74,7 +74,6 @@ class NameModalViewController: UIViewController {
                         
                         vc.oneProfil = self.oneProfil
                         self.dismiss(animated: false, completion: nil)
-                        //self.view.window?.rootViewController? = vc
                         self.embedViewController.showScene(vc)
                         
                     })

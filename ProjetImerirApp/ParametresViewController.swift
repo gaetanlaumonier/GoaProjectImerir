@@ -107,11 +107,10 @@ class ParametresViewController: UIViewController {
                 
                 let presentingViewType = self.presentingViewController!.childViewControllers.first as! LabyrintheViewController
                 if presentingViewType.isFirstMaze == true {
-                    let dialogueView = presentingViewType.presentingViewController as! DialogueViewController
                     UIView.animate(withDuration: 2.5, animations: {
                         self.view.alpha = 0
                         presentingViewType.view.alpha = 0
-                        dialogueView.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                        presentingViewType.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
                     }, completion : { _ in
                         vc.firstMenuForRun = false
                         self.dismiss(animated: false, completion: nil)
