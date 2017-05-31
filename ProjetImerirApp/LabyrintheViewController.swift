@@ -122,7 +122,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var bruitageMusicPlayer = AVAudioPlayer()
     
     /// AVFoundation object that is used to play looping sounds related to the bats.
-    var bruitageMusicPlayerMonstre = AVAudioPlayer()
+    var bruitageMusicPlayerMonstre: AVAudioPlayer?
     
     // TODO : REMOVE
     var firstGameTimer = Timer()
