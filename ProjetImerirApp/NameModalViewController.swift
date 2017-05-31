@@ -56,7 +56,7 @@ class NameModalViewController: UIViewController {
             {
                 self.view.endEditing(true)
                 bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
-                myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.8)
+                myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.4)
                 myPresentingViewController.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
                 UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
                     self.nameView.alpha = CGFloat(0)
@@ -67,13 +67,12 @@ class NameModalViewController: UIViewController {
                         self.view.alpha = 0
                     }, completion : { _ in
                         let namePlayer = self.nameField.text!.capitalizingFirstLetter()
-                        self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 3, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 1, statsQuiz : ["bonneReponseQuiz":0, "pourcentage" : 0], statsCookie : ["cookieGoodTaped":0, "pourcentage" : 0], statsRangement : ["goodClassification":0, "pourcentage" : 0], statsConsole : ["missileHit":0, "pourcentage" : 0], statsBac : ["goodClassification":0, "pourcentage" : 0], statsLabyrinthe : ["timeSpent":0, "batKilled" : 0], questionAlreadyPick:[])
+                        self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Personne", sceneActuelle : 2, statsQuiz : ["bonneReponseQuiz":0, "pourcentage" : 0], statsCookie : ["cookieGoodTaped":0, "pourcentage" : 0], statsRangement : ["goodClassification":0, "pourcentage" : 0], statsConsole : ["missileHit":0, "pourcentage" : 0], statsBac : ["goodClassification":0, "pourcentage" : 0], statsLabyrinthe : ["timeSpent":0, "batKilled" : 0], questionAlreadyPick:[])
                         self.oneProfil.name = namePlayer
                         self.saveMyData()
                         
                         vc.oneProfil = self.oneProfil
                         self.dismiss(animated: false, completion: nil)
-                        //self.view.window?.rootViewController? = vc
                         self.embedViewController.showScene(vc)
                         
                     })

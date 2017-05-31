@@ -1,18 +1,4 @@
 
-//a integrer a chaque jeux : header, musique, background, traitement de la fin, bruitage, pause
-//Traitement de la fin des jeux
-
-//mercredi question, commit
-//jeudi wiki, fin des jeux, test
-//vendredi test, commentaires
-//samedi revision oral et redactionnel
-
-//addchildviewcontroller(vc)
-//vc.loadviewifneed
-//addsubview
-//transition
-//removefromsuperview
-
 import UIKit
 
 //Structure générale des questions du quiz

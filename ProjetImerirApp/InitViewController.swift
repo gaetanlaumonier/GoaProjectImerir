@@ -59,7 +59,7 @@ class InitViewController: UIViewController {
         
         if let mySaveData = NSKeyedUnarchiver.unarchiveObject(withFile: maData.path) as? ProfilJoueur {
     
-            myBruitageMusicPlayer = GestionBruitage(filename: "Air", volume : 0.8)
+            myBruitageMusicPlayer = GestionBruitage(filename: "Air", volume : 0.4)
             
             if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
             {

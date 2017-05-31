@@ -13,34 +13,34 @@ class ProfilJoueur : NSObject, NSCoding{
                 {
                     let topController = UIApplication.topViewController()!
                    // var embedViewController:EmbedViewController!
-                    
-                    switch topController {
+
+                    switch topController.childViewControllers.first {
                     case is QuestionViewController:
-                        let presentingViewType = topController as! QuestionViewController
+                        let presentingViewType = topController.childViewControllers.first as! QuestionViewController
                         presentingViewType.startTimer.invalidate()
                         break
                     case is CookieViewController:
-                        let presentingViewType = topController as! CookieViewController
+                        let presentingViewType = topController.childViewControllers.first as! CookieViewController
                         presentingViewType.myTimer.invalidate()
                         presentingViewType.gamePause = true
                         break
                     case is RangementViewController:
-                        let presentingViewType = topController as! RangementViewController
+                        let presentingViewType = topController.childViewControllers.first as! RangementViewController
                         presentingViewType.endGameTimer.invalidate()
                         presentingViewType.gamePause = true
                         break
                     case is LabyrintheViewController:
-                        let presentingViewType = topController as! LabyrintheViewController
+                        let presentingViewType = topController.childViewControllers.first as! LabyrintheViewController
                         if presentingViewType.isFirstMaze {
                             presentingViewType.firstGameTimer.invalidate()
                         }
                         break
                     case is ConsoleViewController:
-                        let presentingViewType = topController as! ConsoleViewController
+                        let presentingViewType = topController.childViewControllers.first as! ConsoleViewController
                         presentingViewType.pauseGame()
                         break
                     case is BacViewController:
-                        let presentingViewType = topController as! BacViewController
+                        let presentingViewType = topController.childViewControllers.first as! BacViewController
                         presentingViewType.pauseGame()
                         break
                         
