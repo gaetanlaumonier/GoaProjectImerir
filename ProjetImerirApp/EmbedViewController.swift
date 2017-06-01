@@ -16,7 +16,6 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
     var gcUserCanceled = false
     
     func showScene(_ scene: UIViewController) {
-        print(scene)
         if currentScene == nil {
             currentScene = scene
             addChildViewController(currentScene)
@@ -26,7 +25,6 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
             addChildViewController(scene)
             
             transition(from: currentScene, to: scene, duration: 0, options: .transitionCrossDissolve, animations: nil, completion: {_ in
-                print(scene)
                 self.currentScene.removeFromParentViewController()
                 self.currentScene = scene
             })

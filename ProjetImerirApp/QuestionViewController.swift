@@ -238,10 +238,12 @@ class QuestionViewController: UIViewController {
             } else {
                 resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
                 changeColorLabelBad(label: headerView.lifePointLabel)
+
                 self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
             }
         }else {
             resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+
             changeColorLabelBad(label: headerView.lifePointLabel)
             self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
         }
@@ -417,20 +419,23 @@ class QuestionViewController: UIViewController {
             case "Input":
                 
                 self.view.endEditing(true)
-                
                 for i in 0..<self.themeQuestionActif[self.QuestionNumber].Choice.count{
                     if(stringReponse.trimmingCharacters(in: .whitespacesAndNewlines) == self.themeQuestionActif[self.QuestionNumber].Choice[i]){
-                        self.resultatLabel.text = "\(self.AllAnswersReactions[0].bonneReponse[self.resultatVrai])"
                         self.reponseTrouverInput = true
-                        self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1
-                        self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikGood", volume : 0.8)
+                        break
                     } else {
-                        self.VerifNoobFunction()
-                        self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
+                        self.reponseTrouverInput = false
                     }
                 }
                 
-                
+                if reponseTrouverInput == false {
+                    self.VerifNoobFunction()
+                    self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
+                } else {
+                    self.resultatLabel.text = "\(self.AllAnswersReactions[0].bonneReponse[self.resultatVrai])"
+                    self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1
+                    self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikGood", volume : 0.8)
+                }
                 
                 self.InputAnswer.alpha = 0
                 self.saisieReponseLabel.alpha = 0
