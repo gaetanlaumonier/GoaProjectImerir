@@ -45,6 +45,43 @@ extension UILabel {
     }
 }
 
+extension UITextField {
+    func setupLabelDynamicSize(fontSize:CGFloat) {
+        let screenSize = UIScreen.main.bounds.size
+        var calculatedFont: UIFont?
+        let currentFontName = self.font!.fontName
+        
+        if screenSize.height < 500 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1)
+            self.font = calculatedFont
+        } else if screenSize.height < 600{
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.1)
+            self.font = calculatedFont
+        } else if screenSize.height < 700{
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.3)
+            self.font = calculatedFont
+        } else if screenSize.height < 800 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.4)
+            self.font = calculatedFont
+        } else if screenSize.height < 900 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.5)
+            self.font = calculatedFont
+        } else if screenSize.height < 1000 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2)
+            self.font = calculatedFont
+        } else if screenSize.height < 1100 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.1)
+            self.font = calculatedFont
+        } else if screenSize.height < 2000 {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 2.4)
+            self.font = calculatedFont
+        }else {
+            calculatedFont = UIFont(name: currentFontName, size: fontSize * 3)
+            self.font = calculatedFont
+        }
+    }
+}
+
 extension CATextLayer {
     func setupLabelDynamicSize(fontSize:CGFloat) {
         let screenSize = UIScreen.main.bounds.size

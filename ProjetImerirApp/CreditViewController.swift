@@ -29,6 +29,9 @@ class CreditViewController: UIViewController, CAAnimationDelegate {
         AllCredit = buildCredit()
         view.alpha = 0
         
+        let embedViewController = getEmbedViewController()
+        
+        embedViewController?.updateAchievement("achievement.credits")
     }
     
     override func viewDidAppear(_ animated: Bool) {

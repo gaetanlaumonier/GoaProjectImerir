@@ -18,6 +18,7 @@ class InitViewController: UIViewController {
     @IBOutlet weak var MenuBackgroundView: UIImageView!
     @IBOutlet weak var statsButton: DesignableButton!
     @IBOutlet weak var launchScreenImageView: UIImageView!
+    @IBOutlet var gameCenterLabel: DesignableLabel!
     
     var oneProfil = ProfilJoueur()
     var embedViewController:EmbedViewController!
@@ -33,6 +34,14 @@ class InitViewController: UIViewController {
         embedViewController = getEmbedViewController()
         embedViewController.backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
         
+        if embedViewController.gcEnabled {
+            gameCenterLabel.text = "Connecté"
+            gameCenterLabel.textColor = .green
+        }
+        
+        print(NotificationCenter.default)
+        NotificationCenter.default.addObserver(forName: embedViewController.gcConnectedNotif, object: nil, queue: nil, using: self.onGcUserConnected)
+        
         MenuBackgroundView.loadGif(name: "LabSortie")
         if firstMenuForRun == true {
         } else {
@@ -40,6 +49,11 @@ class InitViewController: UIViewController {
             self.view.alpha = 0
             
         }
+    }
+    
+    func onGcUserConnected(notification:Notification) {
+        gameCenterLabel.text = "Connecté"
+        gameCenterLabel.textColor = .green
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,24 +114,30 @@ class InitViewController: UIViewController {
         myBruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 0.5)
 
         if embedViewController.gcEnabled {
-            
             let bestScoreInt = GKScore(leaderboardIdentifier: embedViewController.LEADERBOARD_ID)
             bestScoreInt.value = Int64(102)
             
             GKScore.report([bestScoreInt]) { (error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                } else {
-                    print("Best Score submitted to your Leaderboard!")
-                    let gcVC = GKGameCenterViewController()
-                    gcVC.gameCenterDelegate = self.embedViewController
-                    gcVC.viewState = .leaderboards
-                    gcVC.leaderboardIdentifier = self.embedViewController.LEADERBOARD_ID
-                    self.present(gcVC, animated: true, completion: nil)
-                }
+
+                guard error == nil  else { return }
+                
+                print("Best Score submitted to your Leaderboard!")
+                let gcVC = GKGameCenterViewController()
+                gcVC.gameCenterDelegate = self.embedViewController
+                gcVC.viewState = .achievements
+                self.embedViewController.present(gcVC, animated: true, completion: nil)
             }
         } else {
-            embedViewController.authenticateLocalPlayer()
+            
+            if embedViewController.gcUserCanceled {
+                let alert = UIAlertController(title: "Erreur", message: "Si vous souhaitez activer Game Center", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
     }
     

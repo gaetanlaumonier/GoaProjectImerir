@@ -239,8 +239,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "475"
             endingLineNumber = "475"
-            landmarkName = "LabyrintheViewController"
-            landmarkType = "3">
+            landmarkName = "looseHealth(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -271,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "377"
             endingLineNumber = "377"
-            landmarkName = "onPotionTaken(_:)"
+            landmarkName = "arrowTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -335,7 +335,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "653"
             endingLineNumber = "653"
-            landmarkName = "getRoomImage()"
+            landmarkName = "loadRoom(_:_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -415,7 +415,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "712"
             endingLineNumber = "712"
-            landmarkName = "redrawHUD()"
+            landmarkName = "getAvalaibleDirections(room:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -431,7 +431,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "714"
             endingLineNumber = "714"
-            landmarkName = "redrawHUD()"
+            landmarkName = "getAvalaibleDirections(room:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -447,7 +447,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "778"
             endingLineNumber = "778"
-            landmarkName = "drawNextBat()"
+            landmarkName = "drawSpikes()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -463,7 +463,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "779"
             endingLineNumber = "779"
-            landmarkName = "drawNextBat()"
+            landmarkName = "drawSpikes()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -479,7 +479,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "774"
             endingLineNumber = "774"
-            landmarkName = "drawNextBat()"
+            landmarkName = "drawSpikes()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -495,8 +495,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "740"
             endingLineNumber = "740"
-            landmarkName = "drawSpikes()"
-            landmarkType = "7">
+            landmarkName = "LabyrintheViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -511,7 +511,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "747"
             endingLineNumber = "747"
-            landmarkName = "drawSpikes()"
+            landmarkName = "redrawHUD()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -527,7 +527,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "713"
             endingLineNumber = "713"
-            landmarkName = "redrawHUD()"
+            landmarkName = "getAvalaibleDirections(room:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -544,6 +544,38 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "testNameCheck()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/EmbedViewController.swift"
+            timestampString = "518014873.057464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "authenticateLocalPlayer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/CreditViewController.swift"
+            timestampString = "518012688.913379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

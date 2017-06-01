@@ -25,6 +25,7 @@
 		3F659C9A1EC925CA00E64121 /* SpaceBonusHD.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */; };
 		3F8E113E1ED5BD91004EC072 /* RulesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E113D1ED5BD91004EC072 /* RulesPageViewController.swift */; };
 		3F9BE7211ED9C71B00F67C75 /* FicheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9BE7201ED9C71B00F67C75 /* FicheView.xib */; };
+		3FBBB97F1EE0378000EEDCAB /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBB97E1EE0378000EEDCAB /* DesignableTextField.swift */; };
 		3FC57A7A1EDB2CE300F5A7E1 /* BoireCafe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57A791EDB2CE300F5A7E1 /* BoireCafe.mp3 */; };
 		3FC57A7C1EDB2CED00F5A7E1 /* Fenetre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57A7B1EDB2CED00F5A7E1 /* Fenetre.mp3 */; };
 		3FC57A7E1EDB2CF300F5A7E1 /* BolCereale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57A7D1EDB2CF300F5A7E1 /* BolCereale.mp3 */; };
@@ -177,6 +178,7 @@
 		3F659C991EC925CA00E64121 /* SpaceBonusHD.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SpaceBonusHD.gif; sourceTree = "<group>"; };
 		3F8E113D1ED5BD91004EC072 /* RulesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesPageViewController.swift; sourceTree = "<group>"; };
 		3F9BE7201ED9C71B00F67C75 /* FicheView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FicheView.xib; path = ProjetImerirApp/FicheView.xib; sourceTree = "<group>"; };
+		3FBBB97E1EE0378000EEDCAB /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		3FC57A791EDB2CE300F5A7E1 /* BoireCafe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BoireCafe.mp3; sourceTree = "<group>"; };
 		3FC57A7B1EDB2CED00F5A7E1 /* Fenetre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fenetre.mp3; sourceTree = "<group>"; };
 		3FC57A7D1EDB2CF300F5A7E1 /* BolCereale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BolCereale.mp3; sourceTree = "<group>"; };
@@ -364,13 +366,6 @@
 			path = ProjetImerirAppTests;
 			sourceTree = "<group>";
 		};
-		3F63214A1EDD4CC400B0405E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3F659C7A1EC74CA700E64121 /* ArcadeConsole */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +541,7 @@
 				3FD1ACDE1EC5AF6D008F66CB /* HeaderView.swift */,
 				3FD1ACDF1EC5AF6D008F66CB /* GamesRulesView.swift */,
 				3F8E113D1ED5BD91004EC072 /* RulesPageViewController.swift */,
+				3FBBB97E1EE0378000EEDCAB /* DesignableTextField.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -674,7 +670,7 @@
 				TargetAttributes = {
 					3F2844641E488E94001E8ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8BNRNG4PCS;
+						DevelopmentTeam = 8QBTLLQW94;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -818,6 +814,7 @@
 				3FD1AD191EC5AF6D008F66CB /* CreditViewController.swift in Sources */,
 				3FD1AD2A1EC5AF6D008F66CB /* ScoreUp.swift in Sources */,
 				3FD1AD2E1EC5AF6D008F66CB /* RangementView.swift in Sources */,
+				3FBBB97F1EE0378000EEDCAB /* DesignableTextField.swift in Sources */,
 				3FD1AD261EC5AF6D008F66CB /* Bonus.swift in Sources */,
 				3F05B9241EDD6AC6002649AE /* EmbedViewController.swift in Sources */,
 				3F8E113E1ED5BD91004EC072 /* RulesPageViewController.swift in Sources */,
@@ -1032,11 +1029,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8BNRNG4PCS;
+				DEVELOPMENT_TEAM = 8QBTLLQW94;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.imerir.banalejournee;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.imerir.banalejournee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1049,11 +1046,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8BNRNG4PCS;
+				DEVELOPMENT_TEAM = 8QBTLLQW94;
 				INFOPLIST_FILE = ProjetImerirApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.imerir.banalejournee;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.imerir.banalejournee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
