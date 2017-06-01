@@ -269,11 +269,13 @@ class DialogueViewController: UIViewController {
             self.firstDialogue = true
             self.DialogueNumber = 0
             self.GestionDialogue()
+            self.tapEnable = false
             UIView.animate(withDuration: 2, delay : 1, animations: {
                 self.imageBackground.alpha = 0.6
                 self.dialogueView.alpha = 1
             }, completion : { _ in
                 self.arrowView.isHidden = false
+                self.tapEnable = true
                 
             })
         })
@@ -397,6 +399,7 @@ class DialogueViewController: UIViewController {
     
     func DialoguesFinaux(){
         self.oneProfil.sceneActuelle += 3
+        self.tapEnable = false
         UIView.animate(withDuration: 0.25, animations: {
             self.arrowView.alpha = 0
         })
@@ -408,6 +411,7 @@ class DialogueViewController: UIViewController {
             for obj in self.personnages {
                 obj.removeFromSuperview()
             }
+            self.tapEnable = true
             self.firstDialogue = true
             self.DialogueNumber = 0
             self.GestionDialogue()

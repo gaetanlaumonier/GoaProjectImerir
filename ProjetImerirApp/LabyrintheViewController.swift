@@ -11,7 +11,7 @@ import AVFoundation
 
 class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource {
     
-    /// Viasually represents the background image in the view.
+    /// Visually represents the background image in the view.
     @IBOutlet var background: UIImageView!
     
     /// Represents the view where the player's informations are displayed.
@@ -534,6 +534,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             } else {
             self.oneProfil.statsLabyrinthe["batKilled"] = 100 * self.nbrBatKilled / self.nbrBatAppear
             }
+            self.oneProfil.lifePoint = 60
             vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {

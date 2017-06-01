@@ -13,7 +13,6 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
     let LEADERBOARD_ID = "com.score.banalejournee"
     
     func showScene(_ scene: UIViewController) {
-        print(scene)
         if currentScene == nil {
             currentScene = scene
             addChildViewController(currentScene)
@@ -23,7 +22,6 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
             addChildViewController(scene)
             
             transition(from: currentScene, to: scene, duration: 0, options: .transitionCrossDissolve, animations: nil, completion: {_ in
-                print(scene)
                 self.currentScene.removeFromParentViewController()
                 self.currentScene = scene
             })
@@ -71,6 +69,6 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
         
         showScene(initVc)
         
-        authenticateLocalPlayer()
+     //   authenticateLocalPlayer()
     }
 }
