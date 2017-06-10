@@ -77,26 +77,10 @@
             timestampString = "517222282.938766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "scoreGestureFinal()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjetImerirApp/RangementViewController.swift"
-            timestampString = "517222282.938766"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "startEndTimer()"
-            landmarkType = "7">
+            landmarkName = "RangementViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/RangementViewController.swift"
-            timestampString = "517669888.550085"
+            timestampString = "518046602.25854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "spawnObject(nombre:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/RangementViewController.swift"
-            timestampString = "517669888.550085"
+            timestampString = "518046602.25854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
-            landmarkName = "getRandomObject()"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "addTag(objet:type:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/RangementViewController.swift"
-            timestampString = "517669888.550085"
+            timestampString = "518046602.25854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
-            landmarkName = "stopWiggling(objet:)"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
+            landmarkName = "updateScore()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -330,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "653"
-            endingLineNumber = "653"
+            startingLineNumber = "650"
+            endingLineNumber = "650"
             landmarkName = "loadRoom(_:_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/ConsoleViewController.swift"
-            timestampString = "517593621.932965"
+            timestampString = "518049803.432653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "startMissileSpawner()"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/BacViewController.swift"
-            timestampString = "517918335.721638"
+            timestampString = "518049803.432653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "endGame()"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "712"
-            endingLineNumber = "712"
+            startingLineNumber = "709"
+            endingLineNumber = "709"
             landmarkName = "getAvalaibleDirections(room:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "714"
-            endingLineNumber = "714"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
             landmarkName = "getAvalaibleDirections(room:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,12 +426,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "778"
-            endingLineNumber = "778"
-            landmarkName = "drawSpikes()"
+            startingLineNumber = "775"
+            endingLineNumber = "775"
+            landmarkName = "drawPotion()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -458,43 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "779"
-            endingLineNumber = "779"
-            landmarkName = "drawSpikes()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "774"
-            endingLineNumber = "774"
-            landmarkName = "drawSpikes()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "740"
-            endingLineNumber = "740"
+            startingLineNumber = "776"
+            endingLineNumber = "776"
             landmarkName = "LabyrintheViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -506,12 +458,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "747"
-            endingLineNumber = "747"
-            landmarkName = "redrawHUD()"
+            startingLineNumber = "771"
+            endingLineNumber = "771"
+            landmarkName = "drawPotion()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -522,11 +474,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetImerirApp/LabyrintheViewController.swift"
-            timestampString = "517853930.65028"
+            timestampString = "518092905.620527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "713"
-            endingLineNumber = "713"
+            startingLineNumber = "737"
+            endingLineNumber = "737"
+            landmarkName = "LabyrintheViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/LabyrintheViewController.swift"
+            timestampString = "518092905.620527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
+            landmarkName = "LabyrintheViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetImerirApp/LabyrintheViewController.swift"
+            timestampString = "518092905.620527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "710"
+            endingLineNumber = "710"
             landmarkName = "getAvalaibleDirections(room:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -545,20 +529,6 @@
             endingLineNumber = "34"
             landmarkName = "testNameCheck()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjetImerirApp/EmbedViewController.swift"
-            timestampString = "518014873.057464"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

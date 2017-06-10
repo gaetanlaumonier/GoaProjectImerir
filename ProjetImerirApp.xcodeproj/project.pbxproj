@@ -13,6 +13,7 @@
 		3F25E4CC1ECC813A009AAEEC /* BacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */; };
 		3F25E4D01ECC90D5009AAEEC /* Fiche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */; };
 		3F28447E1E488E94001E8ED3 /* ProjetImerirAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */; };
+		3F6272F41EE2DD390098BDD5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6272F31EE2DD390098BDD5 /* MenuViewController.swift */; };
 		3F659C751EC73ACC00E64121 /* ArcadeConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */; };
 		3F659C791EC74C3600E64121 /* AlienMissile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F659C781EC74C3600E64121 /* AlienMissile.gif */; };
 		3F659C7C1EC74CD500E64121 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */; };
@@ -166,6 +167,7 @@
 		3F2844791E488E94001E8ED3 /* ProjetImerirAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetImerirAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F28447D1E488E94001E8ED3 /* ProjetImerirAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetImerirAppTests.swift; sourceTree = "<group>"; usesTabs = 0; };
 		3F28447F1E488E94001E8ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6272F31EE2DD390098BDD5 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3F659C741EC73ACC00E64121 /* ArcadeConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArcadeConsole.storyboard; path = ProjetImerirApp/ArcadeConsole.storyboard; sourceTree = "<group>"; };
 		3F659C781EC74C3600E64121 /* AlienMissile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AlienMissile.gif; sourceTree = "<group>"; };
 		3F659C7B1EC74CD500E64121 /* ConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ConsoleViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -471,6 +473,7 @@
 				3FF66F1F1ECC7E920042E99B /* StatsViewController.swift */,
 				3FF66F211ECC7EAC0042E99B /* StatsTableViewCell.swift */,
 				3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */,
+				3F6272F31EE2DD390098BDD5 /* MenuViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				3FD1AD261EC5AF6D008F66CB /* Bonus.swift in Sources */,
 				3F05B9241EDD6AC6002649AE /* EmbedViewController.swift in Sources */,
 				3F8E113E1ED5BD91004EC072 /* RulesPageViewController.swift in Sources */,
+				3F6272F41EE2DD390098BDD5 /* MenuViewController.swift in Sources */,
 				3FD1AD181EC5AF6D008F66CB /* ParametresViewController.swift in Sources */,
 				3FD1AD2C1EC5AF6D008F66CB /* SomeHelp.swift in Sources */,
 				3FD1AD0E1EC5AF6D008F66CB /* ContentCookieViewController.swift in Sources */,

@@ -22,7 +22,7 @@ class CreditViewController: UIViewController, CAAnimationDelegate {
     
     var AllCredit = [Credit]()
     var bruitageMusicPlayer = AVAudioPlayer()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

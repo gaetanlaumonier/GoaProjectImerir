@@ -21,8 +21,8 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var paperBin: UIImageView!
     @IBOutlet var checkmark: UIImageView!
     
-    var gameDuration = 20.0
-    var timeLeft = 20.0
+    var gameDuration = 60.0
+    var timeLeft = 60.0
     var timers = [String:Timer]()
     
     var currentSheets = [Fiche]()
@@ -409,6 +409,11 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
             oneProfil.sceneActuelle += 1
+            
+            if !isAddict {
+                embedViewController.updateAchievement("achievement.bacnocoffee")
+            }
+            
             oneProfil.statsBac["goodClassification"] = studiedSheets
             if totalSheets > 0 {
                 oneProfil.statsBac["pourcentage"] = 100 * goodSheets / totalSheets
@@ -513,6 +518,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
             fillCoffee()
             
             let wasAddict = isAddict
+            isAddict = true
             
             removeAddictionEffects()
             addCoffeeEffects()
@@ -642,10 +648,10 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         currentSheets.append(sheet)
         
         
-        if isAddict {
-            addAddictionEffect(on: sheet)
-        } else if isOnCoffee {
+        if isOnCoffee {
             addCoffeeEffect(on: sheet)
+        } else if isAddict {
+            addAddictionEffect(on: sheet)
         }
     }
     
@@ -721,7 +727,6 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     func removeAddictionEffects() {
-        isAddict = false
         
         for sheet in currentSheets {
             removeAddictionEffect(on: sheet)
@@ -729,7 +734,6 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     func addAddictionEffects() {
-        isAddict = true
         
         for sheet in currentSheets {
             addAddictionEffect(on: sheet)

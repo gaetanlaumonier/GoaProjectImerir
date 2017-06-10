@@ -394,7 +394,29 @@ class DialogueViewController: UIViewController {
     }
     
     func CorrectAnswer(){
-        dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(self.oneProfil.statsQuiz["bonneReponseQuiz"]!.hashValue) questions de quiz sur 40."
+        let nbGood = oneProfil.statsQuiz["bonneReponseQuiz"]!.hashValue
+        
+        dialogueLabel.text = "\(AllDialogue[self.oneProfil.sceneActuelle].libelleDialogue[DialogueNumber])\(nbGood) questions de quiz sur 40."
+        
+        
+        if nbGood < 20 {
+            embedViewController.updateAchievement("achievement.rattrapage")
+        } else if nbGood >= 24 {
+            
+            embedViewController.updateAchievement("achievement.mentionab")
+            
+            if nbGood >= 28 {
+                embedViewController.updateAchievement("achievement.mentionb")
+            }
+            
+            if nbGood >= 32 {
+                embedViewController.updateAchievement("achievement.mentiontb")
+            }
+            
+            if nbGood == 40 {
+                embedViewController.updateAchievement("achievement.sansfautes")
+            }
+        }
     }
     
     func DialoguesFinaux(){
@@ -423,6 +445,18 @@ class DialogueViewController: UIViewController {
         if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController
         {
             UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                
+                if self.oneProfil.classeJoueur == "Personne" {
+                    self.embedViewController.updateAchievement("achievement.noclass")
+                }
+                
+                print(self.oneProfil.sceneActuelle)
+                if self.oneProfil.sceneActuelle == 18 {
+                    self.embedViewController.updateAchievement("achievement.bestending")
+                }
+                
+                self.embedViewController.submitToLeaderboard(self.embedViewController.LEADERBOARD_LIFEPOINTS, Int64(self.oneProfil.lifePoint))
+                
                 self.view.alpha = 0
             } , completion: { success in
                 vc.firstMenuForRun = false
@@ -611,7 +645,7 @@ class DialogueViewController: UIViewController {
                 DialogueNumber += 1
                 bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume: 0.5)
             } else {
-                firstDialogue  = false
+                firstDialogue = false
             }
             
             if DialogueNumber >= PsychoAnswer[0].profilEvil.count - 1 && playerProfil != ""{
@@ -623,32 +657,41 @@ class DialogueViewController: UIViewController {
                 switch playerProfil {
                 case "profil_crieur":
                     dialogueLabel.text = PsychoAnswer[0].profilCrieur[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.crieur")
                     break
                 case "profil_sociable":
                     dialogueLabel.text = PsychoAnswer[0].profilSociable[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.sociable")
                     break
                 case "profil_timide":
                     dialogueLabel.text = PsychoAnswer[0].profilTimide[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.timide")
                     break
                 case "profil_innovateur":
                     dialogueLabel.text = PsychoAnswer[0].profilInnovateur[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.innovateur")
                     break
                 default:
                     playerProfil = ""
                     break
                 }
+                
+                
             }
             
             if playerProfil == ""{
                 switch goodOrEvil {
                 case "profil_evil":
                     dialogueLabel.text = PsychoAnswer[0].profilEvil[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.evil")
                     break
                 case "profil_good":
                     dialogueLabel.text = PsychoAnswer[0].profilGood[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.good")
                     break
                 case "profil_equal":
                     dialogueLabel.text = PsychoAnswer[0].profilEqual[DialogueNumber]
+                    embedViewController.updateAchievement("achievement.equal")
                 default:
                     fatalError("error psycho2 traitment")
                 }

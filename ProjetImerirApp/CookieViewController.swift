@@ -29,7 +29,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var progress:Float = 0.5
     var isMomWatching = false
     var momInterval:TimeInterval!
-    var gameDurationTotal:TimeInterval = 20
+    var gameDurationTotal:TimeInterval = 60
     var gameTimer : Int = 0
     var noob = false
     var geek = false
@@ -55,7 +55,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         mom.loadGif(name: "Maman")
         
         cookie.layer.cornerRadius = cookie.frame.size.width/2
-        progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
+        progressBar.transform = CGAffineTransform(scaleX: 1.0, y: UIScreen.main.bounds.width/40)
         
         initProfil()
         initPageView()
@@ -91,7 +91,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         pageViewLabels = ["Ce cookie ci-dessus est ton objectif. Clique dessus le plus rapidement possible.", "Evite absolument de cliquer quand la maman te regarde !","Rempli au maximum la jauge vers la droite pour éviter de perdre de la vie.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeCookie as String)"]
         pageViewImages = ["Cookie", "Mom","progressBar", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Le gâteau","La mère","La barre d'humeur", "\(AllClasse[idClasse].idClasse as String)"]
-        pageViewHints = ["Les bébés aussi ont plusieurs doigts.", "Clique sur le cookie quand tu ne voit que ses cheveux.", "Perte de 5 pv si elle n'est pas remplie à moitié à la fin.", ""]
+        pageViewHints = ["Les bébés aussi ont plusieurs doigts.", "Clique sur le cookie quand tu ne vois que ses cheveux.", "Des points de vie te seront retirés sinon.", ""]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "CookiePageViewController") as! UIPageViewController
         
@@ -107,16 +107,6 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
         pageViewController.view.frame = modal
         pageViewController.view.center = view.center
-        
-        
-        UIGraphicsBeginImageContext(pageViewController.view.frame.size)
-        UIImage(named: "Background Kid")?.draw(in: pageViewController.view.bounds)
-        
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        
-        pageViewController.view.backgroundColor = UIColor(patternImage: image)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -184,6 +174,11 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         
         // Lance la boucle du timer
         myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CookieViewController.TimerGesture), userInfo: nil, repeats: true)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            self.embedViewController.updateAchievement("achievement.cookieclicks", Double(self.oneProfil.statsCookie["cookieGoodTaped"]!) / 100)
+            self.embedViewController.updateAchievement("achievement.cookieclicks2", Double(self.oneProfil.statsCookie["cookieGoodTaped"]!) / 200)
+        })
     }
     
     func addGestures() {
@@ -283,8 +278,8 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     //// GAME LOGIC ////
     
     func cookieClicked(tapGR: UITapGestureRecognizer){
-       cookieTaped += 1
         if isReallyClicked(tapGR: tapGR){
+            cookieTaped += 1
             if isMomWatching {
                 changeColorLabelBad(label: headerView.lifePointLabel)
                 self.oneProfil.lifePoint -= 1
@@ -310,7 +305,8 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
                 } else if progress < 1 {
                     progress = 1
                 }
-             self.oneProfil.statsCookie["cookieGoodTaped"]! += 1
+                
+                oneProfil.statsCookie["cookieGoodTaped"]! += 1
             }
             
             drawParticle(at: tapGR.location(in: view))
@@ -368,7 +364,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     func drawParticle(at: CGPoint) {
         
-        let particle = UIImageView(frame: CGRect(x: at.x, y: at.y, width: 40, height: 40))
+        let particle = UIImageView(frame: CGRect(x: at.x, y: at.y, width: view.bounds.width/10, height: view.bounds.width/10))
         
         if isMomWatching {
             
@@ -409,8 +405,8 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         var decalageY:CGFloat = 1
         if isMomWatching { decalageY = -1 }
         
-        let posX = origin.x + CGFloat(Int(arc4random_uniform(80)) - 40)
-        let posY = origin.y + (abs(posX - origin.x) - 50) * decalageY
+        let posX = origin.x + CGFloat(CGFloat(arc4random_uniform(UInt32(CGFloat(view.bounds.width/5.0)))) - view.bounds.width/10.0)
+        let posY = origin.y + (abs(posX - origin.x) - view.bounds.width/8.0) * decalageY
         
         return CGPoint(x: posX, y: posY)
     }
@@ -507,19 +503,24 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     func hideMom() {
         isMomWatching = false
-        toggleMom()
+        toggleMom(up: false)
         Timer.scheduledTimer(timeInterval: randomInterval(), target: self, selector: #selector(CookieViewController.showMom), userInfo: nil, repeats: false)
     }
     
     func showMom() {
-        isMomWatching = true
-        toggleMom()
+        
+        // Wait 1/3s so the player don't loose life instantly
+        Timer.scheduledTimer(withTimeInterval: 1/3, repeats: false, block: { _ in
+            self.isMomWatching = true
+        })
+        
+        toggleMom(up: true)
         Timer.scheduledTimer(timeInterval: randomInterval(), target: self, selector: #selector(CookieViewController.hideMom), userInfo: nil, repeats: false)
     }
     
-    func toggleMom(){
+    func toggleMom(up: Bool){
         let anim = CABasicAnimation(keyPath: "position.y")
-        if isMomWatching {
+        if up {
             anim.fromValue = mom.layer.position.y + mom.bounds.height
             anim.toValue = mom.layer.position.y
         } else {

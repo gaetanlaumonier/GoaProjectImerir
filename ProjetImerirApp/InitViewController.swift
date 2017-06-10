@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import GameKit
 
 class InitViewController: UIViewController {
     
@@ -18,7 +17,8 @@ class InitViewController: UIViewController {
     @IBOutlet weak var MenuBackgroundView: UIImageView!
     @IBOutlet weak var statsButton: DesignableButton!
     @IBOutlet weak var launchScreenImageView: UIImageView!
-    @IBOutlet var gameCenterLabel: DesignableLabel!
+    @IBOutlet var appVersion: DesignableLabel!
+    @IBOutlet var roueCrantee: UIImageView!
     
     var oneProfil = ProfilJoueur()
     var embedViewController:EmbedViewController!
@@ -33,15 +33,11 @@ class InitViewController: UIViewController {
         
         embedViewController = getEmbedViewController()
         embedViewController.backgroundMusicPlayer = GestionMusic(filename: "LostJungle")
+
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        appVersion.text = "v" + version
         
-        if embedViewController.gcEnabled {
-            gameCenterLabel.text = "Connecté"
-            gameCenterLabel.textColor = .green
-        }
-        
-        print(NotificationCenter.default)
-        NotificationCenter.default.addObserver(forName: embedViewController.gcConnectedNotif, object: nil, queue: nil, using: self.onGcUserConnected)
-        
+                
         MenuBackgroundView.loadGif(name: "LabSortie")
         if firstMenuForRun == true {
         } else {
@@ -49,11 +45,6 @@ class InitViewController: UIViewController {
             self.view.alpha = 0
             
         }
-    }
-    
-    func onGcUserConnected(notification:Notification) {
-        gameCenterLabel.text = "Connecté"
-        gameCenterLabel.textColor = .green
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +57,33 @@ class InitViewController: UIViewController {
             FonduApparition(myView: self, myDelai: 1)
         }
         
+        animateOptionWheel()
+    }
+    
+    func animateOptionWheel() {
+        roueCrantee.layer.shadowOpacity = 1
+        roueCrantee.layer.shadowRadius = 15
+        roueCrantee.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        let anim = CABasicAnimation(keyPath: "shadowRadius")
+        anim.fromValue = 0
+        anim.toValue = 15
+        anim.duration = 1
+        anim.repeatCount = Float.infinity
+        
+        let anim2 = CAKeyframeAnimation(keyPath: "shadowColor")
+        anim2.values = [UIColor.white.cgColor,
+                        UIColor.red.cgColor,
+                        UIColor.green.cgColor,
+                        UIColor.blue.cgColor,
+                        UIColor.yellow.cgColor,
+                        UIColor.white.cgColor]
+        anim2.keyTimes = [0,0.2, 0.4, 0.6, 0.8, 1]
+        anim2.duration = 5
+        anim2.repeatCount = Float.infinity
+        
+        roueCrantee.layer.add(anim, forKey: nil)
+        roueCrantee.layer.add(anim2, forKey: nil)
     }
     
     @IBAction func ChargerPartie(_ sender: UIButton) {
@@ -107,38 +125,6 @@ class InitViewController: UIViewController {
                 print("Could not instantiate view controller with identifier of type StatsViewController")
                 return
             }}
-    }
-    
-    @IBAction func onTrophyTapped(_ sender: UITapGestureRecognizer) {
-        
-        myBruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 0.5)
-
-        if embedViewController.gcEnabled {
-            let bestScoreInt = GKScore(leaderboardIdentifier: embedViewController.LEADERBOARD_ID)
-            bestScoreInt.value = Int64(102)
-            
-            GKScore.report([bestScoreInt]) { (error) in
-
-                guard error == nil  else { return }
-                
-                print("Best Score submitted to your Leaderboard!")
-                let gcVC = GKGameCenterViewController()
-                gcVC.gameCenterDelegate = self.embedViewController
-                gcVC.viewState = .achievements
-                self.embedViewController.present(gcVC, animated: true, completion: nil)
-            }
-        } else {
-            
-            if embedViewController.gcUserCanceled {
-                let alert = UIAlertController(title: "Erreur", message: "Si vous souhaitez activer Game Center", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                
-                alert.addAction(action)
-                
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-        }
     }
     
     //Fonction abandonnée d'apparition de label personnalisé

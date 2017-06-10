@@ -21,8 +21,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var spaceship: Spaceship!
     var shield: UIImageView!
     
-    var gameDuration:CFTimeInterval = 30
-    var timeLeft:CFTimeInterval = 30
+    var gameDuration:CFTimeInterval = 60
+    var timeLeft:CFTimeInterval = 60
     
     var spawnFromTop = true
     var missileSize:CGSize!
@@ -65,6 +65,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var missileHit = 0
     
     var embedViewController:EmbedViewController!
+    
+    var allHealsAndBonus = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -380,6 +382,15 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         
         if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
             oneProfil.sceneActuelle += 1
+            
+            if missileHit == 0 {
+                embedViewController.updateAchievement("achievement.consoleperfect")
+            }
+            
+            if allHealsAndBonus {
+                embedViewController.updateAchievement("achievement.consoletakeall")
+            }
+            
             oneProfil.statsConsole["pourcentage"] = 100 - (100 * missileHit / nbrMissile)
             oneProfil.statsConsole["missileHit"] = missileHit
             vc.oneProfil = oneProfil
@@ -490,7 +501,12 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                 
             }, completion: { (finished) in
                 
-                if finished && bonus.tag != 10{
+                if finished && bonus.tag != 10 {
+                    
+                    if let _ = self.spawnerTimers["bonus"] {
+                        self.allHealsAndBonus = false
+                    }
+                    
                     self.bonusViews.remove(at: self.bonusViews.index(of: bonus)!)
                     bonus.removeFromSuperview()
                 }
@@ -557,6 +573,11 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                 UIView.animate(withDuration: anim.duration * 1/3, animations: { _ in
                     healView.alpha = 0
                 }, completion: { _ in
+                    
+                    if let _ = self.spawnerTimers["heal"] {
+                        self.allHealsAndBonus = false
+                    }
+                    
                     self.healViews.remove(at: self.healViews.index(of: healView)!)
                     healView.removeFromSuperview()
                 })
@@ -676,7 +697,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             let distance = abs(explosion.midX - spaceship.center.x)
             
             let damage =  (aoeWidth - distance) / aoeWidth * 2 + 1
-            self.missileHit += 1
+            
             looseHealth(Int(round(damage)))
         }
     }
@@ -686,6 +707,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         guard shield.isHidden else {
             return
         }
+        
+        self.missileHit += 1
         
         if oneProfil.classeJoueur == "Noob" {
             if drand48() < 0.2 {
@@ -965,5 +988,16 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        for view in view.subviews {
+            if view is UIImageView {
+                let imageView = view as! UIImageView
+                imageView.stopAnimating()
+                imageView.removeFromSuperview()
+            }
+        }
     }
 }

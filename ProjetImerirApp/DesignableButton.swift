@@ -13,14 +13,14 @@ import UIKit
     //Change dynamiquement par l'interface graphique le cornerRadius du button
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet{
-            self.layer.cornerRadius = cornerRadius
+            self.layer.cornerRadius = cornerRadius * UIScreen.main.bounds.width / 500.0
         }
     }
     
     //Change dynamiquement par l'interface graphique le borderWidth du button
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet{
-            self.layer.borderWidth = borderWidth
+            self.layer.borderWidth = borderWidth * UIScreen.main.bounds.width / 500.0
         }
     }
     

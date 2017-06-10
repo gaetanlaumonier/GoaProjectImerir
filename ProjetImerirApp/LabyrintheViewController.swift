@@ -527,14 +527,17 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                     self.embedViewController.showScene(vc)
                 })
         } else {
-                self.oneProfil.sceneActuelle += 1
-                self.oneProfil.statsLabyrinthe["timeSpent"] = self.elapsedTime
+            firstGameTimer.invalidate()
+            self.oneProfil.sceneActuelle += 1
+            self.oneProfil.statsLabyrinthe["timeSpent"] = self.elapsedTime
             if nbrBatAppear < 1 {
                 self.oneProfil.statsLabyrinthe["batKilled"] = 100
             } else {
             self.oneProfil.statsLabyrinthe["batKilled"] = 100 * self.nbrBatKilled / self.nbrBatAppear
             }
-            self.oneProfil.lifePoint = 60
+
+            embedViewController.updateAchievement("achievement.mazeexploration", Double(knownRooms.count) / Double(mazeObj.walkableCells))
+            
             vc.oneProfil = self.oneProfil
                 self.saveMyData()
                 UIView.animate(withDuration: 7, animations: {
@@ -1023,10 +1026,17 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
                         
                         self.elapsedTime += 1
                         if self.isFirstMaze {
-                            if self.elapsedTime >= 10 {
+                            if self.elapsedTime >= 30 {
                                 self.endGame()
                             }
+                        } else {
+                            
+                            self.embedViewController.updateAchievement("achievement.mazefive", Double(self.elapsedTime) / 300)
+                            
+                            self.embedViewController.updateAchievement("achievement.mazeten", Double(self.elapsedTime) / 600)
+                          
                         }
+                        
                     })
                 })
             }

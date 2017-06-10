@@ -114,7 +114,7 @@
                  "MusiqueDialogue": ""
                  }, {
                  "idDialogue": "17",
-                 "libelleDialogue": ["Vous venez de finir le jeu et avez obtenu la fin surprenante.", "Le directeur est en effet plein de surprises. ", "Vous pouvez cependant encore faire mieux afin de dévoiler tout les secrets de l'école. ", "Nous vous invitons donc à recommencer le jeu avec de meilleurs résultats pour obtenir une meilleure fin. ", "Merci d'avoir joué au jeu !", ""],
+                 "libelleDialogue": ["Vous venez de finir le jeu et avez obtenu la fin surprenante.", "Le directeur est en effet plein de surprises. ", "Vous pouvez cependant encore faire mieux afin de dévoiler tous les secrets de l'école. ", "Nous vous invitons donc à recommencer le jeu avec de meilleurs résultats pour obtenir une meilleure fin. ", "Merci d'avoir joué au jeu !", ""],
                  "eventDialogue": ["nil", "nil", "nil", "nil", "nil", "RetourMenu"],
                  "BackgroundDialogue": ["nil", "nil"],
                  "MusiqueDialogue": ""
@@ -134,7 +134,7 @@
                     
                     "profil_innovateur": ["Un génie !", "Innovation, engagement, future, volonté, tel est votre vocabulaire.", "Ne soyez pas effrayé de l'avenir, sachez prendre du recul et analyser calmement chaque situation.", "Croyez en vos rêves, sans vous mettre une pression démesurée.", "Gardez les pieds sur terre, en vous investissant dans vos passions.", "Et votre bonheur futur ne sera qu'exponentiel avec le temps.", ""],
                     
-                    "profil_evil": ["Je constate aussi un certain profil démoniaque !", "Vous n'hésiteriez apparemment pas à vendre votre propre enfant pour acheter la dernière carte graphique !", "Est-ce une bonne ou une mauvaise chose au final ?", "Je plaisante bien sûr, vous ne feriez pas une chose pareille non ?", "Peu importe, avec une telle mentalité, vous finirez sûrement majeur de promo puis Président de la République.", "Au passage, ne pensez pas à mettre le chaos dans l'école ou vous aurez affaire à moi.", ""],
+                    "profil_evil": ["Je constate aussi un certain profil démoniaque !", "Vous n'hésiteriez apparemment pas à vendre votre propre enfant pour acheter la dernière carte graphique !", "Est-ce une bonne ou une mauvaise chose au final ?", "Je plaisante bien sûr, vous ne feriez pas une chose pareille non ?", "Peu importe, avec une telle mentalité, vous finirez sûrement major de promo puis Président de la République.", "Au passage, ne pensez pas à mettre le chaos dans l'école ou vous aurez affaire à moi.", ""],
                     
                     "profil_good": ["Je constate aussi une bonne personne en vous !", "Entre le bien et le mal, votre choix serait rapide.", "La société vous a inculqué de bonnes valeurs et vous les avez gardées.", "Nul doute que votre entourage doit vous apprécier.", "Une vie remplie de petites attentions et de plaisirs sains.", "J'espère quand même que vos petits enfants penseront à vous appeler plus tard, ce qui vous emplirait de joie.", ""],
                     

@@ -31,6 +31,9 @@ class Maze {
     /// Height with which the maze was generated
     var height: Int!
     
+    /// The total number of .space cells in the maze
+    var walkableCells: Int = 0
+    
     /**
      Generate a random maze.
      
@@ -59,6 +62,7 @@ class Maze {
         self.carve(x: 2, y: 2)
         data[1][2] = Cell.Wall
         data[height - 2][width - 3] = Cell.Space
+        walkableCells += 2
     }
     
     // Carve starting at x, y.
@@ -75,6 +79,7 @@ class Maze {
             if data[y1][x1] == Cell.Wall && data[y2][x2] == Cell.Wall {
                 data[y1][x1] = Cell.Space
                 data[y2][x2] = Cell.Space
+                walkableCells += 2
                 carve(x: x2, y: y2)
             } else {
                 dir = (dir + 1) % 4

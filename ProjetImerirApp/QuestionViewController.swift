@@ -331,6 +331,7 @@ class QuestionViewController: UIViewController {
                 self.InputAnswer.alpha = 1
                 self.inputButtonValidate.alpha = 1
                 self.InputAnswer.text = ""
+                self.InputAnswer.becomeFirstResponder()
                 UIView.animate(withDuration: 0.5, animations: {
                     self.saisieReponseLabel.center.x = self.view.frame.width/2
                     self.InputAnswer.center.x = self.view.frame.width/2

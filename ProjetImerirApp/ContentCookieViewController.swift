@@ -33,6 +33,8 @@ class ContentCookieViewController: UIViewController {
     // Stored so it can be animated from another function
     var progressBar = UIProgressView()
     
+    var progressTimer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +51,7 @@ class ContentCookieViewController: UIViewController {
                 NSLayoutConstraint(item: progressBar, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.5, constant: 0)
                 ])
             
-            Timer.scheduledTimer(timeInterval: 1/60, target: self, selector: #selector(ContentCookieViewController.animateProgressBar), userInfo: nil, repeats: true)
+            progressTimer = Timer.scheduledTimer(timeInterval: 1/60, target: self, selector: #selector(ContentCookieViewController.animateProgressBar), userInfo: nil, repeats: true)
         } else if actualImage == "Mom" {
             // Load GIF
             GamesRulesView.imageView.loadGif(name: "Maman")
@@ -101,6 +103,10 @@ class ContentCookieViewController: UIViewController {
             progressBar.progress = 0
         }
         progressBar.progressTintColor = UIColor(red: 1 - CGFloat(progressBar.progress), green: CGFloat(progressBar.progress), blue: 0.0, alpha: 1.0)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        progressTimer.invalidate()
     }
     
     override func didReceiveMemoryWarning() {

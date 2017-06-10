@@ -50,6 +50,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var goodObjectInContainer : Int = 0
     
     var embedViewController:EmbedViewController!
+    
+    var noBonusWasPicked = true
 
     
     override func viewDidLoad() {
@@ -148,27 +150,18 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         })
     }
     
-    func scoreGestureFinal(){
-        if score <= 20 {
-            self.oneProfil.lifePoint -= 15
-        } else if score <= 30 {
-            self.oneProfil.lifePoint -= 10
-        } else if score <= 50 {
-            self.oneProfil.lifePoint -= 5
-        } else if score <= 70 {
-            self.oneProfil.lifePoint -= 2
-        }
-        
-        if score < 71 {
-            changeColorLabelBad(label: headerView.lifePointLabel)
-            headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
-        }
-    }
-    
     func endGame() {
         endGameTimer.invalidate()
         
         let objPerSecond = Double(goodObjectInContainer) / gameDuration
+        
+        if objPerSecond >= 1.5 {
+            embedViewController.updateAchievement("achievement.rangementfast")
+        }
+        
+        if noBonusWasPicked {
+            embedViewController.updateAchievement("achievement.rangementnobonus")
+        }
         
         let finalHealth = Int(objPerSecond * 10 - 10)
         
@@ -472,6 +465,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     }
     
     func onBonusPicked(sender: Bonus) {
+        noBonusWasPicked = false
         bruitageMusicPlayer = GestionBruitage(filename: "Bonus", volume: 1)
         sender.onBonusPicked()
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h1e-iz-tf4">
-    <device id="ipad12_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h1e-iz-tf4">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,43 +21,41 @@
                         <viewControllerLayoutGuide type="bottom" id="j2a-Q7-nr5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y5q-9Y-sZD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArcadeCookie" translatesAutoresizingMaskIntoConstraints="NO" id="Wk6-ki-bh3">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Cookie" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-gL-EVB">
-                                <rect key="frame" x="25" y="224" width="973" height="956"/>
+                                <rect key="frame" x="10.333333333333343" y="148" width="393.33333333333337" height="515.33333333333337"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-XP-Qm6">
-                                <rect key="frame" x="60" y="198" width="904" height="2"/>
+                                <rect key="frame" x="60" y="121.66666666666667" width="294" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="tJi-LB-h66"/>
                                 </constraints>
                             </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-ag-5hq">
-                                <rect key="frame" x="553" y="920.5" width="461" height="437.5"/>
+                                <rect key="frame" x="217.66666666666663" y="551.33333333333348" width="186.33333333333337" height="176.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b7P-ag-5hq" secondAttribute="height" multiplier="1/0.95" id="T7G-Fn-kO0"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sad" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-7o-JBK">
-                                <rect key="frame" x="30" y="174" width="50" height="50"/>
+                                <rect key="frame" x="30" y="97.666666666666657" width="49.666666666666671" height="49.999999999999972"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="WEZ-pL-7Et"/>
-                                    <constraint firstAttribute="width" constant="50" id="nco-iI-lql"/>
+                                    <constraint firstAttribute="width" secondItem="FnW-7o-JBK" secondAttribute="height" id="Osw-Nu-XoE"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Happy" translatesAutoresizingMaskIntoConstraints="NO" id="OPh-ya-jkV">
-                                <rect key="frame" x="944" y="174" width="50" height="50"/>
+                                <rect key="frame" x="334.33333333333326" y="98.333333333333314" width="49.666666666666686" height="49.666666666666686"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="EFm-Fx-dGZ"/>
-                                    <constraint firstAttribute="width" constant="50" id="yWS-dC-xLW"/>
+                                    <constraint firstAttribute="width" secondItem="OPh-ya-jkV" secondAttribute="height" id="KYd-7G-Ium"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-Ew-6Hr" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="10" width="1024" height="164"/>
+                                <rect key="frame" x="0.0" y="10" width="414" height="88.333333333333329"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -65,6 +63,7 @@
                         <constraints>
                             <constraint firstItem="qhV-XP-Qm6" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="23j-bs-tvb"/>
                             <constraint firstItem="qhV-XP-Qm6" firstAttribute="leading" secondItem="y5q-9Y-sZD" secondAttribute="leadingMargin" constant="40" id="3i4-3J-IZr"/>
+                            <constraint firstItem="FnW-7o-JBK" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" multiplier="0.12" id="3pl-du-YFB"/>
                             <constraint firstItem="fuG-gL-EVB" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="7cR-PC-wDd"/>
                             <constraint firstItem="j2a-Q7-nr5" firstAttribute="top" secondItem="b7P-ag-5hq" secondAttribute="bottom" constant="8" symbolic="YES" id="9fQ-Em-Z1V"/>
                             <constraint firstItem="hKw-Ew-6Hr" firstAttribute="height" secondItem="y5q-9Y-sZD" secondAttribute="height" multiplier="0.12" id="Ez6-PK-H45"/>
@@ -79,6 +78,7 @@
                             <constraint firstItem="FnW-7o-JBK" firstAttribute="leading" secondItem="qhV-XP-Qm6" secondAttribute="leading" constant="-30" id="d8Q-cJ-ZXT"/>
                             <constraint firstItem="fuG-gL-EVB" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" multiplier="0.95" id="eos-qc-M5Q"/>
                             <constraint firstItem="FnW-7o-JBK" firstAttribute="centerY" secondItem="qhV-XP-Qm6" secondAttribute="centerY" id="fqx-90-2Th"/>
+                            <constraint firstItem="OPh-ya-jkV" firstAttribute="width" secondItem="y5q-9Y-sZD" secondAttribute="width" multiplier="0.12" id="jon-NK-wcJ"/>
                             <constraint firstItem="OPh-ya-jkV" firstAttribute="top" secondItem="hKw-Ew-6Hr" secondAttribute="bottom" id="kab-zR-Qga"/>
                             <constraint firstItem="hKw-Ew-6Hr" firstAttribute="centerX" secondItem="y5q-9Y-sZD" secondAttribute="centerX" id="kdn-at-QL5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qhV-XP-Qm6" secondAttribute="trailing" constant="40" id="pE6-84-cdi"/>
@@ -113,19 +113,8 @@
                         <viewControllerLayoutGuide type="bottom" id="BhA-Ik-2EK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PnU-Nx-6YX" userLabel="GamesRulesView" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="30"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
