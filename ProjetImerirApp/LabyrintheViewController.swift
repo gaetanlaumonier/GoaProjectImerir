@@ -291,7 +291,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func createMaze() {
-        mazeObj = Maze(width: 11, height: 11)
+        mazeObj = Maze(width: 17, height: 17)
         maze = mazeObj.data
         embedViewController = getEmbedViewController()
 
