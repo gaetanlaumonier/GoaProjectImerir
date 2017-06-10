@@ -45,6 +45,8 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     var cookieTaped : Int = 0
     
     var embedViewController:EmbedViewController!
+    var achievementTimer = Timer()
+    var arcadeMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +177,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         // Lance la boucle du timer
         myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CookieViewController.TimerGesture), userInfo: nil, repeats: true)
         
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+        achievementTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.embedViewController.updateAchievement("achievement.cookieclicks", Double(self.oneProfil.statsCookie["cookieGoodTaped"]!) / 100)
             self.embedViewController.updateAchievement("achievement.cookieclicks2", Double(self.oneProfil.statsCookie["cookieGoodTaped"]!) / 200)
         })
@@ -244,26 +246,41 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     func returnToDialog() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
-        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
-            self.decreaseTimer.invalidate()
-            self.oneProfil.sceneActuelle += 1
-            if self.cookieTaped != 0 {
-                self.oneProfil.statsCookie["pourcentage"]! = 100 * self.oneProfil.statsCookie["cookieGoodTaped"]! / self.cookieTaped
-            } else {
-                self.oneProfil.statsCookie["pourcentage"]! = 0
+        
+        decreaseTimer.invalidate()
+        achievementTimer.invalidate()
+
+        if arcadeMode {
+            if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController {
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    self.view.alpha = 0
+                } , completion: { success in
+                    vc.firstMenuForRun = false
+                    self.embedViewController.showScene(vc)
+                })
             }
-            
-            vc.oneProfil = self.oneProfil
-            self.saveMyData()
-            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
-                self.view.alpha = 0
-            } , completion: { success in
-                self.embedViewController.showScene(vc)
-            })
         } else {
-            print("Could not instantiate view controller with identifier of type DialogueViewController")
-            return
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
+                self.oneProfil.sceneActuelle += 1
+                if self.cookieTaped != 0 {
+                    self.oneProfil.statsCookie["pourcentage"]! = 100 * self.oneProfil.statsCookie["cookieGoodTaped"]! / self.cookieTaped
+                } else {
+                    self.oneProfil.statsCookie["pourcentage"]! = 0
+                }
+                
+                vc.oneProfil = self.oneProfil
+                self.saveMyData()
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2)
+                    self.view.alpha = 0
+                } , completion: { success in
+                    self.embedViewController.showScene(vc)
+                })
+            } else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
+            }
         }
     }
     

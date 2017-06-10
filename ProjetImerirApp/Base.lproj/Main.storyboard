@@ -66,111 +66,141 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-Bu-ab5" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="56" y="189" width="208" height="56.5"/>
-                                <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Nouvelle Partie">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.3019008078" green="0.29598118410000002" blue="0.30782043149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="yyN-R3-Zyy" kind="presentation" identifier="choiceName" id="r1y-L3-Zpd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-BW-Mo9" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="56" y="275.5" width="208" height="57"/>
-                                <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="Continuer">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.3019008078" green="0.29598118410000002" blue="0.30782043149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ChargerPartie:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="V62-EZ-uWD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6W-ew-jUV" userLabel="Stats" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="56" y="362.5" width="208" height="56.5"/>
-                                <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="Stats">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="StatsButton:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="D66-Hw-SVR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnn-YC-hLC" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="56" y="449" width="208" height="57"/>
-                                <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="Crédits">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="23D-lh-nEh" kind="presentation" identifier="Credits" modalTransitionStyle="crossDissolve" id="dOC-LB-Dsj"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nZT-ie-EJT">
+                                <rect key="frame" x="48" y="142" width="224" height="341"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-Bu-ab5" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="52"/>
+                                        <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Nouvelle Partie">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.3019008078" green="0.29598118410000002" blue="0.30782043149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="yyN-R3-Zyy" kind="presentation" identifier="choiceName" id="r1y-L3-Zpd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-BW-Mo9" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="224" height="52.5"/>
+                                        <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Continuer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.3019008078" green="0.29598118410000002" blue="0.30782043149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ChargerPartie:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="V62-EZ-uWD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oD-Wd-ku0" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144.5" width="224" height="52"/>
+                                        <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Mode Arcade">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="6KN-6r-4Ao" kind="presentation" modalTransitionStyle="crossDissolve" id="5la-aH-yFm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6W-ew-jUV" userLabel="Stats" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="216.5" width="224" height="52.5"/>
+                                        <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Stats">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="StatsButton:" destination="4Vd-Vn-EX1" eventType="touchUpInside" id="D66-Hw-SVR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnn-YC-hLC" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="289" width="224" height="52"/>
+                                        <color key="backgroundColor" red="0.15123334390000001" green="0.15123334390000001" blue="0.15123334390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Crédits">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="23D-lh-nEh" kind="presentation" identifier="Credits" modalTransitionStyle="crossDissolve" id="dOC-LB-Dsj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT0-7Z-f2u" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="536.5" width="46.5" height="26"/>
+                                <rect key="frame" x="16" y="540" width="39.5" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -189,7 +219,7 @@
                                     <outletCollection property="gestureRecognizers" destination="vw3-A3-tsh" appends="YES" id="Lje-Zj-Wkb"/>
                                 </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-ug-tVy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-ug-tVy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <gestureRecognizers/>
                             </imageView>
@@ -201,38 +231,26 @@
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="8se-Ds-hFG"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" id="BUX-jm-3Bw"/>
                             <constraint firstAttribute="trailing" secondItem="tbU-Ch-oxP" secondAttribute="trailing" multiplier="1.01" id="BoU-r8-8OZ"/>
+                            <constraint firstItem="nZT-ie-EJT" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.7" id="Dga-62-rSr"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="EHw-07-coc"/>
-                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" constant="20" id="EmL-K9-yFC"/>
-                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="top" secondItem="R5H-Bu-ab5" secondAttribute="bottom" constant="30" id="LAK-bb-J6c"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.85" id="NyE-G1-D2y"/>
-                            <constraint firstItem="j6W-ew-jUV" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.65" id="OQN-39-dAx"/>
-                            <constraint firstItem="tnn-YC-hLC" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="PFl-zT-blQ"/>
                             <constraint firstItem="tbU-Ch-oxP" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.15" id="Phv-ut-mJp"/>
-                            <constraint firstItem="R5H-Bu-ab5" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="PuU-cX-xRo"/>
+                            <constraint firstItem="nZT-ie-EJT" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Syu-Yp-3TE"/>
                             <constraint firstItem="bT0-7Z-f2u" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leadingMargin" multiplier="1.01" id="TmJ-QZ-sUH"/>
                             <constraint firstItem="Rbq-ug-tVy" firstAttribute="leading" secondItem="V2U-jB-sko" secondAttribute="leading" id="UeQ-Ta-FJH"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Vob-aI-BRH"/>
-                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="XtX-hc-6sp"/>
-                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="YPT-f2-Jfy"/>
-                            <constraint firstItem="R5H-Bu-ab5" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.65" id="a7r-7g-Bfr"/>
-                            <constraint firstItem="tnn-YC-hLC" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.65" id="bn4-nz-IRs"/>
-                            <constraint firstItem="j6W-ew-jUV" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="i4d-4g-wka"/>
+                            <constraint firstItem="nZT-ie-EJT" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.6" id="fcT-ai-sbW"/>
                             <constraint firstAttribute="bottom" secondItem="tbU-Ch-oxP" secondAttribute="bottom" multiplier="1.01" id="iGU-hV-Dev"/>
-                            <constraint firstItem="MXK-BW-Mo9" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.65" id="lhC-dC-Lsa"/>
-                            <constraint firstItem="R5H-Bu-ab5" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.1" id="mKS-vf-mhg"/>
-                            <constraint firstItem="tnn-YC-hLC" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="mLM-Sl-tUx"/>
+                            <constraint firstItem="nZT-ie-EJT" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" multiplier="1.1" id="mS3-9r-5rn"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" multiplier="0.3" id="mtH-ga-XwK"/>
                             <constraint firstAttribute="trailing" secondItem="Rbq-ug-tVy" secondAttribute="trailing" id="nGP-gz-QTb"/>
-                            <constraint firstItem="tnn-YC-hLC" firstAttribute="top" secondItem="j6W-ew-jUV" secondAttribute="bottom" constant="30" id="nxx-tz-DaB"/>
                             <constraint firstItem="BKK-gC-96s" firstAttribute="top" secondItem="bT0-7Z-f2u" secondAttribute="bottom" multiplier="1.01" id="p48-Eg-lh0"/>
                             <constraint firstAttribute="bottom" secondItem="Rbq-ug-tVy" secondAttribute="bottom" id="p6t-ag-HsM"/>
                             <constraint firstItem="3lF-mz-r9V" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="rAq-O9-Zuc"/>
                             <constraint firstItem="Rbq-ug-tVy" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="uCN-sR-93N"/>
-                            <constraint firstItem="j6W-ew-jUV" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="vde-xX-Ki0"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="wQa-0V-6Dg"/>
                             <constraint firstItem="Rbq-ug-tVy" firstAttribute="top" secondItem="V2U-jB-sko" secondAttribute="top" id="waf-An-B0O"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" id="xf1-eS-ynV"/>
-                            <constraint firstItem="j6W-ew-jUV" firstAttribute="top" secondItem="MXK-BW-Mo9" secondAttribute="bottom" constant="30" id="xu2-EO-h5q"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="height" secondItem="V2U-jB-sko" secondAttribute="height" multiplier="0.2" id="zke-Db-ir2"/>
                         </constraints>
                     </view>
@@ -491,7 +509,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="174" height="79.5"/>
                                                     <subviews>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lke-TT-pDO" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                            <rect key="frame" x="11" y="0.0" width="152" height="32"/>
+                                                            <rect key="frame" x="6.5" y="0.0" width="161" height="32"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <state key="normal" title="Succès &amp; Classement">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -503,7 +521,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsN-2f-j2k" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                            <rect key="frame" x="45.5" y="32" width="83" height="47.5"/>
+                                                            <rect key="frame" x="33" y="32" width="108" height="29.5"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <state key="normal" title="Non connecté">
                                                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -515,11 +533,11 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Jg-Xw-ned">
-                                                            <rect key="frame" x="17" y="79.5" width="140" height="1"/>
+                                                            <rect key="frame" x="17" y="61.5" width="140" height="2.5"/>
                                                             <color key="progressTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </progressView>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-4s-eAL" customClass="DesignableLabel" customModule="ProjetImerirApp" customModuleProvider="target">
-                                                            <rect key="frame" x="87" y="79.5" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="74" y="63" width="26.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -901,6 +919,283 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUV-gr-mSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-988" y="-1253"/>
+        </scene>
+        <!--Mode Arcade View Controller-->
+        <scene sceneID="Imw-JI-5ri">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="6KN-6r-4Ao" customClass="ModeArcadeViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="eLA-or-AsL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LNS-QG-xv8">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ANd-HE-WNn">
+                                    <rect key="frame" x="48" y="85" width="224" height="398"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGK-x6-GYq" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="224" height="63.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Geek">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onClasseChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="SXI-T6-awz"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj5-DU-86x" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="83.5" width="224" height="63.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Fonctionnaire">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onClasseChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="dz0-O1-pr7"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-RQ-67K" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="167" width="224" height="64"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Noob">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onClasseChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="AX0-tc-0Oe"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLJ-Be-p6S" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="251" width="224" height="63.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Hacker">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onClasseChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="u6k-FW-LDj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv3-1F-5uP" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="334.5" width="224" height="63.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Personne">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onClasseChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="8kH-vl-Dbz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y1a-Vd-lca">
+                                    <rect key="frame" x="48" y="85" width="224" height="398"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-kJ-1qc" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="224" height="84.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Arcade Cookie">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onArcadeChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="l3b-zx-C9d"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRq-96-HhA" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="104.5" width="224" height="84.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Arcade Rangement">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onArcadeChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="gec-pk-lMl"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJv-r0-RMj" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="209" width="224" height="84.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Arcade Console">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onArcadeChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="EHH-j6-rz6"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ap-hU-zGC" customClass="DesignableButton" customModule="ProjetImerirApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="313.5" width="224" height="84.5"/>
+                                            <color key="backgroundColor" red="0.31537515859999998" green="0.30797357889999999" blue="0.30523850629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <state key="normal" title="Arcade Bac">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.75395892109999996" blue="0.095592755619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onArcadeChoosen:" destination="6KN-6r-4Ao" eventType="touchUpInside" id="g9c-cn-wFK"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="y1a-Vd-lca" firstAttribute="centerX" secondItem="LNS-QG-xv8" secondAttribute="centerX" id="51g-84-z0V"/>
+                                <constraint firstItem="ANd-HE-WNn" firstAttribute="centerX" secondItem="LNS-QG-xv8" secondAttribute="centerX" id="I3e-nz-vox"/>
+                                <constraint firstItem="y1a-Vd-lca" firstAttribute="width" secondItem="LNS-QG-xv8" secondAttribute="width" multiplier="0.7" id="LRF-JO-4ro"/>
+                                <constraint firstItem="ANd-HE-WNn" firstAttribute="width" secondItem="LNS-QG-xv8" secondAttribute="width" multiplier="0.7" id="N1o-7J-uTm"/>
+                                <constraint firstItem="ANd-HE-WNn" firstAttribute="height" secondItem="LNS-QG-xv8" secondAttribute="height" multiplier="0.7" id="RzG-de-zRC"/>
+                                <constraint firstItem="y1a-Vd-lca" firstAttribute="height" secondItem="LNS-QG-xv8" secondAttribute="height" multiplier="0.7" id="jUY-El-rNX"/>
+                                <constraint firstItem="ANd-HE-WNn" firstAttribute="centerY" secondItem="LNS-QG-xv8" secondAttribute="centerY" id="mEQ-JX-xff"/>
+                                <constraint firstItem="y1a-Vd-lca" firstAttribute="centerY" secondItem="LNS-QG-xv8" secondAttribute="centerY" id="pFD-lG-9TQ"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="yhd-ML-63Y" appends="YES" id="qth-AP-1v8"/>
+                            </connections>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="arcadesStackView" destination="y1a-Vd-lca" id="FTx-ng-LmO"/>
+                        <outlet property="classesStackView" destination="ANd-HE-WNn" id="vVr-1T-b4D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZh-p4-pxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yhd-ML-63Y" userLabel="Dismiss">
+                    <connections>
+                        <action selector="dismissModal:" destination="6KN-6r-4Ao" id="fQg-UJ-W5f"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1954" y="1081"/>
         </scene>
     </scenes>
     <resources>

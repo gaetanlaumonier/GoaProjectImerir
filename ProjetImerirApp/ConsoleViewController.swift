@@ -67,6 +67,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
     var embedViewController:EmbedViewController!
     
     var allHealsAndBonus = true
+    var arcadeMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -380,30 +381,42 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         pauseGame()
         activateShield(20.0)
         
-        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
-            oneProfil.sceneActuelle += 1
-            
-            if missileHit == 0 {
-                embedViewController.updateAchievement("achievement.consoleperfect")
+        if missileHit == 0 {
+            embedViewController.updateAchievement("achievement.consoleperfect")
+        }
+        
+        if allHealsAndBonus {
+            embedViewController.updateAchievement("achievement.consoletakeall")
+        }
+        
+        if arcadeMode {
+            if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController
+            {
+                UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                    self.view.alpha = 0
+                } , completion: { success in
+                    vc.firstMenuForRun = false
+                    self.embedViewController.showScene(vc)
+                })
             }
-            
-            if allHealsAndBonus {
-                embedViewController.updateAchievement("achievement.consoletakeall")
+        } else {
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
+                oneProfil.sceneActuelle += 1
+                oneProfil.statsConsole["pourcentage"] = 100 - (100 * missileHit / nbrMissile)
+                oneProfil.statsConsole["missileHit"] = missileHit
+                vc.oneProfil = oneProfil
+                saveMyData()
+                UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                    self.view.alpha = 0
+                } , completion: { _ in
+                    self.embedViewController.showScene(vc)
+                })
+            }else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
             }
-            
-            oneProfil.statsConsole["pourcentage"] = 100 - (100 * missileHit / nbrMissile)
-            oneProfil.statsConsole["missileHit"] = missileHit
-            vc.oneProfil = oneProfil
-            saveMyData()
-            UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
-                self.view.alpha = 0
-            } , completion: { _ in
-                self.embedViewController.showScene(vc)
-            })
-        }else {
-            print("Could not instantiate view controller with identifier of type DialogueViewController")
-            return
         }
     }
     

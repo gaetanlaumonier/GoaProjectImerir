@@ -58,6 +58,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     var totalSheets = 0
     
     var embedViewController:EmbedViewController!
+    var arcadeMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -407,32 +408,44 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     func endGame() {
         pauseGame()
         
-        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
-            oneProfil.sceneActuelle += 1
-            
-            if !isAddict {
-                embedViewController.updateAchievement("achievement.bacnocoffee")
-            }
-            
-            oneProfil.statsBac["goodClassification"] = studiedSheets
-            if totalSheets > 0 {
-                oneProfil.statsBac["pourcentage"] = 100 * goodSheets / totalSheets
-            } else {
-                oneProfil.statsBac["pourcentage"] = 0
-            }
-            vc.oneProfil = oneProfil
-            saveMyData()
-            UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
-                self.view.alpha = 0
-            } , completion: { _ in
-                self.embedViewController.showScene(vc)
-            })
-        }else {
-            print("Could not instantiate view controller with identifier of type DialogueViewController")
-            return
+        if !isAddict {
+            embedViewController.updateAchievement("achievement.bacnocoffee")
         }
-
+        
+        if arcadeMode {
+            if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController
+            {
+                UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                    self.view.alpha = 0
+                } , completion: { success in
+                    vc.firstMenuForRun = false
+                    self.embedViewController.showScene(vc)
+                })
+            }
+        } else {
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController {
+                oneProfil.sceneActuelle += 1
+                
+                oneProfil.statsBac["goodClassification"] = studiedSheets
+                if totalSheets > 0 {
+                    oneProfil.statsBac["pourcentage"] = 100 * goodSheets / totalSheets
+                } else {
+                    oneProfil.statsBac["pourcentage"] = 0
+                }
+                vc.oneProfil = oneProfil
+                saveMyData()
+                UIView.animate(withDuration: 7, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 6)
+                    self.view.alpha = 0
+                } , completion: { _ in
+                    self.embedViewController.showScene(vc)
+                })
+            }else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
+            }
+        }
     }
     
     

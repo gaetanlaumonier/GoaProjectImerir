@@ -31,8 +31,8 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var bonusList = [AnyClass]()
     
     var score = 0
-    var gameDuration = 20.0
-    var timeLeft = 20.0
+    var gameDuration = 60.0
+    var timeLeft = 60.0
     var slowGameFactor = 1.0
     var originalSize:CGFloat!
     
@@ -52,6 +52,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     var embedViewController:EmbedViewController!
     
     var noBonusWasPicked = true
+    var arcadeMode = false
 
     
     override func viewDidLoad() {
@@ -86,7 +87,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         pageViewLabels = ["Cet objet est un de tes objectifs, ton but est de le ranger dans le bon conteneur.", "Les jouets vont dans le coffre, les déchets dans la poubelle et les vêtements dans l'armoire.","Touche une icône \"bonus\" pour voir ce qu'il rapporte.", "Avec la classe \(self.oneProfil.classeJoueur), \(AllClasse[idClasse].arcadeRangement as String)"]
         pageViewImages = ["LaserGun", "CoffreAJouet","Bonus", "\(AllClasse[idClasse].idClasse as String)"]
         pageViewTitles = ["Les Objets","Les Conteneurs","Les Bonus", "\(AllClasse[idClasse].idClasse as String)"]
-        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perds de la vie quand tu te trompe de conteneur.", "La majorité des bonus a un impact positif.", ""]
+        pageViewHints = ["Les objets bougent de plus en plus vite.", "Tu perds de la vie quand tu te trompes de conteneur.", "La majorité des bonus a un impact positif.", ""]
         
         pageViewController = storyboard?.instantiateViewController(withIdentifier: "RangementPageViewController") as! UIPageViewController
         
@@ -184,27 +185,42 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     }
     
     func returnToDialog() {
-        if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
-        {
-            UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
-                self.view.alpha = 0
-            } , completion: { success in
-                self.oneProfil.sceneActuelle += 1
-                if self.objInContainer != 0 {
-                    self.oneProfil.statsRangement["pourcentage"]! = 100 * self.goodObjectInContainer / self.objInContainer
-                } else {
-                    self.oneProfil.statsRangement["goodClassification"]! = 0
-                }
-                self.oneProfil.statsRangement["goodClassification"]! = self.goodObjectInContainer
-                
-                vc.oneProfil = self.oneProfil
-                self.saveMyData()
-                self.embedViewController.showScene(vc)
-            })
-        }else {
-            print("Could not instantiate view controller with identifier of type DialogueViewController")
-            return
+        
+        if arcadeMode {
+            if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController
+            {
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                    self.view.alpha = 0
+                } , completion: { success in
+                    vc.firstMenuForRun = false
+                    self.embedViewController.showScene(vc)
+                })
+            }
+        } else {
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateInitialViewController() as? DialogueViewController
+            {
+                UIView.animate(withDuration: 3, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                    self.view.alpha = 0
+                } , completion: { success in
+                    self.oneProfil.sceneActuelle += 1
+                    if self.objInContainer != 0 {
+                        self.oneProfil.statsRangement["pourcentage"]! = 100 * self.goodObjectInContainer / self.objInContainer
+                    } else {
+                        self.oneProfil.statsRangement["goodClassification"]! = 0
+                    }
+                    self.oneProfil.statsRangement["goodClassification"]! = self.goodObjectInContainer
+                    
+                    vc.oneProfil = self.oneProfil
+                    self.saveMyData()
+                    self.embedViewController.showScene(vc)
+                })
+            }else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
+            }
+
         }
     }
     

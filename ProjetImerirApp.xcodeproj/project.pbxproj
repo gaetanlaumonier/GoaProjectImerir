@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F05B9241EDD6AC6002649AE /* EmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */; };
 		3F07DE781EDDBFCD0050130F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F07DE771EDDBFCD0050130F /* GameKit.framework */; };
+		3F155F0B1EEC0A2700920C2A /* ModeArcadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F155F0A1EEC0A2700920C2A /* ModeArcadeViewController.swift */; };
 		3F25E4C91ECC7FE9009AAEEC /* ArcadeBac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */; };
 		3F25E4CC1ECC813A009AAEEC /* BacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */; };
 		3F25E4D01ECC90D5009AAEEC /* Fiche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */; };
@@ -160,6 +161,7 @@
 /* Begin PBXFileReference section */
 		3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedViewController.swift; sourceTree = "<group>"; };
 		3F07DE771EDDBFCD0050130F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		3F155F0A1EEC0A2700920C2A /* ModeArcadeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeArcadeViewController.swift; sourceTree = "<group>"; };
 		3F25E4C81ECC7FE9009AAEEC /* ArcadeBac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArcadeBac.storyboard; path = ProjetImerirApp/ArcadeBac.storyboard; sourceTree = "<group>"; };
 		3F25E4CB1ECC813A009AAEEC /* BacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BacViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F25E4CF1ECC90D5009AAEEC /* Fiche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiche.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 				3FF66F211ECC7EAC0042E99B /* StatsTableViewCell.swift */,
 				3F05B9231EDD6AC6002649AE /* EmbedViewController.swift */,
 				3F6272F31EE2DD390098BDD5 /* MenuViewController.swift */,
+				3F155F0A1EEC0A2700920C2A /* ModeArcadeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				3FD1AD0C1EC5AF6D008F66CB /* StrangeBat.swift in Sources */,
 				3FD6B7A11ECF548800495579 /* ContentBacViewController.swift in Sources */,
 				3F659C981EC91BD200E64121 /* ContentConsoleViewController.swift in Sources */,
+				3F155F0B1EEC0A2700920C2A /* ModeArcadeViewController.swift in Sources */,
 				3F659C7C1EC74CD500E64121 /* ConsoleViewController.swift in Sources */,
 				3FD1AD0D1EC5AF6D008F66CB /* ContentLabyrintheViewController.swift in Sources */,
 				3FD1AD2B1EC5AF6D008F66CB /* ScoreDown.swift in Sources */,

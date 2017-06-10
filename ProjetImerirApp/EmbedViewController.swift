@@ -144,7 +144,7 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
         achievement.showsCompletionBanner = true  // use Game Center's UI
 
         GKAchievement.report([achievement], withCompletionHandler: { (error:Error?) -> Void in
-            guard error == nil else {
+            if let error = error {
                 print(error)
                 return
             }
