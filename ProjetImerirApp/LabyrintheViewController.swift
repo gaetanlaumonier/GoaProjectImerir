@@ -128,7 +128,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     var firstGameTimer = Timer()
     
     /// Represents the time left before ending the game in the first maze context.
-    var elapsedTime = Int()
+    var elapsedTime = 0
     
     /// AVFoundation object used to play sound effect of the dying bats. Is isolated from the bruitageMusicPlayer so that they don't cancel each other.
     var killMonster = AVAudioPlayer()
@@ -291,7 +291,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func createMaze() {
-        mazeObj = Maze(width: 17, height: 17)
+        mazeObj = Maze(width: 13, height: 13)
         maze = mazeObj.data
         embedViewController = getEmbedViewController()
 
@@ -801,7 +801,12 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     func drawNextBat() {
 
         guard !currentRoom.bats.isEmpty else {
-            self.enableArrows()
+            enableArrows()
+            return
+        }
+        
+        if isFirstMaze && elapsedTime > 25 {
+            enableArrows()
             return
         }
 
