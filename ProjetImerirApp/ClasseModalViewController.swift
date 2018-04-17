@@ -54,8 +54,7 @@ class ClasseModalViewController: UIViewController {
         {
             self.bruitageMusicPlayer = self.GestionBruitage(filename: "Clik", volume : 1)
             UIView.animate(withDuration: 1, animations: {
-            self.classeView.alpha = 0
-
+                self.classeView.alpha = 0
             }, completion: { _ in
                 UIView.animate(withDuration: 2, animations: {
                     myPresentingViewController.view.alpha = 0

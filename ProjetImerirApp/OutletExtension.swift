@@ -422,7 +422,7 @@ extension UIViewController{
         label.alpha = 0.8
         label.setupLabelDynamicSize(fontSize: 24)
         
-        blurEffectView.addSubview(label)
+        blurEffectView.contentView.addSubview(label)
         
         if let _ = onClick {
             let gesture = UITapGestureRecognizer(target: self, action: onClick)
@@ -436,11 +436,9 @@ extension UIViewController{
     }
 
     func FonduApparition(myView : UIViewController, myDelai : Float){
-    UIView.animate(withDuration: TimeInterval(myDelai), animations: {
-    myView.view.alpha = 1
-    })
-        
-
+        UIView.animate(withDuration: TimeInterval(myDelai), animations: {
+        myView.view.alpha = 1
+        })
     }
     
     //Change dynamiquement la couleur du lifePointLabel en vert en cas de gain de PV

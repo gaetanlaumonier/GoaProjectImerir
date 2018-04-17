@@ -173,7 +173,5 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
         showScene(initVc)
         
         authenticateLocalPlayer()
-        
-        print(NotificationCenter.default)
     }
 }
