@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="udD-PG-bRI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="udD-PG-bRI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Futura.ttc">
-            <string>Futura-Bold</string>
-            <string>Futura-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Embed View Controller-->
         <scene sceneID="FRP-ro-hsW">
@@ -51,7 +45,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LabSortie.gif" translatesAutoresizingMaskIntoConstraints="NO" id="3lF-mz-r9V">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOd-Sd-a8B">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOd-Sd-a8B">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cvV-2h-sw2">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -216,7 +210,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoueCrantée" translatesAutoresizingMaskIntoConstraints="NO" id="tbU-Ch-oxP">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoueCrantee" translatesAutoresizingMaskIntoConstraints="NO" id="tbU-Ch-oxP">
                                 <rect key="frame" x="269" y="515" width="48" height="47.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tbU-Ch-oxP" secondAttribute="height" id="HnY-aC-7i1"/>
@@ -239,6 +233,7 @@
                             <constraint firstAttribute="trailing" secondItem="tbU-Ch-oxP" secondAttribute="trailing" multiplier="1.01" id="BoU-r8-8OZ"/>
                             <constraint firstItem="nZT-ie-EJT" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.7" id="Dga-62-rSr"/>
                             <constraint firstItem="hOd-Sd-a8B" firstAttribute="centerY" secondItem="V2U-jB-sko" secondAttribute="centerY" id="EHw-07-coc"/>
+                            <constraint firstItem="tbU-Ch-oxP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bT0-7Z-f2u" secondAttribute="trailing" constant="8" id="Nlq-s4-KN3"/>
                             <constraint firstItem="LM7-OW-Qej" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.85" id="NyE-G1-D2y"/>
                             <constraint firstItem="tbU-Ch-oxP" firstAttribute="width" secondItem="V2U-jB-sko" secondAttribute="width" multiplier="0.15" id="Phv-ut-mJp"/>
                             <constraint firstItem="nZT-ie-EJT" firstAttribute="centerX" secondItem="V2U-jB-sko" secondAttribute="centerX" id="Syu-Yp-3TE"/>
@@ -411,6 +406,7 @@
                                                                     <constraint firstItem="bCq-PA-fvd" firstAttribute="height" secondItem="eVn-6g-HI3" secondAttribute="height" id="lcZ-Ay-79u"/>
                                                                     <constraint firstItem="AkN-m3-fD6" firstAttribute="width" secondItem="1W1-Bn-16Q" secondAttribute="width" multiplier="0.65" id="mdf-ev-Zqr"/>
                                                                     <constraint firstItem="eVn-6g-HI3" firstAttribute="width" secondItem="1W1-Bn-16Q" secondAttribute="width" multiplier="0.65" id="tHb-oQ-Rzg"/>
+                                                                    <constraint firstItem="bCq-PA-fvd" firstAttribute="trailing" secondItem="cGu-Ez-vpx" secondAttribute="trailing" id="uzF-3f-2hw"/>
                                                                     <constraint firstItem="bYy-qO-bkN" firstAttribute="width" secondItem="1W1-Bn-16Q" secondAttribute="width" multiplier="0.8" id="xjJ-Ic-HOz"/>
                                                                     <constraint firstItem="AkN-m3-fD6" firstAttribute="height" secondItem="1W1-Bn-16Q" secondAttribute="height" multiplier="0.3" id="z1n-dY-hsp"/>
                                                                     <constraint firstItem="AkN-m3-fD6" firstAttribute="leading" secondItem="1W1-Bn-16Q" secondAttribute="leading" constant="10" id="zRa-hG-iHA"/>
@@ -1210,7 +1206,7 @@
         <image name="LabSortie.gif" width="939" height="1196"/>
         <image name="LaunchScreen" width="1125" height="1600"/>
         <image name="Rating" width="1070" height="1024"/>
-        <image name="RoueCrantée" width="741" height="720"/>
+        <image name="RoueCrantee" width="741" height="720"/>
         <image name="Trophee" width="329" height="360"/>
         <image name="Wikia" width="2000" height="501"/>
     </resources>

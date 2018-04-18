@@ -39,7 +39,7 @@ class NameModalViewController: UIViewController {
             return "Pas de caractères spéciaux !"
         } else if name == "" {
             return "N'oublie pas de rentrer un nom !"
-        } else if (name.characters.count) < 2 || (name.characters.count) > 12 {
+        } else if (name.count) < 2 || (name.count) > 12 {
             return "de 2 à 12 lettres maximum !"
         }
         

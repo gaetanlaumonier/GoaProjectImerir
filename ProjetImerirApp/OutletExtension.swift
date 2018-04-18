@@ -115,8 +115,9 @@ extension CATextLayer {
 //Met en majuscule la première lettre du nom du joueur en début de partie
 extension String {
     func capitalizingFirstLetter() -> String {
-        let first = String(characters.prefix(1)).capitalized
-        let other = String(characters.dropFirst())
+        let first = prefix(1).capitalized
+        let other = dropFirst()
+        
         return first + other
     }
     

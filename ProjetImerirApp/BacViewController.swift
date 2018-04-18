@@ -724,8 +724,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         sheet.matiereLabel.textColor = UIColor(hue: invertedHue, saturation: 1, brightness: 0.9, alpha: 1)
-        
-        sheet.matiereLabel.text = String(Array(sheet.matiere.lowercased().characters).shuffled).capitalizingFirstLetter()
+        sheet.matiereLabel.text = String(Array(sheet.matiere.lowercased()).shuffled).capitalizingFirstLetter()
     }
     
     func removeAddictionEffect(on sheet: Fiche) {
