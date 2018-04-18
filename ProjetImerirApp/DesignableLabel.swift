@@ -47,7 +47,7 @@ import UIKit
             paragraphStyle.lineSpacing = lineSpace
             
             let attrString = NSMutableAttributedString(string: self.text!)
-            attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+            attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
             self.attributedText = attrString
             self.textAlignment = NSTextAlignment.center
         }

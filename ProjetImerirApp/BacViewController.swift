@@ -491,7 +491,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
                 
             } else {
                 
-                UIView.animate(withDuration: 0.5, delay:0, options: .allowUserInteraction, animations: { _ in
+                UIView.animate(withDuration: 0.5, delay:0, options: .allowUserInteraction, animations: { 
                     let txy = CGAffineTransform(translationX: origin.x, y: origin.y)
                     let rot = CGAffineTransform(rotationAngle: 0)
                     sender.view!.transform = rot.concatenating(txy);
@@ -572,7 +572,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     func swapToRight(_ view: UIView) {
         
         view.tag = 10
-        UIView.animate(withDuration: 0.5, animations: { _ in
+        UIView.animate(withDuration: 0.5, animations: { 
             let txy = CGAffineTransform(translationX: self.view.bounds.width, y: -abs(self.view.bounds.width) / 15)
             let rot = CGAffineTransform(rotationAngle: self.view.bounds.width / 1500)
             view.transform = rot.concatenating(txy);
@@ -587,7 +587,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
     func swapToLeft(_ view: UIView) {
         
         view.tag = 10
-        UIView.animate(withDuration: 0.5, animations: { _ in
+        UIView.animate(withDuration: 0.5, animations: { 
             let txy = CGAffineTransform(translationX: -self.view.bounds.width, y: -abs(self.view.bounds.width) / 15)
             let rot = CGAffineTransform(rotationAngle: -self.view.bounds.width / 1500)
             view.transform = rot.concatenating(txy);
@@ -650,7 +650,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
             sheet.isUserInteractionEnabled = false
             sheet.frame.origin.y = view.bounds.height
             
-            UIView.animate(withDuration: 1, animations: { _ in
+            UIView.animate(withDuration: 1, animations: { 
                 sheet.frame.origin.y = self.ficheView.frame.origin.y
             }, completion: { _ in
                 sheet.isUserInteractionEnabled = true
@@ -816,11 +816,11 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         
         
         self.view.addSubview(label)
-        UIView.animate(withDuration: 1, animations: {_ in
+        UIView.animate(withDuration: 1, animations: {
             label.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             label.alpha = 1
         },completion: {_ in
-            UIView.animate(withDuration: 3, animations: {_ in
+            UIView.animate(withDuration: 3, animations: {
                 label.alpha = 0
             }, completion: {_ in
                 label.removeFromSuperview()
@@ -838,7 +838,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
         NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
     }
     
-    func hideModal() {
+    @objc func hideModal() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         for subview in self.view.subviews {
             
@@ -846,7 +846,7 @@ class BacViewController: UIViewController, UIPageViewControllerDataSource {
                 continue
             }
             
-            UIView.animate(withDuration: 1, animations: {_ in
+            UIView.animate(withDuration: 1, animations: {
                 self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 subview.alpha = 0
             }, completion: { _ in

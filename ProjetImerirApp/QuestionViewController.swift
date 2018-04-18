@@ -100,7 +100,7 @@ class QuestionViewController: UIViewController {
         readyPopup = endGamePopup(text: "Appuie sur l'écran pour commencer la série de questions.", onClick: #selector(pickFirstQuestion))
     }
     
-    func pickFirstQuestion() {
+    @objc func pickFirstQuestion() {
         readyPopup.removeFromSuperview()
         PickQuestion()
     }
@@ -355,7 +355,7 @@ class QuestionViewController: UIViewController {
     }
     
     //Gère l'écoulement du temps de question
-    func GestionTimer(){
+    @objc func GestionTimer(){
         countSeconde -= 1
         headerView.timerLabel?.text = "\(Int(countSeconde))s"
         if countSeconde <= 0 {

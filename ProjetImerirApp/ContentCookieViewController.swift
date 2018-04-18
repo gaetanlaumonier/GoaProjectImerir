@@ -96,7 +96,7 @@ class ContentCookieViewController: UIViewController {
         }
     }
     
-    func animateProgressBar() {
+    @objc func animateProgressBar() {
         if progressBar.progress < 1 {
             progressBar.progress += 1/180
         } else {

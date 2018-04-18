@@ -91,7 +91,7 @@ class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate 
             gcVC.gameCenterDelegate = self.embedViewController
             gcVC.viewState = .achievements
             
-            dismiss(animated: true, completion: { _ in
+            dismiss(animated: true, completion: {
                 self.embedViewController.present(gcVC, animated: true, completion: nil)
             })
             
@@ -140,7 +140,7 @@ class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate 
             composeVC.setToRecipients(["labanalejournee@gmail.com"])
             composeVC.setSubject("Feedback")
             
-            dismiss(animated: true, completion: { _ in
+            dismiss(animated: true, completion: {
                 self.embedViewController.present(composeVC, animated: true, completion: nil)
             })
         }
@@ -164,7 +164,7 @@ class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
-        controller.dismiss(animated: true, completion: { _ in
+        controller.dismiss(animated: true, completion: {
             
             if result.rawValue == 2 {
                 let alert = UIAlertController(title: "Message envoyé", message: "Merci d'avoir envoyé votre message, il sera lu par notre équipe très bientôt.", preferredStyle: .alert)

@@ -361,7 +361,7 @@ extension UIImage {
 extension Collection where Indices.Iterator.Element == Index {
     
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-    subscript (safe index: Index) -> Generator.Element? {
+    subscript (safe index: Index) -> Iterator.Element? {
         return indices.contains(index) ? self[index] : nil
         
     }
@@ -558,7 +558,7 @@ extension Array {
         var array = self
         indices.dropLast().forEach {
             guard case let index = Int(arc4random_uniform(UInt32(count - $0))) + $0, index != $0 else { return }
-            swap(&array[$0], &array[index])
+            array.swapAt($0, index)
         }
         return array
     }

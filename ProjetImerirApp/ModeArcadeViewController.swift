@@ -34,10 +34,10 @@ class ModeArcadeViewController: UIViewController {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         arcadeChoosen = sender.tag
         
-        UIView.animate(withDuration: 1, animations: { _ in
+        UIView.animate(withDuration: 1) {
             self.arcadesStackView.alpha = 0
             self.classesStackView.alpha = 1
-        })
+        }
     }
     
     @IBAction func onClasseChoosen(_ sender: DesignableButton) {

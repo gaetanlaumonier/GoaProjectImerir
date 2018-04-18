@@ -194,7 +194,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         decreaseTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CookieViewController.decreaseScore), userInfo: nil, repeats: true)
     }
     
-    func decreaseScore() {
+    @objc func decreaseScore() {
         if gamePause == false {
             if progress >= progressDecrease {
                 progress -= progressDecrease
@@ -205,7 +205,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         }
     }
     
-    func TimerGesture(){
+    @objc func TimerGesture(){
         gameTimer -= 1
         headerView.timerLabel.text = "\(Int(gameTimer)) s"
         if gameTimer == 0 {
@@ -244,7 +244,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         let _ = endGamePopup(text: dialogText, onClick: #selector(returnToDialog))
     }
     
-    func returnToDialog() {
+    @objc func returnToDialog() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         
         decreaseTimer.invalidate()
@@ -294,7 +294,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     //// GAME LOGIC ////
     
-    func cookieClicked(tapGR: UITapGestureRecognizer){
+    @objc func cookieClicked(tapGR: UITapGestureRecognizer){
         if isReallyClicked(tapGR: tapGR){
             cookieTaped += 1
             if isMomWatching {
@@ -448,7 +448,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         animateSmileysRotate()
     }
     
-    func animateSmileysScale() {
+    @objc func animateSmileysScale() {
         
         let anim = CABasicAnimation(keyPath: "transform.scale.x")
         anim.fromValue = 1
@@ -474,7 +474,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         animateSadRotate()
     }
     
-    func animateHappyRotate() {
+    @objc func animateHappyRotate() {
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         anim.fromValue = 0
         
@@ -494,7 +494,7 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
         Timer.scheduledTimer(timeInterval: anim.duration * 2, target: self, selector: #selector(CookieViewController.animateHappyRotate), userInfo: nil, repeats: false)
     }
     
-    func animateSadRotate() {
+    @objc func animateSadRotate() {
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         anim.fromValue = 0
         
@@ -518,13 +518,13 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     //// MOM ////
     
-    func hideMom() {
+    @objc func hideMom() {
         isMomWatching = false
         toggleMom(up: false)
         Timer.scheduledTimer(timeInterval: randomInterval(), target: self, selector: #selector(CookieViewController.showMom), userInfo: nil, repeats: false)
     }
     
-    func showMom() {
+    @objc func showMom() {
         
         // Wait 1/3s so the player don't loose life instantly
         Timer.scheduledTimer(withTimeInterval: 1/3, repeats: false, block: { _ in
@@ -559,18 +559,18 @@ class CookieViewController: UIViewController, CAAnimationDelegate, UIPageViewCon
     
     //// PAGE VIEW ////
     
-    func hideModal() {
+    @objc func hideModal() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
             for subview in self.view.subviews {
                 guard subview is UIVisualEffectView else {
                     continue
                 }
                 
-                UIView.animate(withDuration: 1, animations: {_ in
+                UIView.animate(withDuration: 1) {
                     self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-                })
+                }
                 
-                UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {_ in
+                UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {
                     subview.alpha = 0
                 }, completion: { finished in
                     subview.removeFromSuperview()

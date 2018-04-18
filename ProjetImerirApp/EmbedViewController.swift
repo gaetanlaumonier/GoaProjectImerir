@@ -45,7 +45,7 @@ class EmbedViewController: UIViewController, GKGameCenterControllerDelegate {
             } else if (localPlayer.isAuthenticated) {
                 
                 // Recupere les succes déjà acquis et les stocke dans un tableau qui sera lu a chaque tentative d'ajout d'un succès
-                self.loadOwnedAchievements(completion: { _ in
+                self.loadOwnedAchievements(completion: {
                     GKAchievementDescription.loadAchievementDescriptions(completionHandler: { (achievements, error) -> Void in
                         if let error = error {
                             print(error)

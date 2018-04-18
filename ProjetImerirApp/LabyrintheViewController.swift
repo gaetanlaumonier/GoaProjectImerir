@@ -253,12 +253,11 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         initMap()
         
         // Load the initial room where the player has spawned
-        loadRoom(player.x, player.y, completion: { _ in
-            
-            UIView.animate(withDuration: 0.5, animations: { _ in
+        loadRoom(player.x, player.y) {
+            UIView.animate(withDuration: 0.5) {
                 self.view.alpha = 1
-            })
-        })
+            }
+        }
     }
     
     // Called in viewDidLoad
@@ -274,12 +273,12 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         potionView.loadGif(name: "Potion")
         
         // Remade GIF displaying method to be able to get the current image displaying
-        spikes.loadGif(name: "Piege", completion: { _ in
+        spikes.loadGif(name: "Piege") {
             self.setupSpikesDict()
             self.spikes.image = nil
             self.spikes.image = self.spikesImages.first?.img
             self.animateSpikes()
-        })
+        }
         
         // Add gesture recognizer to the view itself for tapping moving bats (to manage presentationLayer)
         batGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBatTap))
@@ -369,15 +368,15 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     //// GLOBAL FUNCTIONS & IBActions ////
     
     // On arrow tapped
-    func arrowTapped(_ sender: UITapGestureRecognizer) {
+    @objc func arrowTapped(_ sender: UITapGestureRecognizer) {
         
         guard let arrowView = sender.view else {
             return
         }
         self.bruitageMusicPlayer = self.GestionBruitage(filename: "Clik", volume: 0.9)
-        UIView.animate(withDuration: 0.3, animations: { _ in
+        UIView.animate(withDuration: 0.3) {
             arrowView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        })
+        }
         
         disableArrows()
         
@@ -385,19 +384,19 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             manageSpikes()
         }
         
-        UIView.animate(withDuration: 0.5, animations: { _ in
+        UIView.animate(withDuration: 0.5, animations: { 
             self.view.alpha = 0
         }, completion: { _ in
             arrowView.transform = .identity
             self.hideArrows()
-            self.moveTo(Direction(rawValue: arrowView.tag)!, completion: { _ in
-                UIView.animate(withDuration: 0.5, animations: { _ in
+            self.moveTo(Direction(rawValue: arrowView.tag)!) {
+                UIView.animate(withDuration: 0.5, animations: { 
                     self.view.alpha = 1
                 }, completion : { _ in
                     self.disableArrows()
                     self.drawNextBat()
                 })
-            })
+            }
         })
     }
     
@@ -410,7 +409,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             }
             bruitageMusicPlayer = GestionBruitage(filename: "Potion", volume: 0.6)
             currentRoom.potion = nil
-            UIView.animate(withDuration: 0.5, animations: { _ in
+            UIView.animate(withDuration: 0.5, animations: { 
                 self.potionView.alpha = 0
             }, completion: { _ in
                 self.potionView.isHidden = true
@@ -459,7 +458,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         for arrow in arrowsList {
             
             if arrow.value.alpha == 0 {
-                UIView.animate(withDuration: 0.5, animations: { _ in
+                UIView.animate(withDuration: 0.5, animations: { 
                     arrow.value.alpha = 1
                 }, completion: { _ in
                     arrow.value.isUserInteractionEnabled = true
@@ -600,9 +599,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         player.x = player.x + newX
         player.y = player.y + newY
         
-        loadRoom(player.x, player.y, completion: { _ in
+        loadRoom(player.x, player.y) {
             completion?()
-        })
+        }
     }
     
     /**
@@ -651,9 +650,9 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         
         redrawHUD()
         
-        background.loadGif(name: imageName, completion: {_ in
+        background.loadGif(name: imageName) {
             completion?()
-        })
+        }
     }
     
     /**
@@ -710,7 +709,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             return cells
         }
         
-        let possibleCells = [(Direction.North, [room.x-1,room.y]),
+        let possibleCells: [(Direction, [Int])]  = [(Direction.North, [room.x-1,room.y]),
                              (Direction.East, [room.x,room.y+1]),
                              (Direction.South, [room.x+1,room.y]),
                              (Direction.West, [room.x,room.y-1])]
@@ -718,7 +717,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         var directions:[Direction] = []
         
         for cell in possibleCells {
-            if maze[cell.1[0]!][cell.1[1]!] == Maze.Cell.Space {
+            if maze[cell.1[0]][cell.1[1]] == Maze.Cell.Space {
                 directions.append(cell.0)
             }
         }
@@ -819,14 +818,13 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         self.view.insertSubview(batView, belowSubview: damageOverlay)
         nbrBatAppear += 1
         currentBat = batView
-        batView.loadGif(name: bat.name, completion: { _ in
+        batView.loadGif(name: bat.name) {
             batView.transform = CGAffineTransform(rotationAngle: -0.2)
-            
-            UIView.animate(withDuration: 0.05, delay: 0, options: [.repeat,.autoreverse], animations: { _ in
-                batView.transform = CGAffineTransform(rotationAngle: 0.2)
-            })
 
-        })
+            UIView.animateKeyframes(withDuration: 0.05, delay: 0, options: [.repeat,.autoreverse], animations: {
+                batView.transform = CGAffineTransform(rotationAngle: 0.2)
+            }, completion: nil)
+        }
         
         let speedFactor:Double
         
@@ -841,7 +839,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
         } else {
             bruitageMusicPlayerMonstre = GestionBruitageLoop(filename: "MonstreLow", volume: 0.5)
         }
-        UIView.animate(withDuration: 3/bat.speed/speedFactor, delay: 0, options: .curveEaseIn ,animations: { _ in
+        UIView.animate(withDuration: 3/bat.speed/speedFactor, delay: 0, options: .curveEaseIn ,animations: { 
             let size = (drand48()/2 + 1) * Double(self.view.bounds.midX)
             let randX = Double(arc4random_uniform(UInt32(Double(self.view.bounds.width) + size))) - size
             
@@ -858,7 +856,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     // On monster tapped
-    func handleBatTap(_ sender: UITapGestureRecognizer) {
+    @objc func handleBatTap(_ sender: UITapGestureRecognizer) {
         
         guard currentBat != nil else {
             return
@@ -884,7 +882,7 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
             self.currentRoom.bats.remove(at: 0)
             self.drawNextBat()
 
-            UIView.animate(withDuration: 1, animations: { _ in
+            UIView.animate(withDuration: 1, animations: { 
                 bat.alpha = 0
             }, completion: { _ in
                 bat.removeFromSuperview()
@@ -1010,18 +1008,18 @@ class LabyrintheViewController: UIViewController, UIPageViewControllerDataSource
     
     //// RULES PAGE VIEW ////
     
-    func hideModal() {
+    @objc func hideModal() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 0.7)
         for subview in self.view.subviews {
             guard subview is UIVisualEffectView else {
                 continue
             }
             
-            UIView.animate(withDuration: 1, animations: {_ in
+            UIView.animate(withDuration: 1) {
                 self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-            })
+            }
             
-            UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {_ in
+            UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {
                 subview.alpha = 0
             }, completion: { finished in
                 subview.removeFromSuperview()

@@ -184,7 +184,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         let _ = endGamePopup(text: dialogText, onClick: #selector(returnToDialog))
     }
     
-    func returnToDialog() {
+    @objc func returnToDialog() {
         
         if arcadeMode {
             if let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "InitController") as? InitViewController
@@ -370,7 +370,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     
     func animateTo(objet: Objet, position: CGPoint, duration: CFTimeInterval = 0.5, options: UIViewAnimationOptions = [.allowUserInteraction, .curveEaseOut] ,completion: ((Bool) -> Swift.Void)? = nil) {
         
-        UIView.animate(withDuration: duration * animationMultiplier, delay: 0, options: options, animations: {_ in
+        UIView.animate(withDuration: duration * animationMultiplier, delay: 0, options: options, animations: {
             objet.frame.origin = position
             objet.isMoving = true
             objet.isWiggling = false
@@ -379,7 +379,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     }
     
     func animateOut(objet: Objet) {
-        UIView.animate(withDuration: 0.5 * animationMultiplier, delay: 0, options: [.allowUserInteraction], animations: {_ in
+        UIView.animate(withDuration: 0.5 * animationMultiplier, delay: 0, options: [.allowUserInteraction], animations: {
             objet.isDying = true
             objet.isUserInteractionEnabled = false
             objet.isWiggling = false
@@ -394,7 +394,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     }
     
     func animateIn(objet: Objet) {
-        UIView.animate(withDuration: 1 * animationMultiplier, delay: animationMultiplier - 1 , options: [.allowUserInteraction], animations: {_ in
+        UIView.animate(withDuration: 1 * animationMultiplier, delay: animationMultiplier - 1 , options: [.allowUserInteraction], animations: {
             objet.isSpawning = true
             objet.alpha = 1
         }, completion: {_ in
@@ -454,7 +454,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
                 let point = self.getValidPosition()
                 objet.isWiggling = true
                 
-                UIView.animate(withDuration: objet.wiggleSpeed * animationMultiplier, delay: 0, options: [.allowUserInteraction, .curveLinear], animations: {_ in
+                UIView.animate(withDuration: objet.wiggleSpeed * animationMultiplier, delay: 0, options: [.allowUserInteraction, .curveLinear], animations: {
                     objet.center = point
                     objet.isMoving = true
                     objet.isWiggling = false
@@ -480,7 +480,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         scoreLabel.text = String(score)
     }
     
-    func onBonusPicked(sender: Bonus) {
+    @objc func onBonusPicked(sender: Bonus) {
         noBonusWasPicked = false
         bruitageMusicPlayer = GestionBruitage(filename: "Bonus", volume: 1)
         sender.onBonusPicked()
@@ -583,11 +583,11 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         
 
         self.view.addSubview(label)
-        UIView.animate(withDuration: 1, animations: {_ in
+        UIView.animate(withDuration: 1, animations: {
             label.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             label.alpha = 1
         },completion: {_ in
-            UIView.animate(withDuration: 3, animations: {_ in
+            UIView.animate(withDuration: 3, animations: {
                 label.alpha = 0
             }, completion: {_ in
                 label.removeFromSuperview()
@@ -624,7 +624,7 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
     }
     
     func animateBonus(bonus: Bonus){
-        UIView.animate(withDuration: 2, delay: 0, options: [.allowUserInteraction, .autoreverse], animations: {_ in
+        UIView.animate(withDuration: 2, delay: 0, options: [.allowUserInteraction, .autoreverse], animations: {
             
             bonus.alpha = 1
             bonus.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -641,18 +641,18 @@ class RangementViewController: UIViewController, UIPageViewControllerDataSource 
         super.didReceiveMemoryWarning()
     }
     
-    func hideModal() {
+    @objc func hideModal() {
         bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
         for subview in self.view.subviews {
             guard subview is UIVisualEffectView else {
                 continue
             }
             
-            UIView.animate(withDuration: 1, animations: {_ in
+            UIView.animate(withDuration: 1) {
                 self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-            })
+            }
             
-            UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {_ in
+            UIView.animate(withDuration: 3,delay: 0, options: .curveEaseOut ,animations: {
                 subview.alpha = 0
             }, completion: { finished in
                 subview.removeFromSuperview()

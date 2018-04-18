@@ -226,10 +226,9 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         ship.alpha = 0
         view.addSubview(ship)
         
-        UIView.animate(withDuration: 1, animations: { _ in
+        UIView.animate(withDuration: 1) {
             ship.alpha = 1
-        })
-        
+        }
         
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         anim.duration = 10 * speedFactor
@@ -261,14 +260,14 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         bomb = UIImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width*0.8, height: view.bounds.width*0.8))
         
         bomb.isHidden = true
-        bomb.loadGif(name: "SpaceBomb", completion: { _ in
+        bomb.loadGif(name: "SpaceBomb") {
             self.bombDuration = CFTimeInterval(UIImage.lastLoadedGIFDuration)
             if let seq = self.bomb.animationImages {
                 print(seq)
                 self.initialBombSequence = seq
             }
             self.bomb.stopAnimating()
-        })
+        }
         
         view.insertSubview(bomb, aboveSubview: background)
         
@@ -344,7 +343,9 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                     
                     
                     let anim = CABasicAnimation(keyPath: "position.y")
-                    anim.duration = CFTimeInterval(CGFloat(10) * (abs(missile.frame.origin.y - finalPos) / abs(startPos - finalPos)))
+                    
+                    let completion = abs(missile.frame.origin.y - finalPos) / abs(startPos - finalPos);
+                    anim.duration = CFTimeInterval(10 * completion)
 
                     anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
                     anim.toValue = finalPos
@@ -507,8 +508,8 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         bonusViews.append(bonus)
         view.addSubview(bonus)
         
-        bonus.loadGif(name: "SpaceBonus", completion: { _ in
-            UIView.animate(withDuration: (drand48() * 2 + 1) * self.speedFactor, delay: 0, options: [.curveEaseIn], animations: { _ in
+        bonus.loadGif(name: "SpaceBonus") {
+            UIView.animate(withDuration: (drand48() * 2 + 1) * self.speedFactor, delay: 0, options: [.curveEaseIn], animations: { 
                 
                 bonus.frame.origin.y = finalY
                 
@@ -525,7 +526,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                 }
                 
             })
-        })
+        }
     }
     
     func spawnHeal() {
@@ -545,9 +546,9 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         healViews.append(healView)
         view.addSubview(healView)
         
-        UIView.animate(withDuration: 1, animations: { _ in
+        UIView.animate(withDuration: 1) {
             healView.alpha = 1
-        })
+        }
         
         let path = UIBezierPath()
         
@@ -583,7 +584,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             
             // Impossible avec delay car les instructions contenues dans le block sont exécutées instantanément
             if healView.tag != 10 {
-                UIView.animate(withDuration: anim.duration * 1/3, animations: { _ in
+                UIView.animate(withDuration: anim.duration * 1/3, animations: { 
                     healView.alpha = 0
                 }, completion: { _ in
                     
@@ -678,7 +679,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                 bruit = 0
             }
             view.addSubview(explosionView)
-            explosionView.loadGif(name: "Explosion", completion: { _ in
+            explosionView.loadGif(name: "Explosion") {
                 let duration = CFTimeInterval(UIImage.lastLoadedGIFDuration)
                 
                 missile.layer.removeAnimation(forKey: "position")
@@ -687,7 +688,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                     self.manageExplosionDamages(explosionView.frame)
                 }
                 
-                UIView.animate(withDuration: 0.5, animations: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
                     missile.alpha = 0
                 }, completion: { _ in
                     self.missileViews.remove(at: self.missileViews.index(of: missile)!)
@@ -697,7 +698,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                 Timer.scheduledTimer(withTimeInterval: duration / 1000, repeats: false, block: { _ in
                     explosionView.removeFromSuperview()
                 })
-            })
+            }
         }
     }
     
@@ -845,7 +846,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             self.gainHealth(3)
             bonusBruitageMusicPlayer = GestionBruitage(filename: "Bonus", volume: 1)
 
-            UIView.animate(withDuration: anim.duration * 1/3, delay: anim.duration * 2/3, animations: { _ in
+            UIView.animate(withDuration: anim.duration * 1/3, delay: anim.duration * 2/3, animations: { 
                 itemTouched.alpha = 0
             }, completion: { _ in
                 self.healViews.remove(at: self.healViews.index(of: itemTouched)!)
@@ -853,7 +854,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
             })
         } else if bonusViews.contains(itemTouched) {
             bonusBruitageMusicPlayer = GestionBruitage(filename: "Bonus", volume: 1)
-            UIView.animate(withDuration: 1, animations: { _ in
+            UIView.animate(withDuration: 1, animations: { 
                 itemTouched.alpha = 0
             }, completion: { _ in
                 self.bonusViews.remove(at: self.bonusViews.index(of: itemTouched)!)
@@ -894,11 +895,11 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         
         
         self.view.addSubview(label)
-        UIView.animate(withDuration: 1, animations: {_ in
+        UIView.animate(withDuration: 1, animations: {
             label.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             label.alpha = 1
         },completion: {_ in
-            UIView.animate(withDuration: 3, animations: {_ in
+            UIView.animate(withDuration: 3, animations: {
                 label.alpha = 0
             }, completion: {_ in
                 label.removeFromSuperview()
@@ -921,7 +922,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
         NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
     }
     
-    func hideModal() {
+    @objc func hideModal() {
         bruitageMusicPlayer1 = GestionBruitage(filename: "Clik", volume : 1)
         for subview in self.view.subviews {
             
@@ -929,7 +930,7 @@ class ConsoleViewController: UIViewController, CAAnimationDelegate, UIPageViewCo
                 continue
             }
             
-            UIView.animate(withDuration: 1, animations: {_ in
+            UIView.animate(withDuration: 1, animations: {
                 self.pageViewController.view.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 subview.alpha = 0
             }, completion: { _ in
