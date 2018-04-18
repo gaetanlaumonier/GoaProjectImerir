@@ -1,22 +1,25 @@
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     
     @IBOutlet weak var BackgroundVIew: UIImageView!
     @IBOutlet var Buttons : [UIButton]!
+    @IBOutlet weak var themeActif: DesignableLabel!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var lifePointLabel: UILabel!
     @IBOutlet weak var dialogueLabel: UILabel!
     @IBOutlet weak var resultatLabel: UILabel!
     @IBOutlet weak var bonneReponseLabel: UILabel!
-    @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var dialogueView: UIView!
+    @IBOutlet weak var answerView: UIView!
     @IBOutlet weak var questionView: UIView!
     @IBOutlet weak var InputAnswer: UITextField!
     @IBOutlet weak var resultatView: UIView!
     @IBOutlet weak var inputButtonValidate: UIButton!
     @IBOutlet weak var hackButton: UIButton!
+    @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var saisieReponseLabel: DesignableLabel!
     
     
     var QuestionsComplete = [Question]()
@@ -27,8 +30,8 @@ class QuestionViewController: UIViewController {
     var TableauEnigme : [Question] = []
     var TableauPsycho : [Question] = []
     var themeQuestionActif = [Question]()
-    var oneProfil = ProfilJoueur(name : "I", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Geek")
-    var QuestionNumber = Int()
+    var oneProfil = ProfilJoueur()
+    var QuestionNumber : Int = 0
     var QuestionPose : Int = 0
     var messageSpecialLabel : Int = 0
     var countSeconde : Float = 0
@@ -36,23 +39,39 @@ class QuestionViewController: UIViewController {
     var resultatVrai = Int()
     var actionResultat = Int()
     var startTimer = Timer()
-    
-    //variable de classe de joueur
     var chanceDuNoob : Bool = false
     var modeHackeurActive : Bool = false
     var multiplicateurFonctionnaire : Float = 1
+    var serieQuestionActive : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
+    var nbrQuestionSerie : Int = 0
+    var endSerie : Bool = false
+    var idQuestion : [String:Int] = ["CultureG" : 0, "Info": 0, "Enigme": 0, "Psycho": 0]
+    var bruitageMusicPlayer = AVAudioPlayer()
+    var readyPopup: UIView!
+    
+    var embedViewController:EmbedViewController!
     
     //Chargement du json, création du tableau des questions, 1ère question
     override func viewDidLoad() {
         super.viewDidLoad()
-        // BackgroundVIew.loadGif(name: "DirecteurEnd")
-        
+        self.view.alpha = 0
+        QuestionMusicGesture()
         QuestionsComplete = buildQuestions()
         AllAnswersReactions = buildAnswersReactions()
         AllClasseJoueur = buildClasseJoueur()
         EffetClasse()
-        lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        InputAnswer.autocorrectionType = .no
+        headerView.lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
+        headerView.timerLabel.textColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        
+        nbrQuestionSerie = (serieQuestionActive["CultureG"]!.hashValue + serieQuestionActive["Info"]!.hashValue + serieQuestionActive["Enigme"]!.hashValue + serieQuestionActive["Psycho"]!.hashValue)
+        
+        for number in self.oneProfil.questionAlreadyPick {
+            QuestionsComplete[number].AlreadyPick = true
+        }
+        
         for j in 0..<QuestionsComplete.count{
+            
             switch QuestionsComplete[j].Topic{
             case "Info":
                 TableauInfo.append(QuestionsComplete[j])
@@ -70,74 +89,119 @@ class QuestionViewController: UIViewController {
                 break
             }
         }
-        themeQuestionActif = TableauInfo
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        hackButton.layer.cornerRadius = view.bounds.width / 20
+        
+        FonduApparition(myView: self, myDelai: 1)
+        
+        // Appuyer sur l'écran pour commencer la série
+        readyPopup = endGamePopup(text: "Appuie sur l'écran pour commencer la série de questions.", onClick: #selector(pickFirstQuestion))
+    }
+    
+    @objc func pickFirstQuestion() {
+        readyPopup.removeFromSuperview()
         PickQuestion()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //Gère les séries de question
+    func SerieQuestionGestion(){
+        
+        if serieQuestionActive["CultureG"]!>0 && idQuestion["CultureG"]! < serieQuestionActive["CultureG"]!{
+            themeQuestionActif = TableauCulture
+            themeActif.text = "Culture Générale"
+        } else if serieQuestionActive["Info"]!>0 && idQuestion["Info"]! < serieQuestionActive["Info"]!{
+            themeQuestionActif = TableauInfo
+            themeActif.text = "Culture Informatique"
+        } else if serieQuestionActive["Enigme"]!>0 && idQuestion["Enigme"]! < serieQuestionActive["Enigme"]!{
+            themeQuestionActif = TableauEnigme
+            themeActif.text = "Enigme"
+        } else if serieQuestionActive["Psycho"]!>0 && idQuestion["Psycho"]! < serieQuestionActive["Psycho"]!{
+            themeQuestionActif = TableauPsycho
+            themeActif.text = "Psychologie"
+        } else {
+            if self.oneProfil.sceneActuelle == 1{
+                self.oneProfil.lifePoint = self.oneProfil.lifePoint + (self.oneProfil.statsQuiz["bonneReponseQuiz"]! * 2)
+            }
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
+            {
+                endSerie = true
+                self.oneProfil.sceneActuelle += 1
+                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.view.alpha = 0
+                    self.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 1.5)
+                } , completion: { success in
+                    vc.oneProfil = self.oneProfil
+                    self.saveMyData()
+                    self.embedViewController.showScene(vc)
+                    
+                })
+            }else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
+            }
+        }
     }
-    
     
     //Rend caché les éléments de l'AnswerView
     func QuestionInit(){
+        
+        self.saisieReponseLabel.alpha = 0
+        self.saisieReponseLabel.textColor = .white
+        self.InputAnswer.alpha = 0
+        self.inputButtonValidate.alpha = 0
+        self.resultatLabel.alpha = 0
+        self.bonneReponseLabel.alpha = 0
+        self.dialogueView.alpha = 0
+        self.resultatView.alpha = 0
+        self.dialogueLabel.alpha = 0
+        self.dialogueView.isHidden = true
+        self.dialogueLabel.text = ""
+        self.resultatLabel.text = ""
+        self.bonneReponseLabel.text = ""
+        
         for i in 0..<Buttons.count{
-            Buttons[i].isHidden = true
+            Buttons[i].center.x = self.view.frame.width + (self.questionView.bounds.width/2 + 10)
         }
-        InputAnswer.isHidden = true
-        inputButtonValidate.isHidden = true
-        bonneReponseLabel.isHidden = true
-        resultatView.isHidden = true
-        reponseTrouverInput = false
         
         
     }
     
     //Pose une question qui n'a pas été posée, lance le timer...
     func PickQuestion(){
+        SerieQuestionGestion()
         QuestionInit()
-        if themeQuestionActif.count > 0 && QuestionPose < themeQuestionActif.count {
+        
+        if themeQuestionActif.count > 0 && QuestionPose < themeQuestionActif.count && endSerie == false{
             QuestionNumber = Int(arc4random_uniform(UInt32(themeQuestionActif.count)))
             while themeQuestionActif[QuestionNumber].AlreadyPick == true {
                 QuestionNumber = Int(arc4random_uniform(UInt32(themeQuestionActif.count)))
             }
             questionLabel.text = themeQuestionActif[QuestionNumber].Question
             formatAnswers()
-            
             if themeQuestionActif[QuestionNumber].Timer != 0 {
-                TimerLabel.isHidden = false
+                headerView.timerLabel?.isHidden = false
                 countSeconde = Float(themeQuestionActif[QuestionNumber].Timer) * multiplicateurFonctionnaire
                 hackFunction()
-                TimerLabel.text = "\(Int(countSeconde))s"
+                headerView.timerLabel?.text = "\(Int(countSeconde))s"
                 startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionViewController.GestionTimer), userInfo: nil, repeats: true)
                 
             } else {
-                TimerLabel.isHidden = true
+                headerView.timerLabel?.isHidden = true
                 startTimer.invalidate()
             }
             
-            if themeQuestionActif[QuestionNumber].FeedBack != "" {
-                dialogueLabel.text = themeQuestionActif[QuestionNumber].FeedBack
-            }else{
-                dialogueLabel.text = "Répond à cette question"
-            }
-            
             messageSpecialLabel = 0
-            themeQuestionActif[QuestionNumber].AlreadyPick = true
         }else{
-            dialogueLabel.text = "Plus de question"
+            themeActif.text = ""
+            questionLabel.text = "Fin de la série de question"
         }
-        EndGame()
     }
     
     //Interprète la classe du joueur
     func EffetClasse(){
-        
         switch self.oneProfil.classeJoueur{
-        case "Geek":
-           // self.oneProfil.lifePoint += 50
-           // lifePointLabel.text = "\(self.oneProfil.lifePoint) PV"
-            break
         case "Noob":
             chanceDuNoob = true
             break
@@ -153,6 +217,7 @@ class QuestionViewController: UIViewController {
         
     }
     
+    //Gère le bonus du Hacker
     func hackFunction(){
         if modeHackeurActive == true {
             let ApparitionRandom = Int(arc4random_uniform(UInt32(3)))
@@ -162,22 +227,29 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    //Gère le bonus du Noob
     func VerifNoobFunction(){
         if chanceDuNoob == true {
-            let intChanceDuNoob = Int(arc4random_uniform(UInt32(3)))
+            let intChanceDuNoob = Int(arc4random_uniform(UInt32(5)))
             if intChanceDuNoob == 2 {
                 resultatLabel.text = "\(AllAnswersReactions[0].chanceDuNoob[actionResultat]) \(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
                 self.oneProfil.lifePoint += themeQuestionActif[QuestionNumber].HPLost!
+                changeColorLabelGood(label: headerView.lifePointLabel)
             } else {
                 resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+                changeColorLabelBad(label: headerView.lifePointLabel)
+
                 self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
             }
         }else {
             resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+
+            changeColorLabelBad(label: headerView.lifePointLabel)
             self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
         }
     }
     
+    //Clique sur le bouton de la réponse A
     @IBAction func AButton(_ sender: UIButton) {
         if themeQuestionActif[QuestionNumber].Topic == "Psycho"{
             resultatReponseSwitch(stringReponse: "0", typeOfQuestion : "Psycho")
@@ -186,6 +258,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    //Clique sur le bouton de la réponse B
     @IBAction func BButton(_ sender: UIButton) {
         if themeQuestionActif[QuestionNumber].Topic == "Psycho"{
             resultatReponseSwitch(stringReponse: "1", typeOfQuestion : "Psycho")
@@ -194,6 +267,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    //Clique sur le bouton de la réponse C
     @IBAction func CButton (_ sender: UIButton){
         if themeQuestionActif[QuestionNumber].Topic == "Psycho"{
             resultatReponseSwitch(stringReponse: "2", typeOfQuestion : "Psycho")
@@ -202,6 +276,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    //Clique sur le bouton de la réponse D
     @IBAction func DButton(_ sender: UIButton){
         if themeQuestionActif[QuestionNumber].Topic == "Psycho"{
             resultatReponseSwitch(stringReponse: "3", typeOfQuestion : "Psycho")
@@ -210,11 +285,12 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    //Clique sur le bouton de la réponse en TextField
     @IBAction func inputButtonValidate(_ sender: UIButton){
         if InputAnswer.text != ""{
             resultatReponseSwitch(stringReponse: InputAnswer.text!, typeOfQuestion : "Input")
         } else {
-            dialogueLabel.text = "Vous devez saisir une réponse"
+            saisieReponseLabel.textColor = .red
         }
     }
     
@@ -227,42 +303,61 @@ class QuestionViewController: UIViewController {
     
     //Gère l'affichage des réponses selon le thème
     func formatAnswers(){
-        switch themeQuestionActif[QuestionNumber].TypeOfQuestion{
-        case "Button":
-            var choiceArray : [String] = []
-            choiceArray.append(themeQuestionActif[QuestionNumber].Answer!)
-            for i in 0..<themeQuestionActif[QuestionNumber].Choice.count{
-                choiceArray.append(themeQuestionActif[QuestionNumber].Choice[i])
-            }
-            choiceArray.sort()
+        self.questionView.center.x = self.view.frame.width + (self.questionView.bounds.width/2 + 10)
+        UIView.animate(withDuration: 0.25, animations: {
+            self.questionView.center.x = self.view.frame.width/2
             
-            for i in 0..<Buttons.count{
-                Buttons[i].isHidden = false
-                
-                Buttons[i].setTitle(choiceArray[i], for :UIControlState.normal)
+        }, completion : { _ in
+            self.QuestionInit()
+            switch self.themeQuestionActif[self.QuestionNumber].TypeOfQuestion{
+            case "Button":
+                var choiceArray : [String] = []
+                choiceArray.append(self.themeQuestionActif[self.QuestionNumber].Answer!)
+                for i in 0..<self.themeQuestionActif[self.QuestionNumber].Choice.count{
+                    choiceArray.append(self.themeQuestionActif[self.QuestionNumber].Choice[i])
+                    
+                }
+                choiceArray.sort()
+                for i in 0..<self.Buttons.count{
+                    self.Buttons[i].alpha = 1
+                    self.Buttons[i].setTitle(choiceArray[i], for :UIControlState.normal)
+                    UIView.animate(withDuration: 0.25, delay : (TimeInterval(i)/4), animations: {
+                        self.Buttons[i].center.x = self.view.frame.width/2
+                    })
+                }
+                break
+            case "Input":
+                self.saisieReponseLabel.alpha = 1
+                self.InputAnswer.alpha = 1
+                self.inputButtonValidate.alpha = 1
+                self.InputAnswer.text = ""
+                self.InputAnswer.becomeFirstResponder()
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.saisieReponseLabel.center.x = self.view.frame.width/2
+                    self.InputAnswer.center.x = self.view.frame.width/2
+                    self.inputButtonValidate.center.x = self.view.frame.width/2
+                })
+                break
+            case "Psycho":
+                for i in 0..<self.Buttons.count{
+                    self.Buttons[i].alpha = 1
+                    self.Buttons[i].setTitle(self.themeQuestionActif[self.QuestionNumber].Choice[i], for :UIControlState.normal)
+                    UIView.animate(withDuration: 0.25, delay : (TimeInterval(i)/4), animations: {
+                        self.Buttons[i].center.x = self.view.frame.width/2
+                    })
+                }
+                break
+            default :
+                print("erreur TypeOfQuestion")
+                break
             }
-            break
-        case "Input":
-            InputAnswer.isHidden = false
-            inputButtonValidate.isHidden = false
-            InputAnswer.text = ""
-            break
-        case "Psycho":
-            for i in 0..<Buttons.count{
-                Buttons[i].isHidden = false
-                Buttons[i].setTitle(themeQuestionActif[QuestionNumber].Choice[i], for :UIControlState.normal)
-            }
-            break
-        default :
-            print("erreur TypeOfQuestion")
-            break
-        }
+        })
     }
     
     //Gère l'écoulement du temps de question
-    func GestionTimer(){
+    @objc func GestionTimer(){
         countSeconde -= 1
-        TimerLabel.text = "\(Int(countSeconde))s"
+        headerView.timerLabel?.text = "\(Int(countSeconde))s"
         if countSeconde <= 0 {
             resultatReponseSwitch(stringReponse: "PasLeTime", typeOfQuestion: "PasLeTime")
         }
@@ -271,48 +366,115 @@ class QuestionViewController: UIViewController {
     //Analyse la réponse donnée selon le type de la question
     func resultatReponseSwitch(stringReponse : String, typeOfQuestion : String){
         if messageSpecialLabel == 0 {
+            
+            hackButton.isHidden = true
             startTimer.invalidate()
             resultatVrai = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].bonneReponse.count)))
             actionResultat = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].gainPVReponse.count)))
-            themeQuestionActif[QuestionNumber].AlreadyPick = true
+            AlreadyPickGesture()
             switch typeOfQuestion {
+                //Question type "QCM"
             case "Button":
-                for i in 0..<Buttons.count{
-                    Buttons[i].setTitle("", for :UIControlState.normal)
-                    Buttons[i].isHidden = true
-                }
-                if(stringReponse == themeQuestionActif[QuestionNumber].Answer){
-                    resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
+                QuestionInit()
+                if(stringReponse == self.themeQuestionActif[self.QuestionNumber].Answer){
+                    self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikGood", volume : 0.8)
+                    self.resultatLabel.text = "\(self.AllAnswersReactions[0].bonneReponse[self.resultatVrai])"
+                    self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1
                 } else {
-                    VerifNoobFunction()
+                    self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
+                    self.VerifNoobFunction()
                 }
-                bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
-                dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions"
+                
+                for i in 0..<self.Buttons.count{
+                    self.Buttons[i].alpha = 0
+                    self.Buttons[i].setTitle("", for :UIControlState.normal)
+                }
+                self.bonneReponseLabel.text = "La réponse est : \(self.themeQuestionActif[self.QuestionNumber].Answer!)"
+                self.resultatView.alpha = 1
+                self.dialogueView.isHidden = false
+                if self.themeQuestionActif[self.QuestionNumber].FeedBack != "" {
+                    self.dialogueLabel.text = self.themeQuestionActif[self.QuestionNumber].FeedBack
+                }else{
+                    self.dialogueLabel.text = "Tu as répondu à \(self.QuestionPose) questions sur \(self.nbrQuestionSerie) dans cette série."
+                }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.resultatLabel.alpha = 1
+                }, completion : { _ in
+                    UIView.animate(withDuration: 0.4, animations: {
+                        self.bonneReponseLabel.alpha = 1
+                        
+                    }, completion : { _ in
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.dialogueView.alpha = 1
+                            
+                        }, completion : { _ in
+                            UIView.animate(withDuration: 0.75, animations: {
+                                self.dialogueLabel.alpha = 1
+                            })
+                        })
+                    })
+                })
                 
                 break
+                //Question en saisie de réponse
             case "Input":
-                InputAnswer.isHidden = true
-                inputButtonValidate.isHidden = true
-                for i in 0..<themeQuestionActif[QuestionNumber].Choice.count{
-                    if(stringReponse == themeQuestionActif[QuestionNumber].Choice[i]){
-                        resultatLabel.text = "\(AllAnswersReactions[0].bonneReponse[resultatVrai])"
-                        reponseTrouverInput = true
+                
+                self.view.endEditing(true)
+                for i in 0..<self.themeQuestionActif[self.QuestionNumber].Choice.count{
+                    if(stringReponse.trimmingCharacters(in: .whitespacesAndNewlines) == self.themeQuestionActif[self.QuestionNumber].Choice[i]){
+                        self.reponseTrouverInput = true
+                        break
+                    } else {
+                        self.reponseTrouverInput = false
                     }
                 }
+                
                 if reponseTrouverInput == false {
-                    VerifNoobFunction()
+                    self.VerifNoobFunction()
+                    self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
+                } else {
+                    self.resultatLabel.text = "\(self.AllAnswersReactions[0].bonneReponse[self.resultatVrai])"
+                    self.oneProfil.statsQuiz["bonneReponseQuiz"]! += 1
+                    self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikGood", volume : 0.8)
                 }
-                bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
-                dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions"
+                
+                self.InputAnswer.alpha = 0
+                self.saisieReponseLabel.alpha = 0
+                self.inputButtonValidate.alpha = 0
+                self.bonneReponseLabel.text = "La réponse est : \(self.themeQuestionActif[self.QuestionNumber].Answer!)"
+                self.resultatView.alpha = 1
+                self.dialogueView.isHidden = false
+                
+                if self.themeQuestionActif[self.QuestionNumber].FeedBack != "" {
+                    self.dialogueLabel.text = self.themeQuestionActif[self.QuestionNumber].FeedBack
+                }else{
+                    self.dialogueLabel.text = "Tu as répondu à \(self.QuestionPose) questions sur \(self.nbrQuestionSerie) dans cette série."
+                }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.resultatLabel.alpha = 1
+                }, completion : { _ in
+                    UIView.animate(withDuration: 0.4, animations: {
+                        self.bonneReponseLabel.alpha = 1
+                        
+                    }, completion : { _ in
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.dialogueView.alpha = 1
+                            
+                        }, completion : { _ in
+                            UIView.animate(withDuration: 0.75, animations: {
+                                self.dialogueLabel.alpha = 1
+                            })
+                        })
+                    })
+                })
                 
                 break
+                //Question de psychologie
             case "Psycho":
                 let IntReponse : Int = Int(stringReponse)!
+                bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
                 let profilNameAnswer : String = themeQuestionActif[QuestionNumber].ProfilConsequence![IntReponse]
-                for i in 0..<Buttons.count{
-                    Buttons[i].setTitle("", for :UIControlState.normal)
-                    Buttons[i].isHidden = true
-                }
+                
                 switch profilNameAnswer {
                 case "profil_crieur":
                     self.oneProfil.dictProfil["profil_crieur"]? += 1
@@ -336,122 +498,263 @@ class QuestionViewController: UIViewController {
                     print("Error json ProfilConsequence")
                     break
                 }
-                resultatLabel.text = "Ta réponse est retenu, cela me servira par la suite"
-                if themeQuestionActif[QuestionNumber].HPLostArray[IntReponse] != 0 {
-                    self.oneProfil.lifePoint -= (themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])! + (self.oneProfil.dictProfil["profil_evil"])!
-                    resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int((themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!) + (self.oneProfil.dictProfil["profil_evil"])!) PV."
-                    dialogueLabel.text = "Tu as un profil assez diabolique, je ne suis pas sur que tu finira le jeu avec des réponses comme cela"
+                
+                let rand = Int(arc4random_uniform(2))
+                if rand == 1 {
+                    dialogueLabel.text = "Ta réponse est retenu, cela me servira par la suite"
+                } else {
+                    dialogueLabel.text = "Tu as répondu à \(QuestionPose) questions sur \(nbrQuestionSerie) dans cette série."
                 }
                 
-                bonneReponseLabel.text = ("Tu as répondu : \(themeQuestionActif[QuestionNumber].Choice[IntReponse])")
-                if QuestionPose > 12 {
+                if themeQuestionActif[QuestionNumber].HPLostArray[IntReponse] != 0 {
                     
-                    print(self.oneProfil.dictProfil)
-                    
+                    resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int((themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!) + (self.oneProfil.dictProfil["profil_evil"])!) PV."
                 }
+                
+                resultatLabel.text = ("Tu as répondu : \(themeQuestionActif[QuestionNumber].Choice[IntReponse])")
+                switch themeQuestionActif[QuestionNumber].FeedBackPsycho[IntReponse]{
+                case "argentAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].argentAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].argentAnswer[rand]
+                    break
+                case "droleAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].droleAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].droleAnswer[rand]
+                    break
+                case "sociableAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].sociableAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].sociableAnswer[rand]
+                    break
+                case "romantiqueAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].romantiqueAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].romantiqueAnswer[rand]
+                    break
+                case "timideAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].timideAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].timideAnswer[rand]
+                    break
+                case "soumisAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].soumisAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].soumisAnswer[rand]
+                    break
+                case "creatifAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].creatifAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].creatifAnswer[rand]
+                    break
+                case "crieurAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].crieurAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].crieurAnswer[rand]
+                    break
+                case "evilAnswer":
+                    let rand = Int(arc4random_uniform(UInt32(AllAnswersReactions[0].evilAnswer.count)))
+                    bonneReponseLabel.text = AllAnswersReactions[0].evilAnswer[rand]
+                    changeColorLabelBad(label: headerView.lifePointLabel)
+                    self.oneProfil.lifePoint -= (themeQuestionActif[QuestionNumber].HPLostArray?[IntReponse])!
+                    break
+                default:
+                    break
+                }
+                
+                for i in 0..<self.Buttons.count{
+                    self.Buttons[i].alpha = 0
+                    self.Buttons[i].setTitle("", for :UIControlState.normal)
+                }
+                self.resultatView.alpha = 1
+                self.dialogueView.isHidden = false
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.resultatLabel.alpha = 1
+                }, completion : { _ in
+                    UIView.animate(withDuration: 0.4, animations: {
+                        self.bonneReponseLabel.alpha = 1
+                        
+                    }, completion : { _ in
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.dialogueView.alpha = 1
+                            
+                        }, completion : { _ in
+                            UIView.animate(withDuration: 0.75, animations: {
+                                self.dialogueLabel.alpha = 1
+                            })
+                        })
+                    })
+                })
+                
                 break
                 
+            //Temps écoulé
             case "PasLeTime":
-                for i in 0..<Buttons.count{
-                    Buttons[i].setTitle("", for :UIControlState.normal)
-                    Buttons[i].isHidden = true
-                }
-                InputAnswer.isHidden = true
-                inputButtonValidate.isHidden = true
+                bruitageMusicPlayer = GestionBruitage(filename: "ClikBad", volume : 1)
+                self.view.endEditing(true)
+                
                 resultatLabel.text = "\(AllAnswersReactions[0].mauvaiseReponse[resultatVrai])\(AllAnswersReactions[0].pertePVReponse[actionResultat])\(Int(themeQuestionActif[QuestionNumber].HPLost!)) PV."
+                changeColorLabelBad(label: headerView.lifePointLabel)
                 self.oneProfil.lifePoint -= themeQuestionActif[QuestionNumber].HPLost!
                 bonneReponseLabel.text = "La réponse est : \(themeQuestionActif[QuestionNumber].Answer!)"
+                
+                self.InputAnswer.alpha = 0
+                self.saisieReponseLabel.alpha = 0
+                self.inputButtonValidate.alpha = 0
+                for i in 0..<self.Buttons.count{
+                    self.Buttons[i].alpha = 0
+                    self.Buttons[i].setTitle("", for :UIControlState.normal)
+                }
+                
+                self.resultatView.alpha = 1
+                self.dialogueView.isHidden = false
+                
+                if self.themeQuestionActif[self.QuestionNumber].FeedBack != "" {
+                    self.dialogueLabel.text = self.themeQuestionActif[self.QuestionNumber].FeedBack
+                }else{
+                    self.dialogueLabel.text = "Tu as répondu à \(self.QuestionPose) questions sur \(self.nbrQuestionSerie) dans cette série."
+                }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.resultatLabel.alpha = 1
+                }, completion : { _ in
+                    UIView.animate(withDuration: 0.4, animations: {
+                        self.bonneReponseLabel.alpha = 1
+                        
+                    }, completion : { _ in
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.dialogueView.alpha = 1
+                            
+                        }, completion : { _ in
+                            UIView.animate(withDuration: 0.75, animations: {
+                                self.dialogueLabel.alpha = 1
+                            })
+                        })
+                    })
+                })
+                
                 break
                 
             default:
                 print("Erreur TypeOfQuestion")
                 break
             }
-            QuestionPose += 1
-            resultatView.isHidden = false
-            bonneReponseLabel.isHidden = false
-            lifePointLabel.text = String("\(self.oneProfil.lifePoint) PV")
+            idQuestion[themeQuestionActif[QuestionNumber].Topic!]? += 1
+            
+            
+            headerView.lifePointLabel?.text = String("\(self.oneProfil.lifePoint) PV")
             messageSpecialLabel = 1
         }
     }
     
-    func EndGame(){
-        if self.oneProfil.lifePoint < 1 {
-            messageSpecialLabel = 3
+    //La même question ne sera jamais posé au joueur
+    func AlreadyPickGesture(){
+        switch themeQuestionActif[QuestionNumber].Topic {
+        case "CultureG":
+            TableauCulture[QuestionNumber].AlreadyPick = true
+            break
+        case "Info":
+            TableauInfo[QuestionNumber].AlreadyPick = true
+            break
+        case "Enigme":
+            TableauEnigme[QuestionNumber].AlreadyPick = true
+            break
+        case "Psycho":
+            TableauPsycho[QuestionNumber].AlreadyPick = true
+            break
+        default:
+            fatalError("Problem with AlreadyPick func")
+            break
         }
+        themeQuestionActif[QuestionNumber].AlreadyPick = true
+        QuestionsComplete[themeQuestionActif[QuestionNumber].IdQuestion].AlreadyPick = themeQuestionActif[QuestionNumber].AlreadyPick
+        QuestionPose += 1
     }
     
-    @IBAction func InfoPush(_ sender: UIButton) {
-        QuestionPose = 0
-        startTimer.invalidate()
-        themeQuestionActif = TableauInfo
-        dialogueLabel.text = "Questions d'informatique sélectionnées"
-        for i in 0..<themeQuestionActif.count{
-            if themeQuestionActif[i].AlreadyPick == true{
-                QuestionPose += 1
-            }
-        }
-        PickQuestion()
-    }
-    
-    @IBAction func CulturePush(_ sender: UIButton) {
-        QuestionPose = 0
-        startTimer.invalidate()
-        
-        themeQuestionActif = TableauCulture
-        dialogueLabel.text = "Questions de Culture Générale sélectionnées"
-        for i in 0..<themeQuestionActif.count{
-            if themeQuestionActif[i].AlreadyPick == true{
-                QuestionPose += 1
-            }
-        }
-        PickQuestion()
-        
-    }
-    @IBAction func EnigmePush(_ sender: UIButton){
-        QuestionPose = 0
-        startTimer.invalidate()
-        
-        themeQuestionActif = TableauEnigme
-        dialogueLabel.text = "Enigmes sélectionnées"
-        for i in 0..<themeQuestionActif.count{
-            if themeQuestionActif[i].AlreadyPick == true{
-                QuestionPose += 1
-            }
-        }
-        PickQuestion()
-        
-    }
-    @IBAction func PsychoPush(_ sender: UIButton){
-        QuestionPose = 0
-        startTimer.invalidate()
-        
-        themeQuestionActif = TableauPsycho
-        dialogueLabel.text = "Questions de Psychologie sélectionnées"
-        for i in 0..<themeQuestionActif.count{
-            if themeQuestionActif[i].AlreadyPick == true{
-                QuestionPose += 1
-            }
-        }
-        PickQuestion()
-    }
+//    @IBAction func InfoPush(_ sender: UIButton) {
+//        QuestionPose = 0
+//        startTimer.invalidate()
+//        themeQuestionActif = TableauInfo
+//        dialogueLabel.text = "Questions d'Informatique sélectionnées"
+//        themeActif.text = "Culture Informatique"
+//        for i in 0..<themeQuestionActif.count{
+//            if themeQuestionActif[i].AlreadyPick == true{
+//                QuestionPose += 1
+//            }
+//        }
+//        PickQuestion()
+//    }
+//    
+//    @IBAction func CulturePush(_ sender: UIButton) {
+//        QuestionPose = 0
+//        startTimer.invalidate()
+//        
+//        themeQuestionActif = TableauCulture
+//        dialogueLabel.text = "Questions de Culture Générale sélectionnées"
+//        themeActif.text = "Culture Générale"
+//        for i in 0..<themeQuestionActif.count{
+//            if themeQuestionActif[i].AlreadyPick == true{
+//                QuestionPose += 1
+//            }
+//        }
+//        PickQuestion()
+//        
+//    }
+//    @IBAction func EnigmePush(_ sender: UIButton){
+//        QuestionPose = 0
+//        startTimer.invalidate()
+//        
+//        themeQuestionActif = TableauEnigme
+//        dialogueLabel.text = "Enigmes sélectionnées"
+//        themeActif.text = "Enigme"
+//        for i in 0..<themeQuestionActif.count{
+//            if themeQuestionActif[i].AlreadyPick == true{
+//                QuestionPose += 1
+//            }
+//        }
+//        PickQuestion()
+//        
+//    }
+//    @IBAction func PsychoPush(_ sender: UIButton){
+//        QuestionPose = 0
+//        startTimer.invalidate()
+//        
+//        themeQuestionActif = TableauPsycho
+//        dialogueLabel.text = "Questions de Psychologie sélectionnées"
+//        themeActif.text = "Psychologie"
+//        for i in 0..<themeQuestionActif.count{
+//            if themeQuestionActif[i].AlreadyPick == true{
+//                QuestionPose += 1
+//            }
+//        }
+//        PickQuestion()
+//    }
     
     // function which is triggered when handleTap is called
     @IBAction func HandleTouchDialogue(_ sender: UITapGestureRecognizer) {
         if messageSpecialLabel == 1 {
             messageSpecialLabel = 0
             PickQuestion()
+            
         }
-        if messageSpecialLabel == 3 {
-            resultatLabel.text = "GAME OVER"
-            dialogueLabel.text = "GAME OVER"
-            lifePointLabel.text = "GAME OVER"
-            questionLabel.text = "GAME OVER"
-            bonneReponseLabel.text = "GAME OVER"
-            for i in 0..<Buttons.count{
-                Buttons[i].setTitle("GAME OVER", for: .normal)
+    }
+    
+    //Gère la musique de fond du quiz
+    func QuestionMusicGesture(){
+        embedViewController = getEmbedViewController()
+        
+        if self.oneProfil.sceneActuelle >= 1 && self.oneProfil.sceneActuelle <= 5 {
+            embedViewController.backgroundMusicPlayer = GestionMusic(filename: "Bog")
+        } else {
+            embedViewController.backgroundMusicPlayer = GestionMusic(filename: "SodiumVapor")
+        }
+    }
+    
+    //Sauvegarde la progression du joueur dans la mémoire interne
+    func saveMyData(){
+        self.oneProfil.questionAlreadyPick.removeAll()
+        for question in QuestionsComplete {
+            if question.AlreadyPick == true {
+                self.oneProfil.questionAlreadyPick.append(question.IdQuestion)
             }
         }
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+        
     }
     
 }

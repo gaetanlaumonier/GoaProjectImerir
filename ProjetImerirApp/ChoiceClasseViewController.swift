@@ -6,6 +6,7 @@
 //  Copyright © 2017 Student. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 
 class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -13,50 +14,41 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     var AllClasse = [ClasseJoueur]()
     var buttonSender : Int = 10
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur()
+    var bruitageMusicPlayer = AVAudioPlayer()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.alpha = 0
         AllClasse = buildClasseJoueur()
         tableView.allowsSelection = false
-        print(oneProfil.name)
-        print(oneProfil.lifePoint)
-        print(oneProfil.classeJoueur)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        FonduApparition(myView: self, myDelai: 1)
+        tableView.flashScrollIndicators()
     }
     
-    // MARK: - Table view data source
-    
-     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AllClasse.count
     }
     
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classeCell", for: indexPath) as! ClasseTableViewCell
         
         //soulignement du titre
-        let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
+        let underlineAttribute = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         let underlineAttributedString = NSAttributedString(string: "StringWithUnderLine", attributes: underlineAttribute)
         cell.titleClasseLabel?.attributedText = underlineAttributedString
         
         cell.titleClasseLabel?.text = AllClasse[indexPath.row].nomClasse
+        cell.imageClasse?.image = UIImage(named : AllClasse[indexPath.row].idClasse )
         cell.libelleClasse?.text = AllClasse[indexPath.row].libelleClasse
         cell.pouvoirClasse?.text = AllClasse[indexPath.row].pouvoirClasse
         cell.classeButton?.tag = indexPath.row
@@ -66,6 +58,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func ClasseSelected(sender : UIButton){
         buttonSender = sender.tag
+        bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -87,6 +80,7 @@ class ChoiceClasseViewController: UIViewController, UITableViewDataSource, UITab
             let classePlayer = AllClasse[buttonSender].idClasse
             toViewController.classePlayer = classePlayer!
             toViewController.oneProfil = self.oneProfil
+            
         }
     }
     

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JAh-ch-AMt">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bac View Controller-->
+        <scene sceneID="zke-Z7-r2r">
+            <objects>
+                <viewController id="JAh-ch-AMt" customClass="BacViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v9K-Xp-kwJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bzR-k6-XxW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uh0-wt-9g6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArcadeBac" translatesAutoresizingMaskIntoConstraints="NO" id="KbZ-Le-7b7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23r-SM-YaL" customClass="Fiche" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="134.66666666666669" y="510" width="144.66666666666669" height="206"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="23r-SM-YaL" secondAttribute="height" multiplier="21:29.7" id="foh-h7-fhi"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Xam-TT-8gA" appends="YES" id="rnF-kO-iRR"/>
+                                </connections>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FenetreFermee" translatesAutoresizingMaskIntoConstraints="NO" id="yQw-a9-9Rk">
+                                <rect key="frame" x="67" y="20" width="280" height="279.66666666666669"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yQw-a9-9Rk" secondAttribute="height" id="eFG-NT-R30"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5yo-g3-mth" appends="YES" id="owT-Ul-Wwg"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BolVide" translatesAutoresizingMaskIntoConstraints="NO" id="50s-ly-MgE">
+                                <rect key="frame" x="20" y="294.33333333333331" width="147.33333333333334" height="147.33333333333337"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="50s-ly-MgE" secondAttribute="height" id="p4a-Cd-Tgj"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ldv-no-MVp" appends="YES" id="YI2-yc-IyJ"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CafeVide" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-VQ-Uex">
+                                <rect key="frame" x="227.99999999999997" y="331.33333333333331" width="147.33333333333329" height="147"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jMd-VQ-Uex" secondAttribute="height" id="42N-oG-mLJ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="61w-uL-nu8" appends="YES" id="Ftq-FK-LKr"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmb-BD-af4" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="414" height="88.333333333333329"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PaperBin" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-Y4-Ehq">
+                                <rect key="frame" x="20.000000000000004" y="510" width="41.333333333333343" height="206"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckMark" translatesAutoresizingMaskIntoConstraints="NO" id="Kut-Iu-Rcv">
+                                <rect key="frame" x="352.66666666666674" y="510" width="41.333333333333314" height="206"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yQw-a9-9Rk" firstAttribute="top" secondItem="v9K-Xp-kwJ" secondAttribute="bottom" id="3jb-XC-6dw"/>
+                            <constraint firstItem="Kut-Iu-Rcv" firstAttribute="centerY" secondItem="23r-SM-YaL" secondAttribute="centerY" id="46C-yf-mGU"/>
+                            <constraint firstItem="KbZ-Le-7b7" firstAttribute="width" secondItem="Uh0-wt-9g6" secondAttribute="width" id="5iP-TT-gLt"/>
+                            <constraint firstItem="23r-SM-YaL" firstAttribute="width" secondItem="Uh0-wt-9g6" secondAttribute="width" multiplier="0.35" id="5lA-ey-S3c"/>
+                            <constraint firstItem="Kut-Iu-Rcv" firstAttribute="width" secondItem="Uh0-wt-9g6" secondAttribute="width" multiplier="0.1" id="5wv-cb-mOR"/>
+                            <constraint firstItem="KbZ-Le-7b7" firstAttribute="height" secondItem="Uh0-wt-9g6" secondAttribute="height" id="8JR-ko-WqJ"/>
+                            <constraint firstItem="23r-SM-YaL" firstAttribute="centerX" secondItem="Uh0-wt-9g6" secondAttribute="centerX" id="8go-L4-2Xe"/>
+                            <constraint firstItem="9bT-Y4-Ehq" firstAttribute="height" secondItem="23r-SM-YaL" secondAttribute="height" id="Ajk-de-lXx"/>
+                            <constraint firstItem="nmb-BD-af4" firstAttribute="top" secondItem="Uh0-wt-9g6" secondAttribute="top" constant="10" id="BNZ-fc-emE"/>
+                            <constraint firstItem="23r-SM-YaL" firstAttribute="bottom" secondItem="bzR-k6-XxW" secondAttribute="top" constant="-20" id="Blq-jh-VYg"/>
+                            <constraint firstItem="Kut-Iu-Rcv" firstAttribute="height" secondItem="23r-SM-YaL" secondAttribute="height" id="GLJ-EN-6xa"/>
+                            <constraint firstItem="KbZ-Le-7b7" firstAttribute="centerX" secondItem="Uh0-wt-9g6" secondAttribute="centerX" id="Hvb-iY-Wl6"/>
+                            <constraint firstItem="9bT-Y4-Ehq" firstAttribute="bottom" secondItem="23r-SM-YaL" secondAttribute="bottom" id="Jbo-pb-jhX"/>
+                            <constraint firstItem="50s-ly-MgE" firstAttribute="height" secondItem="Uh0-wt-9g6" secondAttribute="height" multiplier="0.2" id="MIz-mQ-tzR"/>
+                            <constraint firstItem="nmb-BD-af4" firstAttribute="width" secondItem="Uh0-wt-9g6" secondAttribute="width" id="NRZ-JG-gyL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kut-Iu-Rcv" secondAttribute="trailing" id="OfG-S8-G2m"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="50s-ly-MgE" secondAttribute="leading" id="ZFd-oP-cvt"/>
+                            <constraint firstItem="yQw-a9-9Rk" firstAttribute="height" secondItem="Uh0-wt-9g6" secondAttribute="height" multiplier="0.38" id="ahT-Vx-pH0"/>
+                            <constraint firstItem="9bT-Y4-Ehq" firstAttribute="leading" secondItem="Uh0-wt-9g6" secondAttribute="leadingMargin" id="fRb-MF-o5l"/>
+                            <constraint firstItem="jMd-VQ-Uex" firstAttribute="centerY" secondItem="Uh0-wt-9g6" secondAttribute="centerY" multiplier="1.1" id="fX5-tK-d2b"/>
+                            <constraint firstItem="jMd-VQ-Uex" firstAttribute="height" secondItem="Uh0-wt-9g6" secondAttribute="height" multiplier="0.2" id="iEP-9s-JWe"/>
+                            <constraint firstItem="yQw-a9-9Rk" firstAttribute="centerX" secondItem="Uh0-wt-9g6" secondAttribute="centerX" id="iHK-YN-BZu"/>
+                            <constraint firstItem="9bT-Y4-Ehq" firstAttribute="width" secondItem="Uh0-wt-9g6" secondAttribute="width" multiplier="0.1" id="iNI-3q-mNU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jMd-VQ-Uex" secondAttribute="trailing" multiplier="1.05" id="mIa-nb-Zfr"/>
+                            <constraint firstItem="nmb-BD-af4" firstAttribute="height" secondItem="Uh0-wt-9g6" secondAttribute="height" multiplier="0.12" id="nnb-em-DC9"/>
+                            <constraint firstItem="KbZ-Le-7b7" firstAttribute="centerY" secondItem="Uh0-wt-9g6" secondAttribute="centerY" id="o76-5U-DC2"/>
+                            <constraint firstItem="50s-ly-MgE" firstAttribute="centerY" secondItem="Uh0-wt-9g6" secondAttribute="centerY" id="xzb-ZN-7uB"/>
+                            <constraint firstItem="nmb-BD-af4" firstAttribute="centerX" secondItem="Uh0-wt-9g6" secondAttribute="centerX" id="zxe-OP-h7z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bowl" destination="50s-ly-MgE" id="aaa-4o-DOn"/>
+                        <outlet property="checkmark" destination="Kut-Iu-Rcv" id="QQ6-YE-b7r"/>
+                        <outlet property="coffee" destination="jMd-VQ-Uex" id="PTn-Xg-ahr"/>
+                        <outlet property="ficheView" destination="23r-SM-YaL" id="uLs-l1-cxb"/>
+                        <outlet property="headerView" destination="nmb-BD-af4" id="4IN-kB-8qX"/>
+                        <outlet property="paperBin" destination="9bT-Y4-Ehq" id="PnW-hM-qoc"/>
+                        <outlet property="window" destination="yQw-a9-9Rk" id="rg7-6v-Thk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jii-nV-VFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Xam-TT-8gA">
+                    <connections>
+                        <action selector="onSwipe:" destination="JAh-ch-AMt" id="so4-cd-2hn"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="5yo-g3-mth">
+                    <connections>
+                        <action selector="onWindowOpened:" destination="JAh-ch-AMt" id="Rgj-pT-LP8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="61w-uL-nu8">
+                    <connections>
+                        <action selector="onCoffeeDrunk:" destination="JAh-ch-AMt" id="gYH-gD-fXz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ldv-no-MVp">
+                    <connections>
+                        <action selector="onCerealEaten:" destination="JAh-ch-AMt" id="cRW-Jn-CQB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="7.3369565217391308"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="COV-IZ-89b">
+            <objects>
+                <pageViewController storyboardIdentifier="BacPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="o2G-uG-eHv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gja-TD-Ssx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-273"/>
+        </scene>
+        <!--Content Bac View Controller-->
+        <scene sceneID="Z9U-6Y-pfl">
+            <objects>
+                <viewController storyboardIdentifier="ContentBacViewController" id="YeU-pk-0II" customClass="ContentBacViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iab-7m-pWx"/>
+                        <viewControllerLayoutGuide type="bottom" id="eVX-s2-Zg0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="buf-lf-E0X" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="GamesRulesView" destination="buf-lf-E0X" id="c6f-hg-gdS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0A-L4-Z8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="515"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArcadeBac" width="1098" height="1487"/>
+        <image name="BolVide" width="1000" height="765"/>
+        <image name="CafeVide" width="800" height="798"/>
+        <image name="CheckMark" width="733" height="720"/>
+        <image name="FenetreFermee" width="1200" height="1270"/>
+        <image name="PaperBin" width="768" height="768"/>
+    </resources>
+</document>

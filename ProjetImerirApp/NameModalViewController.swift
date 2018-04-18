@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NameModalViewController: UIViewController {
     
@@ -16,52 +17,109 @@ class NameModalViewController: UIViewController {
     @IBOutlet weak var contrainteLabel: UILabel!
     @IBOutlet weak var NameButton: UIButton!
     
-    var oneProfil = ProfilJoueur(name : "", lifePoint : 0, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "")
+    var oneProfil = ProfilJoueur()
+    var bruitageMusicPlayer = AVAudioPlayer()
+    var embedViewController:EmbedViewController!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print(oneProfil.name)
-        print(oneProfil.lifePoint)
-        print(oneProfil.classeJoueur)
-
-
+        embedViewController = getEmbedViewController()
+        nameField.becomeFirstResponder()
     }
     
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "newPart" {
-            let toViewController = segue.destination as! DialogueViewController
-            let namePlayer = nameField.text!.capitalizingFirstLetter()
-            self.oneProfil.name = namePlayer
-            toViewController.oneProfil = self.oneProfil
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        upKeyboard(self)
     }
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    
+    func getErrorMessage(for name: String) -> String? {
         
-        if identifier == "newPart" {
-            let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789éàêèâ")
-            if nameField.text?.rangeOfCharacter(from: characterset.inverted) != nil {
-                contrainteLabel.text = "Pas de caractères spéciaux !"
-                return false
-            }   else if nameField.text == "" {
-                contrainteLabel.text = "N'oublie pas de rentrer un nom !"
-                return false
-            } else {
-                performSegue(withIdentifier: "newPart", sender: self)
-                let initView : UIViewController = InitViewController()
-              //  initView.dismiss(animated: false, completion: nil)
-                //self.dismiss(animated: false, completion: nil)
-                return true
-            }
+        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789éèàêèâôöëç-ûÔÖÛÇÉÈÊËÀÂ ")
+        if name.rangeOfCharacter(from: characterset.inverted) != nil {
+            return "Pas de caractères spéciaux !"
+        } else if name == "" {
+            return "N'oublie pas de rentrer un nom !"
+        } else if (name.count) < 2 || (name.count) > 12 {
+            return "de 2 à 12 lettres maximum !"
+        }
+        
+        return nil
+    }
+    
+    @IBAction func startNewGame(_ sender: UIButton) {
+
+        let myPresentingViewController = self.presentingViewController!.childViewControllers.first as! InitViewController
+                
+        if let msgError = getErrorMessage(for: nameField.text!) {
+            contrainteLabel.text = msgError
+            self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
         } else {
-            return false
+            if let vc = UIStoryboard(name:"Dialogue", bundle:nil).instantiateViewController(withIdentifier: "Dialogue") as? DialogueViewController
+            {
+                self.view.endEditing(true)
+                bruitageMusicPlayer = GestionBruitage(filename: "Clik", volume : 1)
+                myPresentingViewController.myBruitageMusicPlayer = self.GestionBruitage(filename: "Air", volume : 0.4)
+                myPresentingViewController.embedViewController.backgroundMusicPlayer.setVolume(0, fadeDuration: 2.5)
+                UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.nameView.alpha = CGFloat(0)
+                    
+                } , completion: { _ in
+                    
+                    let namePlayer = self.nameField.text!.capitalizingFirstLetter()
+                    
+                    if namePlayer == "Gaetan" || namePlayer == "Gaëtan" {
+                        self.embedViewController.updateAchievement("achievement.gaetan")
+                    }
+                    
+                    if namePlayer == "Anthony" {
+                        self.embedViewController.updateAchievement("achievement.anthony")
+                    }
+                    
+                    UIView.animate(withDuration: 2.5, animations: {
+                        myPresentingViewController.view.alpha = 0
+                        self.view.alpha = 0
+                    }, completion : { _ in
+                        
+                        self.oneProfil = ProfilJoueur(name : "Inconnu", lifePoint : 100, dictProfil : ["profil_crieur":0, "profil_sociable" : 0, "profil_timide":0, "profil_innovateur":0, "profil_evil":0, "profil_good":0], classeJoueur : "Hacker", sceneActuelle : 0, statsQuiz : ["bonneReponseQuiz":0, "pourcentage" : 0], statsCookie : ["cookieGoodTaped":0, "pourcentage" : 0], statsRangement : ["goodClassification":0, "pourcentage" : 0], statsConsole : ["missileHit":0, "pourcentage" : 0], statsBac : ["goodClassification":0, "pourcentage" : 0], statsLabyrinthe : ["timeSpent":0, "batKilled" : 0], questionAlreadyPick:[])
+                        self.oneProfil.name = namePlayer
+                        
+                        self.saveMyData()
+                        
+                        vc.oneProfil = self.oneProfil
+                        self.dismiss(animated: false, completion: nil)
+                        
+                        self.embedViewController.showScene(vc)
+                    })
+                })
+            } else {
+                print("Could not instantiate view controller with identifier of type DialogueViewController")
+                return
+            }
         }
     }
+    
     @IBAction func dismissButton(_ sender: UIButton) {
+        self.bruitageMusicPlayer = self.GestionBruitage(filename: "ClikBad", volume : 1)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func upKeyboard(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.nameView.frame.origin.y = self.view.bounds.height/7
+        })
+    }
+    
+    @IBAction func downKeyboard(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.nameView.center.y = self.view.center.y
+        })
+        
+    }
+    
+    func saveMyData(){
+        var maData = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        maData.appendPathComponent("saveGame")
+        NSKeyedArchiver.archiveRootObject(self.oneProfil, toFile: maData.path)
+        
     }
 }

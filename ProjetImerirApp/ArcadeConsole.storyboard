@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PcS-kE-0Dj">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Console View Controller-->
+        <scene sceneID="WtY-qX-Vio">
+            <objects>
+                <viewController id="PcS-kE-0Dj" customClass="ConsoleViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B01-Ur-inJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="L08-g4-glf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RhC-Dc-TKj">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceBackground.gif" translatesAutoresizingMaskIntoConstraints="NO" id="D6Q-Qb-EQk">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jc-v8-EjR" customClass="HeaderView" customModule="ProjetImerirApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="164"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Jc-v8-EjR" firstAttribute="width" secondItem="RhC-Dc-TKj" secondAttribute="width" id="4rp-VL-tte"/>
+                            <constraint firstItem="D6Q-Qb-EQk" firstAttribute="centerX" secondItem="RhC-Dc-TKj" secondAttribute="centerX" id="66x-gj-JHJ"/>
+                            <constraint firstItem="D6Q-Qb-EQk" firstAttribute="width" secondItem="RhC-Dc-TKj" secondAttribute="width" id="Dta-hn-B1h"/>
+                            <constraint firstItem="6Jc-v8-EjR" firstAttribute="height" secondItem="RhC-Dc-TKj" secondAttribute="height" multiplier="0.12" id="ICB-ez-M4a"/>
+                            <constraint firstItem="D6Q-Qb-EQk" firstAttribute="height" secondItem="RhC-Dc-TKj" secondAttribute="height" id="MWK-Os-apq"/>
+                            <constraint firstItem="6Jc-v8-EjR" firstAttribute="top" secondItem="RhC-Dc-TKj" secondAttribute="top" constant="10" id="MbC-68-jqo"/>
+                            <constraint firstItem="D6Q-Qb-EQk" firstAttribute="centerY" secondItem="RhC-Dc-TKj" secondAttribute="centerY" id="NZa-ER-Dvg"/>
+                            <constraint firstItem="6Jc-v8-EjR" firstAttribute="centerX" secondItem="RhC-Dc-TKj" secondAttribute="centerX" id="jRJ-OD-iQ1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="background" destination="D6Q-Qb-EQk" id="9gK-xb-kKc"/>
+                        <outlet property="headerView" destination="6Jc-v8-EjR" id="aJY-vR-Vbc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ylh-iX-Ts2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11" y="270"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="gCT-P8-Y4l">
+            <objects>
+                <pageViewController storyboardIdentifier="ConsolePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="kFN-zx-Fp1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5O-Oz-pHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-273"/>
+        </scene>
+        <!--Content Console View Controller-->
+        <scene sceneID="lA0-h9-qTR">
+            <objects>
+                <viewController storyboardIdentifier="ContentConsoleViewController" id="MX1-xf-mDv" customClass="ContentConsoleViewController" customModule="ProjetImerirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ehh-Zt-5Mw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tgy-9k-KtH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HCS-AX-1q1" customClass="GamesRulesView" customModule="ProjetImerirApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="GamesRulesView" destination="HCS-AX-1q1" id="AQD-WI-z9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qe0-d5-aBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="515"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SpaceBackground.gif" width="498" height="560"/>
+    </resources>
+</document>

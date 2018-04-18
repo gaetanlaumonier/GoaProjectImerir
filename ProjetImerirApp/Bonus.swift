@@ -17,7 +17,7 @@ class Bonus: UIButton {
         super.didMoveToSuperview()
         if let spview = self.superview {
             rangementView = spview as! RangementView
-            self.addTarget(rangementView.controller, action: #selector(RangementViewController.onBonusPicked), for: .touchUpInside)
+            self.addTarget(rangementView.controller, action: #selector(RangementViewController.onBonusPicked(sender:)), for: .touchUpInside)
         }
     }
     
@@ -34,17 +34,15 @@ class Bonus: UIButton {
         
     }
     
-    func onBonusPicked() {
+    @objc func onBonusPicked() {
         self.isUserInteractionEnabled = false
         rangementView.controller.drawMessage(bonus: self)
         self.layer.removeAllAnimations()
-        UIView.animate(withDuration: 2, animations: {_ in
+        UIView.animate(withDuration: 2, animations: {
             self.alpha = 0
             self.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         },completion: {_ in
             self.removeFromSuperview()
         })
     }
-    
-    
 }

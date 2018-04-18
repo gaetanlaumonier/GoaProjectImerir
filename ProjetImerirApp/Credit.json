@@ -1,0 +1,72 @@
+{
+    "Credit": [{
+               "idLabel": "0",
+               "textLabel": "Crédits",
+               "typeLabel": "titre"
+               }, {
+               "idLabel": "1",
+               "textLabel": "Réalisation",
+               "typeLabel": "sousTitre"
+               }, {
+               "idLabel": "2",
+               "textLabel": "IMÉRIR Perpignan",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "3",
+               "textLabel": "Développement",
+               "typeLabel": "sousTitre"
+               }, {
+               "idLabel": "4",
+               "textLabel": "Anthony Natoli",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "5",
+               "textLabel": "Gaetan Laumonier",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "6",
+               "textLabel": "Musique",
+               "typeLabel": "sousTitre"
+               }, {
+               "idLabel": "7",
+               "textLabel": "Eric Matyas",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "8",
+               "textLabel": "www.soundimage.org",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "9",
+               "textLabel": "www.universal-soundbank.com",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "10",
+               "textLabel": "Création Graphique",
+               "typeLabel": "sousTitre"
+               }, {
+               "idLabel": "11",
+               "textLabel": "Gaetan Laumonier",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "12",
+               "textLabel": "www.millionthvector.blogspot.fr",
+               "typeLabel": "texte"
+               }, {
+               "idLabel": "13",
+               "textLabel": "Recherche Graphique",
+               "typeLabel": "sousTitre"
+               }, {
+               "idLabel": "14",
+               "textLabel": "Anthony Natoli",
+               "typeLabel": "texte"
+               },{
+               "idLabel": "15",
+               "textLabel":"Wiki du jeu",
+               "typeLabel": "sousTitre"
+               },{
+               "idLabel": "16",
+               "textLabel": "fr.la-banale-journee.wikia.com",
+               "typeLabel": "texte"
+               }
+               ]
+}
